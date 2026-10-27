@@ -1,17 +1,17 @@
 ---
-title: "Migrate the JAXB API dependency unless Recorder still needs it"
-sidebar_label: "Migrate the JAXB API dependency unless Recorder still needs it"
+title: "Migrate the JAXB API dependency unless Recorder or Jackson still needs it"
+sidebar_label: "Migrate the JAXB API dependency unless Recorder or Jackson still needs it"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Migrate the JAXB API dependency unless Recorder still needs it
+# Migrate the JAXB API dependency unless Recorder or Jackson still needs it
 
 **org.openrewrite.java.migrate.jakarta.ChangeJaxbApiDependency**
 
-_Migrate JAXB API coordinates while preserving the legacy API needed alongside Jakarta JAXB by external Arquillian Recorder 1.x binaries. Recorder modules migrated in the same reactor are excluded._
+_Migrate JAXB API coordinates while preserving the legacy API needed alongside Jakarta JAXB by external Arquillian Recorder 1.x binaries or by Jackson's JAXB annotations module. Recorder modules migrated in the same reactor are excluded._
 
 ## Recipe source
 
@@ -33,7 +33,7 @@ This recipe is used as part of the following composite recipes:
 
 <RunRecipe
   recipeName="org.openrewrite.java.migrate.jakarta.ChangeJaxbApiDependency"
-  displayName="Migrate the JAXB API dependency unless Recorder still needs it"
+  displayName="Migrate the JAXB API dependency unless Recorder or Jackson still needs it"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-migrate-java"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA"

@@ -1,13 +1,13 @@
 ---
-title: "URL Hash Code"
-sidebar_label: "URL Hash Code"
+title: "`URL#hashCode()`"
+sidebar_label: "`URL#hashCode()`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# URL Hash Code
+# `URL#hashCode()`
 
 **org.openrewrite.staticanalysis.URLEqualsHashCodeRecipes$URLHashCodeRecipe**
 
@@ -15,7 +15,7 @@ _Uses of `hashCode()` cause `java.net.URL` to make blocking internet connections
 
 ### Tags
 
-* [RSPEC-2112](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S2112&open=java%3AS2112)
+* [RSPEC-S2112](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S2112&open=java%3AS2112)
 
 ## Recipe source
 
@@ -30,14 +30,14 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 This recipe is used as part of the following composite recipes:
 
-* [URL Equals and Hash Code](/recipes/staticanalysis/urlequalshashcoderecipes.md)
+* [`URL#equals()` and `URL#hashCode()`](/recipes/staticanalysis/urlequalshashcoderecipes.md)
 
 
 ## Usage
 
 <RunRecipe
   recipeName="org.openrewrite.staticanalysis.URLEqualsHashCodeRecipes$URLHashCodeRecipe"
-  displayName="URL Hash Code"
+  displayName="`URL#hashCode()`"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-static-analysis"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_STATIC_ANALYSIS"

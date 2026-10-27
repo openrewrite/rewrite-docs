@@ -13,10 +13,6 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 _The compiler inserts a call to the no argument constructor of the super class when a constructor does not start with an explicit `this()` or `super(..)` call, which makes writing out `super();` redundant._
 
-### Tags
-
-* [RSPEC-S3253](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S3253&open=java%3AS3253)
-
 ## Recipe source
 
 [GitHub: RemoveNoArgumentSuperConstructorCall.java](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/RemoveNoArgumentSuperConstructorCall.java),

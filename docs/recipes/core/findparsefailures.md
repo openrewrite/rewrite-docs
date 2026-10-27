@@ -31,6 +31,13 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | createdAfter | *Optional*. Only report on source files that were created after this date. | `2025-01-01` |
 
 
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Check parse quality](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/mainframe/ingestion/checkparsequality)
+
+
 ## Usage
 
 <RunRecipe

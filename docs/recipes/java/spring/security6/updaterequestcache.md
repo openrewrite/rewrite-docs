@@ -1,17 +1,17 @@
 ---
-title: "Keep the default RequestCache querying behavior in Spring Security 5"
-sidebar_label: "Keep the default RequestCache querying behavior in Spring Security 5"
+title: "Keep the Spring Security 5 `RequestCache` querying behavior"
+sidebar_label: "Keep the Spring Security 5 `RequestCache` querying behavior"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Keep the default RequestCache querying behavior in Spring Security 5
+# Keep the Spring Security 5 `RequestCache` querying behavior
 
 **org.openrewrite.java.spring.security6.UpdateRequestCache**
 
-_By default, Spring Security 5 queries the saved request on every request, which means that in a typical setup, the HttpSession is queried on every request to use the RequestCache. In Spring Security 6, the default behavior has changed, and RequestCache will only be queried for a cached request if the HTTP parameter "continue" is defined. To maintain the same default behavior as Spring Security 5, either explicitly add the HTTP parameter "continue" to every request or use NullRequestCache to override the default behavior._
+_By default, Spring Security 5 queries the saved request on every request, which means that in a typical setup, the `HttpSession` is queried on every request to use the `RequestCache`. In Spring Security 6, the default behavior has changed, and `RequestCache` will only be queried for a cached request if the HTTP parameter `continue` is defined. To maintain the Spring Security 5 behavior, `setMatchingRequestParameterName(null)` is called on `HttpSessionRequestCache` instances assigned to a local variable._
 
 ## Recipe source
 
@@ -118,7 +118,7 @@ public class SecurityConfig {
 
 <RunRecipe
   recipeName="org.openrewrite.java.spring.security6.UpdateRequestCache"
-  displayName="Keep the default RequestCache querying behavior in Spring Security 5"
+  displayName="Keep the Spring Security 5 `RequestCache` querying behavior"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-spring"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING"

@@ -1,17 +1,17 @@
 ---
-title: "Pragmatists `@RunWith(JUnitParamsRunner.class)` to JUnit Jupiter `@Parameterized` tests"
-sidebar_label: "Pragmatists `@RunWith(JUnitParamsRunner.class)` to JUnit Jupiter `@Parameterized` tests"
+title: "Pragmatists `@RunWith(JUnitParamsRunner.class)` to JUnit Jupiter `@ParameterizedTest` tests"
+sidebar_label: "Pragmatists `@RunWith(JUnitParamsRunner.class)` to JUnit Jupiter `@ParameterizedTest` tests"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Pragmatists `@RunWith(JUnitParamsRunner.class)` to JUnit Jupiter `@Parameterized` tests
+# Pragmatists `@RunWith(JUnitParamsRunner.class)` to JUnit Jupiter `@ParameterizedTest` tests
 
 **org.openrewrite.java.testing.junit5.JUnitParamsRunnerToParameterized**
 
-_Convert Pragmatists Parameterized test to the JUnit Jupiter ParameterizedTest equivalent._
+_Convert Pragmatists JUnitParams tests to the JUnit Jupiter `@ParameterizedTest` equivalent._
 
 ## Recipe source
 
@@ -153,7 +153,7 @@ public class PersonTests {
 
 <RunRecipe
   recipeName="org.openrewrite.java.testing.junit5.JUnitParamsRunnerToParameterized"
-  displayName="Pragmatists `@RunWith(JUnitParamsRunner.class)` to JUnit Jupiter `@Parameterized` tests"
+  displayName="Pragmatists `@RunWith(JUnitParamsRunner.class)` to JUnit Jupiter `@ParameterizedTest` tests"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-testing-frameworks"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_TESTING_FRAMEWORKS"

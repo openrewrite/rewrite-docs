@@ -59,7 +59,6 @@ This recipe is available under the [Moderne Source Available License](https://do
   * groupId: `org.springframework.boot`
   * artifactId: `*`
   * newVersion: `4.0.x`
-  * overrideManagedVersion: `false`
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `org.springframework.boot`
   * artifactId: `spring-boot-dependencies`
@@ -99,6 +98,10 @@ This recipe is available under the [Moderne Source Available License](https://do
   * overrideManagedVersion: `true`
 * [Migrate Liquibase property values passed to SpringLiquibase](../../../java/spring/boot4/migrateliquibasepropertiesapi)
 * [Migrate to Spring Boot 4.0 modular starters (Community Edition)](../../../java/spring/boot4/migratetomodularstarters-community-edition)
+* [Remove a Gradle or Maven dependency](../../../java/dependencies/removedependency)
+  * groupId: `org.springframework.boot`
+  * artifactId: `spring-boot-starter-aop`
+  * unlessUsing: `org.aspectj.lang.annotation.*`
 * [Rename Spring Boot 4.0 starters with managed versions](../../../java/spring/boot4/renamedeprecatedstartersmanagedversions)
 * [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
   * oldGroupId: `org.springframework.boot`
@@ -125,10 +128,6 @@ This recipe is available under the [Moderne Source Available License](https://do
   * oldArtifactId: `spring-boot-starter-web-services`
   * newArtifactId: `spring-boot-starter-webservices`
   * newVersion: `4.0.x`
-* [Remove a Gradle or Maven dependency](../../../java/dependencies/removedependency)
-  * groupId: `org.springframework.boot`
-  * artifactId: `spring-boot-starter-aop`
-  * unlessUsing: `org.aspectj.lang.annotation.*`
 * [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
   * oldGroupId: `org.springframework.boot`
   * oldArtifactId: `spring-boot-starter-aop`
@@ -195,7 +194,6 @@ recipeList:
       groupId: org.springframework.boot
       artifactId: "*"
       newVersion: 4.0.x
-      overrideManagedVersion: false
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: org.springframework.boot
       artifactId: spring-boot-dependencies
@@ -235,6 +233,10 @@ recipeList:
       overrideManagedVersion: true
   - org.openrewrite.java.spring.boot4.MigrateLiquibasePropertiesApi
   - org.openrewrite.java.spring.boot4.MigrateToModularStarters
+  - org.openrewrite.java.dependencies.RemoveDependency:
+      groupId: org.springframework.boot
+      artifactId: spring-boot-starter-aop
+      unlessUsing: org.aspectj.lang.annotation.*
   - org.openrewrite.java.spring.boot4.RenameDeprecatedStartersManagedVersions
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.springframework.boot
@@ -261,10 +263,6 @@ recipeList:
       oldArtifactId: spring-boot-starter-web-services
       newArtifactId: spring-boot-starter-webservices
       newVersion: 4.0.x
-  - org.openrewrite.java.dependencies.RemoveDependency:
-      groupId: org.springframework.boot
-      artifactId: spring-boot-starter-aop
-      unlessUsing: org.aspectj.lang.annotation.*
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.springframework.boot
       oldArtifactId: spring-boot-starter-aop
@@ -309,11 +307,7 @@ recipeList:
 project
 ```
 
-<Tabs groupId="beforeAfter">
-<TabItem value="pom.xml" label="pom.xml">
-
-
-###### Before
+###### Unchanged
 ```xml title="pom.xml"
 <project>
     <modelVersion>4.0.0</modelVersion>
@@ -338,50 +332,6 @@ project
     </dependencies>
 </project>
 ```
-
-###### After
-```xml title="pom.xml"
-<project>
-    <modelVersion>4.0.0</modelVersion>
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>4.0.8</version>
-        <relativePath/>
-    </parent>
-    <groupId>com.example</groupId>
-    <artifactId>redundant-version-app</artifactId>
-    <version>1.0-SNAPSHOT</version>
-    <dependencies>
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-        </dependency>
-    </dependencies>
-</project>
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
---- pom.xml
-+++ pom.xml
-@@ -12,3 +12,0 @@
-    <artifactId>redundant-version-app</artifactId>
-    <version>1.0-SNAPSHOT</version>
--   <properties>
--       <commons-lang3-override.version>3.18.0</commons-lang3-override.version>
--   </properties>
-    <dependencies>
-@@ -19,1 +16,0 @@
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
--           <version>${commons-lang3-override.version}</version>
-        </dependency>
-```
-</TabItem>
-</Tabs>
 
 ---
 
@@ -394,11 +344,7 @@ project
 project
 ```
 
-<Tabs groupId="beforeAfter">
-<TabItem value="pom.xml" label="pom.xml">
-
-
-###### Before
+###### Unchanged
 ```xml title="pom.xml"
 <project>
     <modelVersion>4.0.0</modelVersion>
@@ -423,50 +369,6 @@ project
     </dependencies>
 </project>
 ```
-
-###### After
-```xml title="pom.xml"
-<project>
-    <modelVersion>4.0.0</modelVersion>
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>4.0.8</version>
-        <relativePath/>
-    </parent>
-    <groupId>com.example</groupId>
-    <artifactId>redundant-version-app</artifactId>
-    <version>1.0-SNAPSHOT</version>
-    <dependencies>
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-        </dependency>
-    </dependencies>
-</project>
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
---- pom.xml
-+++ pom.xml
-@@ -12,3 +12,0 @@
-    <artifactId>redundant-version-app</artifactId>
-    <version>1.0-SNAPSHOT</version>
--   <properties>
--       <commons-lang3-override.version>3.18.0</commons-lang3-override.version>
--   </properties>
-    <dependencies>
-@@ -19,1 +16,0 @@
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
--           <version>${commons-lang3-override.version}</version>
-        </dependency>
-```
-</TabItem>
-</Tabs>
 
 
 ## Usage

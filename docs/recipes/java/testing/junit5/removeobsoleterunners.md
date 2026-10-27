@@ -1,17 +1,17 @@
 ---
-title: "Remove JUnit 4 `@RunWith` annotations that do not require an `@ExtendsWith` replacement"
-sidebar_label: "Remove JUnit 4 `@RunWith` annotations that do not require an `@ExtendsWith` replacement"
+title: "Remove JUnit 4 `@RunWith` annotations that do not require an `@ExtendWith` replacement"
+sidebar_label: "Remove JUnit 4 `@RunWith` annotations that do not require an `@ExtendWith` replacement"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Remove JUnit 4 `@RunWith` annotations that do not require an `@ExtendsWith` replacement
+# Remove JUnit 4 `@RunWith` annotations that do not require an `@ExtendWith` replacement
 
 **org.openrewrite.java.testing.junit5.RemoveObsoleteRunners**
 
-_Some JUnit 4 `@RunWith` annotations do not require replacement with an equivalent JUnit Jupiter `@ExtendsWith` annotation. This can be used to remove those runners that either do not have a JUnit Jupiter equivalent or do not require a replacement as part of JUnit 4 to 5 migration._
+_Some JUnit 4 `@RunWith` annotations do not require replacement with an equivalent JUnit Jupiter `@ExtendWith` annotation. This can be used to remove those runners that either do not have a JUnit Jupiter equivalent or do not require a replacement as part of JUnit 4 to 5 migration._
 
 ## Recipe source
 
@@ -89,7 +89,7 @@ Here's how you can define and customize such a recipe within your rewrite.yml:
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.RemoveObsoleteRunnersExample
-displayName: Remove JUnit 4 `@RunWith` annotations that do not require an `@ExtendsWith` replacement example
+displayName: Remove JUnit 4 `@RunWith` annotations that do not require an `@ExtendWith` replacement example
 recipeList:
   - org.openrewrite.java.testing.junit5.RemoveObsoleteRunners:
       obsoleteRunners:
@@ -98,7 +98,7 @@ recipeList:
 
 <RunRecipe
   recipeName="org.openrewrite.java.testing.junit5.RemoveObsoleteRunners"
-  displayName="Remove JUnit 4 `@RunWith` annotations that do not require an `@ExtendsWith` replacement"
+  displayName="Remove JUnit 4 `@RunWith` annotations that do not require an `@ExtendWith` replacement"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-testing-frameworks"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_TESTING_FRAMEWORKS"

@@ -28,6 +28,137 @@ This recipe is used as part of the following composite recipes:
 
 * [Migrate System Rules to System Stubs and JUnit Pioneer](/recipes/java/testing/junit5/migratesystemrules.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.junit.Rule;
+import org.junit.contrib.java.lang.system.SystemErrRule;
+import org.junit.contrib.java.lang.system.SystemOutRule;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+class GreeterTest {
+    @Rule
+    public final SystemOutRule out = new SystemOutRule().enableLog().mute();
+
+    @Rule
+    public final SystemErrRule err = new SystemErrRule().enableLog();
+
+    @Test
+    void greets() {
+        System.out.println("Hello");
+        assertEquals("Hello\n", out.getLogWithNormalizedLineSeparator());
+        out.clearLog();
+        System.err.print("Oops");
+        assertEquals("Oops", err.getLog());
+        assertEquals(4, err.getLogAsBytes().length);
+    }
+}
+```
+
+###### After
+```java
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import uk.org.webcompere.systemstubs.jupiter.SystemStub;
+import uk.org.webcompere.systemstubs.jupiter.SystemStubsExtension;
+import uk.org.webcompere.systemstubs.stream.SystemErr;
+import uk.org.webcompere.systemstubs.stream.SystemOut;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static uk.org.webcompere.systemstubs.stream.output.OutputFactories.tapAndOutput;
+
+@ExtendWith(SystemStubsExtension.class)
+class GreeterTest {
+    @SystemStub
+    public final SystemOut out = new SystemOut();
+
+    @SystemStub
+    public final SystemErr err = new SystemErr(tapAndOutput());
+
+    @Test
+    void greets() {
+        System.out.println("Hello");
+        assertEquals("Hello\n", out.getText().replace(System.lineSeparator(), "\n"));
+        out.clear();
+        System.err.print("Oops");
+        assertEquals("Oops", err.getText());
+        assertEquals(4, err.getText().getBytes().length);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,3 +1,0 @@
+-import org.junit.Rule;
+-import org.junit.contrib.java.lang.system.SystemErrRule;
+-import org.junit.contrib.java.lang.system.SystemOutRule;
+import org.junit.jupiter.api.Test;
+@@ -5,0 +2,5 @@
+import org.junit.contrib.java.lang.system.SystemOutRule;
+import org.junit.jupiter.api.Test;
++import org.junit.jupiter.api.extension.ExtendWith;
++import uk.org.webcompere.systemstubs.jupiter.SystemStub;
++import uk.org.webcompere.systemstubs.jupiter.SystemStubsExtension;
++import uk.org.webcompere.systemstubs.stream.SystemErr;
++import uk.org.webcompere.systemstubs.stream.SystemOut;
+
+@@ -7,0 +9,1 @@
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
++import static uk.org.webcompere.systemstubs.stream.output.OutputFactories.tapAndOutput;
+
+@@ -8,0 +11,1 @@
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
++@ExtendWith(SystemStubsExtension.class)
+class GreeterTest {
+@@ -9,2 +13,2 @@
+
+class GreeterTest {
+-   @Rule
+-   public final SystemOutRule out = new SystemOutRule().enableLog().mute();
++   @SystemStub
++   public final SystemOut out = new SystemOut();
+
+@@ -12,2 +16,2 @@
+    public final SystemOutRule out = new SystemOutRule().enableLog().mute();
+
+-   @Rule
+-   public final SystemErrRule err = new SystemErrRule().enableLog();
++   @SystemStub
++   public final SystemErr err = new SystemErr(tapAndOutput());
+
+@@ -18,2 +22,2 @@
+    void greets() {
+        System.out.println("Hello");
+-       assertEquals("Hello\n", out.getLogWithNormalizedLineSeparator());
+-       out.clearLog();
++       assertEquals("Hello\n", out.getText().replace(System.lineSeparator(), "\n"));
++       out.clear();
+        System.err.print("Oops");
+@@ -21,2 +25,2 @@
+        out.clearLog();
+        System.err.print("Oops");
+-       assertEquals("Oops", err.getLog());
+-       assertEquals(4, err.getLogAsBytes().length);
++       assertEquals("Oops", err.getText());
++       assertEquals(4, err.getText().getBytes().length);
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

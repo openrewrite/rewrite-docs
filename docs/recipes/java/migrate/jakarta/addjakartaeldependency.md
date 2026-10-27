@@ -1,13 +1,13 @@
 ---
-title: "Add the Jakarta El API when needed"
-sidebar_label: "Add the Jakarta El API when needed"
+title: "Add the Jakarta EL API when needed"
+sidebar_label: "Add the Jakarta EL API when needed"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Add the Jakarta El API when needed
+# Add the Jakarta EL API when needed
 
 **org.openrewrite.java.migrate.jakarta.AddJakartaElDependency**
 
@@ -48,7 +48,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.jakarta.AddJakartaElDependency
-displayName: Add the Jakarta El API when needed
+displayName: Add the Jakarta EL API when needed
 description: |
   Add the migrated API without promoting an explicitly provided or compile-only dependency.
 preconditions:
@@ -77,7 +77,7 @@ This recipe is used as part of the following composite recipes:
 
 <RunRecipe
   recipeName="org.openrewrite.java.migrate.jakarta.AddJakartaElDependency"
-  displayName="Add the Jakarta El API when needed"
+  displayName="Add the Jakarta EL API when needed"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-migrate-java"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA"
@@ -96,6 +96,25 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
+
+### Maven metadata failures
+**org.openrewrite.maven.table.MavenMetadataFailures**
+
+_Attempts to resolve maven metadata that failed._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Group id | The groupId of the artifact for which the metadata download failed. |
+| Artifact id | The artifactId of the artifact for which the metadata download failed. |
+| Version | The version of the artifact for which the metadata download failed. |
+| Maven repository | The URL of the Maven repository that the metadata download failed on. |
+| Snapshots | Does the repository support snapshots. |
+| Releases | Does the repository support releases. |
+| Failure | The reason the metadata download failed. |
+
+</TabItem>
+
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results

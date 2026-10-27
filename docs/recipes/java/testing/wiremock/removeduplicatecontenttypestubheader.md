@@ -28,6 +28,63 @@ This recipe is used as part of the following composite recipes:
 
 * [Keep a single `Content-Type` response header while still on WireMock 3](/recipes/java/testing/wiremock/removeduplicatecontenttypeheaders.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="src/test/resources/mappings/get-user.json" label="src/test/resources/mappings/get-user.json">
+
+
+###### Before
+```json title="src/test/resources/mappings/get-user.json"
+{
+  "request": {
+    "method": "GET",
+    "url": "/user"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": [ "text/plain", "application/json" ]
+    },
+    "body": "{}"
+  }
+}
+```
+
+###### After
+```json title="src/test/resources/mappings/get-user.json"
+{
+  "request": {
+    "method": "GET",
+    "url": "/user"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": "{}"
+  }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- src/test/resources/mappings/get-user.json
++++ src/test/resources/mappings/get-user.json
+@@ -9,1 +9,1 @@
+    "status": 200,
+    "headers": {
+-     "Content-Type": [ "text/plain", "application/json" ]
++     "Content-Type": "application/json"
+    },
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

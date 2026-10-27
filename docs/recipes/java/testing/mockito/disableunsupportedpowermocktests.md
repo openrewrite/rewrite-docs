@@ -28,6 +28,73 @@ This recipe is used as part of the following composite recipes:
 
 * [Replace PowerMock with raw Mockito](/recipes/java/testing/mockito/replacepowermockito.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.junit.Test;
+import org.mockito.Mockito;
+import org.powermock.api.mockito.PowerMockito;
+
+public class MyTest {
+
+    @Test
+    public void verifiesAPrivateMethod() throws Exception {
+        Object target = Mockito.mock(Object.class);
+        PowerMockito.verifyPrivate(target, Mockito.times(1)).invoke("hidden");
+    }
+}
+```
+
+###### After
+```java
+import org.junit.Ignore;
+import org.junit.Test;
+import org.mockito.Mockito;
+import org.powermock.api.mockito.PowerMockito;
+
+public class MyTest {
+
+    @Test
+    @Ignore("PowerMock test disabled by migration: rework it not to rely on private members")
+    public void verifiesAPrivateMethod() throws Exception {
+        // The body of this test is kept for reference while it is migrated by hand:
+        // Object target = Mockito.mock(Object.class);
+        // PowerMockito.verifyPrivate(target, Mockito.times(1)).invoke("hidden");
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,0 +1,1 @@
++import org.junit.Ignore;
+import org.junit.Test;
+@@ -8,0 +9,1 @@
+
+    @Test
++   @Ignore("PowerMock test disabled by migration: rework it not to rely on private members")
+    public void verifiesAPrivateMethod() throws Exception {
+@@ -9,2 +11,3 @@
+    @Test
+    public void verifiesAPrivateMethod() throws Exception {
+-       Object target = Mockito.mock(Object.class);
+-       PowerMockito.verifyPrivate(target, Mockito.times(1)).invoke("hidden");
++       // The body of this test is kept for reference while it is migrated by hand:
++       // Object target = Mockito.mock(Object.class);
++       // PowerMockito.verifyPrivate(target, Mockito.times(1)).invoke("hidden");
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

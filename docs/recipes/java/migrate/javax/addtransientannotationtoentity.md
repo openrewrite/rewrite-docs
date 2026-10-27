@@ -1,13 +1,13 @@
 ---
-title: "Unannotated entity attributes require a Transient annotation"
-sidebar_label: "Unannotated entity attributes require a Transient annotation"
+title: "Add `@Transient` to unannotated entity attributes"
+sidebar_label: "Add `@Transient` to unannotated entity attributes"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Unannotated entity attributes require a Transient annotation
+# Add `@Transient` to unannotated entity attributes
 
 **org.openrewrite.java.migrate.javax.AddTransientAnnotationToEntity**
 
@@ -100,7 +100,7 @@ public class EntityB {
 
 <RunRecipe
   recipeName="org.openrewrite.java.migrate.javax.AddTransientAnnotationToEntity"
-  displayName="Unannotated entity attributes require a Transient annotation"
+  displayName="Add `@Transient` to unannotated entity attributes"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-migrate-java"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA"

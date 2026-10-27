@@ -12,4 +12,8 @@ _Recipes that include further recipes, often including the individual recipes be
 
 * [Migrates to Apache Commons Collections 4.x](./upgradeapachecommonscollections_3_4.md)
 
+## Recipes
+
+* [Replace `CollectionUtils.cardinality` with `IterableUtils.frequency`](./collectionutilscardinalitytofrequency.md)
+
 

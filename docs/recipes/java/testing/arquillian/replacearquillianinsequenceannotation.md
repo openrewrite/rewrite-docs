@@ -1,13 +1,13 @@
 ---
-title: "Arquillian JUnit 4 `@InSequence` to JUnit Jupiter `@Order`"
-sidebar_label: "Arquillian JUnit 4 `@InSequence` to JUnit Jupiter `@Order`"
+title: "Replace Arquillian JUnit 4 `@InSequence` with JUnit Jupiter `@Order`"
+sidebar_label: "Replace Arquillian JUnit 4 `@InSequence` with JUnit Jupiter `@Order`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Arquillian JUnit 4 `@InSequence` to JUnit Jupiter `@Order`
+# Replace Arquillian JUnit 4 `@InSequence` with JUnit Jupiter `@Order`
 
 **org.openrewrite.java.testing.arquillian.ReplaceArquillianInSequenceAnnotation**
 
@@ -22,11 +22,41 @@ _Transforms the Arquillian JUnit 4 `@InSequence` to the JUnit Jupiter `@Order`._
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license). Moderne customers can download precompiled artifacts from The Code Genome Project. For non-commercial use you can build the artifact from source locally.
 
 
+## Definition
+
+<Tabs groupId="recipeType">
+<TabItem value="recipe-list" label="Recipe List" >
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.jboss.arquillian.junit.InSequence`
+  * newFullyQualifiedTypeName: `org.junit.jupiter.api.Order`
+  * ignoreDefinition: `true`
+
+</TabItem>
+
+<TabItem value="yaml-recipe-list" label="Yaml Recipe List">
+
+```yaml
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: org.openrewrite.java.testing.arquillian.ReplaceArquillianInSequenceAnnotation
+displayName: Replace Arquillian JUnit 4 `@InSequence` with JUnit Jupiter `@Order`
+description: |
+  Transforms the Arquillian JUnit 4 `@InSequence` to the JUnit Jupiter `@Order`.
+recipeList:
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.jboss.arquillian.junit.InSequence
+      newFullyQualifiedTypeName: org.junit.jupiter.api.Order
+      ignoreDefinition: true
+
+```
+</TabItem>
+</Tabs>
+
 ## Used by
 
 This recipe is used as part of the following composite recipes:
 
-* [Use Arquillian JUnit 5 Extension](/recipes/java/testing/arquillian/arquillianjunit4toarquillianjunit5.md)
+* [Use Arquillian JUnit 5 extension](/recipes/java/testing/arquillian/arquillianjunit4toarquillianjunit5.md)
 
 ## Example
 
@@ -100,7 +130,7 @@ class A {
 
 <RunRecipe
   recipeName="org.openrewrite.java.testing.arquillian.ReplaceArquillianInSequenceAnnotation"
-  displayName="Arquillian JUnit 4 `@InSequence` to JUnit Jupiter `@Order`"
+  displayName="Replace Arquillian JUnit 4 `@InSequence` with JUnit Jupiter `@Order`"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-testing-frameworks"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_TESTING_FRAMEWORKS"

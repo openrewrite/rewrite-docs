@@ -105,6 +105,105 @@ This recipe is used as part of the following composite recipes:
 * [Migrate to Spring Boot 4.0 (Community Edition)](/recipes/java/spring/boot4/upgradespringboot_4_0-community-edition.md)
 * [Migrate to Spring Framework 7.0](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/framework7/upgradespringframework_7_0)
 
+## Examples
+##### Example 1
+`UpgradeSpringFramework_7_0Test#replacesUnprocessableEntityStaticImport`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import static org.springframework.http.HttpStatus.UNPROCESSABLE_ENTITY;
+
+class A {
+    int status() {
+        return UNPROCESSABLE_ENTITY.value();
+    }
+}
+```
+
+###### After
+```java
+import static org.springframework.http.HttpStatus.UNPROCESSABLE_CONTENT;
+
+class A {
+    int status() {
+        return UNPROCESSABLE_CONTENT.value();
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import static org.springframework.http.HttpStatus.UNPROCESSABLE_ENTITY;
++import static org.springframework.http.HttpStatus.UNPROCESSABLE_CONTENT;
+
+@@ -5,1 +5,1 @@
+class A {
+    int status() {
+-       return UNPROCESSABLE_ENTITY.value();
++       return UNPROCESSABLE_CONTENT.value();
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`UpgradeSpringFramework_7_0Test#replacesUnprocessableEntityStaticImport`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import static org.springframework.http.HttpStatus.UNPROCESSABLE_ENTITY;
+
+class A {
+    int status() {
+        return UNPROCESSABLE_ENTITY.value();
+    }
+}
+```
+
+###### After
+```java
+import static org.springframework.http.HttpStatus.UNPROCESSABLE_CONTENT;
+
+class A {
+    int status() {
+        return UNPROCESSABLE_CONTENT.value();
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import static org.springframework.http.HttpStatus.UNPROCESSABLE_ENTITY;
++import static org.springframework.http.HttpStatus.UNPROCESSABLE_CONTENT;
+
+@@ -5,1 +5,1 @@
+class A {
+    int status() {
+-       return UNPROCESSABLE_ENTITY.value();
++       return UNPROCESSABLE_CONTENT.value();
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

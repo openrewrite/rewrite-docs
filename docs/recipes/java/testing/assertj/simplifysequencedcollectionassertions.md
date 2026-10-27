@@ -1,17 +1,17 @@
 ---
-title: "Simplify AssertJ assertions on SequencedCollection"
-sidebar_label: "Simplify AssertJ assertions on SequencedCollection"
+title: "Simplify AssertJ assertions on `SequencedCollection`"
+sidebar_label: "Simplify AssertJ assertions on `SequencedCollection`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Simplify AssertJ assertions on SequencedCollection
+# Simplify AssertJ assertions on `SequencedCollection`
 
 **org.openrewrite.java.testing.assertj.SimplifySequencedCollectionAssertions**
 
-_Simplify AssertJ assertions on SequencedCollection by using dedicated assertion methods. For example, `assertThat(sequencedCollection.getLast())` can be simplified to `assertThat(sequencedCollection).last()`._
+_Simplify AssertJ assertions on `SequencedCollection` by using dedicated assertion methods. For example, `assertThat(sequencedCollection.getLast())` can be simplified to `assertThat(sequencedCollection).last()`._
 
 ## Recipe source
 
@@ -82,7 +82,7 @@ class MyTest {
 
 <RunRecipe
   recipeName="org.openrewrite.java.testing.assertj.SimplifySequencedCollectionAssertions"
-  displayName="Simplify AssertJ assertions on SequencedCollection"
+  displayName="Simplify AssertJ assertions on `SequencedCollection`"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-testing-frameworks"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_TESTING_FRAMEWORKS"

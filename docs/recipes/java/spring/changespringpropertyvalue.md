@@ -1,13 +1,13 @@
 ---
-title: "Change the value of a spring application property"
-sidebar_label: "Change the value of a spring application property"
+title: "Change the value of a Spring application property"
+sidebar_label: "Change the value of a Spring application property"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Change the value of a spring application property
+# Change the value of a Spring application property
 
 **org.openrewrite.java.spring.ChangeSpringPropertyValue**
 
@@ -36,8 +36,8 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrate Enabled to Access Spring Boot Properties](/recipes/java/spring/boot3/springbootproperties_3_4_enabledtoaccess.md)
 * [Migrate Spring Boot properties to 4.0](/recipes/java/spring/boot4/springbootproperties_4_0.md)
+* [Migrate `enabled` to `access` Spring Boot properties](/recipes/java/spring/boot3/springbootproperties_3_4_enabledtoaccess.md)
 * [Migrate from Spring Boot 1.x to 2.0](/recipes/java/spring/boot2/upgradespringboot_2_0.md)
 * [Migrate to Spring Boot 2.7](/recipes/java/spring/boot2/upgradespringboot_2_7.md)
 * [Migrate to Spring ORM to 5](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/orm/springorm5)
@@ -93,7 +93,7 @@ Here's how you can define and customize such a recipe within your rewrite.yml:
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.ChangeSpringPropertyValueExample
-displayName: Change the value of a spring application property example
+displayName: Change the value of a Spring application property example
 recipeList:
   - org.openrewrite.java.spring.ChangeSpringPropertyValue:
       propertyKey: management.metrics.binders.files.enabled
@@ -103,7 +103,7 @@ recipeList:
 
 <RunRecipe
   recipeName="org.openrewrite.java.spring.ChangeSpringPropertyValue"
-  displayName="Change the value of a spring application property"
+  displayName="Change the value of a Spring application property"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-spring"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING"

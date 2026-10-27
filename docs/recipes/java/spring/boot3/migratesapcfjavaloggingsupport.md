@@ -1,13 +1,13 @@
 ---
-title: "Migrate SAP cloud foundry logging support to Spring Boot 3.x"
-sidebar_label: "Migrate SAP cloud foundry logging support to Spring Boot 3.x"
+title: "Migrate SAP Cloud Foundry logging support to Spring Boot 3.x"
+sidebar_label: "Migrate SAP Cloud Foundry logging support to Spring Boot 3.x"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Migrate SAP cloud foundry logging support to Spring Boot 3.x
+# Migrate SAP Cloud Foundry logging support to Spring Boot 3.x
 
 **org.openrewrite.java.spring.boot3.MigrateSapCfJavaLoggingSupport**
 
@@ -54,7 +54,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.spring.boot3.MigrateSapCfJavaLoggingSupport
-displayName: Migrate SAP cloud foundry logging support to Spring Boot 3.x
+displayName: Migrate SAP Cloud Foundry logging support to Spring Boot 3.x
 description: |
   Migrate SAP cloud foundry logging support from `cf-java-logging-support-servlet` to `cf-java-logging-support-servlet-jakarta`, to use Jakarta with Spring Boot 3.
 tags:
@@ -87,7 +87,7 @@ This recipe is used as part of the following composite recipes:
 
 <RunRecipe
   recipeName="org.openrewrite.java.spring.boot3.MigrateSapCfJavaLoggingSupport"
-  displayName="Migrate SAP cloud foundry logging support to Spring Boot 3.x"
+  displayName="Migrate SAP Cloud Foundry logging support to Spring Boot 3.x"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-spring"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING"
@@ -106,6 +106,25 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
+
+### Maven metadata failures
+**org.openrewrite.maven.table.MavenMetadataFailures**
+
+_Attempts to resolve maven metadata that failed._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Group id | The groupId of the artifact for which the metadata download failed. |
+| Artifact id | The artifactId of the artifact for which the metadata download failed. |
+| Version | The version of the artifact for which the metadata download failed. |
+| Maven repository | The URL of the Maven repository that the metadata download failed on. |
+| Snapshots | Does the repository support snapshots. |
+| Releases | Does the repository support releases. |
+| Failure | The reason the metadata download failed. |
+
+</TabItem>
+
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results

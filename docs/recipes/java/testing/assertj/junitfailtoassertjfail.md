@@ -1,13 +1,13 @@
 ---
-title: "JUnit fail to AssertJ"
-sidebar_label: "JUnit fail to AssertJ"
+title: "JUnit `fail` to AssertJ"
+sidebar_label: "JUnit `fail` to AssertJ"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# JUnit fail to AssertJ
+# JUnit `fail` to AssertJ
 
 **org.openrewrite.java.testing.assertj.JUnitFailToAssertJFail**
 
@@ -88,7 +88,7 @@ import org.junit.jupiter.api.Test;
 
 <RunRecipe
   recipeName="org.openrewrite.java.testing.assertj.JUnitFailToAssertJFail"
-  displayName="JUnit fail to AssertJ"
+  displayName="JUnit `fail` to AssertJ"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-testing-frameworks"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_TESTING_FRAMEWORKS"

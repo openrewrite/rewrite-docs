@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.testing.dbrider.MigrateDbRiderSpringToDbRiderJUnit5**
 
-_This recipe will migrate the necessary dependencies and annotations from DbRider with JUnit4 to JUnit5 in a Spring application._
+_Migrates the DbRider dependency and annotations from `rider-spring` (JUnit 4) to `rider-junit5` (JUnit 5) in a Spring application._
 
 ### Tags
 
@@ -59,7 +59,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.testing.dbrider.MigrateDbRiderSpringToDbRiderJUnit5
 displayName: Migrate rider-spring (JUnit4) to rider-junit5 (JUnit5)
 description: |
-  This recipe will migrate the necessary dependencies and annotations from DbRider with JUnit4 to JUnit5 in a Spring application.
+  Migrates the DbRider dependency and annotations from `rider-spring` (JUnit 4) to `rider-junit5` (JUnit 5) in a Spring application.
 tags:
   - spring
   - dbrider
@@ -108,6 +108,25 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
+
+### Maven metadata failures
+**org.openrewrite.maven.table.MavenMetadataFailures**
+
+_Attempts to resolve maven metadata that failed._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Group id | The groupId of the artifact for which the metadata download failed. |
+| Artifact id | The artifactId of the artifact for which the metadata download failed. |
+| Version | The version of the artifact for which the metadata download failed. |
+| Maven repository | The URL of the Maven repository that the metadata download failed on. |
+| Snapshots | Does the repository support snapshots. |
+| Releases | Does the repository support releases. |
+| Failure | The reason the metadata download failed. |
+
+</TabItem>
+
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results

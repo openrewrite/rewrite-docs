@@ -1,13 +1,13 @@
 ---
-title: "JUnit 4 `ExpectedException` To JUnit Jupiter's `assertThrows()`"
-sidebar_label: "JUnit 4 `ExpectedException` To JUnit Jupiter's `assertThrows()`"
+title: "JUnit 4 `ExpectedException` to JUnit Jupiter's `assertThrows()`"
+sidebar_label: "JUnit 4 `ExpectedException` to JUnit Jupiter's `assertThrows()`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# JUnit 4 `ExpectedException` To JUnit Jupiter's `assertThrows()`
+# JUnit 4 `ExpectedException` to JUnit Jupiter's `assertThrows()`
 
 **org.openrewrite.java.testing.junit5.ExpectedExceptionToAssertThrows**
 
@@ -124,7 +124,7 @@ class MyTest {
 
 <RunRecipe
   recipeName="org.openrewrite.java.testing.junit5.ExpectedExceptionToAssertThrows"
-  displayName="JUnit 4 `ExpectedException` To JUnit Jupiter's `assertThrows()`"
+  displayName="JUnit 4 `ExpectedException` to JUnit Jupiter's `assertThrows()`"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-testing-frameworks"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_TESTING_FRAMEWORKS"

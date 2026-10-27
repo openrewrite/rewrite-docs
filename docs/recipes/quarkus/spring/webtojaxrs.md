@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.quarkus.spring.WebToJaxRs**
 
-_Converts Spring Web annotations such as `@RestController`, `@RequestMapping`, `@GetMapping`, etc., to their JAX-RS equivalents like `@Path`, `@GET`, etc._
+_Converts Spring Web annotations such as `@RestController`, `@RequestMapping`, `@GetMapping`, etc., to their JAX-RS equivalents like `@Path`, `@GET`, etc. MVC view controllers, and handler methods that have no single JAX-RS equivalent, are left unchanged and marked for manual migration._
 
 ## Recipe source
 

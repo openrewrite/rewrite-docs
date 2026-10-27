@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.testing.junit5.JUnit5BestPractices**
 
-_Applies best practices to tests._
+_Migrates JUnit 4 tests to JUnit 5, upgrades to JUnit 5.14 and applies the JUnit Jupiter best practices._
 
 ### Tags
 
@@ -55,7 +55,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.testing.junit5.JUnit5BestPractices
 displayName: JUnit 5 best practices
 description: |
-  Applies best practices to tests.
+  Migrates JUnit 4 tests to JUnit 5, upgrades to JUnit 5.14 and applies the JUnit Jupiter best practices.
 tags:
   - junit
   - testing
@@ -207,23 +207,6 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
-<TabItem value="org.openrewrite.java.testing.mockito.table.PowerMockTestsDisabled" label="PowerMockTestsDisabled">
-
-### PowerMock tests disabled for manual migration
-**org.openrewrite.java.testing.mockito.table.PowerMockTestsDisabled**
-
-_Tests disabled because they use a PowerMock feature with no Mockito equivalent. Each row is an action item: rework the test so it does not reach into private members, then re-enable it._
-
-| Column Name | Description |
-| ----------- | ----------- |
-| Source path | The path of the test source file. |
-| Test class | The test class the disabled test belongs to. |
-| Disabled element | The test method that was disabled, or the class name when the usage sits outside a test method and the whole class had to be disabled. |
-| Scope | `METHOD` when a single test was disabled, `CLASS` when the whole test class was. |
-| Reason | The PowerMock usage that cannot be migrated. |
-
-</TabItem>
-
 <TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
 
 ### Maven metadata failures
@@ -240,6 +223,23 @@ _Attempts to resolve maven metadata that failed._
 | Snapshots | Does the repository support snapshots. |
 | Releases | Does the repository support releases. |
 | Failure | The reason the metadata download failed. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.java.testing.mockito.table.PowerMockTestsDisabled" label="PowerMockTestsDisabled">
+
+### PowerMock tests disabled for manual migration
+**org.openrewrite.java.testing.mockito.table.PowerMockTestsDisabled**
+
+_Tests disabled because they use a PowerMock feature with no Mockito equivalent. Each row is an action item: rework the test so it does not reach into private members, then re-enable it._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Source path | The path of the test source file. |
+| Test class | The test class the disabled test belongs to. |
+| Disabled element | The test method that was disabled, or the class name when the usage sits outside a test method and the whole class had to be disabled. |
+| Scope | `METHOD` when a single test was disabled, `CLASS` when the whole test class was. |
+| Reason | The PowerMock usage that cannot be migrated. |
 
 </TabItem>
 

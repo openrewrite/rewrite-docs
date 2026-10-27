@@ -1,17 +1,17 @@
 ---
-title: "Migrate to JavaEE6"
-sidebar_label: "Migrate to JavaEE6"
+title: "Migrate to Java EE 6"
+sidebar_label: "Migrate to Java EE 6"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Migrate to JavaEE6
+# Migrate to Java EE 6
 
 **org.openrewrite.java.migrate.javaee6**
 
-_These recipes help with the Migration to Java EE 6, flagging and updating deprecated methods._
+_Apply changes needed when migrating to Java EE 6, such as calling `HttpServletRequest.logout()` before `HttpSession.invalidate()`._
 
 ### Tags
 
@@ -37,7 +37,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 **Recipes**
 
-* [Use HttpServletRequest `logout` method for programmatic security logout in Servlet 3.0](../../java/migrate/javax/httpsessioninvalidate)
+* [Call `HttpServletRequest.logout()` before `HttpSession.invalidate()`](../../java/migrate/javax/httpsessioninvalidate)
 
 </TabItem>
 
@@ -47,9 +47,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.javaee6
-displayName: Migrate to JavaEE6
+displayName: Migrate to Java EE 6
 description: |
-  These recipes help with the Migration to Java EE 6, flagging and updating deprecated methods.
+  Apply changes needed when migrating to Java EE 6, such as calling `HttpServletRequest.logout()` before `HttpSession.invalidate()`.
 tags:
   - javaee6
   - deprecated
@@ -66,14 +66,14 @@ recipeList:
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrate to JavaEE7](/recipes/java/migrate/javaee7-recipe.md)
+* [Migrate to Java EE 7](/recipes/java/migrate/javaee7-recipe.md)
 
 
 ## Usage
 
 <RunRecipe
   recipeName="org.openrewrite.java.migrate.javaee6"
-  displayName="Migrate to JavaEE6"
+  displayName="Migrate to Java EE 6"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-migrate-java"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA"

@@ -34,9 +34,9 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 This recipe is used as part of the following composite recipes:
 
 * [Change dataformat fury to fory in xml dsl.](/recipes/apache/camel/upgrade/camel413/furyxmldsl.md)
-* [Migrate JAXB-WS Plugin](/recipes/java/migrate/javax/migratejaxbwsplugin.md)
 * [Migrate JSF variable-resolver to el-resolver](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/framework/jsf23/migratefacesconfig)
 * [Migrate RichFaces tags in `xhtml` files](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/jsf/richfaces/update45/updatexhtmltags)
+* [Migrate the JAX-WS Maven plugin](/recipes/java/migrate/javax/migratejaxbwsplugin.md)
 * [Replace global method security with method security](/recipes/java/spring/security5/replaceglobalmethodsecuritywithmethodsecurityxml.md)
 * [Replace modules with subprojects](/recipes/maven/replacemoduleswithsubprojects.md)
 * [XML DSL bearer from rest/securityDefinitions is renamed to bearerToken](/recipes/apache/camel/upgrade/camel412/xmldslbearer.md)

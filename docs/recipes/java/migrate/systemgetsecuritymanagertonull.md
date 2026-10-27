@@ -50,7 +50,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * methodPattern: `java.lang.System#getSecurityManager()`
   * replacement: `null`
 * [Simplify the removed security manager's thread group fallback](../../java/migrate/simplifysecuritymanagerthreadgroup)
-* [Simplify constant if branch execution](../../staticanalysis/simplifyconstantifbranchexecution)
+* [Simplify constant `if` branch execution](../../staticanalysis/simplifyconstantifbranchexecution)
 
 </TabItem>
 
@@ -89,6 +89,97 @@ recipeList:
 This recipe is used as part of the following composite recipes:
 
 * [Migrate to Java 25](/recipes/java/migrate/upgradetojava25.md)
+
+## Examples
+##### Example 1
+`SimplifySecurityManagerThreadGroupTest#removeNullLocalAndDeadBranch`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+class Test {
+    ThreadGroup group;
+    Test() {
+        SecurityManager s = System.getSecurityManager();
+        group = (s != null) ? s.getThreadGroup() : Thread.currentThread().getThreadGroup();
+    }
+}
+```
+
+###### After
+```java
+class Test {
+    ThreadGroup group;
+    Test() {
+        group = Thread.currentThread().getThreadGroup();
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -4,2 +4,1 @@
+    ThreadGroup group;
+    Test() {
+-       SecurityManager s = System.getSecurityManager();
+-       group = (s != null) ? s.getThreadGroup() : Thread.currentThread().getThreadGroup();
++       group = Thread.currentThread().getThreadGroup();
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`SimplifySecurityManagerThreadGroupTest#removeNullLocalAndDeadBranch`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+class Test {
+    ThreadGroup group;
+    Test() {
+        SecurityManager s = System.getSecurityManager();
+        group = (s != null) ? s.getThreadGroup() : Thread.currentThread().getThreadGroup();
+    }
+}
+```
+
+###### After
+```java
+class Test {
+    ThreadGroup group;
+    Test() {
+        group = Thread.currentThread().getThreadGroup();
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -4,2 +4,1 @@
+    ThreadGroup group;
+    Test() {
+-       SecurityManager s = System.getSecurityManager();
+-       group = (s != null) ? s.getThreadGroup() : Thread.currentThread().getThreadGroup();
++       group = Thread.currentThread().getThreadGroup();
+    }
+```
+</TabItem>
+</Tabs>
 
 
 ## Usage

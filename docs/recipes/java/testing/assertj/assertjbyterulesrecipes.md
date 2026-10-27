@@ -1,17 +1,17 @@
 ---
-title: "Adopt AssertJ Byte Assertions"
-sidebar_label: "Adopt AssertJ Byte Assertions"
+title: "Adopt AssertJ `Byte` assertions"
+sidebar_label: "Adopt AssertJ `Byte` assertions"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Adopt AssertJ Byte Assertions
+# Adopt AssertJ `Byte` assertions
 
 **org.openrewrite.java.testing.assertj.AssertJByteRulesRecipes**
 
-_Adopt AssertJ Byte Assertions. Favor semantically explicit methods (e.g. `myByte.isZero()` over `myByte.isEqualTo(0)`)._
+_Adopt AssertJ `Byte` assertions. Favor semantically explicit methods (e.g. `myByte.isZero()` over `myByte.isEqualTo(0)`)._
 
 ## Recipe source
 
@@ -44,9 +44,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.testing.assertj.AssertJByteRulesRecipes
-displayName: Adopt AssertJ Byte Assertions
+displayName: Adopt AssertJ `Byte` assertions
 description: |
-  Adopt AssertJ Byte Assertions. Favor semantically explicit methods (e.g. `myByte.isZero()` over `myByte.isEqualTo(0)`).
+  Adopt AssertJ `Byte` assertions. Favor semantically explicit methods (e.g. `myByte.isZero()` over `myByte.isEqualTo(0)`).
 recipeList:
   - org.openrewrite.java.testing.assertj.AssertJByteRulesRecipes$AbstractByteAssertIsEqualToRecipe
   - org.openrewrite.java.testing.assertj.AssertJByteRulesRecipes$AbstractByteAssertIsNotEqualToRecipe
@@ -116,7 +116,7 @@ class A {
 
 <RunRecipe
   recipeName="org.openrewrite.java.testing.assertj.AssertJByteRulesRecipes"
-  displayName="Adopt AssertJ Byte Assertions"
+  displayName="Adopt AssertJ `Byte` assertions"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-testing-frameworks"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_TESTING_FRAMEWORKS"

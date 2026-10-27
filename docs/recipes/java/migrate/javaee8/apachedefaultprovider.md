@@ -1,17 +1,17 @@
 ---
-title: "Flags any `org.apache.bval.jsr*` (bval 1.1) and `org.apache.bval.jsr303*` (bval 1.0) package references"
-sidebar_label: "Flags any `org.apache.bval.jsr*` (bval 1.1) and `org.apache.bval.jsr303*` (bval 1.0) package references"
+title: "Replace Apache BVal with Hibernate Validator in `validation.xml`"
+sidebar_label: "Replace Apache BVal with Hibernate Validator in `validation.xml`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Flags any `org.apache.bval.jsr*` (bval 1.1) and `org.apache.bval.jsr303*` (bval 1.0) package references
+# Replace Apache BVal with Hibernate Validator in `validation.xml`
 
 **org.openrewrite.java.migrate.javaee8.ApacheDefaultProvider**
 
-_This recipe flags any `org.apache.bval.jsr*` (bval 1.1) and `org.apache.bval.jsr303*` (bval 1.0) package references in validation.xml deployment descriptors. Bean Validation 2.0 and later use the Hibernate Validator implementation instead of the Apache BVal implementation which was used for Bean Validation 1.0 and 1.1._
+_Bean Validation 2.0 and later use the Hibernate Validator implementation instead of the Apache BVal implementation which was used for Bean Validation 1.0 and 1.1. This recipe points the default provider, message interpolator, traversable resolver and constraint validator factory in `validation.xml` deployment descriptors at their Hibernate Validator implementations, and removes the parameter name provider._
 
 ## Recipe source
 
@@ -59,9 +59,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.javaee8.ApacheDefaultProvider
-displayName: Flags any `org.apache.bval.jsr*` (bval 1.1) and `org.apache.bval.jsr303*` (bval 1.0) package references
+displayName: Replace Apache BVal with Hibernate Validator in `validation.xml`
 description: |
-  This recipe flags any `org.apache.bval.jsr*` (bval 1.1) and `org.apache.bval.jsr303*` (bval 1.0) package references in validation.xml deployment descriptors. Bean Validation 2.0 and later use the Hibernate Validator implementation instead of the Apache BVal implementation which was used for Bean Validation 1.0 and 1.1.
+  Bean Validation 2.0 and later use the Hibernate Validator implementation instead of the Apache BVal implementation which was used for Bean Validation 1.0 and 1.1. This recipe points the default provider, message interpolator, traversable resolver and constraint validator factory in `validation.xml` deployment descriptors at their Hibernate Validator implementations, and removes the parameter name provider.
 preconditions:
   - org.openrewrite.Singleton
 recipeList:
@@ -88,7 +88,7 @@ recipeList:
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrate to JavaEE8](/recipes/java/migrate/javaee8-recipe.md)
+* [Migrate to Java EE 8](/recipes/java/migrate/javaee8-recipe.md)
 
 ## Examples
 ##### Example 1
@@ -218,7 +218,7 @@ This recipe is used as part of the following composite recipes:
 
 <RunRecipe
   recipeName="org.openrewrite.java.migrate.javaee8.ApacheDefaultProvider"
-  displayName="Flags any `org.apache.bval.jsr*` (bval 1.1) and `org.apache.bval.jsr303*` (bval 1.0) package references"
+  displayName="Replace Apache BVal with Hibernate Validator in `validation.xml`"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-migrate-java"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA"

@@ -37,14 +37,14 @@ This recipe is available under the [Moderne Source Available License](https://do
 **Recipes**
 
 * [Adopt `@Container` and add `@Testcontainers`](../../../java/testing/testcontainers/addtestcontainersannotations)
-* [Explicit container images and versions](../../../java/testing/testcontainers/explicitcontainerimages)
+* [Use explicit container images and versions](../../../java/testing/testcontainers/explicitcontainerimages)
 * [Replace `ContainerState.getContainerIpAddress()` with `getHost()`](../../../java/testing/testcontainers/gethostmigration)
 * [Change type](../../../java/changetype)
   * oldFullyQualifiedTypeName: `org.testcontainers.containers.DockerComposeContainer`
   * newFullyQualifiedTypeName: `org.testcontainers.containers.ComposeContainer`
 * [Rename Testcontainers dependencies](../../../java/testing/testcontainers/testcontainers2dependencies)
 * [Migrate removed `LocalStackContainer` members to Testcontainers 2.x](../../../java/testing/testcontainers/testcontainers2localstack)
-* [Testcontainers 2 container classes](../../../java/testing/testcontainers/testcontainers2containerclasses)
+* [Move container classes to their Testcontainers 2 packages](../../../java/testing/testcontainers/testcontainers2containerclasses)
 
 </TabItem>
 
@@ -106,6 +106,25 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
+
+### Maven metadata failures
+**org.openrewrite.maven.table.MavenMetadataFailures**
+
+_Attempts to resolve maven metadata that failed._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Group id | The groupId of the artifact for which the metadata download failed. |
+| Artifact id | The artifactId of the artifact for which the metadata download failed. |
+| Version | The version of the artifact for which the metadata download failed. |
+| Maven repository | The URL of the Maven repository that the metadata download failed on. |
+| Snapshots | Does the repository support snapshots. |
+| Releases | Does the repository support releases. |
+| Failure | The reason the metadata download failed. |
+
+</TabItem>
+
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results

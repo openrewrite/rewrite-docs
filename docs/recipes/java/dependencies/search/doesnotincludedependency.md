@@ -1,17 +1,17 @@
 ---
-title: "Does not include dependency for Gradle and Maven"
-sidebar_label: "Does not include dependency for Gradle and Maven"
+title: "Does not include Gradle or Maven dependency"
+sidebar_label: "Does not include Gradle or Maven dependency"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Does not include dependency for Gradle and Maven
+# Does not include Gradle or Maven dependency
 
 **org.openrewrite.java.dependencies.search.DoesNotIncludeDependency**
 
-_A precondition which returns false if visiting a Gradle file / Maven pom which includes the specified dependency in the classpath of some Gradle configuration / Maven scope. For compatibility with multimodule projects, this should most often be applied as a precondition._
+_A precondition which returns false if visiting a Gradle build file or Maven `pom.xml` which includes the specified dependency in the classpath of some Gradle configuration or Maven scope. For compatibility with multi-module projects, this should most often be applied as a precondition._
 
 ## Recipe source
 
@@ -25,12 +25,12 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 | Type | Name | Description | Example |
 | --- | --- | --- | --- |
-| `String` | groupId | The first part of a dependency coordinate `com.google.guava:guava:VERSION`. Supports glob. | `com.google.guava` |
-| `String` | artifactId | The second part of a dependency coordinate `com.google.guava:guava:VERSION`. Supports glob. | `guava` |
+| `String` | groupId | The first part of a dependency coordinate `com.google.guava:guava:VERSION`. Supports glob expressions. | `com.google.guava` |
+| `String` | artifactId | The second part of a dependency coordinate `com.google.guava:guava:VERSION`. Supports glob expressions. | `guava` |
 | `String` | version | *Optional*. Match only dependencies with the specified resolved version. Node-style [version selectors](https://docs.openrewrite.org/reference/dependency-version-selectors) may be used. All versions are searched by default. | `1.x` |
-| `Boolean` | onlyDirect | *Optional*. Default false. If enabled, transitive dependencies will not be considered. | `true` |
-| `String` | scope | *Optional*. Default any. If specified, only the requested scope's classpaths will be checked. Valid options: `compile`, `test`, `runtime`, `provided` | `compile` |
-| `String` | configuration | *Optional*. Match dependencies with the specified configuration. If not specified, all configurations will be searched. | `compileClasspath` |
+| `Boolean` | onlyDirect | *Optional*. For Maven only, if enabled, transitive dependencies will not be considered. Defaults to `false`. |  |
+| `String` | scope | *Optional*. For Maven only, if specified, only the requested scope's classpaths will be checked. All scopes are checked by default. Valid options: `compile`, `test`, `runtime`, `provided` | `compile` |
+| `String` | configuration | *Optional*. For Gradle only, match dependencies with the specified configuration. If not specified, all configurations will be searched. | `compileClasspath` |
 
 ## Example
 
@@ -150,20 +150,19 @@ Here's how you can define and customize such a recipe within your rewrite.yml:
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.DoesNotIncludeDependencyExample
-displayName: Does not include dependency for Gradle and Maven example
+displayName: Does not include Gradle or Maven dependency example
 recipeList:
   - org.openrewrite.java.dependencies.search.DoesNotIncludeDependency:
       groupId: com.google.guava
       artifactId: guava
       version: 1.x
-      onlyDirect: true
       scope: compile
       configuration: compileClasspath
 ```
 
 <RunRecipe
   recipeName="org.openrewrite.java.dependencies.search.DoesNotIncludeDependency"
-  displayName="Does not include dependency for Gradle and Maven"
+  displayName="Does not include Gradle or Maven dependency"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-java-dependencies"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JAVA_DEPENDENCIES"

@@ -11,11 +11,11 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.spring.http.ReplaceStringLiteralsWithMediaTypeConstants**
 
-_Replace String literals with `org.springframework.http.MediaType` constants._
+_Replace String literals with `org.springframework.http.MediaType` constants in modules that depend on `spring-web`._
 
 ## Recipe source
 
-[GitHub: ReplaceStringLiteralsWithMediaTypeConstants.java](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/http/ReplaceStringLiteralsWithMediaTypeConstants.java),
+[GitHub: spring-http-constants.yml](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-http-constants.yml),
 [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues),
 [Code Genome Project](https://artifacts.codegenomeproject.org/maven/org/openrewrite/recipe/rewrite-spring/)
 
@@ -30,6 +30,14 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Module has dependency](../../../java/dependencies/search/modulehasdependency)
+  * groupIdPattern: `org.springframework`
+  * artifactIdPattern: `spring-web`
+
+**Recipes**
+
 * [Replace String literal with constant](../../../java/replacestringliteralwithconstant)
   * literalValue: `*/*`
   * fullyQualifiedConstantName: `org.springframework.http.MediaType.ALL_VALUE`
@@ -134,7 +142,11 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.spring.http.ReplaceStringLiteralsWithMediaTypeConstants
 displayName: Replace String literals with `MediaType` constants
 description: |
-  Replace String literals with `org.springframework.http.MediaType` constants.
+  Replace String literals with `org.springframework.http.MediaType` constants in modules that depend on `spring-web`.
+preconditions:
+  - org.openrewrite.java.dependencies.search.ModuleHasDependency:
+      groupIdPattern: org.springframework
+      artifactIdPattern: spring-web
 recipeList:
   - org.openrewrite.java.ReplaceStringLiteralWithConstant:
       literalValue: */*

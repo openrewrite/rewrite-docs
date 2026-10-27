@@ -28,6 +28,49 @@ This recipe is used as part of the following composite recipes:
 
 * [AssertJ best practices](/recipes/java/testing/assertj/assertj-best-practices.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import static org.assertj.core.api.BDDAssertions.then;
+
+class Test {
+    void test(int port) {
+        then(port).isNotEqualTo(0).as("Lifecycle port is zero");
+    }
+}
+```
+
+###### After
+```java
+import static org.assertj.core.api.BDDAssertions.then;
+
+class Test {
+    void test(int port) {
+        then(port).as("Lifecycle port is zero").isNotEqualTo(0);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -5,1 +5,1 @@
+class Test {
+    void test(int port) {
+-       then(port).isNotEqualTo(0).as("Lifecycle port is zero");
++       then(port).as("Lifecycle port is zero").isNotEqualTo(0);
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

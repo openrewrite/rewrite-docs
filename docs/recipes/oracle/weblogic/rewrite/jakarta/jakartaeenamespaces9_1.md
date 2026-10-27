@@ -51,7 +51,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Migrate xmlns entries in `*.tld` files.](../../../../oracle/weblogic/rewrite/jakarta/javaxwebjsptaglibrarytldstojakarta9webjsptaglibrarytlds)
 * [Migrate xmlns entries in `*.xjb` files.](../../../../oracle/weblogic/rewrite/jakarta/javaxbindingsschemaxjbstojakarta9bindingsschemaxjbs)
 * [Migrate xmlns entries in `**/validation/*.xml` files.](../../../../oracle/weblogic/rewrite/jakarta/javaxvalidationmappingxmlstojakarta9validationmappingxmls)
-* [Migrate xmlns entries and javax. packages in `validation.xml` files](../../../../java/migrate/jakarta/javaxbeanvalidationxmltojakartabeanvalidationxml)
+* [Migrate xmlns entries and `javax` packages in `validation.xml` files](../../../../java/migrate/jakarta/javaxbeanvalidationxmltojakartabeanvalidationxml)
 * [Migrate xmlns entries in `test-*.xml` files for Jakarta EE 9.1 using test interfaces](../../../../oracle/weblogic/rewrite/jakarta/javaxtestxmlstojakartatestsxmls)
 
 </TabItem>

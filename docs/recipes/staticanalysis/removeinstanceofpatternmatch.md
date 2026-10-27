@@ -1,17 +1,17 @@
 ---
-title: "Removes from code Java 14's `instanceof` pattern matching"
-sidebar_label: "Removes from code Java 14's `instanceof` pattern matching"
+title: "Remove Java 14's `instanceof` pattern matching"
+sidebar_label: "Remove Java 14's `instanceof` pattern matching"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Removes from code Java 14's `instanceof` pattern matching
+# Remove Java 14's `instanceof` pattern matching
 
 **org.openrewrite.staticanalysis.RemoveInstanceOfPatternMatch**
 
-_Adds an explicit variable declaration at the beginning of `if` statement instead of `instanceof` pattern matching._
+_Adds an explicit variable declaration at the beginning of the `if` statement instead of `instanceof` pattern matching._
 
 ## Recipe source
 
@@ -75,7 +75,7 @@ class Example {
 
 <RunRecipe
   recipeName="org.openrewrite.staticanalysis.RemoveInstanceOfPatternMatch"
-  displayName="Removes from code Java 14's `instanceof` pattern matching"
+  displayName="Remove Java 14's `instanceof` pattern matching"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-static-analysis"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_STATIC_ANALYSIS"

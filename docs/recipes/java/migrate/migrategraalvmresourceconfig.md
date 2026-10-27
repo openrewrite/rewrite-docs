@@ -1,17 +1,17 @@
 ---
-title: "Migrate GraalVM resource-config.json to glob patterns"
-sidebar_label: "Migrate GraalVM resource-config.json to glob patterns"
+title: "Migrate GraalVM `resource-config.json` to glob patterns"
+sidebar_label: "Migrate GraalVM `resource-config.json` to glob patterns"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Migrate GraalVM resource-config.json to glob patterns
+# Migrate GraalVM `resource-config.json` to glob patterns
 
 **org.openrewrite.java.migrate.MigrateGraalVMResourceConfig**
 
-_Migrates GraalVM native-image resource-config.json files from the legacy regex pattern format (JDK 21 and earlier) to the new glob pattern format (JDK 23+). Converts `pattern` entries to `glob` entries and restructures the format. Note: `excludes` are no longer supported in the new format and will be removed._
+_Migrates GraalVM `native-image` `resource-config.json` files from the legacy regex pattern format (JDK 21 and earlier) to the new glob pattern format (JDK 23+). Converts `pattern` entries to `glob` entries and restructures the format. Note: `excludes` are no longer supported in the new format and will be removed._
 
 ## Recipe source
 
@@ -87,7 +87,7 @@ This recipe is used as part of the following composite recipes:
 
 <RunRecipe
   recipeName="org.openrewrite.java.migrate.MigrateGraalVMResourceConfig"
-  displayName="Migrate GraalVM resource-config.json to glob patterns"
+  displayName="Migrate GraalVM `resource-config.json` to glob patterns"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-migrate-java"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA"

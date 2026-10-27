@@ -11,145 +11,25 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.testing.junit.RemoveJupiterMigrationSupport**
 
-_Remove JUnit Jupiter migrationsupport._
-
-### Tags
-
-* [junit](/reference/recipes-by-tag#junit)
-* [testing](/reference/recipes-by-tag#testing)
+_Removes `junit-jupiter-migrationsupport` from modules that don't use its `@EnableRuleMigrationSupport`, `ExternalResourceSupport` or other types, and its managed version once no module uses them._
 
 ## Recipe source
 
-[GitHub: junit-jupiter.yml](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/resources/META-INF/rewrite/junit-jupiter.yml),
+[GitHub: RemoveJupiterMigrationSupport.java](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/junit/RemoveJupiterMigrationSupport.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues),
 [Code Genome Project](https://artifacts.codegenomeproject.org/maven/org/openrewrite/recipe/rewrite-testing-frameworks/)
 
-:::info
-This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
-:::
-
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license). Moderne customers can download precompiled artifacts from The Code Genome Project. For non-commercial use you can build the artifact from source locally.
 
-
-## Definition
-
-<Tabs groupId="recipeType">
-<TabItem value="recipe-list" label="Recipe List" >
-**Preconditions**
-
-* [Singleton](../../../core/singleton)
-
-**Recipes**
-
-* [Remove a Gradle or Maven dependency](../../../java/dependencies/removedependency)
-  * groupId: `org.junit.jupiter`
-  * artifactId: `junit-jupiter-migrationsupport`
-* [Remove Maven managed dependency](../../../maven/removemanageddependency)
-  * groupId: `org.junit.jupiter`
-  * artifactId: `junit-jupiter-migrationsupport`
-
-</TabItem>
-
-<TabItem value="yaml-recipe-list" label="Yaml Recipe List">
-
-```yaml
----
-type: specs.openrewrite.org/v1beta/recipe
-name: org.openrewrite.java.testing.junit.RemoveJupiterMigrationSupport
-displayName: Remove JUnit Jupiter migrationsupport
-description: |
-  Remove JUnit Jupiter migrationsupport.
-tags:
-  - junit
-  - testing
-preconditions:
-  - org.openrewrite.Singleton
-recipeList:
-  - org.openrewrite.java.dependencies.RemoveDependency:
-      groupId: org.junit.jupiter
-      artifactId: junit-jupiter-migrationsupport
-  - org.openrewrite.maven.RemoveManagedDependency:
-      groupId: org.junit.jupiter
-      artifactId: junit-jupiter-migrationsupport
-
-```
-</TabItem>
-</Tabs>
 
 ## Used by
 
 This recipe is used as part of the following composite recipes:
 
+* [JUnit 6 migration from JUnit 5.x](/recipes/java/testing/junit6/junit5to6migration.md)
 * [JUnit Jupiter best practices](/recipes/java/testing/junit/jupiterbestpractices.md)
 
-## Examples
-##### Example 1
-`RemoveJupiterMigrationSupportTest#removesDependencyFromMavenPomXml`
-
-
-###### Unchanged
-```mavenProject
-project
-```
-
-<Tabs groupId="beforeAfter">
-<TabItem value="pom.xml" label="pom.xml">
-
-
-###### Before
-```xml title="pom.xml"
-<project>
-    <modelVersion>4.0.0</modelVersion>
-    <groupId>com.example</groupId>
-    <artifactId>demo</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <dependencies>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-migrationsupport</artifactId>
-            <version>5.9.3</version>
-            <scope>test</scope>
-        </dependency>
-    </dependencies>
-</project>
-```
-
-###### After
-```xml title="pom.xml"
-<project>
-    <modelVersion>4.0.0</modelVersion>
-    <groupId>com.example</groupId>
-    <artifactId>demo</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-</project>
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
---- pom.xml
-+++ pom.xml
-@@ -6,8 +6,0 @@
-    <artifactId>demo</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
--   <dependencies>
--       <dependency>
--           <groupId>org.junit.jupiter</groupId>
--           <artifactId>junit-jupiter-migrationsupport</artifactId>
--           <version>5.9.3</version>
--           <scope>test</scope>
--       </dependency>
--   </dependencies>
-</project>
-```
-</TabItem>
-</Tabs>
-
----
-
-##### Example 2
-`RemoveJupiterMigrationSupportTest#removesDependencyFromMavenPomXml`
+## Example
 
 
 ###### Unchanged

@@ -1,17 +1,17 @@
 ---
-title: "Update Jakarta EE annotation Dependencies to 2.1.x"
-sidebar_label: "Update Jakarta EE annotation Dependencies to 2.1.x"
+title: "Update Jakarta EE annotation dependencies to 2.1.x"
+sidebar_label: "Update Jakarta EE annotation dependencies to 2.1.x"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Update Jakarta EE annotation Dependencies to 2.1.x
+# Update Jakarta EE annotation dependencies to 2.1.x
 
 **org.openrewrite.java.migrate.jakarta.UpdateJakartaAnnotations2**
 
-_Update Jakarta EE annotation Dependencies to 2.1.x._
+_Deprecated and does nothing, as the `jakarta.annotation-api` upgrade to 2.1.x is now part of the Jakarta EE 10 API migration._
 
 ### Tags
 
@@ -30,7 +30,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <RunRecipe
   recipeName="org.openrewrite.java.migrate.jakarta.UpdateJakartaAnnotations2"
-  displayName="Update Jakarta EE annotation Dependencies to 2.1.x"
+  displayName="Update Jakarta EE annotation dependencies to 2.1.x"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-migrate-java"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA"

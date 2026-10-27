@@ -36,6 +36,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
 * [Migrates to Apache Commons Collections 4.x](../../apache/commons/collections/upgradeapachecommonscollections_3_4)
+* [Replace `CollectionUtils.cardinality` with `IterableUtils.frequency`](../../apache/commons/collections/collectionutilscardinalitytofrequency)
 * [Migrates to Apache Commons Lang 3.x](../../apache/commons/lang/upgradeapachecommonslang_2_3)
 * [Migrates to Apache Commons Math 3.x](../../apache/commons/math/upgradeapachecommonsmath_2_3)
 * [Relocate `org.apache.commons:commons-io` to `commons-io:commons-io`](../../apache/commons/io/relocateapachecommonsio)
@@ -59,6 +60,7 @@ tags:
   - apache
 recipeList:
   - org.openrewrite.apache.commons.collections.UpgradeApacheCommonsCollections_3_4
+  - org.openrewrite.apache.commons.collections.CollectionUtilsCardinalityToFrequency
   - org.openrewrite.apache.commons.lang.UpgradeApacheCommonsLang_2_3
   - org.openrewrite.apache.commons.math.UpgradeApacheCommonsMath_2_3
   - org.openrewrite.apache.commons.io.RelocateApacheCommonsIo
@@ -241,6 +243,25 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
+
+### Maven metadata failures
+**org.openrewrite.maven.table.MavenMetadataFailures**
+
+_Attempts to resolve maven metadata that failed._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Group id | The groupId of the artifact for which the metadata download failed. |
+| Artifact id | The artifactId of the artifact for which the metadata download failed. |
+| Version | The version of the artifact for which the metadata download failed. |
+| Maven repository | The URL of the Maven repository that the metadata download failed on. |
+| Snapshots | Does the repository support snapshots. |
+| Releases | Does the repository support releases. |
+| Failure | The reason the metadata download failed. |
+
+</TabItem>
+
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results

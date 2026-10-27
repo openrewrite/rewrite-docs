@@ -1,17 +1,17 @@
 ---
-title: "Remove JavaDoc `@param`, `@return`, and `@throws` with no description"
-sidebar_label: "Remove JavaDoc `@param`, `@return`, and `@throws` with no description"
+title: "Remove Javadoc `@param`, `@return`, and `@throws` with no description"
+sidebar_label: "Remove Javadoc `@param`, `@return`, and `@throws` with no description"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Remove JavaDoc `@param`, `@return`, and `@throws` with no description
+# Remove Javadoc `@param`, `@return`, and `@throws` with no description
 
 **org.openrewrite.staticanalysis.RemoveEmptyJavaDocParameters**
 
-_Removes `@param`, `@return`, and `@throws` with no description from JavaDocs._
+_Removes `@param` and `@return` tags with no description, and `@throws` tags with neither an exception type nor a description, from Javadoc comments._
 
 ## Recipe source
 
@@ -66,7 +66,7 @@ class Test {
 
 <RunRecipe
   recipeName="org.openrewrite.staticanalysis.RemoveEmptyJavaDocParameters"
-  displayName="Remove JavaDoc `@param`, `@return`, and `@throws` with no description"
+  displayName="Remove Javadoc `@param`, `@return`, and `@throws` with no description"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-static-analysis"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_STATIC_ANALYSIS"

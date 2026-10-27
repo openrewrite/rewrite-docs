@@ -55,7 +55,7 @@ import java.util.Optional;
 
 public class MyAuditorAware implements AuditorAware<String> {
     @Override
-    public Optional<java.lang.String> getCurrentAuditor() {
+    public Optional<String> getCurrentAuditor() {
         return Optional.ofNullable("admin");
     }
 }
@@ -76,7 +76,7 @@ public class MyAuditorAware implements AuditorAware<String> {
     @Override
 -   public String getCurrentAuditor() {
 -       return "admin";
-+   public Optional<java.lang.String> getCurrentAuditor() {
++   public Optional<String> getCurrentAuditor() {
 +       return Optional.ofNullable("admin");
     }
 ```

@@ -1,17 +1,17 @@
 ---
-title: "Migrate RestAssured from javax to jakarta namespace by upgrading to a version compatible with J2EE9"
-sidebar_label: "Migrate RestAssured from javax to jakarta namespace by upgrading to a version compatible with J2EE9"
+title: "Migrate RestAssured from javax to jakarta namespace by upgrading to a version compatible with Jakarta EE 9"
+sidebar_label: "Migrate RestAssured from javax to jakarta namespace by upgrading to a version compatible with Jakarta EE 9"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Migrate RestAssured from javax to jakarta namespace by upgrading to a version compatible with J2EE9
+# Migrate RestAssured from javax to jakarta namespace by upgrading to a version compatible with Jakarta EE 9
 
 **org.openrewrite.java.migrate.jakarta.RestAssuredJavaxToJakarta**
 
-_Java EE has been rebranded to Jakarta EE.  This recipe replaces existing RestAssured dependencies with their counterparts that are compatible with Jakarta EE 9._
+_Java EE has been rebranded to Jakarta EE. This recipe replaces existing RestAssured dependencies with their counterparts that are compatible with Jakarta EE 9._
 
 ## Recipe source
 
@@ -45,9 +45,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.jakarta.RestAssuredJavaxToJakarta
-displayName: Migrate RestAssured from javax to jakarta namespace by upgrading to a version compatible with J2EE9
+displayName: Migrate RestAssured from javax to jakarta namespace by upgrading to a version compatible with Jakarta EE 9
 description: |
-  Java EE has been rebranded to Jakarta EE.  This recipe replaces existing RestAssured dependencies with their counterparts that are compatible with Jakarta EE 9.
+  Java EE has been rebranded to Jakarta EE. This recipe replaces existing RestAssured dependencies with their counterparts that are compatible with Jakarta EE 9.
 preconditions:
   - org.openrewrite.Singleton
 recipeList:
@@ -71,7 +71,7 @@ This recipe is used as part of the following composite recipes:
 
 <RunRecipe
   recipeName="org.openrewrite.java.migrate.jakarta.RestAssuredJavaxToJakarta"
-  displayName="Migrate RestAssured from javax to jakarta namespace by upgrading to a version compatible with J2EE9"
+  displayName="Migrate RestAssured from javax to jakarta namespace by upgrading to a version compatible with Jakarta EE 9"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-migrate-java"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA"
@@ -90,6 +90,25 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
+
+### Maven metadata failures
+**org.openrewrite.maven.table.MavenMetadataFailures**
+
+_Attempts to resolve maven metadata that failed._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Group id | The groupId of the artifact for which the metadata download failed. |
+| Artifact id | The artifactId of the artifact for which the metadata download failed. |
+| Version | The version of the artifact for which the metadata download failed. |
+| Maven repository | The URL of the Maven repository that the metadata download failed on. |
+| Snapshots | Does the repository support snapshots. |
+| Releases | Does the repository support releases. |
+| Failure | The reason the metadata download failed. |
+
+</TabItem>
+
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results

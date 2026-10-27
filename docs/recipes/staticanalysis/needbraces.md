@@ -16,6 +16,7 @@ _Adds missing braces around code such as single-line `if`, `for`, `while`, and `
 ### Tags
 
 * [RSPEC-S121](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S121&open=java%3AS121)
+* [RSPEC-S5261](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S5261&open=java%3AS5261)
 
 ## Recipe source
 

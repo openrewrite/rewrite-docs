@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.maven.RemoveDuplicatePluginDeclarations**
 
-_Maven 4 rejects duplicate plugin declarations (same groupId and artifactId) with an error. This recipe removes duplicate plugin declarations, keeping only the first occurrence._
+_Maven 3.10 and Maven 4 reject duplicate plugin declarations (same groupId and artifactId) with an error, where Maven 3.9 and earlier only warned. This recipe collapses each set of duplicates into the position of the first declaration, preserving the effective model Maven 3 built from them. Maven 3 merged duplicates, with the later declaration taking precedence, whenever there was a declaration to merge them into: always for build plugins, and for plugins in a profile or in plugin management when the main build or a parent also declares the plugin. Otherwise it applied only the last declaration, which is then the one kept._
 
 ## Recipe source
 
@@ -75,7 +75,7 @@ This recipe is used as part of the following composite recipes:
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.1</version>
+                <version>3.11.0</version>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -93,6 +93,12 @@ This recipe is used as part of the following composite recipes:
 ```diff
 --- pom.xml
 +++ pom.xml
+@@ -10,1 +10,1 @@
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+-               <version>3.8.1</version>
++               <version>3.11.0</version>
+            </plugin>
 @@ -17,5 +17,0 @@
                 <version>2.22.2</version>
             </plugin>

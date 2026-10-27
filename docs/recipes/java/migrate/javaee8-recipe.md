@@ -1,17 +1,17 @@
 ---
-title: "Migrate to JavaEE8"
-sidebar_label: "Migrate to JavaEE8"
+title: "Migrate to Java EE 8"
+sidebar_label: "Migrate to Java EE 8"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Migrate to JavaEE8
+# Migrate to Java EE 8
 
 **org.openrewrite.java.migrate.javaee8**
 
-_These recipes help with the Migration to Java EE 8, flagging and updating deprecated methods._
+_Apply changes needed when migrating to Java EE 8, such as upgrading the Java Servlet dependency, replacing deprecated Servlet methods, and moving Bean Validation configuration from Apache BVal to Hibernate Validator. Includes the Java EE 7 migration._
 
 ### Tags
 
@@ -41,10 +41,10 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 **Recipes**
 
-* [Migrate to JavaEE7](../../java/migrate/javaee7-recipe)
-* [Update Java EE Servlet Dependencies to 3.x](../../java/migrate/javaee8/migratetoservlet3x)
+* [Migrate to Java EE 7](../../java/migrate/javaee7-recipe)
+* [Update Java Servlet dependencies to 3.x](../../java/migrate/javaee8/migratetoservlet3x)
 * [Replace `HttpServletRequestWrapper.isRequestedSessionIdFromUrl()` with `isRequestedSessionIdFromURL()`](../../java/migrate/javaee8/servletisrequestedsessionidfromurl)
-* [Flags any `org.apache.bval.jsr*` (bval 1.1) and `org.apache.bval.jsr303*` (bval 1.0) package references](../../java/migrate/javaee8/apachedefaultprovider)
+* [Replace Apache BVal with Hibernate Validator in `validation.xml`](../../java/migrate/javaee8/apachedefaultprovider)
 
 </TabItem>
 
@@ -54,9 +54,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.javaee8
-displayName: Migrate to JavaEE8
+displayName: Migrate to Java EE 8
 description: |
-  These recipes help with the Migration to Java EE 8, flagging and updating deprecated methods.
+  Apply changes needed when migrating to Java EE 8, such as upgrading the Java Servlet dependency, replacing deprecated Servlet methods, and moving Bean Validation configuration from Apache BVal to Hibernate Validator. Includes the Java EE 7 migration.
 tags:
   - javaee8
   - deprecated
@@ -83,7 +83,7 @@ This recipe is used as part of the following composite recipes:
 
 <RunRecipe
   recipeName="org.openrewrite.java.migrate.javaee8"
-  displayName="Migrate to JavaEE8"
+  displayName="Migrate to Java EE 8"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-migrate-java"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA"
@@ -102,6 +102,25 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
+
+### Maven metadata failures
+**org.openrewrite.maven.table.MavenMetadataFailures**
+
+_Attempts to resolve maven metadata that failed._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Group id | The groupId of the artifact for which the metadata download failed. |
+| Artifact id | The artifactId of the artifact for which the metadata download failed. |
+| Version | The version of the artifact for which the metadata download failed. |
+| Maven repository | The URL of the Maven repository that the metadata download failed on. |
+| Snapshots | Does the repository support snapshots. |
+| Releases | Does the repository support releases. |
+| Failure | The reason the metadata download failed. |
+
+</TabItem>
+
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results

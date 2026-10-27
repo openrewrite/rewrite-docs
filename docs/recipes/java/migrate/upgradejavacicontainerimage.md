@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.migrate.UpgradeJavaCiContainerImage**
 
-_Upgrade cimg/openjdk job containers in GitHub Actions and CircleCI to the target Java version, preserving newer versions and unrelated service images._
+_Upgrade `cimg/openjdk` job containers in GitHub Actions and CircleCI to the target Java version, preserving newer versions and unrelated service images._
 
 ## Recipe source
 

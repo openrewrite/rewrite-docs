@@ -26,7 +26,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrate to JavaEE7](/recipes/java/migrate/javaee7-recipe.md)
+* [Migrate to Java EE 7](/recipes/java/migrate/javaee7-recipe.md)
 
 ## Example
 

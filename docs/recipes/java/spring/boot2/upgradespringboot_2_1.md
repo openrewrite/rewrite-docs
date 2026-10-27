@@ -47,7 +47,6 @@ This recipe is available under the [Moderne Source Available License](https://do
   * groupId: `org.springframework.boot`
   * artifactId: `*`
   * newVersion: `2.1.x`
-  * overrideManagedVersion: `false`
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `org.springframework.boot`
   * artifactId: `spring-boot-dependencies`
@@ -99,7 +98,6 @@ recipeList:
       groupId: org.springframework.boot
       artifactId: "*"
       newVersion: 2.1.x
-      overrideManagedVersion: false
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: org.springframework.boot
       artifactId: spring-boot-dependencies

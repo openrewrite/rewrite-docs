@@ -1,17 +1,17 @@
 ---
-title: "Update Apache Shiro Dependencies to 2.0.x"
-sidebar_label: "Update Apache Shiro Dependencies to 2.0.x"
+title: "Update Apache Shiro dependencies to 2.0.x"
+sidebar_label: "Update Apache Shiro dependencies to 2.0.x"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Update Apache Shiro Dependencies to 2.0.x
+# Update Apache Shiro dependencies to 2.0.x
 
 **org.openrewrite.java.migrate.jakarta.UpdateApacheShiroDependencies**
 
-_Update Apache Shiro Dependencies to 2.0.x._
+_Upgrade Apache Shiro to the 2.0.x `jakarta` classifier artifacts and move the relocated codec and utility types, and upgrade `buji-pac4j` and pac4j to their Jakarta EE versions._
 
 ## Recipe source
 
@@ -85,9 +85,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.jakarta.UpdateApacheShiroDependencies
-displayName: Update Apache Shiro Dependencies to 2.0.x
+displayName: Update Apache Shiro dependencies to 2.0.x
 description: |
-  Update Apache Shiro Dependencies to 2.0.x.
+  Upgrade Apache Shiro to the 2.0.x `jakarta` classifier artifacts and move the relocated codec and utility types, and upgrade `buji-pac4j` and pac4j to their Jakarta EE versions.
 preconditions:
   - org.openrewrite.Singleton
 recipeList:
@@ -200,7 +200,7 @@ This recipe is used as part of the following composite recipes:
 
 <RunRecipe
   recipeName="org.openrewrite.java.migrate.jakarta.UpdateApacheShiroDependencies"
-  displayName="Update Apache Shiro Dependencies to 2.0.x"
+  displayName="Update Apache Shiro dependencies to 2.0.x"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-migrate-java"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA"
@@ -219,6 +219,25 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
+
+### Maven metadata failures
+**org.openrewrite.maven.table.MavenMetadataFailures**
+
+_Attempts to resolve maven metadata that failed._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Group id | The groupId of the artifact for which the metadata download failed. |
+| Artifact id | The artifactId of the artifact for which the metadata download failed. |
+| Version | The version of the artifact for which the metadata download failed. |
+| Maven repository | The URL of the Maven repository that the metadata download failed on. |
+| Snapshots | Does the repository support snapshots. |
+| Releases | Does the repository support releases. |
+| Failure | The reason the metadata download failed. |
+
+</TabItem>
+
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results

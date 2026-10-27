@@ -1,6 +1,6 @@
 ---
-title: "Convert `ArgumentMatcher&lt;T&gt;` anonymous class to lambda"
-sidebar_label: "Convert `ArgumentMatcher&lt;T&gt;` anonymous class to lambda"
+title: "Convert `ArgumentMatcher<T>` anonymous class to lambda"
+sidebar_label: "Convert `ArgumentMatcher<T>` anonymous class to lambda"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -26,7 +26,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 This recipe is used as part of the following composite recipes:
 
-* [Mockito 3.x migration from 1.x](/recipes/java/testing/mockito/mockito1to3migration.md)
+* [Upgrade Mockito from 1.x to 3.x](/recipes/java/testing/mockito/mockito1to3migration.md)
 
 ## Example
 

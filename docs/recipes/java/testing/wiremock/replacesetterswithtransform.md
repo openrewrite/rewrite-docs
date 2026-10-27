@@ -28,6 +28,53 @@ This recipe is used as part of the following composite recipes:
 
 * [Upgrade WireMock to 4.x](/recipes/java/testing/wiremock/wiremock3to4migration.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import com.github.tomakehurst.wiremock.matching.RequestPattern;
+import com.github.tomakehurst.wiremock.stubbing.StubMapping;
+
+class Stubs {
+    StubMapping retarget(StubMapping mapping, RequestPattern pattern) {
+        mapping.setRequest(pattern);
+        return mapping;
+    }
+}
+```
+
+###### After
+```java
+import com.github.tomakehurst.wiremock.matching.RequestPattern;
+import com.github.tomakehurst.wiremock.stubbing.StubMapping;
+
+class Stubs {
+    StubMapping retarget(StubMapping mapping, RequestPattern pattern) {
+        mapping = mapping.transform(builder -> builder.setRequest(pattern));
+        return mapping;
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -6,1 +6,1 @@
+class Stubs {
+    StubMapping retarget(StubMapping mapping, RequestPattern pattern) {
+-       mapping.setRequest(pattern);
++       mapping = mapping.transform(builder -> builder.setRequest(pattern));
+        return mapping;
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

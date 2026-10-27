@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.dependencies.UpgradeTransitiveDependencyVersion**
 
-_Upgrades the version of a transitive dependency in a Maven pom.xml or Gradle build.gradle. Leaves direct dependencies unmodified. Can be paired with the regular Upgrade Dependency Version recipe to upgrade a dependency everywhere, regardless of whether it is direct or transitive._
+_Upgrades the version of a transitive dependency in a Maven `pom.xml` or Gradle `build.gradle` or `build.gradle.kts`. Leaves direct dependencies unmodified. Can be paired with `UpgradeDependencyVersion` to upgrade a dependency everywhere, regardless of whether it is direct or transitive._
 
 ## Recipe source
 
@@ -25,17 +25,17 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 | Type | Name | Description | Example |
 | --- | --- | --- | --- |
-| `String` | groupId | The first part of a dependency coordinate 'org.apache.logging.log4j:ARTIFACT_ID:VERSION'. | `org.apache.logging.log4j` |
-| `String` | artifactId | The second part of a dependency coordinate 'org.apache.logging.log4j:log4j-bom:VERSION'. | `log4j-bom` |
+| `String` | groupId | The first part of a dependency coordinate `org.apache.logging.log4j:ARTIFACT_ID:VERSION`. | `org.apache.logging.log4j` |
+| `String` | artifactId | The second part of a dependency coordinate `org.apache.logging.log4j:log4j-bom:VERSION`. | `log4j-bom` |
 | `String` | version | An exact version number or node-style semver selector used to select the version number. | `latest.release` |
-| `String` | scope | *Optional*. An optional scope to use for the dependency management tag. Relevant only to Maven. Valid options: `import`, `runtime`, `provided`, `test` | `import` |
-| `String` | type | *Optional*. An optional type to use for the dependency management tag. Relevant only to Maven builds. Valid options: `jar`, `pom`, `war` | `pom` |
-| `String` | classifier | *Optional*. An optional classifier to use for the dependency management tag. Relevant only to Maven. | `test` |
-| `String` | versionPattern | *Optional*. Allows version selection to be extended beyond the original Node Semver semantics. So for example,Setting 'version' to "25-29" can be paired with a metadata pattern of "-jre" to select 29.0-jre | `-jre` |
+| `String` | scope | *Optional*. For Maven only, an optional scope to use for the dependency management tag. Valid options: `import`, `runtime`, `provided`, `test` | `import` |
+| `String` | type | *Optional*. For Maven only, an optional type to use for the dependency management tag. Valid options: `jar`, `pom`, `war` | `pom` |
+| `String` | classifier | *Optional*. For Maven only, an optional classifier to use for the dependency management tag. | `test` |
+| `String` | versionPattern | *Optional*. Allows version selection to be extended beyond the original Node Semver semantics. So for example, setting `version` to "25-29" can be paired with a metadata pattern of "-jre" to select 29.0-jre. | `-jre` |
 | `String` | because | *Optional*. The reason for upgrading the transitive dependency. For example, we could be responding to a vulnerability. | `CVE-2021-1234` |
-| `Boolean` | releasesOnly | *Optional*. Whether to exclude snapshots from consideration when using a semver selector |  |
-| `String` | onlyIfUsing | *Optional*. Only add managed dependencies to projects having a dependency matching the expression. | `org.apache.logging.log4j:log4j*` |
-| `Boolean` | addToRootPom | *Optional*. Add to the root pom where root is the eldest parent of the pom within the source set. |  |
+| `Boolean` | releasesOnly | *Optional*. For Maven only, whether to exclude snapshots from consideration when using a semver selector. |  |
+| `String` | onlyIfUsing | *Optional*. For Maven only, only add managed dependencies to projects having a dependency matching the expression. | `org.apache.logging.log4j:log4j*` |
+| `Boolean` | addToRootPom | *Optional*. For Maven only, add to the root pom where root is the eldest parent of the pom within the source set. |  |
 
 
 ## Usage
@@ -84,6 +84,25 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
+
+### Maven metadata failures
+**org.openrewrite.maven.table.MavenMetadataFailures**
+
+_Attempts to resolve maven metadata that failed._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Group id | The groupId of the artifact for which the metadata download failed. |
+| Artifact id | The artifactId of the artifact for which the metadata download failed. |
+| Version | The version of the artifact for which the metadata download failed. |
+| Maven repository | The URL of the Maven repository that the metadata download failed on. |
+| Snapshots | Does the repository support snapshots. |
+| Releases | Does the repository support releases. |
+| Failure | The reason the metadata download failed. |
+
+</TabItem>
+
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results

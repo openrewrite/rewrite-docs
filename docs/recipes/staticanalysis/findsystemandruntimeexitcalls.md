@@ -25,6 +25,45 @@ _Marks calls to `System.exit(int)`, `Runtime.exit(int)`, and `Runtime.halt(int)`
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license). Moderne customers can download precompiled artifacts from The Code Genome Project. For non-commercial use you can build the artifact from source locally.
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+class A {
+    void bail() {
+        System.exit(1);
+    }
+}
+```
+
+###### After
+```java
+class A {
+    void bail() {
+        /*~~(JVM exit call; terminating from application code bypasses normal shutdown.)~~>*/System.exit(1);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,1 +3,1 @@
+class A {
+    void bail() {
+-       System.exit(1);
++       /*~~(JVM exit call; terminating from application code bypasses normal shutdown.)~~>*/System.exit(1);
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

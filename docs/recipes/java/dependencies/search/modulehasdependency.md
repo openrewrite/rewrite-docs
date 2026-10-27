@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.dependencies.search.ModuleHasDependency**
 
-_Searches for both Gradle and Maven modules that have a dependency matching the specified groupId and artifactId. Places a `SearchResult` marker on all sources within a module with a matching dependency. This recipe is intended to be used as a precondition for other recipes. For example this could be used to limit the application of a spring boot migration to only projects that use spring-boot-starter, limiting unnecessary upgrading. If the search result you want is instead just the build.gradle(.kts) or pom.xml file applying the plugin, use the `FindDependency` recipe instead._
+_Searches for both Gradle and Maven modules that have a dependency matching the specified `groupId` and `artifactId`. Places a `SearchResult` marker on all sources within a module with a matching dependency. This recipe is intended to be used as a precondition for other recipes. For example this could be used to limit the application of a Spring Boot migration to only projects that use `spring-boot-starter`, limiting unnecessary upgrading. If the search result you want is instead just the `build.gradle(.kts)` or `pom.xml` file declaring the dependency, use the `FindDependency` recipe instead._
 
 ## Recipe source
 
@@ -27,8 +27,9 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | --- | --- | --- | --- |
 | `String` | groupIdPattern | Group glob pattern used to match dependencies. | `com.fasterxml.jackson.module` |
 | `String` | artifactIdPattern | Artifact glob pattern used to match dependencies. | `jackson-module-*` |
-| `String` | scope | *Optional*. Match dependencies with the specified scope. All scopes are searched by default. Valid options: `compile`, `test`, `runtime`, `provided`, `system` | `compile` |
-| `String` | version | *Optional*. Match only dependencies with the specified version. Node-style [version selectors](https://docs.openrewrite.org/reference/dependency-version-selectors) may be used.All versions are searched by default. | `1.x` |
+| `String` | scope | *Optional*. For Maven only, match dependencies with the specified scope. All scopes are searched by default. Valid options: `compile`, `test`, `runtime`, `provided`, `system` | `compile` |
+| `String` | version | *Optional*. Match only dependencies with the specified version. Node-style [version selectors](https://docs.openrewrite.org/reference/dependency-version-selectors) may be used. All versions are searched by default. | `1.x` |
+| `Boolean` | onlyDirect | *Optional*. If enabled, transitive dependencies will not be considered. All dependencies are searched by default. |  |
 | `Boolean` | invertMarking | *Optional*. If `true`, will invert the check for whether to mark a file. Defaults to `false`. |  |
 
 
@@ -39,6 +40,7 @@ This recipe is used as part of the following composite recipes:
 * [Module has monolithic Spring Boot starter](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/modulehasmonolithicstarter)
 * [Module uses Flyway](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/moduleusesflyway)
 * [Module uses Liquibase](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/moduleusesliquibase)
+* [Module uses Spring gRPC](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/moduleusesspringgrpc)
 
 
 ## Usage
@@ -66,7 +68,7 @@ recipeList:
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JAVA_DEPENDENCIES"
   requiresConfiguration
   cliOptions={' --recipe-option "groupIdPattern=com.fasterxml.jackson.module" --recipe-option "artifactIdPattern=jackson-module-*"'}
-  optionalCliOptions={' --recipe-option "scope=compile" --recipe-option "version=1.x" --recipe-option "invertMarking=true"'}
+  optionalCliOptions={' --recipe-option "scope=compile" --recipe-option "version=1.x" --recipe-option "onlyDirect=true" --recipe-option "invertMarking=true"'}
   hasDataTables
 />
 

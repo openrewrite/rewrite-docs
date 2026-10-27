@@ -1,13 +1,13 @@
 ---
-title: "Clean Up Assertions"
-sidebar_label: "Clean Up Assertions"
+title: "Clean up assertions"
+sidebar_label: "Clean up assertions"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Clean Up Assertions
+# Clean up assertions
 
 **org.openrewrite.java.testing.junit5.CleanupAssertions**
 
@@ -44,7 +44,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Replace JUnit `assertTrue(!&lt;boolean&gt;)` to `assertFalse(&lt;boolean&gt;)`](../../../java/testing/cleanup/asserttruenegationtoassertfalse)
 * [Replace JUnit `assertFalse(!&lt;boolean&gt;)` to `assertTrue(&lt;boolean&gt;)`](../../../java/testing/cleanup/assertfalsenegationtoasserttrue)
 * [Replace JUnit `assertTrue(a.equals(b))` to `assertEquals(a,b)`](../../../java/testing/cleanup/asserttrueequalstoassertequals)
-* [Junit `assertTrue(a == b)` to `assertEquals(a,b)`](../../../java/testing/cleanup/asserttruecomparisontoassertequals)
+* [Replace JUnit `assertTrue(a == b)` with `assertEquals(a, b)`](../../../java/testing/cleanup/asserttruecomparisontoassertequals)
 * [Replace JUnit `assertFalse(a.equals(b))` to `assertNotEquals(a,b)`](../../../java/testing/cleanup/assertfalseequalstoassertnotequals)
 * [`assertEquals(a, null)` to `assertNull(a)`](../../../java/testing/cleanup/assertequalsnulltoassertnull)
 * [Replace JUnit `assertFalse(a == null)` to `assertNotNull(a)`](../../../java/testing/cleanup/assertfalsenulltoassertnotnull)
@@ -61,7 +61,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.testing.junit5.CleanupAssertions
-displayName: Clean Up Assertions
+displayName: Clean up assertions
 description: |
   Simplifies JUnit Jupiter assertions to their most-direct equivalents.
 tags:
@@ -196,7 +196,7 @@ class ExampleTest {
 
 <RunRecipe
   recipeName="org.openrewrite.java.testing.junit5.CleanupAssertions"
-  displayName="Clean Up Assertions"
+  displayName="Clean up assertions"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-testing-frameworks"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_TESTING_FRAMEWORKS"

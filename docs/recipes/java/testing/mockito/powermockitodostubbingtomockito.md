@@ -1,6 +1,6 @@
 ---
-title: "Replace PowerMockito `doX().when(instance, &quot;method&quot;)` with Mockito-compatible stubbing"
-sidebar_label: "Replace PowerMockito `doX().when(instance, &quot;method&quot;)` with Mockito-compatible stubbing"
+title: "Replace PowerMockito `doX().when(instance, \"method\")` with Mockito-compatible stubbing"
+sidebar_label: "Replace PowerMockito `doX().when(instance, \"method\")` with Mockito-compatible stubbing"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.testing.mockito.PowerMockitoDoStubbingToMockito**
 
-_Replaces PowerMockito's private method stubbing pattern `doNothing().when(instance, "methodName", args...)` with the standard Mockito pattern `doNothing().when(instance).methodName(args...)`._
+_Replaces PowerMockito's `doNothing().when(instance, "methodName", args...)` stubbing (and that of the other `doX()` methods) with the standard Mockito pattern `doNothing().when(instance).methodName(args...)`. Mockito can not stub private methods, so stubbing of a private method is left unchanged and gets a comment._
 
 ## Recipe source
 

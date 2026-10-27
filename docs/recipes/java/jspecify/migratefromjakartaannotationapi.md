@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.jspecify.MigrateFromJakartaAnnotationApi**
 
-_Migrate from Jakarta annotation API to JSpecify._
+_Replace the `jakarta.annotation` `@Nullable` and `@Nonnull` annotations with their JSpecify equivalents, adding the JSpecify dependency where needed._
 
 ## Recipe source
 
@@ -42,6 +42,8 @@ This recipe is available under the [Moderne Source Available License](https://do
   * version: `1.0.0`
   * onlyIfUsing: `jakarta.annotation.*ull*`
   * acceptTransitive: `true`
+* [Remove annotation from `void` method](../../java/migrate/jspecify/removeannotationfromvoidmethod)
+  * annotationType: `jakarta.annotation.*ull*`
 * [Change type](../../java/changetype)
   * oldFullyQualifiedTypeName: `jakarta.annotation.Nullable`
   * newFullyQualifiedTypeName: `org.jspecify.annotations.Nullable`
@@ -65,7 +67,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.jspecify.MigrateFromJakartaAnnotationApi
 displayName: Migrate from Jakarta annotation API to JSpecify
 description: |
-  Migrate from Jakarta annotation API to JSpecify.
+  Replace the `jakarta.annotation` `@Nullable` and `@Nonnull` annotations with their JSpecify equivalents, adding the JSpecify dependency where needed.
 preconditions:
   - org.openrewrite.Singleton
 recipeList:
@@ -75,6 +77,8 @@ recipeList:
       version: 1.0.0
       onlyIfUsing: jakarta.annotation.*ull*
       acceptTransitive: true
+  - org.openrewrite.java.migrate.jspecify.RemoveAnnotationFromVoidMethod:
+      annotationType: jakarta.annotation.*ull*
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: jakarta.annotation.Nullable
       newFullyQualifiedTypeName: org.jspecify.annotations.Nullable
@@ -122,6 +126,25 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
+
+### Maven metadata failures
+**org.openrewrite.maven.table.MavenMetadataFailures**
+
+_Attempts to resolve maven metadata that failed._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Group id | The groupId of the artifact for which the metadata download failed. |
+| Artifact id | The artifactId of the artifact for which the metadata download failed. |
+| Version | The version of the artifact for which the metadata download failed. |
+| Maven repository | The URL of the Maven repository that the metadata download failed on. |
+| Snapshots | Does the repository support snapshots. |
+| Releases | Does the repository support releases. |
+| Failure | The reason the metadata download failed. |
+
+</TabItem>
+
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results

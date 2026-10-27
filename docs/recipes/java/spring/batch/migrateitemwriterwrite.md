@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.spring.batch.MigrateItemWriterWrite**
 
-_In `ItemWriter` the signature of the `write()` method has changed in spring-batch 5.x._
+_In `ItemWriter` the signature of the `write()` method has changed in Spring Batch 5.x._
 
 ## Recipe source
 

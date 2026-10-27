@@ -1,17 +1,17 @@
 ---
-title: "Junit `assertTrue(a == b)` to `assertEquals(a,b)`"
-sidebar_label: "Junit `assertTrue(a == b)` to `assertEquals(a,b)`"
+title: "Replace JUnit `assertTrue(a == b)` with `assertEquals(a, b)`"
+sidebar_label: "Replace JUnit `assertTrue(a == b)` with `assertEquals(a, b)`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Junit `assertTrue(a == b)` to `assertEquals(a,b)`
+# Replace JUnit `assertTrue(a == b)` with `assertEquals(a, b)`
 
 **org.openrewrite.java.testing.cleanup.AssertTrueComparisonToAssertEquals**
 
-_Using `assertEquals(a,b)` is simpler and more clear._
+_Using `assertEquals(a, b)` is simpler and more clear._
 
 ## Recipe source
 
@@ -26,7 +26,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 This recipe is used as part of the following composite recipes:
 
-* [Clean Up Assertions](/recipes/java/testing/junit5/cleanupassertions.md)
+* [Clean up assertions](/recipes/java/testing/junit5/cleanupassertions.md)
 
 ## Example
 
@@ -80,7 +80,7 @@ public class Test {
 
 <RunRecipe
   recipeName="org.openrewrite.java.testing.cleanup.AssertTrueComparisonToAssertEquals"
-  displayName="Junit `assertTrue(a == b)` to `assertEquals(a,b)`"
+  displayName="Replace JUnit `assertTrue(a == b)` with `assertEquals(a, b)`"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-testing-frameworks"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_TESTING_FRAMEWORKS"

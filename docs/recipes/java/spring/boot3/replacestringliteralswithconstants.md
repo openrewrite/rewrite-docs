@@ -49,8 +49,6 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 * [Replace String literals with `HttpHeaders` constants](../../../java/spring/http/replacestringliteralswithhttpheadersconstants)
 * [Replace String literals with `MediaType` constants](../../../java/spring/http/replacestringliteralswithmediatypeconstants)
-* [Simplify unnecessary `MediaType.parseMediaType()` and `MediaType.valueOf()` calls](../../../java/spring/http/simplifymediatypeparsecalls)
-* [Simplify WebTestClient expressions](../../../java/spring/http/simplifywebtestclientcalls)
 
 </TabItem>
 
@@ -77,8 +75,6 @@ preconditions:
 recipeList:
   - org.openrewrite.java.spring.http.ReplaceStringLiteralsWithHttpHeadersConstants
   - org.openrewrite.java.spring.http.ReplaceStringLiteralsWithMediaTypeConstants
-  - org.openrewrite.java.spring.http.SimplifyMediaTypeParseCalls
-  - org.openrewrite.java.spring.http.SimplifyWebTestClientCalls
 
 ```
 </TabItem>

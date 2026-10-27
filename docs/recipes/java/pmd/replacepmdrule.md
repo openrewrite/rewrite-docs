@@ -36,6 +36,51 @@ This recipe is used as part of the following composite recipes:
 * [Migrate a PMD 6 ruleset to PMD 7](/recipes/java/pmd/pmd6to7migration.md)
 * [Rename PMD rules that were renamed within the PMD 7 line](/recipes/java/pmd/pmd7rulerenames.md)
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|oldRule|`category/java/errorprone.xml/MissingBreakInSwitch`|
+|newRule|`ImplicitSwitchFallThrough`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="xml" label="xml">
+
+
+###### Before
+```xml
+<?xml version="1.0"?>
+<ruleset name="custom">
+    <rule ref="category/java/errorprone.xml/MissingBreakInSwitch"/>
+    <rule ref="category/java/errorprone.xml/EmptyCatchBlock"/>
+</ruleset>
+```
+
+###### After
+```xml
+<?xml version="1.0"?>
+<ruleset name="custom">
+    <rule ref="category/java/errorprone.xml/ImplicitSwitchFallThrough"/>
+    <rule ref="category/java/errorprone.xml/EmptyCatchBlock"/>
+</ruleset>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,1 +3,1 @@
+<?xml version="1.0"?>
+<ruleset name="custom">
+-   <rule ref="category/java/errorprone.xml/MissingBreakInSwitch"/>
++   <rule ref="category/java/errorprone.xml/ImplicitSwitchFallThrough"/>
+    <rule ref="category/java/errorprone.xml/EmptyCatchBlock"/>
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

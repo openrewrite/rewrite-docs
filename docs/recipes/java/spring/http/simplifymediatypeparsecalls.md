@@ -26,7 +26,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 This recipe is used as part of the following composite recipes:
 
-* [Replace String literals with Spring constants](/recipes/java/spring/boot3/replacestringliteralswithconstants.md)
+* [Spring Boot 3.3 best practices (only)](/recipes/java/spring/boot3/springboot3bestpracticesonly.md)
 
 
 ## Usage

@@ -1,13 +1,13 @@
 ---
-title: "Migrate `setReadTimeout(java.lang.int)` to SocketConfig `setSoTimeout(..)`"
-sidebar_label: "Migrate `setReadTimeout(java.lang.int)` to SocketConfig `setSoTimeout(..)`"
+title: "Migrate `setReadTimeout(int)` to SocketConfig `setSoTimeout(..)`"
+sidebar_label: "Migrate `setReadTimeout(int)` to SocketConfig `setSoTimeout(..)`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Migrate `setReadTimeout(java.lang.int)` to SocketConfig `setSoTimeout(..)`
+# Migrate `setReadTimeout(int)` to SocketConfig `setSoTimeout(..)`
 
 **org.openrewrite.java.spring.framework.HttpComponentsClientHttpRequestFactoryReadTimeout**
 
@@ -126,7 +126,7 @@ class RestContextInitializer {
 
 <RunRecipe
   recipeName="org.openrewrite.java.spring.framework.HttpComponentsClientHttpRequestFactoryReadTimeout"
-  displayName="Migrate `setReadTimeout(java.lang.int)` to SocketConfig `setSoTimeout(..)`"
+  displayName="Migrate `setReadTimeout(int)` to SocketConfig `setSoTimeout(..)`"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-spring"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING"

@@ -25,7 +25,7 @@ _3 recipes_
 
 _License: Moderne Source Available License_
 
-_125 recipes_
+_126 recipes_
 
 * [org.openrewrite.apache.ApacheBestPractices](/recipes/apache/apachebestpractices.md)
   * **Apache best practices**
@@ -39,6 +39,9 @@ _125 recipes_
 * [org.openrewrite.apache.commons.codec.ApacheBase64ToJavaBase64](/recipes/apache/commons/codec/apachebase64tojavabase64.md)
   * **Prefer `java.util.Base64`**
   * Prefer the Java standard library's `java.util.Base64` over third-party usage of apache's `apache.commons.codec.binary.Base64`.
+* [org.openrewrite.apache.commons.collections.CollectionUtilsCardinalityToFrequency](/recipes/apache/commons/collections/collectionutilscardinalitytofrequency.md)
+  * **Replace `CollectionUtils.cardinality` with `IterableUtils.frequency`**
+  * Replace attributed Java invocations of Commons Collections 4 `cardinality` when `IterableUtils` is present on the source set classpath (Commons Collections 4.1 or later). Preserve null iterable rejection with `Objects.requireNonNull`, requiring Java 7 or later. Only local variables, parameters and literals with a class qualifier or static import are migrated. Other argument expressions, expression qualifiers, explicit type arguments and method references are retained to preserve evaluation and typing.
 * [org.openrewrite.apache.commons.collections.UpgradeApacheCommonsCollections_3_4](/recipes/apache/commons/collections/upgradeapachecommonscollections_3_4.md)
   * **Migrates to Apache Commons Collections 4.x**
   * Migrate applications to the latest Apache Commons Collections 4.x release. This recipe modifies application's build files, make changes to deprecated/preferred APIs, and migrates configuration settings that have changes between versions.
@@ -438,7 +441,7 @@ _26 recipes_
   * Replace `cucumber.api.CucumberOptions` with the TestNG variant in source files that run through a TestNG runner.
 * [org.openrewrite.cucumber.jvm.CucumberRunWithToSuite](/recipes/cucumber/jvm/cucumberrunwithtosuite.md)
   * **Cucumber JUnit 4 `@RunWith(Cucumber.class)` to JUnit Platform `@Suite`**
-  * Replaces the Cucumber JUnit 4 runner with a JUnit Platform `@Suite` that runs the Cucumber engine. The `@CucumberOptions` become `@ConfigurationParameter` annotations, and the features become `@SelectClasspathResource` selectors where they are on the classpath. The JUnit 4 runner looks for glue in the package of the annotated class by default, and the Cucumber engine in the whole classpath, so that package becomes the explicit glue when none is configured. Class-level setup and teardown methods become `@BeforeSuite` and `@AfterSuite` methods, as a `@Suite` does not run `@BeforeClass` or `@BeforeAll`. A class that extends another class, which may contribute `@CucumberOptions`, or that has an option that cannot be carried over, such as one that refers to a constant, keeps the JUnit 4 runner, with a comment explaining why.
+  * Replaces the Cucumber JUnit 4 runner with a JUnit Platform `@Suite` that runs the Cucumber engine. The `@CucumberOptions` become `@ConfigurationParameter` annotations, and the features become `@SelectClasspathResource` selectors where they are on the classpath. The JUnit 4 runner looks for glue in the package of the annotated class by default, and the Cucumber engine in the whole classpath, so that package becomes the explicit glue when none is configured. Class-level setup and teardown methods become `@BeforeSuite` and `@AfterSuite` methods, as a `@Suite` does not run `@BeforeClass` or `@BeforeAll`. A class that runs with a subclass of the runner, that extends another class, which may contribute `@CucumberOptions`, or that has an option that cannot be carried over, such as one that refers to a constant, keeps the JUnit 4 runner, with a comment explaining why.
 * [org.openrewrite.cucumber.jvm.CucumberToJunitPlatformSuite](/recipes/cucumber/jvm/cucumbertojunitplatformsuite.md)
   * **Cucumber to JUnit test `@Suite`**
   * Migrates Cucumber tests run by the `@Cucumber` annotation or the JUnit 4 `@RunWith(Cucumber.class)` runner to a JUnit Platform `@Suite`, and swaps `cucumber-junit` for `cucumber-junit-platform-engine` 7.x. Each Cucumber-JVM module depends on the `cucumber-core` of its own release, and the engine fails to run against any other, so the rest of the Cucumber-JVM dependencies move to that same 7.x.
@@ -488,117 +491,11 @@ _26 recipes_
   * **Upgrade to Cucumber-JVM 7.x**
   * Upgrade to Cucumber-JVM 7.x from any previous version.
 
-## rewrite-feature-flags
-
-_License: Moderne Source Available License_
-
-_33 recipes_
-
-* [org.openrewrite.featureflags.RemoveBooleanFlag](/recipes/featureflags/removebooleanflag.md)
-  * **Remove a boolean feature flag for feature key**
-  * Replace method invocations for feature key with value, and simplify constant if branch execution.
-* [org.openrewrite.featureflags.RemoveDoubleFlag](/recipes/featureflags/removedoubleflag.md)
-  * **Remove a double feature flag for feature key**
-  * Replace method invocations for feature key with value, and simplify constant if branch execution.
-* [org.openrewrite.featureflags.RemoveIntegerFlag](/recipes/featureflags/removeintegerflag.md)
-  * **Remove an integer feature flag for feature key**
-  * Replace method invocations for feature key with value, and simplify constant if branch execution.
-* [org.openrewrite.featureflags.RemoveStringFlag](/recipes/featureflags/removestringflag.md)
-  * **Remove a String feature flag for feature key**
-  * Replace method invocations for feature key with value, and simplify constant if branch execution.
-* [org.openrewrite.featureflags.ff4j.RemoveCheck](/recipes/featureflags/ff4j/removecheck.md)
-  * **Remove FF4j's `check` for feature key**
-  * Replace `check()` invocations for `featureKey` with `replacementValue`, and simplify constant if branch execution.
-* [org.openrewrite.featureflags.ff4j.search.FindFeatureFlag](/recipes/featureflags/ff4j/search/findfeatureflag.md)
-  * **Find a FF4j feature flag**
-  * Find a FF4j feature flag.
-* [org.openrewrite.featureflags.launchdarkly.ChangeVariationDefault](/recipes/featureflags/launchdarkly/changevariationdefault.md)
-  * **Change the default value for feature key**
-  * Change the default value for `Variation` invocations for feature key.
-* [org.openrewrite.featureflags.launchdarkly.MarkIncompatibleEvaluationDetailAccessors](/recipes/featureflags/launchdarkly/markincompatibleevaluationdetailaccessors.md)
-  * **Mark incompatible LaunchDarkly `EvaluationDetail` accessors**
-  * OpenFeature's `FlagEvaluationDetails` does not offer a direct replacement for every `EvaluationDetail` accessor. Add a `TODO` comment on `getVariationIndex()`, `isDefaultValue()` and `getReason()` calls so they are migrated by hand, since `getVariationIndex()` and `isDefaultValue()` have no equivalent and `getReason()` returns a `String` rather than an `EvaluationReason`.
-* [org.openrewrite.featureflags.launchdarkly.MigrateLDClientLifecycle](/recipes/featureflags/launchdarkly/migrateldclientlifecycle.md)
-  * **Migrate LaunchDarkly `LDClient` lifecycle calls to OpenFeature**
-  * Migrate `LDClient` lifecycle calls: `close()` becomes `OpenFeatureAPI.getInstance().shutdown()` and `isInitialized()` becomes `OpenFeatureAPI.getInstance().getClient().getProviderState() == ProviderState.READY`. OpenFeature manages provider state globally rather than per client instance, so the original receiver is dropped.
-* [org.openrewrite.featureflags.launchdarkly.MigrateLDClientToOpenFeature](/recipes/featureflags/launchdarkly/migrateldclienttoopenfeature.md)
-  * **Migrate LaunchDarkly `LDClient` construction to OpenFeature**
-  * Replace `new LDClient(...)` with `OpenFeatureAPI.getInstance().getClient()`. When the client is assigned to a local variable, the one-time provider bootstrap `OpenFeatureAPI.getInstance().setProviderAndWait(new Provider(...))` is generated from the original SDK key and configuration. In other positions (such as fields) the original configuration is preserved in a `TODO` comment instead, as a statement cannot be inserted there.
-* [org.openrewrite.featureflags.launchdarkly.MigrateLDContextToEvaluationContext](/recipes/featureflags/launchdarkly/migrateldcontexttoevaluationcontext.md)
-  * **Migrate LaunchDarkly `LDContext` to OpenFeature `MutableContext`**
-  * Convert `LDContext.create(...)` and `LDContext.builder(...)` construction to OpenFeature's `MutableContext`, mapping `name(...)` and `set(...)` attributes to `add(...)` and dropping the terminal `build()` call. Targeting `kind`, multi-context and private attributes are left untouched for manual review.
-* [org.openrewrite.featureflags.launchdarkly.MigrateLDValueToValue](/recipes/featureflags/launchdarkly/migrateldvaluetovalue.md)
-  * **Migrate LaunchDarkly `LDValue` and `jsonValueVariation` to OpenFeature**
-  * Migrate `jsonValueVariation`/`jsonValueVariationDetail` to OpenFeature's `getObjectValue`/`getObjectDetails` (reordering the context argument to last) and convert scalar `LDValue.of(...)` and `LDValue.ofNull()` defaults to `dev.openfeature.sdk.Value`. To keep the result compilable, this recipe is skipped for files that use the structured builders `LDValue.buildObject()`, `LDValue.buildArray()`, `LDValue.parse(...)` or `LDValue.of(long)`, which require manual migration to `Structure`/`List&lt;Value&gt;`.
-* [org.openrewrite.featureflags.launchdarkly.MigrateLaunchDarklyToOpenFeature](/recipes/featureflags/launchdarkly/migratelaunchdarklytoopenfeature.md)
-  * **Migrate from LaunchDarkly to OpenFeature**
-  * Migrate call sites from the LaunchDarkly server SDK to the vendor-neutral [OpenFeature](https://openfeature.dev/) API, backed by the LaunchDarkly OpenFeature provider. Flag evaluations are renamed and their arguments reordered (LaunchDarkly takes the context as the second argument; OpenFeature takes it last), `LDContext` construction becomes `MutableContext`, and `LDClient` becomes `dev.openfeature.sdk.Client`. The one-time provider bootstrap (`OpenFeatureAPI.setProviderAndWait(...)`) is intentionally left for manual configuration.
-* [org.openrewrite.featureflags.launchdarkly.MigrateUserToContext](/recipes/featureflags/launchdarkly/migrateusertocontext.md)
-  * **Migrate `LDUser` to `LDContext`**
-  * Migrate from `LDUser` and `LDUser.Builder` to `LDContext` and `ContextBuilder`.
-* [org.openrewrite.featureflags.launchdarkly.RemoveBoolVariation](/recipes/featureflags/launchdarkly/removeboolvariation.md)
-  * **Remove LaunchDarkly's `boolVariation` for feature key**
-  * Replace `boolVariation` invocations for feature key with value, and simplify constant if branch execution.
-* [org.openrewrite.featureflags.launchdarkly.RemoveDoubleVariation](/recipes/featureflags/launchdarkly/removedoublevariation.md)
-  * **Remove LaunchDarkly's `doubleVariation` for feature key**
-  * Replace `doubleVariation` invocations for feature key with value, and simplify constant if branch execution.
-* [org.openrewrite.featureflags.launchdarkly.RemoveIntVariation](/recipes/featureflags/launchdarkly/removeintvariation.md)
-  * **Remove LaunchDarkly's `intVariation` for feature key**
-  * Replace `intVariation` invocations for feature key with value, and simplify constant if branch execution.
-* [org.openrewrite.featureflags.launchdarkly.RemoveStringVariation](/recipes/featureflags/launchdarkly/removestringvariation.md)
-  * **Remove LaunchDarkly's `stringVariation` for feature key**
-  * Replace `stringVariation` invocations for feature key with value, and simplify constant if branch execution.
-* [org.openrewrite.featureflags.launchdarkly.UpgradeLaunchDarkly6](/recipes/featureflags/launchdarkly/upgradelaunchdarkly6.md)
-  * **Migrate to LaunchDarkly 6.x**
-  * This recipe will apply changes commonly needed when migrating to LaunchDarkly 6.x.
-* [org.openrewrite.featureflags.launchdarkly.UpgradeLaunchDarkly7](/recipes/featureflags/launchdarkly/upgradelaunchdarkly7.md)
-  * **Migrate to LaunchDarkly 7.x**
-  * This recipe will apply changes commonly needed when migrating to LaunchDarkly 7.x.
-* [org.openrewrite.featureflags.launchdarkly.search.FindFeatureFlag](/recipes/featureflags/launchdarkly/search/findfeatureflag.md)
-  * **Find a LaunchDarkly feature flag**
-  * Find a LaunchDarkly feature flag.
-* [org.openrewrite.featureflags.openfeature.RemoveGetBooleanValue](/recipes/featureflags/openfeature/removegetbooleanvalue.md)
-  * **Remove OpenFeature's `getBooleanValue` for feature key**
-  * Replace `getBooleanValue()` invocations for `featureKey` with `replacementValue`, and simplify constant if branch execution.
-* [org.openrewrite.featureflags.openfeature.RemoveGetDoubleValue](/recipes/featureflags/openfeature/removegetdoublevalue.md)
-  * **Remove OpenFeature's `getDoubleValue` for feature key**
-  * Replace `getDoubleValue()` invocations for `featureKey` with `replacementValue`, and simplify constant if branch execution.
-* [org.openrewrite.featureflags.openfeature.RemoveGetIntegerValue](/recipes/featureflags/openfeature/removegetintegervalue.md)
-  * **Remove OpenFeature's `getIntegerValue` for feature key**
-  * Replace `getIntegerValue()` invocations for `featureKey` with `replacementValue`, and simplify constant if branch execution.
-* [org.openrewrite.featureflags.openfeature.RemoveGetStringValue](/recipes/featureflags/openfeature/removegetstringvalue.md)
-  * **Remove OpenFeature's `getStringValue` for feature key**
-  * Replace `getStringValue()` invocations for `featureKey` with `replacementValue`, and simplify constant if branch execution.
-* [org.openrewrite.featureflags.openfeature.search.FindFeatureFlag](/recipes/featureflags/openfeature/search/findfeatureflag.md)
-  * **Find an OpenFeature feature flag**
-  * Find an OpenFeature feature flag.
-* [org.openrewrite.featureflags.quarkus.RemoveGetInt](/recipes/featureflags/quarkus/removegetint.md)
-  * **Remove Quarkus feature flag's `getInt` for feature key**
-  * Replace `getInt()` invocations for `featureKey` with `replacementValue`, and simplify constant if branch execution.
-* [org.openrewrite.featureflags.quarkus.RemoveGetString](/recipes/featureflags/quarkus/removegetstring.md)
-  * **Remove Quarkus feature flag's `getString` for feature key**
-  * Replace `getString()` invocations for `featureKey` with `replacementValue`, and simplify constant if branch execution.
-* [org.openrewrite.featureflags.quarkus.RemoveIsEnabled](/recipes/featureflags/quarkus/removeisenabled.md)
-  * **Remove Quarkus feature flag's `isEnabled` for feature key**
-  * Replace `isEnabled()` invocations for `featureKey` with `replacementValue`, and simplify constant if branch execution.
-* [org.openrewrite.featureflags.quarkus.search.FindFeatureFlag](/recipes/featureflags/quarkus/search/findfeatureflag.md)
-  * **Find a Quarkus feature flag**
-  * Find a Quarkus feature flag.
-* [org.openrewrite.featureflags.search.FindFeatureFlag](/recipes/featureflags/search/findfeatureflag.md)
-  * **Find a feature flag**
-  * Find a feature flag matching method pattern.
-* [org.openrewrite.featureflags.unleash.RemoveIsEnabled](/recipes/featureflags/unleash/removeisenabled.md)
-  * **Remove Unleash's `isEnabled` for feature key**
-  * Replace `isEnabled()` invocations for `featureKey` with `replacementValue`, and simplify constant if branch execution.
-* [org.openrewrite.featureflags.unleash.search.FindFeatureFlag](/recipes/featureflags/unleash/search/findfeatureflag.md)
-  * **Find an Unleash feature flag**
-  * Find an Unleash feature flag.
-
 ## rewrite-github-actions
 
 _License: Moderne Source Available License_
 
-_63 recipes_
+_64 recipes_
 
 * [org.openrewrite.github.AddCronTrigger](/recipes/github/addcrontrigger.md)
   * **Add cron workflow trigger**
@@ -693,6 +590,9 @@ _63 recipes_
 * [org.openrewrite.github.ReplaceSecrets](/recipes/github/replacesecrets.md)
   * **Replace GitHub Action secret names**
   * Replace references to GitHub Action secrets in workflow files.
+* [org.openrewrite.github.SetupGoUpgradeGoVersion](/recipes/github/setupgoupgradegoversion.md)
+  * **Upgrade `actions/setup-go` `go-version`**
+  * Update the Go version used by `actions/setup-go` if it is below the expected version number. A `strategy.matrix` axis that feeds `go-version` gets the expected version added when none of its values reach it.
 * [org.openrewrite.github.SetupJavaAdoptOpenJDKToTemurin](/recipes/github/setupjavaadoptopenjdktotemurin.md)
   * **Use `actions/setup-java` `temurin` distribution**
   * Adopt OpenJDK got moved to Eclipse Temurin and won't be updated anymore. It is highly recommended to migrate workflows from adopt to temurin to keep receiving software and security updates. See more details in the [Good-bye AdoptOpenJDK post](https://blog.adoptopenjdk.net/2021/08/goodbye-adoptopenjdk-hello-adoptium/).
@@ -713,7 +613,7 @@ _63 recipes_
   * Replace `actions/setup-python` action with `astral-sh/setup-uv` action for faster Python environment setup and dependency management.  **Benefits of UV:**  - Significantly faster package installation and environment setup  - Built-in dependency resolution and locking  - Integrated caching for improved CI performance  - Drop-in replacement for pip workflows  **Transformations applied:**  - `actions/setup-python@v5` → `astral-sh/setup-uv@v6`  - `cache: 'pip'` → `enable-cache: 'true'`  - `pip install -r requirements.txt` → `uv sync` (configurable strategy)  - `python -m &lt;module&gt;` → `uv run &lt;module&gt;`  - Removes unnecessary `pip install --upgrade pip` steps  **Sync strategies:**  - `basic`: Basic synchronization (`uv sync`)  - `locked`: Use locked dependencies (`uv sync --locked`)  - `full`: Install all extras and dev dependencies (`uv sync --all-extras --dev`)  See the [UV GitHub integration guide](https://docs.astral.sh/uv/guides/integration/github/) for more details.
 * [org.openrewrite.github.SetupPythonUpgradePythonVersion](/recipes/github/setuppythonupgradepythonversion.md)
   * **Upgrade `actions/setup-python` `python-version`**
-  * Update the Python version used by `actions/setup-python` if it is below the expected version number.
+  * Update the Python version used by `actions/setup-python` if it is below the expected version number. A `strategy.matrix` axis that feeds `python-version` gets the expected version added when none of its values reach it.
 * [org.openrewrite.github.UpgradeOfficialGitHubActions](/recipes/github/upgradeofficialgithubactions.md)
   * **Upgrade official GitHub Actions to their latest versions**
   * Upgrades actions from the official `actions` and `github` organizations to the newest known version, working entirely offline. Each reference is upgraded while preserving its existing precision: a major version (`v4`) moves to the newest major, a full version (`v4.1.2`) to the newest full version, and a commit SHA to the latest known commit. Actions that are not official, not known, or already up to date are left untouched.
@@ -764,7 +664,7 @@ _63 recipes_
   * Find workflows that use obfuscated action references or expressions that may be attempting to hide malicious behavior. This includes action paths with `'.'`, `'..'`, empty components, or expressions that use quote manipulation to hide their true intent. Based on [zizmor's `obfuscation` audit](https://github.com/woodruffw/zizmor/blob/main/crates/zizmor/src/audit/obfuscation.rs).
 * [org.openrewrite.github.security.PinGitHubActionsToSha](/recipes/github/security/pingithubactionstosha.md)
   * **Pin GitHub Actions to commit SHAs**
-  * Replaces mutable tag or branch references in GitHub Actions `uses:` declarations with immutable commit SHAs. A static mapping of well-known actions is checked first; if the action is not found, the GitHub API is used to resolve the reference at recipe run time. By default only third-party actions are pinned; set `pinOfficialActions` to include actions from the `actions` and `github` organizations. To pin only a specific allow-list of actions, set `includedActions`.
+  * Replaces mutable tag or branch references in GitHub Actions `uses:` declarations with immutable commit SHAs, using a built-in mapping of well-known actions. The recipe makes no network calls; references not found in the mapping are left unchanged and listed in a data table. By default only third-party actions are pinned; set `pinOfficialActions` to include actions from the `actions` and `github` organizations. To pin only a subset of the mapped actions, set `includedActions`.
 * [org.openrewrite.github.security.RefVersionMismatch](/recipes/github/security/refversionmismatch.md)
   * **Find commit SHAs with potentially mismatched version comments**
   * Find GitHub Actions that are pinned to commit SHAs but have version comments that may not match the actual pinned version. This can lead to confusion about which version is actually being used and potential security issues if the comment misleads developers about the pinned version. Based on [zizmor's `ref-version-mismatch` audit](https://github.com/woodruffw/zizmor/blob/main/crates/zizmor/src/audit/ref_version_mismatch.rs).
@@ -867,11 +767,14 @@ _22 recipes_
 
 _License: Moderne Source Available License_
 
-_30 recipes_
+_32 recipes_
 
 * [org.openrewrite.hibernate.AddScalarPreferStandardBasicTypes](/recipes/hibernate/addscalarpreferstandardbasictypes.md)
   * **AddScalarPreferStandardBasicTypesForHibernate5**
   * Prefer the use of `StandardBasicTypes.*` in `NativeQuery.addScalar(...)` invocations.
+* [org.openrewrite.hibernate.ChangeHibernateDialect](/recipes/hibernate/changehibernatedialect.md)
+  * **Change Hibernate dialect**
+  * Change a Hibernate dialect type and its configuration in properties, YAML, `persistence.xml` and `hibernate.cfg.xml`. XML changes are limited to dialect properties in standard persistence descriptors and Hibernate configuration files.
 * [org.openrewrite.hibernate.EmptyInterceptorToInterface](/recipes/hibernate/emptyinterceptortointerface.md)
   * **Replace `extends EmptyInterceptor` with `implements Interceptor` and potentially `StatementInspector`**
   * In Hibernate 6.0 the `Interceptor` interface received default implementations therefore the NOOP implementation that could be extended was no longer needed. This recipe migrates 5.x `Interceptor#onPrepareStatement(String)` to 6.0 `StatementInspector#inspect()`.
@@ -880,7 +783,10 @@ _30 recipes_
   * Replaces type mapping of booleans with appropriate attribute converters.
 * [org.openrewrite.hibernate.MigrateDialect](/recipes/hibernate/migratedialect.md)
   * **Migrate Hibernate dialect to the generic dialect**
-  * Migrate Hibernate version-specific dialect classes removed by Hibernate 6.2 to their generic equivalents.
+  * Migrate Hibernate version-specific dialect classes removed by Hibernate 6.2 to their generic equivalents in Java, properties, YAML, `persistence.xml` and `hibernate.cfg.xml`.
+* [org.openrewrite.hibernate.MigratePersistenceXmlToJakartaPersistence32](/recipes/hibernate/migratepersistencexmltojakartapersistence32.md)
+  * **Migrate `persistence.xml` to Jakarta Persistence 3.2**
+  * Update Jakarta Persistence 3.0 and 3.1 descriptors named `persistence.xml` to 3.2. Preserve newer descriptors, namespace prefixes and unrelated schema locations.
 * [org.openrewrite.hibernate.MigrateRemovedDialectsHibernate70](/recipes/hibernate/migrateremoveddialectshibernate70.md)
   * **Migrate dialects removed in Hibernate 7.0 to their generic equivalents**
   * Hibernate 7.0 removed the remaining version- and storage-specific dialect subclasses that still existed in Hibernate 6.x. The IBM-i (`DB2400*`) variants map to `DB2iDialect`, not the generic `DB2Dialect`; the HANA row/column-store variants and MariaDB 10.6 collapse into the generic `HANADialect` / `MariaDBDialect`, which autodetect behavior from the JDBC connection.
@@ -946,7 +852,7 @@ _30 recipes_
   * Adds the `FetchType` to jakarta annotations and deletes `@LazyCollection`.
 * [org.openrewrite.hibernate.TypeAnnotationParameter](/recipes/hibernate/typeannotationparameter.md)
   * **`@Type` annotation type parameter migration**
-  * Hibernate 6.x has 'type' parameter of type String replaced with 'value' of type class.
+  * Migrate Hibernate type class references and supported basic type registry names to Hibernate 6 annotations. Unrecognized registry names are retained for manual migration.
 * [org.openrewrite.hibernate.TypeDescriptorToType](/recipes/hibernate/typedescriptortotype.md)
   * **Rename `JavaTypeDescriptor` and `SqlTypeDescriptor` to `JavaType` and `SqlType`**
   * Rename `JavaTypeDescriptor` and `SqlTypeDescriptor` to `JavaType` and `SqlType` respectively. See https://github.com/hibernate/hibernate-orm/blob/6.0/migration-guide.adoc#type-system for more details.
@@ -958,13 +864,13 @@ _30 recipes_
   * This recipe will apply changes commonly needed when migrating to Hibernate Validator 9.1.x.
 * [org.openrewrite.hibernate.validator.MoveValidToContainerElement](/recipes/hibernate/validator/movevalidtocontainerelement.md)
   * **Move `@Valid` from the container to its element type**
-  * Hibernate Validator 9.1 deprecates requesting cascaded validation at the container level, and warns while building the metadata for declarations such as `@Valid List&lt;Order&gt; orders`. Rewrites those to the type argument form `List&lt;@Valid Order&gt; orders` that has been available since Bean Validation 2.0. The element type argument is annotated for `Iterable` and `Optional` containers, and the value type argument for `Map`, matching where the built-in value extractors cascade to. `@Valid` on anything other than one of those containers is left alone, as are wildcard, raw, qualified and array type arguments.
+  * Hibernate Validator 9.1 deprecates requesting cascaded validation at the container level, and warns while building the metadata for declarations such as `@Valid List&lt;Order&gt; orders`. Rewrites those to the type argument form `List&lt;@Valid Order&gt; orders` that has been available since Bean Validation 2.0. The element type argument is annotated for `Iterable` and `Optional` containers, and the value type argument for `Map`, matching where the built-in value extractors cascade to. `@Valid` on anything other than one of those containers is left alone, as are wildcard, raw and array type arguments.
 
 ## rewrite-jackson
 
 _License: Apache License Version 2.0_
 
-_49 recipes_
+_61 recipes_
 
 * [org.openrewrite.java.jackson.AddJsonCreatorToPrivateConstructors](/recipes/java/jackson/addjsoncreatortoprivateconstructors.md)
   * **Add `@JsonCreator` to non-public constructors**
@@ -986,13 +892,16 @@ _49 recipes_
   * Find `Map` and `Collection` fields that carry `@JsonSetter(nulls = Nulls.AS_EMPTY)`, are initialized with an empty collection, and are no longer hidden by `@JsonIgnore` on the field or its getter, or by a class level `@JsonIgnoreProperties`. In rewrite-jackson 1.17.0 through 1.28.0 the Jackson 2 to 3 migration replaced `@JsonIgnore` with `@JsonSetter(nulls = Nulls.AS_EMPTY)` on exactly these fields, which starts serializing properties that were deliberately hidden wherever the field is otherwise visible, such as through a getter. Run this recipe to audit repositories migrated with those versions; every match that should stay out of the JSON output needs `@JsonIgnore` restored, which the `addJsonIgnore` option does for you.
 * [org.openrewrite.java.jackson.IOExceptionToJacksonException](/recipes/java/jackson/ioexceptiontojacksonexception.md)
   * **Replace `IOException` with `JacksonException` in catch clauses**
-  * In Jackson 3, `ObjectMapper` and related classes no longer throw `IOException`. This recipe replaces `catch (IOException e)` with `catch (JacksonException e)` when the try block contains Jackson API calls. When the try block also contains non-Jackson code that throws `IOException`, the catch is changed to a multi-catch `catch (JacksonException | IOException e)`.
+  * In Jackson 3, `ObjectMapper` and related classes no longer throw `IOException`. This recipe replaces `catch (IOException e)` with `catch (JacksonException e)` when the try block contains Jackson API calls. When the try block also contains non-Jackson code that throws `IOException`, the catch is changed to a multi-catch `catch (JacksonException | IOException e)`. Where the caught exception is passed on as an `IOException`, for instance to `new UncheckedIOException(e)`, it is wrapped in a `new IOException(e)`; such catches are left alone when the try block also throws `IOException` from non-Jackson code.
 * [org.openrewrite.java.jackson.Jackson3JsonNodeFieldIterators](/recipes/java/jackson/jackson3jsonnodefielditerators.md)
   * **Migrate `JSONNode` field iterator for Jackson 3**
   * `JSONNode` fields are using `Collections` instead of `Iterator` singe Jackson 3. To mimic Jackson 2s behavior an additional call to `Collection#iterator()`is needed.
 * [org.openrewrite.java.jackson.JacksonBestPractices](/recipes/java/jackson/jacksonbestpractices.md)
   * **Jackson best practices**
   * Apply best practices for using Jackson library, including upgrade to Jackson 2.x and removing redundant annotations.
+* [org.openrewrite.java.jackson.JsonNodeTextValueToStringValue](/recipes/java/jackson/jsonnodetextvaluetostringvalue.md)
+  * **Replace `JsonNode.textValue()` with `stringValue(null)`**
+  * In Jackson 2, `JsonNode.textValue()` returns `null` for nodes that are not textual. In Jackson 3, `textValue()` delegates to `stringValue()`, which throws for nodes that are not strings. `stringValue(null)` keeps the Jackson 2 behavior of returning `null`.
 * [org.openrewrite.java.jackson.JsonSerializeIncludeToJsonInclude](/recipes/java/jackson/jsonserializeincludetojsoninclude.md)
   * **Migrate deprecated `@JsonSerialize(include = ...)` to `@JsonInclude`**
   * Move the deprecated `include` attribute of FasterXML's `@JsonSerialize` to a separate `@JsonInclude` annotation. The `include` attribute was deprecated in Jackson 2.x and removed in Jackson 3.x; running this recipe before the Jackson 2 → 3 package rename produces a correct `tools.jackson.annotation.JsonInclude` on the Jackson 3 side.
@@ -1008,6 +917,9 @@ _49 recipes_
 * [org.openrewrite.java.jackson.ModuleStillOnJackson2](/recipes/java/jackson/modulestillonjackson2.md)
   * **Find modules still on Jackson 2**
   * Marks the source files of modules that either do not resolve Jackson 3 yet, or still use Jackson 2 types in their own sources or those of their child modules. Modules that already resolve Jackson 3 and no longer use Jackson 2 types are left unmarked, as any Jackson 2 dependencies they still declare are there on purpose, for instance for generated sources that are not part of the LST.
+* [org.openrewrite.java.jackson.ObjectCodecToReadWriteContext](/recipes/java/jackson/objectcodectoreadwritecontext.md)
+  * **Declare `ObjectCodec` variables as `ObjectReadContext` or `ObjectWriteContext`**
+  * Jackson 3 removes `ObjectCodec`. `JsonParser.getCodec()` becomes `objectReadContext()`, which returns an `ObjectReadContext`, and `JsonGenerator.getCodec()` becomes `objectWriteContext()`, which returns an `ObjectWriteContext`. This recipe changes the declared type of variables initialized from those calls, so the declaration still compiles after the migration.
 * [org.openrewrite.java.jackson.ReadValueUrlToOpenStream](/recipes/java/jackson/readvalueurltoopenstream.md)
   * **Migrate `ObjectMapper.readValue(URL, ...)` to use `openStream()`**
   * Jackson 3.x removed every `URL`-accepting `readValue` overload from `ObjectMapper`. Rewrite call sites to feed `URL.openStream()` into the surviving `readValue(InputStream, ...)` overload, which is what `readValue(URL, ...)` did internally in Jackson 2.x. The caller's checked-exception story is unchanged: `URL.openStream()` declares `IOException`, the same checked exception the removed `readValue(URL, ...)` declared.
@@ -1016,7 +928,7 @@ _49 recipes_
   * Jackson 3 includes Java time, JDK 8 and parameter name support in databind and removes their module classes. Remove Spring `@Bean` methods that only return a new default instance of one of these modules. Customized, overridden or directly referenced factories are left for manual migration.
 * [org.openrewrite.java.jackson.RemoveBuiltInModuleRegistrations](/recipes/java/jackson/removebuiltinmoduleregistrations.md)
   * **Remove registrations of modules built-in to Jackson 3**
-  * In Jackson 3, `ParameterNamesModule`, `Jdk8Module`, and `JavaTimeModule` are built into `jackson-databind` and no longer need to be registered manually. This recipe removes `ObjectMapper.registerModule()` and `MapperBuilder.addModule()` calls for these modules.
+  * In Jackson 3, `ParameterNamesModule`, `Jdk8Module`, and `JavaTimeModule` are built into `jackson-databind` and no longer need to be registered manually. This recipe removes `ObjectMapper.registerModule()` and `MapperBuilder.addModule()` calls for these modules. A `ParameterNamesModule` created with `JsonCreator.Mode.PROPERTIES` or `DELEGATING` is replaced with the matching `ConstructorDetector` instead, as that mode is not the Jackson 3 default.
 * [org.openrewrite.java.jackson.RemoveDeadJacksonThrows](/recipes/java/jackson/removedeadjacksonthrows.md)
   * **Remove dead `throws` declarations for unchecked Jackson exceptions**
   * In Jackson 3 the exception hierarchy is rerooted under `JacksonException`, which extends `RuntimeException`. Any surviving `throws` for a Jackson exception type is dead: callers are not required to handle it, and the declaration misleads readers into thinking checked-exception handling is needed. Removes `throws` for `JacksonException` and its subtypes (e.g. `DatabindException`) from both methods and constructors. Assumes the Jackson 2 to 3 package changes have already run, so all Jackson exception types live under `tools.jackson`. Does not touch `throws IOException` (still a checked exception) or non-Jackson exception types.
@@ -1053,6 +965,33 @@ _49 recipes_
 * [org.openrewrite.java.jackson.UpgradeJackson_2_3](/recipes/java/jackson/upgradejackson_2_3.md)
   * **Migrates from Jackson 2.x to Jackson 3.x**
   * Migrate applications to the latest Jackson 3.x release. This recipe handles package changes (`com.fasterxml.jackson` -&gt; `tools.jackson`), dependency updates, core class renames, exception renames, and method renames (e.g., `JsonGenerator.writeObject()` -&gt; `writePOJO()`, `JsonParser.getCurrentValue()` -&gt; `currentValue()`).
+* [org.openrewrite.java.jackson.UpgradeJackson_2_3_AddDatabindDependency](/recipes/java/jackson/upgradejackson_2_3_adddatabinddependency.md)
+  * **Add Jackson 3 `jackson-databind` for sources that use it transitively**
+  * Add `tools.jackson.core:jackson-databind` to modules whose sources use its Jackson 2 types, but only get `com.fasterxml.jackson.core:jackson-databind` transitively. Jackson 2 artifacts that are declared directly are upgraded instead.
+* [org.openrewrite.java.jackson.UpgradeJackson_2_3_AddDataformatAvroDependency](/recipes/java/jackson/upgradejackson_2_3_adddataformatavrodependency.md)
+  * **Add Jackson 3 `jackson-dataformat-avro` for sources that use it transitively**
+  * Add `tools.jackson.dataformat:jackson-dataformat-avro` to modules whose sources use its Jackson 2 types, but only get `com.fasterxml.jackson.dataformat:jackson-dataformat-avro` transitively. Jackson 2 artifacts that are declared directly are upgraded instead.
+* [org.openrewrite.java.jackson.UpgradeJackson_2_3_AddDataformatCborDependency](/recipes/java/jackson/upgradejackson_2_3_adddataformatcbordependency.md)
+  * **Add Jackson 3 `jackson-dataformat-cbor` for sources that use it transitively**
+  * Add `tools.jackson.dataformat:jackson-dataformat-cbor` to modules whose sources use its Jackson 2 types, but only get `com.fasterxml.jackson.dataformat:jackson-dataformat-cbor` transitively. Jackson 2 artifacts that are declared directly are upgraded instead.
+* [org.openrewrite.java.jackson.UpgradeJackson_2_3_AddDataformatCsvDependency](/recipes/java/jackson/upgradejackson_2_3_adddataformatcsvdependency.md)
+  * **Add Jackson 3 `jackson-dataformat-csv` for sources that use it transitively**
+  * Add `tools.jackson.dataformat:jackson-dataformat-csv` to modules whose sources use its Jackson 2 types, but only get `com.fasterxml.jackson.dataformat:jackson-dataformat-csv` transitively. Jackson 2 artifacts that are declared directly are upgraded instead.
+* [org.openrewrite.java.jackson.UpgradeJackson_2_3_AddDataformatIonDependency](/recipes/java/jackson/upgradejackson_2_3_adddataformationdependency.md)
+  * **Add Jackson 3 `jackson-dataformat-ion` for sources that use it transitively**
+  * Add `tools.jackson.dataformat:jackson-dataformat-ion` to modules whose sources use its Jackson 2 types, but only get `com.fasterxml.jackson.dataformat:jackson-dataformat-ion` transitively. Jackson 2 artifacts that are declared directly are upgraded instead.
+* [org.openrewrite.java.jackson.UpgradeJackson_2_3_AddDataformatProtobufDependency](/recipes/java/jackson/upgradejackson_2_3_adddataformatprotobufdependency.md)
+  * **Add Jackson 3 `jackson-dataformat-protobuf` for sources that use it transitively**
+  * Add `tools.jackson.dataformat:jackson-dataformat-protobuf` to modules whose sources use its Jackson 2 types, but only get `com.fasterxml.jackson.dataformat:jackson-dataformat-protobuf` transitively. Jackson 2 artifacts that are declared directly are upgraded instead.
+* [org.openrewrite.java.jackson.UpgradeJackson_2_3_AddDataformatSmileDependency](/recipes/java/jackson/upgradejackson_2_3_adddataformatsmiledependency.md)
+  * **Add Jackson 3 `jackson-dataformat-smile` for sources that use it transitively**
+  * Add `tools.jackson.dataformat:jackson-dataformat-smile` to modules whose sources use its Jackson 2 types, but only get `com.fasterxml.jackson.dataformat:jackson-dataformat-smile` transitively. Jackson 2 artifacts that are declared directly are upgraded instead.
+* [org.openrewrite.java.jackson.UpgradeJackson_2_3_AddDataformatXmlDependency](/recipes/java/jackson/upgradejackson_2_3_adddataformatxmldependency.md)
+  * **Add Jackson 3 `jackson-dataformat-xml` for sources that use it transitively**
+  * Add `tools.jackson.dataformat:jackson-dataformat-xml` to modules whose sources use its Jackson 2 types, but only get `com.fasterxml.jackson.dataformat:jackson-dataformat-xml` transitively. Jackson 2 artifacts that are declared directly are upgraded instead.
+* [org.openrewrite.java.jackson.UpgradeJackson_2_3_AddDataformatYamlDependency](/recipes/java/jackson/upgradejackson_2_3_adddataformatyamldependency.md)
+  * **Add Jackson 3 `jackson-dataformat-yaml` for sources that use it transitively**
+  * Add `tools.jackson.dataformat:jackson-dataformat-yaml` to modules whose sources use its Jackson 2 types, but only get `com.fasterxml.jackson.dataformat:jackson-dataformat-yaml` transitively. Jackson 2 artifacts that are declared directly are upgraded instead.
 * [org.openrewrite.java.jackson.UpgradeJackson_2_3_Dependencies](/recipes/java/jackson/upgradejackson_2_3_dependencies.md)
   * **Upgrade Jackson 2.x dependencies to 3.x**
   * Upgrade Jackson Maven dependencies from 2.x to 3.x versions and update group IDs. Modules that already resolve Jackson 3 and no longer use Jackson 2 types in their sources are left as-is, as any Jackson 2 dependencies they still declare are there on purpose.
@@ -1083,6 +1022,9 @@ _49 recipes_
 * [org.openrewrite.java.jackson.UpgradeJackson_2_3_RemoveRedundantFeatureFlags](/recipes/java/jackson/upgradejackson_2_3_removeredundantfeatureflags.md)
   * **Remove redundant Jackson 3 feature flag configurations**
   * Remove `ObjectMapper` feature flag configurations that are now defaults in Jackson 3.
+* [org.openrewrite.java.jackson.UpgradeJackson_2_3_RestAssured](/recipes/java/jackson/upgradejackson_2_3_restassured.md)
+  * **Use the Jackson 3 object mapper factory of REST Assured**
+  * REST Assured 6 configures Jackson 3 through `jackson3ObjectMapperFactory` and `ObjectMapperType.JACKSON_3`, next to their Jackson 2 counterparts, which do not accept a Jackson 3 `ObjectMapper`.
 * [org.openrewrite.java.jackson.UpgradeJackson_2_3_TypeChanges](/recipes/java/jackson/upgradejackson_2_3_typechanges.md)
   * **Update Jackson 2.x types to 3.x**
   * Update Jackson type names including exception types and core class renames.
@@ -1118,62 +1060,68 @@ _49 recipes_
 
 _License: Apache License Version 2.0_
 
-_18 recipes_
+_20 recipes_
 
 * [org.openrewrite.java.dependencies.AddDependency](/recipes/java/dependencies/adddependency.md)
   * **Add Gradle or Maven dependency**
-  * For a Gradle project, add a gradle dependency to a `build.gradle` file in the correct configuration based on where it is used. Or For a maven project, Add a Maven dependency to a `pom.xml` file in the correct scope based on where it is used.
+  * For a Gradle project, add a dependency to a `build.gradle` or `build.gradle.kts` file in the correct configuration based on where it is used. For a Maven project, add a dependency to a `pom.xml` file in the correct scope based on where it is used.
 * [org.openrewrite.java.dependencies.ChangeDependency](/recipes/java/dependencies/changedependency.md)
   * **Change Gradle or Maven dependency**
   * Change the group ID, artifact ID, and/or the version of a specified Gradle or Maven dependency.
 * [org.openrewrite.java.dependencies.DependencyInsight](/recipes/java/dependencies/dependencyinsight.md)
-  * **Dependency insight for Gradle and Maven**
+  * **Gradle or Maven dependency insight**
   * Finds dependencies, including transitive dependencies, in both Gradle and Maven projects. Matches within all Gradle dependency configurations and Maven scopes.
 * [org.openrewrite.java.dependencies.DependencyList](/recipes/java/dependencies/dependencylist.md)
   * **Dependency report**
   * Emits a data table detailing all Gradle and Maven dependencies. This recipe makes no changes to any source file.
 * [org.openrewrite.java.dependencies.DependencyResolutionDiagnostic](/recipes/java/dependencies/dependencyresolutiondiagnostic.md)
   * **Dependency resolution diagnostic**
-  * Recipes which manipulate dependencies must be able to successfully access the artifact repositories and resolve dependencies from them. This recipe produces two data tables used to understand the state of dependency resolution.   The Repository accessibility report lists all the artifact repositories known to the project and whether respond to network access. The network access is attempted while the recipe is run and so is representative of current conditions.   The Gradle dependency configuration errors lists all the dependency configurations that failed to resolve one or more dependencies when the project was parsed. This is representative of conditions at the time the LST was parsed.
+  * Recipes which manipulate dependencies must be able to successfully access the artifact repositories and resolve dependencies from them. This recipe produces two data tables used to understand the state of dependency resolution.  The Repository accessibility report lists all the artifact repositories known to the project and whether they respond to network access. The network access is attempted while the recipe is run and so is representative of current conditions.  The Gradle dependency configuration errors lists all the dependency configurations that failed to resolve one or more dependencies when the project was parsed. This is representative of conditions at the time the LST was parsed.
+* [org.openrewrite.java.dependencies.ExcludeDependency](/recipes/java/dependencies/excludedependency.md)
+  * **Exclude a Gradle or Maven dependency**
+  * Exclude the specified dependency from any direct dependency that transitively includes it. For a Gradle project, adds an `exclude` to the declaration's closure in `build.gradle` or `build.gradle.kts`. For a Maven project, adds an `&lt;exclusion&gt;` to the dependency in the `pom.xml`.
 * [org.openrewrite.java.dependencies.FindDependency](/recipes/java/dependencies/finddependency.md)
-  * **Find Maven and Gradle dependencies**
-  * Finds direct dependencies declared in Maven and Gradle build files. This does *not* search transitive dependencies. To detect both direct and transitive dependencies use `org.openrewrite.java.dependencies.DependencyInsight` This recipe works for both Maven and Gradle projects.
+  * **Find Gradle or Maven dependencies**
+  * Finds direct dependencies declared in Gradle and Maven build files. This does *not* search transitive dependencies. To detect both direct and transitive dependencies use `org.openrewrite.java.dependencies.DependencyInsight`.
 * [org.openrewrite.java.dependencies.FindRepositoryOrder](/recipes/java/dependencies/findrepositoryorder.md)
-  * **Maven repository order**
-  * Determine the order in which dependencies will be resolved for each `pom.xml` or `build.gradle` based on its defined repositories and effective settings.
+  * **Gradle or Maven repository order**
+  * Determine the order in which dependencies will be resolved for each `pom.xml` or `build.gradle` based on its defined repositories. For Maven, the effective `settings.xml` is also taken into account.
 * [org.openrewrite.java.dependencies.RelocatedDependencyCheck](/recipes/java/dependencies/relocateddependencycheck.md)
   * **Find relocated dependencies**
-  * Find Maven and Gradle dependencies and Maven plugins that have relocated to a new `groupId` or `artifactId`. Relocation information comes from the [oga-maven-plugin](https://github.com/jonathanlermitage/oga-maven-plugin/) maintained by Jonathan Lermitage, Filipe Roque and others.  This recipe makes no changes to any source file by default. Add `changeDependencies=true` to change dependencies, but note that you might need to run additional recipes to update imports and adopt other breaking changes.
+  * Find Maven and Gradle dependencies, version catalog entries, Maven plugins, parents and extensions that have relocated to a new `groupId` or `artifactId`. Relocation information comes from the [oga-maven-plugin](https://github.com/jonathanlermitage/oga-maven-plugin/) maintained by Jonathan Lermitage, Filipe Roque and others.  This recipe makes no changes to any source file by default. Add `changeDependencies=true` to change dependencies whose relocated artifact publishes the same version, but note that you might need to run additional recipes to update imports and adopt other breaking changes.
 * [org.openrewrite.java.dependencies.RemoveDependency](/recipes/java/dependencies/removedependency.md)
   * **Remove a Gradle or Maven dependency**
-  * For Gradle project, removes a single dependency from the dependencies section of the `build.gradle`. For Maven project, removes a single dependency from the `&lt;dependencies&gt;` section of the pom.xml.
+  * For a Gradle project, removes a single dependency from the `dependencies` section of the `build.gradle` or `build.gradle.kts`. For a Maven project, removes a single dependency from the `&lt;dependencies&gt;` section of the `pom.xml`.
+* [org.openrewrite.java.dependencies.RemoveExclusion](/recipes/java/dependencies/removeexclusion.md)
+  * **Remove a Gradle or Maven dependency exclusion**
+  * Remove exclusions of the specified dependency, the inverse of `ExcludeDependency`. For a Gradle project, removes `exclude` declarations from dependency and configuration closures in `build.gradle` or `build.gradle.kts`. For a Maven project, removes the `&lt;exclusion&gt;` from dependencies and managed dependencies in the `pom.xml`.
 * [org.openrewrite.java.dependencies.RemoveRedundantDependencies](/recipes/java/dependencies/removeredundantdependencies.md)
   * **Remove redundant explicit dependencies**
   * Remove explicit dependencies that are already provided transitively by a specified dependency. This recipe downloads and resolves the parent dependency's POM to determine its true transitive dependencies, allowing it to detect redundancies even when both dependencies are explicitly declared. A direct dependency is only removed when the transitive one provides it at the exact same scope and with the same declared exclusions, so that removing it does not change the effective classpath. Declarations that constrain resolution through a version range or dynamic version, such as a Gradle `version \{ strictly ... \}` block, are never removed.
 * [org.openrewrite.java.dependencies.UpgradeDependencyVersion](/recipes/java/dependencies/upgradedependencyversion.md)
   * **Upgrade Gradle or Maven dependency versions**
-  * For Gradle projects, upgrade the version of a dependency in a `build.gradle` file. Supports updating dependency declarations of various forms:  * `String` notation: `&quot;group:artifact:version&quot;`   * `Map` notation: `group: 'group', name: 'artifact', version: 'version'` It is possible to update version numbers which are defined earlier in the same file in variable declarations.  For Maven projects, upgrade the version of a dependency by specifying a group ID and (optionally) an artifact ID using Node Semver advanced range selectors, allowing more precise control over version updates to patch or minor releases.
+  * For Gradle projects, upgrade the version of a dependency in a `build.gradle` or `build.gradle.kts` file. Supports updating dependency declarations of various forms:  * `String` notation: `&quot;group:artifact:version&quot;`  * `Map` notation: `group: 'group', name: 'artifact', version: 'version'` It is possible to update version numbers which are defined earlier in the same file in variable declarations, in `gradle.properties`, or in a version catalog.  For Maven projects, upgrade the version of a dependency by specifying a group ID and an artifact ID using Node Semver advanced range selectors, allowing more precise control over version updates to patch or minor releases.
 * [org.openrewrite.java.dependencies.UpgradeTransitiveDependencyVersion](/recipes/java/dependencies/upgradetransitivedependencyversion.md)
   * **Upgrade transitive Gradle or Maven dependencies**
-  * Upgrades the version of a transitive dependency in a Maven pom.xml or Gradle build.gradle. Leaves direct dependencies unmodified. Can be paired with the regular Upgrade Dependency Version recipe to upgrade a dependency everywhere, regardless of whether it is direct or transitive.
+  * Upgrades the version of a transitive dependency in a Maven `pom.xml` or Gradle `build.gradle` or `build.gradle.kts`. Leaves direct dependencies unmodified. Can be paired with `UpgradeDependencyVersion` to upgrade a dependency everywhere, regardless of whether it is direct or transitive.
 * [org.openrewrite.java.dependencies.search.DoesNotIncludeDependency](/recipes/java/dependencies/search/doesnotincludedependency.md)
-  * **Does not include dependency for Gradle and Maven**
-  * A precondition which returns false if visiting a Gradle file / Maven pom which includes the specified dependency in the classpath of some Gradle configuration / Maven scope. For compatibility with multimodule projects, this should most often be applied as a precondition.
+  * **Does not include Gradle or Maven dependency**
+  * A precondition which returns false if visiting a Gradle build file or Maven `pom.xml` which includes the specified dependency in the classpath of some Gradle configuration or Maven scope. For compatibility with multi-module projects, this should most often be applied as a precondition.
 * [org.openrewrite.java.dependencies.search.FindDuplicateClasses](/recipes/java/dependencies/search/findduplicateclasses.md)
   * **Find duplicate classes on the classpath**
-  * Detects classes that appear in multiple dependencies on the classpath. This is similar to what the Maven duplicate-finder-maven-plugin does. Duplicate classes can cause runtime issues when different versions of the same class are loaded.
+  * Detects classes that appear in multiple dependencies on the classpath. This is similar to what the Maven `duplicate-finder-maven-plugin` does. Duplicate classes can cause runtime issues when different versions of the same class are loaded.
 * [org.openrewrite.java.dependencies.search.FindMinimumDependencyVersion](/recipes/java/dependencies/search/findminimumdependencyversion.md)
   * **Find the oldest matching dependency version in use**
-  * The oldest dependency version in use is the lowest dependency version in use in any source set of any subproject of a repository. It is possible that, for example, the main source set of a project uses Jackson 2.11, but a test source set uses Jackson 2.16. In this case, the oldest Jackson version in use is Java 2.11.
+  * The oldest dependency version in use is the lowest dependency version in use in any source set of any subproject of a repository. It is possible that, for example, the main source set of a project uses Jackson 2.11, but a test source set uses Jackson 2.16. In this case, the oldest Jackson version in use is Jackson 2.11.
 * [org.openrewrite.java.dependencies.search.FindMinimumJUnitVersion](/recipes/java/dependencies/search/findminimumjunitversion.md)
   * **Find minimum JUnit version**
-  * A recipe to find the minimum version of JUnit dependencies. This recipe is designed to return the minimum version of JUnit in a project. It will search for JUnit 4 and JUnit 5 dependencies in the project. If both versions are found, it will return the minimum version of JUnit 4. If a minimumVersion is provided, the recipe will search to see if the minimum version of JUnit used by the project is no lower than the minimumVersion. For example: if the minimumVersion is 4, and the project has JUnit 4.12 and JUnit 5.7, the recipe will return JUnit 4.12. If the project has only JUnit 5.7, the recipe will return JUnit 5.7. Another example: if the minimumVersion is 5, and the project has JUnit 4.12 and JUnit 5.7, the recipe will not return any results.
+  * Finds the minimum version of JUnit dependencies in a project. It will search for JUnit 4 and JUnit 5 dependencies in the project. If both versions are found, it will return the JUnit 4 version. If a `minimumVersion` is provided, the recipe only returns results when that is the minimum version of JUnit used by the project. For example: if the `minimumVersion` is 4, and the project has JUnit 4.12 and JUnit 5.7, the recipe will return JUnit 4.12. If the project has only JUnit 5.7, the recipe will not return any results. Another example: if the `minimumVersion` is 5, and the project has JUnit 4.12 and JUnit 5.7, the recipe will not return any results.
 * [org.openrewrite.java.dependencies.search.ModuleHasDependency](/recipes/java/dependencies/search/modulehasdependency.md)
   * **Module has dependency**
-  * Searches for both Gradle and Maven modules that have a dependency matching the specified groupId and artifactId. Places a `SearchResult` marker on all sources within a module with a matching dependency. This recipe is intended to be used as a precondition for other recipes. For example this could be used to limit the application of a spring boot migration to only projects that use spring-boot-starter, limiting unnecessary upgrading. If the search result you want is instead just the build.gradle(.kts) or pom.xml file applying the plugin, use the `FindDependency` recipe instead.
+  * Searches for both Gradle and Maven modules that have a dependency matching the specified `groupId` and `artifactId`. Places a `SearchResult` marker on all sources within a module with a matching dependency. This recipe is intended to be used as a precondition for other recipes. For example this could be used to limit the application of a Spring Boot migration to only projects that use `spring-boot-starter`, limiting unnecessary upgrading. If the search result you want is instead just the `build.gradle(.kts)` or `pom.xml` file declaring the dependency, use the `FindDependency` recipe instead.
 * [org.openrewrite.java.dependencies.search.RepositoryHasDependency](/recipes/java/dependencies/search/repositoryhasdependency.md)
   * **Repository has dependency**
-  * Searches for both Gradle and Maven modules that have a dependency matching the specified groupId and artifactId. Places a `SearchResult` marker on all sources within a repository with a matching dependency. This recipe is intended to be used as a precondition for other recipes. For example this could be used to limit the application of a spring boot migration to only projects that use a springframework dependency, limiting unnecessary upgrading. If the search result you want is instead just the build.gradle(.kts) or pom.xml file applying the plugin, use the `FindDependency` recipe instead.
+  * Searches for both Gradle and Maven modules that have a dependency matching the specified `groupId` and `artifactId`. Places a `SearchResult` marker on all sources within a repository with a matching dependency. This recipe is intended to be used as a precondition for other recipes. For example this could be used to limit the application of a Spring Boot migration to only projects that use a Spring Framework dependency, limiting unnecessary upgrading. If the search result you want is instead just the `build.gradle(.kts)` or `pom.xml` file declaring the dependency, use the `FindDependency` recipe instead.
 
 ## rewrite-jenkins
 
@@ -1887,74 +1835,80 @@ _40 recipes_
 
 _License: Moderne Source Available License_
 
-_505 recipes_
+_529 recipes_
 
 * [com.google.guava.InlineGuavaMethods](/recipes/google/guava/inlineguavamethods.md)
-  * **Inline `guava` methods annotated with `@InlineMe`**
+  * **Inline Guava methods annotated with `@InlineMe`**
   * Automatically generated recipes to inline method calls based on `@InlineMe` annotations discovered in the type table.
 * [org.openrewrite.java.jspecify.JSpecifyBestPractices](/recipes/java/jspecify/jspecifybestpractices.md)
   * **JSpecify best practices**
   * Apply JSpecify best practices, such as migrating off of alternatives, and adding missing `@Nullable` annotations.
 * [org.openrewrite.java.jspecify.MigrateFromJakartaAnnotationApi](/recipes/java/jspecify/migratefromjakartaannotationapi.md)
   * **Migrate from Jakarta annotation API to JSpecify**
-  * Migrate from Jakarta annotation API to JSpecify.
+  * Replace the `jakarta.annotation` `@Nullable` and `@Nonnull` annotations with their JSpecify equivalents, adding the JSpecify dependency where needed.
 * [org.openrewrite.java.jspecify.MigrateFromJavaxAnnotationApi](/recipes/java/jspecify/migratefromjavaxannotationapi.md)
   * **Migrate from javax annotation API to JSpecify**
-  * Migrate from javax annotation API to JSpecify.
+  * Replace the `javax.annotation` `@Nullable`, `@CheckForNull`, `@Nonnull` and `@ParametersAreNonnullByDefault` annotations with their JSpecify equivalents, adding the JSpecify dependency where needed.
 * [org.openrewrite.java.jspecify.MigrateFromJetbrainsAnnotations](/recipes/java/jspecify/migratefromjetbrainsannotations.md)
   * **Migrate from JetBrains annotations to JSpecify**
-  * Migrate from JetBrains annotations to JSpecify.
+  * Replace the `org.jetbrains.annotations` `@Nullable` and `@NotNull` annotations with their JSpecify equivalents, adding the JSpecify dependency where needed.
 * [org.openrewrite.java.jspecify.MigrateFromMicrometerAnnotations](/recipes/java/jspecify/migratefrommicrometerannotations.md)
   * **Migrate from Micrometer annotations to JSpecify**
-  * Migrate from Micrometer annotations to JSpecify.
+  * Replace the `io.micrometer.core.lang` `@Nullable` and `@NonNull` annotations with their JSpecify equivalents, adding the JSpecify dependency where needed.
 * [org.openrewrite.java.jspecify.MigrateFromMicronautAnnotations](/recipes/java/jspecify/migratefrommicronautannotations.md)
   * **Migrate from Micronaut Framework annotations to JSpecify**
-  * Migrate from Micronaut Framework annotations to JSpecify.
+  * Replace the `io.micronaut.core.annotation` `@Nullable` and `@NonNull` annotations with their JSpecify equivalents, adding the JSpecify dependency where needed.
 * [org.openrewrite.java.jspecify.MigrateFromSpotBugsAnnotations](/recipes/java/jspecify/migratefromspotbugsannotations.md)
   * **Migrate from SpotBugs annotations to JSpecify**
   * Migrate from SpotBugs `edu.umd.cs.findbugs.annotations` annotations to JSpecify.
 * [org.openrewrite.java.jspecify.MigrateFromSpringFrameworkAnnotations](/recipes/java/jspecify/migratefromspringframeworkannotations.md)
   * **Migrate from Spring Framework annotations to JSpecify**
-  * Migrate from Spring Framework annotations to JSpecify.
+  * Replace the `org.springframework.lang` `@Nullable` and `@NonNull` annotations with their JSpecify equivalents, adding the JSpecify dependency where needed.
 * [org.openrewrite.java.jspecify.MigrateToJSpecify](/recipes/java/jspecify/migratetojspecify.md)
   * **Migrate to JSpecify**
   * This recipe will migrate to JSpecify annotations from various other nullability annotation standards.
 * [org.openrewrite.java.migrate.AccessController](/recipes/java/migrate/accesscontroller.md)
-  * **Remove Security AccessController**
-  * The Security Manager API is unsupported in Java 24. This recipe will remove the usage of `java.security.AccessController`.
+  * **Remove `AccessController.checkPermission(..)` calls**
+  * The Security Manager API is unsupported in Java 24. This recipe removes calls to `java.security.AccessController#checkPermission(..)`.
+* [org.openrewrite.java.migrate.AddAspectJToolsToAspectJMavenPlugin](/recipes/java/migrate/addaspectjtoolstoaspectjmavenplugin.md)
+  * **Add `aspectjtools` to the AspectJ Maven plugin**
+  * Pins `aspectjtools` 1.9.25.1 on the `dev.aspectj:aspectj-maven-plugin`, as the AspectJ compiler bundled with the plugin is too old to read Java 25 bytecode. An existing `aspectjtools` plugin dependency is left as is, rather than being reset to this version.
 * [org.openrewrite.java.migrate.AddJDeprScanPlugin](/recipes/java/migrate/addjdeprscanplugin.md)
-  * **Add `JDeprScan` Maven Plug-in**
+  * **Add `JDeprScan` Maven plugin**
   * Add the `JDeprScan` Maven plugin to scan class files for uses of deprecated APIs.
+* [org.openrewrite.java.migrate.AddLombokAnnotationProcessorPath](/recipes/java/migrate/addlombokannotationprocessorpath.md)
+  * **Add `lombok` to the `maven-compiler-plugin` annotation processor paths**
+  * Add the `lombok` annotation processor path, matching the version of the `lombok` dependency. Once `annotationProcessorPaths` is configured, javac no longer discovers annotation processors on the classpath, so Lombok has to be listed there explicitly to keep running.
 * [org.openrewrite.java.migrate.AddLombokMapstructBinding](/recipes/java/migrate/addlombokmapstructbinding.md)
   * **Add `lombok-mapstruct-binding` when both MapStruct and Lombok are used**
   * Add the `lombok-mapstruct-binding` annotation processor as needed when both MapStruct and Lombok are used.
 * [org.openrewrite.java.migrate.AddLombokMapstructBindingMavenDependencyOnly](/recipes/java/migrate/addlombokmapstructbindingmavendependencyonly.md)
   * **Add `lombok-mapstruct-binding` dependency for Maven when both MapStruct and Lombok are used**
-  * Add the `lombok-mapstruct-binding` when both MapStruct and Lombok are used, and the dependency does not already exist. Only to be called from `org.openrewrite.java.migrate.AddLombokMapstructBinding` to reduce redundant checks.
+  * Add the `lombok-mapstruct-binding` Maven dependency when this module uses both Lombok and MapStruct and the binding is not already a dependency or configured on the compiler annotation processor path.
 * [org.openrewrite.java.migrate.AddMapstructAnnotationProcessorPath](/recipes/java/migrate/addmapstructannotationprocessorpath.md)
   * **Add `mapstruct-processor` to the `maven-compiler-plugin` annotation processor paths**
   * Add the `mapstruct-processor` annotation processor path, matching the version of the `mapstruct` dependency, so that MapStruct mappers are generated when annotation processing is configured explicitly.
 * [org.openrewrite.java.migrate.AddMissingMethodImplementation](/recipes/java/migrate/addmissingmethodimplementation.md)
-  * **Adds missing method implementations**
-  * Check for missing methods required by interfaces and adds them.
+  * **Add missing method implementations**
+  * Add a method to classes that implement the given interface but are missing the method.
 * [org.openrewrite.java.migrate.AddMockitoJavaAgentToMavenSurefirePlugin](/recipes/java/migrate/addmockitojavaagenttomavensurefireplugin.md)
-  * **Add Mockito Java Agent to Maven Surefire Plugin**
+  * **Add Mockito Java agent to Maven Surefire plugin**
   * Mockito attaches its Byte Buddy agent to the running JVM at test time, which the JDK has warned about since Java 21 and intends to disallow. This recipe instead loads the agent up front through the Maven Surefire plugin, adding the `maven-dependency-plugin` `properties` goal to resolve the agent jar path, to silence the warning and stay ahead of the JDK change.
 * [org.openrewrite.java.migrate.AddStaticVariableOnProducerSessionBean](/recipes/java/migrate/addstaticvariableonproducersessionbean.md)
-  * **Adds `static` modifier to `@Produces` fields that are in session beans**
+  * **Add `static` modifier to `@Produces` fields in session beans**
   * Ensures that the fields annotated with `@Produces` which is inside the session bean (`@Stateless`, `@Stateful`, or `@Singleton`) are declared `static`.
 * [org.openrewrite.java.migrate.AddSuppressionForIllegalReflectionWarningsPlugin](/recipes/java/migrate/addsuppressionforillegalreflectionwarningsplugin.md)
-  * **Add maven jar plugin to suppress illegal reflection warnings**
-  * Adds a maven jar plugin that's configured to suppress Illegal Reflection Warnings.
+  * **Add `maven-jar-plugin` to suppress illegal reflection warnings**
+  * Adds a `maven-jar-plugin` with `Add-Opens` manifest entries to `war` and `ear` modules to suppress illegal reflection warnings.
 * [org.openrewrite.java.migrate.AddSurefireFailsafeArgLine](/recipes/java/migrate/addsurefirefailsafeargline.md)
-  * **Add `argLine` to surefire and failsafe plugins**
-  * Adds the specified arguments to the `argLine` configuration of the Maven Surefire and Failsafe plugins, merging with any existing argLine value without duplicating arguments. The `@\{argLine\}` [late property reference](https://maven.apache.org/surefire/maven-surefire-plugin/faq.html) is prepended so that an agent injected by another plugin during the build, such as the JaCoCo coverage agent from `jacoco-maven-plugin:prepare-agent`, is preserved rather than overwritten. It is not added when the existing `argLine` already references the `argLine` property.
+  * **Add `argLine` to Maven Surefire and Failsafe plugins**
+  * Adds the specified arguments to the `argLine` configuration of the Maven Surefire and Failsafe plugins, merging with any existing `argLine` value without duplicating arguments. The `@\{argLine\}` [late property reference](https://maven.apache.org/surefire/maven-surefire-plugin/faq.html) is prepended so that an agent injected by another plugin during the build, such as the JaCoCo coverage agent from `jacoco-maven-plugin:prepare-agent`, is preserved rather than overwritten. It is not added when the existing `argLine` already references the `argLine` property.
 * [org.openrewrite.java.migrate.ArrayStoreExceptionToTypeNotPresentException](/recipes/java/migrate/arraystoreexceptiontotypenotpresentexception.md)
   * **Catch `TypeNotPresentException` thrown by `Class.getAnnotation()`**
   * Replace catch blocks for `ArrayStoreException` around `Class.getAnnotation()` with `TypeNotPresentException` to ensure compatibility with Java 11+.
 * [org.openrewrite.java.migrate.BeanDiscovery](/recipes/java/migrate/beandiscovery.md)
-  * **Behavior change to bean discovery in modules with `beans.xml` file with no version specified**
-  * Alters beans with missing version attribute to include this attribute as well as the bean-discovery-mode=&quot;all&quot; attribute to maintain an explicit bean archive.
+  * **Add `version` and `bean-discovery-mode` to `beans.xml` files without a version**
+  * Alters `beans.xml` files with a missing `version` attribute to include this attribute as well as `bean-discovery-mode=&quot;all&quot;`, to maintain an explicit bean archive.
 * [org.openrewrite.java.migrate.BeansXmlNamespace](/recipes/java/migrate/beansxmlnamespace.md)
   * **Change `beans.xml` `schemaLocation` to match XML namespace**
   * Set the `schemaLocation` that corresponds to the `xmlns` set in `beans.xml` files.
@@ -1974,13 +1928,13 @@ _505 recipes_
   * **Remove explicit casts on `Arrays.asList(..).toArray()`**
   * Convert code like `(Integer[]) Arrays.asList(1, 2, 3).toArray()` to `Arrays.asList(1, 2, 3).toArray(new Integer[0])`.
 * [org.openrewrite.java.migrate.ChangeDefaultKeyStore](/recipes/java/migrate/changedefaultkeystore.md)
-  * **Return String `jks` when  `KeyStore.getDefaultType()` is called**
-  * In Java 11 the default keystore was updated from JKS to PKCS12. As a result, applications relying on KeyStore.getDefaultType() may encounter issues after migrating, unless their JKS keystore has been converted to PKCS12. This recipe returns default key store of `jks` when `KeyStore.getDefaultType()` method is called to use the pre Java 11 default keystore.
+  * **Replace `KeyStore.getDefaultType()` with `&quot;jks&quot;`**
+  * In Java 9 the default keystore type changed from JKS to PKCS12. As a result, applications relying on `KeyStore.getDefaultType()` may encounter issues after migrating, unless their JKS keystore has been converted to PKCS12. This recipe replaces `KeyStore.getDefaultType()` with `&quot;jks&quot;` in projects still on Java 8 or earlier, so that they keep the pre Java 9 default keystore type once upgraded.
 * [org.openrewrite.java.migrate.ChangeMethodInvocationReturnType](/recipes/java/migrate/changemethodinvocationreturntype.md)
   * **Change method invocation return type**
   * Changes the return type of a method invocation.
 * [org.openrewrite.java.migrate.ComIntelliJAnnotationsToOrgJetbrainsAnnotations](/recipes/java/migrate/comintellijannotationstoorgjetbrainsannotations.md)
-  * **Migrate com.intellij:annotations to org.jetbrains:annotations**
+  * **Migrate `com.intellij:annotations` to `org.jetbrains:annotations`**
   * This recipe will upgrade old dependency of com.intellij:annotations to the newer org.jetbrains:annotations.
 * [org.openrewrite.java.migrate.CommentJava24KotlinCap](/recipes/java/migrate/commentjava24kotlincap.md)
   * **Explain why the Java version was capped at 24 for Kotlin modules**
@@ -1996,7 +1950,7 @@ _505 recipes_
   * The java.desktop module had a few implementations of finalize() that did nothing and have been removed. This recipe will remove these methods.
 * [org.openrewrite.java.migrate.DeprecatedCountStackFramesMethod](/recipes/java/migrate/deprecatedcountstackframesmethod.md)
   * **Remove `Thread.countStackFrames()` method**
-  * `Thread.countStackFrames()` has been removed in Java SE 14 and has been changed in this release to unconditionally throw `UnsupportedOperationException`  This recipe removes the usage of this method in your application as long as the method is not assigned to a variable.  For more information on the Java SE 14 deprecation of this method, see https://bugs.java.com/bugdatabase/view_bug?bug_id=8205132.
+  * `Thread.countStackFrames()` has been removed in Java SE 14 and has been changed in this release to unconditionally throw `UnsupportedOperationException`. This recipe removes the usage of this method in your application as long as the method is not assigned to a variable. For more information on the Java SE 14 deprecation of this method, see https://bugs.java.com/bugdatabase/view_bug?bug_id=8205132.
 * [org.openrewrite.java.migrate.DeprecatedJavaxSecurityCert](/recipes/java/migrate/deprecatedjavaxsecuritycert.md)
   * **Use `java.security.cert` instead of `javax.security.cert`**
   * The `javax.security.cert` package has been deprecated for removal.
@@ -2010,14 +1964,14 @@ _505 recipes_
   * **Enable Lombok annotation processor**
   * With Java 23 the encapsulation of JDK internals made it necessary to configure annotation processors like Lombok explicitly. The change is valid for older versions as well.
 * [org.openrewrite.java.migrate.IBMJDKtoOracleJDK](/recipes/java/migrate/ibmjdktooraclejdk.md)
-  * **Migrate from IBM Runtimes to Oracle Runtimes**
+  * **Migrate from IBM runtimes to Oracle runtimes**
   * This recipe will apply changes commonly needed when upgrading Java versions. The solutions provided in this list are solutions necessary for migrating from IBM Runtimes to Oracle Runtimes.
 * [org.openrewrite.java.migrate.IBMSemeru](/recipes/java/migrate/ibmsemeru.md)
   * **Migrate to IBM Semeru Runtimes**
   * This recipe will apply changes commonly needed when upgrading Java versions. The solutions provided in this list are solutions only available in IBM Semeru Runtimes.
 * [org.openrewrite.java.migrate.IllegalArgumentExceptionToAlreadyConnectedException](/recipes/java/migrate/illegalargumentexceptiontoalreadyconnectedexception.md)
   * **Replace `IllegalArgumentException` with `AlreadyConnectedException` in `DatagramChannel.send()` method**
-  * Replace `IllegalArgumentException` with `AlreadyConnectedException` for DatagramChannel.send() to ensure compatibility with Java 11+.
+  * Replace `IllegalArgumentException` with `AlreadyConnectedException` for `DatagramChannel.send()` to ensure compatibility with Java 11+.
 * [org.openrewrite.java.migrate.InternalBindPackages](/recipes/java/migrate/internalbindpackages.md)
   * **Use `com.sun.xml.bind.*` instead of `com.sun.xml.internal.bind.*`**
   * Do not use APIs from `com.sun.xml.internal.bind.*` packages.
@@ -2034,17 +1988,17 @@ _505 recipes_
   * **Use `com.ibm.net.ssl.www2.protocol.https.Handler` instead of `com.sun.net.ssl.internal.www.protocol.https.Handler`**
   * Do not use the `com.sun.net.ssl.internal.www.protocol.https.Handler` class.
 * [org.openrewrite.java.migrate.JREJdbcInterfaceNewMethods](/recipes/java/migrate/jrejdbcinterfacenewmethods.md)
-  * **Adds missing JDBC interface methods**
+  * **Add missing JDBC interface methods**
   * Add method implementations stubs to classes that implement JDBC interfaces.
 * [org.openrewrite.java.migrate.JREThrowableFinalMethods](/recipes/java/migrate/jrethrowablefinalmethods.md)
   * **Rename final method declarations `getSuppressed()` and `addSuppressed(Throwable exception)` in classes that extend `Throwable`**
-  * The recipe renames  `getSuppressed()` and `addSuppressed(Throwable exception)` methods  in classes that extend `java.lang.Throwable` to `myGetSuppressed` and `myAddSuppressed(Throwable)`. These methods were added to Throwable in Java 7 and are marked final which cannot be overridden.
+  * The recipe renames `getSuppressed()` and `addSuppressed(Throwable exception)` methods in classes that extend `java.lang.Throwable` to `myGetSuppressed` and `myAddSuppressed(Throwable)`. These methods were added to `Throwable` in Java 7 and are marked final which cannot be overridden.
 * [org.openrewrite.java.migrate.JREWrapperInterface](/recipes/java/migrate/jrewrapperinterface.md)
   * **Add missing `isWrapperFor` and `unwrap` methods**
   * Add method implementations stubs to classes that implement `java.sql.Wrapper`.
 * [org.openrewrite.java.migrate.Java8toJava11](/recipes/java/migrate/java8tojava11.md)
   * **Migrate to Java 11**
-  * This recipe will apply changes commonly needed when upgrading to Java 11. Specifically, for those applications that are built on Java 8, this recipe will update and add dependencies on J2EE libraries that are no longer directly bundled with the JDK. This recipe will also replace deprecated API with equivalents when there is a clear migration strategy. Build files will also be updated to use Java 11 as the target/source and plugins will be also be upgraded to versions that are compatible with Java 11.
+  * This recipe will apply changes commonly needed when upgrading to Java 11. Specifically, for those applications that are built on Java 8, this recipe will update and add dependencies on J2EE libraries that are no longer directly bundled with the JDK. This recipe will also replace deprecated API with equivalents when there is a clear migration strategy. Build files will also be updated to use Java 11 as the target/source and plugins will also be upgraded to versions that are compatible with Java 11.
 * [org.openrewrite.java.migrate.JavaBestPractices](/recipes/java/migrate/javabestpractices.md)
   * **Java best practices**
   * Applies opinionated best practices for Java projects targeting Java 25. This recipe includes the full Java 25 upgrade chain plus additional improvements to code style, API usage, and third-party dependency reduction that go beyond what the version migration recipes apply.
@@ -2058,14 +2012,14 @@ _505 recipes_
   * **Use `com.sun.security.auth.module.Krb5LoginModule` instead of `com.ibm.security.auth.module.Krb5LoginModule`**
   * Do not use the `com.ibm.security.auth.module.Krb5LoginModule` class.
 * [org.openrewrite.java.migrate.MXBeanRule](/recipes/java/migrate/mxbeanrule.md)
-  * **MBean and MXBean interfaces must be public**
+  * **Make MBean and MXBean interfaces public**
   * Sets visibility of MBean and MXBean interfaces to public.
 * [org.openrewrite.java.migrate.MigrateGraalVMResourceConfig](/recipes/java/migrate/migrategraalvmresourceconfig.md)
-  * **Migrate GraalVM resource-config.json to glob patterns**
-  * Migrates GraalVM native-image resource-config.json files from the legacy regex pattern format (JDK 21 and earlier) to the new glob pattern format (JDK 23+). Converts `pattern` entries to `glob` entries and restructures the format. Note: `excludes` are no longer supported in the new format and will be removed.
+  * **Migrate GraalVM `resource-config.json` to glob patterns**
+  * Migrates GraalVM `native-image` `resource-config.json` files from the legacy regex pattern format (JDK 21 and earlier) to the new glob pattern format (JDK 23+). Converts `pattern` entries to `glob` entries and restructures the format. Note: `excludes` are no longer supported in the new format and will be removed.
 * [org.openrewrite.java.migrate.MigrateZipErrorToZipException](/recipes/java/migrate/migrateziperrortozipexception.md)
   * **Use `ZipException` instead of `ZipError`**
-  * Use `ZipException` instead of the deprecated `ZipError` in Java 9 or higher.
+  * Use `ZipException` instead of the deprecated `ZipError` in Java 25 or higher.
 * [org.openrewrite.java.migrate.ReferenceCloneMethod](/recipes/java/migrate/referenceclonemethod.md)
   * **Replace `java.lang.ref.Reference.clone()` with constructor call**
   * The recipe replaces any clone calls that may resolve to a `java.lang.ref.Reference.clone()` or any of its known subclasses: `java.lang.ref.PhantomReference`, `java.lang.ref.SoftReference`, and `java.lang.ref.WeakReference` with a constructor call passing in the referent and reference queue as parameters.
@@ -2073,26 +2027,26 @@ _505 recipes_
   * **Remove illegal semicolons**
   * Remove semicolons after package declarations and imports, no longer accepted in Java 21 as of [JDK-8027682](https://bugs.openjdk.org/browse/JDK-8027682).
 * [org.openrewrite.java.migrate.RemoveSecurityManager](/recipes/java/migrate/removesecuritymanager.md)
-  * **Remove Security SecurityManager**
-  * The Security Manager API is unsupported in Java 24. This recipe will remove the usage of `java.security.SecurityManager`.
+  * **Remove `SecurityManager` permission checks**
+  * The Security Manager API is unsupported in Java 24. This recipe removes calls to the `java.lang.SecurityManager#check*(..)` methods.
 * [org.openrewrite.java.migrate.RemoveSecurityPolicy](/recipes/java/migrate/removesecuritypolicy.md)
-  * **Remove Security Policy**
-  * The Security Manager API is unsupported in Java 24. This recipe will remove the use of `java.security.Policy`.
+  * **Remove `Policy.setPolicy(..)` calls**
+  * The Security Manager API is unsupported in Java 24. This recipe removes calls to `java.security.Policy#setPolicy(..)`.
 * [org.openrewrite.java.migrate.RemovedFileIOFinalizeMethods](/recipes/java/migrate/removedfileiofinalizemethods.md)
-  * **Replace `finalize` method in `java.io.FileInputStream`  and `java.io.FileOutputStream`**
+  * **Replace `finalize` method in `java.io.FileInputStream` and `java.io.FileOutputStream`**
   * The `finalize` method in `java.io.FileInputStream` and `java.io.FileOutputStream` is no longer available in Java SE 12 and later. The recipe replaces it with the `close` method.
 * [org.openrewrite.java.migrate.RemovedJavaXMLWSModuleProvided](/recipes/java/migrate/removedjavaxmlwsmoduleprovided.md)
   * **Do not package `java.xml.ws` module in WebSphere Liberty applications**
-  * The `java.xml.ws` module was removed in Java11. Websphere Liberty provides its own implementation of the module, which can be used by specifying the `jaxws-2.2` feature in the server.xml file. This recipe updates the `javax.xml.ws` dependency to use the `provided` scope to avoid class loading issues.
+  * The `java.xml.ws` module was removed in Java 11. WebSphere Liberty provides its own implementation of the module, which can be used by specifying the `jaxws-2.2` feature in the server.xml file. This recipe updates the `javax.xml.ws` dependency to use the `provided` scope to avoid class loading issues.
 * [org.openrewrite.java.migrate.RemovedJaxBModuleProvided](/recipes/java/migrate/removedjaxbmoduleprovided.md)
   * **Do not package `java.xml.bind` and `java.activation` modules in WebSphere Liberty applications**
-  * The `java.xml.bind` and `java.activation` modules were removed in Java11. Websphere Liberty provides its own implementation of the modules, which can be used by specifying the `jaxb-2.2` feature in the server.xml file. This recipe updates the `javax.xml.bind` and `javax.activation` dependencies to use the `provided` scope to avoid class loading issues.
+  * The `java.xml.bind` and `java.activation` modules were removed in Java 11. WebSphere Liberty provides its own implementation of the modules, which can be used by specifying the `jaxb-2.2` feature in the server.xml file. This recipe updates the `javax.xml.bind` and `javax.activation` dependencies to use the `provided` scope to avoid class loading issues.
 * [org.openrewrite.java.migrate.RemovedLegacySunJSSEProviderName](/recipes/java/migrate/removedlegacysunjsseprovidername.md)
   * **Use `SunJSSE` instead of `com.sun.net.ssl.internal.ssl.Provider`**
   * The `com.sun.net.ssl.internal.ssl.Provider` provider name was removed.
 * [org.openrewrite.java.migrate.RemovedModifierAndConstantBootstrapsConstructors](/recipes/java/migrate/removedmodifierandconstantbootstrapsconstructors.md)
-  * **Change `java.lang.reflect.Modifier` and ` java.lang.invoke.ConstantBootstraps` method calls to static**
-  * The `java.lang.reflect.Modifier()` and `java.lang.invoke.ConstantBootstraps()` constructors have been removed in Java SE 15 because both classes only contain static methods. This recipe converts the usage of all methods in the two classes to be  static. See https://docs.oracle.com/en/java/javase/15/migrate/index.html#GUID-233853B8-0782-429E-BEF7-7532EE610E63 for more information on these changes.
+  * **Change `java.lang.reflect.Modifier` and `java.lang.invoke.ConstantBootstraps` method calls to static**
+  * The `java.lang.reflect.Modifier()` and `java.lang.invoke.ConstantBootstraps()` constructors have been removed in Java SE 15 because both classes only contain static methods. This recipe converts the usage of all methods in the two classes to be static. See https://docs.oracle.com/en/java/javase/15/migrate/index.html#GUID-233853B8-0782-429E-BEF7-7532EE610E63 for more information on these changes.
 * [org.openrewrite.java.migrate.RemovedPolicy](/recipes/java/migrate/removedpolicy.md)
   * **Replace `javax.security.auth.Policy` with `java.security.Policy`**
   * The `javax.security.auth.Policy` class is not available from Java SE 11 onwards.
@@ -2106,23 +2060,23 @@ _505 recipes_
   * **Replace `SSLSession.getPeerCertificateChain()` method**
   * The `javax.net.ssl.SSLSession.getPeerCertificateChain()` method implementation was removed from the SunJSSE provider and HTTP client implementation in Java SE 15. The default implementation will now throw an `UnsupportedOperationException`. Applications using this method should be updated to use the `javax.net.ssl.SSLSession.getPeerCertificates()` method instead.
 * [org.openrewrite.java.migrate.RemovedSecurityManagerMethods](/recipes/java/migrate/removedsecuritymanagermethods.md)
-  * **Replace deprecated methods in`SecurityManager`**
+  * **Replace deprecated methods in `SecurityManager`**
   * Replace `SecurityManager` methods `checkAwtEventQueueAccess()`, `checkSystemClipboardAccess()`, `checkMemberAccess()` and `checkTopLevelWindow()` deprecated in Java SE 11 by `checkPermission(new java.security.AllPermission())`.
 * [org.openrewrite.java.migrate.RemovedSubjectMethods](/recipes/java/migrate/removedsubjectmethods.md)
-  * **Adopt `javax.security.auth.Subject.current()` and `javax.security.auth.Subject.callAs()` methods`**
+  * **Adopt `javax.security.auth.Subject.current()` and `javax.security.auth.Subject.callAs()` methods**
   * Replaces the `javax.security.auth.Subject.getSubject()` and `javax.security.auth.Subject.doAs()` methods with `javax.security.auth.Subject.current()` and `javax.security.auth.Subject.callAs()`.
 * [org.openrewrite.java.migrate.RemovedToolProviderConstructor](/recipes/java/migrate/removedtoolproviderconstructor.md)
   * **Change `javax.tools.ToolProvider` methods calls to static**
   * The `javax.tools.ToolProvider()` constructor has been removed in Java SE 16 since the class only contains static methods. The recipe converts `javax.tools.ToolProvider getSystemJavaCompiler()`, `javax.tools.ToolProvider getSystemDocumentationTool()` and `javax.tools.ToolProvider getSystemToolClassLoader()` to static methods.
 * [org.openrewrite.java.migrate.RemovedZipFinalizeMethods](/recipes/java/migrate/removedzipfinalizemethods.md)
   * **Replace `finalize` method in `java.util.zip.ZipFile`, `java.util.zip.Inflater` and `java.util.zip.Deflater`**
-  * The `finalize` method in `java.util.zip.ZipFile` is replaced with the `close` method and is replaced by the `end` method in  `java.util.zip.Inflater` and `java.util.zip.Deflater` as it is no longer available in Java SE 12 and later.
+  * The `finalize` method in `java.util.zip.ZipFile` is replaced with the `close` method and is replaced by the `end` method in `java.util.zip.Inflater` and `java.util.zip.Deflater` as it is no longer available in Java SE 12 and later.
 * [org.openrewrite.java.migrate.ReplaceAWTGetPeerMethod](/recipes/java/migrate/replaceawtgetpeermethod.md)
   * **Replace AWT `getPeer()` method**
   * This recipe replaces the use of `getPeer()` method in `java.awt.*` classes. `component.getPeer() != null` is replaced with `component.isDisplayable()` and `component.getPeer() instanceof LightweightPeer` is replaced with `component.isLightweight()`.
 * [org.openrewrite.java.migrate.ReplaceComSunAWTUtilitiesMethods](/recipes/java/migrate/replacecomsunawtutilitiesmethods.md)
   * **Replace `com.sun.awt.AWTUtilities` static method invocations**
-  * This recipe replaces several static calls  in `com.sun.awt.AWTUtilities` with the JavaSE 11 equivalent. The methods replaced are `AWTUtilities.isTranslucencySupported()`, `AWTUtilities.setWindowOpacity()`, `AWTUtilities.getWindowOpacity()`, `AWTUtilities.getWindowShape()`, `AWTUtilities.isWindowOpaque()`, `AWTUtilities.isTranslucencyCapable()` and `AWTUtilities.setComponentMixingCutoutShape()`.
+  * This recipe replaces several static calls in `com.sun.awt.AWTUtilities` with the JavaSE 11 equivalent. The methods replaced are `AWTUtilities.isTranslucencySupported()`, `AWTUtilities.setWindowOpacity()`, `AWTUtilities.getWindowOpacity()`, `AWTUtilities.getWindowShape()`, `AWTUtilities.isWindowOpaque()`, `AWTUtilities.isTranslucencyCapable()` and `AWTUtilities.setComponentMixingCutoutShape()`.
 * [org.openrewrite.java.migrate.ReplaceLocalizedStreamMethods](/recipes/java/migrate/replacelocalizedstreammethods.md)
   * **Replace `getLocalizedInputStream` and `getLocalizedOutputStream` with direct assignment**
   * Replaces `Runtime.getLocalizedInputStream(InputStream)` and `Runtime.getLocalizedOutputStream(OutputStream)` with their direct arguments. This modification is made because the previous implementation of `getLocalizedInputStream` and `getLocalizedOutputStream` merely returned the arguments provided.
@@ -2131,7 +2085,7 @@ _505 recipes_
   * Replace the value of a complete `String` literal.
 * [org.openrewrite.java.migrate.SimplifySecurityManagerThreadGroup](/recipes/java/migrate/simplifysecuritymanagerthreadgroup.md)
   * **Simplify the removed security manager's thread group fallback**
-  * Remove a null SecurityManager local used only by the immediately following thread group conditional.
+  * Remove a `null` `SecurityManager` local used only by the immediately following thread group conditional.
 * [org.openrewrite.java.migrate.SunNetSslPackageUnavailable](/recipes/java/migrate/sunnetsslpackageunavailable.md)
   * **Replace `com.sun.net.ssl` package**
   * The internal API `com.sun.net.ssl` is removed. The package was intended for internal use only and replacement APIs can be found in the `javax.net.ssl` package.
@@ -2145,8 +2099,8 @@ _505 recipes_
   * **Remove `Thread.destroy()` and `Thread.stop(Throwable)`**
   * The `java.lang.Thread.destroy()` method was never implemented, and the `java.lang.Thread.stop(java.lang.Throwable)` method has been unusable since Java SE 8. This recipe removes any usage of these methods from your application.
 * [org.openrewrite.java.migrate.UpdateSdkMan](/recipes/java/migrate/updatesdkman.md)
-  * **Update SDKMan Java version**
-  * Update the SDKMAN JDK version in the `.sdkmanrc` file. Given a major release (e.g., 17), the recipe will update the current distribution to the current default SDKMAN version of the specified major release. The distribution option can be used to specify a specific JVM distribution. Note that these must correspond to valid SDKMAN distributions.
+  * **Update SDKMAN! Java version**
+  * Update the SDKMAN! JDK version in the `.sdkmanrc` file. Given a major release (e.g., 17), the recipe will update the current distribution to the current default SDKMAN! version of the specified major release. The distribution option can be used to specify a specific JVM distribution. Note that these must correspond to valid SDKMAN! distributions.
 * [org.openrewrite.java.migrate.UpgradeBuildToJava11](/recipes/java/migrate/upgradebuildtojava11.md)
   * **Upgrade build to Java 11**
   * Updates build files to use Java 11 as the target/source.
@@ -2158,7 +2112,7 @@ _505 recipes_
   * Updates build files to use Java 21 as the target/source.
 * [org.openrewrite.java.migrate.UpgradeBuildToJava24ForKotlin1x](/recipes/java/migrate/upgradebuildtojava24forkotlin1x.md)
   * **Upgrade build to Java 24 for Kotlin 1.x**
-  * Kotlin versions before 2.3 only support up to Java 24, and Kotlin 1.x cannot be safely upgraded automatically because crossing the K2 compiler default introduced in Kotlin 2.0 is a source-breaking change. Such modules are therefore capped at Java 24 and annotated with an explanation. Modules already on Kotlin 2.0-2.2 are instead bumped to Kotlin 2.3 by `UpgradeKotlinForJava25` so they can reach Java 25. Applies only to modules that actually compile Kotlin (i.e. contain `.kt` source files), so transitive `kotlin-stdlib` dependencies do not trigger the cap.
+  * Kotlin versions before 2.3 only support up to Java 24, and Kotlin 1.x cannot be safely upgraded automatically because crossing the K2 compiler default introduced in Kotlin 2.0 is a source-breaking change. Such modules are therefore capped at Java 24. Modules already on Kotlin 2.0-2.2 are not capped, as they can be upgraded to Kotlin 2.3 and reach Java 25 instead. Applies only to modules that actually compile Kotlin (i.e. contain `.kt` source files), so transitive `kotlin-stdlib` dependencies do not trigger the cap.
 * [org.openrewrite.java.migrate.UpgradeBuildToJava25](/recipes/java/migrate/upgradebuildtojava25.md)
   * **Upgrade build to Java 25 (non-Kotlin)**
   * Upgrades build files to Java 25 for modules without Kotlin source files. This covers pure Java projects, including those that only pick up `kotlin-stdlib` transitively through another dependency.
@@ -2167,13 +2121,13 @@ _505 recipes_
   * Upgrades build files to Java 25 for Kotlin modules already on Kotlin 2.3 or later.
 * [org.openrewrite.java.migrate.UpgradeDockerImageVersion](/recipes/java/migrate/upgradedockerimageversion.md)
   * **Upgrade Docker image Java version**
-  * Upgrade Docker image tags to use the specified Java version. Updates common Java Docker images including eclipse-temurin, amazoncorretto, azul/zulu-openjdk, and others. Also migrates deprecated images (openjdk, adoptopenjdk) to eclipse-temurin, preserving any tag suffix such as `-jre-alpine`. When a `FROM` is built from a build argument, the default value of the corresponding global `ARG` is upgraded instead, such that `ARG java_version=17` used as `FROM eclipse-temurin:$\{java_version\}` becomes `ARG java_version=25`. Image references built from arguments without a default value are left untouched, as their value can not be determined statically. A digest pin is dropped when the tag is upgraded, as the stale digest would otherwise keep resolving to the old image.
+  * Upgrade Docker image tags to use the specified Java version. Updates common Java Docker images including `eclipse-temurin`, `amazoncorretto`, `azul/zulu-openjdk`, and others. Also migrates deprecated images (`openjdk`, `adoptopenjdk`) to `eclipse-temurin`, preserving any tag suffix such as `-jre-alpine`. A pinned patch or update version is dropped, as in `17.0.9_9-jdk` becoming `25-jdk`, as images are not published for that patch of the new version. When a `FROM` is built from a build argument, the default value of the corresponding global `ARG` is upgraded instead, such that `ARG java_version=17` used as `FROM eclipse-temurin:$\{java_version\}` becomes `ARG java_version=25`. Image references built from arguments without a default value are left untouched, as their value can not be determined statically. A digest pin is dropped when the tag is upgraded, as the stale digest would otherwise keep resolving to the old image.
 * [org.openrewrite.java.migrate.UpgradeJavaCiContainerImage](/recipes/java/migrate/upgradejavacicontainerimage.md)
   * **Upgrade CircleCI OpenJDK job images**
-  * Upgrade cimg/openjdk job containers in GitHub Actions and CircleCI to the target Java version, preserving newer versions and unrelated service images.
+  * Upgrade `cimg/openjdk` job containers in GitHub Actions and CircleCI to the target Java version, preserving newer versions and unrelated service images.
 * [org.openrewrite.java.migrate.UpgradeJavaVersion](/recipes/java/migrate/upgradejavaversion.md)
   * **Upgrade Java version**
-  * Upgrade build plugin configuration to use the specified Java version. This recipe changes `java.toolchain.languageVersion` in `build.gradle(.kts)` of gradle projects, or maven-compiler-plugin target version and related settings. Will not downgrade if the version is newer than the specified version.
+  * Upgrade build plugin configuration to use the specified Java version. This recipe changes `java.toolchain.languageVersion` in `build.gradle(.kts)` of Gradle projects, or `maven-compiler-plugin` target version and related settings. Will not downgrade if the version is newer than the specified version.
 * [org.openrewrite.java.migrate.UpgradeKotlinForJava25](/recipes/java/migrate/upgradekotlinforjava25.md)
   * **Upgrade Kotlin to 2.3 for Java 25 compatibility**
   * Only Kotlin 2.3 and later can target Java 25 bytecode, so modules on an older Kotlin are otherwise capped at Java 24. This recipe upgrades modules that compile Kotlin (i.e. contain `.kt` source files) and are already on Kotlin 2.0, 2.1, or 2.2 up to the latest Kotlin 2.3, so they can subsequently be migrated to Java 25. Modules on Kotlin 1.x are left untouched, as crossing the K2 compiler default introduced in Kotlin 2.0 is a source-breaking change that should not be applied automatically. As a safety net the module is also floored at Java 24: if the Kotlin upgrade cannot be applied (for instance because the version is managed externally by a parent or BOM), the module still lands on Java 24 rather than being left behind, and is raised the rest of the way to Java 25 only once it actually reaches Kotlin 2.3.
@@ -2182,13 +2136,13 @@ _505 recipes_
   * Align the Kotlin `jvmTarget` with the project's Java version so the Kotlin compiler emits bytecode at the same level as `javac`. Covers `kotlin-maven-plugin` `&lt;jvmTarget&gt;` configuration and the Gradle `kotlinOptions \{ jvmTarget = ... \}` / `compilerOptions \{ jvmTarget = ... \}` blocks (Groovy and Kotlin DSL). Will not downgrade if the existing Kotlin target is higher than the requested version.
 * [org.openrewrite.java.migrate.UpgradePluginsForJava11](/recipes/java/migrate/upgradepluginsforjava11.md)
   * **Upgrade plugins to Java 11 compatible versions**
-  * Updates plugins to version compatible with Java 11.
+  * Updates plugins to versions compatible with Java 11.
 * [org.openrewrite.java.migrate.UpgradePluginsForJava17](/recipes/java/migrate/upgradepluginsforjava17.md)
   * **Upgrade plugins to Java 17 compatible versions**
-  * Updates plugins to version compatible with Java 17.
+  * Updates plugins to versions compatible with Java 17.
 * [org.openrewrite.java.migrate.UpgradePluginsForJava21](/recipes/java/migrate/upgradepluginsforjava21.md)
   * **Upgrade plugins to Java 21 compatible versions**
-  * Updates plugins and dependencies to version compatible with Java 21.
+  * Updates plugins and dependencies to versions compatible with Java 21.
 * [org.openrewrite.java.migrate.UpgradePluginsForJava25](/recipes/java/migrate/upgradepluginsforjava25.md)
   * **Upgrade plugins to Java 25 compatible versions**
   * Updates plugins and dependencies to versions compatible with Java 25.
@@ -2197,13 +2151,13 @@ _505 recipes_
   * Upgrade Spring Boot 3 Maven parents to the latest 3.5 release so that Spring's bundled ASM can read Java 25 class files. Stay within Boot 3: crossing from Boot 2 requires a separate Jakarta migration, and newer Boot major versions must not be downgraded.
 * [org.openrewrite.java.migrate.UpgradeToJava17](/recipes/java/migrate/upgradetojava17.md)
   * **Migrate to Java 17**
-  * This recipe will apply changes commonly needed when migrating to Java 17. Specifically, for those applications that are built on Java 8, this recipe will update and add dependencies on J2EE libraries that are no longer directly bundled with the JDK. This recipe will also replace deprecated API with equivalents when there is a clear migration strategy. Build files will also be updated to use Java 17 as the target/source and plugins will be also be upgraded to versions that are compatible with Java 17.
+  * This recipe will apply changes commonly needed when migrating to Java 17. Specifically, for those applications that are built on Java 8, this recipe will update and add dependencies on J2EE libraries that are no longer directly bundled with the JDK. This recipe will also replace deprecated API with equivalents when there is a clear migration strategy. Build files will also be updated to use Java 17 as the target/source and plugins will also be upgraded to versions that are compatible with Java 17.
 * [org.openrewrite.java.migrate.UpgradeToJava21](/recipes/java/migrate/upgradetojava21.md)
   * **Migrate to Java 21**
-  * This recipe will apply changes commonly needed when migrating to Java 21. This recipe will also replace deprecated API with equivalents when there is a clear migration strategy. Build files will also be updated to use Java 21 as the target/source and plugins will be also be upgraded to versions that are compatible with Java 21.
+  * This recipe will apply changes commonly needed when migrating to Java 21. This recipe will also replace deprecated API with equivalents when there is a clear migration strategy. Build files will also be updated to use Java 21 as the target/source and plugins will also be upgraded to versions that are compatible with Java 21.
 * [org.openrewrite.java.migrate.UpgradeToJava25](/recipes/java/migrate/upgradetojava25.md)
   * **Migrate to Java 25**
-  * This recipe will apply changes commonly needed when migrating to Java 25. This recipe will also replace deprecated API with equivalents when there is a clear migration strategy. Build files will also be updated to use Java 25 as the target/source and plugins will be also be upgraded to versions that are compatible with Java 25.
+  * This recipe will apply changes commonly needed when migrating to Java 25. This recipe will also replace deprecated API with equivalents when there is a clear migration strategy. Build files will also be updated to use Java 25 as the target/source and plugins will also be upgraded to versions that are compatible with Java 25.
 * [org.openrewrite.java.migrate.UpgradeToJava6](/recipes/java/migrate/upgradetojava6.md)
   * **Migrate to Java 6**
   * This recipe will apply changes commonly needed when upgrading to Java 6. This recipe will also replace deprecated API with equivalents when there is a clear migration strategy.
@@ -2215,7 +2169,7 @@ _505 recipes_
   * This recipe will apply changes commonly needed when upgrading to Java 8. This recipe will also replace deprecated API with equivalents when there is a clear migration strategy.
 * [org.openrewrite.java.migrate.UpgradeUnmodeledMavenJavaVersion](/recipes/java/migrate/upgradeunmodeledmavenjavaversion.md)
   * **Upgrade Java version in alternate Maven builds**
-  * Update explicit Java version properties and compiler settings in pom.xml files parsed as XML without a Maven model, for example in a repository built with Gradle. Property references are left intact.
+  * Update explicit Java version properties and compiler settings in `pom.xml` files parsed as XML without a Maven model, for example in a repository built with Gradle. Property references are left intact.
 * [org.openrewrite.java.migrate.UseJavaUtilBase64](/recipes/java/migrate/usejavautilbase64.md)
   * **Prefer `java.util.Base64` instead of `sun.misc`**
   * Prefer `java.util.Base64` instead of using `sun.misc` in Java 8 or higher. `sun.misc` is not exported by the Java module system and accessing this class will result in a warning in Java 11 and an error in Java 17.
@@ -2236,7 +2190,7 @@ _505 recipes_
   * This recipe will remove Cobertura, as it is not compatible with Java 11.
 * [org.openrewrite.java.migrate.concurrent.JavaConcurrentAPIs](/recipes/java/migrate/concurrent/javaconcurrentapis.md)
   * **Use modernized `java.util.concurrent` APIs**
-  * The Java concurrent APIs were updated in Java 9 and those changes resulted in certain APIs being deprecated. This recipe update an application to replace the deprecated APIs with their modern alternatives.
+  * The Java concurrent APIs were updated in Java 9 and those changes resulted in certain APIs being deprecated. This recipe updates an application to replace the deprecated APIs with their modern alternatives.
 * [org.openrewrite.java.migrate.concurrent.MigrateAtomicBooleanWeakCompareAndSetToWeakCompareAndSetPlain](/recipes/java/migrate/concurrent/migrateatomicbooleanweakcompareandsettoweakcompareandsetplain.md)
   * **Use `AtomicBoolean#weakCompareAndSetPlain(boolean, boolean)`**
   * Use `AtomicBoolean#weakCompareAndSetPlain(boolean, boolean)` instead of the deprecated `AtomicBoolean#weakCompareAndSet(boolean, boolean)` in Java 9 or higher.
@@ -2341,10 +2295,10 @@ _505 recipes_
   * Prefer `Collection.stream().map(Function)` over `Iterables.transform(Collection, Function)`.
 * [org.openrewrite.java.migrate.guava.NoGuavaJava11](/recipes/java/migrate/guava/noguavajava11.md)
   * **Prefer the Java 11 standard library instead of Guava**
-  * Guava filled in important gaps in the Java standard library and still does. But at least some of Guava's API surface area is covered by the Java standard library now, and some projects may be able to remove Guava altogether if they migrate to standard library for these functions.
+  * Replace Guava's `ImmutableList`, `ImmutableMap` and `ImmutableSet` `of` and `copyOf` factories, and `MoreObjects.firstNonNull`, with their Java standard library equivalents on Java 11 or higher.
 * [org.openrewrite.java.migrate.guava.NoGuavaJava21](/recipes/java/migrate/guava/noguavajava21.md)
   * **Prefer the Java 21 standard library instead of Guava**
-  * Guava filled in important gaps in the Java standard library and still does. But at least some of Guava's API surface area is covered by the Java standard library now, and some projects may be able to remove Guava altogether if they migrate to standard library for these functions.
+  * Replace Guava's `Maps` and `Sets` `new*WithExpectedSize` factories and the primitive `constrainToRange` methods with their Java standard library equivalents on Java 21 or higher.
 * [org.openrewrite.java.migrate.guava.NoGuavaListsNewArrayList](/recipes/java/migrate/guava/noguavalistsnewarraylist.md)
   * **Prefer `new ArrayList&lt;&gt;()`**
   * Prefer the Java standard library over third-party usage of Guava in simple cases like this.
@@ -2390,20 +2344,80 @@ _505 recipes_
 * [org.openrewrite.java.migrate.guava.NoGuavaRefasterRecipes](/recipes/java/migrate/guava/noguavarefasterrecipes.md)
   * **Refaster style Guava to Java migration recipes**
   * Recipes that migrate from Guava to Java, using Refaster style templates for cases beyond what declarative recipes can cover.
+* [org.openrewrite.java.migrate.guava.NoGuavaRefasterRecipes$Collections2TransformRecipe](/recipes/java/migrate/guava/noguavarefasterrecipes$collections2transformrecipe.md)
+  * **Prefer `Collection.stream().map(Function)` over `Collections2.transform`**
+  * Prefer `Collection.stream().map(Function)` over `Collections2.transform(Collection, Function)`.
+* [org.openrewrite.java.migrate.guava.NoGuavaRefasterRecipes$IterablesAllRecipe](/recipes/java/migrate/guava/noguavarefasterrecipes$iterablesallrecipe.md)
+  * **Prefer `Collection.stream().allMatch(Predicate)`**
+  * Prefer `Collection.stream().allMatch(Predicate)` over `Iterables.all(Collection, Predicate)`.
+* [org.openrewrite.java.migrate.guava.NoGuavaRefasterRecipes$ListsNewArrayListFromCollectionRecipe](/recipes/java/migrate/guava/noguavarefasterrecipes$listsnewarraylistfromcollectionrecipe.md)
+  * **Prefer `new ArrayList&lt;&gt;(Collection)`**
+  * Prefer the Java standard library over third-party usage of Guava in simple cases like this.
+* [org.openrewrite.java.migrate.guava.NoGuavaRefasterRecipes$ListsNewArrayListRecipe](/recipes/java/migrate/guava/noguavarefasterrecipes$listsnewarraylistrecipe.md)
+  * **Prefer `new ArrayList&lt;&gt;()`**
+  * Prefer the Java standard library over third-party usage of Guava in simple cases like this.
+* [org.openrewrite.java.migrate.guava.NoGuavaRefasterRecipes$ListsNewArrayListWithCapacityRecipe](/recipes/java/migrate/guava/noguavarefasterrecipes$listsnewarraylistwithcapacityrecipe.md)
+  * **Prefer `new ArrayList&lt;&gt;(int)`**
+  * Prefer the Java standard library over third-party usage of Guava in simple cases like this.
+* [org.openrewrite.java.migrate.guava.NoGuavaRefasterRecipes$ListsNewCopyOnWriteArrayListFromCollectionRecipe](/recipes/java/migrate/guava/noguavarefasterrecipes$listsnewcopyonwritearraylistfromcollectionrecipe.md)
+  * **Prefer `new CopyOnWriteArrayList&lt;&gt;(Collection)`**
+  * Prefer the Java standard library over third-party usage of Guava in simple cases like this.
+* [org.openrewrite.java.migrate.guava.NoGuavaRefasterRecipes$ListsNewCopyOnWriteArrayListRecipe](/recipes/java/migrate/guava/noguavarefasterrecipes$listsnewcopyonwritearraylistrecipe.md)
+  * **Prefer `new CopyOnWriteArrayList&lt;&gt;()`**
+  * Prefer the Java standard library over third-party usage of Guava in simple cases like this.
+* [org.openrewrite.java.migrate.guava.NoGuavaRefasterRecipes$ListsNewLinkedListFromCollectionRecipe](/recipes/java/migrate/guava/noguavarefasterrecipes$listsnewlinkedlistfromcollectionrecipe.md)
+  * **Prefer `new LinkedList&lt;&gt;(Collection)`**
+  * Prefer the Java standard library over third-party usage of Guava in simple cases like this.
+* [org.openrewrite.java.migrate.guava.NoGuavaRefasterRecipes$ListsNewLinkedListRecipe](/recipes/java/migrate/guava/noguavarefasterrecipes$listsnewlinkedlistrecipe.md)
+  * **Prefer `new LinkedList&lt;&gt;()`**
+  * Prefer the Java standard library over third-party usage of Guava in simple cases like this.
+* [org.openrewrite.java.migrate.guava.NoGuavaRefasterRecipes$MapsNewHashMapFromMapRecipe](/recipes/java/migrate/guava/noguavarefasterrecipes$mapsnewhashmapfrommaprecipe.md)
+  * **Prefer `new HashMap&lt;&gt;(Map)`**
+  * Prefer the Java standard library over third-party usage of Guava in simple cases like this.
+* [org.openrewrite.java.migrate.guava.NoGuavaRefasterRecipes$MapsNewHashMapRecipe](/recipes/java/migrate/guava/noguavarefasterrecipes$mapsnewhashmaprecipe.md)
+  * **Prefer `new HashMap&lt;&gt;()`**
+  * Prefer the Java standard library over third-party usage of Guava in simple cases like this.
+* [org.openrewrite.java.migrate.guava.NoGuavaRefasterRecipes$MapsNewLinkedHashMapFromMapRecipe](/recipes/java/migrate/guava/noguavarefasterrecipes$mapsnewlinkedhashmapfrommaprecipe.md)
+  * **Prefer `new LinkedHashMap&lt;&gt;(Map)`**
+  * Prefer the Java standard library over third-party usage of Guava in simple cases like this.
+* [org.openrewrite.java.migrate.guava.NoGuavaRefasterRecipes$MapsNewLinkedHashMapRecipe](/recipes/java/migrate/guava/noguavarefasterrecipes$mapsnewlinkedhashmaprecipe.md)
+  * **Prefer `new LinkedHashMap&lt;&gt;()`**
+  * Prefer the Java standard library over third-party usage of Guava in simple cases like this.
+* [org.openrewrite.java.migrate.guava.NoGuavaRefasterRecipes$MapsNewTreeMapFromSortedMapRecipe](/recipes/java/migrate/guava/noguavarefasterrecipes$mapsnewtreemapfromsortedmaprecipe.md)
+  * **Prefer `new TreeMap&lt;&gt;(SortedMap)`**
+  * Prefer the Java standard library over third-party usage of Guava in simple cases like this.
+* [org.openrewrite.java.migrate.guava.NoGuavaRefasterRecipes$MapsNewTreeMapRecipe](/recipes/java/migrate/guava/noguavarefasterrecipes$mapsnewtreemaprecipe.md)
+  * **Prefer `new TreeMap&lt;&gt;()`**
+  * Prefer the Java standard library over third-party usage of Guava in simple cases like this.
+* [org.openrewrite.java.migrate.guava.NoGuavaRefasterRecipes$MapsNewTreeMapWithComparatorRecipe](/recipes/java/migrate/guava/noguavarefasterrecipes$mapsnewtreemapwithcomparatorrecipe.md)
+  * **Prefer `new TreeMap&lt;&gt;(Comparator)`**
+  * Prefer the Java standard library over third-party usage of Guava in simple cases like this.
 * [org.openrewrite.java.migrate.guava.NoGuavaRefasterRecipes$PreconditionsCheckNotNullToObjectsRequireNonNullRecipe](/recipes/java/migrate/guava/noguavarefasterrecipes$preconditionschecknotnulltoobjectsrequirenonnullrecipe.md)
-  * **`Preconditions.checkNotNull` to `Objects.requireNonNull`**
+  * **Replace `Preconditions.checkNotNull` with `Objects.requireNonNull`**
   * Migrate from Guava `Preconditions.checkNotNull` to Java 8 `java.util.Objects.requireNonNull`.
 * [org.openrewrite.java.migrate.guava.NoGuavaRefasterRecipes$PreconditionsCheckNotNullWithMessageToObjectsRequireNonNullMessageTypeObjectRecipe](/recipes/java/migrate/guava/noguavarefasterrecipes$preconditionschecknotnullwithmessagetoobjectsrequirenonnullmessagetypeobjectrecipe.md)
-  * **`Preconditions.checkNotNull` with `Object` message to `Objects.requireNonNull` with `String.valueOf`**
+  * **Replace `Preconditions.checkNotNull` taking an `Object` message with `Objects.requireNonNull` and `String.valueOf`**
   * Migrate from Guava `Preconditions.checkNotNull` to Java 8 `java.util.Objects.requireNonNull`.
 * [org.openrewrite.java.migrate.guava.NoGuavaRefasterRecipes$PreconditionsCheckNotNullWithMessageToObjectsRequireNonNullRecipe](/recipes/java/migrate/guava/noguavarefasterrecipes$preconditionschecknotnullwithmessagetoobjectsrequirenonnullrecipe.md)
-  * **`Preconditions.checkNotNull` with `String` message to `Objects.requireNonNull`**
+  * **Replace `Preconditions.checkNotNull` taking a `String` message with `Objects.requireNonNull`**
   * Migrate from Guava `Preconditions.checkNotNull` to Java 8 `java.util.Objects.requireNonNull`.
+* [org.openrewrite.java.migrate.guava.NoGuavaRefasterRecipes$SetsNewConcurrentHashSetRecipe](/recipes/java/migrate/guava/noguavarefasterrecipes$setsnewconcurrenthashsetrecipe.md)
+  * **Prefer `Collections.newSetFromMap(new ConcurrentHashMap&lt;&gt;())`**
+  * Prefer the Java standard library over third-party usage of Guava in simple cases like this.
+* [org.openrewrite.java.migrate.guava.NoGuavaRefasterRecipes$SetsNewLinkedHashSetFromCollectionRecipe](/recipes/java/migrate/guava/noguavarefasterrecipes$setsnewlinkedhashsetfromcollectionrecipe.md)
+  * **Prefer `new LinkedHashSet&lt;&gt;(Collection)`**
+  * Prefer the Java standard library over third-party usage of Guava in simple cases like this.
+* [org.openrewrite.java.migrate.guava.NoGuavaRefasterRecipes$SetsNewLinkedHashSetRecipe](/recipes/java/migrate/guava/noguavarefasterrecipes$setsnewlinkedhashsetrecipe.md)
+  * **Prefer `new LinkedHashSet&lt;&gt;()`**
+  * Prefer the Java standard library over third-party usage of Guava in simple cases like this.
+* [org.openrewrite.java.migrate.guava.NoGuavaRefasterRecipes$SetsNewLinkedHashSetWithExpectedSizeRecipe](/recipes/java/migrate/guava/noguavarefasterrecipes$setsnewlinkedhashsetwithexpectedsizerecipe.md)
+  * **Prefer `new LinkedHashSet&lt;&gt;(int)`**
+  * Prefer the Java standard library over third-party usage of Guava in simple cases like this.
 * [org.openrewrite.java.migrate.guava.NoGuavaSetsFilter](/recipes/java/migrate/guava/noguavasetsfilter.md)
   * **Prefer `Collection.stream().filter(Predicate)`**
   * Prefer `Collection.stream().filter(Predicate)` over `Sets.filter(Set, Predicate)`.
 * [org.openrewrite.java.migrate.guava.NoGuavaSetsNewConcurrentHashSet](/recipes/java/migrate/guava/noguavasetsnewconcurrenthashset.md)
-  * **Prefer `new ConcurrentHashMap&lt;&gt;()`**
+  * **Prefer `Collections.newSetFromMap(new ConcurrentHashMap&lt;&gt;())`**
   * Prefer the Java standard library over third-party usage of Guava in simple cases like this.
 * [org.openrewrite.java.migrate.guava.NoGuavaSetsNewHashSet](/recipes/java/migrate/guava/noguavasetsnewhashset.md)
   * **Prefer `new HashSet&lt;&gt;()`**
@@ -2413,10 +2427,10 @@ _505 recipes_
   * Prefer the Java standard library over third-party usage of Guava in simple cases like this.
 * [org.openrewrite.java.migrate.guava.NoMapsAndSetsWithExpectedSize](/recipes/java/migrate/guava/nomapsandsetswithexpectedsize.md)
   * **Prefer JDK methods for Maps and Sets of an expected size**
-  * Prefer Java 19+ methods to create Maps and Sets of an expected size instead of using Guava methods.
+  * Replace Guava's `Maps.newHashMapWithExpectedSize(int)`, `Maps.newLinkedHashMapWithExpectedSize(int)`, `Sets.newHashSetWithExpectedSize(int)` and `Sets.newLinkedHashSetWithExpectedSize(int)` with the JDK `HashMap`, `LinkedHashMap`, `HashSet` and `LinkedHashSet` constructors.
 * [org.openrewrite.java.migrate.guava.PreferCharCompare](/recipes/java/migrate/guava/prefercharcompare.md)
-  * **Prefer `java.lang.Char#compare`**
-  * Prefer `java.lang.Char#compare` instead of using `com.google.common.primitives.Chars#compare`.
+  * **Prefer `Character#compare`**
+  * Prefer `java.lang.Character#compare` instead of using `com.google.common.primitives.Chars#compare`.
 * [org.openrewrite.java.migrate.guava.PreferIntegerCompare](/recipes/java/migrate/guava/preferintegercompare.md)
   * **Prefer `Integer#compare`**
   * Prefer `java.lang.Integer#compare` instead of using `com.google.common.primitives.Ints#compare`.
@@ -2463,8 +2477,8 @@ _505 recipes_
   * **Prefer `java.util.Optional#orElse(null)` over `com.google.common.base.Optional#orNull()`**
   * Replaces `com.google.common.base.Optional#orNull()` with `java.util.Optional#orElse(null)`.
 * [org.openrewrite.java.migrate.guava.PreferJavaUtilOptionalOrSupplier](/recipes/java/migrate/guava/preferjavautiloptionalorsupplier.md)
-  * **Prefer `java.util.Optional#or(Supplier&lt;T extends java.util.Optional&lt;T&gt;&gt;)`**
-  * Prefer `java.util.Optional#or(Supplier&lt;T extends java.util.Optional&lt;T&gt;&gt;)` over `com.google.common.base.Optional#or(com.google.common.base.Optional).
+  * **Prefer `java.util.Optional#or(Supplier&lt;? extends Optional&lt;? extends T&gt;&gt;)`**
+  * Prefer `java.util.Optional#or(Supplier&lt;? extends Optional&lt;? extends T&gt;&gt;)` over `com.google.common.base.Optional#or(com.google.common.base.Optional)`.
 * [org.openrewrite.java.migrate.guava.PreferJavaUtilPredicate](/recipes/java/migrate/guava/preferjavautilpredicate.md)
   * **Prefer `java.util.function.Predicate`**
   * Prefer `java.util.function.Predicate` instead of using `com.google.common.base.Predicate`.
@@ -2503,7 +2517,7 @@ _505 recipes_
   * Prefer `java.lang.Short#compare` instead of using `com.google.common.primitives.Shorts#compare`.
 * [org.openrewrite.java.migrate.io.AddInputStreamBulkReadMethod](/recipes/java/migrate/io/addinputstreambulkreadmethod.md)
   * **Add bulk read method to `InputStream` implementations**
-  * Adds a `read(byte[], int, int)` method to `InputStream` subclasses that only override the single-byte `read()` method. Java's default `InputStream.read(byte[], int, int)` implementation calls the single-byte `read()` method in a loop, which can cause severe performance degradation (up to 350x slower) for bulk reads. This recipe detects `InputStream` implementations that delegate to another stream and adds the missing bulk read method to delegate bulk reads as well.
+  * Adds a `read(byte[], int, int)` method to `InputStream` subclasses that only override the single-byte `read()` method. Java's default `InputStream.read(byte[], int, int)` implementation calls the single-byte `read()` method in a loop, which can cause severe performance degradation (up to 350x slower) for bulk reads. This recipe detects `InputStream` implementations that delegate to another stream and adds the missing bulk read method to delegate bulk reads as well. Implementations whose `read()` body is too complex to delegate safely get a `TODO` comment instead, to implement the bulk read method by hand.
 * [org.openrewrite.java.migrate.io.ReplaceFileInOrOutputStreamFinalizeWithClose](/recipes/java/migrate/io/replacefileinoroutputstreamfinalizewithclose.md)
   * **Replace invocations of `finalize()` on `FileInputStream` and `FileOutputStream` with `close()`**
   * Replace invocations of the deprecated `finalize()` method on `FileInputStream` and `FileOutputStream` with `close()`.
@@ -2520,38 +2534,38 @@ _505 recipes_
   * **Add the Jakarta CDI API when needed**
   * Add the Jakarta CDI API for migrated source without promoting an explicitly provided or compile-only API to a runtime dependency.
 * [org.openrewrite.java.migrate.jakarta.AddJakartaEjbDependency](/recipes/java/migrate/jakarta/addjakartaejbdependency.md)
-  * **Add the Jakarta Ejb API when needed**
+  * **Add the Jakarta EJB API when needed**
   * Add the migrated API without promoting an explicitly provided or compile-only dependency.
 * [org.openrewrite.java.migrate.jakarta.AddJakartaElDependency](/recipes/java/migrate/jakarta/addjakartaeldependency.md)
-  * **Add the Jakarta El API when needed**
+  * **Add the Jakarta EL API when needed**
   * Add the migrated API without promoting an explicitly provided or compile-only dependency.
 * [org.openrewrite.java.migrate.jakarta.AddJakartaInjectDependency](/recipes/java/migrate/jakarta/addjakartainjectdependency.md)
-  * **Add the jakarta.inject API when needed**
+  * **Add the `jakarta.inject` API when needed**
   * Add a standalone API only when no explicitly provided API or full platform already supplies it.
 * [org.openrewrite.java.migrate.jakarta.AddJakartaMailDependency](/recipes/java/migrate/jakarta/addjakartamaildependency.md)
   * **Add the Jakarta Mail API when needed**
   * Add the migrated API without promoting an explicitly provided or compile-only dependency.
 * [org.openrewrite.java.migrate.jakarta.AddJakartaRestDependency](/recipes/java/migrate/jakarta/addjakartarestdependency.md)
-  * **Add the jakarta.ws.rs API when needed**
+  * **Add the `jakarta.ws.rs` API when needed**
   * Add a standalone API only when no explicitly provided API or full platform already supplies it.
 * [org.openrewrite.java.migrate.jakarta.AddJakartaXmlBindRuntime](/recipes/java/migrate/jakarta/addjakartaxmlbindruntime.md)
   * **Add a Jakarta JAXB runtime for Maven applications**
-  * Add a Jakarta JAXB 3 runtime when a Maven module calls JAXBContext.newInstance and has no explicit JAXB provider or provided Jakarta platform. Java 8's built-in javax provider cannot serve Jakarta calls. Annotation-only modules are left alone and test-only calls receive a test dependency.
+  * Add a Jakarta JAXB 3 runtime when a Maven module calls `JAXBContext.newInstance` and has no explicit JAXB provider or provided Jakarta platform. Java 8's built-in `javax` provider cannot serve Jakarta calls. Annotation-only modules are left alone and test-only calls receive a test dependency.
 * [org.openrewrite.java.migrate.jakarta.ApplicationPathWildcardNoLongerAccepted](/recipes/java/migrate/jakarta/applicationpathwildcardnolongeraccepted.md)
-  * **Remove trailing slash from `jakarta.ws.rs.ApplicationPath` values**
+  * **Remove trailing `/*` from `jakarta.ws.rs.ApplicationPath` values**
   * Remove trailing `/*` from `jakarta.ws.rs.ApplicationPath` values.
 * [org.openrewrite.java.migrate.jakarta.ChangeJaxbApiDependency](/recipes/java/migrate/jakarta/changejaxbapidependency.md)
-  * **Migrate the JAXB API dependency unless Recorder still needs it**
-  * Migrate JAXB API coordinates while preserving the legacy API needed alongside Jakarta JAXB by external Arquillian Recorder 1.x binaries. Recorder modules migrated in the same reactor are excluded.
+  * **Migrate the JAXB API dependency unless Recorder or Jackson still needs it**
+  * Migrate JAXB API coordinates while preserving the legacy API needed alongside Jakarta JAXB by external Arquillian Recorder 1.x binaries or by Jackson's JAXB annotations module. Recorder modules migrated in the same reactor are excluded.
 * [org.openrewrite.java.migrate.jakarta.DeprecatedCDIAPIsRemoved40](/recipes/java/migrate/jakarta/deprecatedcdiapisremoved40.md)
-  * **Remove deprecated API's not supported in CDI4.0**
+  * **Remove deprecated APIs not supported in CDI 4.0**
   * Deprecated APIs have been removed in CDI 4.0. This recipe removes and updates the corresponding deprecated methods.
 * [org.openrewrite.java.migrate.jakarta.DoesNotHaveProvidedApiDependency](/recipes/java/migrate/jakarta/doesnothaveprovidedapidependency.md)
   * **Build does not declare a provided API dependency**
   * Find build files without an explicitly provided or compile-only API, so adding a compile dependency does not promote a container-provided API to runtime scope.
 * [org.openrewrite.java.migrate.jakarta.EhcacheJavaxToJakarta](/recipes/java/migrate/jakarta/ehcachejavaxtojakarta.md)
   * **Migrate Ehcache from javax to jakarta namespace**
-  * Java EE has been rebranded to Jakarta EE.  This recipe replaces existing Ehcache dependencies with their counterparts that are compatible with Jakarta EE 9.
+  * Java EE has been rebranded to Jakarta EE. This recipe replaces existing Ehcache dependencies with their counterparts that are compatible with Jakarta EE 9.
 * [org.openrewrite.java.migrate.jakarta.Faces2xMigrationToJakartaFaces3x](/recipes/java/migrate/jakarta/faces2xmigrationtojakartafaces3x.md)
   * **JSF 2.x to Jakarta Faces 3.x**
   * Jakarta EE 9 uses Faces 3.0, a major upgrade to Jakarta packages and XML namespaces.
@@ -2560,16 +2574,16 @@ _505 recipes_
   * Jakarta EE 10 uses Faces 4.0.
 * [org.openrewrite.java.migrate.jakarta.Faces4xMigrationToFaces41x](/recipes/java/migrate/jakarta/faces4xmigrationtofaces41x.md)
   * **Jakarta Faces 4.0 to 4.1**
-  * Jakarta EE 11 uses Faces 4.1 a minor upgrade.
+  * Jakarta EE 11 uses Faces 4.1, a minor upgrade.
 * [org.openrewrite.java.migrate.jakarta.FacesJNDINamesChanged](/recipes/java/migrate/jakarta/facesjndinameschanged.md)
-  * **JNDI name `jsf/ClientSideSecretKey` has been renamed to `faces/ClientSideSecretKey`, and the `jsf/FlashSecretKey` JNDI name has been renamed to `faces/FlashSecretKey`**
+  * **Rename the `jsf/ClientSideSecretKey` and `jsf/FlashSecretKey` JNDI names to `faces/*`**
   * The `jsf/ClientSideSecretKey` JNDI name has been renamed to `faces/ClientSideSecretKey`, and the `jsf/FlashSecretKey` JNDI name has been renamed to `faces/FlashSecretKey`. The JNDI keys that have been renamed are updated to allow use of the keys.
 * [org.openrewrite.java.migrate.jakarta.FacesManagedBeansRemoved](/recipes/java/migrate/jakarta/facesmanagedbeansremoved.md)
-  * **Substitute removed Faces Managed Beans**
+  * **Substitute removed Faces managed beans**
   * This recipe substitutes Faces Managed Beans, which were deprecated in JavaServer Faces 2.3 and have been removed from Jakarta Faces 4.0.
 * [org.openrewrite.java.migrate.jakarta.FileuploadToFileUpload2](/recipes/java/migrate/jakarta/fileuploadtofileupload2.md)
-  * **Migrate deprecated `org.apache.commons.fileload` packages to `org.apache.commons.fileload.core`**
-  * Migrate deprecated `org.apache.commons.fileload` packages to `org.apache.commons.fileload.core`.
+  * **Migrate `commons-fileupload` to `commons-fileupload2-jakarta-servlet5`**
+  * Migrate Apache Commons FileUpload 1.x and the `commons-fileupload2-jakarta` milestone to `commons-fileupload2-jakarta-servlet5`, moving `org.apache.commons.fileupload` packages and servlet types to their FileUpload 2 equivalents.
 * [org.openrewrite.java.migrate.jakarta.HasJettyDependency](/recipes/java/migrate/jakarta/hasjettydependency.md)
   * **Build uses Jetty before version 12**
   * Mark the source set when a Maven or Gradle module depends on servlet or WebSocket artifacts relocated by the Jetty 12 migration. This permits updating the Java baseline in parent build files as well as the module using Jetty.
@@ -2577,26 +2591,26 @@ _505 recipes_
   * **Project has no Jakarta annotations**
   * Mark all source as found per `JavaProject` where no Jakarta annotations are found. This is useful mostly as a precondition for recipes that require Jakarta annotations to be present.
 * [org.openrewrite.java.migrate.jakarta.InvocationContextGetConstructor](/recipes/java/migrate/jakarta/invocationcontextgetconstructor.md)
-  * **Complete InvocationContext decorators**
-  * Delegate getConstructor() when a legacy InvocationContext wrapper delegates getMethod().
+  * **Complete `InvocationContext` decorators**
+  * Delegate `getConstructor()` when a legacy `InvocationContext` wrapper delegates `getMethod()`.
 * [org.openrewrite.java.migrate.jakarta.JacksonJavaxToJakarta](/recipes/java/migrate/jakarta/jacksonjavaxtojakarta.md)
   * **Migrate Jackson from javax to jakarta namespace**
-  * Java EE has been rebranded to Jakarta EE.  This recipe replaces existing Jackson dependencies with their counterparts that are compatible with Jakarta EE 9.
+  * Java EE has been rebranded to Jakarta EE. This recipe replaces existing Jackson dependencies with their counterparts that are compatible with Jakarta EE 9.
 * [org.openrewrite.java.migrate.jakarta.JacksonProviderOverrides](/recipes/java/migrate/jakarta/jacksonprovideroverrides.md)
   * **Migrate Jackson provider configuration overrides**
   * Add and forward the default view parameter required by Jakarta Jackson providers.
 * [org.openrewrite.java.migrate.jakarta.JakartaEE10](/recipes/java/migrate/jakarta/jakartaee10.md)
   * **Migrate to Jakarta EE 10**
-  * These recipes help with the Migration to Jakarta EE 10, flagging and updating deprecated methods.
+  * Migrate to Jakarta EE 10 from Java EE 8 or Jakarta EE 9. Moves `javax` packages to `jakarta`, upgrades the Jakarta EE APIs, implementations and Maven plugins to their Jakarta EE 10 versions, and replaces APIs that were deprecated or removed in Jakarta EE 10.
 * [org.openrewrite.java.migrate.jakarta.JakartaEE11](/recipes/java/migrate/jakarta/jakartaee11.md)
   * **Migrate to Jakarta EE 11**
-  * These recipes help with the Migration to Jakarta EE 11, flagging and updating deprecated methods.
+  * Migrate to Jakarta EE 11 by applying the Jakarta EE 10 migration, and then upgrading the Jakarta EE platform, Jakarta Faces and Maven plugins to their Jakarta EE 11 versions.
 * [org.openrewrite.java.migrate.jakarta.JakartaFacesConfigXml4](/recipes/java/migrate/jakarta/jakartafacesconfigxml4.md)
   * **Migrate xmlns entries in `faces-config.xml` files**
   * Jakarta EE 10 uses Faces version 4.
 * [org.openrewrite.java.migrate.jakarta.JakartaFacesEcmaScript](/recipes/java/migrate/jakarta/jakartafacesecmascript.md)
-  * **Migrate JSF values inside EcmaScript files**
-  * Convert JSF to Faces values inside JavaScript,TypeScript, and Properties files.
+  * **Migrate JSF values inside ECMAScript files**
+  * Convert JSF to Faces values inside JavaScript, TypeScript, and properties files.
 * [org.openrewrite.java.migrate.jakarta.JakartaFacesTagLibraryXml4](/recipes/java/migrate/jakarta/jakartafacestaglibraryxml4.md)
   * **Migrate xmlns entries in `taglib.xml` files**
   * Faces 4 uses facelet-taglib 4.0.
@@ -2628,7 +2642,7 @@ _505 recipes_
   * **Migrate deprecated `javax.batch` packages to `jakarta.batch`**
   * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
 * [org.openrewrite.java.migrate.jakarta.JavaxBeanValidationXmlToJakartaBeanValidationXml](/recipes/java/migrate/jakarta/javaxbeanvalidationxmltojakartabeanvalidationxml.md)
-  * **Migrate xmlns entries and javax. packages in `validation.xml` files**
+  * **Migrate xmlns entries and `javax` packages in `validation.xml` files**
   * Java EE has been rebranded to Jakarta EE, necessitating an XML namespace relocation.
 * [org.openrewrite.java.migrate.jakarta.JavaxBeansXmlToJakartaBeansXml](/recipes/java/migrate/jakarta/javaxbeansxmltojakartabeansxml.md)
   * **Migrate xmlns entries in `beans.xml` files**
@@ -2640,7 +2654,7 @@ _505 recipes_
   * **Migrate deprecated `javaee-api` dependencies to `jakarta.platform`**
   * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
 * [org.openrewrite.java.migrate.jakarta.JavaxEjbJarXmlToJakartaEjbJarXml](/recipes/java/migrate/jakarta/javaxejbjarxmltojakartaejbjarxml.md)
-  * **Migrate xmlns entries and javax. packages in `ejb-jar.xml` files**
+  * **Migrate xmlns entries and `javax` packages in `ejb-jar.xml` files**
   * Java EE has been rebranded to Jakarta EE, necessitating an XML namespace relocation.
 * [org.openrewrite.java.migrate.jakarta.JavaxEjbToJakartaEjb](/recipes/java/migrate/jakarta/javaxejbtojakartaejb.md)
   * **Migrate deprecated `javax.ejb` packages to `jakarta.ejb`**
@@ -2703,7 +2717,7 @@ _505 recipes_
   * **Migrate deprecated `javax.servlet` packages to `jakarta.servlet`**
   * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
 * [org.openrewrite.java.migrate.jakarta.JavaxToJakartaCdiExtensions](/recipes/java/migrate/jakarta/javaxtojakartacdiextensions.md)
-  * **Rename CDI Extension to Jakarta**
+  * **Rename CDI extension service files to Jakarta**
   * Rename `javax.enterprise.inject.spi.Extension` to `jakarta.enterprise.inject.spi.Extension`.
 * [org.openrewrite.java.migrate.jakarta.JavaxTransactionMigrationToJakartaTransaction](/recipes/java/migrate/jakarta/javaxtransactionmigrationtojakartatransaction.md)
   * **Migrate deprecated `javax.transaction` packages to `jakarta.transaction`**
@@ -2730,7 +2744,7 @@ _505 recipes_
   * **Migrate deprecated `javax.soap` packages to `jakarta.soap`**
   * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
 * [org.openrewrite.java.migrate.jakarta.JavaxXmlToJakartaXmlXJCBinding](/recipes/java/migrate/jakarta/javaxxmltojakartaxmlxjcbinding.md)
-  * **Migrate XJC Bindings to Jakata XML**
+  * **Migrate XJC bindings to Jakarta XML**
   * Java EE has been rebranded to Jakarta EE, migrates the namespace and version in XJC bindings.
 * [org.openrewrite.java.migrate.jakarta.JavaxXmlWsMigrationToJakartaXmlWs](/recipes/java/migrate/jakarta/javaxxmlwsmigrationtojakartaxmlws.md)
   * **Migrate deprecated `javax.xml.ws` packages to `jakarta.xml.ws`**
@@ -2745,35 +2759,35 @@ _505 recipes_
   * **Update Jetty EE9 to Jetty EE10**
   * Update Jetty dependencies from EE9 to EE10, changing the groupId and artifactIds as needed.
 * [org.openrewrite.java.migrate.jakarta.JettyUpgradeEE9](/recipes/java/migrate/jakarta/jettyupgradeee9.md)
-  * **Update Jetty9 to Jetty12**
+  * **Update Jetty 9 to Jetty 12**
   * Update Jetty dependencies from version 9 to version 12.
 * [org.openrewrite.java.migrate.jakarta.JohnzonJavaxToJakarta](/recipes/java/migrate/jakarta/johnzonjavaxtojakarta.md)
   * **Migrate Johnzon from javax to jakarta namespace**
-  * Java EE has been rebranded to Jakarta EE.  This recipe replaces existing Johnzon dependencies with their counterparts that are compatible with Jakarta EE 9.
+  * Java EE has been rebranded to Jakarta EE. This recipe replaces existing Johnzon dependencies with their counterparts that are compatible with Jakarta EE 9.
 * [org.openrewrite.java.migrate.jakarta.MigrateFastjsonForJakarta10](/recipes/java/migrate/jakarta/migratefastjsonforjakarta10.md)
   * **Update Fastjson for Jakarta EE 10**
   * Update Fastjson to be compatible with Jakarta EE 10.
 * [org.openrewrite.java.migrate.jakarta.MigratePluginsForJakarta10](/recipes/java/migrate/jakarta/migratepluginsforjakarta10.md)
-  * **Update Plugins for Jakarta EE 10**
-  * Update plugin to be compatible with Jakarta EE 10.
+  * **Update plugins for Jakarta EE 10**
+  * Update plugins to be compatible with Jakarta EE 10.
 * [org.openrewrite.java.migrate.jakarta.MigratePluginsForJakarta11](/recipes/java/migrate/jakarta/migratepluginsforjakarta11.md)
-  * **Update Plugins for Jakarta EE 11**
+  * **Update plugins for Jakarta EE 11**
   * Update plugins to be compatible with Jakarta EE 11.
 * [org.openrewrite.java.migrate.jakarta.MigratePluginsForJakarta9](/recipes/java/migrate/jakarta/migratepluginsforjakarta9.md)
-  * **Update Plugins for Jakarta EE 9**
+  * **Update plugins for Jakarta EE 9**
   * Update plugins to be compatible with Jakarta EE 9.
 * [org.openrewrite.java.migrate.jakarta.MigrationToJakarta10Apis](/recipes/java/migrate/jakarta/migrationtojakarta10apis.md)
-  * **Migrate Jakarta EE 9 api dependencies to Jakarta EE 10 versions**
-  * Jakarta EE 10 updates some apis compared to Jakarta EE 9.
+  * **Migrate Jakarta EE 9 API dependencies to Jakarta EE 10 versions**
+  * Upgrade the Jakarta EE 9 API dependencies to their Jakarta EE 10 versions.
 * [org.openrewrite.java.migrate.jakarta.OmniFacesNamespaceMigration](/recipes/java/migrate/jakarta/omnifacesnamespacemigration.md)
-  * **OmniFaces Namespace Migration**
+  * **Migrate OmniFaces namespaces**
   * Find and replace legacy OmniFaces namespaces.
 * [org.openrewrite.java.migrate.jakarta.RemovalsServletJakarta10](/recipes/java/migrate/jakarta/removalsservletjakarta10.md)
-  * **Replace  deprecated Jakarta Servlet methods and classes**
+  * **Replace deprecated Jakarta Servlet methods and classes**
   * This recipe replaces the classes and methods deprecated in Jakarta Servlet 6.0.
 * [org.openrewrite.java.migrate.jakarta.RemoveBeanIsNullable](/recipes/java/migrate/jakarta/removebeanisnullable.md)
   * **Remove `Bean.isNullable()`**
-  * `Bean.isNullable()` has been removed in CDI 4.0.0, and now always returns `false`.
+  * `Bean.isNullable()` was deprecated in CDI 1.1, after which implementations should always return `false`, and was removed in CDI 4.0. Replace calls with `false` and simplify the resulting conditionals.
 * [org.openrewrite.java.migrate.jakarta.RemoveJakartaAnnotationDependencyWhenManagedBySpringBoot](/recipes/java/migrate/jakarta/removejakartaannotationdependencywhenmanagedbyspringboot.md)
   * **Remove `jakarta.annotation-api` dependency when managed by Spring Boot**
   * Best practice recipe to cleanup a direct dependency which also comes transitively for Spring Boot applications.
@@ -2794,16 +2808,16 @@ _505 recipes_
   * Faces 3.0 introduced using `StateManagementStrategy` in favor of `StateManager`, which was later removed in Faces 4.0.
 * [org.openrewrite.java.migrate.jakarta.RemovedUIComponentConstant](/recipes/java/migrate/jakarta/removeduicomponentconstant.md)
   * **Replace `CURRENT_COMPONENT` and `CURRENT_COMPOSITE_COMPONENT` with `getCurrentComponent()` and `getCurrentCompositeComponent()`**
-  * Replace `jakarta.faces.component.UIComponent.CURRENT_COMPONENT` and `CURRENT_COMPOSITE_COMPONENT` constants with `jakarta.faces.component.UIComponent.getCurrentComponent()` and `getCurrentCompositeComponent()`. that were added in JSF 2.0.
+  * Replace lookups of the `jakarta.faces.component.UIComponent.CURRENT_COMPONENT` and `CURRENT_COMPOSITE_COMPONENT` keys in the `FacesContext` attributes with `UIComponent.getCurrentComponent(FacesContext)` and `UIComponent.getCurrentCompositeComponent(FacesContext)`, which were added in JSF 2.0.
 * [org.openrewrite.java.migrate.jakarta.ReplaceJakartaJwsWithJakartaXmlWs](/recipes/java/migrate/jakarta/replacejakartajwswithjakartaxmlws.md)
   * **Replace `jakarta.jws-api` with `jakarta.xml.ws-api`**
   * Starting with Jakarta EE 10, the standalone `jakarta.jws-api` artifact was retired and its content was merged into `jakarta.xml.ws-api`. This recipe replaces a declared `jakarta.jws:jakarta.jws-api` dependency in place with `jakarta.xml.ws:jakarta.xml.ws-api`, and adds `jakarta.xml.ws:jakarta.xml.ws-api` directly when `jakarta.jws` was only available transitively.
 * [org.openrewrite.java.migrate.jakarta.RestAssuredJavaxToJakarta](/recipes/java/migrate/jakarta/restassuredjavaxtojakarta.md)
-  * **Migrate RestAssured from javax to jakarta namespace by upgrading to a version compatible with J2EE9**
-  * Java EE has been rebranded to Jakarta EE.  This recipe replaces existing RestAssured dependencies with their counterparts that are compatible with Jakarta EE 9.
+  * **Migrate RestAssured from javax to jakarta namespace by upgrading to a version compatible with Jakarta EE 9**
+  * Java EE has been rebranded to Jakarta EE. This recipe replaces existing RestAssured dependencies with their counterparts that are compatible with Jakarta EE 9.
 * [org.openrewrite.java.migrate.jakarta.RetainJaxbApiForArquillianRecorder](/recipes/java/migrate/jakarta/retainjaxbapiforarquillianrecorder.md)
   * **Retain the JAXB 2 API for Arquillian Recorder 1.x**
-  * Retain the legacy JAXB API in Maven modules using Arquillian Recorder 1.x binaries, which still reference javax.xml.bind classes after the application's Jakarta migration.
+  * Retain the legacy JAXB API in Maven modules using Arquillian Recorder 1.x binaries, which still reference `javax.xml.bind` classes after the application's Jakarta migration.
 * [org.openrewrite.java.migrate.jakarta.RetainJaxbApiForJackson](/recipes/java/migrate/jakarta/retainjaxbapiforjackson.md)
   * **Retain `javax.xml.bind:jaxb-api` when `jackson-module-jaxb-annotations` is present**
   * When migrating from `javax.xml.bind` to `jakarta.xml.bind` 3.0+, the `javax.xml.bind:jaxb-api` dependency is normally replaced. However, if `jackson-module-jaxb-annotations` is on the classpath (and still uses the `javax.xml.bind` namespace), this recipe ensures `javax.xml.bind:jaxb-api` remains available as a runtime dependency to prevent `NoClassDefFoundError`.
@@ -2812,73 +2826,73 @@ _505 recipes_
   * Jakarta Servlet methods have been deprecated for removal in Jakarta Servlet 6.0 to align with RFC 6265. In addition, the behavior of these methods has been changed so the setters no longer have any effect, the getComment methods return null, and the getVersion method returns 0. The deprecated methods are removed.
 * [org.openrewrite.java.migrate.jakarta.UpdateAddAnnotatedTypes](/recipes/java/migrate/jakarta/updateaddannotatedtypes.md)
   * **Replace `BeforeBeanDiscovery.addAnnotatedType(AnnotatedType)` with `addAnnotatedType(AnnotatedType, String)`**
-  * `BeforeBeanDiscovery.addAnnotatedType(AnnotatedType)` is deprecated in CDI 1.1. It is Replaced by `BeforeBeanDiscovery.addAnnotatedType(AnnotatedType, String)`.
+  * `BeforeBeanDiscovery.addAnnotatedType(AnnotatedType)` is deprecated in CDI 1.1. It is replaced by `BeforeBeanDiscovery.addAnnotatedType(AnnotatedType, String)`.
 * [org.openrewrite.java.migrate.jakarta.UpdateAnnotationAttributeJavaxToJakarta](/recipes/java/migrate/jakarta/updateannotationattributejavaxtojakarta.md)
   * **Update annotation attributes using `javax` to `jakarta`**
   * Replace `javax` with `jakarta` in annotation attributes for matching annotation signatures.
 * [org.openrewrite.java.migrate.jakarta.UpdateApacheCommonsEmailDependencies](/recipes/java/migrate/jakarta/updateapachecommonsemaildependencies.md)
   * **Update Apache Commons Email to Email2 for Jakarta**
-  * Update Apache Commons Email to Email2 for Jakarta.
+  * Replace `commons-email` with `commons-email2-jakarta` 2.0.x, and move the `org.apache.commons.mail` types to their Email2 packages.
 * [org.openrewrite.java.migrate.jakarta.UpdateApacheShiroDependencies](/recipes/java/migrate/jakarta/updateapacheshirodependencies.md)
-  * **Update Apache Shiro Dependencies to 2.0.x**
-  * Update Apache Shiro Dependencies to 2.0.x.
+  * **Update Apache Shiro dependencies to 2.0.x**
+  * Upgrade Apache Shiro to the 2.0.x `jakarta` classifier artifacts and move the relocated codec and utility types, and upgrade `buji-pac4j` and pac4j to their Jakarta EE versions.
 * [org.openrewrite.java.migrate.jakarta.UpdateApacheWSSecurityPackages](/recipes/java/migrate/jakarta/updateapachewssecuritypackages.md)
-  * **Migrate `org.apache.ws.security` and `org.apache.ws.security.components.crypto` packages to  `org.apache.wss4j.common.ext` and `org.apache.wss4j.common.crypto` packages**
-  * Java EE has been rebranded to Jakarta EE.  This recipe replaces Apache security packages to migrate to Apache `wss4j`.
+  * **Migrate `org.apache.ws.security` and `org.apache.ws.security.components.crypto` packages to `org.apache.wss4j.common.ext` and `org.apache.wss4j.common.crypto` packages**
+  * Java EE has been rebranded to Jakarta EE. This recipe replaces Apache security packages to migrate to Apache `wss4j`.
 * [org.openrewrite.java.migrate.jakarta.UpdateBeanManagerMethods](/recipes/java/migrate/jakarta/updatebeanmanagermethods.md)
   * **Update `fireEvent()` and `createInjectionTarget()` calls**
   * Updates `BeanManager.fireEvent()` or `BeanManager.createInjectionTarget()`.
 * [org.openrewrite.java.migrate.jakarta.UpdateEclipseLinkDependencies](/recipes/java/migrate/jakarta/updateeclipselinkdependencies.md)
-  * **Update EclipseLink Dependencies to 4.x**
-  * Update EclipseLink Dependencies to 4.x.
+  * **Update EclipseLink dependencies to 4.x**
+  * Upgrade the `org.eclipse.persistence` dependencies to EclipseLink 4.x, which implements Jakarta Persistence 3.1.
 * [org.openrewrite.java.migrate.jakarta.UpdateFileupload2Dependencies](/recipes/java/migrate/jakarta/updatefileupload2dependencies.md)
-  * **Update Apache Commons FileUpload2 package for EE10**
-  * Update Apache Commons FileUpload2 package for EE10.
+  * **Update Apache Commons FileUpload2 package for Jakarta EE 10**
+  * Replace the `commons-fileupload2-jakarta-servlet5` artifact and package with their `servlet6` counterparts, which target Jakarta Servlet 6.0.
 * [org.openrewrite.java.migrate.jakarta.UpdateGetRealPath](/recipes/java/migrate/jakarta/updategetrealpath.md)
-  * **Updates `getRealPath()` to call `getContext()` followed by `getRealPath()`**
-  * Updates `getRealPath()` for `jakarta.servlet.ServletRequest` and `jakarta.servlet.ServletRequestWrapper` to use `ServletContext.getRealPath(String)`.
+  * **Replace `ServletRequest.getRealPath(String)` with `getServletContext().getRealPath(String)`**
+  * Replace the removed `getRealPath(String)` on `jakarta.servlet.ServletRequest` and `jakarta.servlet.ServletRequestWrapper` with `getServletContext().getRealPath(String)`.
 * [org.openrewrite.java.migrate.jakarta.UpdateJakartaAnnotations2](/recipes/java/migrate/jakarta/updatejakartaannotations2.md)
-  * **Update Jakarta EE annotation Dependencies to 2.1.x**
-  * Update Jakarta EE annotation Dependencies to 2.1.x.
+  * **Update Jakarta EE annotation dependencies to 2.1.x**
+  * Deprecated and does nothing, as the `jakarta.annotation-api` upgrade to 2.1.x is now part of the Jakarta EE 10 API migration.
 * [org.openrewrite.java.migrate.jakarta.UpdateJakartaFacesApi3](/recipes/java/migrate/jakarta/updatejakartafacesapi3.md)
   * **Migrate deprecated `javax.faces` packages to `jakarta.faces`**
   * Java EE has been rebranded to Jakarta EE, necessitating a package relocation and upgrade.
 * [org.openrewrite.java.migrate.jakarta.UpdateJakartaFacesApi4](/recipes/java/migrate/jakarta/updatejakartafacesapi4.md)
-  * **Update Jakarta EE Java Faces Dependencies to 4.0.x**
-  * Update Jakarta EE Java Faces Dependencies to 4.0.x.
+  * **Update Jakarta Faces dependencies to 4.0.x**
+  * Upgrade the Jakarta Faces API and the `org.glassfish:jakarta.faces` implementation to 4.0.x.
 * [org.openrewrite.java.migrate.jakarta.UpdateJakartaFacesApi41](/recipes/java/migrate/jakarta/updatejakartafacesapi41.md)
-  * **Update Jakarta EE Java Faces Dependencies to 4.1.x**
-  * Update Jakarta EE Java Faces Dependencies to 4.1.x.
+  * **Update Jakarta Faces dependencies to 4.1.x**
+  * Upgrade the Jakarta Faces API to 4.1.x.
 * [org.openrewrite.java.migrate.jakarta.UpdateJakartaPlatform10](/recipes/java/migrate/jakarta/updatejakartaplatform10.md)
-  * **Update Jakarta EE Platform Dependencies to 10.0.0**
-  * Update Jakarta EE Platform Dependencies to 10.0.0.
+  * **Update Jakarta EE platform dependencies to 10.0.0**
+  * Upgrade the `jakarta.platform` dependencies to 10.0.0.
 * [org.openrewrite.java.migrate.jakarta.UpdateJakartaPlatform11](/recipes/java/migrate/jakarta/updatejakartaplatform11.md)
-  * **Update Jakarta EE Platform Dependencies to 11.0.x**
-  * Update Jakarta EE Platform Dependencies to 11.0.x.
+  * **Update Jakarta EE platform dependencies to 11.0.x**
+  * Upgrade the `jakarta.platform` dependencies to 11.0.x, along with the Jakarta Annotations and Jakarta Server Pages APIs.
 * [org.openrewrite.java.migrate.jakarta.UpdateJakartaXmlWsEE10](/recipes/java/migrate/jakarta/updatejakartaxmlwsee10.md)
-  * **Update Jakarta EE XML Web Services Dependencies for EE 10**
-  * Update Jakarta EE XML Web Services Dependencies for EE 10.
+  * **Update Jakarta XML Web Services dependencies for Jakarta EE 10**
+  * Upgrade the Jakarta XML Binding, SOAP and XML Web Services APIs and the `jaxws-rt` implementation to their Jakarta EE 10 versions, replacing the retired `jakarta.jws-api` artifact with `jakarta.xml.ws-api`.
 * [org.openrewrite.java.migrate.jakarta.UpdateJerseyDependencies](/recipes/java/migrate/jakarta/updatejerseydependencies.md)
-  * **Update GlassFish Jersey Dependencies to 3.1.x**
-  * Update GlassFish Jersey Dependencies to 3.1.x.
+  * **Update GlassFish Jersey dependencies to 3.1.x**
+  * Upgrade the GlassFish Jersey dependencies to 3.1.x, and Tyrus to 2.1.x.
 * [org.openrewrite.java.migrate.jakarta.UpdateManagedBeanToNamed](/recipes/java/migrate/jakarta/updatemanagedbeantonamed.md)
   * **Update Faces `@ManagedBean` to use CDI `@Named`**
-  * Faces ManagedBean was deprecated in JSF 2.3 (EE8) and removed in Jakarta Faces 4.0 (EE10). Replace `@ManagedBean` with `@Named` for CDI-based bean management.
+  * Faces `@ManagedBean` was deprecated in JSF 2.3 (EE8) and removed in Jakarta Faces 4.0 (EE10). Replace `@ManagedBean` with `@Named` for CDI-based bean management.
 * [org.openrewrite.java.migrate.jakarta.UpdateRestLet2_6](/recipes/java/migrate/jakarta/updaterestlet2_6.md)
-  * **Update RestLet to 2.6.0**
-  * Update RestLet to 2.6.0.
+  * **Update Restlet to 2.6.x**
+  * Upgrade Restlet dependencies to 2.6.x, moving the `org.restlet.jee` artifacts to the `org.restlet` group and removing the `org.restlet.ext.httpclient` extension.
 * [org.openrewrite.java.migrate.jakarta.UpdateYassonDependencies](/recipes/java/migrate/jakarta/updateyassondependencies.md)
-  * **Update Eclipse Yasson Dependencies to 3.0.x**
-  * Update Eclipse Yasson Dependencies to 3.0.x.
+  * **Update Eclipse Yasson dependencies to 3.0.x**
+  * Upgrade the `org.eclipse:yasson` dependency to 3.0.x, which implements Jakarta JSON Binding 3.0.
 * [org.openrewrite.java.migrate.jakarta.UpgradeFaces3OpenSourceLibraries](/recipes/java/migrate/jakarta/upgradefaces3opensourcelibraries.md)
   * **Upgrade Faces open source libraries**
-  * Upgrade PrimeFaces, OmniFaces, and MyFaces libraries to Jakarta EE9 versions.
+  * Upgrade PrimeFaces, OmniFaces, and MyFaces libraries to Jakarta EE 9 versions.
 * [org.openrewrite.java.migrate.jakarta.UpgradeFaces41OpenSourceLibraries](/recipes/java/migrate/jakarta/upgradefaces41opensourcelibraries.md)
   * **Upgrade Faces open source libraries**
-  * Upgrade OmniFaces and MyFaces/Mojarra libraries to Jakarta EE11 versions.
+  * Upgrade OmniFaces and MyFaces/Mojarra libraries to Jakarta EE 11 versions.
 * [org.openrewrite.java.migrate.jakarta.UpgradeFaces4OpenSourceLibraries](/recipes/java/migrate/jakarta/upgradefaces4opensourcelibraries.md)
   * **Upgrade Faces open source libraries**
-  * Upgrade PrimeFaces, OmniFaces, and MyFaces libraries to Jakarta EE10 versions.
+  * Upgrade PrimeFaces, OmniFaces, and MyFaces libraries to Jakarta EE 10 versions.
 * [org.openrewrite.java.migrate.jakarta.UpgradeJavaForJetty12](/recipes/java/migrate/jakarta/upgradejavaforjetty12.md)
   * **Use Java 17 for Jetty 12**
   * Update the Java baseline of builds using Jetty to the minimum required by Jetty 12.
@@ -2886,7 +2900,7 @@ _505 recipes_
   * **Align legacy Jetty core dependencies with Jetty 12**
   * Upgrade explicitly declared Jetty core dependencies alongside the relocated servlet dependencies.
 * [org.openrewrite.java.migrate.jakarta.UpgradeMavenEjbPluginConfiguration](/recipes/java/migrate/jakarta/upgrademavenejbpluginconfiguration.md)
-  * **Set `maven-ejb-plugin` ejbVersion to 4.0**
+  * **Set `maven-ejb-plugin` `ejbVersion` to `4.0`**
   * Updates the `&lt;ejbVersion&gt;` configuration of `maven-ejb-plugin` to `4.0` when the current value (or its resolved Maven property) indicates EJB 3.x. Handles the common pattern where `&lt;ejbVersion&gt;` is coupled to the `javax.ejb-api` dependency version via a shared property, decoupling them after migration.
 * [org.openrewrite.java.migrate.jakarta.WeldToJakarta](/recipes/java/migrate/jakarta/weldtojakarta.md)
   * **Migrate Weld implementations to Jakarta CDI**
@@ -2895,37 +2909,37 @@ _505 recipes_
   * **Replace `doUpgrade(..)` with `ServerContainer.upgradeHttpToWebSocket(..)`**
   * Deprecated `WsWsocServerContainer.doUpgrade(..)` is replaced by the Jakarta WebSocket 2.1 specification `ServerContainer.upgradeHttpToWebSocket(..)`.
 * [org.openrewrite.java.migrate.javaee6](/recipes/java/migrate/javaee6.md)
-  * **Migrate to JavaEE6**
-  * These recipes help with the Migration to Java EE 6, flagging and updating deprecated methods.
+  * **Migrate to Java EE 6**
+  * Apply changes needed when migrating to Java EE 6, such as calling `HttpServletRequest.logout()` before `HttpSession.invalidate()`.
 * [org.openrewrite.java.migrate.javaee7](/recipes/java/migrate/javaee7-recipe.md)
-  * **Migrate to JavaEE7**
-  * These recipes help with the Migration to Java EE 7, flagging and updating deprecated methods.
+  * **Migrate to Java EE 7**
+  * Apply changes needed when migrating to Java EE 7, such as replacing the OpenJPA persistence provider with EclipseLink, setting an explicit JPA shared cache mode, aligning the `beans.xml` schema location, and making `@Produces` fields in session beans `static`. Includes the Java EE 6 migration.
 * [org.openrewrite.java.migrate.javaee7.OpenJPAPersistenceProvider](/recipes/java/migrate/javaee7/openjpapersistenceprovider.md)
-  * **Removed OpenJPA providers in the persistence.xml file**
-  * When migrating  to EclipseLink, using OpenJPA providers in EclipseLink results in runtime errors. To resolve these errors, the recipe removes the flagged OpenJPA provider from the persistence.xml.
+  * **Replace the OpenJPA persistence provider with EclipseLink in `persistence.xml`**
+  * When migrating to EclipseLink, using OpenJPA providers in EclipseLink results in runtime errors. To resolve these errors, this recipe replaces the OpenJPA `PersistenceProviderImpl` in `persistence.xml` with the EclipseLink `PersistenceProvider`.
 * [org.openrewrite.java.migrate.javaee8](/recipes/java/migrate/javaee8-recipe.md)
-  * **Migrate to JavaEE8**
-  * These recipes help with the Migration to Java EE 8, flagging and updating deprecated methods.
+  * **Migrate to Java EE 8**
+  * Apply changes needed when migrating to Java EE 8, such as upgrading the Java Servlet dependency, replacing deprecated Servlet methods, and moving Bean Validation configuration from Apache BVal to Hibernate Validator. Includes the Java EE 7 migration.
 * [org.openrewrite.java.migrate.javaee8.ApacheDefaultProvider](/recipes/java/migrate/javaee8/apachedefaultprovider.md)
-  * **Flags any `org.apache.bval.jsr*` (bval 1.1) and `org.apache.bval.jsr303*` (bval 1.0) package references**
-  * This recipe flags any `org.apache.bval.jsr*` (bval 1.1) and `org.apache.bval.jsr303*` (bval 1.0) package references in validation.xml deployment descriptors. Bean Validation 2.0 and later use the Hibernate Validator implementation instead of the Apache BVal implementation which was used for Bean Validation 1.0 and 1.1.
+  * **Replace Apache BVal with Hibernate Validator in `validation.xml`**
+  * Bean Validation 2.0 and later use the Hibernate Validator implementation instead of the Apache BVal implementation which was used for Bean Validation 1.0 and 1.1. This recipe points the default provider, message interpolator, traversable resolver and constraint validator factory in `validation.xml` deployment descriptors at their Hibernate Validator implementations, and removes the parameter name provider.
 * [org.openrewrite.java.migrate.javaee8.MigrateToServlet3x](/recipes/java/migrate/javaee8/migratetoservlet3x.md)
-  * **Update Java EE Servlet Dependencies to 3.x**
-  * Update Java EE Servlet Dependencies to 3.x.
+  * **Update Java Servlet dependencies to 3.x**
+  * Replace the legacy `javax.servlet:servlet-api` dependency with `javax.servlet:javax.servlet-api` 3.x.
 * [org.openrewrite.java.migrate.javaee8.ServletIsRequestedSessionIdFromURL](/recipes/java/migrate/javaee8/servletisrequestedsessionidfromurl.md)
   * **Replace `HttpServletRequestWrapper.isRequestedSessionIdFromUrl()` with `isRequestedSessionIdFromURL()`**
-  * The  method `HttpServletRequestWrapper.isRequestedSessionIdFromUrl()` is deprecated in JavaEE8 and is replaced by `HttpServletRequestWrapper.isRequestedSessionIdFromURL()`.
+  * The method `HttpServletRequestWrapper.isRequestedSessionIdFromUrl()` is deprecated in Java EE 8 and is replaced by `HttpServletRequestWrapper.isRequestedSessionIdFromURL()`.
 * [org.openrewrite.java.migrate.javax.AddApiDependencyForImports](/recipes/java/migrate/javax/addapidependencyforimports.md)
   * **Add an API dependency for explicit imports**
   * Add an API dependency to the nearest Maven module importing the package, including imports whose types could not be resolved by the parser because the JDK used to provide them. A module that already has the API in the needed scope, or from a dependency it declares as provided, is left alone.
 * [org.openrewrite.java.migrate.javax.AddColumnAnnotation](/recipes/java/migrate/javax/addcolumnannotation.md)
-  * **`@ElementCollection` annotations must be accompanied by a defined `@Column` annotation**
-  * When an attribute is annotated with `@ElementCollection`, a separate table is created for the attribute that includes the attribute  ID and value. In OpenJPA, the column for the annotated attribute is named element, whereas EclipseLink names the column based on  the name of the attribute. To remain compatible with tables that were created with OpenJPA, add a `@Column` annotation with the name  attribute set to element.
+  * **Set `@Column(name = &quot;element&quot;)` on `@ElementCollection` attributes**
+  * When an attribute is annotated with `@ElementCollection`, a separate table is created for the attribute that includes the attribute ID and value. In OpenJPA, the column for the annotated attribute is named `element`, whereas EclipseLink names the column based on the name of the attribute. To remain compatible with tables that were created with OpenJPA, add a `@Column` annotation with the `name` attribute set to `element`.
 * [org.openrewrite.java.migrate.javax.AddCommonAnnotationsDependencies](/recipes/java/migrate/javax/addcommonannotationsdependencies.md)
   * **Add explicit Common Annotations dependencies**
   * Add the necessary `annotation-api` dependency from Jakarta EE 8 to maintain compatibility with Java version 11 or greater.
 * [org.openrewrite.java.migrate.javax.AddDefaultConstructorToEntityClass](/recipes/java/migrate/javax/adddefaultconstructortoentityclass.md)
-  * **`@Entity` objects with constructors must also have a default constructor**
+  * **Add a default constructor to `@Entity` and `@MappedSuperclass` classes**
   * When a Java Persistence API (JPA) entity class has a constructor with arguments, the class must also have a default, no-argument constructor. The OpenJPA implementation automatically generates the no-argument constructor, but the EclipseLink implementation does not.
 * [org.openrewrite.java.migrate.javax.AddInjectDependencies](/recipes/java/migrate/javax/addinjectdependencies.md)
   * **Add explicit Inject dependencies**
@@ -2941,37 +2955,37 @@ _505 recipes_
   * This recipe will add explicit API dependencies without runtime dependencies for Jakarta EE 8 when a Java 8 application is using JAXB. Any existing API dependencies will be upgraded to the latest version of Jakarta EE 8. The artifacts are moved to Jakarta EE 8 version 2.x which allows for the continued use of the `javax.xml.bind` namespace. All JAXB runtime implementation dependencies are removed.
 * [org.openrewrite.java.migrate.javax.AddJaxbRuntime](/recipes/java/migrate/javax/addjaxbruntime.md)
   * **Use latest JAXB API and runtime for Jakarta EE 8**
-  * Update build files to use the latest JAXB runtime from Jakarta EE 8 to maintain compatibility with Java version 11 or greater. The recipe will add a JAXB run-time, in Gradle `compileOnly`+`testImplementation` and Maven `provided` scope, to any project that has a transitive dependency on the JAXB API. **The resulting dependencies still use the `javax` namespace, despite the move to the Jakarta artifact**.
+  * Update build files to use the latest JAXB runtime from Jakarta EE 8 to maintain compatibility with Java version 11 or greater. The recipe will add a JAXB run-time, in Gradle `runtimeOnly` and Maven `runtime` scope, to any project that uses `javax.xml.bind` and has a transitive dependency on the JAXB API. **The resulting dependencies still use the `javax` namespace, despite the move to the Jakarta artifact**.
 * [org.openrewrite.java.migrate.javax.AddJaxwsDependencies](/recipes/java/migrate/javax/addjaxwsdependencies.md)
   * **Add explicit JAX-WS dependencies**
-  * This recipe will add explicit dependencies for Jakarta EE 8 when a Java 8 application is using JAX-WS. Any existing dependencies will be upgraded to the latest version of Jakarta EE 8. The artifacts are moved to Jakarta EE 8 but the application can continue to use the `javax.xml.bind` namespace.
+  * This recipe will add explicit dependencies for Jakarta EE 8 when a Java 8 application is using JAX-WS. Any existing dependencies will be upgraded to the latest version of Jakarta EE 8. The artifacts are moved to Jakarta EE 8 but the application can continue to use the `javax.xml.ws` namespace.
 * [org.openrewrite.java.migrate.javax.AddJaxwsRuntime](/recipes/java/migrate/javax/addjaxwsruntime.md)
   * **Use the latest JAX-WS API and runtime for Jakarta EE 8**
   * Update build files to use the latest JAX-WS runtime from Jakarta EE 8 to maintain compatibility with Java version 11 or greater. The recipe will add a JAX-WS run-time, in Gradle `compileOnly`+`testImplementation` and Maven `provided` scope, to any project that has a transitive dependency on the JAX-WS API. **The resulting dependencies still use the `javax` namespace, despite the move to the Jakarta artifact**.
 * [org.openrewrite.java.migrate.javax.AddJaxwsRuntime$AddJaxwsRuntimeGradle](/recipes/java/migrate/javax/addjaxwsruntime$addjaxwsruntimegradle.md)
   * **Use the latest JAX-WS API and runtime for Jakarta EE 8**
-  * Update Gradle build files to use the latest JAX-WS runtime from Jakarta EE 8 to maintain compatibility with Java version 11 or greater.  The recipe will add a JAX-WS run-time, in `compileOnly`+`testImplementation` configurations, to any project that has a transitive dependency on the JAX-WS API. **The resulting dependencies still use the `javax` namespace, despite the move to the Jakarta artifact**.
+  * Update Gradle build files to use the latest JAX-WS runtime from Jakarta EE 8 to maintain compatibility with Java version 11 or greater. The recipe will add a JAX-WS run-time, in `compileOnly`+`testImplementation` configurations, to any project that has a transitive dependency on the JAX-WS API. **The resulting dependencies still use the `javax` namespace, despite the move to the Jakarta artifact**.
 * [org.openrewrite.java.migrate.javax.AddJaxwsRuntime$AddJaxwsRuntimeMaven](/recipes/java/migrate/javax/addjaxwsruntime$addjaxwsruntimemaven.md)
   * **Use the latest JAX-WS API and runtime for Jakarta EE 8**
-  * Update maven build files to use the latest JAX-WS runtime from Jakarta EE 8 to maintain compatibility with Java version 11 or greater.  The recipe will add a JAX-WS run-time, in `provided` scope, to any project that has a transitive dependency on the JAX-WS API. **The resulting dependencies still use the `javax` namespace, despite the move to the Jakarta artifact**.
+  * Update maven build files to use the latest JAX-WS runtime from Jakarta EE 8 to maintain compatibility with Java version 11 or greater. The recipe will add a JAX-WS run-time, in `provided` scope, to any project that has a transitive dependency on the JAX-WS API. **The resulting dependencies still use the `javax` namespace, despite the move to the Jakarta artifact**.
 * [org.openrewrite.java.migrate.javax.AddScopeToInjectedClass](/recipes/java/migrate/javax/addscopetoinjectedclass.md)
   * **Add scope annotation to injected classes**
-  * Finds member variables annotated with `@Inject' and applies `@Dependent` scope annotation to the variable's type.
+  * Finds member variables annotated with `@Inject` and applies `@Dependent` scope annotation to the variable's type.
 * [org.openrewrite.java.migrate.javax.AddTableGenerator](/recipes/java/migrate/javax/addtablegenerator.md)
-  * **Attributes with automatically generated values require configuration**
+  * **Add a `@TableGenerator` to automatically generated `@GeneratedValue` attributes**
   * Adds missing `@TableGenerator` annotation and updates the `@GeneratedValue` annotation values when it uses automatically generated values.
 * [org.openrewrite.java.migrate.javax.AddTransientAnnotationToCollections](/recipes/java/migrate/javax/addtransientannotationtocollections.md)
-  * **Unannotated collection attributes require a Transient annotation**
+  * **Add `@Transient` to unannotated collection attributes**
   * In OpenJPA, attributes that inherit from the `java.util.Collection&lt;E&gt;` interface are not a default persistent type, so these attributes are not persisted unless they are annotated. EclipseLink has a different default behavior and attempts to persist these attributes to the database. To keep the OpenJPA behavior of ignoring unannotated collection attributes, add the `javax.persistence.Transient` annotation to these attributes in EclipseLink.
 * [org.openrewrite.java.migrate.javax.AddTransientAnnotationToEntity](/recipes/java/migrate/javax/addtransientannotationtoentity.md)
-  * **Unannotated entity attributes require a Transient annotation**
+  * **Add `@Transient` to unannotated entity attributes**
   * In OpenJPA, attributes that are themselves entity classes are not persisted by default. EclipseLink has a different default behavior and tries to persist these attributes to the database. To keep the OpenJPA behavior of ignoring unannotated entity attributes, add the `javax.persistence.Transient` annotation to these attributes in EclipseLink.
 * [org.openrewrite.java.migrate.javax.AddTransientAnnotationToPrivateAccessor](/recipes/java/migrate/javax/addtransientannotationtoprivateaccessor.md)
-  * **Private accessor methods must have a `@Transient` annotation**
+  * **Add `@Transient` to private accessor methods**
   * According to the JPA 2.1 specification, when property access is used, the property accessor methods must be public or protected. OpenJPA ignores any private accessor methods, whereas EclipseLink persists those attributes. To ignore private accessor methods in EclipseLink, the methods must have a `@Transient` annotation.
 * [org.openrewrite.java.migrate.javax.HttpSessionInvalidate](/recipes/java/migrate/javax/httpsessioninvalidate.md)
-  * **Use HttpServletRequest `logout` method for programmatic security logout in Servlet 3.0**
-  * Do not rely on HttpSession `invalidate` method for programmatic security logout. Add the HttpServletRequest `logout` method which was introduced in Java EE 6 as part of the Servlet 3.0 specification.
+  * **Call `HttpServletRequest.logout()` before `HttpSession.invalidate()`**
+  * Add a call to `HttpServletRequest#logout()`, introduced in Servlet 3.0, before `HttpSession#invalidate()`, so that a programmatic logout also clears the authenticated user, not only the session. Only applies to standalone `invalidate()` statements in methods with an `HttpServletRequest` parameter where the `ServletException` thrown by `logout()` is already declared or caught.
 * [org.openrewrite.java.migrate.javax.JavaxLangModelUtil](/recipes/java/migrate/javax/javaxlangmodelutil.md)
   * **Use modernized `javax.lang.model.util` APIs**
   * Certain `javax.lang.model.util` APIs have become deprecated and their usages changed, necessitating usage changes.
@@ -3000,7 +3014,7 @@ _505 recipes_
   * **Use `javax.lang.model.util.ElementScanner9`**
   * Use `javax.lang.model.util.ElementScanner9` instead of the deprecated `javax.lang.model.util.ElementScanner6` in Java 9 or higher.
 * [org.openrewrite.java.migrate.javax.MigrateJaxBWSPlugin](/recipes/java/migrate/javax/migratejaxbwsplugin.md)
-  * **Migrate JAXB-WS Plugin**
+  * **Migrate the JAX-WS Maven plugin**
   * Upgrade the JAXB-WS Maven plugin to be compatible with Java 11.
 * [org.openrewrite.java.migrate.javax.MigrateOneGfwJaxbDependencies](/recipes/java/migrate/javax/migrateonegfwjaxbdependencies.md)
   * **Replace `one.gfw` JAXB artifacts with their official coordinates**
@@ -3027,13 +3041,13 @@ _505 recipes_
   * **Use `javax.xml.stream.XMLOutputFactory#newFactory(String, ClassLoader)`**
   * Use `javax.xml.stream.XMLOutputFactory#newFactory` instead of the deprecated `javax.xml.stream.XMLOutputFactory#newInstance` in Java 7 or higher.
 * [org.openrewrite.java.migrate.javax.RemoveEmbeddableId](/recipes/java/migrate/javax/removeembeddableid.md)
-  * **`@Embeddable` classes cannot have an `@Id` annotation when referenced by an `@EmbeddedId` annotation**
+  * **Remove `@Id` from `@Embeddable` classes referenced by an `@EmbeddedId`**
   * According to the Java Persistence API (JPA) specification, if an entity defines an attribute with an `@EmbeddedId` annotation, the embeddable class cannot contain an attribute with an `@Id` annotation. If both the `@EmbeddedId` annotation and the `@Id` annotation are defined, OpenJPA ignores the `@Id` annotation, whereas EclipseLink throws an exception.
 * [org.openrewrite.java.migrate.javax.RemoveTemporalAnnotation](/recipes/java/migrate/javax/removetemporalannotation.md)
   * **Remove the `@Temporal` annotation for some `java.sql` attributes**
   * OpenJPA persists the fields of attributes of type `java.sql.Date`, `java.sql.Time`, or `java.sql.Timestamp` that have a `javax.persistence.Temporal` annotation, whereas EclipseLink throws an exception. Remove the `@Temporal` annotation so the behavior in EclipseLink will match the behavior in OpenJPA.
 * [org.openrewrite.java.migrate.javax.UseJoinColumnForMapping](/recipes/java/migrate/javax/usejoincolumnformapping.md)
-  * **`@JoinColumn` annotations must be used with relationship mappings**
+  * **Replace `@Column` with `@JoinColumn` on relationship mappings**
   * In OpenJPA, when a relationship attribute has either a `@OneToOne` or a `@ManyToOne` annotation with a `@Column` annotation, the `@Column` annotation is treated as a `@JoinColumn` annotation. EclipseLink throws an exception that indicates that the entity class must use `@JoinColumn` instead of `@Column` to map a relationship attribute.
 * [org.openrewrite.java.migrate.javax.openJPAToEclipseLink](/recipes/java/migrate/javax/openjpatoeclipselink.md)
   * **Migrate from OpenJPA to EclipseLink JPA**
@@ -3041,6 +3055,9 @@ _505 recipes_
 * [org.openrewrite.java.migrate.jspecify.MoveAnnotationToArrayType](/recipes/java/migrate/jspecify/moveannotationtoarraytype.md)
   * **Move annotation to array type**
   * When an annotation like `@Nullable` is applied to an array type in declaration position, this recipe moves it to the array brackets. For example, `@Nullable byte[]` becomes `byte @Nullable[]`. Best used before `ChangeType` in a migration pipeline, targeting the pre-migration annotation type.
+* [org.openrewrite.java.migrate.jspecify.RemoveAnnotationFromVoidMethod](/recipes/java/migrate/jspecify/removeannotationfromvoidmethod.md)
+  * **Remove annotation from `void` method**
+  * Nullability annotations are meaningless on methods returning `void`, and type-use annotations such as JSpecify's `@Nullable` are not permitted there. This recipe removes such annotations so they are not carried over by a later `ChangeType`.
 * [org.openrewrite.java.migrate.lang.ExplicitRecordImport](/recipes/java/migrate/lang/explicitrecordimport.md)
   * **Add explicit import for `Record` classes**
   * Add explicit import for `Record` classes when upgrading past Java 14+, to avoid conflicts with `java.lang.Record`.
@@ -3049,15 +3066,15 @@ _505 recipes_
   * [JEP 513](https://openjdk.org/jeps/513) allows statements before an explicit `super(..)` or `this(..)` constructor invocation. When such a call computes one of its arguments through a method invocation or object creation, this recipe extracts the non-trivial arguments into local variables declared right before the call, surfacing the work done before construction.  This is a strictly behavior-preserving transformation: argument expressions are already evaluated before the delegate constructor body runs, and such an argument can never reference the instance under construction, so hoisting them into preceding statements changes neither the order of side effects nor the set of legal references. Arguments are extracted in their original left-to-right order, and trivial arguments (literals and local variable references, which have no side effects) are left in place. Statements that follow the constructor invocation are deliberately *not* moved, as reordering them relative to the delegate constructor's side effects could change behavior.
 * [org.openrewrite.java.migrate.lang.FindNonVirtualExecutors](/recipes/java/migrate/lang/findnonvirtualexecutors.md)
   * **Find non-virtual `ExecutorService` creation**
-  * Find all places where static `java.util.concurrent.Executors` method creates a non-virtual `java.util.concurrent.ExecutorService`. This recipe can be used to search fro `ExecutorService` that can be replaced by Virtual Thread executor.
+  * Find all places where static `java.util.concurrent.Executors` method creates a non-virtual `java.util.concurrent.ExecutorService`. This recipe can be used to search for `ExecutorService` that can be replaced by a virtual thread executor.
 * [org.openrewrite.java.migrate.lang.FindThreadStartInConstructor](/recipes/java/migrate/lang/findthreadstartinconstructor.md)
   * **Find `Thread.start()` calls made during construction of a non-final class**
   * Finds `Thread.start()` invocations reached during construction of a non-`final` class — from a constructor body, an instance field initializer, or an instance initializer block. Starting a thread before construction completes lets the new thread observe a partially-initialised object; the problem is compounded when a subclass extends the class, because the superclass constructor starts the thread before the subclass' own fields have been initialised. Move the `start()` call to a separate method callers invoke after construction, or declare the class `final`.
 * [org.openrewrite.java.migrate.lang.FindVirtualThreadOpportunities](/recipes/java/migrate/lang/findvirtualthreadopportunities.md)
-  * **Find Virtual Thread opportunities**
-  * Find opportunities to convert existing code to use Virtual Threads.
+  * **Find virtual thread opportunities**
+  * Find opportunities to convert existing code to use virtual threads.
 * [org.openrewrite.java.migrate.lang.IfElseIfConstructToSwitch](/recipes/java/migrate/lang/ifelseifconstructtoswitch.md)
-  * **If-else-if-else to switch**
+  * **Replace if-else-if-else with switch**
   * Replace if-else-if-else with switch statements. In order to be replaced with a switch, all conditions must be on the same variable and there must be at least three cases.
 * [org.openrewrite.java.migrate.lang.JavaLangAPIs](/recipes/java/migrate/lang/javalangapis.md)
   * **Use modernized `java.lang` APIs**
@@ -3109,7 +3126,7 @@ _505 recipes_
   * Renames single-underscore identifiers to double-underscore in Java source files with source compatibility of Java 8 or below. In Java 9+, `_` is a reserved keyword and causes a compile error.
 * [org.openrewrite.java.migrate.lang.ReplaceUnusedVariablesWithUnderscore](/recipes/java/migrate/lang/replaceunusedvariableswithunderscore.md)
   * **Replace unused variables with underscore**
-  * Replace unused variable declarations with underscore (_) for Java 22+. This includes unused variables in enhanced for loops, catch blocks, and lambda parameters where the variable is never referenced.
+  * Replace unused variable declarations with underscore (`_`) for Java 22+. This includes unused variables in enhanced for loops, catch blocks, and lambda parameters where the variable is never referenced.
 * [org.openrewrite.java.migrate.lang.StringFormatted](/recipes/java/migrate/lang/stringformatted.md)
   * **Prefer `String.formatted(Object...)`**
   * Prefer `String.formatted(Object...)` over `String.format(String, Object...)` in Java 17 or higher.
@@ -3129,7 +3146,7 @@ _505 recipes_
   * **Replace lower and upper case `String` comparisons with `String.equalsIgnoreCase(String)`**
   * Replace `String` equality comparisons involving `.toLowerCase()` or `.toUpperCase()` with `String.equalsIgnoreCase(String anotherString)`.
 * [org.openrewrite.java.migrate.lang.SwitchCaseAssignmentsToSwitchExpression](/recipes/java/migrate/lang/switchcaseassignmentstoswitchexpression.md)
-  * **Convert assigning Switch statements to Switch expressions**
+  * **Convert assigning switch statements to switch expressions**
   * Switch statements for which each case is assigning a value to the same variable can be converted to a switch expression that returns the value of the variable. This recipe is only applicable for Java 21 and later.
 * [org.openrewrite.java.migrate.lang.SwitchCaseEnumGuardToLabel](/recipes/java/migrate/lang/switchcaseenumguardtolabel.md)
   * **Use switch cases labels for enums**
@@ -3142,7 +3159,7 @@ _505 recipes_
   * Convert switch expressions with colon cases and yield statements to arrow syntax. This recipe is only applicable for Java 21 and later.
 * [org.openrewrite.java.migrate.lang.ThreadStopUnsupported](/recipes/java/migrate/lang/threadstopunsupported.md)
   * **Replace `Thread.resume()`, `Thread.stop()`, and `Thread.suspend()` with `throw new UnsupportedOperationException()`**
-  * `Thread.resume()`, `Thread.stop()`, and `Thread.suspend()` always throws a `new UnsupportedOperationException` in Java 21+. This recipe makes that explicit, as the migration is more complicated. See https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/doc-files/threadPrimitiveDeprecation.html .
+  * `Thread.resume()`, `Thread.stop()`, and `Thread.suspend()` always throw an `UnsupportedOperationException` in Java 21+. This recipe makes that explicit, and adds a comment pointing to the [migration guide](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/doc-files/threadPrimitiveDeprecation.html), as the migration is more complicated. On earlier Java versions only the comment is added.
 * [org.openrewrite.java.migrate.lang.UseStringIsEmptyRecipe](/recipes/java/migrate/lang/usestringisemptyrecipe.md)
   * **Replace `0 &lt; s.length()` with `!s.isEmpty()`**
   * Replace `0 &lt; s.length()` and `s.length() != 0` with `!s.isEmpty()`.
@@ -3151,15 +3168,15 @@ _505 recipes_
   * Text blocks are easier to read than concatenated strings.
 * [org.openrewrite.java.migrate.lang.UseVar](/recipes/java/migrate/lang/usevar.md)
   * **Use local variable type inference**
-  * Apply local variable type inference (`var`) for primitives and objects. These recipes can cause unused imports, be advised to run `org.openrewrite.java.RemoveUnusedImports afterwards.
+  * Apply local variable type inference (`var`) for primitives and objects. This can leave imports of the replaced types unused, so remove unused imports afterwards.
 * [org.openrewrite.java.migrate.lang.var.UseVarForConstructors](/recipes/java/migrate/lang/var/usevarforconstructors.md)
   * **Use `var` for constructor call assignments**
   * Replace explicit type declarations with `var` when the variable is initialized with a constructor call of exactly the same type. Does not transform when declared type differs from constructor type (e.g., interface vs implementation).
 * [org.openrewrite.java.migrate.lang.var.UseVarForGenericMethodInvocations](/recipes/java/migrate/lang/var/usevarforgenericmethodinvocations.md)
   * **Apply `var` to generic method invocations**
-  * Apply `var` to variables initialized by invocations of generic methods. This recipe ignores generic factory methods without parameters, because open rewrite cannot handle them correctly ATM.
+  * Apply `var` to variables initialized by invocations of generic methods. Invocations with neither type nor method arguments are left alone, as their type arguments are inferred from the declared type, which `var` would lose.
 * [org.openrewrite.java.migrate.lang.var.UseVarForGenericsConstructors](/recipes/java/migrate/lang/var/usevarforgenericsconstructors.md)
-  * **Apply `var` to Generic Constructors**
+  * **Apply `var` to generic constructors**
   * Apply `var` to generics variables initialized by constructor calls.
 * [org.openrewrite.java.migrate.lang.var.UseVarForObject](/recipes/java/migrate/lang/var/usevarforobject.md)
   * **Use `var` for reference-typed variables**
@@ -3204,7 +3221,7 @@ _505 recipes_
   * **Flag usage of a Lombok feature**
   * Assign `lombok.&lt;featureName&gt;.flagUsage` in every `lombok.config`, so that Lombok fails the build, or warns, where the feature is used. Nested configs are written to as well, as those have the last word on the directories below them.
 * [org.openrewrite.java.migrate.lombok.LombokBestPractices](/recipes/java/migrate/lombok/lombokbestpractices.md)
-  * **Lombok Best Practices**
+  * **Lombok best practices**
   * Applies all recipes that enforce best practices for using Lombok.
 * [org.openrewrite.java.migrate.lombok.LombokOnXToOnX_](/recipes/java/migrate/lombok/lombokonxtoonx_.md)
   * **Migrate Lombok's `@__` syntax to `onX_` for Java 8+**
@@ -3213,8 +3230,8 @@ _505 recipes_
   * **Prefer `final var` over `lombok.val`**
   * Prefer the Java standard library's `final var` and `var` over third-party usage of Lombok's `lombok.val` and `lombok.var` in Java 10 or higher.
 * [org.openrewrite.java.migrate.lombok.LombokValueToRecord](/recipes/java/migrate/lombok/lombokvaluetorecord.md)
-  * **Convert `@lombok.Value` class to Record**
-  * Convert Lombok `@Value` annotated classes to standard Java Records.
+  * **Convert `@lombok.Value` class to record**
+  * Convert Lombok `@Value` annotated classes to standard Java records.
 * [org.openrewrite.java.migrate.lombok.UpdateLombokToJava11](/recipes/java/migrate/lombok/updatelomboktojava11.md)
   * **Migrate Lombok to a Java 11 compatible version**
   * Update Lombok dependency to a version that is compatible with Java 11 and migrate experimental Lombok types that have been promoted.
@@ -3235,22 +3252,22 @@ _505 recipes_
   * Prefer the Lombok `@RequiredArgsConstructor` annotation over explicitly written out constructors that only assign final fields.
 * [org.openrewrite.java.migrate.lombok.log.UseCommonsLog](/recipes/java/migrate/lombok/log/usecommonslog.md)
   * **Use `@CommonsLog` instead of explicit fields**
-  * Prefer the lombok annotation `@CommonsLog` over explicitly written out `org.apache.commons.logging.Log` fields.
+  * Prefer the Lombok annotation `@CommonsLog` over explicitly written out `org.apache.commons.logging.Log` fields.
 * [org.openrewrite.java.migrate.lombok.log.UseJBossLog](/recipes/java/migrate/lombok/log/usejbosslog.md)
   * **Use `@JBossLog` instead of explicit fields**
-  * Prefer the lombok annotation `@JBossLog` over explicitly written out `org.jboss.logging.Logger` fields.
+  * Prefer the Lombok annotation `@JBossLog` over explicitly written out `org.jboss.logging.Logger` fields.
 * [org.openrewrite.java.migrate.lombok.log.UseLog](/recipes/java/migrate/lombok/log/uselog.md)
   * **Use `@Log` instead of explicit fields**
-  * Prefer the lombok annotation `@Log` over explicitly written out `java.util.logging.Logger` fields.
+  * Prefer the Lombok annotation `@Log` over explicitly written out `java.util.logging.Logger` fields.
 * [org.openrewrite.java.migrate.lombok.log.UseLog4j2](/recipes/java/migrate/lombok/log/uselog4j2.md)
   * **Use `@Log4j2` instead of explicit fields**
-  * Prefer the lombok annotation `@Log4j2` over explicitly written out `org.apache.logging.log4j.Logger` fields.
+  * Prefer the Lombok annotation `@Log4j2` over explicitly written out `org.apache.logging.log4j.Logger` fields.
 * [org.openrewrite.java.migrate.lombok.log.UseLombokLogAnnotations](/recipes/java/migrate/lombok/log/uselomboklogannotations.md)
   * **Use Lombok logger annotations instead of explicit fields**
   * Applies all recipes that replace logger declarations with class level annotations.
 * [org.openrewrite.java.migrate.lombok.log.UseSlf4j](/recipes/java/migrate/lombok/log/useslf4j.md)
-  * **Use `@Slf4` instead of explicit fields**
-  * Prefer the lombok annotation `@Slf4` over explicitly written out `org.slf4j.Logger` fields.
+  * **Use `@Slf4j` instead of explicit fields**
+  * Prefer the Lombok annotation `@Slf4j` over explicitly written out `org.slf4j.Logger` fields.
 * [org.openrewrite.java.migrate.maven.UpdateMavenProjectPropertyJavaVersion](/recipes/java/migrate/maven/updatemavenprojectpropertyjavaversion.md)
   * **Update Maven Java project properties**
   * The Java version is determined by several project properties, including:   * `java.version`  * `jdk.version`  * `javaVersion`  * `jdkVersion`  * `maven.compiler.source`  * `maven.compiler.target`  * `maven.compiler.release`  * `release.version`  If none of these properties are in use and the maven compiler plugin is not otherwise configured, adds the `maven.compiler.release` property.
@@ -3268,7 +3285,7 @@ _505 recipes_
   * Use `java.net.HttpURLConnection.HTTP_INTERNAL_ERROR` instead of the deprecated `java.net.HttpURLConnection.HTTP_SERVER_ERROR`.
 * [org.openrewrite.java.migrate.net.MigrateMulticastSocketGetTTLToGetTimeToLive](/recipes/java/migrate/net/migratemulticastsocketgetttltogettimetolive.md)
   * **Use `java.net.MulticastSocket#getTimeToLive()`**
-  * Use `java.net.MulticastSocket#getTimeToLive()` instead of the deprecated `java.net.MulticastSocket#getTTL()` in Java 1.2 or higher.
+  * Use `java.net.MulticastSocket#getTimeToLive()` instead of the deprecated `java.net.MulticastSocket#getTTL()` in Java 1.2 or higher. Where the result is used, it is cast back to `byte`, so that the value and the expression type stay the same.
 * [org.openrewrite.java.migrate.net.MigrateMulticastSocketSetTTLToSetTimeToLive](/recipes/java/migrate/net/migratemulticastsocketsetttltosettimetolive.md)
   * **Use `java.net.MulticastSocket#setTimeToLive(int)`**
   * Use `java.net.MulticastSocket#setTimeToLive(int)` instead of the deprecated `java.net.MulticastSocket#setTTL(byte)` in Java 1.2 or higher.
@@ -3293,6 +3310,9 @@ _505 recipes_
 * [org.openrewrite.java.migrate.search.AboutJavaVersion](/recipes/java/migrate/search/aboutjavaversion.md)
   * **Find which Java version is in use**
   * A diagnostic for studying the distribution of Java language version levels (both source and target compatibility across files and source sets).
+* [org.openrewrite.java.migrate.search.FindCompletableFutureDefaultExecutor](/recipes/java/migrate/search/findcompletablefuturedefaultexecutor.md)
+  * **Find `CompletableFuture` async calls without an `Executor`**
+  * Finds `CompletableFuture` and `CompletionStage` `*Async` calls that don't pass an `Executor`, and `CompletableFuture.delayedExecutor` calls without a base `Executor`. These run on `ForkJoinPool.commonPool()`. Before JDK 25, a common pool with parallelism of 1 or less (e.g. on a 2-CPU host) made `CompletableFuture` fall back to a new thread per task; from JDK 25 that fallback is gone, so blocking work queues behind a single worker thread. Calls that pass `ForkJoinPool.commonPool()` explicitly are also found, because they got the same fallback before JDK 25. Review each call and pass a dedicated `Executor` where the task blocks.
 * [org.openrewrite.java.migrate.search.FindDataUsedOnDto](/recipes/java/migrate/search/finddatausedondto.md)
   * **Find data used on DTOs**
   * Find data elements used on DTOs. This is useful to provide information where data over-fetching may be a problem.
@@ -3300,7 +3320,7 @@ _505 recipes_
   * **Find methods that only use one DTO data element**
   * Find methods that have 'opportunities' for improvement.
 * [org.openrewrite.java.migrate.search.FindInternalJavaxApis](/recipes/java/migrate/search/findinternaljavaxapis.md)
-  * **Find uses of internal javax APIs**
+  * **Find uses of internal `javax` APIs**
   * The libraries that define these APIs will have to be migrated before any of the repositories that use them.
 * [org.openrewrite.java.migrate.search.FindJavaVersion](/recipes/java/migrate/search/findjavaversion.md)
   * **Find Java versions in use**
@@ -3349,10 +3369,10 @@ _505 recipes_
   * Prefer `Set.of(..)` instead of using `Collections.singleton()` in Java 9 or higher. Note that the resulting `Set` is not behaviorally equivalent: `Set.of(..)` throws `NullPointerException` when probed with `contains(null)`, whereas `Collections.singleton(..)` returns `false`.
 * [org.openrewrite.java.migrate.util.MigrateCollectionsUnmodifiableList](/recipes/java/migrate/util/migratecollectionsunmodifiablelist.md)
   * **Prefer `List.of(..)`**
-  * Prefer `List.Of(..)` instead of using `unmodifiableList(java.util.Arrays asList(&lt;args&gt;))` in Java 9 or higher.
+  * Prefer `List.of(..)` instead of using `Collections.unmodifiableList(Arrays.asList(..))` in Java 9 or higher.
 * [org.openrewrite.java.migrate.util.MigrateCollectionsUnmodifiableSet](/recipes/java/migrate/util/migratecollectionsunmodifiableset.md)
   * **Prefer `Set.of(..)`**
-  * Prefer `Set.Of(..)` instead of using `unmodifiableSet(java.util.Set(java.util.Arrays asList(&lt;args&gt;)))` in Java 9 or higher.
+  * Prefer `Set.of(..)` instead of using `Collections.unmodifiableSet(new HashSet&lt;&gt;(Arrays.asList(..)))` in Java 9 or higher.
 * [org.openrewrite.java.migrate.util.MigrateInflaterDeflaterToClose](/recipes/java/migrate/util/migrateinflaterdeflatertoclose.md)
   * **Replace `Inflater` and `Deflater` `end()` calls with `close()`**
   * Replace `end()` method calls with `close()` method calls for `Inflater` and `Deflater` classes in Java 25+, as they now implement AutoCloseable.
@@ -3366,14 +3386,14 @@ _505 recipes_
   * **Prefer `Optional.isEmpty()`**
   * Prefer `Optional.isEmpty()` instead of using `!Optional.isPresent()` in Java 11 or higher.
 * [org.openrewrite.java.migrate.util.OptionalStreamRecipe](/recipes/java/migrate/util/optionalstreamrecipe.md)
-  * **`Stream&lt;Optional&gt;` idiom recipe**
-  * Migrate Java 8 `Optional&lt;Stream&gt;.filter(Optional::isPresent).map(Optional::get)` to Java 11 `.flatMap(Optional::stream)`.
+  * **Replace `filter(Optional::isPresent).map(Optional::get)` with `flatMap(Optional::stream)`**
+  * Replace `Stream&lt;Optional&gt;.filter(Optional::isPresent).map(Optional::get)` with `.flatMap(Optional::stream)` in Java 9 or higher.
 * [org.openrewrite.java.migrate.util.RemoveFinalizerFromZip](/recipes/java/migrate/util/removefinalizerfromzip.md)
-  * **Remove invocations of deprecated invocations from Deflater, Inflater, ZipFile**
-  * Remove invocations of finalize() deprecated invocations from Deflater, Inflater, ZipFile.
+  * **Remove `finalize()` invocations on `Deflater`, `Inflater` and `ZipFile`**
+  * Remove invocations of the deprecated `finalize()` method on `Deflater`, `Inflater` and `ZipFile`.
 * [org.openrewrite.java.migrate.util.ReplaceMathRandomWithThreadLocalRandomRecipe](/recipes/java/migrate/util/replacemathrandomwiththreadlocalrandomrecipe.md)
-  * **Replace `java.lang.Math random()` with `ThreadLocalRandom nextDouble()`**
-  * Replace `java.lang.Math random()` with `ThreadLocalRandom nextDouble()` to reduce contention.
+  * **Replace `Math.random()` with `ThreadLocalRandom.current().nextDouble()`**
+  * Replace `Math.random()` with `ThreadLocalRandom.current().nextDouble()` to reduce contention.
 * [org.openrewrite.java.migrate.util.ReplaceStreamCollectWithToList](/recipes/java/migrate/util/replacestreamcollectwithtolist.md)
   * **Replace `Stream.collect(Collectors.toUnmodifiableList())` with `Stream.toList()`**
   * Replace `Stream.collect(Collectors.toUnmodifiableList())` with Java 16+ `Stream.toList()`. Also replaces `Stream.collect(Collectors.toList())` if `convertToList` is set to `true`.
@@ -3384,8 +3404,8 @@ _505 recipes_
   * **Use `getFirst()` instead of `stream().findFirst().orElseThrow()`**
   * For SequencedCollections, use `collection.getFirst()` instead of `collection.stream().findFirst().orElseThrow()`.
 * [org.openrewrite.java.migrate.util.UseEnumSetOf](/recipes/java/migrate/util/useenumsetof.md)
-  * **Prefer `EnumSet of(..)`**
-  * Prefer `EnumSet of(..)` instead of using `Set of(..)` when the arguments are enums in Java 9 or higher.
+  * **Prefer `EnumSet.of(..)`**
+  * Prefer `EnumSet.of(..)` instead of using `Set.of(..)` when the arguments are enums in Java 9 or higher.
 * [org.openrewrite.java.migrate.util.UseListOf](/recipes/java/migrate/util/uselistof.md)
   * **Prefer `List.of(..)`**
   * Prefer `List.of(..)` in Java 10 or higher. Two input shapes are recognised:  - Anonymous-class initialization (`new ArrayList&lt;&gt;() \{\{ add(&quot;a&quot;); add(&quot;b&quot;); \}\}`), which is replaced wholesale with `List.of(&quot;a&quot;, &quot;b&quot;)` (immutable result, matching the anonymous-class idiom's typical intent). - A `new ArrayList&lt;&gt;()` or `new LinkedHashSet&lt;&gt;()` declaration followed by a chain of `target.add(..)` statements, which is collapsed to `new ArrayList&lt;&gt;(List.of(..))` or `new LinkedHashSet&lt;&gt;(List.of(..))` (preserving both the mutable collection and its iteration order).
@@ -3670,7 +3690,7 @@ _24 recipes_
 
 _License: Moderne Source Available License_
 
-_43 recipes_
+_55 recipes_
 
 * [org.openrewrite.java.jspecify.MigrateFromOpenRewriteAnnotations](/recipes/java/jspecify/migratefromopenrewriteannotations.md)
   * **Migrate from OpenRewrite annotations to JSpecify**
@@ -3684,9 +3704,15 @@ _43 recipes_
 * [org.openrewrite.java.recipes.CorrectlySpacedDescriptions](/recipes/java/recipes/correctlyspaceddescriptions.md)
   * **Correctly spaced descriptions**
   * Recipe descriptions should be cleanly formatted. This recipe forces correct spacing in multiline descriptions. In a multi line description the lines should not start with whitespace and end with a single space except for the last line which should end with a &quot;.&quot; (e.g. ```   return &quot;This is a correct &quot; +    &quot;multi line description&quot;; ``` ).
+* [org.openrewrite.java.recipes.DeclarativeRecipeBestPractices](/recipes/java/recipes/declarativerecipebestpractices.md)
+  * **Declarative recipe best practices**
+  * Best practices for declarative YAML recipe development.
 * [org.openrewrite.java.recipes.DeclarativeSingleton](/recipes/java/recipes/declarativesingleton.md)
   * **Make declarative recipes singletons**
   * Adds the `org.openrewrite.Singleton` precondition to declarative YAML recipes to ensure they only execute once, even when included multiple times.
+* [org.openrewrite.java.recipes.EndDeclarativeRecipeDescriptionsWithPeriod](/recipes/java/recipes/enddeclarativerecipedescriptionswithperiod.md)
+  * **End declarative recipe descriptions with a period**
+  * Append a period to the `description` of declarative YAML recipes, as is expected of recipe descriptions. Descriptions that already end in punctuation, or end in a code fence, table or list of links, are left as is.
 * [org.openrewrite.java.recipes.ExamplesExtractor](/recipes/java/recipes/examplesextractor.md)
   * **Extract documentation examples from tests**
   * Extract the before/after sources from tests annotated with `@DocumentExample`, and generate a YAML file with those examples to be shown in the documentation to show usage.
@@ -3696,6 +3722,9 @@ _43 recipes_
 * [org.openrewrite.java.recipes.FindRecipes](/recipes/java/recipes/findrecipes.md)
   * **Find OpenRewrite recipes**
   * This recipe finds all OpenRewrite recipes, primarily to produce a data table that is being used to experiment with fine-tuning a large language model to produce more recipes.
+* [org.openrewrite.java.recipes.FindSharedVisitorInstances](/recipes/java/recipes/findsharedvisitorinstances.md)
+  * **Find visitor instances shared across `getVisitor()` calls**
+  * Find `static` fields, and instance fields of `Recipe` classes, holding `TreeVisitor` instances. `getVisitor()` is called once per source file and source files may be visited concurrently, so a shared visitor that walks the tree has its cursor, visit count and after-visit list corrupted by concurrent visits. Construct such visitors inside `getVisitor()` instead. Fields holding only visitors which keep no per-visit state, such as `UsesType` combined through `Preconditions.or/and/not`, are not reported.
 * [org.openrewrite.java.recipes.GenerateDeprecatedMethodRecipes](/recipes/java/recipes/generatedeprecatedmethodrecipes.md)
   * **Generate `InlineMethodCalls` recipes for deprecated delegating methods**
   * Finds `@Deprecated` method declarations whose body is a single delegation call to another method in the same class, and generates a declarative YAML recipe file containing `InlineMethodCalls` entries for each.
@@ -3708,6 +3737,12 @@ _43 recipes_
 * [org.openrewrite.java.recipes.JavaRecipeBestPractices](/recipes/java/recipes/javarecipebestpractices.md)
   * **Java Recipe best practices**
   * Best practices for Java recipe development.
+* [org.openrewrite.java.recipes.ListUtilsFilterOverMapToNull](/recipes/java/recipes/listutilsfilterovermaptonull.md)
+  * **Use `ListUtils.filter` instead of mapping elements to `null`**
+  * Replaces `ListUtils.map(list, e -&gt; condition ? null : e)` and the equivalent block lambdas with `ListUtils.filter(list, e -&gt; !condition)`, which states the intent of removing elements directly.
+* [org.openrewrite.java.recipes.LowercaseVersionWildcards](/recipes/java/recipes/lowercaseversionwildcards.md)
+  * **Use a lowercase `x` as version wildcard in declarative recipes**
+  * Replace an uppercase `X` wildcard in the `version` and `newVersion` options of declarative YAML recipes, such as `2.0.X`, with the conventional lowercase `2.0.x`.
 * [org.openrewrite.java.recipes.MissingOptionExample](/recipes/java/recipes/missingoptionexample.md)
   * **Find missing `@Option` `example` values**
   * Find `@Option` annotations that are missing `example` values for documentation, and add a TODO comment.
@@ -3726,6 +3761,12 @@ _43 recipes_
 * [org.openrewrite.java.recipes.RecipeTestingBestPractices](/recipes/java/recipes/recipetestingbestpractices.md)
   * **Recipe testing best practices**
   * Best practices for testing recipes.
+* [org.openrewrite.java.recipes.RemoveConsecutiveDuplicateRecipes](/recipes/java/recipes/removeconsecutiveduplicaterecipes.md)
+  * **Remove consecutive duplicate entries from declarative recipe lists**
+  * Remove an entry from the `recipeList` or `preconditions` of a declarative YAML recipe when it repeats the entry right before it, with the same recipe name and options, as running it twice in a row has no effect. Duplicates further apart are kept, as the recipes in between can produce new matches for the repeated recipe.
+* [org.openrewrite.java.recipes.RemoveEmptyRecipeOptions](/recipes/java/recipes/removeemptyrecipeoptions.md)
+  * **Remove the trailing colon from declarative recipe entries without options**
+  * Remove the trailing colon, or `: \{\}`, from entries in the `recipeList` or `preconditions` of a declarative YAML recipe that configure no options, to list just the recipe name.
 * [org.openrewrite.java.recipes.RemoveImportBeforeAddImport](/recipes/java/recipes/removeimportbeforeaddimport.md)
   * **Reorder `maybeRemoveImport` before `maybeAddImport`**
   * Reorders `maybeAddImport` and `maybeRemoveImport` calls so that imports are removed before new imports are added. This ordering prevents potential conflicts when the import being added and the import being removed resolve to the same simple class name.
@@ -3747,6 +3788,9 @@ _43 recipes_
 * [org.openrewrite.java.recipes.SelectRecipeExamples](/recipes/java/recipes/selectrecipeexamples.md)
   * **Automatically select recipe examples from the unit test cases of a recipe**
   * Add `@DocumentExample` to the first non-issue and not a disabled unit test of a recipe as an example, if there are not any examples yet.
+* [org.openrewrite.java.recipes.SimplifyRecipeSpecCycles](/recipes/java/recipes/simplifyrecipespeccycles.md)
+  * **Remove `RecipeSpec.cycles(int)` calls that restate the default**
+  * Removes a `cycles(int)` call on a `RecipeSpec` whose value equals the number of cycles `rewriteRun` runs without it, which is one more than `expectedCyclesThatMakeChanges(int)` and at least two. A cycle count pinned to the expected count is left alone, since removing it adds the cycle that verifies the recipe settled.
 * [org.openrewrite.java.recipes.SingleDocumentExample](/recipes/java/recipes/singledocumentexample.md)
   * **Single `@DocumentExample` per test class**
   * Ensures there's only one `@DocumentExample` annotated `@Test` method per test class, as that looks best in our documentation. `@ParameterizedTest` methods are not supported.
@@ -3756,6 +3800,12 @@ _43 recipes_
 * [org.openrewrite.java.recipes.SourceSpecTextBlockNewLine](/recipes/java/recipes/sourcespectextblocknewline.md)
   * **New line at the end of `SourceSpecs` text blocks**
   * Text blocks that assert before and after source code should have a new line after it is closed.
+* [org.openrewrite.java.recipes.StaticFinalMatcherFields](/recipes/java/recipes/staticfinalmatcherfields.md)
+  * **Make matcher fields `static final` constants**
+  * Instance fields of recipes and visitors holding a `MethodMatcher`, `AnnotationMatcher` or `TypeMatcher` built only from constants are recreated, and their pattern parsed again, for every instance. Make such `private final` fields `private static final` constants with an upper snake case name.
+* [org.openrewrite.java.recipes.UnconditionalMaybeImport](/recipes/java/recipes/unconditionalmaybeimport.md)
+  * **Drop redundant conditions around `maybeAddImport` and `maybeRemoveImport`**
+  * `maybeAddImport` only adds an import when the type is referenced, and `maybeRemoveImport` only removes one when the type is no longer referenced, so wrapping these calls in an `if` statement is redundant. Unwraps `if` statements without an `else` that contain only such calls, when the condition and arguments have no side effects and the condition does not guard the arguments. Guards comparing trees by identity, such as `if (cu != c)`, are kept, as are calls passing `onlyIfReferenced` as anything other than `true`.
 * [org.openrewrite.java.recipes.UpgradeTestsToJava21](/recipes/java/recipes/upgradeteststojava21.md)
   * **Migrate tests to Java 21**
   * Use Java 21 features in tests.
@@ -3768,6 +3818,9 @@ _43 recipes_
 * [org.openrewrite.java.recipes.UseJavaTemplateStaticApply](/recipes/java/recipes/usejavatemplatestaticapply.md)
   * **Use `JavaTemplate.apply()` static method**
   * Replaces `JavaTemplate.builder(template).build().apply(cursor, coordinates, args...)` with `JavaTemplate.apply(template, cursor, coordinates, args...)` when the builder chain has no intermediate configuration methods.
+* [org.openrewrite.java.recipes.UseMethodMatcherPreconditions](/recipes/java/recipes/usemethodmatcherpreconditions.md)
+  * **Use `UsesMethod` and `DeclaresMethod` preconditions with `MethodMatcher`s**
+  * Pass an existing `static final` `MethodMatcher` field to `UsesMethod` and `DeclaresMethod` instead of repeating its method pattern and `matchOverrides` flag. Also replace `new FindMethods(..).getVisitor()` and `new FindMethodDeclaration(..).getVisitor()` preconditions with `UsesMethod` and `DeclaresMethod`, which only consult the types in use of a source file.
 * [org.openrewrite.java.recipes.UseRewriteTestDefaults](/recipes/java/recipes/userewritetestdefaults.md)
   * **Refactor RewriteTest to use defaults method**
   * When all `rewriteRun` methods in a test class use the same RecipeSpec configuration, refactor to use the `defaults` method instead.
@@ -3795,6 +3848,9 @@ _43 recipes_
 * [org.openrewrite.java.recipes.UseVisitWithParentCursor](/recipes/java/recipes/usevisitwithparentcursor.md)
   * **Use `visit` with parent cursor when calling from another visitor**
   * When calling another visitor from within a visitor, use the generic `visit(tree, ctx, getCursor().getParentTreeCursor())` method instead of a specific `visit*` method like `visitMethodInvocation`. The specific visit methods bypass the visitor lifecycle, including cursor setup, pre/post visit hooks, and observer notifications.
+* [org.openrewrite.java.recipes.UseVisitorReduce](/recipes/java/recipes/usevisitorreduce.md)
+  * **Use `TreeVisitor#reduce` instead of a captured accumulator**
+  * Replaces an accumulator that is declared, passed to `TreeVisitor#visit` and only read afterwards with a call to `TreeVisitor#reduce`, which returns the accumulator it was given. When the accumulator is read only once, right after the visit, the `reduce` call is inlined at that read.
 * [org.openrewrite.recipes.rewrite.InlineMethods](/recipes/recipes/rewrite/inlinemethods.md)
   * **Inline calls to deprecated OpenRewrite methods**
   * Inline calls to deprecated OpenRewrite methods that delegate to their replacement, composing the `InlineDeprecatedMethods` recipes that individual recipe modules generate and publish themselves.
@@ -3830,7 +3886,7 @@ _341 recipes_
   * **Migrate to Flyway 10**
   * Migrate to Flyway 10. See details at [Flyway V10 has landed](https://documentation.red-gate.com/fd/flyway-v10-has-landed-222627771.html).
 * [org.openrewrite.java.spring.AddSpringProperty](/recipes/java/spring/addspringproperty.md)
-  * **Add a spring configuration property**
+  * **Add a Spring configuration property**
   * Add a spring configuration property to a configuration file if it does not already exist in that file.
 * [org.openrewrite.java.spring.ChangeMethodParameter](/recipes/java/spring/changemethodparameter.md)
   * **Change parameter type for a method declaration**
@@ -3839,7 +3895,7 @@ _341 recipes_
   * **Change the key of a Spring application property**
   * Change Spring application property keys existing in either Properties or YAML files, and in `@Value`, `@ConditionalOnProperty` or `@SpringBootTest` annotations.
 * [org.openrewrite.java.spring.ChangeSpringPropertyValue](/recipes/java/spring/changespringpropertyvalue.md)
-  * **Change the value of a spring application property**
+  * **Change the value of a Spring application property**
   * Change Spring application property values existing in either Properties or YAML files, and in `@Value`, `@ConditionalOnProperty`, `@SpringBootTest`, or `@TestPropertySource` annotations.
 * [org.openrewrite.java.spring.CommentOutSpringPropertyKey](/recipes/java/spring/commentoutspringpropertykey.md)
   * **Comment out Spring properties**
@@ -3848,7 +3904,7 @@ _341 recipes_
   * **Convert auto-configuration `exclude` to `excludeName`**
   * Rewrite a class literal in the `exclude` attribute of `@SpringBootApplication` or `@EnableAutoConfiguration` to a string literal in the `excludeName` attribute. Useful when the excluded auto-configuration is not on the compile classpath (for example because it became package-private in a newer version of its library). If the target was the last entry in `exclude`, that attribute is removed. If `excludeName` already contains the value, no duplicate is added.
 * [org.openrewrite.java.spring.DeleteSpringProperty](/recipes/java/spring/deletespringproperty.md)
-  * **Delete a spring configuration property**
+  * **Delete a Spring configuration property**
   * Delete a spring configuration property from any configuration file that contains a matching key.
 * [org.openrewrite.java.spring.ExpandProperties](/recipes/java/spring/expandproperties.md)
   * **Expand Spring YAML properties**
@@ -3858,7 +3914,7 @@ _341 recipes_
   * Removes implicit web annotation names.
 * [org.openrewrite.java.spring.MarkAdditionalSpringConfigFiles](/recipes/java/spring/markadditionalspringconfigfiles.md)
   * **Mark additional files as Spring configuration**
-  * Attach a `SpringConfigFile` marker to YAML/properties files matching the provided glob patterns so that Spring property recipes such as `ChangeSpringPropertyKey`, `DeleteSpringProperty`, `ChangeSpringPropertyValue`, and `CommentOutSpringPropertyKey` will visit files that live outside standard resource source sets. Files that already pass the `SourceSet`-based check are skipped to avoid redundant markers.
+  * Deprecated, and makes no changes. Spring property recipes such as `ChangeSpringPropertyKey`, `DeleteSpringProperty`, `ChangeSpringPropertyValue`, and `CommentOutSpringPropertyKey` now discover the Spring configuration files outside source sets themselves.
 * [org.openrewrite.java.spring.NoAutowiredOnConstructor](/recipes/java/spring/noautowiredonconstructor.md)
   * **Remove the `@Autowired` annotation on inferred constructor**
   * Spring can infer an autowired constructor when there is a single constructor on the bean. This recipe removes unneeded `@Autowired` annotations on constructors.
@@ -3873,7 +3929,7 @@ _341 recipes_
   * Replace method declaration `@RequestMapping` annotations with `@GetMapping`, `@PostMapping`, etc. when possible.
 * [org.openrewrite.java.spring.PropertiesToKebabCase](/recipes/java/spring/propertiestokebabcase.md)
   * **Normalize Spring properties to kebab-case**
-  * Normalize Spring properties to use lowercase and hyphen-separated syntax.  For example, changing `spring.main.showBanner` to `spring.main.show-banner`.  With [Spring's relaxed binding](https://docs.spring.io/spring-boot/docs/2.5.6/reference/html/features.html#features.external-config.typesafe-configuration-properties.relaxed-binding),  `kebab-case` may be used in properties files and still be converted to configuration beans.  Note, an exception to this is the case of `@Value`, which is match-sensitive. For example, `@Value(&quot;$\{anExampleValue\}&quot;)` will not match `an-example-value`.  [The Spring reference documentation recommends using `kebab-case` for properties where possible](https://docs.spring.io/spring-boot/docs/2.5.6/reference/html/features.html#features.external-config.typesafe-configuration-properties.relaxed-binding).
+  * Normalize Spring properties to use lowercase and hyphen-separated syntax.  For example, changing `spring.main.showBanner` to `spring.main.show-banner`.  With [Spring's relaxed binding](https://docs.spring.io/spring-boot/docs/2.5.6/reference/html/features.html#features.external-config.typesafe-configuration-properties.relaxed-binding),  `kebab-case` may be used in properties files and still be converted to configuration beans.  Note, an exception to this is the case of `@Value`, which is match-sensitive. For example, `@Value(&quot;$\{anExampleValue\}&quot;)` will not match `an-example-value`.  Keys that name something rather than a Spring property, such as logger names, JDBC driver properties or OAuth2 client registration ids, are left unchanged.  [The Spring reference documentation recommends using `kebab-case` for properties where possible](https://docs.spring.io/spring-boot/docs/2.5.6/reference/html/features.html#features.external-config.typesafe-configuration-properties.relaxed-binding).
 * [org.openrewrite.java.spring.PropertiesToKebabCaseProperties](/recipes/java/spring/propertiestokebabcaseproperties.md)
   * **Normalize Spring `application*.properties` properties to kebab-case**
   * Normalize Spring `application*.properties` properties to kebab-case.
@@ -3905,14 +3961,14 @@ _341 recipes_
   * **Convert receive type in some invocation of StepExecution.xx()**
   * Convert receive type in some invocation of StepExecution.xx().
 * [org.openrewrite.java.spring.batch.JobParameterToString](/recipes/java/spring/batch/jobparametertostring.md)
-  * **Migration invocation of JobParameter.toString to JobParameter.getValue.toString**
-  * JobParameter.toString() logic is quite different in spring batch 5, need take JobParameter.getValue.toString replace the JobParameter.toString.
+  * **Migrate `JobParameter.toString()` to `JobParameter.getValue().toString()`**
+  * The `JobParameter.toString()` output changed in Spring Batch 5, so replace it with `JobParameter.getValue().toString()`.
 * [org.openrewrite.java.spring.batch.ListenerSupportClassToInterface](/recipes/java/spring/batch/listenersupportclasstointerface.md)
   * **Transform classes that extend `*ListenerSupport` to implement the `*Listener` interfaces instead**
   * As of 5.0 `*Listener` interfaces default methods (made possible by a Java 8 baseline) can be implemented directly without the need for the adapter.
 * [org.openrewrite.java.spring.batch.MigrateItemWriterWrite](/recipes/java/spring/batch/migrateitemwriterwrite.md)
   * **Migrate `ItemWriter`**
-  * In `ItemWriter` the signature of the `write()` method has changed in spring-batch 5.x.
+  * In `ItemWriter` the signature of the `write()` method has changed in Spring Batch 5.x.
 * [org.openrewrite.java.spring.batch.MigrateJobBuilderFactory](/recipes/java/spring/batch/migratejobbuilderfactory.md)
   * **Migrate `JobBuilderFactory` to `JobBuilder`**
   * `JobBuilderFactory` was deprecated in spring-batch 5.x. It is replaced by `JobBuilder`.
@@ -3930,13 +3986,13 @@ _341 recipes_
   * In Spring Batch 5.0, `StepExecution` and `JobExecution` timestamp methods (`getStartTime()`, `getEndTime()`, `getCreateTime()`, `getLastUpdated()`) return `java.time.LocalDateTime` instead of `java.util.Date`. This recipe updates variable declarations accordingly.
 * [org.openrewrite.java.spring.batch.MigrateToChunkOrientedStepBuilder](/recipes/java/spring/batch/migratetochunkorientedstepbuilder.md)
   * **Migrate to the new chunk-oriented step model**
-  * Spring Batch 6.0 deprecates `StepBuilder.chunk(int, PlatformTransactionManager)` in favor of a new chunk-oriented model, where the transaction manager is configured through `ChunkOrientedStepBuilder.transactionManager(PlatformTransactionManager)`. Replaces `chunk(chunkSize, transactionManager)` with `chunk(chunkSize).transactionManager(transactionManager)`, but only where every other method in the builder chain has an equivalent on `ChunkOrientedStepBuilder`. The new model dropped the Spring Retry based chunk and retry APIs without a drop-in replacement, so chains calling `backOffPolicy`, `retryPolicy`, `retryContextCache`, `keyGenerator`, `noRetry`, `noRollback`, `noSkip`, `processorNonTransactional`, `readerIsTransactionalQueue`, `chunkOperations`, `stepOperations`, `exceptionHandler`, `listener(RetryListener)`, `chunk(CompletionPolicy, PlatformTransactionManager)` or `taskExecutor(TaskExecutor)` with a non-async executor are left untouched, and remain a manual migration step. See the [Spring Batch 6.0 migration guide](https://github.com/spring-projects/spring-batch/wiki/Spring-Batch-6.0-Migration-Guide#new-chunk-oriented-model-implementation).
+  * Spring Batch 6.0 deprecates `StepBuilder.chunk(int, PlatformTransactionManager)` in favor of a new chunk-oriented model. Replaces `chunk(chunkSize, transactionManager)` with `chunk(chunkSize).transactionManager(transactionManager)` when every other call in the builder chain has a counterpart on `ChunkOrientedStepBuilder`. A `retryLimit(..)` and the `retry(..)` calls in its chain become one `retryPolicy(RetryPolicy)` that keeps the number of attempts and has no delay, because the new model counts `retryLimit` as retries rather than attempts and, by default, waits one second between them. A `retryLimit(..)` without any `retry(..)` is removed, as the new model would otherwise retry every exception. Unlike Spring Retry, the new policy also retries when a *cause* of the thrown exception matches. Chains with advanced Spring Retry configuration are left untouched and remain a manual migration step: `retryPolicy`, `backOffPolicy`, `retryContextCache`, `keyGenerator`, `noRetry` and `listener(RetryListener)`. The same applies to other APIs the new model dropped: `listener(Object)`, `noRollback`, `noSkip`, `processorNonTransactional`, `readerIsTransactionalQueue`, `chunkOperations`, `stepOperations`, `exceptionHandler`, `chunk(CompletionPolicy, PlatformTransactionManager)` and `taskExecutor(TaskExecutor)` with a non-async executor. See the [Spring Batch 6.0 migration guide](https://github.com/spring-projects/spring-batch/wiki/Spring-Batch-6.0-Migration-Guide#new-chunk-oriented-model-implementation).
 * [org.openrewrite.java.spring.batch.RemoveDefaultBatchConfigurer](/recipes/java/spring/batch/removedefaultbatchconfigurer.md)
   * **Remove `DefaultBatchConfigurer`**
   * Remove `extends DefaultBatchConfigurer` and `@Override` from associated methods.
 * [org.openrewrite.java.spring.batch.ReplaceSupportClassWithItsInterface](/recipes/java/spring/batch/replacesupportclasswithitsinterface.md)
-  * **Transform classes that extend a given Class to implement the given Interface instead**
-  * As of spring-batch 5.x Listeners has default methods (made possible by a Java 8 baseline) and can be implemented directly without the need for this adapter.
+  * **Transform classes that extend a given class to implement the given interface instead**
+  * As of Spring Batch 5.x listeners have default methods (made possible by a Java 8 baseline) and can be implemented directly without the need for this adapter.
 * [org.openrewrite.java.spring.batch.SpringBatch4To5Migration](/recipes/java/spring/batch/springbatch4to5migration.md)
   * **Migrate to Spring Batch 5.0 from 4.3**
   * Migrate applications built on Spring Batch 4.3 to the latest Spring Batch 5.0 release.
@@ -3951,7 +4007,7 @@ _341 recipes_
   * Class having `@Bean` annotation over any methods but missing `@Configuration` annotation over the declaring class would have `@Configuration` annotation added. Classes referenced as scoped configuration via `.class` (e.g. `@FeignClient(configuration = X.class)`) are skipped to preserve their intended per-client scope.
 * [org.openrewrite.java.spring.boot2.AddSpringBootStarterValidation](/recipes/java/spring/boot2/addspringbootstartervalidation.md)
   * **Add `spring-boot-starter-validation` if needed**
-  * Add `spring-boot-starter-validation` when validation constraints are used, unless the project already declares an explicit validation API dependency.
+  * Add `spring-boot-starter-validation` when validation constraints are used, unless the project already declares `jakarta.validation-api` or `hibernate-validator` directly.
 * [org.openrewrite.java.spring.boot2.ChangeEmbeddedServletContainerCustomizer](/recipes/java/spring/boot2/changeembeddedservletcontainercustomizer.md)
   * **Adjust configuration classes to use the `WebServerFactoryCustomizer` interface**
   * Find any classes implementing `EmbeddedServletContainerCustomizer` and change the interface to `WebServerFactoryCustomizer&lt;ConfigurableServletWebServerFactory&gt;`.
@@ -3962,10 +4018,10 @@ _341 recipes_
   * **Migrate multi-condition `@ConditionalOnBean` annotations from Boot 1.x**
   * Migrate multi-condition `@ConditionalOnBean` annotations to use `AnyNestedCondition` when upgrading from Spring Boot 1.x to 2.x. In Boot 1.x, listing multiple beans in `@ConditionalOnBean` meant OR (any match); in Boot 2.x+ it means AND (all must match). This recipe preserves the original OR semantics by wrapping conditions in an `AnyNestedCondition` class.
 * [org.openrewrite.java.spring.boot2.DatabaseComponentAndBeanInitializationOrdering](/recipes/java/spring/boot2/databasecomponentandbeaninitializationordering.md)
-  * **Adds `@DependsOnDatabaseInitialization` to Spring Beans and Components depending on `javax.sql.DataSource`**
+  * **Add `@DependsOnDatabaseInitialization` to Spring beans and components depending on `javax.sql.DataSource`**
   * Beans of certain well-known types, such as `JdbcTemplate`, will be ordered so that they are initialized after the database has been initialized. If you have a bean that works with the `DataSource` directly, annotate its class or `@Bean` method with `@DependsOnDatabaseInitialization` to ensure that it too is initialized after the database has been initialized. See the [release notes](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.5-Release-Notes#initialization-ordering) for more.
 * [org.openrewrite.java.spring.boot2.DatabaseComponentAndBeanInitializationOrderingUnconditionally](/recipes/java/spring/boot2/databasecomponentandbeaninitializationorderingunconditionally.md)
-  * **Unconditionally adds `@DependsOnDatabaseInitialization` to Spring Beans and Components depending on `javax.sql.DataSource`**
+  * **Unconditionally add `@DependsOnDatabaseInitialization` to Spring beans and components depending on `javax.sql.DataSource`**
   * Beans of certain well-known types, such as `JdbcTemplate`, will be ordered so that they are initialized after the database has been initialized. If you have a bean that works with the `DataSource` directly, annotate its class or `@Bean` method with `@DependsOnDatabaseInitialization` to ensure that it too is initialized after the database has been initialized. See the [release notes](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.5-Release-Notes#initialization-ordering) for more. This recipe will not check if the `@DependsOnDatabaseInitialization` annotation is on the classpath. This recipe is best combined with a precondition, as seen in `DatabaseComponentAndBeanInitializationOrdering`.
 * [org.openrewrite.java.spring.boot2.GetErrorAttributes](/recipes/java/spring/boot2/geterrorattributes.md)
   * **Use `ErrorAttributes#getErrorAttributes(WebRequest, ErrorAttributeOptions)`**
@@ -4008,7 +4064,7 @@ _341 recipes_
   * Migrate null credentials.
 * [org.openrewrite.java.spring.boot2.MigrateDiskSpaceHealthIndicatorConstructor](/recipes/java/spring/boot2/migratediskspacehealthindicatorconstructor.md)
   * **Use `DiskSpaceHealthIndicator(File, DataSize)`**
-  * `DiskSpaceHealthIndicator(File, long)` was deprecated in Spring Data 2.1 for removal in 2.2.
+  * `DiskSpaceHealthIndicator(File, long)` was deprecated in Spring Boot 2.1 for removal in 2.2.
 * [org.openrewrite.java.spring.boot2.MigrateErrorControllerPackageName](/recipes/java/spring/boot2/migrateerrorcontrollerpackagename.md)
   * **Use `org.springframework.boot.web.servlet.error.ErrorController`**
   * Use `org.springframework.boot.web.servlet.error.ErrorController` instead of the deprecated `org.springframework.boot.autoconfigure.web.ErrorController` in Spring Boot 2.0 or higher.
@@ -4019,14 +4075,14 @@ _341 recipes_
   * **Use `javax.validation.constraints`**
   * Use `javax.validation.constraints` instead of the deprecated `org.hibernate.validator.constraints` in Spring Boot 2.0 or higher.
 * [org.openrewrite.java.spring.boot2.MigrateHsqlEmbeddedDatabaseConnection](/recipes/java/spring/boot2/migratehsqlembeddeddatabaseconnection.md)
-  * **Migrate deprecated Spring-Boot `EmbeddedDatabaseConnection.HSQL`**
-  * Spring-Boot `EmbeddedDatabaseConnection.HSQL` was deprecated in favor of `EmbeddedDatabaseConnection.HSQLDB` in 2.4.
+  * **Migrate deprecated Spring Boot `EmbeddedDatabaseConnection.HSQL`**
+  * Spring Boot `EmbeddedDatabaseConnection.HSQL` was deprecated in favor of `EmbeddedDatabaseConnection.HSQLDB` in 2.4.
 * [org.openrewrite.java.spring.boot2.MigrateHttpMessageConvertersPackageName](/recipes/java/spring/boot2/migratehttpmessageconverterspackagename.md)
   * **Use `org.springframework.boot.autoconfigure.http.HttpMessageConverters`**
   * Use `org.springframework.boot.autoconfigure.http.HttpMessageConverters` instead of the deprecated `org.springframework.boot.autoconfigure.web.HttpMessageConverters` in Spring Boot 2.0 or higher.
 * [org.openrewrite.java.spring.boot2.MigrateLocalServerPortAnnotation](/recipes/java/spring/boot2/migratelocalserverportannotation.md)
   * **Use `org.springframework.boot.web.server.LocalServerPort`**
-  * Updates the package and adds the necessary dependency if `LocalServerPort` is in use. The package of `LocalServerPort` was changed in Spring Boot 2.0, necessitating changes.
+  * Updates the package of `LocalServerPort`, which changed in Spring Boot 2.0.
 * [org.openrewrite.java.spring.boot2.MigrateLoggingSystemPropertyConstants](/recipes/java/spring/boot2/migrateloggingsystempropertyconstants.md)
   * **Migrate to recommended constants in `LogbackLoggingSystemProperties` from deprecated values in `LoggingSystemProperties`**
   * Replaces field and static access of deprecated fields in `LoggingSystemProperties` with the recommendations from `LogbackLoggingSystemProperties`. Deprecated in 2.4.x and removed in 2.6.0.
@@ -4073,8 +4129,8 @@ _341 recipes_
   * **Replace `EnvironmentTestUtils` with `TestPropertyValues`**
   * Replaces any references to the deprecated `EnvironmentTestUtils` with `TestPropertyValues` and the appropriate functionality.
 * [org.openrewrite.java.spring.boot2.ReplaceExtendWithAndContextConfiguration](/recipes/java/spring/boot2/replaceextendwithandcontextconfiguration.md)
-  * **Replace `@ExtendWith` and `@ContextConfiguration` with `@SpringJunitConfig`**
-  * Replaces `@ExtendWith(SpringRunner.class)` and `@ContextConfiguration` with `@SpringJunitConfig`, preserving attributes on `@ContextConfiguration`, unless `@ContextConfiguration(loader = ...)` is used.
+  * **Replace `@ExtendWith` and `@ContextConfiguration` with `@SpringJUnitConfig`**
+  * Replaces `@ExtendWith(SpringRunner.class)` and `@ContextConfiguration` with `@SpringJUnitConfig`, preserving attributes on `@ContextConfiguration`, unless `@ContextConfiguration(loader = ...)` is used.
 * [org.openrewrite.java.spring.boot2.RestTemplateBuilderRequestFactory](/recipes/java/spring/boot2/resttemplatebuilderrequestfactory.md)
   * **Migrate `RestTemplateBuilder`**
   * Migrate `RestTemplateBuilder#requestFactory` calls to use a `Supplier`. See the [migration guide](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.0-Migration-Guide#resttemplatebuilder) for more.
@@ -4118,8 +4174,8 @@ _341 recipes_
   * **Migrate Spring Boot properties to 2.7**
   * Migrate properties found in `application.properties` and `application.yml`.
 * [org.openrewrite.java.spring.boot2.UnnecessarySpringExtension](/recipes/java/spring/boot2/unnecessaryspringextension.md)
-  * **Remove `@SpringExtension`**
-  * `@SpringBootTest` and all test slice annotations already applies `@SpringExtension` as of Spring Boot 2.1.0.
+  * **Remove redundant `@ExtendWith(SpringExtension.class)`**
+  * `@SpringBootTest` and all test slice annotations already apply `@ExtendWith(SpringExtension.class)` as of Spring Boot 2.1.0.
 * [org.openrewrite.java.spring.boot2.UnnecessarySpringRunWith](/recipes/java/spring/boot2/unnecessaryspringrunwith.md)
   * **Remove unnecessary Spring `@RunWith`**
   * Remove `@RunWith` annotations on Spring tests.
@@ -4153,12 +4209,12 @@ _341 recipes_
 * [org.openrewrite.java.spring.boot2.search.CustomizingJooqDefaultConfiguration](/recipes/java/spring/boot2/search/customizingjooqdefaultconfiguration.md)
   * **In Spring Boot 2.5 a `DefaultConfigurationCustomizer` can now be used in favour of defining one or more `*Provider` beans**
   * To streamline the customization of jOOQ’s `DefaultConfiguration`, a bean that implements `DefaultConfigurationCustomizer` can now be defined. This customizer callback should be used in favour of defining one or more `*Provider` beans, the support for which has now been deprecated. See [Spring Boot 2.5 jOOQ customization](https://docs.spring.io/spring-boot/docs/2.5.x/reference/htmlsingle/#features.sql.jooq.customizing).
+* [org.openrewrite.java.spring.boot2.search.FindIntegrationSchedulerPool](/recipes/java/spring/boot2/search/findintegrationschedulerpool.md)
+  * **Integration scheduler pool size**
+  * Spring Integration now reuses an available `TaskScheduler` rather than configuring its own. In a typical application setup relying on the auto-configuration, this means that Spring Integration uses the auto-configured task scheduler that has a pool size of 1. To restore Spring Integration’s default of 10 threads, use the `spring.task.scheduling.pool.size` property.
 * [org.openrewrite.java.spring.boot2.search.FindUpgradeRequirementsSpringBoot_2_5](/recipes/java/spring/boot2/search/findupgraderequirementsspringboot_2_5.md)
   * **Find patterns that require updating for Spring Boot 2.5**
   * Looks for a series of patterns that have not yet had auto-remediation recipes developed for.
-* [org.openrewrite.java.spring.boot2.search.IntegrationSchedulerPoolRecipe](/recipes/java/spring/boot2/search/integrationschedulerpoolrecipe.md)
-  * **Integration scheduler pool size**
-  * Spring Integration now reuses an available `TaskScheduler` rather than configuring its own. In a typical application setup relying on the auto-configuration, this means that Spring Integration uses the auto-configured task scheduler that has a pool size of 1. To restore Spring Integration’s default of 10 threads, use the `spring.task.scheduling.pool.size` property.
 * [org.openrewrite.java.spring.boot2.search.LoggingShutdownHooks](/recipes/java/spring/boot2/search/loggingshutdownhooks.md)
   * **Applications using logging shutdown hooks**
   * Spring Boot registers a logging shutdown hook by default for JAR-based applications to ensure that logging resources are released when the JVM exits. If your application is deployed as a WAR then the shutdown hook is not registered since the servlet container usually handles logging concerns.   Most applications will want the shutdown hook. However, if your application has complex context hierarchies, then you may need to disable it. You can use the `logging.register-shutdown-hook` property to do that.
@@ -4187,13 +4243,13 @@ _341 recipes_
   * **Downgrade Jakarta Servlet API to 5.0 when using Jetty**
   * Jetty does not yet support Servlet 6.0. This recipe will detect the presence of the `spring-boot-starter-jetty` as a first-order dependency and will add the maven property `jakarta-servlet.version` setting it's value to `5.0.0`. This will downgrade the `jakarta-servlet` artifact if the pom's parent extends from the spring-boot-parent.
 * [org.openrewrite.java.spring.boot3.EnableVirtualThreads](/recipes/java/spring/boot3/enablevirtualthreads.md)
-  * **Enable Virtual Threads on Java 21**
+  * **Enable virtual threads on Java 21**
   * Set `spring.threads.virtual.enabled` to `true` in `application.properties` or `application.yml`.
 * [org.openrewrite.java.spring.boot3.MaintainTrailingSlashURLMappings](/recipes/java/spring/boot3/maintaintrailingslashurlmappings.md)
   * **Maintain trailing slash URL mappings**
   * This is part of Spring MVC and WebFlux URL Matching Changes, as of Spring Framework 6.0, the trailing slash matching configuration option has been deprecated and its default value set to false. This means that previously, a controller `@GetMapping(&quot;/some/greeting&quot;)` would match both `GET /some/greeting` and `GET /some/greeting/`, but it doesn't match `GET /some/greeting/` anymore by default and will result in an HTTP 404 error. This recipe is to maintain trailing slash in all HTTP url mappings.
 * [org.openrewrite.java.spring.boot3.MigrateDropWizardDependencies](/recipes/java/spring/boot3/migratedropwizarddependencies.md)
-  * **Migrate dropWizard dependencies to Spring Boot 3.x**
+  * **Migrate Dropwizard dependencies to Spring Boot 3.x**
   * Migrate dropWizard dependencies to the new artifactId, since these are changed with Spring Boot 3.
 * [org.openrewrite.java.spring.boot3.MigrateHooksToReactorContextProperty](/recipes/java/spring/boot3/migratehookstoreactorcontextproperty.md)
   * **Use `spring.reactor.context-propagation` property**
@@ -4202,10 +4258,10 @@ _341 recipes_
   * **Rename `server.max-http-header-size` to `server.max-http-request-header-size`**
   * Previously, the server.max-http-header-size was treated inconsistently across the four supported embedded web servers. When using Jetty, Netty, or Undertow it would configure the max HTTP request header size. When using Tomcat it would configure the max HTTP request and response header sizes. The renamed property is used to configure the http request header size in Spring Boot 3.0. **To limit the max header size of an HTTP response on Tomcat or Jetty (the only two servers that support such a setting), use a `WebServerFactoryCustomizer`**.
 * [org.openrewrite.java.spring.boot3.MigrateSapCfJavaLoggingSupport](/recipes/java/spring/boot3/migratesapcfjavaloggingsupport.md)
-  * **Migrate SAP cloud foundry logging support to Spring Boot 3.x**
+  * **Migrate SAP Cloud Foundry logging support to Spring Boot 3.x**
   * Migrate SAP cloud foundry logging support from `cf-java-logging-support-servlet` to `cf-java-logging-support-servlet-jakarta`, to use Jakarta with Spring Boot 3.
 * [org.openrewrite.java.spring.boot3.MigrateThymeleafDependencies](/recipes/java/spring/boot3/migratethymeleafdependencies.md)
-  * **Migrate thymeleaf dependencies to Spring Boot 3.x**
+  * **Migrate Thymeleaf dependencies to Spring Boot 3.x**
   * Migrate thymeleaf dependencies to the new artifactId, since these are changed with Spring Boot 3.
 * [org.openrewrite.java.spring.boot3.MigrateWebMvcTagsToObservationConvention](/recipes/java/spring/boot3/migratewebmvctagstoobservationconvention.md)
   * **Migrate `WebMvcTagsProvider` to `DefaultServerRequestObservationConvention`**
@@ -4214,14 +4270,14 @@ _341 recipes_
   * **Bean methods should return concrete types**
   * Replace Bean method return types with concrete types being returned. This is required for Spring 6 AOT.
 * [org.openrewrite.java.spring.boot3.RelocateLauncherClasses](/recipes/java/spring/boot3/relocatelauncherclasses.md)
-  * **Relocate Launcher Classes**
+  * **Relocate launcher classes**
   * Relocate classes that have been moved to different packages in Spring Boot 3.2.
 * [org.openrewrite.java.spring.boot3.RemoveConstructorBindingAnnotation](/recipes/java/spring/boot3/removeconstructorbindingannotation.md)
   * **Remove Unnecessary `@ConstructorBinding`**
   * As of Boot 3.0 `@ConstructorBinding` is no longer needed at the type level on `@ConfigurationProperties` classes and should be removed.
 * [org.openrewrite.java.spring.boot3.RemoveEnableBatchProcessing](/recipes/java/spring/boot3/removeenablebatchprocessing.md)
-  * **Enable Spring Batch Annotation**
-  * Add or remove the `@EnableBatchProcessing` annotation from a Spring Boot application.
+  * **Remove `@EnableBatchProcessing` from Spring Boot applications**
+  * Remove `@EnableBatchProcessing` from classes annotated with `@SpringBootApplication`, as in Spring Boot 3 it makes the batch auto-configuration back off. An annotation with attributes is kept, so its configuration is not lost.
 * [org.openrewrite.java.spring.boot3.RemoveSolrAutoConfigurationExclude](/recipes/java/spring/boot3/removesolrautoconfigurationexclude.md)
   * **Remove `SolrAutoConfiguration`**
   * `SolrAutoConfiguration` was removed in Spring Boot 3; remove references to it from exclusions on annotations.
@@ -4259,13 +4315,13 @@ _341 recipes_
   * **Migrate Spring Boot properties to 3.4 (Community Edition)**
   * Migrate properties found in `application.properties` and `application.yml`.
 * [org.openrewrite.java.spring.boot3.SpringBootProperties_3_4_EnabledToAccess](/recipes/java/spring/boot3/springbootproperties_3_4_enabledtoaccess.md)
-  * **Migrate Enabled to Access Spring Boot Properties**
+  * **Migrate `enabled` to `access` Spring Boot properties**
   * Migrate properties found in `application.properties` and `application.yml`, specifically converting 'enabled' to 'access'.
 * [org.openrewrite.java.spring.boot3.SpringBootProperties_3_5](/recipes/java/spring/boot3/springbootproperties_3_5.md)
   * **Migrate Spring Boot properties to 3.5**
   * Migrate properties found in `application.properties` and `application.yml`.
 * [org.openrewrite.java.spring.boot3.UpdatePrometheusPushgateway](/recipes/java/spring/boot3/updateprometheuspushgateway.md)
-  * **Update Prometheus Pushgateway Dependency Coordinates**
+  * **Update Prometheus Pushgateway dependency coordinates**
   * Update the Prometheus Pushgateway artifact ID for Spring Boot 3.5 compatibility.
 * [org.openrewrite.java.spring.boot3.UpgradeMyBatisToSpringBoot_2_0](/recipes/java/spring/boot3/upgrademybatistospringboot_2_0.md)
   * **Upgrade MyBatis to Spring Boot 2.0**
@@ -4299,16 +4355,16 @@ _341 recipes_
   * Upgrade MyBatis Spring modules to a version corresponding to Spring Boot 3.2.
 * [org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_0](/recipes/java/spring/boot3/upgradespringboot_3_0-community-edition.md)
   * **Migrate to Spring Boot 3.0 (Community Edition)**
-  * Migrate applications to the latest Spring Boot 3.0 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 2.7.
+  * Migrate applications to the latest Spring Boot 3.0 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 3.0.
 * [org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_1](/recipes/java/spring/boot3/upgradespringboot_3_1.md)
   * **Migrate to Spring Boot 3.1**
-  * Migrate applications to the latest Spring Boot 3.1 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 3.0.
+  * Migrate applications to the latest Spring Boot 3.1 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 3.1.
 * [org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_2](/recipes/java/spring/boot3/upgradespringboot_3_2.md)
   * **Migrate to Spring Boot 3.2**
-  * Migrate applications to the latest Spring Boot 3.2 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 3.1.
+  * Migrate applications to the latest Spring Boot 3.2 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 3.2.
 * [org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_3](/recipes/java/spring/boot3/upgradespringboot_3_3.md)
   * **Migrate to Spring Boot 3.3**
-  * Migrate applications to the latest Spring Boot 3.3 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 3.2.
+  * Migrate applications to the latest Spring Boot 3.3 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 3.3.
 * [org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_4](/recipes/java/spring/boot3/upgradespringboot_3_4-community-edition.md)
   * **Migrate to Spring Boot 3.4 (Community Edition)**
   * Migrate applications to the latest Spring Boot 3.4 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs.
@@ -4385,8 +4441,8 @@ _341 recipes_
   * **Find Spring Boot repositories**
   * Find every source file of a repository in which some build uses Spring Boot: a Spring Boot dependency, direct or transitive, the Spring Boot Gradle plugin, a Spring Boot parent POM, or an imported `spring-boot-dependencies` BOM. A repository without build files matches.
 * [org.openrewrite.java.spring.cloud2022.AddLoggingPatternLevelForSleuth](/recipes/java/spring/cloud2022/addloggingpatternlevelforsleuth.md)
-  * **Add logging.pattern.level for traceId and spanId**
-  * Add `logging.pattern.level` for traceId and spanId which was previously set by default, if not already set.
+  * **Add `logging.pattern.level` for `traceId` and `spanId`**
+  * Add `logging.pattern.level` for `traceId` and `spanId` which was previously set by default, if not already set.
 * [org.openrewrite.java.spring.cloud2022.DependencyUpgrades](/recipes/java/spring/cloud2022/dependencyupgrades.md)
   * **Upgrade dependencies to Spring Cloud 2022**
   * Upgrade dependencies to Spring Cloud 2022 from prior 2021.x version.
@@ -4418,22 +4474,22 @@ _341 recipes_
   * **Upgrade dependencies to Spring Cloud 2025**
   * Upgrade dependencies to Spring Cloud 2025 from prior 2024.x version.
 * [org.openrewrite.java.spring.cloud2025.SpringCloudGatewayDeprecatedModulesAndStarters](/recipes/java/spring/cloud2025/springcloudgatewaydeprecatedmodulesandstarters.md)
-  * **Migrate to New Spring Cloud Gateway Modules and Starters**
+  * **Migrate to new Spring Cloud Gateway modules and starters**
   * Migrate to new Spring Cloud Gateway modules and starters for Spring Cloud 2025.
 * [org.openrewrite.java.spring.cloud2025.SpringCloudGatewayProperties](/recipes/java/spring/cloud2025/springcloudgatewayproperties.md)
-  * **Migrate Spring Cloud Gateway Properties**
+  * **Migrate Spring Cloud Gateway properties**
   * Migrate Spring Cloud Gateway properties for Spring Cloud 2025 release.
 * [org.openrewrite.java.spring.cloud2025.SpringCloudGatewayProxyWebMvcProperties](/recipes/java/spring/cloud2025/springcloudgatewayproxywebmvcproperties.md)
-  * **Migrate Spring Cloud Gateway Proxy WebMvc Properties**
+  * **Migrate Spring Cloud Gateway Proxy WebMvc properties**
   * Migrate Spring Cloud Gateway Proxy WebMvc properties for Spring Cloud 2025 release.
 * [org.openrewrite.java.spring.cloud2025.SpringCloudGatewayProxyWebfluxProperties](/recipes/java/spring/cloud2025/springcloudgatewayproxywebfluxproperties.md)
-  * **Migrate Spring Cloud Gateway Proxy Webflux Properties**
+  * **Migrate Spring Cloud Gateway Proxy WebFlux properties**
   * Migrate Spring Cloud Gateway Proxy Webflux properties for Spring Cloud 2025 release.
 * [org.openrewrite.java.spring.cloud2025.SpringCloudGatewayWebMvcProperties](/recipes/java/spring/cloud2025/springcloudgatewaywebmvcproperties.md)
-  * **Migrate Spring Cloud Gateway WebMvc Properties**
+  * **Migrate Spring Cloud Gateway WebMvc properties**
   * Migrate Spring Cloud Gateway WebMvc properties for Spring Cloud 2025 release.
 * [org.openrewrite.java.spring.cloud2025.SpringCloudGatewayWebfluxProperties](/recipes/java/spring/cloud2025/springcloudgatewaywebfluxproperties.md)
-  * **Migrate Spring Cloud Gateway Webflux Properties**
+  * **Migrate Spring Cloud Gateway WebFlux properties**
   * Migrate Spring Cloud Gateway Webflux properties for Spring Cloud 2025 release.
 * [org.openrewrite.java.spring.cloud2025.UpgradeSpringCloud_2025](/recipes/java/spring/cloud2025/upgradespringcloud_2025.md)
   * **Migrate to Spring Cloud 2025**
@@ -4502,8 +4558,8 @@ _341 recipes_
   * **Rewrite safe `PathSelectors.regex(...)` calls as `PathSelectors.ant(...)`**
   * Springdoc's `GroupedOpenApi.pathsToMatch(...)` accepts Ant-style patterns, not Java regex. This recipe rewrites `PathSelectors.regex(...)` calls whose literal argument is a literal path prefix followed by `.*` (optionally anchored with `^`/`$`) into the equivalent `PathSelectors.ant(...)` call, so downstream Docket-to-GroupedOpenApi migration can translate the path. Regex patterns that use metacharacters, alternation, or character classes are left unchanged.
 * [org.openrewrite.java.spring.doc.RemoveBeanValidatorPluginsConfiguration](/recipes/java/spring/doc/removebeanvalidatorpluginsconfiguration.md)
-  * **Removes @Import(BeanValidatorPluginsConfiguration.class)**
-  * As Springdoc OpenAPI supports Bean Validation out of the box, the BeanValidatorPluginsConfiguration is no longer supported nor needed. Thus remove @Import(BeanValidatorPluginsConfiguration.class).
+  * **Remove `@Import(BeanValidatorPluginsConfiguration.class)`**
+  * As Springdoc OpenAPI supports Bean Validation out of the box, the `BeanValidatorPluginsConfiguration` is no longer supported nor needed. Thus remove `@Import(BeanValidatorPluginsConfiguration.class)`.
 * [org.openrewrite.java.spring.doc.SecurityContextToSecurityScheme](/recipes/java/spring/doc/securitycontexttosecurityscheme.md)
   * **Replace elements of SpringFox's security with Swagger's security models**
   * Replace `ApiKey`, `AuthorizationScope`, and `SecurityScheme` elements with Swagger's equivalents.
@@ -4520,13 +4576,13 @@ _341 recipes_
   * **Migrate `setConnectTimeout(int)` to ConnectionConfig `setConnectTimeout(..)`**
   * `setConnectTimeout(..)` was deprecated in Spring Framework 6.2 and removed in 7.0. This recipe migrates local `PoolingHttpClientConnectionManager` instances that are wired into the request factory, and adds a comment when the configuration is not safe to migrate automatically.
 * [org.openrewrite.java.spring.framework.HttpComponentsClientHttpRequestFactoryReadTimeout](/recipes/java/spring/framework/httpcomponentsclienthttprequestfactoryreadtimeout.md)
-  * **Migrate `setReadTimeout(java.lang.int)` to SocketConfig `setSoTimeout(..)`**
+  * **Migrate `setReadTimeout(int)` to SocketConfig `setSoTimeout(..)`**
   * `setReadTimeout(..)` was removed in Spring Framework 6.1.
 * [org.openrewrite.java.spring.framework.JdbcTemplateObjectArrayArgToVarArgs](/recipes/java/spring/framework/jdbctemplateobjectarrayargtovarargs.md)
   * **Use varargs equivalents for deprecated JdbcTemplate signatures**
   * `JdbcTemplate` signatures with `Object[]` arguments are deprecated, in favor of their existing varargs equivalents.
 * [org.openrewrite.java.spring.framework.MigrateBase64Utils](/recipes/java/spring/framework/migratebase64utils.md)
-  * **Migrate `org.springframework.util.Base64Utils` to `java.io.Base64`**
+  * **Migrate `org.springframework.util.Base64Utils` to `java.util.Base64`**
   * Replaces usages of deprecated `org.springframework.util.Base64Utils` with `java.util.Base64`.
 * [org.openrewrite.java.spring.framework.MigrateClientHttpResponseGetRawStatusCodeMethod](/recipes/java/spring/framework/migrateclienthttpresponsegetrawstatuscodemethod.md)
   * **Replaces deprecated `ClientHttpResponse#getRawStatusCode()`**
@@ -4554,7 +4610,7 @@ _341 recipes_
   * With Spring 6 `HttpStatus` was replaced by `HttpStatusCode` in most method signatures in the `ResponseEntityExceptionHandler`.
 * [org.openrewrite.java.spring.framework.MigrateResponseStatusException](/recipes/java/spring/framework/migrateresponsestatusexception.md)
   * **Migrate breaking changes in `ResponseStatusException`**
-  * Migrate Spring Framework 5.3's `ResponseStatusException` method `getRawStatusCode()` to Spring Framework 6's `getStatusCode().value()` and `ResponseStatusException` method `getStatus()` to Spring Framework 6's `getStatusCode()` .
+  * Migrate Spring Framework 5.3's `ResponseStatusException` method `getRawStatusCode()` to Spring Framework 6's `getStatusCode().value()` and `ResponseStatusException` method `getStatus()` to Spring Framework 6's `getStatusCode()`.
 * [org.openrewrite.java.spring.framework.MigrateResponseStatusExceptionGetRawStatusCodeMethod](/recipes/java/spring/framework/migrateresponsestatusexceptiongetrawstatuscodemethod.md)
   * **Migrate `ResponseStatusException#getRawStatusCode()` to `getStatusCode().value()`**
   * Migrate Spring Framework 5.3's `ResponseStatusException` method `getRawStatusCode()` to Spring Framework 6's `getStatusCode().value()`. Also handles `RestClientResponseException` and its subclasses such as `HttpServerErrorException`.
@@ -4608,16 +4664,16 @@ _341 recipes_
   * `StringUtils#isEmpty(Object)` was deprecated in 5.3.
 * [org.openrewrite.java.spring.http.ReplaceStringLiteralsWithHttpHeadersConstants](/recipes/java/spring/http/replacestringliteralswithhttpheadersconstants.md)
   * **Replace String literals with `HttpHeaders` constants**
-  * Replace String literals with `org.springframework.http.HttpHeaders` constants.
+  * Replace String literals with `org.springframework.http.HttpHeaders` constants in modules that depend on `spring-web`.
 * [org.openrewrite.java.spring.http.ReplaceStringLiteralsWithMediaTypeConstants](/recipes/java/spring/http/replacestringliteralswithmediatypeconstants.md)
   * **Replace String literals with `MediaType` constants**
-  * Replace String literals with `org.springframework.http.MediaType` constants.
+  * Replace String literals with `org.springframework.http.MediaType` constants in modules that depend on `spring-web`.
 * [org.openrewrite.java.spring.http.SimplifyMediaTypeParseCalls](/recipes/java/spring/http/simplifymediatypeparsecalls.md)
   * **Simplify unnecessary `MediaType.parseMediaType()` and `MediaType.valueOf()` calls**
   * Replaces `MediaType.parseMediaType(&quot;application/json&quot;)` and `MediaType.valueOf(&quot;application/json&quot;)` with `MediaType.APPLICATION_JSON`.
 * [org.openrewrite.java.spring.http.SimplifyWebTestClientCalls](/recipes/java/spring/http/simplifywebtestclientcalls.md)
-  * **Simplify WebTestClient expressions**
-  * Simplifies various types of WebTestClient expressions to improve code readability.
+  * **Simplify `WebTestClient` expressions**
+  * Simplifies various types of `WebTestClient` expressions to improve code readability.
 * [org.openrewrite.java.spring.http.SpringWebDependency](/recipes/java/spring/http/springwebdependency.md)
   * **Find Spring Web dependency**
   * Find compile scoped Spring Web dependency for Maven and Gradle, both direct and transitive.
@@ -4634,7 +4690,7 @@ _341 recipes_
   * **Remove `KafkaOperations.usingCompletableFuture()`**
   * Remove the `KafkaOperations.usingCompletableFuture()` bridge during Spring Kafka 2.9 to 3.0 migration.
 * [org.openrewrite.java.spring.kafka.UpgradeSpringKafka_2_8_ErrorHandlers](/recipes/java/spring/kafka/upgradespringkafka_2_8_errorhandlers.md)
-  * **Migrates Spring Kafka deprecated error handlers**
+  * **Migrate deprecated Spring Kafka error handlers**
   * Migrate error handlers deprecated in Spring Kafka `2.8.x` to their replacements.
 * [org.openrewrite.java.spring.kafka.UpgradeSpringKafka_3_0](/recipes/java/spring/kafka/upgradespringkafka_3_0.md)
   * **Migrate to Spring Kafka 3.0**
@@ -4682,11 +4738,11 @@ _341 recipes_
   * **Find Spring components**
   * Find Spring components, including controllers, services, repositories, return types of `@Bean` annotated methods, etc.
 * [org.openrewrite.java.spring.security.SpringSecurityBestPractices](/recipes/java/spring/security/springsecuritybestpractices.md)
-  * **Spring security best practices**
+  * **Spring Security best practices**
   * Applies security best practices to Spring applications, including TLS for database and message broker connections.
 * [org.openrewrite.java.spring.security5.AuthorizeHttpRequests](/recipes/java/spring/security5/authorizehttprequests.md)
   * **Replace `HttpSecurity.authorizeRequests(...)` with `HttpSecurity.authorizeHttpRequests(...)` and `ExpressionUrlAuthorizationConfigurer`, `AbstractInterceptUrlConfigurer` with `AuthorizeHttpRequestsConfigurer`, etc**
-  * Replace `HttpSecurity.authorizeRequests(...)` deprecated in Spring Security 6 with `HttpSecurity.authorizeHttpRequests(...)` and all method calls on the resultant object respectively. Replace deprecated `AbstractInterceptUrlConfigurer` and its deprecated subclasses with `AuthorizeHttpRequestsConfigurer` and its corresponding subclasses.
+  * Replace `HttpSecurity.authorizeRequests(...)` deprecated in Spring Security 6 with `HttpSecurity.authorizeHttpRequests(...)` and all method calls on the resultant object respectively. Replace deprecated `AbstractInterceptUrlConfigurer` and its deprecated subclasses with `AuthorizeHttpRequestsConfigurer` and its corresponding subclasses. Literal `access(String)` and `hasIpAddress(String)` expressions are wrapped in a `WebExpressionAuthorizationManager`. Files using expression-based authorization that can't be converted faithfully, such as `not()`, `expressionHandler(..)` or a custom `accessDecisionManager(..)`, are left unchanged, as `authorizeRequests` is still available in Spring Security 6.
 * [org.openrewrite.java.spring.security5.ConvertSecurityMatchersToSecurityMatcher](/recipes/java/spring/security5/convertsecuritymatcherstosecuritymatcher.md)
   * **Convert `requestMatchers` chain to `securityMatcher`**
   * Converts `HttpSecurity.requestMatchers().antMatchers(...)` and similar patterns to `HttpSecurity.securityMatcher(...)`. The no-arg `requestMatchers()` method returns a `RequestMatcherConfigurer` that is not a configurer in the lambda DSL sense, so it should be replaced with the `securityMatcher()` method introduced in Spring Security 5.8.
@@ -4701,13 +4757,13 @@ _341 recipes_
   * `@EnableGlobalMethodSecurity` and `&lt;global-method-security&gt;` are deprecated in favor of `@EnableMethodSecurity` and `&lt;method-security&gt;`, respectively. The new annotation and XML element activate Spring’s pre-post annotations by default and use AuthorizationManager internally.
 * [org.openrewrite.java.spring.security5.UpdateArgon2PasswordEncoder](/recipes/java/spring/security5/updateargon2passwordencoder.md)
   * **Use new `Argon2PasswordEncoder` factory methods**
-  * In Spring Security 5.8 some `Argon2PasswordEncoder` constructors have been deprecated in favor of factory methods. Refer to the [ Spring Security migration docs](https://docs.spring.io/spring-security/reference/5.8/migration/index.html#_update_argon2passwordencoder) for more information.
+  * In Spring Security 5.8 some `Argon2PasswordEncoder` constructors have been deprecated in favor of factory methods. Refer to the [Spring Security migration docs](https://docs.spring.io/spring-security/reference/5.8/migration/index.html#_update_argon2passwordencoder) for more information.
 * [org.openrewrite.java.spring.security5.UpdatePbkdf2PasswordEncoder](/recipes/java/spring/security5/updatepbkdf2passwordencoder.md)
   * **Use new `Pbkdf2PasswordEncoder` factory methods**
-  * In Spring Security 5.8 some `Pbkdf2PasswordEncoder` constructors have been deprecated in favor of factory methods. Refer to the [ Spring Security migration docs](https://docs.spring.io/spring-security/reference/5.8/migration/index.html#_update_pbkdf2passwordencoder) for more information.
+  * In Spring Security 5.8 some `Pbkdf2PasswordEncoder` constructors have been deprecated in favor of factory methods. Replaces them with `Pbkdf2PasswordEncoder.defaultsForSpringSecurity_v5_5()` or an equivalent constructor, so existing password hashes keep verifying. Refer to the [Spring Security migration docs](https://docs.spring.io/spring-security/reference/5.8/migration/index.html#_update_pbkdf2passwordencoder) for more information.
 * [org.openrewrite.java.spring.security5.UpdateSCryptPasswordEncoder](/recipes/java/spring/security5/updatescryptpasswordencoder.md)
   * **Use new `SCryptPasswordEncoder` factory methods**
-  * In Spring Security 5.8 some `SCryptPasswordEncoder` constructors have been deprecated in favor of factory methods. Refer to the [ Spring Security migration docs](https://docs.spring.io/spring-security/reference/5.8/migration/index.html#_update_scryptpasswordencoder) for more information.
+  * In Spring Security 5.8 some `SCryptPasswordEncoder` constructors have been deprecated in favor of factory methods. Refer to the [Spring Security migration docs](https://docs.spring.io/spring-security/reference/5.8/migration/index.html#_update_scryptpasswordencoder) for more information.
 * [org.openrewrite.java.spring.security5.UpgradeSpringSecurity_5_7](/recipes/java/spring/security5/upgradespringsecurity_5_7.md)
   * **Migrate to Spring Security 5.7**
   * Migrate applications to the latest Spring Security 5.7 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions.
@@ -4731,7 +4787,7 @@ _341 recipes_
   * Converts `HttpSecurity::apply` chained call from Spring Security pre 6.2.x into new lambda DSL style calls and removes `and()` methods.
 * [org.openrewrite.java.spring.security6.PropagateAuthenticationServiceExceptions](/recipes/java/spring/security6/propagateauthenticationserviceexceptions.md)
   * **Remove calls matching `AuthenticationEntryPointFailureHandler.setRethrowAuthenticationServiceException(true)`**
-  * Remove any calls matching `AuthenticationEntryPointFailureHandler.setRethrowAuthenticationServiceException(true)`. See the corresponding [Sprint Security 6.0 migration step](https://docs.spring.io/spring-security/reference/6.0.0/migration/servlet/authentication.html#_propagate_authenticationserviceexceptions) for details.
+  * Remove any calls matching `AuthenticationEntryPointFailureHandler.setRethrowAuthenticationServiceException(true)`. See the corresponding [Spring Security 6.0 migration step](https://docs.spring.io/spring-security/reference/6.0.0/migration/servlet/authentication.html#_propagate_authenticationserviceexceptions) for details.
 * [org.openrewrite.java.spring.security6.RemoveFilterSecurityInterceptorOncePerRequest](/recipes/java/spring/security6/removefiltersecurityinterceptoronceperrequest.md)
   * **Remove unnecessary `filterSecurityInterceptorOncePerRequest(false)` when upgrading to Spring Security 6**
   * In Spring Security 6.0, `&lt;http&gt;` defaults `authorizeRequests#filterSecurityInterceptorOncePerRequest` to false. So, to complete migration, any defaults values can be removed.
@@ -4739,17 +4795,17 @@ _341 recipes_
   * **Remove unneeded `oauth2Login` config when upgrading to Spring Security 6**
   * `oauth2Login()` is a Spring Security feature that allows users to authenticate with an OAuth2 or OpenID Connect 1.0 provider. When a user is authenticated using this feature, they are granted a set of authorities that determines what actions they are allowed to perform within the application.  In Spring Security 5, the default authority given to a user authenticated with an OAuth2 or OpenID Connect 1.0 provider via `oauth2Login()` is `ROLE_USER`. This means that the user is allowed to access the application's resources as a regular user.  However, in Spring Security 6, the default authority given to a user authenticated with an OAuth2 provider is `OAUTH2_USER`, and the default authority given to a user authenticated with an OpenID Connect 1.0 provider is `OIDC_USER`. These authorities are more specific and allow for better customization of the user's permissions within the application.  If you are upgrading to Spring Security 6 and you have previously configured a `GrantedAuthoritiesMapper` to handle the authorities of users authenticated via `oauth2Login()`, you can remove it completely as the new default authorities should be sufficient.
 * [org.openrewrite.java.spring.security6.RemoveUseAuthorizationManager](/recipes/java/spring/security6/removeuseauthorizationmanager.md)
-  * **Remove unnecessary `use-authorization-manager` for message security in Spring security 6**
+  * **Remove unnecessary `use-authorization-manager` for message security in Spring Security 6**
   * In Spring Security 6, `&lt;websocket-message-broker&gt;` defaults `use-authorization-manager` to `true`. So, the `use-authorization-manager` attribute for message security is no longer needed and can be removed.
 * [org.openrewrite.java.spring.security6.RequireExplicitSavingOfSecurityContextRepository](/recipes/java/spring/security6/requireexplicitsavingofsecuritycontextrepository.md)
   * **Remove explicit `SecurityContextConfigurer.requireExplicitSave(true)` opt-in**
-  * Remove explicit `SecurityContextConfigurer.requireExplicitSave(true)` opt-in as that is the new default in Spring Security 6. See the corresponding [Sprint Security 6.0 migration step](https://docs.spring.io/spring-security/reference/6.0.0/migration/servlet/session-management.html#_require_explicit_saving_of_securitycontextrepository) for details.
+  * Remove explicit `SecurityContextConfigurer.requireExplicitSave(true)` opt-in as that is the new default in Spring Security 6. See the corresponding [Spring Security 6.0 migration step](https://docs.spring.io/spring-security/reference/6.0.0/migration/servlet/session-management.html#_require_explicit_saving_of_securitycontextrepository) for details.
 * [org.openrewrite.java.spring.security6.UpdateEnableReactiveMethodSecurity](/recipes/java/spring/security6/updateenablereactivemethodsecurity.md)
   * **Remove the `useAuthorizationManager=true` attribute from `@EnableReactiveMethodSecurity`**
   * In Spring security 6.0, `@EnableReactiveMethodSecurity` defaults `useAuthorizationManager` to true. So, to complete migration, `@EnableReactiveMethodSecurity` remove the `useAuthorizationManager` attribute.
 * [org.openrewrite.java.spring.security6.UpdateRequestCache](/recipes/java/spring/security6/updaterequestcache.md)
-  * **Keep the default RequestCache querying behavior in Spring Security 5**
-  * By default, Spring Security 5 queries the saved request on every request, which means that in a typical setup, the HttpSession is queried on every request to use the RequestCache. In Spring Security 6, the default behavior has changed, and RequestCache will only be queried for a cached request if the HTTP parameter &quot;continue&quot; is defined. To maintain the same default behavior as Spring Security 5, either explicitly add the HTTP parameter &quot;continue&quot; to every request or use NullRequestCache to override the default behavior.
+  * **Keep the Spring Security 5 `RequestCache` querying behavior**
+  * By default, Spring Security 5 queries the saved request on every request, which means that in a typical setup, the `HttpSession` is queried on every request to use the `RequestCache`. In Spring Security 6, the default behavior has changed, and `RequestCache` will only be queried for a cached request if the HTTP parameter `continue` is defined. To maintain the Spring Security 5 behavior, `setMatchingRequestParameterName(null)` is called on `HttpSessionRequestCache` instances assigned to a local variable.
 * [org.openrewrite.java.spring.security6.UpgradeSpringSecurity_6_0](/recipes/java/spring/security6/upgradespringsecurity_6_0.md)
   * **Migrate to Spring Security 6.0**
   * Migrate applications to the latest Spring Security 6.0 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions.
@@ -4770,7 +4826,7 @@ _341 recipes_
   * Migrate applications to the latest Spring Security 6.5 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions.
 * [org.openrewrite.java.spring.security6.UseSha256InRememberMe](/recipes/java/spring/security6/usesha256inrememberme.md)
   * **Remove explicit configuration of SHA-256 as encoding and matching algorithm for `TokenBasedRememberMeServices`**
-  * As of Spring Security 6.0 the SHA-256 algorithm is the default for the encoding and matching algorithm used by `TokenBasedRememberMeServices` and does thus no longer need to be explicitly configured. See the corresponding [Sprint Security 6.0 migration step](https://docs.spring.io/spring-security/reference/6.0.0/migration/servlet/authentication.html#servlet-opt-in-sha256-rememberme) for details.
+  * As of Spring Security 6.0 the SHA-256 algorithm is the default for the encoding and matching algorithm used by `TokenBasedRememberMeServices` and does thus no longer need to be explicitly configured. See the corresponding [Spring Security 6.0 migration step](https://docs.spring.io/spring-security/reference/6.0.0/migration/servlet/authentication.html#servlet-opt-in-sha256-rememberme) for details.
 * [org.openrewrite.java.spring.security6.oauth2.client.OAuth2ClientLambdaDsl](/recipes/java/spring/security6/oauth2/client/oauth2clientlambdadsl.md)
   * **Convert `OAuth2ClientConfigurer` chained calls into Lambda DSL**
   * Converts `OAuth2ClientConfigurer` chained call from Spring Security pre 5.2.x into new lambda DSL style calls and removes `and()` methods.
@@ -4791,7 +4847,7 @@ _341 recipes_
   * Replace JUnit 4's `SpringClassRule` and `SpringMethodRule` with JUnit 5's `SpringExtension` or rely on an existing `@SpringBootTest`.
 * [org.openrewrite.java.spring.util.concurrent.ListenableToCompletableFuture](/recipes/java/spring/util/concurrent/listenabletocompletablefuture.md)
   * **Migrate `ListenableFuture` to `CompletableFuture`**
-  * Spring Framework 6.0 removed `org.springframework.util.concurrent.ListenableFuture` in favor of `java.util.concurrent.CompletableFuture`. This recipe migrates `ListenableFuture` types, along with their `addCallback` invocations and `ListenableFutureCallback` implementations, to `CompletableFuture`.
+  * Spring Framework 6.0 removed `org.springframework.util.concurrent.ListenableFuture` in favor of `java.util.concurrent.CompletableFuture`. This recipe migrates `ListenableFuture` types, along with their `addCallback` invocations and `ListenableFutureCallback` implementations, to `CompletableFuture`. Files with an `addCallback` invocation that can't be converted are left unchanged.
 * [org.openrewrite.java.springdoc.CleanupRemainingSpringfox](/recipes/java/springdoc/cleanupremainingspringfox.md)
   * **Remove remaining Springfox dead code**
   * Removes unused private methods left behind after SpringFoxToSpringDoc migration. When Docket beans are removed, private helper methods (e.g., `appInfo()`) become dead code but are not cleaned up, causing compilation errors.
@@ -4799,7 +4855,7 @@ _341 recipes_
   * **Migrate from springdoc-openapi-common to springdoc-openapi-starter-common**
   * Migrate from springdoc-openapi-common to springdoc-openapi-starter-common.
 * [org.openrewrite.java.springdoc.ReplaceSpringFoxDependencies](/recipes/java/springdoc/replacespringfoxdependencies.md)
-  * **Replace SpringFox Dependencies**
+  * **Replace SpringFox dependencies**
   * Replace SpringFox Dependencies.
 * [org.openrewrite.java.springdoc.SpringFoxToSpringDoc](/recipes/java/springdoc/springfoxtospringdoc.md)
   * **Migrate from SpringFox Swagger to SpringDoc and OpenAPI**
@@ -4836,7 +4892,7 @@ _341 recipes_
 
 _License: Moderne Source Available License_
 
-_67 recipes_
+_68 recipes_
 
 * [org.openrewrite.quarkus.spring.AddQuarkusMavenPlugin](/recipes/quarkus/spring/addquarkusmavenplugin.md)
   * **Add Quarkus Maven plugin**
@@ -4919,12 +4975,15 @@ _67 recipes_
 * [org.openrewrite.quarkus.spring.MigrateSpringValidation](/recipes/quarkus/spring/migratespringvalidation.md)
   * **Migrate Spring Validation to Quarkus**
   * Migrates Spring Boot validation to Quarkus Hibernate Validator. Adds the quarkus-hibernate-validator dependency and handles validation annotation imports.
+* [org.openrewrite.quarkus.spring.ModuleIsSpringBootApplication](/recipes/quarkus/spring/moduleisspringbootapplication.md)
+  * **Module is part of a Spring Boot 3 or 4 application**
+  * Marks all sources in modules that run on Spring Boot 3.x or 4.x (including snapshots and milestones), apply the Spring Boot build plugin and have a `main` method on a class annotated with `@SpringBootApplication` or `@SpringBootConfiguration` in the main source set, as well as the Maven parents of those modules and the modules they depend on at runtime. Projects nested under `src/*/resources`, such as test fixtures, are never marked; only configuration files directly in a resources directory or its `config` directory are. Intended as a precondition, so that libraries and framework code are not migrated as if they were applications.
 * [org.openrewrite.quarkus.spring.MongoRepositoryToPanacheMongoRepository](/recipes/quarkus/spring/mongorepositorytopanachemongorepository.md)
   * **Convert MongoRepository to PanacheMongoRepository**
   * Transforms Spring Data `MongoRepository&lt;T, ID&gt;` interfaces to Quarkus `PanacheMongoRepository&lt;T&gt;`, dropping the ID type parameter.
 * [org.openrewrite.quarkus.spring.RemoveSpringBootParent](/recipes/quarkus/spring/removespringbootparent.md)
-  * **Remove Spring Boot 3.x parent POM**
-  * Removes the Spring Boot 3.x starter parent POM from Maven projects.
+  * **Remove Spring Boot parent POM**
+  * Removes the Spring Boot 3.x or 4.x starter parent POM from Maven projects.
 * [org.openrewrite.quarkus.spring.ReplaceSpringBootApplication](/recipes/quarkus/spring/replacespringbootapplication.md)
   * **Replace `@SpringBootApplication` with Quarkus equivalent**
   * Replace `@SpringBootApplication` annotation with `@QuarkusMain`, `SpringApplication.run()` calls.
@@ -5038,20 +5097,20 @@ _67 recipes_
   * Transform Spring `@Value` annotations to MicroProfile `@ConfigProperty` with proper parameter mapping.
 * [org.openrewrite.quarkus.spring.WebToJaxRs](/recipes/quarkus/spring/webtojaxrs.md)
   * **Convert Spring Web annotations to JAX-RS**
-  * Converts Spring Web annotations such as `@RestController`, `@RequestMapping`, `@GetMapping`, etc., to their JAX-RS equivalents like `@Path`, `@GET`, etc.
+  * Converts Spring Web annotations such as `@RestController`, `@RequestMapping`, `@GetMapping`, etc., to their JAX-RS equivalents like `@Path`, `@GET`, etc. MVC view controllers, and handler methods that have no single JAX-RS equivalent, are left unchanged and marked for manual migration.
 
 ## rewrite-static-analysis
 
 _License: Moderne Source Available License_
 
-_205 recipes_
+_208 recipes_
 
 * [org.openrewrite.recipe.rewrite-static-analysis.InlineDeprecatedMethods](/recipes/recipe/rewrite-static-analysis/inlinedeprecatedmethods.md)
   * **Inline deprecated delegating methods**
   * Automatically generated recipes to inline deprecated method calls that delegate to other methods in the same class.
 * [org.openrewrite.staticanalysis.AbstractClassPublicConstructor](/recipes/staticanalysis/abstractclasspublicconstructor.md)
   * **Constructors of an `abstract` class should not be declared `public`**
-  * Constructors of `abstract` classes can only be called in constructors of their subclasses. Therefore the visibility of `public` constructors are reduced to `protected`. Declaring them `public` is misleading since it implies they could be invoked directly, which is never possible.
+  * Constructors of `abstract` classes can only be called in constructors of their subclasses. Therefore, the visibility of `public` constructors is reduced to `protected`. Declaring them `public` is misleading since it implies they could be invoked directly, which is never possible.
 * [org.openrewrite.staticanalysis.AddSerialAnnotationToSerialVersionUID](/recipes/staticanalysis/addserialannotationtoserialversionuid.md)
   * **Add `@Serial` annotation to `serialVersionUID`**
   * Annotate any `serialVersionUID` fields with `@Serial` to indicate it's part of the serialization mechanism.
@@ -5063,7 +5122,7 @@ _205 recipes_
   * When every branch of an `if`/`else` chain executes the same code, the condition serves no purpose and the code block can be used directly.
 * [org.openrewrite.staticanalysis.AnnotateNullableMethods](/recipes/staticanalysis/annotatenullablemethods.md)
   * **Annotate methods which may return `null` with `@Nullable`**
-  * Add `@Nullable` to non-private methods that may return `null`. By default `org.jspecify.annotations.Nullable` is used, but through the `nullableAnnotationClass` option a custom annotation can be provided. Both `@Target(TYPE_USE)` and declaration annotations (e.g. `javax.annotation.CheckForNull`) are supported. Methods that already carry a known nullable annotation (matched by simple name) are skipped to avoid duplication. This recipe scans for methods that do not already have a `@Nullable` annotation and checks their return statements for potential null values. It also identifies known methods from standard libraries that may return null, such as methods from `Map`, `Queue`, `Deque`, `NavigableSet`, and `Spliterator`. The return of streams, or lambdas are not taken into account.
+  * Add `@Nullable` to `public` methods that may return `null`. By default `org.jspecify.annotations.Nullable` is used, but through the `nullableAnnotationClass` option a custom annotation can be provided. Both `@Target(TYPE_USE)` and declaration annotations (e.g. `javax.annotation.CheckForNull`) are supported. Methods that already carry a known nullable annotation (matched by simple name) are skipped to avoid duplication. This recipe scans for methods that do not already have a `@Nullable` annotation and checks their return statements for potential null values. It also identifies known methods from standard libraries that may return null, such as methods from `Map`, `Queue`, `Deque`, `NavigableSet`, and `Spliterator`. The return of streams, or lambdas are not taken into account.
 * [org.openrewrite.staticanalysis.AnnotateNullableParameters](/recipes/staticanalysis/annotatenullableparameters.md)
   * **Annotate null-checked method parameters with `@Nullable`**
   * Add `@Nullable` to parameters of public methods that are explicitly checked for `null`. By default `org.jspecify.annotations.Nullable` is used, but through the `nullableAnnotationClass` option a custom annotation can be provided. Both `@Target(TYPE_USE)` and declaration annotations (e.g. `javax.annotation.CheckForNull`) are supported. Parameters that already carry a known nullable annotation are skipped to avoid duplication. This recipe scans for methods that do not already have parameters annotated with a nullable annotation and checks their usages for potential null checks. Additional null-checking methods can be specified via the `additionalNullCheckingMethods` option.
@@ -5071,7 +5130,7 @@ _205 recipes_
   * **Annotate required method parameters with `@NonNull`**
   * Add `@NonNull` to parameters of public methods that are explicitly checked for `null` and throw an exception if null. By default `org.jspecify.annotations.NonNull` is used, but through the `nonNullAnnotationClass` option a custom annotation can be provided. When providing a custom `nonNullAnnotationClass` that annotation should be meta annotated with `@Target(TYPE_USE)`. This recipe scans for methods that do not already have parameters annotated with `@NonNull` annotation and checks for null validation patterns that throw exceptions, such as `if (param == null) throw new IllegalArgumentException()`.
 * [org.openrewrite.staticanalysis.AtomicPrimitiveEqualsUsesGet](/recipes/staticanalysis/atomicprimitiveequalsusesget.md)
-  * **Atomic Boolean, Integer, and Long equality checks compare their values**
+  * **`AtomicBoolean`, `AtomicInteger`, and `AtomicLong` equality checks compare their values**
   * `AtomicBoolean#equals(Object)`, `AtomicInteger#equals(Object)` and `AtomicLong#equals(Object)` are only equal to their instance. This recipe converts `a.equals(b)` to `a.get() == b.get()`. These atomic classes do not override `equals` from `Object`, so calling it compares object identity rather than the wrapped value, which is almost never the intended behavior.
 * [org.openrewrite.staticanalysis.AvoidBoxedBooleanExpressions](/recipes/staticanalysis/avoidboxedbooleanexpressions.md)
   * **Avoid boxed boolean expressions**
@@ -5084,9 +5143,9 @@ _205 recipes_
   * Convert `BigDecimal` rounding constants to the equivalent `RoundingMode` enum. The integer-based rounding constants on `BigDecimal` are deprecated and lack type safety; the `RoundingMode` enum makes the rounding behavior self-documenting and prevents invalid values.
 * [org.openrewrite.staticanalysis.BooleanChecksNotInverted](/recipes/staticanalysis/booleanchecksnotinverted.md)
   * **Boolean checks should not be inverted**
-  * Ensures that boolean checks are not unnecessarily inverted. Also fixes double negative boolean expressions. Negating a comparison and then inverting it adds cognitive overhead; using the direct operator (e.g., `&gt;=` instead of `!(... &lt; ...)`) is clearer and easier to reason about.
+  * Ensures that boolean checks are not unnecessarily inverted. Also fixes double negative boolean expressions. Negating a comparison and then inverting it adds cognitive overhead; using the direct operator (e.g., `&gt;=` instead of `!(... &lt; ...)`) is clearer and easier to reason about. Ordered floating-point comparisons retain their negation to preserve NaN behavior.
 * [org.openrewrite.staticanalysis.BufferedWriterCreationRecipes](/recipes/staticanalysis/bufferedwritercreationrecipes.md)
-  * **Modernize `BufferedWriter` creation &amp; prevent file descriptor leaks**
+  * **Modernize `BufferedWriter` creation and prevent file descriptor leaks**
   * The code `new BufferedWriter(new FileWriter(f))` creates a `BufferedWriter` that does not close the underlying `FileWriter` when it is closed. This can lead to file descriptor leaks as per [CWE-755](https://cwe.mitre.org/data/definitions/755.html). Use `Files.newBufferedWriter` to create a `BufferedWriter` that closes the underlying file descriptor when it is closed.
 * [org.openrewrite.staticanalysis.BufferedWriterCreationRecipes$BufferedWriterFromNewFileWriterWithFileAndBooleanArgumentsRecipe](/recipes/staticanalysis/bufferedwritercreationrecipes$bufferedwriterfromnewfilewriterwithfileandbooleanargumentsrecipe.md)
   * **Convert `new BufferedWriter(new FileWriter(File, boolean))` to `Files.newBufferedWriter(Path, StandardOpenOption)`**
@@ -5101,22 +5160,22 @@ _205 recipes_
   * **Convert `new BufferedWriter(new FileWriter(String))` to `Files.newBufferedWriter(Path)`**
   * Convert `new BufferedWriter(new FileWriter(s))` to `Files.newBufferedWriter(new java.io.File(s).toPath())`.
 * [org.openrewrite.staticanalysis.CaseInsensitiveComparisonsDoNotChangeCase](/recipes/staticanalysis/caseinsensitivecomparisonsdonotchangecase.md)
-  * **CaseInsensitive comparisons do not alter case**
+  * **Case-insensitive comparisons do not alter case**
   * Remove `String#toLowerCase()` or `String#toUpperCase()` from `String#equalsIgnoreCase(..)` comparisons. Changing case before a case-insensitive comparison is redundant and allocates unnecessary intermediate `String` objects.
 * [org.openrewrite.staticanalysis.CatchClauseOnlyRethrows](/recipes/staticanalysis/catchclauseonlyrethrows.md)
   * **Catch clause should do more than just rethrow**
   * A `catch` clause that only rethrows the caught exception is unnecessary. Letting the exception bubble up as normal achieves the same result with less code. Such catch blocks add visual noise and indentation without changing program behavior.
 * [org.openrewrite.staticanalysis.ChainStringBuilderAppendCalls](/recipes/staticanalysis/chainstringbuilderappendcalls.md)
   * **Chain `StringBuilder.append()` calls**
-  * String concatenation within calls to `StringBuilder.append()` causes unnecessary memory allocation. Except for concatenations of String literals, which are joined together at compile time. Replaces inefficient concatenations with chained calls to `StringBuilder.append()`. Using `+` inside `append()` defeats the purpose of the `StringBuilder`, since the concatenation creates a temporary `String` before appending.
+  * String concatenation within calls to `StringBuilder.append()` causes unnecessary memory allocation, except for concatenations of `String` literals, which are joined together at compile time. Replaces inefficient concatenations with chained calls to `StringBuilder.append()`. Using `+` inside `append()` defeats the purpose of the `StringBuilder`, since the concatenation creates a temporary `String` before appending.
 * [org.openrewrite.staticanalysis.CodeCleanup](/recipes/staticanalysis/codecleanup.md)
   * **Code cleanup**
-  * Automatically cleanup code, e.g. remove unnecessary parentheses, simplify expressions.
+  * Automatically clean up code, e.g. remove unnecessary parentheses, add missing braces and fix whitespace.
 * [org.openrewrite.staticanalysis.CollapsibleIfStatements](/recipes/staticanalysis/collapsibleifstatements.md)
-  * **Mergeable &quot;if&quot; statements should be combined**
+  * **Mergeable `if` statements should be combined**
   * When an `if` statement body contains only another `if` with no `else`, the two conditions can be combined with `&amp;&amp;`. Merging the conditions reduces nesting and makes the code easier to read.
 * [org.openrewrite.staticanalysis.CollectionToArrayShouldHaveProperType](/recipes/staticanalysis/collectiontoarrayshouldhavepropertype.md)
-  * **'Collection.toArray()' should be passed an array of the proper type**
+  * **`Collection.toArray()` should be passed an array of the proper type**
   * Using `Collection.toArray()` without parameters returns an `Object[]`, which requires casting. It is more efficient and clearer to use `Collection.toArray(new T[0])` instead. The parameterless form can cause a `ClassCastException` at runtime when the returned `Object[]` is cast to a more specific array type.
 * [org.openrewrite.staticanalysis.CombineSemanticallyEqualCatchBlocks](/recipes/staticanalysis/combinesemanticallyequalcatchblocks.md)
   * **Combine semantically equal catch blocks**
@@ -5128,17 +5187,17 @@ _205 recipes_
   * **Common static analysis issues**
   * Resolve common static analysis issues (also known as SAST issues).
 * [org.openrewrite.staticanalysis.CompareEnumsWithEqualityOperator](/recipes/staticanalysis/compareenumswithequalityoperator.md)
-  * **Enum values should be compared with &quot;==&quot;**
-  * Replaces `Enum equals(java.lang.Object)` with `Enum == java.lang.Object`. An `!Enum equals(java.lang.Object)` will change to `!=`. Using `==` for enum comparison is null-safe, catches type mismatches at compile time, and is idiomatic since each enum constant is guaranteed to be a singleton.
+  * **Enum values should be compared with `==`**
+  * Replaces `a.equals(b)` with `a == b` when `a` is an enum, and `!a.equals(b)` with `a != b`. Using `==` for enum comparison is null-safe, catches type mismatches at compile time, and is idiomatic since each enum constant is guaranteed to be a singleton.
 * [org.openrewrite.staticanalysis.ControlFlowIndentation](/recipes/staticanalysis/controlflowindentation.md)
   * **Control flow statement indentation**
   * Program flow control statements like `if`, `while`, and `for` can omit curly braces when they apply to only a single statement. This recipe ensures that any statements which follow that statement are correctly indented to show they are not part of the flow control statement. Misleading indentation can give the false impression that a line executes conditionally when it actually runs unconditionally, which is a common source of logic errors.
 * [org.openrewrite.staticanalysis.CovariantEquals](/recipes/staticanalysis/covariantequals.md)
   * **Covariant equals**
-  * Checks that classes and records which define a covariant `equals()` method also override method `equals(Object)`. Covariant `equals()` means a method that is similar to `equals(Object)`, but with a covariant parameter type (any subtype of `Object`). Without a proper `equals(Object)` override, collections and other framework code that rely on the standard signature will silently use `Object.equals`, leading to incorrect behavior.
+  * Checks that classes and records which define a covariant `equals()` method also override method `equals(Object)`. Covariant `equals()` means a method that is similar to `equals(Object)`, but with a covariant parameter type (any subtype of `Object`). Without a proper `equals(Object)` override, collections and other framework code that rely on the standard signature will silently use `Object.equals`, leading to incorrect behavior. Adds an `equals(Object)` that delegates to the covariant `equals()`, so overrides and callers of the covariant method keep compiling. Classes that do not also declare `hashCode()` are left unchanged.
 * [org.openrewrite.staticanalysis.DeclarationSiteTypeVariance](/recipes/staticanalysis/declarationsitetypevariance.md)
   * **Properly use declaration-site type variance**
-  * Currently, Java requires use-site type variance, so if someone has `Function&lt;IN, OUT&gt;` method parameter, it should rather be `Function&lt;? super IN, ? extends OUT&gt;`. Unfortunately, it is not easy to notice that `? super` and `? extends` is missing, so this recipe adds it where that would improve the situation.
+  * Java requires use-site type variance, so a `Function&lt;IN, OUT&gt;` method parameter should rather be `Function&lt;? super IN, ? extends OUT&gt;`. It is easy to miss that `? super` and `? extends` are absent, so this recipe adds them where that improves the situation.
 * [org.openrewrite.staticanalysis.DefaultComesLast](/recipes/staticanalysis/defaultcomeslast.md)
   * **Default comes last**
   * Ensure the `default` case comes last after all the cases in a switch statement. Placing `default` at the end follows a widely expected convention, making it easy to find the fallback behavior at a glance.
@@ -5147,7 +5206,7 @@ _205 recipes_
   * Remove empty blocks that effectively do nothing. Empty blocks are ambiguous -- they may indicate incomplete implementation or accidentally deleted code -- and removing them makes the intent of the surrounding code explicit.
 * [org.openrewrite.staticanalysis.EqualsAvoidsNull](/recipes/staticanalysis/equalsavoidsnull.md)
   * **Equals avoids null**
-  * Checks that any combination of String literals is on the left side of an `equals()` comparison. Also checks for String literals assigned to some field (such as `someString.equals(anotherString = &quot;text&quot;))`. And removes redundant null checks in conjunction with equals comparisons. Placing the literal on the left side prevents `NullPointerException`s, since a literal can never be null and its `equals` method handles null arguments safely.
+  * Checks that any combination of `String` literals is on the left side of an `equals()` comparison. Also checks for `String` literals assigned to some field (such as `someString.equals(anotherString = &quot;text&quot;)`). It also removes redundant null checks in conjunction with `equals()` comparisons. Placing the literal on the left side prevents `NullPointerException`s, since a literal can never be null and its `equals` method handles null arguments safely.
 * [org.openrewrite.staticanalysis.EqualsToContentEquals](/recipes/staticanalysis/equalstocontentequals.md)
   * **Use `String.contentEquals(CharSequence)` instead of `String.equals(CharSequence.toString())`**
   * Use `String.contentEquals(CharSequence)` instead of `String.equals(CharSequence.toString())`.
@@ -5156,13 +5215,13 @@ _205 recipes_
   * This makes the behavior of the code platform neutral. It will not override any existing explicit encodings, even if they don't match the default encoding option. Relying on the platform default charset can produce different results across environments, leading to subtle data corruption bugs.
 * [org.openrewrite.staticanalysis.ExplicitInitialization](/recipes/staticanalysis/explicitinitialization.md)
   * **Explicit initialization**
-  * Checks if any class or object member is explicitly initialized to default for its type value:  - `null` for object references  - zero for numeric types and `char`  - and `false` for `boolean` Removes explicit initializations where they aren't necessary. Since the JVM already guarantees these defaults, restating them adds visual noise and can obscure fields that are intentionally initialized to non-default values.
+  * Checks if any class or object member is explicitly initialized to default for its type value:  - `null` for object references  - zero for `int`, `long`, `short` and `char`  - and `false` for `boolean` Removes explicit initializations where they aren't necessary. Since the JVM already guarantees these defaults, restating them adds visual noise and can obscure fields that are intentionally initialized to non-default values.
 * [org.openrewrite.staticanalysis.ExplicitLambdaArgumentTypes](/recipes/staticanalysis/explicitlambdaargumenttypes.md)
   * **Use explicit types on lambda arguments**
-  * Adds explicit types on lambda arguments, which are otherwise optional. This can make the code clearer and easier to read. This does not add explicit types on arguments when the lambda has one or two parameters and does not have a block body, as things are considered more readable in those cases. For example, `stream.map((a, b) -&gt; a.length);` will not have explicit types added.
+  * Adds explicit types on lambda arguments, which are otherwise optional. This can make the code clearer and easier to read. This does not add explicit types on arguments when the lambda has one or two parameters and does not have a block body, as things are considered more readable in those cases. For example, `(a, b) -&gt; a.length() - b.length()` will not have explicit types added.
 * [org.openrewrite.staticanalysis.ExplicitThis](/recipes/staticanalysis/explicitthis.md)
   * **Use explicit `this.field` and `this.method()`**
-  * Add explicit 'this.' prefix to field and method access.
+  * Add explicit `this.` prefix to field and method access.
 * [org.openrewrite.staticanalysis.ExternalizableHasNoArgsConstructor](/recipes/staticanalysis/externalizablehasnoargsconstructor.md)
   * **`Externalizable` classes have no-arguments constructor**
   * `Externalizable` classes handle both serialization and deserialization and must have a no-args constructor for the deserialization process. Without a public no-argument constructor, the JVM cannot instantiate the object during deserialization and will throw an `InvalidClassException` at runtime.
@@ -5171,7 +5230,7 @@ _205 recipes_
   * Checks for fall-through in switch statements, adding `break` statements in locations where a case contains Java code but does not have a `break`, `return`, `throw`, or `continue` statement. Unintentional fall-through is a common source of bugs, as execution silently continues into the next case branch.
 * [org.openrewrite.staticanalysis.FinalClass](/recipes/staticanalysis/finalclass.md)
   * **Finalize classes with private constructors**
-  * Adds the `final` modifier to classes that expose no public or package-private constructors. If a class cannot be instantiated from the outside, marking it `final` communicates that it was not designed for inheritance and prevents accidental subclassing.
+  * Adds the `final` modifier to classes whose constructors are all `private`. If a class cannot be instantiated from the outside, marking it `final` communicates that it was not designed for inheritance and prevents accidental subclassing.
 * [org.openrewrite.staticanalysis.FinalizeLocalVariables](/recipes/staticanalysis/finalizelocalvariables.md)
   * **Finalize local variables**
   * Adds the `final` modifier keyword to local variables which are not reassigned.
@@ -5193,6 +5252,9 @@ _205 recipes_
 * [org.openrewrite.staticanalysis.FindNewExceptionWithoutCause](/recipes/staticanalysis/findnewexceptionwithoutcause.md)
   * **Find new exceptions thrown without the caught exception**
   * Finds `catch` blocks that throw a newly created exception without referencing the caught exception, which discards the original exception's stack trace and message. Taint tracking over the local variables of the `catch` block establishes whether the caught exception—or any value derived from it—reaches the thrown exception, so indirect references through local variables, helper calls and string concatenation are not falsely reported. This mirrors PMD's `PreserveStackTrace` rule.
+* [org.openrewrite.staticanalysis.FindNonCaseLabelsInSwitch](/recipes/staticanalysis/findnoncaselabelsinswitch.md)
+  * **Find non-`case` labels in `switch` statements**
+  * Marks statement labels placed directly among the `case` labels of a `switch`. Such a label is often a `case` with a missing keyword, which compiles but never matches, or a labeled loop whose `break` is easily misread as leaving the `switch`. Labels nested in a block or statement within a case are not marked. Review these before running `RemoveUnusedLabels`, which would remove unused ones.
 * [org.openrewrite.staticanalysis.FindSystemAndRuntimeExitCalls](/recipes/staticanalysis/findsystemandruntimeexitcalls.md)
   * **Find JVM exit calls**
   * Marks calls to `System.exit(int)`, `Runtime.exit(int)`, and `Runtime.halt(int)`. Terminating the JVM from library or application code is rarely correct: it bypasses the normal shutdown flow, prevents `finally` blocks from running in other threads, and can leave file, socket, and database resources in an inconsistent state. `Runtime.halt` is particularly dangerous because it also skips shutdown hooks.
@@ -5204,10 +5266,10 @@ _205 recipes_
   * Finds zero-argument `Object.wait()` invocations whose enclosing method holds two or more monitors — either through nested `synchronized (...)` blocks, or a `synchronized` method combined with a nested `synchronized` block. `wait()` releases only the monitor of its receiver, so other held monitors continue to block their waiters and can deadlock. Timed waits (`wait(long)`, `wait(long, int)`) are intentionally excluded — sonar-java's S3046 does the same, since timed waits are self-releasing and less likely to cause the failure mode.
 * [org.openrewrite.staticanalysis.FixStringFormatExpressions](/recipes/staticanalysis/fixstringformatexpressions.md)
   * **Fix `String#format` and `String#formatted` expressions**
-  * Fix `String#format` and `String#formatted` expressions by replacing `\n` newline characters with `%n` and removing any unused arguments. Note this recipe is scoped to only transform format expressions which do not specify the argument index. Using `%n` ensures the correct platform-specific line separator, and removing unused arguments eliminates dead code that may mask a mismatch between the format string and its parameters.
+  * Fix `String#format` and `String#formatted` expressions by removing any unused arguments. Note this recipe is scoped to only transform format expressions which do not specify the argument index. Removing unused arguments eliminates dead code that may mask a mismatch between the format string and its parameters.
 * [org.openrewrite.staticanalysis.ForLoopControlVariablePostfixOperators](/recipes/staticanalysis/forloopcontrolvariablepostfixoperators.md)
   * **`for` loop counters should use postfix operators**
-  * Replace `for` loop control variables using pre-increment (`++i`) or pre-decrement (`--i`) operators with their post-increment (`i++`) or post-decrement (`i++`) notation equivalents.
+  * Replace `for` loop control variables using pre-increment (`++i`) or pre-decrement (`--i`) operators with their post-increment (`i++`) or post-decrement (`i--`) notation equivalents.
 * [org.openrewrite.staticanalysis.ForLoopIncrementInUpdate](/recipes/staticanalysis/forloopincrementinupdate.md)
   * **`for` loop counters incremented in update**
   * The increment should be moved to the loop's increment clause if possible. Placing the counter update in the loop body rather than the update clause obscures the loop's control flow and makes it harder to reason about termination.
@@ -5230,14 +5292,17 @@ _205 recipes_
   * **Inline variable**
   * Inline variables when they are immediately used to return or throw. Supports both variable declarations and assignments to local variables. A variable that is declared only to be returned or thrown on the very next line adds an unnecessary level of indirection without improving readability.
 * [org.openrewrite.staticanalysis.InstanceOfPatternMatch](/recipes/staticanalysis/instanceofpatternmatch.md)
-  * **Changes code to use Java 17's `instanceof` pattern matching**
+  * **Change code to use Java 17's `instanceof` pattern matching**
   * Adds pattern variables to `instanceof` expressions wherever the same (side effect free) expression is referenced in a corresponding type cast expression within the flow scope of the `instanceof`. Currently, this recipe supports `if` statements and ternary operator expressions. Pattern matching for `instanceof` collapses the type check, cast, and variable declaration into a single expression, reducing boilerplate and eliminating the risk of an incorrect cast.
 * [org.openrewrite.staticanalysis.InterruptedExceptionHandling](/recipes/staticanalysis/interruptedexceptionhandling.md)
   * **Restore interrupted state in catch blocks**
   * When `InterruptedException` is caught, `Thread.currentThread().interrupt()` should be called to restore the thread's interrupted state. Failing to do so can suppress the interruption signal and prevent proper thread cancellation.
 * [org.openrewrite.staticanalysis.IsEmptyCallOnCollections](/recipes/staticanalysis/isemptycalloncollections.md)
   * **Use `Collection#isEmpty()` instead of comparing `size()`**
-  * Also check for _not_ `isEmpty()` when testing for not equal to zero size. Using `isEmpty()` communicates intent more clearly than comparing `size()` to zero, and for some collection implementations `isEmpty()` can be more efficient since `size()` may require traversal.
+  * Replaces comparisons of `size()` to zero with `isEmpty()`, or with `!isEmpty()` when testing for a non-zero size. Using `isEmpty()` communicates intent more clearly than comparing `size()` to zero, and for some collection implementations `isEmpty()` can be more efficient since `size()` may require traversal.
+* [org.openrewrite.staticanalysis.IsEmptyCallOnMaps](/recipes/staticanalysis/isemptycallonmaps.md)
+  * **Use `Map#isEmpty()` instead of comparing `size()`**
+  * Replaces comparisons of `Map#size()` to zero with `isEmpty()`, or with `!isEmpty()` when testing for a non-zero size. Using `isEmpty()` communicates intent more clearly than comparing `size()` to zero, and for some map implementations `isEmpty()` can be more efficient since `size()` may require traversal.
 * [org.openrewrite.staticanalysis.JavaApiBestPractices](/recipes/staticanalysis/javaapibestpractices.md)
   * **Java API best practices**
   * Use the Java standard library in a way that is most idiomatic.
@@ -5246,7 +5311,7 @@ _205 recipes_
   * Single-line statement lambdas returning a value can be replaced with expression lambdas. Expression-form lambdas are more concise and consistent with a functional programming style, making the code easier to scan.
 * [org.openrewrite.staticanalysis.LowercasePackage](/recipes/staticanalysis/lowercasepackage.md)
   * **Rename packages to lowercase**
-  * By convention all Java package names should contain only lowercase letters, numbers, and dashes. This recipe converts any uppercase letters in package names to be lowercase. Consistent package naming prevents confusion and potential issues on case-insensitive file systems.
+  * By convention all Java package names should contain only lowercase letters, numbers, and underscores. This recipe converts any uppercase letters in package names to be lowercase. Consistent package naming prevents confusion and potential issues on case-insensitive file systems.
 * [org.openrewrite.staticanalysis.MaskCreditCardNumbers](/recipes/staticanalysis/maskcreditcardnumbers.md)
   * **Mask credit card numbers**
   * When encountering string literals which appear to be credit card numbers, mask the last eight digits with the letter 'X'.
@@ -5302,11 +5367,11 @@ _205 recipes_
   * **Remove `finalize()` method**
   * Finalizers are deprecated. Use of `finalize()` can lead to performance issues, deadlocks, hangs, and other undesirable behavior.
 * [org.openrewrite.staticanalysis.NoPrimitiveWrappersForToStringOrCompareTo](/recipes/staticanalysis/noprimitivewrappersfortostringorcompareto.md)
-  * **No primitive wrappers for #toString() or #compareTo(..)**
+  * **No primitive wrappers for `#toString()` or `#compareTo(..)`**
   * Primitive wrappers should not be instantiated only for `#toString()` or `#compareTo(..)` invocations. Allocating a wrapper object just to call a method that has a static equivalent is wasteful; the static versions avoid the unnecessary object creation.
 * [org.openrewrite.staticanalysis.NoRedundantJumpStatements](/recipes/staticanalysis/noredundantjumpstatements.md)
   * **Jump statements should not be redundant**
-  * Jump statements such as return and continue let you change the default flow of program execution, but jump statements that direct the control flow to the original direction are just a waste of keystrokes.
+  * Jump statements such as `return` and `continue` let you change the default flow of program execution, but jump statements that direct the control flow to the original direction are just a waste of keystrokes.
 * [org.openrewrite.staticanalysis.NoToStringOnStringType](/recipes/staticanalysis/notostringonstringtype.md)
   * **Unnecessary `String#toString`**
   * Remove unnecessary `String#toString` invocations on objects which are already a string. Calling `toString()` on something that is already a `String` is redundant and clutters the code.
@@ -5315,7 +5380,7 @@ _205 recipes_
   * Replace unnecessary `String#valueOf(..)` method invocations with the argument directly. This occurs when the argument to `String#valueOf(arg)` is a string literal, such as `String.valueOf(&quot;example&quot;)`. Or, when the `String#valueOf(..)` invocation is used in a concatenation, such as `&quot;example&quot; + String.valueOf(&quot;example&quot;)`. The wrapping call is redundant since Java already performs the conversion implicitly in these contexts.
 * [org.openrewrite.staticanalysis.NullableOnMethodReturnType](/recipes/staticanalysis/nullableonmethodreturntype.md)
   * **Move `@Nullable` method annotations to the return type**
-  * This is the way the cool kids do it. Only annotations declared with `@Target(ElementType.TYPE_USE)` are moved, as the return type is a type context; declaration annotations such as `javax.annotation.Nullable` are left on the method.
+  * Moves `@Nullable` annotations from the method declaration to its return type. Only annotations declared with `@Target(ElementType.TYPE_USE)` are moved, as the return type is a type context; declaration annotations such as `javax.annotation.Nullable` are left on the method.
 * [org.openrewrite.staticanalysis.ObjectFinalizeCallsSuper](/recipes/staticanalysis/objectfinalizecallssuper.md)
   * **`finalize()` calls super**
   * Overrides of `Object#finalize()` should call super. Skipping the super call can prevent parent classes from releasing critical system resources during garbage collection.
@@ -5332,14 +5397,14 @@ _205 recipes_
   * **Prefer increment/decrement and compound assignment operators**
   * Prefer the use of increment and decrement operators (`++`, `--`, `+=`, `-=`) over their more verbose equivalents.
 * [org.openrewrite.staticanalysis.PreferSystemGetPropertyOverGetenv](/recipes/staticanalysis/prefersystemgetpropertyovergetenv.md)
-  * **Prefer `System.getProperty(&quot;user.home&quot;)` over `System.getenv(&quot;HOME&quot;)`**
-  * Replaces `System.getenv(&quot;HOME&quot;)` with `System.getProperty(&quot;user.home&quot;)` for better portability.
+  * **Prefer `System.getProperty(..)` over `System.getenv(..)`**
+  * Replaces `System.getenv(..)` for `USER`, `USERNAME`, `HOME`, `USERPROFILE`, `TMPDIR`, `TEMP` and `TMP` with `System.getProperty(..)` for `user.name`, `user.home` or `java.io.tmpdir`, for better portability.
 * [org.openrewrite.staticanalysis.PrimitiveWrapperClassConstructorToValueOf](/recipes/staticanalysis/primitivewrapperclassconstructortovalueof.md)
   * **Use primitive wrapper `valueOf` method**
-  * The constructor of all primitive types has been deprecated in favor of using the static factory method `valueOf` available for each of the primitive type wrappers. Using `valueOf` enables object caching for frequently used values, reducing unnecessary heap allocations. Note that this changes identity semantics: `valueOf` may return cached instances (such as `Boolean.TRUE` or `Integer` values in `[-128, 127]`), so code that compares boxed values with `==`/`!=`, relies on `System.identityHashCode`, or synchronizes on the boxed value may behave differently after this change.
+  * The constructors of all primitive wrapper types have been deprecated in favor of using the static factory method `valueOf` available for each of the primitive type wrappers. Using `valueOf` enables object caching for frequently used values, reducing unnecessary heap allocations. Note that this changes identity semantics: `valueOf` may return cached instances (such as `Boolean.TRUE` or `Integer` values in `[-128, 127]`), so code that compares boxed values with `==`/`!=`, relies on `System.identityHashCode`, or synchronizes on the boxed value may behave differently after this change.
 * [org.openrewrite.staticanalysis.RedundantFileCreation](/recipes/staticanalysis/redundantfilecreation.md)
-  * **Redundant file creation**
-  * Remove unnecessary intermediate creations of files.
+  * **Redundant `File` creation**
+  * Removes the unnecessary intermediate `File` from `new FileInputStream(new File(name))`.
 * [org.openrewrite.staticanalysis.ReferentialEqualityToObjectEquals](/recipes/staticanalysis/referentialequalitytoobjectequals.md)
   * **Replace referential equality operators with Object equals method invocations when the operands both override `Object.equals(Object obj)`**
   * Using `==` or `!=` compares object references, not the equality of two objects. This modifies code where both sides of a binary operation (`==` or `!=`) override `Object.equals(Object obj)` except when the comparison is within an overridden `Object.equals(Object obj)` method declaration itself. The resulting transformation must be carefully reviewed since any modifications change the program's semantics. When a class defines its own notion of equality through `equals`, using reference comparison is almost always a bug that causes logically identical objects to be treated as different.
@@ -5356,20 +5421,20 @@ _205 recipes_
   * **Related &quot;if/else if&quot; conditions should not be the same**
   * When an `if`/`else if` chain contains the same condition more than once, the second branch can never execute because the first matching branch always wins. The duplicate branch is dead code and should be removed.
 * [org.openrewrite.staticanalysis.RemoveEmptyJavaDocParameters](/recipes/staticanalysis/removeemptyjavadocparameters.md)
-  * **Remove JavaDoc `@param`, `@return`, and `@throws` with no description**
-  * Removes `@param`, `@return`, and `@throws` with no description from JavaDocs.
+  * **Remove Javadoc `@param`, `@return`, and `@throws` with no description**
+  * Removes `@param` and `@return` tags with no description, and `@throws` tags with neither an exception type nor a description, from Javadoc comments.
 * [org.openrewrite.staticanalysis.RemoveExtraSemicolons](/recipes/staticanalysis/removeextrasemicolons.md)
   * **Remove extra semicolons**
-  * Removes not needed semicolons. Semicolons are considered not needed:  * Optional semicolons at the end of try-with-resources,  * after the last enum value if no field or method is defined,  * no statement between two semicolon.  Stray semicolons are typically typos or remnants of refactoring and can mislead readers into thinking a statement is present.
+  * Removes unnecessary semicolons. Semicolons are considered unnecessary:  * at the end of try-with-resources,  * after the last enum value if no field or method is defined,  * when there is no statement between two semicolons.  Stray semicolons are typically typos or remnants of refactoring and can mislead readers into thinking a statement is present.
 * [org.openrewrite.staticanalysis.RemoveHashCodeCallsFromArrayInstances](/recipes/staticanalysis/removehashcodecallsfromarrayinstances.md)
   * **`hashCode()` should not be called on array instances**
   * Replace `hashCode()` calls on arrays with `Arrays.hashCode()` because the results from `hashCode()` are not helpful. Arrays inherit `hashCode()` from `Object`, which returns an identity-based value unrelated to the array contents, so two arrays with identical elements will produce different hash codes.
 * [org.openrewrite.staticanalysis.RemoveInstanceOfPatternMatch](/recipes/staticanalysis/removeinstanceofpatternmatch.md)
-  * **Removes from code Java 14's `instanceof` pattern matching**
-  * Adds an explicit variable declaration at the beginning of `if` statement instead of `instanceof` pattern matching.
+  * **Remove Java 14's `instanceof` pattern matching**
+  * Adds an explicit variable declaration at the beginning of the `if` statement instead of `instanceof` pattern matching.
 * [org.openrewrite.staticanalysis.RemoveJavaDocAuthorTag](/recipes/staticanalysis/removejavadocauthortag.md)
-  * **Remove author tags from JavaDocs**
-  * Removes author tags from JavaDocs to reduce code maintenance.
+  * **Remove author tags from Javadoc**
+  * Removes author tags from Javadoc comments to reduce code maintenance.
 * [org.openrewrite.staticanalysis.RemoveMethodsOnlyCallSuper](/recipes/staticanalysis/removemethodsonlycallsuper.md)
   * **Remove methods that only call super**
   * Methods that override a parent method but only call `super` with the same arguments are redundant and should be removed.
@@ -5377,8 +5442,8 @@ _205 recipes_
   * **Remove no argument `super()` constructor calls**
   * The compiler inserts a call to the no argument constructor of the super class when a constructor does not start with an explicit `this()` or `super(..)` call, which makes writing out `super();` redundant.
 * [org.openrewrite.staticanalysis.RemoveRedundantNullCheckBeforeInstanceof](/recipes/staticanalysis/removeredundantnullcheckbeforeinstanceof.md)
-  * **Remove redundant null checks before instanceof**
-  * Removes redundant null checks before instanceof operations since instanceof returns false for null. Removing the extra check simplifies the conditional and makes the null-safety guarantee of `instanceof` more visible to readers.
+  * **Remove redundant null checks before `instanceof`**
+  * Removes redundant null checks before `instanceof` operations since `instanceof` returns `false` for `null`. Removing the extra check simplifies the conditional and makes the null-safety guarantee of `instanceof` more visible to readers.
 * [org.openrewrite.staticanalysis.RemoveRedundantNullCheckBeforeLiteralEquals](/recipes/staticanalysis/removeredundantnullcheckbeforeliteralequals.md)
   * **Remove redundant null checks before literal equals**
   * Removes redundant null checks before `equals()` comparisons when the receiver is a literal string, since literals can never be null and `equals()` returns false for null arguments.
@@ -5389,14 +5454,17 @@ _205 recipes_
   * **Variables should not be self-assigned**
   * Self-assignments such as `x = x` have no effect and indicate a copy-paste error or typo where the left-hand or right-hand side should reference a different variable.
 * [org.openrewrite.staticanalysis.RemoveSystemOutPrintln](/recipes/staticanalysis/removesystemoutprintln.md)
-  * **Remove `System.out#println` statements**
+  * **Remove `System.out#println` and `System.err#println` statements**
   * Print statements are often left accidentally after debugging an issue. This recipe removes all `System.out#println` and `System.err#println` statements from the code. Production code should use a proper logging framework which provides consistent formatting, configurable log levels, and centralized output control.
 * [org.openrewrite.staticanalysis.RemoveToStringCallsFromArrayInstances](/recipes/staticanalysis/removetostringcallsfromarrayinstances.md)
   * **Remove `toString()` calls on arrays**
   * The result from `toString()` calls on arrays is largely useless. The output does not actually reflect the contents of the array. `Arrays.toString(array)` should be used instead as it gives the contents of the array. Since arrays do not override `toString()` from `Object`, calling it produces only the type name and memory address, which is rarely what was intended.
 * [org.openrewrite.staticanalysis.RemoveUnconditionalValueOverwrite](/recipes/staticanalysis/removeunconditionalvalueoverwrite.md)
   * **Map values should not be replaced unconditionally**
-  * When `map.put(key, value)` is called twice in a row with the same key, the first call is dead code because its value is immediately overwritten. Remove the first call to make the intent clear.
+  * When `map.put(key, value)` is called twice in a row with the same key, or the same array element or Python `dict` entry is assigned twice in a row, the first write is dead code because its value is immediately overwritten. Remove the first write to make the intent clear.
+* [org.openrewrite.staticanalysis.RemoveUnnecessaryBitwiseOperation](/recipes/staticanalysis/removeunnecessarybitwiseoperation.md)
+  * **Unnecessary bit operations should not be performed**
+  * Remove bitwise operations that always yield their other operand: `x &amp; -1`, `x | 0` and `x ^ 0` are all just `x`. Compound assignments such as `x |= 0` are replaced by `x` where their value is used, and removed where they stand alone as a statement.
 * [org.openrewrite.staticanalysis.RemoveUnneededAssertion](/recipes/staticanalysis/removeunneededassertion.md)
   * **Remove unneeded assertions**
   * Remove unneeded assertions like `assert true`, `assertTrue(true)`, or `assertFalse(false)`.
@@ -5420,10 +5488,10 @@ _205 recipes_
   * `private` methods that are never executed are dead code and should be removed. Keeping unreachable methods around adds maintenance burden and can give a false impression of the class's capabilities.
 * [org.openrewrite.staticanalysis.RenameExceptionInEmptyCatch](/recipes/staticanalysis/renameexceptioninemptycatch.md)
   * **Rename caught exceptions in empty catch blocks to `ignored`**
-  * Renames caught exceptions in empty catch blocks to `ignored`. `ignored` will be incremented by 1 if a namespace conflict exists.
+  * Renames caught exceptions in empty catch blocks to `ignored`. A numeric suffix is appended to `ignored` if that name is already taken.
 * [org.openrewrite.staticanalysis.RenameLocalVariablesToCamelCase](/recipes/staticanalysis/renamelocalvariablestocamelcase.md)
   * **Reformat local variable names to camelCase**
-  * Reformat local variable and method parameter names to camelCase to comply with Java naming convention. The recipe will not rename variables declared in for loop controls or catches with a single character. The first character is set to lower case and existing capital letters are preserved. Special characters that are allowed in java field names `$` and `_` are removed (unless the name starts with one). If a special character is removed the next valid alphanumeric will be capitalized. Currently, does not support renaming members of classes. The recipe will not rename a variable if the result already exists in the class, conflicts with a java reserved keyword, or the result is blank. Consistent naming conventions improve readability and reduce friction when navigating unfamiliar code.
+  * Reformat local variable names to camelCase to comply with Java naming convention. The recipe will not rename variables declared in for loop controls or catches with a single character. The first character is set to lower case and existing capital letters are preserved. Special characters that are allowed in java field names `$` and `_` are removed (unless the name starts with one). If a special character is removed the next valid alphanumeric will be capitalized. Currently, does not support renaming members of classes. The recipe will not rename a variable if the result already exists in the class, conflicts with a java reserved keyword, or the result is blank. Consistent naming conventions improve readability and reduce friction when navigating unfamiliar code.
 * [org.openrewrite.staticanalysis.RenameMethodsNamedHashcodeEqualOrToString](/recipes/staticanalysis/renamemethodsnamedhashcodeequalortostring.md)
   * **Rename methods named `hashcode`, `equal`, or `tostring`**
   * Methods should not be named `hashcode`, `equal`, or `tostring`. Any of these are confusing as they appear to be intended as overridden methods from the `Object` base class, despite being case-insensitive. These near-miss names are almost certainly spelling mistakes that silently introduce a new method instead of overriding the intended one.
@@ -5443,11 +5511,11 @@ _205 recipes_
   * **Replace `A.class.isInstance(a)` with `a instanceof A`**
   * There should be no `A.class.isInstance(a)`, it should be replaced by `a instanceof A`. Using `instanceof` enables the compiler to catch type incompatibilities at compile time rather than silently passing at runtime, which helps detect dead code early.
 * [org.openrewrite.staticanalysis.ReplaceCollectionToArrayArgWithEmptyArray](/recipes/staticanalysis/replacecollectiontoarrayargwithemptyarray.md)
-  * **Use Empty Array for `Collection.toArray()`**
+  * **Use empty array for `Collection.toArray()`**
   * Changes new array creation with `Collection#toArray(T[])` to use an empty array argument, which is better for performance.  According to the `Collection#toArray(T[])` documentation:  &gt; If the collection fits in the specified array, it is returned therein.  However, although it's not intuitive, allocating a right-sized array ahead of time to pass to the API appears to be [generally worse for performance](https://shipilev.net/blog/2016/arrays-wisdom-ancients/#_conclusion) according to benchmarking and JVM developers due to a number of implementation details in both Java and the virtual machine.  H2 achieved significant performance gains by [switching to empty arrays instead pre-sized ones](https://github.com/h2database/h2database/issues/311).
 * [org.openrewrite.staticanalysis.ReplaceDeprecatedRuntimeExecMethods](/recipes/staticanalysis/replacedeprecatedruntimeexecmethods.md)
   * **Replace deprecated `Runtime#exec()` methods**
-  * Replace `Runtime#exec(String)` methods to use `exec(String[])` instead because the former is deprecated after Java 18 and is no longer recommended for use by the Java documentation.
+  * Replace `Runtime#exec(String)` methods to use `exec(String[])` instead because the former is deprecated since Java 18 and is no longer recommended for use by the Java documentation.
 * [org.openrewrite.staticanalysis.ReplaceDuplicateStringLiterals](/recipes/staticanalysis/replaceduplicatestringliterals.md)
   * **Replace duplicate `String` literals**
   * Replaces `String` literals with a length of 5 or greater repeated a minimum of 3 times. Qualified `String` literals include final Strings, method invocations, and new class invocations. Adds a new `private static final String` or uses an existing equivalent class field. A new variable name will be generated based on the literal value if an existing field does not exist. The generated name will append a numeric value to the variable name if a name already exists in the compilation unit. Centralizing repeated string values into constants makes refactoring safer and reduces the risk of inconsistent updates.
@@ -5456,12 +5524,12 @@ _205 recipes_
   * `Hashtable` synchronizes every operation, which adds overhead in the common single-threaded case. This recipe replaces a local `Hashtable` with a `HashMap` when data flow analysis can prove the `Hashtable` never escapes its method (it is not returned, assigned to a field, or passed as an argument), so no other thread can observe it and the synchronization is redundant. Fields, escaping variables, and `Hashtable`-specific method usages (`contains`, `elements`, `keys`) are left untouched. `HashMap` permits `null` keys and values, so it accepts every input `Hashtable` did.
 * [org.openrewrite.staticanalysis.ReplaceLambdaWithMethodReference](/recipes/staticanalysis/replacelambdawithmethodreference.md)
   * **Use method references in lambda**
-  * Replaces the single statement lambdas `o -&gt; o instanceOf X`, `o -&gt; (A) o`, `o -&gt; System.out.println(o)`, `o -&gt; o != null`, `o -&gt; o == null` with the equivalent method reference. Method references are often more concise and readable than their lambda equivalents, making the code's intent clearer at a glance.
+  * Replaces the single statement lambdas `o -&gt; o instanceof X`, `o -&gt; (A) o`, `o -&gt; System.out.println(o)`, `o -&gt; o != null`, `o -&gt; o == null` with the equivalent method reference. Method references are often more concise and readable than their lambda equivalents, making the code's intent clearer at a glance.
 * [org.openrewrite.staticanalysis.ReplaceOptionalIsPresentWithIfPresent](/recipes/staticanalysis/replaceoptionalispresentwithifpresent.md)
   * **Replace `Optional#isPresent()` with `Optional#ifPresent()`**
-  * Replace `Optional#isPresent()` with `Optional#ifPresent()`. Please note that this recipe is only suitable for if-blocks that lack an Else-block and have a single condition applied.
+  * Replace `Optional#isPresent()` with `Optional#ifPresent()`. This recipe only applies to `if` statements without an `else` branch and with a single condition.
 * [org.openrewrite.staticanalysis.ReplaceRedundantFormatWithPrintf](/recipes/staticanalysis/replaceredundantformatwithprintf.md)
-  * **Replace redundant String format invocations that are wrapped with PrintStream operations**
+  * **Replace redundant `String.format()` invocations that are wrapped with `PrintStream` operations**
   * Replaces `PrintStream.print(String.format(format, ...args))` with `PrintStream.printf(format, ...args)` (and for `println`, appends a newline to the format string).
 * [org.openrewrite.staticanalysis.ReplaceStackWithDeque](/recipes/staticanalysis/replacestackwithdeque.md)
   * **Replace `java.util.Stack` with `java.util.Deque`**
@@ -5471,22 +5539,22 @@ _205 recipes_
   * `StringBuffer` synchronizes every operation, which adds overhead in the common single-threaded case. `StringBuilder` exposes the identical API without the synchronization. This recipe replaces a local `StringBuffer` with a `StringBuilder` when data flow analysis can prove the `StringBuffer` never escapes its method (it is not returned, assigned to a field, or passed as an argument), so no other thread can observe it and the synchronization is redundant. Fields and escaping variables are left untouched.
 * [org.openrewrite.staticanalysis.ReplaceStringBuilderWithString](/recipes/staticanalysis/replacestringbuilderwithstring.md)
   * **Replace `StringBuilder#append` with `String`**
-  * Replace `StringBuilder.append()` with String if you are only concatenating a small number of strings and the code is simple and easy to read, as the compiler can optimize simple string concatenation expressions into a single String object, which can be more efficient than using StringBuilder.
+  * Replace `StringBuilder.append()` with `String` concatenation if you are only concatenating a small number of strings and the code is simple and easy to read, as the compiler can optimize simple string concatenation expressions into a single `String` object, which can be more efficient than using `StringBuilder`.
 * [org.openrewrite.staticanalysis.ReplaceStringConcatenationWithStringValueOf](/recipes/staticanalysis/replacestringconcatenationwithstringvalueof.md)
-  * **Replace String concatenation with `String.valueOf()`**
+  * **Replace `String` concatenation with `String.valueOf()`**
   * Replace inefficient string concatenation patterns like `&quot;&quot; + ...` with `String.valueOf(...)`. This improves code readability and may have minor performance benefits. The empty string prefix `&quot;&quot; +` is an indirect way to convert a value to a `String`, while `String.valueOf()` clearly communicates the conversion intent.
 * [org.openrewrite.staticanalysis.ReplaceTextBlockWithString](/recipes/staticanalysis/replacetextblockwithstring.md)
   * **Replace text block with regular string**
   * Replace text block with a regular multi-line string. Text blocks that fit on a single line without concatenation or escaped newlines gain no readability benefit from the triple-quote syntax and are clearer as plain string literals.
 * [org.openrewrite.staticanalysis.ReplaceThreadRunWithThreadStart](/recipes/staticanalysis/replacethreadrunwiththreadstart.md)
   * **Replace calls to `Thread.run()` with `Thread.start()`**
-  * `Thread.run()` should not be called directly.
+  * Replaces calls to `Thread.run()` with `Thread.start()`, so that the code runs on a new thread instead of the calling thread.
 * [org.openrewrite.staticanalysis.ReplaceValidateNotNullHavingSingleArgWithObjectsRequireNonNull](/recipes/staticanalysis/replacevalidatenotnullhavingsingleargwithobjectsrequirenonnull.md)
-  * **Replace `org.apache.commons.lang3.Validate#notNull` with `Objects#requireNonNull`**
+  * **Replace single-argument `org.apache.commons.lang3.Validate#notNull` with `Objects#requireNonNull`**
   * Replace `org.apache.commons.lang3.Validate.notNull(Object)` with `Objects.requireNonNull(Object)`.
 * [org.openrewrite.staticanalysis.ReplaceValidateNotNullHavingVarargsWithObjectsRequireNonNull](/recipes/staticanalysis/replacevalidatenotnullhavingvarargswithobjectsrequirenonnull.md)
-  * **Replace `org.apache.commons.lang3.Validate#notNull` with `Objects#requireNonNull`**
-  * Replace `org.apache.commons.lang3.Validate.notNull(Object, String, Object[])` with `Objects.requireNonNull(Object, String)`.
+  * **Replace varargs `org.apache.commons.lang3.Validate#notNull` with `Objects#requireNonNull`**
+  * Replace `org.apache.commons.lang3.Validate.notNull(Object, String, Object[])` with `Objects.requireNonNull(Object, String)`, or with `Objects.requireNonNull(Object, Supplier&lt;String&gt;)` to format the message lazily when format arguments are passed.
 * [org.openrewrite.staticanalysis.ReplaceVectorWithArrayList](/recipes/staticanalysis/replacevectorwitharraylist.md)
   * **Replace `java.util.Vector` with `java.util.ArrayList`**
   * `Vector` synchronizes every operation, which adds overhead in the common single-threaded case. This recipe replaces a local `Vector` with an `ArrayList` when data flow analysis can prove the `Vector` never escapes its method (it is not returned, assigned to a field, or passed as an argument), so no other thread can observe it and the synchronization is redundant. Fields, escaping variables, `Vector`-specific method usages (like `elementAt` or `addElement`), and the `Vector(int, int)` constructor are left untouched.
@@ -5507,7 +5575,7 @@ _205 recipes_
   * Applies De Morgan's laws to simplify boolean expressions with negation. Transforms `!(a &amp;&amp; b)` to `!a || !b` and `!(a || b)` to `!a &amp;&amp; !b`. Distributing negations inward eliminates the outer `!` and makes each individual condition's polarity immediately visible, which aids comprehension.
 * [org.openrewrite.staticanalysis.SimplifyBooleanReturn](/recipes/staticanalysis/simplifybooleanreturn.md)
   * **Simplify boolean return**
-  * Simplifies Boolean expressions by removing redundancies. For example, `a &amp;&amp; true` simplifies to `a`. Wrapping a boolean expression in an if-then-else just to return `true` or `false` adds unnecessary control flow that obscures the straightforward intent of the expression.
+  * Simplifies `if` statements that only return `true` or `false` to a single `return`. For example, `if (a) \{ return true; \} return false;` simplifies to `return a;`. Wrapping a boolean expression in an if-then-else just to return `true` or `false` adds unnecessary control flow that obscures the straightforward intent of the expression.
 * [org.openrewrite.staticanalysis.SimplifyCompoundStatement](/recipes/staticanalysis/simplifycompoundstatement.md)
   * **Simplify compound statement**
   * Fixes or removes useless compound statements. For example, removing `b &amp;= true`, and replacing `b &amp;= false` with `b = false`.
@@ -5515,16 +5583,16 @@ _205 recipes_
   * **Simplify consecutive assignments**
   * Combine consecutive assignments into a single statement where possible.
 * [org.openrewrite.staticanalysis.SimplifyConstantIfBranchExecution](/recipes/staticanalysis/simplifyconstantifbranchexecution.md)
-  * **Simplify constant if branch execution**
-  * Checks for if expressions that are always `true` or `false` and simplifies them. Branches that can never execute are dead code that misleads readers and may mask logic errors introduced during refactoring.
+  * **Simplify constant `if` branch execution**
+  * Checks for `if` conditions that are always `true` or `false` and simplifies them. Branches that can never execute are dead code that misleads readers and may mask logic errors introduced during refactoring.
 * [org.openrewrite.staticanalysis.SimplifyDurationCreationUnits](/recipes/staticanalysis/simplifydurationcreationunits.md)
   * **Simplify `java.time.Duration` units**
   * Simplifies `java.time.Duration` units to be more human-readable.
 * [org.openrewrite.staticanalysis.SimplifyElseBranch](/recipes/staticanalysis/simplifyelsebranch.md)
   * **Simplify `else` branch if it only has a single `if`**
-  * Simplify `else` branch if it only has a single `if`.
+  * Replaces an `else` block that contains only a single `if` statement with an `else if`.
 * [org.openrewrite.staticanalysis.SimplifyForLoopBoundaryComparison](/recipes/staticanalysis/simplifyforloopboundarycomparison.md)
-  * **Simplify for loop boundary comparisons**
+  * **Simplify `for` loop boundary comparisons**
   * Replace `&lt;=` with `&lt;` in for loop conditions by adjusting the comparison operands. For example, `i &lt;= n - 1` simplifies to `i &lt; n`, and `i &lt;= n` becomes `i &lt; n + 1`.
 * [org.openrewrite.staticanalysis.SimplifyRedundantLogicalExpression](/recipes/staticanalysis/simplifyredundantlogicalexpression.md)
   * **Identical expressions used with logical operators should be simplified**
@@ -5539,11 +5607,11 @@ _205 recipes_
   * **Replace `booleanExpression ? true : false` with `booleanExpression`**
   * Replace ternary expressions like `booleanExpression ? true : false` with `booleanExpression`.
 * [org.openrewrite.staticanalysis.SingleLineCommentSpacing](/recipes/staticanalysis/singlelinecommentspacing.md)
-  * **Add space after // in single-line comments**
-  * Ensures there is exactly one space after // in single-line comments when missing.
+  * **Add space after `//` in single-line comments**
+  * Adds a space after `//` in single-line comments that do not start with one.
 * [org.openrewrite.staticanalysis.SortedSetStreamToLinkedHashSet](/recipes/staticanalysis/sortedsetstreamtolinkedhashset.md)
-  * **Sorted set stream should be collected to LinkedHashSet**
-  * Converts `set.stream().sorted().collect(Collectors.toSet())` to `set.stream().sorted().collect(LinkedHashSet::new)`.
+  * **Sorted set stream should be collected to `LinkedHashSet`**
+  * Converts `stream.sorted().collect(Collectors.toSet())` to `stream.sorted().collect(Collectors.toCollection(LinkedHashSet::new))`, so that the sort order is preserved.
 * [org.openrewrite.staticanalysis.StaticAccessViaInstance](/recipes/staticanalysis/staticaccessviainstance.md)
   * **Static members should be accessed via the class name**
   * Accessing static fields or calling static methods on an instance reference is misleading. Static members should be accessed using the declaring class name instead.
@@ -5560,13 +5628,13 @@ _205 recipes_
   * **Typecast parenthesis padding**
   * Fixes whitespace padding between a typecast type identifier and the enclosing left and right parentheses. For example, when configured to remove spacing, `( int ) 0L;` becomes `(int) 0L;`.
 * [org.openrewrite.staticanalysis.URLEqualsHashCodeRecipes](/recipes/staticanalysis/urlequalshashcoderecipes.md)
-  * **URL Equals and Hash Code**
+  * **`URL#equals()` and `URL#hashCode()`**
   * Uses of `equals()` and `hashCode()` cause `java.net.URL` to make blocking internet connections. Instead, use `java.net.URI`.
 * [org.openrewrite.staticanalysis.URLEqualsHashCodeRecipes$URLEqualsRecipe](/recipes/staticanalysis/urlequalshashcoderecipes$urlequalsrecipe.md)
-  * **URL Equals**
+  * **`URL#equals()`**
   * Uses of `equals()` cause `java.net.URL` to make blocking internet connections. Instead, use `java.net.URI`.
 * [org.openrewrite.staticanalysis.URLEqualsHashCodeRecipes$URLHashCodeRecipe](/recipes/staticanalysis/urlequalshashcoderecipes$urlhashcoderecipe.md)
-  * **URL Hash Code**
+  * **`URL#hashCode()`**
   * Uses of `hashCode()` cause `java.net.URL` to make blocking internet connections. Instead, use `java.net.URI`.
 * [org.openrewrite.staticanalysis.UnnecessaryCatch](/recipes/staticanalysis/unnecessarycatch.md)
   * **Remove catch for a checked exception if the try block does not throw that exception**
@@ -5585,7 +5653,7 @@ _205 recipes_
   * Removes unnecessary parentheses from code where extra parentheses pairs are redundant. Redundant parentheses add visual noise and can obscure the actual structure of an expression, making code harder to read at a glance.
 * [org.openrewrite.staticanalysis.UnnecessaryPrimitiveAnnotations](/recipes/staticanalysis/unnecessaryprimitiveannotations.md)
   * **Remove `@Nullable` and `@CheckForNull` annotations from primitives**
-  * Primitives can't be null anyway, so these annotations are not useful in this context. Leaving them in place gives the false impression that a null value is possible, which can confuse readers and static analysis tools alike.
+  * Primitives can't be null anyway, so the `javax.annotation.Nullable` and `javax.annotation.CheckForNull` annotations are not useful in this context. Leaving them in place gives the false impression that a null value is possible, which can confuse readers and static analysis tools alike.
 * [org.openrewrite.staticanalysis.UnnecessaryReturnAsLastStatement](/recipes/staticanalysis/unnecessaryreturnaslaststatement.md)
   * **Unnecessary `return` as last statement in void method**
   * Removes `return` from a `void` method if it's the last statement. A trailing `return` in a void method has no effect on control flow and is just noise that distracts from the meaningful logic.
@@ -5621,7 +5689,7 @@ _205 recipes_
   * Instead of anonymous class declarations, use a lambda where possible. Using lambdas to replace anonymous classes can lead to more expressive and maintainable code, improve code readability, reduce code duplication, and achieve better performance in some cases.
 * [org.openrewrite.staticanalysis.UseListSort](/recipes/staticanalysis/uselistsort.md)
   * **Replace invocations of `Collections#sort(List, Comparator)` with `List#sort(Comparator)`**
-  * The `java.util.Collections#sort(..)` implementation defers to the `java.util.List#sort(Comparator)`, replaced it with the `java.util.List#sort(Comparator)` implementation for better readability.
+  * The `java.util.Collections#sort(..)` implementation defers to `java.util.List#sort(Comparator)`, so call `java.util.List#sort(Comparator)` directly for better readability.
 * [org.openrewrite.staticanalysis.UseMapContainsKey](/recipes/staticanalysis/usemapcontainskey.md)
   * **Use `Map#containsKey`**
   * `map.keySet().contains(a)` can be simplified to `map.containsKey(a)`.
@@ -5629,20 +5697,20 @@ _205 recipes_
   * **Iterate a `Map`'s `entrySet()` rather than its `keySet()`**
   * A loop over `map.keySet()` that calls `map.get(key)` hashes and probes the map again for every element, which on a `TreeMap` costs an extra `O(log n)` lookup per iteration. Iterating `map.entrySet()` instead hands the loop both the key and the value. The loop is only rewritten when:  - The map is a simple reference that is neither modified nor reassigned inside the loop.  - `get` is called only with the loop variable.  - The loop variable is neither reassigned nor captured by a lambda or anonymous class.  Every candidate loop, converted or not, is recorded in a data table along with the reason it was left alone.
 * [org.openrewrite.staticanalysis.UseObjectNotifyAll](/recipes/staticanalysis/useobjectnotifyall.md)
-  * **Replaces `Object.notify()` with `Object.notifyAll()`**
+  * **Replace `Object.notify()` with `Object.notifyAll()`**
   * `Object.notifyAll()` and `Object.notify()` both wake up sleeping threads, but `Object.notify()` only rouses one while `Object.notifyAll()` rouses all of them. Since `Object.notify()` might not wake up the right thread, `Object.notifyAll()` should be used instead. See [this](https://wiki.sei.cmu.edu/confluence/display/java/THI02-J.+Notify+all+waiting+threads+rather+than+a+single+thread) for more information. Using `notify()` in a multi-waiter scenario risks leaving threads permanently stalled when the wrong one is awakened.
 * [org.openrewrite.staticanalysis.UsePortableNewlines](/recipes/staticanalysis/useportablenewlines.md)
-  * **Use %n instead of \n in format strings**
-  * Format strings should use %n rather than \n to produce platform-specific line separators. Hard-coded `\n` characters produce incorrect line endings on Windows, whereas `%n` adapts to the runtime platform automatically.
+  * **Use `%n` instead of `\n` in format strings**
+  * Format strings should use `%n` rather than `\n` to produce platform-specific line separators. Hard-coded `\n` characters produce incorrect line endings on Windows, whereas `%n` adapts to the runtime platform automatically.
 * [org.openrewrite.staticanalysis.UseStandardCharset](/recipes/staticanalysis/usestandardcharset.md)
-  * **Use `StandardCharset` constants**
-  * Replaces `Charset.forName(java.lang.String)` with the equivalent `StandardCharset` constant. Using the predefined constants is both compile-time safe and avoids the need to handle `UnsupportedEncodingException` for charsets that are guaranteed to exist on every JVM.
+  * **Use `StandardCharsets` constants**
+  * Replaces `Charset.forName(java.lang.String)` with the equivalent `StandardCharsets` constant. Using the predefined constants is compile-time safe and avoids looking up by name the charsets that are guaranteed to exist on every JVM.
 * [org.openrewrite.staticanalysis.UseStringCaseInsensitiveOrderRecipe](/recipes/staticanalysis/usestringcaseinsensitiveorderrecipe.md)
   * **Use `String.CASE_INSENSITIVE_ORDER`**
-  * Replaces case-insensitive string comparator lambdas and method references with the JDK constant `String.CASE_INSENSITIVE_ORDER`. Improves readability and removes one closure allocation per call site.
+  * Replaces case-insensitive string comparator lambdas and method references with the JDK constant `String.CASE_INSENSITIVE_ORDER`. Improves readability.
 * [org.openrewrite.staticanalysis.UseStringReplace](/recipes/staticanalysis/usestringreplace.md)
   * **Use `String::replace()` when first parameter is not a real regular expression**
-  * When `String::replaceAll` is used, the first argument should be a real regular expression. If it’s not the case, `String::replace` does exactly the same thing as `String::replaceAll` without the performance drawback of the regex.
+  * When `String::replaceAll` is used, the first argument should be a real regular expression. If that's not the case, `String::replace` does exactly the same thing as `String::replaceAll` without the performance drawback of the regex.
 * [org.openrewrite.staticanalysis.UseSystemLineSeparator](/recipes/staticanalysis/usesystemlineseparator.md)
   * **Use `System.lineSeparator()`**
   * Replace calls to `System.getProperty(&quot;line.separator&quot;)` with `System.lineSeparator()`.
@@ -5651,13 +5719,13 @@ _205 recipes_
   * Refactor try/finally blocks to use try-with-resources when the finally block only closes an `AutoCloseable` resource. Try-with-resources guarantees that resources are closed even when exceptions occur, eliminating an entire class of resource-leak bugs that manual `finally` blocks are prone to.
 * [org.openrewrite.staticanalysis.WhileInsteadOfFor](/recipes/staticanalysis/whileinsteadoffor.md)
   * **Prefer `while` over `for` loops**
-  * When only the condition expression is defined in a for loop, and the initialization and increment expressions are missing, a while loop should be used instead to increase readability. A `for` loop with empty init and update sections signals iteration mechanics that do not exist, whereas `while` clearly communicates a simple conditional loop.
+  * When only the condition expression is defined in a `for` loop, and the initialization and increment expressions are missing, a `while` loop should be used instead to increase readability. A `for` loop with empty init and update sections signals iteration mechanics that do not exist, whereas `while` clearly communicates a simple conditional loop.
 * [org.openrewrite.staticanalysis.WriteOctalValuesAsDecimal](/recipes/staticanalysis/writeoctalvaluesasdecimal.md)
   * **Write octal values as decimal**
   * Developers may not recognize octal values as such, mistaking them instead for decimal values. Because a leading zero silently switches the literal to base-8, what looks like `010` actually represents `8`, which is a common source of subtle numeric bugs.
 * [org.openrewrite.staticanalysis.java.MoveFieldAnnotationToType](/recipes/staticanalysis/java/movefieldannotationtotype.md)
   * **Move annotation to type instead of field**
-  * Annotations that could be applied to either a field or a type are better applied to the type, because similar annotations may be more restrictive, leading to compile errors like 'scoping construct cannot be annotated with type-use annotation' when migrating later.
+  * Annotations that could be applied to either a field or a type are better applied to the type, because similar annotations may be more restrictive, leading to compile errors like 'scoping construct cannot be annotated with type-use annotation' when migrating later. Applies to fields, local variables, method parameters and method return types.
 * [org.openrewrite.staticanalysis.maven.MavenJavadocNonAsciiRecipe](/recipes/staticanalysis/maven/mavenjavadocnonasciirecipe.md)
   * **Remove non-ASCII characters from Javadoc**
   * Maven's javadoc-plugin configuration does not support non-ASCII characters. What makes it tricky is the error is very ambiguous and doesn't help in any way. This recipe removes those non-ASCII characters.
@@ -5666,23 +5734,23 @@ _205 recipes_
 
 _License: Moderne Source Available License_
 
-_303 recipes_
+_311 recipes_
 
 * [org.openrewrite.java.testing.archunit.ArchUnit0to1Migration](/recipes/java/testing/archunit/archunit0to1migration.md)
   * **ArchUnit 0.x upgrade**
   * Upgrade ArchUnit from 0.x to 1.x.
 * [org.openrewrite.java.testing.arquillian.ArquillianJUnit4ToArquillianJUnit5](/recipes/java/testing/arquillian/arquillianjunit4toarquillianjunit5.md)
-  * **Use Arquillian JUnit 5 Extension**
+  * **Use Arquillian JUnit 5 extension**
   * Migrates Arquillian JUnit 4 to JUnit 5.
 * [org.openrewrite.java.testing.arquillian.ReplaceArquillianInSequenceAnnotation](/recipes/java/testing/arquillian/replacearquillianinsequenceannotation.md)
-  * **Arquillian JUnit 4 `@InSequence` to JUnit Jupiter `@Order`**
+  * **Replace Arquillian JUnit 4 `@InSequence` with JUnit Jupiter `@Order`**
   * Transforms the Arquillian JUnit 4 `@InSequence` to the JUnit Jupiter `@Order`.
 * [org.openrewrite.java.testing.assertj.AdoptAssertJDurationAssertions](/recipes/java/testing/assertj/adoptassertjdurationassertions.md)
   * **Adopt AssertJ Duration assertions**
   * Adopt AssertJ `DurationAssert` assertions for more expressive messages.
 * [org.openrewrite.java.testing.assertj.AssertJBigIntegerRulesRecipes](/recipes/java/testing/assertj/assertjbigintegerrulesrecipes.md)
-  * **Adopt AssertJ BigInteger Assertions**
-  * Adopt AssertJ BigInteger Assertions. Favor semantically explicit methods (e.g. `myBigInteger.isZero()` over `myBigInteger.isEqualTo(0)`).
+  * **Adopt AssertJ `BigInteger` assertions**
+  * Adopt AssertJ `BigInteger` assertions. Favor semantically explicit methods (e.g. `myBigInteger.isZero()` over `myBigInteger.isEqualTo(0)`).
 * [org.openrewrite.java.testing.assertj.AssertJBigIntegerRulesRecipes$AbstractBigIntegerAssertIsEqualToRecipe](/recipes/java/testing/assertj/assertjbigintegerrulesrecipes$abstractbigintegerassertisequaltorecipe.md)
   * **Replace `isCloseTo` with `isEqualTo`**
   * Replace `isCloseTo` with `isEqualTo` when `offset` or `percentage` is zero.
@@ -5699,8 +5767,8 @@ _303 recipes_
   * **Replace `isEqualTo(0)` with `isZero()`**
   * Replace `isEqualTo(0)` with `isZero()`.
 * [org.openrewrite.java.testing.assertj.AssertJByteRulesRecipes](/recipes/java/testing/assertj/assertjbyterulesrecipes.md)
-  * **Adopt AssertJ Byte Assertions**
-  * Adopt AssertJ Byte Assertions. Favor semantically explicit methods (e.g. `myByte.isZero()` over `myByte.isEqualTo(0)`).
+  * **Adopt AssertJ `Byte` assertions**
+  * Adopt AssertJ `Byte` assertions. Favor semantically explicit methods (e.g. `myByte.isZero()` over `myByte.isEqualTo(0)`).
 * [org.openrewrite.java.testing.assertj.AssertJByteRulesRecipes$AbstractByteAssertIsEqualToRecipe](/recipes/java/testing/assertj/assertjbyterulesrecipes$abstractbyteassertisequaltorecipe.md)
   * **Replace `isCloseTo` with `isEqualTo`**
   * Replace `isCloseTo` with `isEqualTo` when `offset` or `percentage` is zero.
@@ -5717,8 +5785,8 @@ _303 recipes_
   * **Replace `isEqualTo(0)` with `isZero()`**
   * Replace `isEqualTo(0)` with `isZero()`.
 * [org.openrewrite.java.testing.assertj.AssertJDoubleRulesRecipes](/recipes/java/testing/assertj/assertjdoublerulesrecipes.md)
-  * **Adopt AssertJ Double Assertions**
-  * Adopt AssertJ Double Assertions. Favor semantically explicit methods (e.g. `myDouble.isZero()` over `myDouble.isEqualTo(0.0)`).
+  * **Adopt AssertJ `Double` assertions**
+  * Adopt AssertJ `Double` assertions. Favor semantically explicit methods (e.g. `myDouble.isZero()` over `myDouble.isEqualTo(0.0)`).
 * [org.openrewrite.java.testing.assertj.AssertJDoubleRulesRecipes$AbstractDoubleAssertIsCloseToWithOffsetRecipe](/recipes/java/testing/assertj/assertjdoublerulesrecipes$abstractdoubleassertisclosetowithoffsetrecipe.md)
   * **Replace `isEqualTo` with `isCloseTo`**
   * Replace `isEqualTo` with `isCloseTo` when `offset` or `percentage` is provided.
@@ -5738,8 +5806,8 @@ _303 recipes_
   * **Replace `isEqualTo(0)` with `isZero()`**
   * Replace `isEqualTo(0)` with `isZero()`.
 * [org.openrewrite.java.testing.assertj.AssertJFloatRulesRecipes](/recipes/java/testing/assertj/assertjfloatrulesrecipes.md)
-  * **Adopt AssertJ Float Assertions**
-  * Adopt AssertJ Float Assertions. Favor semantically explicit methods (e.g. `myFloat.isZero()` over `myFloat.isEqualTo(0.0f)`).
+  * **Adopt AssertJ `Float` assertions**
+  * Adopt AssertJ `Float` assertions. Favor semantically explicit methods (e.g. `myFloat.isZero()` over `myFloat.isEqualTo(0.0f)`).
 * [org.openrewrite.java.testing.assertj.AssertJFloatRulesRecipes$AbstractFloatAssertIsCloseToWithOffsetRecipe](/recipes/java/testing/assertj/assertjfloatrulesrecipes$abstractfloatassertisclosetowithoffsetrecipe.md)
   * **Replace `isEqualTo` with `isCloseTo`**
   * Replace `isEqualTo` with `isCloseTo` when `offset` or `percentage` is provided.
@@ -5759,8 +5827,8 @@ _303 recipes_
   * **Replace `isEqualTo(0)` with `isZero()`**
   * Replace `isEqualTo(0)` with `isZero()`.
 * [org.openrewrite.java.testing.assertj.AssertJIntegerRulesRecipes](/recipes/java/testing/assertj/assertjintegerrulesrecipes.md)
-  * **Adopt AssertJ Integer Assertions**
-  * Adopt AssertJ Integer Assertions. Favor semantically explicit methods (e.g. `myInteger.isZero()` over `myInteger.isEqualTo(0)`).
+  * **Adopt AssertJ `Integer` assertions**
+  * Adopt AssertJ `Integer` assertions. Favor semantically explicit methods (e.g. `myInteger.isZero()` over `myInteger.isEqualTo(0)`).
 * [org.openrewrite.java.testing.assertj.AssertJIntegerRulesRecipes$AbstractIntegerAssertIsEqualToRecipe](/recipes/java/testing/assertj/assertjintegerrulesrecipes$abstractintegerassertisequaltorecipe.md)
   * **Replace `isCloseTo` with `isEqualTo`**
   * Replace `isCloseTo` with `isEqualTo` when `offset` or `percentage` is zero.
@@ -5777,8 +5845,8 @@ _303 recipes_
   * **Replace `isEqualTo(0)` with `isZero()`**
   * Replace `isEqualTo(0)` with `isZero()`.
 * [org.openrewrite.java.testing.assertj.AssertJLongRulesRecipes](/recipes/java/testing/assertj/assertjlongrulesrecipes.md)
-  * **Adopt AssertJ Long Assertions**
-  * Adopt AssertJ Long Assertions. Favor semantically explicit methods (e.g. `myLong.isZero()` over `myLong.isEqualTo(0)`).
+  * **Adopt AssertJ `Long` assertions**
+  * Adopt AssertJ `Long` assertions. Favor semantically explicit methods (e.g. `myLong.isZero()` over `myLong.isEqualTo(0)`).
 * [org.openrewrite.java.testing.assertj.AssertJLongRulesRecipes$AbstractLongAssertIsEqualToRecipe](/recipes/java/testing/assertj/assertjlongrulesrecipes$abstractlongassertisequaltorecipe.md)
   * **Replace `isCloseTo` with `isEqualTo`**
   * Replace `isCloseTo` with `isEqualTo` when `offset` or `percentage` is zero.
@@ -5795,8 +5863,8 @@ _303 recipes_
   * **Replace `isEqualTo(0)` with `isZero()`**
   * Replace `isEqualTo(0)` with `isZero()`.
 * [org.openrewrite.java.testing.assertj.AssertJShortRulesRecipes](/recipes/java/testing/assertj/assertjshortrulesrecipes.md)
-  * **Adopt AssertJ Short Assertions**
-  * Adopt AssertJ Short Assertions. Favor semantically explicit methods (e.g. `myShort.isZero()` over `myShort.isEqualTo(0)`).
+  * **Adopt AssertJ `Short` assertions**
+  * Adopt AssertJ `Short` assertions. Favor semantically explicit methods (e.g. `myShort.isZero()` over `myShort.isEqualTo(0)`).
 * [org.openrewrite.java.testing.assertj.AssertJShortRulesRecipes$AbstractShortAssertIsEqualToRecipe](/recipes/java/testing/assertj/assertjshortrulesrecipes$abstractshortassertisequaltorecipe.md)
   * **Replace `isCloseTo` with `isEqualTo`**
   * Replace `isCloseTo` with `isEqualTo` when `offset` or `percentage` is zero.
@@ -5825,11 +5893,11 @@ _303 recipes_
   * **Migrate Fest 2.x to AssertJ**
   * AssertJ provides a rich set of assertions, truly helpful error messages, improves test code readability. Converts Fest 2.x imports to AssertJ imports.
 * [org.openrewrite.java.testing.assertj.IsEqualToIgnoringMillisToIsCloseToRecipe](/recipes/java/testing/assertj/isequaltoignoringmillistoisclosetorecipe.md)
-  * **Replace `AbstractDateAssert#isEqualToIgnoringMillis(java.util.Date)` by `by isCloseTo(Date, long)`**
+  * **Replace `AbstractDateAssert#isEqualToIgnoringMillis(java.util.Date)` with `isCloseTo(Date, long)`**
   * `isEqualToIgnoringMillis()` is deprecated in favor of `isCloseTo()`.
 * [org.openrewrite.java.testing.assertj.JUnitAssertArrayEqualsToAssertThat](/recipes/java/testing/assertj/junitassertarrayequalstoassertthat.md)
-  * **JUnit `assertArrayEquals` to assertJ**
-  * Convert JUnit-style `assertArrayEquals()` to AssertJ's `assertThat().contains()` equivalents.
+  * **JUnit `assertArrayEquals` to AssertJ**
+  * Convert JUnit-style `assertArrayEquals()` to AssertJ's `assertThat().containsExactly()` equivalents.
 * [org.openrewrite.java.testing.assertj.JUnitAssertEqualsToAssertThat](/recipes/java/testing/assertj/junitassertequalstoassertthat.md)
   * **JUnit `assertEquals` to AssertJ**
   * Convert JUnit-style `assertEquals()` to AssertJ's `assertThat().isEqualTo()`.
@@ -5858,7 +5926,7 @@ _303 recipes_
   * **JUnit `assertTrue` to AssertJ**
   * Convert JUnit-style `assertTrue()` to AssertJ's `assertThat().isTrue()`.
 * [org.openrewrite.java.testing.assertj.JUnitFailToAssertJFail](/recipes/java/testing/assertj/junitfailtoassertjfail.md)
-  * **JUnit fail to AssertJ**
+  * **JUnit `fail` to AssertJ**
   * Convert JUnit-style `fail()` to AssertJ's `fail()`.
 * [org.openrewrite.java.testing.assertj.JUnitToAssertj](/recipes/java/testing/assertj/junittoassertj.md)
   * **Migrate JUnit asserts to AssertJ**
@@ -5909,8 +5977,8 @@ _303 recipes_
   * **Simplify redundant AssertJ assertion chains**
   * Removes redundant AssertJ assertions when chained methods already provide the same or stronger guarantees.
 * [org.openrewrite.java.testing.assertj.SimplifySequencedCollectionAssertions](/recipes/java/testing/assertj/simplifysequencedcollectionassertions.md)
-  * **Simplify AssertJ assertions on SequencedCollection**
-  * Simplify AssertJ assertions on SequencedCollection by using dedicated assertion methods. For example, `assertThat(sequencedCollection.getLast())` can be simplified to `assertThat(sequencedCollection).last()`.
+  * **Simplify AssertJ assertions on `SequencedCollection`**
+  * Simplify AssertJ assertions on `SequencedCollection` by using dedicated assertion methods. For example, `assertThat(sequencedCollection.getLast())` can be simplified to `assertThat(sequencedCollection).last()`.
 * [org.openrewrite.java.testing.assertj.SimplifyStreamMapToExtracting](/recipes/java/testing/assertj/simplifystreammaptoextracting.md)
   * **Simplify `assertThat(collection.stream().map(...))` to `assertThat(collection).extracting(...)`**
   * Simplifies AssertJ assertions that use `stream().map()` to extract values from a collection by using the dedicated `extracting()` method instead. This makes the assertion more readable and leverages AssertJ's built-in extraction capabilities.
@@ -5925,7 +5993,7 @@ _303 recipes_
   * Using `assertFalse` or `assertTrue` is simpler and more clear.
 * [org.openrewrite.java.testing.cleanup.AssertEqualsIntegralDeltaToAssertEquals](/recipes/java/testing/cleanup/assertequalsintegraldeltatoassertequals.md)
   * **Remove unnecessary `assertEquals` delta argument for integral types**
-  * Remove the delta argument from `assertEquals()` when both expected and actual are `int` or `long` types, since the delta is meaningless for exact integer comparison. Integer arguments get unnecessarily upcasted to `double` when a delta is provided.
+  * Remove a literal zero delta argument from `assertEquals()` when both expected and actual are `int` or `long` types, since a zero delta already asks for an exact comparison. Integer arguments get unnecessarily upcasted to `double` when a delta is provided; a non-zero delta is a tolerance and is kept.
 * [org.openrewrite.java.testing.cleanup.AssertEqualsNullToAssertNull](/recipes/java/testing/cleanup/assertequalsnulltoassertnull.md)
   * **`assertEquals(a, null)` to `assertNull(a)`**
   * Using `assertNull(a)` is simpler and more clear.
@@ -5954,8 +6022,8 @@ _303 recipes_
   * **Replace JUnit `assertNotEquals(false, &lt;boolean&gt;)` to `assertFalse(&lt;boolean&gt;)` / `assertTrue(&lt;boolean&gt;)`**
   * Using `assertFalse` or `assertTrue` is simpler and more clear.
 * [org.openrewrite.java.testing.cleanup.AssertTrueComparisonToAssertEquals](/recipes/java/testing/cleanup/asserttruecomparisontoassertequals.md)
-  * **Junit `assertTrue(a == b)` to `assertEquals(a,b)`**
-  * Using `assertEquals(a,b)` is simpler and more clear.
+  * **Replace JUnit `assertTrue(a == b)` with `assertEquals(a, b)`**
+  * Using `assertEquals(a, b)` is simpler and more clear.
 * [org.openrewrite.java.testing.cleanup.AssertTrueEqualsToAssertEquals](/recipes/java/testing/cleanup/asserttrueequalstoassertequals.md)
   * **Replace JUnit `assertTrue(a.equals(b))` to `assertEquals(a,b)`**
   * Using `assertEquals(a,b)` is simpler and more clear.
@@ -5970,10 +6038,13 @@ _303 recipes_
   * Assertions such as `org.junit.Assert.assertEquals` expect the first argument to be the expected value and the second argument to be the actual value; for `org.testng.Assert`, it’s the other way around.  This recipe detects `J.Literal`, `J.NewArray`, and `java.util.Iterable` arguments swapping them if necessary so that the error messages won't be confusing.
 * [org.openrewrite.java.testing.cleanup.BestPractices](/recipes/java/testing/cleanup/bestpractices.md)
   * **Testing best practices**
-  * Applies best practices to tests.
+  * Wraps the statements of tests without assertions in `assertDoesNotThrow(..)` and removes the `test` prefix from JUnit 5 test method names.
+* [org.openrewrite.java.testing.cleanup.FindTestClassesWithoutTests](/recipes/java/testing/cleanup/findtestclasseswithouttests.md)
+  * **Find test classes without tests**
+  * Finds classes in test sources that are named `*Test`, `*Tests` or `*TestCase`, or extend JUnit 3 `TestCase`, but contain no tests. Such classes suggest that code is tested when it is not.
 * [org.openrewrite.java.testing.cleanup.KotlinTestMethodsShouldReturnUnit](/recipes/java/testing/cleanup/kotlintestmethodsshouldreturnunit.md)
   * **Kotlin test methods should have return type `Unit`**
-  * Kotlin test methods annotated with `@Test`, `@ParameterizedTest`, `@RepeatedTest`, `@TestTemplate` should have `Unit` return type. Other return types can cause test discovery issues, and warnings as of JUnit 5.13+. This recipe changes the return type to `Unit` and removes `return` statements.
+  * Kotlin test methods annotated with `@Test`, `@ParameterizedTest`, `@RepeatedTest`, `@TestTemplate` should have `Unit` return type. Other return types can cause test discovery issues, and warnings as of JUnit 5.13+. This recipe changes the return type to `Unit` and drops the returned values. Test methods that override a method or are called elsewhere in the same file are left unchanged.
 * [org.openrewrite.java.testing.cleanup.RemoveEmptyTests](/recipes/java/testing/cleanup/removeemptytests.md)
   * **Remove empty tests without comments**
   * Removes empty methods with a `@Test` annotation if the body does not have comments.
@@ -5985,10 +6056,10 @@ _303 recipes_
   * Replace all thrown exception classes of test method signatures by `Exception`.
 * [org.openrewrite.java.testing.cleanup.TestMethodsShouldBeVoid](/recipes/java/testing/cleanup/testmethodsshouldbevoid.md)
   * **Test methods should have void return type**
-  * Test methods annotated with `@Test`, `@ParameterizedTest`, `@RepeatedTest`, `@TestTemplate` should have `void` return type. Non-void return types can cause test discovery issues, and warnings as of JUnit 5.13+. This recipe changes the return type to `void` and removes `return` statements.
+  * Test methods annotated with `@Test`, `@ParameterizedTest`, `@RepeatedTest`, `@TestTemplate` should have `void` return type. Non-void return types can cause test discovery issues, and warnings as of JUnit 5.13+. This recipe changes the return type to `void` and drops the returned values. Test methods that override a method or are called elsewhere in the same file are left unchanged.
 * [org.openrewrite.java.testing.cleanup.TestsShouldIncludeAssertions](/recipes/java/testing/cleanup/testsshouldincludeassertions.md)
   * **Include an assertion in tests**
-  * For tests not having any assertions, wrap the statements with JUnit Jupiter's `Assertions#assertDoesNotThrow(..)`.
+  * For tests not having any assertions, wrap the statements with JUnit Jupiter's `Assertions#assertDoesNotThrow(..)`. Tests that make an assumption are left unchanged, as wrapping them would report a skipped test as a failure.
 * [org.openrewrite.java.testing.cleanup.TestsShouldNotBePublic](/recipes/java/testing/cleanup/testsshouldnotbepublic.md)
   * **Remove `public` visibility of JUnit 5 tests**
   * Remove `public` and optionally `protected` modifiers from methods with `@Test`, `@ParameterizedTest`, `@RepeatedTest`, `@TestFactory`, `@BeforeEach`, `@AfterEach`, `@BeforeAll`, or `@AfterAll`. They no longer have to be public visibility to be usable by JUnit 5.
@@ -6000,21 +6071,24 @@ _303 recipes_
   * Migrate the `DBRiderTestExecutionListener` to the `@DBRider` annotation. This recipe is useful when migrating from JUnit 4 `dbrider-spring` to JUnit 5 `dbrider-junit5`.
 * [org.openrewrite.java.testing.dbrider.MigrateDbRiderSpringToDbRiderJUnit5](/recipes/java/testing/dbrider/migratedbriderspringtodbriderjunit5.md)
   * **Migrate rider-spring (JUnit4) to rider-junit5 (JUnit5)**
-  * This recipe will migrate the necessary dependencies and annotations from DbRider with JUnit4 to JUnit5 in a Spring application.
+  * Migrates the DbRider dependency and annotations from `rider-spring` (JUnit 4) to `rider-junit5` (JUnit 5) in a Spring application.
+* [org.openrewrite.java.testing.easymock.EasyMockCodeToMockito](/recipes/java/testing/easymock/easymockcodetomockito.md)
+  * **Migrate EasyMock code to Mockito**
+  * Change EasyMock types, mock creation, expectations and argument matchers to their Mockito equivalents, and remove replay and verify calls.
 * [org.openrewrite.java.testing.easymock.EasyMockToMockito](/recipes/java/testing/easymock/easymocktomockito.md)
   * **Migrate from EasyMock to Mockito**
-  * This recipe will apply changes commonly needed when migrating from EasyMock to Mockito.
+  * Applies changes commonly needed when migrating from EasyMock to Mockito.
 * [org.openrewrite.java.testing.easymock.EasyMockVerifyToMockitoVerify](/recipes/java/testing/easymock/easymockverifytomockitoverify.md)
   * **Replace EasyMock `verify` calls with Mockito `verify` calls**
   * Replace `EasyMock.verify(dependency)` with individual `Mockito.verify(dependency).method()` calls based on expected methods.
 * [org.openrewrite.java.testing.easymock.RemoveExtendsEasyMockSupport](/recipes/java/testing/easymock/removeextendseasymocksupport.md)
-  * **Migrate Test classes that extend `org.easymock.EasyMockSupport` to use Mockito**
-  * Modify test classes by removing extends EasyMockSupport and replacing EasyMock methods with Mockito equivalents.
+  * **Remove `extends EasyMockSupport` from test classes**
+  * Remove the `extends` clause from test classes that extend `org.easymock.EasyMockSupport` or one of its subclasses. Calls to the inherited EasyMock methods are left to the other EasyMock to Mockito recipes.
 * [org.openrewrite.java.testing.hamcrest.AddHamcrestIfUsed](/recipes/java/testing/hamcrest/addhamcrestifused.md)
   * **Add `org.hamcrest:hamcrest` if it is used**
   * JUnit Jupiter does not include Hamcrest as a transitive dependency. Add a direct dependency for existing Hamcrest usage or ExpectedException assertions that generate Hamcrest usage during migration.
 * [org.openrewrite.java.testing.hamcrest.AssertThatBooleanToAssertJ](/recipes/java/testing/hamcrest/assertthatbooleantoassertj.md)
-  * **Migrate Hamcrest `assertThat(boolean, Matcher)` to AssertJ**
+  * **Migrate Hamcrest `assertThat(String, boolean)` to AssertJ**
   * Replace Hamcrest `assertThat(String, boolean)` with AssertJ `assertThat(boolean).as(String).isTrue()`.
 * [org.openrewrite.java.testing.hamcrest.ConsistentHamcrestMatcherImports](/recipes/java/testing/hamcrest/consistenthamcrestmatcherimports.md)
   * **Use consistent Hamcrest matcher imports**
@@ -6044,8 +6118,8 @@ _303 recipes_
   * **Migrate Hamcrest `not(Matcher)` to AssertJ**
   * Migrate from Hamcrest `not(Matcher)` to AssertJ assertions.
 * [org.openrewrite.java.testing.hamcrest.HamcrestOfMatchersToAssertJ](/recipes/java/testing/hamcrest/hamcrestofmatcherstoassertj.md)
-  * **Migrate `anyOf` Hamcrest Matcher to AssertJ**
-  * Migrate the `anyOf` Hamcrest Matcher to AssertJ's `satisfiesAnyOf` assertion.
+  * **Migrate `anyOf` and `allOf` Hamcrest matchers to AssertJ**
+  * Migrate Hamcrest `assertThat(actual, anyOf(..))` to AssertJ's `satisfiesAnyOf(..)` and `assertThat(actual, allOf(..))` to `satisfies(..)`, keeping each nested matcher as a Hamcrest `assertThat` inside a lambda. Matchers that take an `Iterable` are left unchanged.
 * [org.openrewrite.java.testing.hamcrest.MigrateHamcrestToAssertJ](/recipes/java/testing/hamcrest/migratehamcresttoassertj.md)
   * **Migrate Hamcrest assertions to AssertJ**
   * Migrate Hamcrest `assertThat(..)` to AssertJ `Assertions`.
@@ -6062,26 +6136,29 @@ _303 recipes_
   * **Rewrite JMockit Expectations, NonStrictExpectations, Verifications, VerificationsInOrder, FullVerifications**
   * Rewrites JMockit `Expectations, NonStrictExpectations, Verifications, VerificationsInOrder, FullVerifications` blocks to Mockito statements.
 * [org.openrewrite.java.testing.jmockit.JMockitMockUpToMockito](/recipes/java/testing/jmockit/jmockitmockuptomockito.md)
-  * **Rewrite JMockit MockUp to Mockito statements**
-  * Rewrites JMockit `MockUp` blocks to Mockito statements. This recipe will not rewrite private methods in MockUp.
+  * **Rewrite JMockit `MockUp` to Mockito statements**
+  * Rewrites JMockit `MockUp` blocks that are statements in a method body to Mockito `mockStatic` and `mockConstructionWithAnswer` calls. `@Mock` methods that fake a private method can not be stubbed with Mockito and are dropped.
 * [org.openrewrite.java.testing.jmockit.JMockitToMockito](/recipes/java/testing/jmockit/jmockittomockito.md)
   * **Migrate from JMockit to Mockito**
-  * This recipe will apply changes commonly needed when migrating from JMockit to Mockito.
+  * Applies changes commonly needed when migrating from JMockit to Mockito.
 * [org.openrewrite.java.testing.junit.JUnit6BestPractices](/recipes/java/testing/junit/junit6bestpractices.md)
   * **JUnit 6 best practices**
-  * Applies best practices to tests.
+  * Migrates JUnit 5 tests to JUnit 6 and applies the JUnit Jupiter best practices.
 * [org.openrewrite.java.testing.junit.JupiterBestPractices](/recipes/java/testing/junit/jupiterbestpractices.md)
   * **JUnit Jupiter best practices**
-  * Applies best practices to tests.
+  * Applies best practices to JUnit Jupiter tests, such as statically importing and simplifying assertions, removing the `test` prefix and `public` modifiers from tests, and removing the JUnit Jupiter migration support.
 * [org.openrewrite.java.testing.junit.RemoveJupiterMigrationSupport](/recipes/java/testing/junit/removejupitermigrationsupport.md)
   * **Remove JUnit Jupiter migrationsupport**
-  * Remove JUnit Jupiter migrationsupport.
+  * Removes `junit-jupiter-migrationsupport` from modules that don't use its `@EnableRuleMigrationSupport`, `ExternalResourceSupport` or other types, and its managed version once no module uses them.
 * [org.openrewrite.java.testing.junit5.AddHamcrestJUnitDependency](/recipes/java/testing/junit5/addhamcrestjunitdependency.md)
   * **Add Hamcrest JUnit dependency**
   * Add Hamcrest JUnit dependency only if JUnit 4's `assertThat` or `assumeThat` is used.
 * [org.openrewrite.java.testing.junit5.AddJupiterDependencies](/recipes/java/testing/junit5/addjupiterdependencies.md)
   * **Add JUnit Jupiter dependencies**
   * Adds JUnit Jupiter dependencies to a Maven or Gradle project. JUnit Jupiter can be added either with the artifact `junit-jupiter`, or both of `junit-jupiter-api` and `junit-jupiter-engine`. This adds `junit-jupiter` dependency unless `junit-jupiter-api` or `junit-jupiter-engine` are already present. Maven projects running dependency analysis receive explicit API, engine and, when used, parameterized-test dependencies.
+* [org.openrewrite.java.testing.junit5.AddJupiterMigrationSupport](/recipes/java/testing/junit5/addjupitermigrationsupport.md)
+  * **Add JUnit Jupiter migrationsupport**
+  * Adds `junit-jupiter-migrationsupport` to modules whose JUnit 4 `ExternalResource` rules the JUnit 4 to 5 migration keeps with `@ExtendWith(ExternalResourceSupport.class)`.
 * [org.openrewrite.java.testing.junit5.AddMissingNested](/recipes/java/testing/junit5/addmissingnested.md)
   * **JUnit 5 inner test classes should be annotated with `@Nested`**
   * Adds `@Nested` to inner classes that contain JUnit 5 tests and removes `static` from them. Before Java 16 an inner class may not declare static members other than constant variables, so a static nested class that declares any other static member is marked as needing manual migration instead; sources without a known Java version are assumed to support static members.
@@ -6098,17 +6175,17 @@ _303 recipes_
   * **Applies JUnit 5 `assertThrows` on last statement in lambda block only**
   * Applies JUnit 5 `assertThrows` on last statement in lambda block only. In rare cases may cause compilation errors if the lambda uses effectively non final variables. In some cases, tests might fail if earlier statements in the lambda block throw exceptions.
 * [org.openrewrite.java.testing.junit5.AssertToAssertions](/recipes/java/testing/junit5/asserttoassertions.md)
-  * **JUnit 4 `Assert` To JUnit Jupiter `Assertions`**
+  * **JUnit 4 `Assert` to JUnit Jupiter `Assertions`**
   * Change JUnit 4's `org.junit.Assert` into JUnit Jupiter's `org.junit.jupiter.api.Assertions`.
 * [org.openrewrite.java.testing.junit5.AssertTrueInstanceofToAssertInstanceOf](/recipes/java/testing/junit5/asserttrueinstanceoftoassertinstanceof.md)
   * **`assertTrue(x instanceof y)` to `assertInstanceOf(y.class, x)`**
-  * Migration of JUnit4 (or potentially JUnit5) test case in form of assertTrue(x instanceof y) to assertInstanceOf(y.class, x).
+  * Migrate JUnit 4 (or JUnit 5) assertions in the form of `assertTrue(x instanceof y)` to `assertInstanceOf(y.class, x)`.
 * [org.openrewrite.java.testing.junit5.AssumeNotNullToAssumptionsRecipes](/recipes/java/testing/junit5/assumenotnulltoassumptionsrecipes.md)
   * **Transform `Assume` methods to `Assumptions`**
   * Transform `Assume` methods without a direct counterpart to equivalent assumptions in `Assumptions`.
 * [org.openrewrite.java.testing.junit5.AssumeNotNullToAssumptionsRecipes$SingleArgRecipe](/recipes/java/testing/junit5/assumenotnulltoassumptionsrecipes$singleargrecipe.md)
-  * **Transform singlar `assumeNotNull(object)` to `assumeFalse(object == null)`**
-  * Transform singlar `Assume.assumeNotNull(object)` to `Assumptions.assumeFalse(object == null)`.
+  * **Transform single-argument `assumeNotNull(object)` to `assumeFalse(object == null)`**
+  * Transform single-argument `Assume.assumeNotNull(object)` to `Assumptions.assumeFalse(object == null)`.
 * [org.openrewrite.java.testing.junit5.AssumeNotNullToAssumptionsRecipes$VarArgsRecipe](/recipes/java/testing/junit5/assumenotnulltoassumptionsrecipes$varargsrecipe.md)
   * **Transform variadic `assumeNotNull(objects...)` to a stream of `assumeFalse(object == null)`**
   * Transform `Assume.assumeNotNull(objects...)` to `Stream.of(object1, object2).forEach(o -&gt; Assumptions.assumeFalse(o == null))`.
@@ -6116,7 +6193,7 @@ _303 recipes_
   * **JUnit 4 `@Category` to JUnit Jupiter `@Tag`**
   * Transforms the JUnit 4 `@Category`, which can list multiple categories, into one `@Tag` annotation per category listed.
 * [org.openrewrite.java.testing.junit5.CleanupAssertions](/recipes/java/testing/junit5/cleanupassertions.md)
-  * **Clean Up Assertions**
+  * **Clean up assertions**
   * Simplifies JUnit Jupiter assertions to their most-direct equivalents.
 * [org.openrewrite.java.testing.junit5.CleanupJUnitImports](/recipes/java/testing/junit5/cleanupjunitimports.md)
   * **Cleanup JUnit imports**
@@ -6135,40 +6212,40 @@ _303 recipes_
   * Replaces usage of the JUnit 4 `@Rule EnvironmentVariables` with the JUnit 5-compatible `SystemStubsExtension` and `@SystemStub EnvironmentVariables` from the System Stubs library.
 * [org.openrewrite.java.testing.junit5.ExcludeJUnit4UnlessUsingTestcontainers](/recipes/java/testing/junit5/excludejunit4unlessusingtestcontainers.md)
   * **Exclude JUnit 4, unless a test library requires it**
-  * Excludes JUnit 4 unless Testcontainers 1.x or Guava testlib requires it at runtime, even when tests use JUnit Jupiter.
+  * Excludes JUnit 4 unless Testcontainers 1.x, Guava testlib or JUnit Jupiter migrationsupport requires it at runtime, even when tests use JUnit Jupiter.
 * [org.openrewrite.java.testing.junit5.ExpectedExceptionToAssertThrows](/recipes/java/testing/junit5/expectedexceptiontoassertthrows.md)
-  * **JUnit 4 `ExpectedException` To JUnit Jupiter's `assertThrows()`**
+  * **JUnit 4 `ExpectedException` to JUnit Jupiter's `assertThrows()`**
   * Replace usages of JUnit 4's `@Rule ExpectedException` with JUnit 5's `Assertions.assertThrows()`.
 * [org.openrewrite.java.testing.junit5.ExpectedSystemExitToCatchSystemExit](/recipes/java/testing/junit5/expectedsystemexittocatchsystemexit.md)
   * **Migrate System Rules `ExpectedSystemExit` to System Stubs `catchSystemExit(..)`**
   * Replaces System Rules' `ExpectedSystemExit` rule with System Stubs' `catchSystemExit(..)`, which runs the rest of the test in a lambda and returns the exit status for an `assertEquals(..)`. Assertions registered through `checkAssertionAfterwards(..)` are inlined after it. Rules that other classes may use, or that set expectations outside of the test method body, get a `TODO` comment instead.
 * [org.openrewrite.java.testing.junit5.GradleUseJunitJupiter](/recipes/java/testing/junit5/gradleusejunitjupiter.md)
   * **Gradle `Test` use JUnit Jupiter**
-  * By default Gradle's `Test` tasks use JUnit 4. Gradle `Test` tasks must be configured with `useJUnitPlatform()` to run JUnit Jupiter tests. This recipe adds the `useJUnitPlatform()` method call to the `Test` task configuration.
+  * By default Gradle's `Test` tasks use JUnit 4. Gradle `Test` tasks must be configured with `useJUnitPlatform()` to run JUnit Jupiter tests. This recipe adds the `useJUnitPlatform()` method call to the `Test` task configuration in `build.gradle` and `build.gradle.kts` files.
 * [org.openrewrite.java.testing.junit5.HandleExternalResourceRules](/recipes/java/testing/junit5/handleexternalresourcerules.md)
-  * **Handle the usage of ExternalResourceRule fields using @ExtendWith(ExternalResourceSupport.class)**
-  * Handles the usage of the ExternalResourceRule fields by adding the @ExtendWith(ExternalResourceSupport.class) annotation to the test class.
+  * **Handle the usage of `ExternalResource` rule fields using `@ExtendWith(ExternalResourceSupport.class)`**
+  * Handles the usage of `ExternalResource` rule fields by adding the `@ExtendWith(ExternalResourceSupport.class)` annotation to the test class.
 * [org.openrewrite.java.testing.junit5.IgnoreToDisabled](/recipes/java/testing/junit5/ignoretodisabled.md)
   * **Use JUnit Jupiter `@Disabled`**
   * Migrates JUnit 4.x `@Ignore` to JUnit Jupiter `@Disabled`.
 * [org.openrewrite.java.testing.junit5.ImplausibleTimeoutToMinutes](/recipes/java/testing/junit5/implausibletimeouttominutes.md)
   * **Make implausibly long `@Timeout` values explicit in minutes**
-  * JUnit Jupiter's `@Timeout` defaults to `TimeUnit.SECONDS`, so a value such as `@Timeout(10000)` is interpreted as almost three hours, which is most likely a mistake where milliseconds were intended. This recipe rewrites such implausibly large second-based timeouts to the equivalent number of minutes, for instance `@Timeout(value = 167, unit = TimeUnit.MINUTES)`, preserving the original (likely erroneous) semantics while making the mistake far more visible for review.
+  * JUnit Jupiter's `@Timeout` defaults to `TimeUnit.SECONDS`, so a value such as `@Timeout(7200)` is interpreted as two hours, which is most likely a mistake where milliseconds were intended. This recipe rewrites such implausibly large second-based timeouts to the equivalent number of minutes, for instance `@Timeout(value = 120, unit = TimeUnit.MINUTES)`, preserving the original (likely erroneous) semantics while making the mistake far more visible for review. Other attributes such as `threadMode` are kept, and values that are not a whole number of minutes are left unchanged, since rounding them would change the timeout.
 * [org.openrewrite.java.testing.junit5.JUnit4to5Migration](/recipes/java/testing/junit5/junit4to5migration.md)
   * **JUnit Jupiter migration from JUnit 4.x**
   * Migrates JUnit 4.x tests to JUnit Jupiter.
 * [org.openrewrite.java.testing.junit5.JUnit5BestPractices](/recipes/java/testing/junit5/junit5bestpractices.md)
   * **JUnit 5 best practices**
-  * Applies best practices to tests.
+  * Migrates JUnit 4 tests to JUnit 5, upgrades to JUnit 5.14 and applies the JUnit Jupiter best practices.
 * [org.openrewrite.java.testing.junit5.JUnitParamsRunnerToParameterized](/recipes/java/testing/junit5/junitparamsrunnertoparameterized.md)
-  * **Pragmatists `@RunWith(JUnitParamsRunner.class)` to JUnit Jupiter `@Parameterized` tests**
-  * Convert Pragmatists Parameterized test to the JUnit Jupiter ParameterizedTest equivalent.
+  * **Pragmatists `@RunWith(JUnitParamsRunner.class)` to JUnit Jupiter `@ParameterizedTest` tests**
+  * Convert Pragmatists JUnitParams tests to the JUnit Jupiter `@ParameterizedTest` equivalent.
 * [org.openrewrite.java.testing.junit5.JUnitSoftAssertionsToSoftAssertionsExtension](/recipes/java/testing/junit5/junitsoftassertionstosoftassertionsextension.md)
   * **AssertJ `@Rule` soft assertions to `SoftAssertionsExtension`**
   * Replaces `@Rule` fields of type `JUnitSoftAssertions` or `JUnitBDDSoftAssertions` with `@InjectSoftAssertions` fields, and registers `@ExtendWith(SoftAssertionsExtension.class)` on the test class. JUnit Jupiter does not run JUnit 4 rules, so soft assertions collected through such a rule would otherwise never be reported, silently passing tests that ought to fail.
 * [org.openrewrite.java.testing.junit5.LifecycleNonPrivate](/recipes/java/testing/junit5/lifecyclenonprivate.md)
-  * **Make lifecycle methods non private**
-  * Make JUnit 5's `@AfterAll`, `@AfterEach`, `@BeforeAll` and `@BeforeEach` non private.
+  * **Make lifecycle methods non-private**
+  * Make JUnit 5's `@AfterAll`, `@AfterEach`, `@BeforeAll` and `@BeforeEach` methods non-private.
 * [org.openrewrite.java.testing.junit5.MigrateAssertionFailedError](/recipes/java/testing/junit5/migrateassertionfailederror.md)
   * **Migrate JUnit 4 assertion failure exceptions to JUnit Jupiter**
   * Replace JUnit 4's `junit.framework.AssertionFailedError` and `org.junit.ComparisonFailure` with JUnit Jupiter's `org.opentest4j.AssertionFailedError`.
@@ -6188,11 +6265,11 @@ _303 recipes_
   * **JUnit 4 `@RunWith(Parameterized.class)` to JUnit Jupiter parameterized tests**
   * Convert JUnit 4 parameterized runner the JUnit Jupiter parameterized test equivalent.
 * [org.openrewrite.java.testing.junit5.RemoveDuplicateTestTemplates](/recipes/java/testing/junit5/removeduplicatetesttemplates.md)
-  * **Remove duplicates uses of @TestTemplate implementations for a single method**
-  * Remove duplicates uses of @TestTemplate implementations for a single method.
+  * **Remove duplicate uses of `@TestTemplate` implementations for a single method**
+  * Remove `@Test` from methods that are also annotated with `@RepeatedTest`, which would otherwise run both as a regular test and as a repeated test.
 * [org.openrewrite.java.testing.junit5.RemoveObsoleteRunners](/recipes/java/testing/junit5/removeobsoleterunners.md)
-  * **Remove JUnit 4 `@RunWith` annotations that do not require an `@ExtendsWith` replacement**
-  * Some JUnit 4 `@RunWith` annotations do not require replacement with an equivalent JUnit Jupiter `@ExtendsWith` annotation. This can be used to remove those runners that either do not have a JUnit Jupiter equivalent or do not require a replacement as part of JUnit 4 to 5 migration.
+  * **Remove JUnit 4 `@RunWith` annotations that do not require an `@ExtendWith` replacement**
+  * Some JUnit 4 `@RunWith` annotations do not require replacement with an equivalent JUnit Jupiter `@ExtendWith` annotation. This can be used to remove those runners that either do not have a JUnit Jupiter equivalent or do not require a replacement as part of JUnit 4 to 5 migration.
 * [org.openrewrite.java.testing.junit5.RemoveTryCatchFailBlocks](/recipes/java/testing/junit5/removetrycatchfailblocks.md)
   * **Replace `fail()` in `try-catch` blocks with `Assertions.assertDoesNotThrow(() -&gt; \{ ... \})`**
   * Replace `try-catch` blocks where `catch` merely contains a `fail()` for `fail(String)` statement with `Assertions.assertDoesNotThrow(() -&gt; \{ ... \})`.
@@ -6204,7 +6281,7 @@ _303 recipes_
   * Always use a static import for assertion methods.
 * [org.openrewrite.java.testing.junit5.SystemPropertyRulesToPioneer](/recipes/java/testing/junit5/systempropertyrulestopioneer.md)
   * **Migrate System Rules system property rules to JUnit Pioneer annotations**
-  * Replaces System Rules' `ProvideSystemProperty`, `ClearSystemProperties` and `RestoreSystemProperties` rules with JUnit Pioneer's `@SetSystemProperty`, `@ClearSystemProperty` and `@RestoreSystemProperties` class annotations. Only rules that take string literals and are not used elsewhere in the test are migrated; `SystemRulesToSystemStubs` handles the rest.
+  * Replaces System Rules' `ProvideSystemProperty`, `ClearSystemProperties` and `RestoreSystemProperties` rules with JUnit Pioneer's `@SetSystemProperty`, `@ClearSystemProperty` and `@RestoreSystemProperties` class annotations. Only rules that take string literals and are not used elsewhere in the test are migrated; the others are left for the migration to System Stubs.
 * [org.openrewrite.java.testing.junit5.SystemRulesDependencies](/recipes/java/testing/junit5/systemrulesdependencies.md)
   * **Update dependencies for the System Rules migration**
   * Adds System Stubs and JUnit Pioneer where the System Rules migration introduces them, upgrades JUnit Pioneer to 2.x in modules that get its `@RestoreSystemProperties`, and removes System Rules from modules that no longer use it.
@@ -6212,14 +6289,14 @@ _303 recipes_
   * **Migrate System Rules to System Stubs**
   * Replaces System Rules' `ProvideSystemProperty`, `ClearSystemProperties`, `RestoreSystemProperties`, `SystemOutRule`, `SystemErrRule`, `StandardOutputStreamLog`, `StandardErrorStreamLog`, `DisallowWriteToSystemOut`, `DisallowWriteToSystemErr` and `TextFromStandardInputStream` rules with `@SystemStub` fields of the System Stubs JUnit Jupiter extension. A rule is only migrated when every use of it has a System Stubs equivalent; other rules get a `TODO` comment.
 * [org.openrewrite.java.testing.junit5.TempDirNonFinal](/recipes/java/testing/junit5/tempdirnonfinal.md)
-  * **Make `@TempDir` fields non final**
-  * Make JUnit 5's `org.junit.jupiter.api.io.TempDir` fields non final.
+  * **Make `@TempDir` fields non-final**
+  * Make JUnit 5's `org.junit.jupiter.api.io.TempDir` fields non-final.
 * [org.openrewrite.java.testing.junit5.TemporaryFolderToTempDir](/recipes/java/testing/junit5/temporaryfoldertotempdir.md)
   * **Use JUnit Jupiter `@TempDir`**
   * Translates JUnit 4's `org.junit.rules.TemporaryFolder` into JUnit 5's `org.junit.jupiter.api.io.TempDir`.
 * [org.openrewrite.java.testing.junit5.TestRuleToTestInfo](/recipes/java/testing/junit5/testruletotestinfo.md)
-  * **JUnit TestName @Rule to JUnit Jupiter TestInfo**
-  * Replace usages of JUnit 4's `@Rule TestName` with JUnit 5's TestInfo.
+  * **JUnit `TestName` `@Rule` to JUnit Jupiter `TestInfo`**
+  * Replace usages of JUnit 4's `@Rule TestName` with JUnit 5's `TestInfo`.
 * [org.openrewrite.java.testing.junit5.ThrowingRunnableToExecutable](/recipes/java/testing/junit5/throwingrunnabletoexecutable.md)
   * **Use JUnit Jupiter `Executable`**
   * Migrates JUnit 4.x `ThrowingRunnable` to JUnit Jupiter `Executable`.
@@ -6230,8 +6307,8 @@ _303 recipes_
   * **Migrate JUnit 4 lifecycle annotations to JUnit Jupiter**
   * Replace JUnit 4's `@Before`, `@BeforeClass`, `@After`, and `@AfterClass` annotations with their JUnit Jupiter equivalents.
 * [org.openrewrite.java.testing.junit5.UpdateMockWebServer](/recipes/java/testing/junit5/updatemockwebserver.md)
-  * **OkHttp 3.x `MockWebServer` `@Rule` To 4.x `MockWebServer`**
-  * Replace usages of okhttp3 3.x `@Rule` MockWebServer with 4.x `MockWebServer`.
+  * **OkHttp 3.x `MockWebServer` `@Rule` to 4.x `MockWebServer`**
+  * Replace usages of OkHttp 3.x `@Rule MockWebServer` with 4.x `MockWebServer`.
 * [org.openrewrite.java.testing.junit5.UpdateMockWebServerDispatcher](/recipes/java/testing/junit5/updatemockwebserverdispatcher.md)
   * **Preserve `MockResponse` return type for `Dispatcher.dispatch()` overrides**
   * In mockwebserver3 5.x, `Dispatcher.dispatch()` returns `MockResponse`, not `MockResponse.Builder`. Pre-pin the return type to `mockwebserver3.MockResponse` and wrap return expressions with `.build()`, so the subsequent blanket `MockResponse` → `Builder` type change leaves `dispatch()` alone.
@@ -6245,20 +6322,20 @@ _303 recipes_
   * **Use OkHttp 3 MockWebServer for JUnit 5**
   * Migrates OkHttp 3 `MockWebServer` to enable JUnit Jupiter Extension support.
 * [org.openrewrite.java.testing.junit5.UpgradeSurefirePlugin](/recipes/java/testing/junit5/upgradesurefireplugin.md)
-  * **Upgrade Surefire Plugin**
+  * **Upgrade the Maven Surefire plugin**
   * Upgrades the Maven Surefire Plugin to the latest version if still using an older Maven version.
 * [org.openrewrite.java.testing.junit5.UpgradeToJUnit513](/recipes/java/testing/junit5/upgradetojunit513.md)
   * **Upgrade to JUnit 5.13**
-  * Upgrades JUnit 5 to 5.13.x and migrates all deprecated APIs.
+  * Upgrades JUnit 5 to 5.13.x and replaces the deprecated `ParameterizedTest` placeholder constants with those of `ParameterizedInvocationConstants`.
 * [org.openrewrite.java.testing.junit5.UpgradeToJUnit514](/recipes/java/testing/junit5/upgradetojunit514.md)
   * **Upgrade to JUnit 5.14**
-  * Upgrades JUnit 5 to 5.14.x and migrates all deprecated APIs.
+  * Upgrades JUnit 5 to 5.14.x, including the 5.13 changes, and replaces deprecated types and methods such as `OutputDirectoryProvider` and `DiscoverySelectors.selectClasspathResource(Set)` with their successors.
 * [org.openrewrite.java.testing.junit5.UseAssertSame](/recipes/java/testing/junit5/useassertsame.md)
   * **Use JUnit5's `assertSame` or `assertNotSame` instead of `assertTrue(... == ...)`**
   * Prefers the usage of `assertSame` or `assertNotSame` methods instead of using of vanilla `assertTrue` or `assertFalse` with a boolean comparison. Only applies when both operands are reference types — primitive operands are handled by `AssertTrueComparisonToAssertEquals`.
 * [org.openrewrite.java.testing.junit5.UseHamcrestAssertThat](/recipes/java/testing/junit5/usehamcrestassertthat.md)
   * **Use `MatcherAssert#assertThat(..)`**
-  * JUnit 4's `Assert#assertThat(..)` This method was deprecated in JUnit 4 and removed in JUnit Jupiter.
+  * JUnit 4's `Assert#assertThat(..)` was deprecated in JUnit 4 and removed in JUnit Jupiter, so use Hamcrest's `MatcherAssert#assertThat(..)` instead.
 * [org.openrewrite.java.testing.junit5.UseMockitoExtension](/recipes/java/testing/junit5/usemockitoextension.md)
   * **Use Mockito JUnit Jupiter extension**
   * Migrate uses of `@RunWith(MockitoJUnitRunner.class)` (and similar annotations) to `@ExtendWith(MockitoExtension.class)`.
@@ -6269,11 +6346,14 @@ _303 recipes_
   * **Use wiremock extension**
   * As of 2.31.0, wiremock [supports JUnit 5](https://wiremock.org/docs/junit-jupiter/) via an extension.
 * [org.openrewrite.java.testing.junit5.UseXMLUnitLegacy](/recipes/java/testing/junit5/usexmlunitlegacy.md)
-  * **Use XMLUnit Legacy for JUnit 5**
+  * **Use XMLUnit legacy for JUnit 5**
   * Migrates XMLUnit 1.x to XMLUnit legacy 2.x.
 * [org.openrewrite.java.testing.junit5.VertxUnitToVertxJunit5](/recipes/java/testing/junit5/vertxunittovertxjunit5.md)
-  * **Use Vert.x JUnit 5 Extension**
+  * **Use Vert.x JUnit 5 extension**
   * Migrates Vert.x `@RunWith` `VertxUnitRunner` to the JUnit Jupiter `@ExtendWith` `VertxExtension`.
+* [org.openrewrite.java.testing.junit5.WireMockRuleToWireMockServer](/recipes/java/testing/junit5/wiremockruletowiremockserver.md)
+  * **Use `WireMockServer` for a `WireMockRule` used as a server**
+  * Replace a `WireMockRule` that is started, stopped or passed on as a `WireMockServer` with a plain `WireMockServer`, as the JUnit 5 `WireMockExtension` has no such methods. The server is started and stopped around each test, or around all tests for a `@ClassRule`.
 * [org.openrewrite.java.testing.junit6.JUnit5to6Migration](/recipes/java/testing/junit6/junit5to6migration.md)
   * **JUnit 6 migration from JUnit 5.x**
   * Migrates JUnit 5.x tests to JUnit 6.x.
@@ -6285,10 +6365,10 @@ _303 recipes_
   * JUnit 6 removed the `MethodOrderer.Alphanumeric` class. This recipe migrates usages to `MethodOrderer.MethodName` which provides similar functionality.
 * [org.openrewrite.java.testing.junit6.MinimumJreConditions](/recipes/java/testing/junit6/minimumjreconditions.md)
   * **Migrate JUnit JRE conditions**
-  * This recipe will:  - Remove tests that are only active on JREs that are below the specified version.  - Adjust ranges to use minimum the specified version.
+  * Remove tests that can not run on the specified minimum JRE version or later, and drop JRE versions below that minimum from the `@EnabledOnJre`, `@DisabledOnJre`, `@EnabledForJreRange` and `@DisabledForJreRange` conditions of the remaining tests.
 * [org.openrewrite.java.testing.junit6.RemoveInterceptDynamicTest](/recipes/java/testing/junit6/removeinterceptdynamictest.md)
-  * **Remove `InvocationInterceptor.interceptDynamicTest`**
-  * JUnit 6 removed the `interceptDynamicTest(Invocation, ExtensionContext)` method from `InvocationInterceptor`. This recipe removes implementations of this deprecated method.
+  * **Migrate the two-argument `InvocationInterceptor.interceptDynamicTest`**
+  * JUnit 6 removed the deprecated `InvocationInterceptor#interceptDynamicTest(Invocation, ExtensionContext)`. Java overrides gain a `DynamicTestInvocationContext` parameter, so they keep their body and override the remaining three-argument overload. Overrides in classes that already override the three-argument overload, and non-Java overrides, are removed.
 * [org.openrewrite.java.testing.junit6.RemoveJreOther](/recipes/java/testing/junit6/removejreother.md)
   * **Remove deprecated `JRE.OTHER` from `@EnabledOnJre`/`@DisabledOnJre` arrays**
   * JUnit 6.1 deprecated `JRE.OTHER` in favor of `int`/`int[]` annotation attributes. This recipe removes `JRE.OTHER` entries from `@EnabledOnJre` and `@DisabledOnJre` array values when other JRE constants remain. Lone `JRE.OTHER` usages are left untouched because they have no mechanical replacement; review them manually.
@@ -6316,6 +6396,9 @@ _303 recipes_
 * [org.openrewrite.java.testing.mockito.ArgumentMatcherToLambda](/recipes/java/testing/mockito/argumentmatchertolambda.md)
   * **Convert `ArgumentMatcher&lt;T&gt;` anonymous class to lambda**
   * Converts anonymous `ArgumentMatcher&lt;T&gt;` implementations with `matches(Object)` to lambda expressions with the correct parameter type. In Mockito 1.x, `ArgumentMatcher&lt;T&gt;` extended Hamcrest's `BaseMatcher` and `matches` always took `Object`. In Mockito 2+, `ArgumentMatcher&lt;T&gt;` is a functional interface where `matches` takes `T`.
+* [org.openrewrite.java.testing.mockito.ChangeMockitoAllToMockitoCoreReplacingPowerMock](/recipes/java/testing/mockito/changemockitoalltomockitocorereplacingpowermock.md)
+  * **Change `mockito-all` to `mockito-core` along with the Mockito that replaces PowerMock**
+  * Changes a declared `mockito-all` into `mockito-core`, as `mockito-all` is a 1.x-only uber jar with no 3.x release to upgrade to. This runs before the PowerMock dependencies are replaced, so that a module which declared `mockito-all` is seen to declare `mockito-core` and does not get it a second time.
 * [org.openrewrite.java.testing.mockito.CleanupMockitoImports](/recipes/java/testing/mockito/cleanupmockitoimports.md)
   * **Cleanup Mockito imports**
   * Removes unused `org.mockito` import symbols, unless its possible they are associated with method invocations having null or unknown type information.
@@ -6330,7 +6413,7 @@ _303 recipes_
   * Disables tests that reach into private members through PowerMock, which Mockito deliberately does not support, so that the rest of the repository can migrate. The test is annotated `@Disabled`, `@Ignore` or TestNG's `@Ignore` and recorded in a data table as an action item: rework the test not to depend on private members, then re-enable it. A usage outside a test method, such as in a setup method or a class-level annotation, disables the whole class.
 * [org.openrewrite.java.testing.mockito.ExcludeMockitoAllReplacingPowerMock](/recipes/java/testing/mockito/excludemockitoallreplacingpowermock.md)
   * **Exclude a transitive `mockito-all` from modules that move off PowerMock**
-  * Excludes `mockito-all` from the dependencies that bring it into a module that depends on the PowerMock Mockito API. `mockito-all` is a 1.x-only uber jar with its own `org.mockito.Mockito`, which shadows the one of the Mockito 3.x that replaces PowerMock wherever it comes first on the classpath, so that `Mockito.mockStatic` and `MockedStatic` do not resolve. The Hamcrest 1.1 and Objenesis classes bundled in `mockito-all` go with it. Only the Maven dependencies declared in the module itself are excluded from, not those it inherits from a parent that does not depend on PowerMock. Where `UpgradeMockitoCoreReplacingPowerMock` runs again in a later cycle, it pairs the exclusion with one of `mockito-core`, which is harmless as the module declares the Mockito that replaces PowerMock.
+  * Excludes `mockito-all` from the dependencies that bring it into a module that depends on the PowerMock Mockito API. `mockito-all` is a 1.x-only uber jar with its own `org.mockito.Mockito`, which shadows the one of the Mockito 3.x that replaces PowerMock wherever it comes first on the classpath, so that `Mockito.mockStatic` and `MockedStatic` do not resolve. The Hamcrest 1.1 and Objenesis classes bundled in `mockito-all` go with it. Only the Maven dependencies declared in the module itself are excluded from, not those it inherits from a parent that does not depend on PowerMock. Where `ChangeMockitoAllToMockitoCoreReplacingPowerMock` runs again in a later cycle, it pairs the exclusion with one of `mockito-core`, which is harmless as the module declares the Mockito that replaces PowerMock.
 * [org.openrewrite.java.testing.mockito.FlagUnsupportedPowerMockUsage](/recipes/java/testing/mockito/flagunsupportedpowermockusage.md)
   * **Flag PowerMock usage that cannot be migrated to Mockito**
   * Adds a comment to PowerMock usages that cannot be migrated to Mockito, such as `MemberModifier.suppress`, `PowerMockito.verifyNew` or stubbing private methods. Repositories with such usage are left on PowerMock by `ReplacePowerMockito`, so these need to be migrated manually first.
@@ -6341,13 +6424,13 @@ _303 recipes_
   * **Use static form of Mockito `MockUtil`**
   * Best-effort attempt to remove Mockito `MockUtil` instances.
 * [org.openrewrite.java.testing.mockito.Mockito1to3Migration](/recipes/java/testing/mockito/mockito1to3migration.md)
-  * **Mockito 3.x migration from 1.x**
+  * **Upgrade Mockito from 1.x to 3.x**
   * Upgrade Mockito from 1.x to 3.x.
 * [org.openrewrite.java.testing.mockito.Mockito1to4Migration](/recipes/java/testing/mockito/mockito1to4migration.md)
-  * **Mockito 4.x upgrade**
+  * **Upgrade to Mockito 4.x**
   * Upgrade Mockito from 1.x to 4.x.
 * [org.openrewrite.java.testing.mockito.Mockito1to5Migration](/recipes/java/testing/mockito/mockito1to5migration.md)
-  * **Mockito 5.x upgrade**
+  * **Upgrade to Mockito 5.x**
   * Upgrade Mockito from 1.x to 5.x.
 * [org.openrewrite.java.testing.mockito.Mockito4to5Only](/recipes/java/testing/mockito/mockito4to5only.md)
   * **Mockito 4 to 5.x upgrade only**
@@ -6399,7 +6482,7 @@ _303 recipes_
   * Retargets `PowerMockito`'s `doReturn`, `doThrow`, `doAnswer` and `doNothing` to `Mockito`, except in files that still stub a member by name. There `Stubber.when(Object, String, ...)` has no Mockito counterpart, so the whole chain has to stay on PowerMock to keep compiling.
 * [org.openrewrite.java.testing.mockito.PowerMockitoDoStubbingToMockito](/recipes/java/testing/mockito/powermockitodostubbingtomockito.md)
   * **Replace PowerMockito `doX().when(instance, &quot;method&quot;)` with Mockito-compatible stubbing**
-  * Replaces PowerMockito's private method stubbing pattern `doNothing().when(instance, &quot;methodName&quot;, args...)` with the standard Mockito pattern `doNothing().when(instance).methodName(args...)`.
+  * Replaces PowerMockito's `doNothing().when(instance, &quot;methodName&quot;, args...)` stubbing (and that of the other `doX()` methods) with the standard Mockito pattern `doNothing().when(instance).methodName(args...)`. Mockito can not stub private methods, so stubbing of a private method is left unchanged and gets a comment.
 * [org.openrewrite.java.testing.mockito.PowerMockitoMockStaticToMockito](/recipes/java/testing/mockito/powermockitomockstatictomockito.md)
   * **Replace `PowerMock.mockStatic()` with `Mockito.mockStatic()`**
   * Replaces `PowerMockito.mockStatic()` by `Mockito.mockStatic()`, assigning the resulting `MockedStatic` to a field that is closed after each test, so the static mock stays active for exactly the same part of the test as before. Also migrates `PowerMockito.verifyStatic()` and static stubbing, and removes the `@PrepareForTest` annotation.
@@ -6444,19 +6527,19 @@ _303 recipes_
   * Replaces PowerMock API dependencies with `mockito-inline` when `mockStatic()`, `whenNew()`, or `@PrepareForTest` usage is detected, or `mockito-core` otherwise. PowerMock features like static mocking, constructor mocking, and final class mocking require the inline mock maker which is bundled in `mockito-inline` for Mockito 3.x/4.x.
 * [org.openrewrite.java.testing.mockito.ReplacePowerMockito](/recipes/java/testing/mockito/replacepowermockito.md)
   * **Replace PowerMock with raw Mockito**
-  * PowerMockito with raw Mockito; best executed as part of a Mockito upgrade.  Tests that mock, stub or verify private members are disabled rather than migrated. Mockito does not support reaching into private state by design, and a test that depends on it is testing an implementation detail, so the intended follow-up is a review that reworks each one to exercise the type through its public API -- not a like-for-like translation. Each disabled test keeps its original body as a comment for that review, is annotated `@Disabled`, `@Ignore` or TestNG's `@Ignore`, and is listed as an action item in the `PowerMockTestsDisabled` data table. Commenting the body out is what lets the PowerMock dependency be removed, so the rest of the repository moves off PowerMock and its tests keep running: PowerMock registers its own Mockito `MockMaker`, which cannot create the static and construction mocks the migrated tests rely on, so the two cannot share a classpath.
+  * Replace PowerMockito with raw Mockito; best executed as part of a Mockito upgrade.  Tests that mock, stub or verify private members are disabled rather than migrated. Mockito does not support reaching into private state by design, and a test that depends on it is testing an implementation detail, so the intended follow-up is a review that reworks each one to exercise the type through its public API -- not a like-for-like translation. Each disabled test keeps its original body as a comment for that review, is annotated `@Disabled`, `@Ignore` or TestNG's `@Ignore`, and is listed as an action item in the `PowerMockTestsDisabled` data table. Commenting the body out is what lets the PowerMock dependency be removed, so the rest of the repository moves off PowerMock and its tests keep running: PowerMock registers its own Mockito `MockMaker`, which cannot create the static and construction mocks the migrated tests rely on, so the two cannot share a classpath.
 * [org.openrewrite.java.testing.mockito.ReplacePowerMockitoUsages](/recipes/java/testing/mockito/replacepowermockitousages.md)
   * **Replace PowerMock usages with Mockito**
   * Replaces the PowerMock API, runners, rules and annotations used in Java sources with their Mockito counterparts, and PowerMock `Whitebox` with Java reflection. Build files are left unchanged.
 * [org.openrewrite.java.testing.mockito.SimplifyMockitoVerifyWhenGiven](/recipes/java/testing/mockito/simplifymockitoverifywhengiven.md)
-  * **Call to Mockito method &quot;verify&quot;, &quot;when&quot; or &quot;given&quot; should be simplified**
+  * **Remove `eq()` matchers from Mockito `verify`, `when` and `given` calls**
   * Fixes Sonar issue `java:S6068`: Call to Mockito method &quot;verify&quot;, &quot;when&quot; or &quot;given&quot; should be simplified.
 * [org.openrewrite.java.testing.mockito.ThenThrowCheckedExceptionToRuntimeException](/recipes/java/testing/mockito/thenthrowcheckedexceptiontoruntimeexception.md)
   * **Replace undeclared checked exceptions in `thenThrow` with `RuntimeException`**
   * In Mockito 3+, `thenThrow()` validates that checked exceptions are declared in the mocked method's `throws` clause. This recipe replaces checked exception class literals in `thenThrow()` calls with `RuntimeException.class` when the mocked method does not declare the exception.
 * [org.openrewrite.java.testing.mockito.UpgradeMockitoCoreReplacingPowerMock](/recipes/java/testing/mockito/upgrademockitocorereplacingpowermock.md)
   * **Upgrade `mockito-core` along with the Mockito that replaces PowerMock**
-  * Upgrades an explicitly declared `mockito-core` to at least the Mockito 3.x that replaces the PowerMock Mockito API. An older `mockito-core` would otherwise take precedence over the one `mockito-inline` depends on, so that `Mockito.mockStatic` and `MockedStatic` do not resolve. `mockito-all` is a 1.x-only uber jar with no 3.x release, so it becomes `mockito-core` first. A declared `mockito-inline` is upgraded as well, as before 3.4 it depends on a `mockito-core` without `Mockito.mockStatic`.
+  * Upgrades a declared `mockito-core` to at least the Mockito 3.x that replaces the PowerMock Mockito API. An older `mockito-core` would otherwise take precedence over the one `mockito-inline` depends on, so that `Mockito.mockStatic` and `MockedStatic` do not resolve. A declared `mockito-inline` is upgraded as well, as before 3.4 it depends on a `mockito-core` without `Mockito.mockStatic`. This runs after the PowerMock dependencies are replaced, so that it also upgrades the Mockito artifact that replaces them. A version managed by a BOM, such as the Mockito 3.3 of Spring Boot 2.2 and 2.3, is overridden as well, through its `mockito.version` property where the BOM uses one, so that the other Mockito artifacts it manages stay aligned.
 * [org.openrewrite.java.testing.mockito.VerifyZeroToNoMoreInteractions](/recipes/java/testing/mockito/verifyzerotonomoreinteractions.md)
   * **Replace `verifyZeroInteractions()` with `verifyNoMoreInteractions()`**
   * Replaces `verifyZeroInteractions()` with `verifyNoMoreInteractions()` in Mockito tests when migration when using a Mockito version &lt; 3.x.
@@ -6470,7 +6553,7 @@ _303 recipes_
   * **Add image argument to container constructor**
   * Set the image to use for a container explicitly if unset, rather than relying on the default image for the container class.
 * [org.openrewrite.java.testing.testcontainers.ExplicitContainerImages](/recipes/java/testing/testcontainers/explicitcontainerimages.md)
-  * **Explicit container images and versions**
+  * **Use explicit container images and versions**
   * Replace implicit default container images and versions with explicit versions.
 * [org.openrewrite.java.testing.testcontainers.GetHostMigration](/recipes/java/testing/testcontainers/gethostmigration.md)
   * **Replace `ContainerState.getContainerIpAddress()` with `getHost()`**
@@ -6488,7 +6571,7 @@ _303 recipes_
   * **Testcontainers best practices**
   * Apply best practices to Testcontainers usage.
 * [org.openrewrite.java.testing.testcontainers.Testcontainers2ContainerClasses](/recipes/java/testing/testcontainers/testcontainers2containerclasses.md)
-  * **Testcontainers 2 container classes**
+  * **Move container classes to their Testcontainers 2 packages**
   * Change Testcontainers container classes to their new package locations in Testcontainers 2.x.
 * [org.openrewrite.java.testing.testcontainers.Testcontainers2Dependencies](/recipes/java/testing/testcontainers/testcontainers2dependencies.md)
   * **Rename Testcontainers dependencies**
@@ -6541,6 +6624,9 @@ _303 recipes_
 * [org.openrewrite.java.testing.truth.TruthAssertWithMessageToAssertJ](/recipes/java/testing/truth/truthassertwithmessagetoassertj.md)
   * **Convert Truth `assertWithMessage` to AssertJ**
   * Converts Google Truth's `assertWithMessage().that()` pattern to AssertJ's `assertThat().as()` pattern.
+* [org.openrewrite.java.testing.truth.TruthCodeToAssertJ](/recipes/java/testing/truth/truthcodetoassertj.md)
+  * **Migrate Google Truth code to AssertJ**
+  * Convert Google Truth assertions, subject types and their methods to AssertJ equivalents.
 * [org.openrewrite.java.testing.truth.TruthCustomSubjectsToAssertJ](/recipes/java/testing/truth/truthcustomsubjectstoassertj.md)
   * **Migrate Truth custom subjects to AssertJ**
   * Marks Google Truth's `assertAbout()` usage for manual review as AssertJ handles custom assertions differently.
@@ -6550,6 +6636,9 @@ _303 recipes_
 * [org.openrewrite.java.testing.wiremock.MigrateContentTypeHeaderCharset](/recipes/java/testing/wiremock/migratecontenttypeheadercharset.md)
   * **Preserve the UTF-8 default of `ContentTypeHeader.charset()`**
   * WireMock 3's `ContentTypeHeader.charset()` fell back to `UTF_8` when the header was missing or carried no charset, while 4.x returns an `Optional` that is empty in those cases. Append `orElse(StandardCharsets.UTF_8)` so the value stays what it was; reaching for `get()` or `orElse(null)` instead, which is the easy way to make the compiler happy, would turn a missing charset into an exception or a null.
+* [org.openrewrite.java.testing.wiremock.MigrateJettyEE10ToEE11](/recipes/java/testing/wiremock/migratejettyee10toee11.md)
+  * **Move Jetty EE10 usages to EE11 alongside `wiremock-jetty12`**
+  * WireMock 3's `wiremock-jetty12` module ran on Jetty's EE10 servlet environment, whereas WireMock 4.x runs on EE11, so EE10 types such as the `ServletContextHandler` handed to `NotFoundHandler` no longer line up. Move EE10 packages and dependencies over to their EE11 counterparts, but only in modules depending on `wiremock-jetty12`, where EE10 arrived through WireMock in the first place.
 * [org.openrewrite.java.testing.wiremock.MigrateRequestMethodIsOneOf](/recipes/java/testing/wiremock/migraterequestmethodisoneof.md)
   * **Migrate `RequestMethod.isOneOf` to the matcher it became**
   * WireMock 3's `isOneOf` was an instance method answering whether the method was one of those given. In 4.x it is static and builds a matcher instead, so `method.isOneOf(GET, POST)` quietly stops being a boolean. Rewrite it as `RequestMethod.isOneOf(GET, POST).match(method).isExactMatch()`, which asks the same question of the new API.
@@ -6577,12 +6666,15 @@ _303 recipes_
 * [org.openrewrite.java.testing.wiremock.Wiremock3to4Migration](/recipes/java/testing/wiremock/wiremock3to4migration.md)
   * **Upgrade WireMock to 4.x**
   * Upgrade WireMock to 4.x, which requires Java 17, ships Jetty 12.1 by default, splits JUnit support out into separate modules and makes the primary domain classes immutable. Note that `RequestMethod.GET_OR_HEAD` is a multi method matcher in 4.x rather than a method named `GET_OR_HEAD`, so code reading a name off that particular constant needs a look.
+* [org.openrewrite.java.testing.wiremock.Wiremock4RelocatedTypes](/recipes/java/testing/wiremock/wiremock4relocatedtypes.md)
+  * **Move WireMock types to their 4.x packages**
+  * Change WireMock types that moved packages in WireMock 4.x, such as the Jetty, servlet and Apache HTTP client classes.
 
 ## rewrite-third-party
 
 _License: Apache License Version 2.0_
 
-_1693 recipes_
+_1699 recipes_
 
 * [ai.timefold.solver.migration.ChangeVersion](/recipes/timefold/solver/migration/changeversion.md)
   * **Change the Timefold version**
@@ -7466,6 +7558,21 @@ _1693 recipes_
 * [io.quarkus.updates.core.quarkus39.UpdateConfigRoots](/recipes/quarkus/updates/core/quarkus39/updateconfigroots.md)
   * **io.quarkus.updates.core.quarkus39.UpdateConfigRoots**
   * 
+* [io.quarkus.updates.core.quarkus40.AddPriorityToReserveAnnotation](/recipes/quarkus/updates/core/quarkus40/addprioritytoreserveannotation.md)
+  * **Add `@Priority(0)` to beans annotated with `@Reserve`**
+  * Beans migrated from `@DefaultBean` to `@Reserve` need `@Priority(0)` unless they already have a `@Priority` annotation.
+* [io.quarkus.updates.core.quarkus40.ArcDefaultBeanToReserve](/recipes/quarkus/updates/core/quarkus40/arcdefaultbeantoreserve.md)
+  * **Replace @DefaultBean with @Reserve**
+  * Replace ArC's @DefaultBean annotation with CDI 5.0's @Reserve annotation and add @Priority(0) if not already present. Also replace InjectableBean.isDefaultBean() with Bean.isReserve().
+* [io.quarkus.updates.core.quarkus40.ArcExtensionApiRemovals](/recipes/quarkus/updates/core/quarkus40/arcextensionapiremovals.md)
+  * **Migrate removed ArC and Quarkus deployment APIs**
+  * Replace ArC processor and Quarkus deployment APIs that were deprecated in Quarkus 3.x and removed in Quarkus 4.0.
+* [io.quarkus.updates.core.quarkus40.DroppedRelocations](/recipes/quarkus/updates/core/quarkus40/droppedrelocations.md)
+  * **Handle dropped relocations in Quarkus 4.0**
+  * Rename artifacts whose relocations have been dropped in Quarkus 4.0. These relocations were introduced in Quarkus 3.x and are no longer available.
+* [io.quarkus.updates.core.quarkus40.FlywayMongoDBDependencyRename](/recipes/quarkus/updates/core/quarkus40/flywaymongodbdependencyrename.md)
+  * **Rename Flyway MongoDB artifact**
+  * Flyway renamed flyway-database-mongodb to flyway-database-nc-mongodb in version 13.
 * [io.quarkus.updates.core.quarkus40.HibernateORMConfigProperties](/recipes/quarkus/updates/core/quarkus40/hibernateormconfigproperties.md)
   * **Rename deprecated Hibernate ORM configuration properties**
   * Rename Hibernate ORM configuration properties that were deprecated in Quarkus 3.x and removed in Quarkus 4.0.
@@ -7493,6 +7600,9 @@ _1693 recipes_
 * [io.quarkus.updates.core.quarkus40.MicrometerConfigProperties](/recipes/quarkus/updates/core/quarkus40/micrometerconfigproperties.md)
   * **Rename deprecated Micrometer configuration properties**
   * Rename Micrometer configuration properties that were deprecated in Quarkus 3.x and removed in Quarkus 4.0.
+* [io.quarkus.updates.core.quarkus40.MicrometerPrometheusMetrics](/recipes/quarkus/updates/core/quarkus40/micrometerprometheusmetrics.md)
+  * **Migrate to the Prometheus client 1.x based Micrometer registry**
+  * Quarkus 4.0 switches from `micrometer-registry-prometheus-simpleclient` to `micrometer-registry-prometheus`, whose classes live in the `io.micrometer.prometheusmetrics` package and use `PrometheusRegistry` instead of `CollectorRegistry`.
 * [io.quarkus.updates.core.quarkus40.MiscConfigProperties](/recipes/quarkus/updates/core/quarkus40/miscconfigproperties.md)
   * **Rename miscellaneous deprecated configuration properties**
   * Rename miscellaneous configuration properties that were deprecated in Quarkus 3.x and removed in Quarkus 4.0.
@@ -7525,10 +7635,10 @@ _1693 recipes_
   * quarkus-cxf 3.31.0 deprecated the per client proxy options (proxy-server, proxy-server-port, proxy-server-type, proxy-username, proxy-password, non-proxy-hosts) in favor of the Quarkus Proxy Registry, with removal announced for 4.0.0. A safe automatic rewrite is not possible for every configuration, so this recipe only adds a deprecation warning comment at the top of the affected properties files and leaves the migration to the user.
 * [io.quarkus.updates.cxf.cxf339.AddQuarkusJacksonIfUsed](/recipes/quarkus/updates/cxf/cxf339/addquarkusjacksonifused.md)
   * **Add quarkus-jackson if Jackson is used**
-  * Adds io.quarkus:quarkus-jackson to applications that use Jackson types in their sources, because quarkus-cxf stopped pulling quarkus-jackson transitively in 3.39.0. The detection is source based only: the dependency is not added when it is already available directly or transitively through another extension. The update tooling applies this recipe only to projects depending on io.quarkiverse.cxf:quarkus-cxf.
+  * Adds io.quarkus:quarkus-jackson to applications that use Jackson types in their sources, because quarkus-cxf stopped pulling quarkus-jackson transitively in 3.39.0. The detection is source based only: the dependency is not added when it is already declared directly. The update tooling applies this recipe only to projects depending on io.quarkiverse.cxf:quarkus-cxf.
 * [io.quarkus.updates.cxf.cxf339.UpdateAll](/recipes/quarkus/updates/cxf/cxf339/updateall.md)
   * **Migrate quarkus-cxf to 3.39**
-  * quarkus-cxf 3.39.0 no longer pulls io.quarkus:quarkus-jackson transitively. Adds an explicit quarkus-jackson dependency to applications that use Jackson classes in their sources and do not get the dependency from elsewhere.
+  * quarkus-cxf 3.39.0 no longer pulls io.quarkus:quarkus-jackson transitively. Adds an explicit quarkus-jackson dependency to applications that use Jackson classes in their sources and do not declare it directly.
 * [io.quarkus.updates.cxf.cxf38.UpdateAll](/recipes/quarkus/updates/cxf/cxf38/updateall.md)
   * **Migrate quarkus-cxf to 3.8**
   * Removes the retired logging extension (its functionality moved to io.quarkiverse.cxf:quarkus-cxf in 2.6.0, configuration properties unchanged) for quarkus-cxf 3.8.0.

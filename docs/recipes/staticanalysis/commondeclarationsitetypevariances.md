@@ -13,10 +13,6 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 _When using a method parameter like `Function<IN, OUT>`, it should rather be `Function<? super IN, ? extends OUT>`. This recipe checks for method parameters of well-known types._
 
-### Tags
-
-* [RSPEC-S1217](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S1217&open=java%3AS1217)
-
 ## Recipe source
 
 [GitHub: static-analysis.yml](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/resources/META-INF/rewrite/static-analysis.yml),
@@ -30,14 +26,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-**Preconditions**
-
-* [Singleton](../core/singleton)
-
-**Recipes**
-
 * [Properly use declaration-site type variance](../staticanalysis/declarationsitetypevariance)
   * variantTypes: `[java.util.function.Consumer<IN>, java.util.function.BiPredicate<IN, IN>, java.util.function.DoubleFunction<OUT>, java.util.function.Function<IN, OUT>, java.util.function.IntFunction<OUT>, java.util.function.LongFunction<OUT>, java.util.function.ObjDoubleConsumer<IN>, java.util.function.ObjIntConsumer<IN>, java.util.function.ObjLongConsumer<IN>, java.util.function.Predicate<IN>, java.util.function.Supplier<OUT>, java.util.function.ToDoubleBiFunction<IN, IN>, java.util.function.ToDoubleFunction<IN>, java.util.function.ToIntBiFunction<IN, IN>, java.util.function.ToIntFunction<IN>, java.util.function.ToLongBiFunction<IN, IN>, java.util.function.ToLongFunction<IN>]`
+  * excludedBounds: `[java.lang.*]`
 
 </TabItem>
 
@@ -50,13 +41,10 @@ name: org.openrewrite.staticanalysis.CommonDeclarationSiteTypeVariances
 displayName: Properly use declaration-site type variance for well-known types
 description: |
   When using a method parameter like `Function&lt;IN, OUT&gt;`, it should rather be `Function&lt;? super IN, ? extends OUT&gt;`. This recipe checks for method parameters of well-known types.
-tags:
-  - RSPEC-S1217
-preconditions:
-  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.staticanalysis.DeclarationSiteTypeVariance:
       variantTypes: [java.util.function.Consumer<IN>, java.util.function.BiPredicate<IN, IN>, java.util.function.DoubleFunction<OUT>, java.util.function.Function<IN, OUT>, java.util.function.IntFunction<OUT>, java.util.function.LongFunction<OUT>, java.util.function.ObjDoubleConsumer<IN>, java.util.function.ObjIntConsumer<IN>, java.util.function.ObjLongConsumer<IN>, java.util.function.Predicate<IN>, java.util.function.Supplier<OUT>, java.util.function.ToDoubleBiFunction<IN, IN>, java.util.function.ToDoubleFunction<IN>, java.util.function.ToIntBiFunction<IN, IN>, java.util.function.ToIntFunction<IN>, java.util.function.ToLongBiFunction<IN, IN>, java.util.function.ToLongFunction<IN>]
+      excludedBounds: [java.lang.*]
 
 ```
 </TabItem>

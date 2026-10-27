@@ -36,19 +36,20 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 This recipe is used as part of the following composite recipes:
 
-* [Change `java.lang.reflect.Modifier` and ` java.lang.invoke.ConstantBootstraps` method calls to static](/recipes/java/migrate/removedmodifierandconstantbootstrapsconstructors.md)
+* [Change `java.lang.reflect.Modifier` and `java.lang.invoke.ConstantBootstraps` method calls to static](/recipes/java/migrate/removedmodifierandconstantbootstrapsconstructors.md)
 * [Change `javax.tools.ToolProvider` methods calls to static](/recipes/java/migrate/removedtoolproviderconstructor.md)
+* [Migrate EasyMock code to Mockito](/recipes/java/testing/easymock/easymockcodetomockito.md)
 * [Migrate Hamcrest assertions to JUnit Jupiter](/recipes/java/testing/hamcrest/migratehamcresttojunit5.md)
 * [Migrate JBoss Logging to SLF4J](/recipes/java/logging/slf4j/jbossloggingtoslf4j.md)
 * [Migrate JUL to Log4j 2.x API](/recipes/java/logging/log4j/jultolog4j.md)
 * [Migrate Log4j 1.x to Log4j 2.x](/recipes/java/logging/log4j/log4j1tolog4j2.md)
 * [Migrate SLF4J to Log4j 2.x API](/recipes/java/logging/log4j/slf4jtolog4j.md)
 * [Migrate `AssertionsForClassTypes` and `AssertionsForInterfaceTypes` to `Assertions`](/recipes/java/testing/assertj/migrateassertionsforclassandinterfacetypes.md)
-* [Migrate from EasyMock to Mockito](/recipes/java/testing/easymock/easymocktomockito.md)
 * [Migrate to ApacheHttpClient 5.x](/recipes/apache/httpclient5/upgradeapachehttpclient_5.md)
 * [Migrate to Spring ORM to 5](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/orm/springorm5)
 * [Migrates to Apache Commons Collections 4.x](/recipes/apache/commons/collections/upgradeapachecommonscollections_3_4.md)
 * [Migrates to Apache Commons Lang 3.x](/recipes/apache/commons/lang/upgradeapachecommonslang_2_3.md)
+* [Prefer `Character#compare`](/recipes/java/migrate/guava/prefercharcompare.md)
 * [Prefer `Integer#compareUnsigned`](/recipes/java/migrate/guava/preferintegercompareunsigned.md)
 * [Prefer `Integer#compare`](/recipes/java/migrate/guava/preferintegercompare.md)
 * [Prefer `Integer#divideUnsigned`](/recipes/java/migrate/guava/preferintegerdivideunsigned.md)
@@ -64,7 +65,6 @@ This recipe is used as part of the following composite recipes:
 * [Prefer `Math#multiplyExact`](/recipes/java/migrate/guava/prefermathmultiplyexact.md)
 * [Prefer `Math#subtractExact`](/recipes/java/migrate/guava/prefermathsubtractexact.md)
 * [Prefer `Short#compare`](/recipes/java/migrate/guava/prefershortcompare.md)
-* [Prefer `java.lang.Char#compare`](/recipes/java/migrate/guava/prefercharcompare.md)
 * [Prefer `java.util.Collections#synchronizedNavigableMap`](/recipes/java/migrate/guava/preferjavautilcollectionssynchronizednavigablemap.md)
 * [Prefer `java.util.Collections#unmodifiableNavigableMap`](/recipes/java/migrate/guava/preferjavautilcollectionsunmodifiablenavigablemap.md)
 * [Prefer `java.util.Objects#equals`](/recipes/java/migrate/guava/preferjavautilobjectsequals.md)
@@ -74,11 +74,12 @@ This recipe is used as part of the following composite recipes:
 * [Recipe testing best practices](/recipes/java/recipes/recipetestingbestpractices.md)
 * [Replace PowerMock usages with Mockito](/recipes/java/testing/mockito/replacepowermockitousages.md)
 * [Replace `Paths.get` with `Path.of`](/recipes/java/migrate/nio/file/pathsgettopathof.md)
-* [Replace `org.apache.commons.lang3.Validate#notNull` with `Objects#requireNonNull`](/recipes/staticanalysis/replacevalidatenotnullhavingsingleargwithobjectsrequirenonnull.md)
+* [Replace single-argument `org.apache.commons.lang3.Validate#notNull` with `Objects#requireNonNull`](/recipes/staticanalysis/replacevalidatenotnullhavingsingleargwithobjectsrequirenonnull.md)
 * [Statically import AssertJ's `assertThat`](/recipes/java/testing/assertj/staticimports.md)
 * [Use `Assertions#assume*(..)` and Hamcrest's `MatcherAssume#assume*(..)`](/recipes/java/testing/junit5/migrateassumptions.md)
 * [Use `MatcherAssert#assertThat(..)`](/recipes/java/testing/junit5/usehamcrestassertthat.md)
 * [Use consistent Hamcrest matcher imports](/recipes/java/testing/hamcrest/consistenthamcrestmatcherimports.md)
+* [Use static form of Mockito `MockUtil`](/recipes/java/testing/mockito/mockutilstostatic.md)
 
 
 ## Usage

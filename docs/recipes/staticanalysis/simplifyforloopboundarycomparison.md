@@ -1,13 +1,13 @@
 ---
-title: "Simplify for loop boundary comparisons"
-sidebar_label: "Simplify for loop boundary comparisons"
+title: "Simplify `for` loop boundary comparisons"
+sidebar_label: "Simplify `for` loop boundary comparisons"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Simplify for loop boundary comparisons
+# Simplify `for` loop boundary comparisons
 
 **org.openrewrite.staticanalysis.SimplifyForLoopBoundaryComparison**
 
@@ -67,7 +67,7 @@ class Test {
 
 <RunRecipe
   recipeName="org.openrewrite.staticanalysis.SimplifyForLoopBoundaryComparison"
-  displayName="Simplify for loop boundary comparisons"
+  displayName="Simplify `for` loop boundary comparisons"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-static-analysis"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_STATIC_ANALYSIS"

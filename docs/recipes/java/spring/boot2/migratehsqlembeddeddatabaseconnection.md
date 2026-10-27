@@ -1,17 +1,17 @@
 ---
-title: "Migrate deprecated Spring-Boot `EmbeddedDatabaseConnection.HSQL`"
-sidebar_label: "Migrate deprecated Spring-Boot `EmbeddedDatabaseConnection.HSQL`"
+title: "Migrate deprecated Spring Boot `EmbeddedDatabaseConnection.HSQL`"
+sidebar_label: "Migrate deprecated Spring Boot `EmbeddedDatabaseConnection.HSQL`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Migrate deprecated Spring-Boot `EmbeddedDatabaseConnection.HSQL`
+# Migrate deprecated Spring Boot `EmbeddedDatabaseConnection.HSQL`
 
 **org.openrewrite.java.spring.boot2.MigrateHsqlEmbeddedDatabaseConnection**
 
-_Spring-Boot `EmbeddedDatabaseConnection.HSQL` was deprecated in favor of `EmbeddedDatabaseConnection.HSQLDB` in 2.4._
+_Spring Boot `EmbeddedDatabaseConnection.HSQL` was deprecated in favor of `EmbeddedDatabaseConnection.HSQLDB` in 2.4._
 
 ## Recipe source
 
@@ -76,7 +76,7 @@ class A {
 
 <RunRecipe
   recipeName="org.openrewrite.java.spring.boot2.MigrateHsqlEmbeddedDatabaseConnection"
-  displayName="Migrate deprecated Spring-Boot `EmbeddedDatabaseConnection.HSQL`"
+  displayName="Migrate deprecated Spring Boot `EmbeddedDatabaseConnection.HSQL`"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-spring"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING"

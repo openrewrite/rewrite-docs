@@ -28,6 +28,71 @@ This recipe is used as part of the following composite recipes:
 
 * [Migrate deprecated `javax.ws` packages to `jakarta.ws`](/recipes/java/migrate/jakarta/javaxwstojakartaws.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.glassfish.jersey.filter.LoggingFilter;
+import java.util.logging.Logger;
+import javax.ws.rs.core.Configurable;
+
+class Test {
+    Object filter(Configurable<?> config, Logger logger, boolean entities) {
+        return config.register(new LoggingFilter(logger, entities));
+    }
+}
+```
+
+###### After
+```java
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import javax.ws.rs.core.Configurable;
+
+import org.glassfish.jersey.logging.LoggingFeature;
+
+class Test {
+    Object filter(Configurable<?> config, Logger logger, boolean entities) {
+        return config.register(new LoggingFeature(logger, Level.INFO, entities ? LoggingFeature.Verbosity.PAYLOAD_ANY : LoggingFeature.Verbosity.HEADERS_ONLY, 8192));
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import org.glassfish.jersey.filter.LoggingFilter;
++import java.util.logging.Level;
+import java.util.logging.Logger;
+@@ -3,0 +3,1 @@
+import org.glassfish.jersey.filter.LoggingFilter;
+import java.util.logging.Logger;
++
+import javax.ws.rs.core.Configurable;
+@@ -5,0 +6,2 @@
+import javax.ws.rs.core.Configurable;
+
++import org.glassfish.jersey.logging.LoggingFeature;
++
+class Test {
+@@ -7,1 +10,1 @@
+class Test {
+    Object filter(Configurable<?> config, Logger logger, boolean entities) {
+-       return config.register(new LoggingFilter(logger, entities));
++       return config.register(new LoggingFeature(logger, Level.INFO, entities ? LoggingFeature.Verbosity.PAYLOAD_ANY : LoggingFeature.Verbosity.HEADERS_ONLY, 8192));
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

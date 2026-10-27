@@ -1,13 +1,13 @@
 ---
-title: "Explicit container images and versions"
-sidebar_label: "Explicit container images and versions"
+title: "Use explicit container images and versions"
+sidebar_label: "Use explicit container images and versions"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Explicit container images and versions
+# Use explicit container images and versions
 
 **org.openrewrite.java.testing.testcontainers.ExplicitContainerImages**
 
@@ -136,7 +136,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.testing.testcontainers.ExplicitContainerImages
-displayName: Explicit container images and versions
+displayName: Use explicit container images and versions
 description: |
   Replace implicit default container images and versions with explicit versions.
 preconditions:
@@ -249,7 +249,7 @@ This recipe is used as part of the following composite recipes:
 
 <RunRecipe
   recipeName="org.openrewrite.java.testing.testcontainers.ExplicitContainerImages"
-  displayName="Explicit container images and versions"
+  displayName="Use explicit container images and versions"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-testing-frameworks"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_TESTING_FRAMEWORKS"

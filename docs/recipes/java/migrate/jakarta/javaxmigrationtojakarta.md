@@ -42,7 +42,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 **Recipes**
 
-* [Migrate to JavaEE8](../../../java/migrate/javaee8-recipe)
+* [Migrate to Java EE 8](../../../java/migrate/javaee8-recipe)
 * [Migrate Jakarta EE runtime type names](../../../java/migrate/jakarta/javaxruntimetypenamestojakarta)
 * [Migrate deprecated `javax.activation` packages to `jakarta.activation`](../../../java/migrate/jakarta/javaxactivationmigrationtojakartaactivation)
 * [Migrate deprecated `javax.annotation` to `jakarta.annotation`](../../../java/migrate/jakarta/javaxannotationmigrationtojakartaannotation)
@@ -52,7 +52,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Migrate deprecated `javax.decorator` packages to `jakarta.decorator`](../../../java/migrate/jakarta/javaxdecoratortojakartadecorator)
 * [Migrate deprecated `javax.ejb` packages to `jakarta.ejb`](../../../java/migrate/jakarta/javaxejbtojakartaejb)
 * [Migrate deprecated `javax.el` packages to `jakarta.el`](../../../java/migrate/jakarta/javaxeltojakartael)
-* [Migrate deprecated `org.apache.commons.fileload` packages to `org.apache.commons.fileload.core`](../../../java/migrate/jakarta/fileuploadtofileupload2)
+* [Migrate `commons-fileupload` to `commons-fileupload2-jakarta-servlet5`](../../../java/migrate/jakarta/fileuploadtofileupload2)
 * [Migrate deprecated `javax.enterprise` packages to `jakarta.enterprise`](../../../java/migrate/jakarta/javaxenterprisetojakartaenterprise)
 * [Migrate Weld implementations to Jakarta CDI](../../../java/migrate/jakarta/weldtojakarta)
 * [JSF 2.x to Jakarta Faces 3.x](../../../java/migrate/jakarta/faces2xmigrationtojakartafaces3x)
@@ -77,16 +77,16 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Migrate deprecated `javax.soap` packages to `jakarta.soap`](../../../java/migrate/jakarta/javaxxmlsoaptojakartaxmlsoap)
 * [Migrate deprecated `javax.xml.ws` packages to `jakarta.xml.ws`](../../../java/migrate/jakarta/javaxxmlwsmigrationtojakartaxmlws)
 * [Migrate Jackson from javax to jakarta namespace](../../../java/migrate/jakarta/jacksonjavaxtojakarta)
-* [Update Jetty9 to Jetty12](../../../java/migrate/jakarta/jettyupgradeee9)
+* [Update Jetty 9 to Jetty 12](../../../java/migrate/jakarta/jettyupgradeee9)
 * [Migrate Ehcache from javax to jakarta namespace](../../../java/migrate/jakarta/ehcachejavaxtojakarta)
 * [Migrate Johnzon from javax to jakarta namespace](../../../java/migrate/jakarta/johnzonjavaxtojakarta)
-* [Migrate RestAssured from javax to jakarta namespace by upgrading to a version compatible with J2EE9](../../../java/migrate/jakarta/restassuredjavaxtojakarta)
-* [Remove trailing slash from `jakarta.ws.rs.ApplicationPath` values](../../../java/migrate/jakarta/applicationpathwildcardnolongeraccepted)
-* [Migrate `org.apache.ws.security` and `org.apache.ws.security.components.crypto` packages to  `org.apache.wss4j.common.ext` and `org.apache.wss4j.common.crypto` packages](../../../java/migrate/jakarta/updateapachewssecuritypackages)
+* [Migrate RestAssured from javax to jakarta namespace by upgrading to a version compatible with Jakarta EE 9](../../../java/migrate/jakarta/restassuredjavaxtojakarta)
+* [Remove trailing `/*` from `jakarta.ws.rs.ApplicationPath` values](../../../java/migrate/jakarta/applicationpathwildcardnolongeraccepted)
+* [Migrate `org.apache.ws.security` and `org.apache.ws.security.components.crypto` packages to `org.apache.wss4j.common.ext` and `org.apache.wss4j.common.crypto` packages](../../../java/migrate/jakarta/updateapachewssecuritypackages)
 * [Migrate deprecated `javaee-api` dependencies to `jakarta.platform`](../../../java/migrate/jakarta/javaxeeapitojakarta)
 * [Remove `jakarta.annotation-api` dependency when managed by Spring Boot](../../../java/migrate/jakarta/removejakartaannotationdependencywhenmanagedbyspringboot)
-* [Update RestLet to 2.6.0](../../../java/migrate/jakarta/updaterestlet2_6)
-* [Update Plugins for Jakarta EE 9](../../../java/migrate/jakarta/migratepluginsforjakarta9)
+* [Update Restlet to 2.6.x](../../../java/migrate/jakarta/updaterestlet2_6)
+* [Update plugins for Jakarta EE 9](../../../java/migrate/jakarta/migratepluginsforjakarta9)
 
 </TabItem>
 

@@ -37,14 +37,14 @@ This recipe is available under the [Moderne Source Available License](https://do
 **Recipes**
 
 * [Constructors of an `abstract` class should not be declared `public`](../staticanalysis/abstractclasspublicconstructor)
-* [Atomic Boolean, Integer, and Long equality checks compare their values](../staticanalysis/atomicprimitiveequalsusesget)
+* [`AtomicBoolean`, `AtomicInteger`, and `AtomicLong` equality checks compare their values](../staticanalysis/atomicprimitiveequalsusesget)
 * [`new BigDecimal(double)` should not be used](../staticanalysis/bigdecimaldoubleconstructorrecipe)
 * [`BigDecimal` rounding constants to `RoundingMode` enums](../staticanalysis/bigdecimalroundingconstantstoenums)
 * [Boolean checks should not be inverted](../staticanalysis/booleanchecksnotinverted)
-* [CaseInsensitive comparisons do not alter case](../staticanalysis/caseinsensitivecomparisonsdonotchangecase)
+* [Case-insensitive comparisons do not alter case](../staticanalysis/caseinsensitivecomparisonsdonotchangecase)
 * [Catch clause should do more than just rethrow](../staticanalysis/catchclauseonlyrethrows)
 * [Chain `StringBuilder.append()` calls](../staticanalysis/chainstringbuilderappendcalls)
-* ['Collection.toArray()' should be passed an array of the proper type](../staticanalysis/collectiontoarrayshouldhavepropertype)
+* [`Collection.toArray()` should be passed an array of the proper type](../staticanalysis/collectiontoarrayshouldhavepropertype)
 * [Covariant equals](../staticanalysis/covariantequals)
 * [Default comes last](../staticanalysis/defaultcomeslast)
 * [Remove empty blocks](../staticanalysis/emptyblock)
@@ -61,6 +61,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [`indexOf` should not compare greater than zero](../staticanalysis/indexofshouldnotcomparegreaterthanzero)
 * [Inline variable](../staticanalysis/inlinevariable)
 * [Use `Collection#isEmpty()` instead of comparing `size()`](../staticanalysis/isemptycalloncollections)
+* [Use `Map#isEmpty()` instead of comparing `size()`](../staticanalysis/isemptycallonmaps)
 * [Simplify lambda blocks to expressions](../staticanalysis/lambdablocktoexpression)
 * [Standardize method name casing](../staticanalysis/methodnamecasing)
 * [`switch` statements should have at least 3 `case` clauses](../staticanalysis/minimumswitchcases)
@@ -73,23 +74,23 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Use `Collections#emptyList()`, `emptyMap()`, and `emptySet()`](../staticanalysis/noemptycollectionwithrawtype)
 * [Use comparison rather than equality checks in for conditions](../staticanalysis/noequalityinforcondition)
 * [Remove `finalize()` method](../staticanalysis/nofinalizer)
-* [No primitive wrappers for #toString() or #compareTo(..)](../staticanalysis/noprimitivewrappersfortostringorcompareto)
+* [No primitive wrappers for `#toString()` or `#compareTo(..)`](../staticanalysis/noprimitivewrappersfortostringorcompareto)
 * [Jump statements should not be redundant](../staticanalysis/noredundantjumpstatements)
 * [Unnecessary `String#toString`](../staticanalysis/notostringonstringtype)
 * [Unnecessary `String#valueOf(..)`](../staticanalysis/novalueofonstringtype)
 * [`finalize()` calls super](../staticanalysis/objectfinalizecallssuper)
-* [Prefer `System.getProperty(&quot;user.home&quot;)` over `System.getenv(&quot;HOME&quot;)`](../staticanalysis/prefersystemgetpropertyovergetenv)
+* [Prefer `System.getProperty(..)` over `System.getenv(..)`](../staticanalysis/prefersystemgetpropertyovergetenv)
 * [Use primitive wrapper `valueOf` method](../staticanalysis/primitivewrapperclassconstructortovalueof)
-* [Redundant file creation](../staticanalysis/redundantfilecreation)
+* [Redundant `File` creation](../staticanalysis/redundantfilecreation)
 * [Remove extra semicolons](../staticanalysis/removeextrasemicolons)
 * [Remove no argument `super()` constructor calls](../staticanalysis/removenoargumentsuperconstructorcall)
-* [Remove redundant null checks before instanceof](../staticanalysis/removeredundantnullcheckbeforeinstanceof)
+* [Remove redundant null checks before `instanceof`](../staticanalysis/removeredundantnullcheckbeforeinstanceof)
 * [Remove redundant null checks before literal equals](../staticanalysis/removeredundantnullcheckbeforeliteralequals)
 * [Rename methods named `hashcode`, `equal`, or `tostring`](../staticanalysis/renamemethodsnamedhashcodeequalortostring)
 * [Replace `A.class.isInstance(a)` with `a instanceof A`](../staticanalysis/replaceclassisinstancewithinstanceof)
 * [Use method references in lambda](../staticanalysis/replacelambdawithmethodreference)
 * [Replace `StringBuilder#append` with `String`](../staticanalysis/replacestringbuilderwithstring)
-* [Replace String concatenation with `String.valueOf()`](../staticanalysis/replacestringconcatenationwithstringvalueof)
+* [Replace `String` concatenation with `String.valueOf()`](../staticanalysis/replacestringconcatenationwithstringvalueof)
 * [Simplify `Arrays.asList(..)` with varargs](../staticanalysis/simplifyarraysaslist)
 * [Simplify boolean expression](../staticanalysis/simplifybooleanexpression)
 * [Simplify boolean return](../staticanalysis/simplifybooleanreturn)
@@ -103,7 +104,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Upper case literal suffixes](../staticanalysis/uppercaseliteralsuffixes)
 * [Use the diamond operator](../staticanalysis/usediamondoperator)
 * [No C-style array declarations](../staticanalysis/usejavastylearraydeclarations)
-* [Use %n instead of \n in format strings](../staticanalysis/useportablenewlines)
+* [Use `%n` instead of `\n` in format strings](../staticanalysis/useportablenewlines)
 * [Prefer `while` over `for` loops](../staticanalysis/whileinsteadoffor)
 * [Write octal values as decimal](../staticanalysis/writeoctalvaluesasdecimal)
 * [Structural equality tests should use `==` or `!=`](../kotlin/cleanup/equalsmethodusage)
@@ -150,6 +151,7 @@ recipeList:
   - org.openrewrite.staticanalysis.IndexOfShouldNotCompareGreaterThanZero
   - org.openrewrite.staticanalysis.InlineVariable
   - org.openrewrite.staticanalysis.IsEmptyCallOnCollections
+  - org.openrewrite.staticanalysis.IsEmptyCallOnMaps
   - org.openrewrite.staticanalysis.LambdaBlockToExpression
   - org.openrewrite.staticanalysis.MethodNameCasing
   - org.openrewrite.staticanalysis.MinimumSwitchCases
@@ -205,7 +207,7 @@ recipeList:
 </Tabs>
 ## Examples
 ##### Example 1
-`CommonStaticAnalysisIssuesPerformanceTest#indexOfOnList`
+`CommonStaticAnalysisTest#indexOfOnList`
 
 
 <Tabs groupId="beforeAfter">
@@ -257,7 +259,7 @@ class Test {
 ---
 
 ##### Example 2
-`CommonStaticAnalysisIssuesPerformanceTest#indexOfOnList`
+`CommonStaticAnalysisTest#indexOfOnList`
 
 
 <Tabs groupId="beforeAfter">

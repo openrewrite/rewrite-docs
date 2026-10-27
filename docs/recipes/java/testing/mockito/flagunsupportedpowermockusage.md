@@ -28,6 +28,81 @@ This recipe is used as part of the following composite recipes:
 
 * [Replace PowerMock with raw Mockito](/recipes/java/testing/mockito/replacepowermockito.md)
 
+## Example
+
+
+###### Unchanged
+```java
+class Service {
+    private String secret() {
+        return "real";
+    }
+
+    static void init() {
+    }
+}
+```
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.junit.Test;
+import org.powermock.api.mockito.PowerMockito;
+
+import static org.powermock.api.support.membermodification.MemberMatcher.method;
+import static org.powermock.api.support.membermodification.MemberModifier.suppress;
+
+public class ServiceTest {
+    @Test
+    public void test() throws Exception {
+        suppress(method(Service.class, "init"));
+        Service service = PowerMockito.spy(new Service());
+        PowerMockito.when(service, "secret").thenReturn("mock");
+    }
+}
+```
+
+###### After
+```java
+import org.junit.Test;
+import org.powermock.api.mockito.PowerMockito;
+
+import static org.powermock.api.support.membermodification.MemberMatcher.method;
+import static org.powermock.api.support.membermodification.MemberModifier.suppress;
+
+public class ServiceTest {
+    @Test
+    public void test() throws Exception {
+        /* TODO `MemberModifier.suppress` could not be migrated automatically; migrate it manually to replace PowerMock */
+        suppress(method(Service.class, "init"));
+        Service service = PowerMockito.spy(new Service());
+        /* TODO `PowerMockito.when` with more than one argument could not be migrated automatically; migrate it manually to replace PowerMock */
+        PowerMockito.when(service, "secret").thenReturn("mock");
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -10,0 +10,1 @@
+    @Test
+    public void test() throws Exception {
++       /* TODO `MemberModifier.suppress` could not be migrated automatically; migrate it manually to replace PowerMock */
+        suppress(method(Service.class, "init"));
+@@ -12,0 +13,1 @@
+        suppress(method(Service.class, "init"));
+        Service service = PowerMockito.spy(new Service());
++       /* TODO `PowerMockito.when` with more than one argument could not be migrated automatically; migrate it manually to replace PowerMock */
+        PowerMockito.when(service, "secret").thenReturn("mock");
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

@@ -1,13 +1,13 @@
 ---
-title: "`@JoinColumn` annotations must be used with relationship mappings"
-sidebar_label: "`@JoinColumn` annotations must be used with relationship mappings"
+title: "Replace `@Column` with `@JoinColumn` on relationship mappings"
+sidebar_label: "Replace `@Column` with `@JoinColumn` on relationship mappings"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# `@JoinColumn` annotations must be used with relationship mappings
+# Replace `@Column` with `@JoinColumn` on relationship mappings
 
 **org.openrewrite.java.migrate.javax.UseJoinColumnForMapping**
 
@@ -105,7 +105,7 @@ import javax.persistence.ManyToOne;
 
 <RunRecipe
   recipeName="org.openrewrite.java.migrate.javax.UseJoinColumnForMapping"
-  displayName="`@JoinColumn` annotations must be used with relationship mappings"
+  displayName="Replace `@Column` with `@JoinColumn` on relationship mappings"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-migrate-java"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA"

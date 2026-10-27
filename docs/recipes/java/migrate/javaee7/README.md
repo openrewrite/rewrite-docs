@@ -8,6 +8,6 @@ _Recipes for migrating to [Java EE 7](https://javaee.github.io/javaee-spec/javad
 
 ## Recipes
 
-* [Removed OpenJPA providers in the persistence.xml file](./openjpapersistenceprovider.md)
+* [Replace the OpenJPA persistence provider with EclipseLink in `persistence.xml`](./openjpapersistenceprovider.md)
 
 

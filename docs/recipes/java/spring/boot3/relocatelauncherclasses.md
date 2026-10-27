@@ -1,13 +1,13 @@
 ---
-title: "Relocate Launcher Classes"
-sidebar_label: "Relocate Launcher Classes"
+title: "Relocate launcher classes"
+sidebar_label: "Relocate launcher classes"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Relocate Launcher Classes
+# Relocate launcher classes
 
 **org.openrewrite.java.spring.boot3.RelocateLauncherClasses**
 
@@ -57,7 +57,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.spring.boot3.RelocateLauncherClasses
-displayName: Relocate Launcher Classes
+displayName: Relocate launcher classes
 description: |
   Relocate classes that have been moved to different packages in Spring Boot 3.2.
 preconditions:
@@ -91,7 +91,7 @@ This recipe is used as part of the following composite recipes:
 
 <RunRecipe
   recipeName="org.openrewrite.java.spring.boot3.RelocateLauncherClasses"
-  displayName="Relocate Launcher Classes"
+  displayName="Relocate launcher classes"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-spring"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING"

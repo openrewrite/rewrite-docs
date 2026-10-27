@@ -50,11 +50,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Remove redundant explicit dependency and plugin versions](../../../maven/removeredundantdependencyversions)
   * groupPattern: `org.glassfish.jaxb`
   * artifactPattern: `*`
-  * onlyIfVersionsMatch: `true`
 * [Remove redundant explicit dependency and plugin versions](../../../maven/removeredundantdependencyversions)
   * groupPattern: `com.sun.xml.bind`
   * artifactPattern: `*`
-  * onlyIfVersionsMatch: `true`
 
 </TabItem>
 
@@ -82,11 +80,9 @@ recipeList:
   - org.openrewrite.maven.RemoveRedundantDependencyVersions:
       groupPattern: org.glassfish.jaxb
       artifactPattern: "*"
-      onlyIfVersionsMatch: true
   - org.openrewrite.maven.RemoveRedundantDependencyVersions:
       groupPattern: com.sun.xml.bind
       artifactPattern: "*"
-      onlyIfVersionsMatch: true
 
 ```
 </TabItem>

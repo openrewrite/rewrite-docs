@@ -43,13 +43,13 @@ This recipe is available under the [Moderne Source Available License](https://do
 **Recipes**
 
 * [JSF 2.x to Jakarta Faces 3.x](../../../java/migrate/jakarta/faces2xmigrationtojakartafaces3x)
-* [Update Jakarta EE Java Faces Dependencies to 4.0.x](../../../java/migrate/jakarta/updatejakartafacesapi4)
+* [Update Jakarta Faces dependencies to 4.0.x](../../../java/migrate/jakarta/updatejakartafacesapi4)
 * [Faces XHTML migration for Jakarta EE 10](../../../java/migrate/jakarta/jakartafacesxhtmlee10)
 * [Migrate xmlns entries in `faces-config.xml` files](../../../java/migrate/jakarta/jakartafacesconfigxml4)
 * [Migrate xmlns entries in `taglib.xml` files](../../../java/migrate/jakarta/jakartafacestaglibraryxml4)
 * [Migrate xmlns entries in `web-fragment.xml` files](../../../java/migrate/jakarta/jakartawebfragmentxml6)
 * [Migrate xmlns entries in `web.xml` files](../../../java/migrate/jakarta/jakartawebxml6)
-* [Substitute removed Faces Managed Beans](../../../java/migrate/jakarta/facesmanagedbeansremoved)
+* [Substitute removed Faces managed beans](../../../java/migrate/jakarta/facesmanagedbeansremoved)
 * [Upgrade Faces open source libraries](../../../java/migrate/jakarta/upgradefaces4opensourcelibraries)
 
 </TabItem>
@@ -115,6 +115,25 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
+
+### Maven metadata failures
+**org.openrewrite.maven.table.MavenMetadataFailures**
+
+_Attempts to resolve maven metadata that failed._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Group id | The groupId of the artifact for which the metadata download failed. |
+| Artifact id | The artifactId of the artifact for which the metadata download failed. |
+| Version | The version of the artifact for which the metadata download failed. |
+| Maven repository | The URL of the Maven repository that the metadata download failed on. |
+| Snapshots | Does the repository support snapshots. |
+| Releases | Does the repository support releases. |
+| Failure | The reason the metadata download failed. |
+
+</TabItem>
+
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results

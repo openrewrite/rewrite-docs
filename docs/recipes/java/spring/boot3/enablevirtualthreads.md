@@ -1,13 +1,13 @@
 ---
-title: "Enable Virtual Threads on Java 21"
-sidebar_label: "Enable Virtual Threads on Java 21"
+title: "Enable virtual threads on Java 21"
+sidebar_label: "Enable virtual threads on Java 21"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Enable Virtual Threads on Java 21
+# Enable virtual threads on Java 21
 
 **org.openrewrite.java.spring.boot3.EnableVirtualThreads**
 
@@ -34,7 +34,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 **Recipes**
 
-* [Add a spring configuration property](../../../java/spring/addspringproperty)
+* [Add a Spring configuration property](../../../java/spring/addspringproperty)
   * property: `spring.threads.virtual.enabled`
   * value: `true`
 
@@ -46,7 +46,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.spring.boot3.EnableVirtualThreads
-displayName: Enable Virtual Threads on Java 21
+displayName: Enable virtual threads on Java 21
 description: |
   Set `spring.threads.virtual.enabled` to `true` in `application.properties` or `application.yml`.
 preconditions:
@@ -75,7 +75,7 @@ This recipe is used as part of the following composite recipes:
 
 
 ###### New file
-```properties title="src/main/resources/application.properties"
+```properties
 spring.threads.virtual.enabled=true
 ```
 
@@ -88,7 +88,7 @@ spring.threads.virtual.enabled=true
 
 
 ###### New file
-```properties title="src/main/resources/application.properties"
+```properties
 spring.threads.virtual.enabled=true
 ```
 
@@ -98,7 +98,7 @@ spring.threads.virtual.enabled=true
 
 <RunRecipe
   recipeName="org.openrewrite.java.spring.boot3.EnableVirtualThreads"
-  displayName="Enable Virtual Threads on Java 21"
+  displayName="Enable virtual threads on Java 21"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-spring"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING"

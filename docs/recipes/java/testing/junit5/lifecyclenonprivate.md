@@ -1,17 +1,17 @@
 ---
-title: "Make lifecycle methods non private"
-sidebar_label: "Make lifecycle methods non private"
+title: "Make lifecycle methods non-private"
+sidebar_label: "Make lifecycle methods non-private"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Make lifecycle methods non private
+# Make lifecycle methods non-private
 
 **org.openrewrite.java.testing.junit5.LifecycleNonPrivate**
 
-_Make JUnit 5's `@AfterAll`, `@AfterEach`, `@BeforeAll` and `@BeforeEach` non private._
+_Make JUnit 5's `@AfterAll`, `@AfterEach`, `@BeforeAll` and `@BeforeEach` methods non-private._
 
 ## Recipe source
 
@@ -33,7 +33,7 @@ This recipe is used as part of the following composite recipes:
 
 <RunRecipe
   recipeName="org.openrewrite.java.testing.junit5.LifecycleNonPrivate"
-  displayName="Make lifecycle methods non private"
+  displayName="Make lifecycle methods non-private"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-testing-frameworks"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_TESTING_FRAMEWORKS"

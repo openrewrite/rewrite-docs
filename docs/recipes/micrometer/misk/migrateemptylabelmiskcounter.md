@@ -55,7 +55,7 @@ import static kotlin.collections.CollectionsKt.listOf;
 
 class Test {
   void test(Metrics metrics) {
-      Counter.builder("counter").description("description").register(Metrics.globalRegistry);
+      Counter.builder("counter").description("description").register(io.micrometer.core.instrument.Metrics.globalRegistry);
   }
 }
 ```
@@ -71,7 +71,7 @@ import misk.metrics.v2.Metrics;
 class Test {
   void test(Metrics metrics) {
 -     metrics.counter("counter", "description", listOf());
-+     Counter.builder("counter").description("description").register(Metrics.globalRegistry);
++     Counter.builder("counter").description("description").register(io.micrometer.core.instrument.Metrics.globalRegistry);
   }
 ```
 </TabItem>

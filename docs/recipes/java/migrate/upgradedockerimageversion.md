@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.migrate.UpgradeDockerImageVersion**
 
-_Upgrade Docker image tags to use the specified Java version. Updates common Java Docker images including eclipse-temurin, amazoncorretto, azul/zulu-openjdk, and others. Also migrates deprecated images (openjdk, adoptopenjdk) to eclipse-temurin, preserving any tag suffix such as `-jre-alpine`. When a `FROM` is built from a build argument, the default value of the corresponding global `ARG` is upgraded instead, such that `ARG java_version=17` used as `FROM eclipse-temurin:${java_version}` becomes `ARG java_version=25`. Image references built from arguments without a default value are left untouched, as their value can not be determined statically. A digest pin is dropped when the tag is upgraded, as the stale digest would otherwise keep resolving to the old image._
+_Upgrade Docker image tags to use the specified Java version. Updates common Java Docker images including `eclipse-temurin`, `amazoncorretto`, `azul/zulu-openjdk`, and others. Also migrates deprecated images (`openjdk`, `adoptopenjdk`) to `eclipse-temurin`, preserving any tag suffix such as `-jre-alpine`. A pinned patch or update version is dropped, as in `17.0.9_9-jdk` becoming `25-jdk`, as images are not published for that patch of the new version. When a `FROM` is built from a build argument, the default value of the corresponding global `ARG` is upgraded instead, such that `ARG java_version=17` used as `FROM eclipse-temurin:${java_version}` becomes `ARG java_version=25`. Image references built from arguments without a default value are left untouched, as their value can not be determined statically. A digest pin is dropped when the tag is upgraded, as the stale digest would otherwise keep resolving to the old image._
 
 ## Recipe source
 
@@ -33,6 +33,39 @@ This recipe is available under the [Moderne Source Available License](https://do
 This recipe is used as part of the following composite recipes:
 
 * [Upgrade Java version](/recipes/java/migrate/upgradejavaversion.md)
+
+## Example
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|version|`25`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="docker" label="docker">
+
+
+###### Before
+```docker
+FROM maven:3.9.9-eclipse-temurin-23 AS builder
+```
+
+###### After
+```docker
+FROM maven:3.9-eclipse-temurin-25 AS builder
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-FROM maven:3.9.9-eclipse-temurin-23 AS builder
++FROM maven:3.9-eclipse-temurin-25 AS builder
+```
+</TabItem>
+</Tabs>
 
 
 ## Usage

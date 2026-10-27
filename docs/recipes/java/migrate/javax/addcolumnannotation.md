@@ -1,17 +1,17 @@
 ---
-title: "`@ElementCollection` annotations must be accompanied by a defined `@Column` annotation"
-sidebar_label: "`@ElementCollection` annotations must be accompanied by a defined `@Column` annotation"
+title: "Set `@Column(name = \"element\")` on `@ElementCollection` attributes"
+sidebar_label: "Set `@Column(name = \"element\")` on `@ElementCollection` attributes"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# `@ElementCollection` annotations must be accompanied by a defined `@Column` annotation
+# Set `@Column(name = &quot;element&quot;)` on `@ElementCollection` attributes
 
 **org.openrewrite.java.migrate.javax.AddColumnAnnotation**
 
-_When an attribute is annotated with `@ElementCollection`, a separate table is created for the attribute that includes the attribute  ID and value. In OpenJPA, the column for the annotated attribute is named element, whereas EclipseLink names the column based on  the name of the attribute. To remain compatible with tables that were created with OpenJPA, add a `@Column` annotation with the name  attribute set to element._
+_When an attribute is annotated with `@ElementCollection`, a separate table is created for the attribute that includes the attribute ID and value. In OpenJPA, the column for the annotated attribute is named `element`, whereas EclipseLink names the column based on the name of the attribute. To remain compatible with tables that were created with OpenJPA, add a `@Column` annotation with the `name` attribute set to `element`._
 
 ## Recipe source
 
@@ -96,7 +96,7 @@ import javax.persistence.ElementCollection;
 
 <RunRecipe
   recipeName="org.openrewrite.java.migrate.javax.AddColumnAnnotation"
-  displayName="`@ElementCollection` annotations must be accompanied by a defined `@Column` annotation"
+  displayName="Set `@Column(name = &quot;element&quot;)` on `@ElementCollection` attributes"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-migrate-java"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA"

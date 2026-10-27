@@ -43,20 +43,25 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Use a standard name for `ExecutionContext`](../../java/recipes/executioncontextparametername)
 * [Inline nested visitor classes into the returning method](../../java/recipes/inlinenestedvisitorclass)
 * [Use `J.Literal.isLiteralValue(expression, null)`](../../java/recipes/isliteralnullrecipe)
+* [Use `ListUtils.filter` instead of mapping elements to `null`](../../java/recipes/listutilsfilterovermaptonull)
 * [Find missing `@Option` `example` values](../../java/recipes/missingoptionexample)
 * [Recipe classes should not have mutable `static` fields](../../java/recipes/nomutablestaticfieldsinrecipes)
 * [Use of `@EqualsAndHashCode` on `Recipe`](../../java/recipes/recipeequalsandhashcodecallsuper)
 * [Recipe classes should be public](../../java/recipes/recipeclassesshouldbepublic)
+* [Drop redundant conditions around `maybeAddImport` and `maybeRemoveImport`](../../java/recipes/unconditionalmaybeimport)
 * [Reorder `maybeRemoveImport` before `maybeAddImport`](../../java/recipes/removeimportbeforeaddimport)
+* [Make matcher fields `static final` constants](../../java/recipes/staticfinalmatcherfields)
 * [Replace `getDisplayName()` and `getDescription()` methods with fields](../../java/recipes/usedisplaynameanddescriptionfields)
 * [Replace `getEstimatedEffortPerOccurrence()` method with field](../../java/recipes/useestimatedeffortperoccurrencefield)
 * [Use `StringUtils` utility methods](../../java/recipes/usestringutilsrecipes)
 * [Replace `getTags()` method with field](../../java/recipes/usetagsfield)
 * [Use `JavaTemplate.apply()` static method](../../java/recipes/usejavatemplatestaticapply)
+* [Use `UsesMethod` and `DeclaresMethod` preconditions with `MethodMatcher`s](../../java/recipes/usemethodmatcherpreconditions)
 * [Use `Tree.randomId()` in LST constructors](../../java/recipes/usetreerandomid)
 * [Use `visit` with parent cursor when calling from another visitor](../../java/recipes/usevisitwithparentcursor)
+* [Use `TreeVisitor#reduce` instead of a captured accumulator](../../java/recipes/usevisitorreduce)
 * [Fix missing braces](../../staticanalysis/needbraces)
-* [Remove `System.out#println` statements](../../staticanalysis/removesystemoutprintln)
+* [Remove `System.out#println` and `System.err#println` statements](../../staticanalysis/removesystemoutprintln)
 * [Remove `@NlsRewrite` annotations from `Recipe` classes](../../java/recipes/removenlsrewriteannotations)
 
 </TabItem>
@@ -80,18 +85,23 @@ recipeList:
   - org.openrewrite.java.recipes.ExecutionContextParameterName
   - org.openrewrite.java.recipes.InlineNestedVisitorClass
   - org.openrewrite.java.recipes.IsLiteralNullRecipe
+  - org.openrewrite.java.recipes.ListUtilsFilterOverMapToNull
   - org.openrewrite.java.recipes.MissingOptionExample
   - org.openrewrite.java.recipes.NoMutableStaticFieldsInRecipes
   - org.openrewrite.java.recipes.RecipeEqualsAndHashCodeCallSuper
   - org.openrewrite.java.recipes.RecipeClassesShouldBePublic
+  - org.openrewrite.java.recipes.UnconditionalMaybeImport
   - org.openrewrite.java.recipes.RemoveImportBeforeAddImport
+  - org.openrewrite.java.recipes.StaticFinalMatcherFields
   - org.openrewrite.java.recipes.UseDisplayNameAndDescriptionFields
   - org.openrewrite.java.recipes.UseEstimatedEffortPerOccurrenceField
   - org.openrewrite.java.recipes.UseStringUtilsRecipes
   - org.openrewrite.java.recipes.UseTagsField
   - org.openrewrite.java.recipes.UseJavaTemplateStaticApply
+  - org.openrewrite.java.recipes.UseMethodMatcherPreconditions
   - org.openrewrite.java.recipes.UseTreeRandomId
   - org.openrewrite.java.recipes.UseVisitWithParentCursor
+  - org.openrewrite.java.recipes.UseVisitorReduce
   - org.openrewrite.staticanalysis.NeedBraces
   - org.openrewrite.staticanalysis.RemoveSystemOutPrintln
   - org.openrewrite.java.recipes.RemoveNlsRewriteAnnotations

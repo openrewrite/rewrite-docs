@@ -1,17 +1,17 @@
 ---
-title: "OkHttp 3.x `MockWebServer` `@Rule` To 4.x `MockWebServer`"
-sidebar_label: "OkHttp 3.x `MockWebServer` `@Rule` To 4.x `MockWebServer`"
+title: "OkHttp 3.x `MockWebServer` `@Rule` to 4.x `MockWebServer`"
+sidebar_label: "OkHttp 3.x `MockWebServer` `@Rule` to 4.x `MockWebServer`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# OkHttp 3.x `MockWebServer` `@Rule` To 4.x `MockWebServer`
+# OkHttp 3.x `MockWebServer` `@Rule` to 4.x `MockWebServer`
 
 **org.openrewrite.java.testing.junit5.UpdateMockWebServer**
 
-_Replace usages of okhttp3 3.x `@Rule` MockWebServer with 4.x `MockWebServer`._
+_Replace usages of OkHttp 3.x `@Rule MockWebServer` with 4.x `MockWebServer`._
 
 ## Recipe source
 
@@ -41,9 +41,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.testing.junit5.UpdateMockWebServer
-displayName: OkHttp 3.x `MockWebServer` `@Rule` To 4.x `MockWebServer`
+displayName: OkHttp 3.x `MockWebServer` `@Rule` to 4.x `MockWebServer`
 description: |
-  Replace usages of okhttp3 3.x `@Rule` MockWebServer with 4.x `MockWebServer`.
+  Replace usages of OkHttp 3.x `@Rule MockWebServer` with 4.x `MockWebServer`.
 recipeList:
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: com.squareup.okhttp3
@@ -131,7 +131,7 @@ class MyTest {
 
 <RunRecipe
   recipeName="org.openrewrite.java.testing.junit5.UpdateMockWebServer"
-  displayName="OkHttp 3.x `MockWebServer` `@Rule` To 4.x `MockWebServer`"
+  displayName="OkHttp 3.x `MockWebServer` `@Rule` to 4.x `MockWebServer`"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-testing-frameworks"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_TESTING_FRAMEWORKS"
@@ -150,6 +150,25 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
+
+### Maven metadata failures
+**org.openrewrite.maven.table.MavenMetadataFailures**
+
+_Attempts to resolve maven metadata that failed._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Group id | The groupId of the artifact for which the metadata download failed. |
+| Artifact id | The artifactId of the artifact for which the metadata download failed. |
+| Version | The version of the artifact for which the metadata download failed. |
+| Maven repository | The URL of the Maven repository that the metadata download failed on. |
+| Snapshots | Does the repository support snapshots. |
+| Releases | Does the repository support releases. |
+| Failure | The reason the metadata download failed. |
+
+</TabItem>
+
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results

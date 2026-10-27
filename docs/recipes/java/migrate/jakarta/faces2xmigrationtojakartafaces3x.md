@@ -44,12 +44,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 * [Migrate deprecated `javax.faces` packages to `jakarta.faces`](../../../java/migrate/jakarta/updatejakartafacesapi3)
 * [Faces XHTML migration for Jakarta EE 9](../../../java/migrate/jakarta/jakartafacesxhtmlee9)
-* [Migrate JSF values inside EcmaScript files](../../../java/migrate/jakarta/jakartafacesecmascript)
+* [Migrate JSF values inside ECMAScript files](../../../java/migrate/jakarta/jakartafacesecmascript)
 * [Migrate xmlns entries in `faces-config.xml` files](../../../java/migrate/jakarta/javaxfacesconfigxmltojakartafacesconfigxml)
 * [Migrate xmlns entries in `taglib.xml` files](../../../java/migrate/jakarta/javaxfacestaglibraryxmltojakartafacestaglibraryxml)
 * [Migrate xmlns entries in `web-fragment.xml` files](../../../java/migrate/jakarta/javaxwebfragmentxmltojakartawebfragmentxml)
 * [Migrate xmlns entries in `web.xml` files](../../../java/migrate/jakarta/javaxwebxmltojakartawebxml)
-* [JNDI name `jsf/ClientSideSecretKey` has been renamed to `faces/ClientSideSecretKey`, and the `jsf/FlashSecretKey` JNDI name has been renamed to `faces/FlashSecretKey`](../../../java/migrate/jakarta/facesjndinameschanged)
+* [Rename the `jsf/ClientSideSecretKey` and `jsf/FlashSecretKey` JNDI names to `faces/*`](../../../java/migrate/jakarta/facesjndinameschanged)
 * [Use `jakarta.el` instead of `jakarta.faces.el` and `javax.faces.el`](../../../java/migrate/jakarta/removedjakartafacesexpressionlanguageclasses)
 * [Replace `ResourceResolver` with `ResourceHandler`](../../../java/migrate/jakarta/removedjakartafacesresourceresolver)
 * [Use `StateManagementStrategy`](../../../java/migrate/jakarta/removedstatemanagermethods)
@@ -96,7 +96,6 @@ recipeList:
 
 This recipe is used as part of the following composite recipes:
 
-* [Jakarta Faces 4.0 to 4.1](/recipes/java/migrate/jakarta/faces4xmigrationtofaces41x.md)
 * [Migrate to Jakarta EE 9](/recipes/java/migrate/jakarta/javaxmigrationtojakarta.md)
 * [Upgrade to Jakarta Faces 4.x](/recipes/java/migrate/jakarta/faces3xmigrationtofaces4x.md)
 
@@ -124,6 +123,25 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
+
+### Maven metadata failures
+**org.openrewrite.maven.table.MavenMetadataFailures**
+
+_Attempts to resolve maven metadata that failed._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Group id | The groupId of the artifact for which the metadata download failed. |
+| Artifact id | The artifactId of the artifact for which the metadata download failed. |
+| Version | The version of the artifact for which the metadata download failed. |
+| Maven repository | The URL of the Maven repository that the metadata download failed on. |
+| Snapshots | Does the repository support snapshots. |
+| Releases | Does the repository support releases. |
+| Failure | The reason the metadata download failed. |
+
+</TabItem>
+
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results

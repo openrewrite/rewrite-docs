@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.staticanalysis.RemoveUnconditionalValueOverwrite**
 
-_When `map.put(key, value)` is called twice in a row with the same key, the first call is dead code because its value is immediately overwritten. Remove the first call to make the intent clear._
+_When `map.put(key, value)` is called twice in a row with the same key, or the same array element or Python `dict` entry is assigned twice in a row, the first write is dead code because its value is immediately overwritten. Remove the first write to make the intent clear._
 
 ### Tags
 

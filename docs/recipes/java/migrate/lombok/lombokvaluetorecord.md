@@ -1,17 +1,17 @@
 ---
-title: "Convert `@lombok.Value` class to Record"
-sidebar_label: "Convert `@lombok.Value` class to Record"
+title: "Convert `@lombok.Value` class to record"
+sidebar_label: "Convert `@lombok.Value` class to record"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Convert `@lombok.Value` class to Record
+# Convert `@lombok.Value` class to record
 
 **org.openrewrite.java.migrate.lombok.LombokValueToRecord**
 
-_Convert Lombok `@Value` annotated classes to standard Java Records._
+_Convert Lombok `@Value` annotated classes to standard Java records._
 
 ### Tags
 
@@ -142,7 +142,7 @@ public class UserOfA {
 
 <RunRecipe
   recipeName="org.openrewrite.java.migrate.lombok.LombokValueToRecord"
-  displayName="Convert `@lombok.Value` class to Record"
+  displayName="Convert `@lombok.Value` class to record"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-migrate-java"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA"

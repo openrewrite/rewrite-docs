@@ -50,7 +50,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * comment: `TODO: springfox.documentation.spring.web.json types have no SpringDoc equivalent. Remove this Springfox-internal code and use Jackson ObjectMapper directly if JSON serialization is still needed. See https://springdoc.org/migrating-from-springfox.html for guidance.`
   * methodPattern: `springfox.documentation.spring.web.json.Json* *(..)`
 * [Migrate from Swagger to SpringDoc and OpenAPI](../../java/springdoc/swaggertospringdoc)
-* [Replace SpringFox Dependencies](../../java/springdoc/replacespringfoxdependencies)
+* [Replace SpringFox dependencies](../../java/springdoc/replacespringfoxdependencies)
 * [Migrate `ApiInfoBuilder` to `Info`](../../java/spring/doc/apiinfobuildertoinfo)
 * [Replace elements of SpringFox's security with Swagger's security models](../../java/spring/doc/securitycontexttosecurityscheme)
 * [Migrate SpringFox `SecurityConfiguration` bean to Springdoc Swagger UI properties](../../java/spring/doc/migratespringfoxsecurityconfiguration)
@@ -227,6 +227,25 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
+
+### Maven metadata failures
+**org.openrewrite.maven.table.MavenMetadataFailures**
+
+_Attempts to resolve maven metadata that failed._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Group id | The groupId of the artifact for which the metadata download failed. |
+| Artifact id | The artifactId of the artifact for which the metadata download failed. |
+| Version | The version of the artifact for which the metadata download failed. |
+| Maven repository | The URL of the Maven repository that the metadata download failed on. |
+| Snapshots | Does the repository support snapshots. |
+| Releases | Does the repository support releases. |
+| Failure | The reason the metadata download failed. |
+
+</TabItem>
+
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results

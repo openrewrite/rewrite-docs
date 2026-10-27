@@ -1,13 +1,13 @@
 ---
-title: "Migrate `org.springframework.util.Base64Utils` to `java.io.Base64`"
-sidebar_label: "Migrate `org.springframework.util.Base64Utils` to `java.io.Base64`"
+title: "Migrate `org.springframework.util.Base64Utils` to `java.util.Base64`"
+sidebar_label: "Migrate `org.springframework.util.Base64Utils` to `java.util.Base64`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Migrate `org.springframework.util.Base64Utils` to `java.io.Base64`
+# Migrate `org.springframework.util.Base64Utils` to `java.util.Base64`
 
 **org.openrewrite.java.spring.framework.MigrateBase64Utils**
 
@@ -113,7 +113,7 @@ import java.nio.charset.StandardCharsets;
 
 <RunRecipe
   recipeName="org.openrewrite.java.spring.framework.MigrateBase64Utils"
-  displayName="Migrate `org.springframework.util.Base64Utils` to `java.io.Base64`"
+  displayName="Migrate `org.springframework.util.Base64Utils` to `java.util.Base64`"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-spring"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING"

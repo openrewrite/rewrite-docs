@@ -4,7 +4,7 @@ description: HttpClient 5 OpenRewrite recipes.
 
 # HttpClient 5
 
-_Recipes for migrating to [Apache HttpClient 5.x](https://hc.apache.org/httpcomponents-client-5.4.x/)._
+_Recipes for migrating to [Apache HttpClient 5.x](https://hc.apache.org/httpcomponents-client-5.6.x/)._
 
 ## Composite Recipes
 

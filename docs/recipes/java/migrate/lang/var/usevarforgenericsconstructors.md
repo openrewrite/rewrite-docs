@@ -1,13 +1,13 @@
 ---
-title: "Apply `var` to Generic Constructors"
-sidebar_label: "Apply `var` to Generic Constructors"
+title: "Apply `var` to generic constructors"
+sidebar_label: "Apply `var` to generic constructors"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Apply `var` to Generic Constructors
+# Apply `var` to generic constructors
 
 **org.openrewrite.java.migrate.lang.var.UseVarForGenericsConstructors**
 
@@ -82,7 +82,7 @@ class A {
 
 <RunRecipe
   recipeName="org.openrewrite.java.migrate.lang.var.UseVarForGenericsConstructors"
-  displayName="Apply `var` to Generic Constructors"
+  displayName="Apply `var` to generic constructors"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-migrate-java"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA"

@@ -1,13 +1,13 @@
 ---
-title: "Rename CDI Extension to Jakarta"
-sidebar_label: "Rename CDI Extension to Jakarta"
+title: "Rename CDI extension service files to Jakarta"
+sidebar_label: "Rename CDI extension service files to Jakarta"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Rename CDI Extension to Jakarta
+# Rename CDI extension service files to Jakarta
 
 **org.openrewrite.java.migrate.jakarta.JavaxToJakartaCdiExtensions**
 
@@ -44,7 +44,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.jakarta.JavaxToJakartaCdiExtensions
-displayName: Rename CDI Extension to Jakarta
+displayName: Rename CDI extension service files to Jakarta
 description: |
   Rename `javax.enterprise.inject.spi.Extension` to `jakarta.enterprise.inject.spi.Extension`.
 preconditions:
@@ -69,7 +69,7 @@ This recipe is used as part of the following composite recipes:
 
 <RunRecipe
   recipeName="org.openrewrite.java.migrate.jakarta.JavaxToJakartaCdiExtensions"
-  displayName="Rename CDI Extension to Jakarta"
+  displayName="Rename CDI extension service files to Jakarta"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-migrate-java"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA"

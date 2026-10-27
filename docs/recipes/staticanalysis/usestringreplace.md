@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.staticanalysis.UseStringReplace**
 
-_When `String::replaceAll` is used, the first argument should be a real regular expression. If it’s not the case, `String::replace` does exactly the same thing as `String::replaceAll` without the performance drawback of the regex._
+_When `String::replaceAll` is used, the first argument should be a real regular expression. If that's not the case, `String::replace` does exactly the same thing as `String::replaceAll` without the performance drawback of the regex._
 
 ### Tags
 

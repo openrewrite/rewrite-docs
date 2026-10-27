@@ -45,7 +45,6 @@ This recipe is available under the [Moderne Source Available License](https://do
   * groupId: `org.springframework.security`
   * artifactId: `*`
   * newVersion: `5.3.x`
-  * overrideManagedVersion: `false`
 * [Use `ObjectUtils#isEmpty(Object)`](../../../java/spring/framework/useobjectutilsisempty)
 * [Migrate `HandlerInterceptorAdapter` to `HandlerInterceptor`](../../../java/spring/framework/migratehandlerinterceptor)
 * [Convert `InstantiationAwareBeanPostProcessorAdapter` to `SmartInstantiationAwareBeanPostProcessor`](../../../java/spring/framework/migrateinstantiationawarebeanpostprocessoradapter)
@@ -54,7 +53,6 @@ This recipe is available under the [Moderne Source Available License](https://do
   * groupId: `org.hibernate`
   * artifactId: `hibernate-search-orm`
   * newVersion: `5.11.x`
-  * overrideManagedVersion: `false`
 * [Remove a Gradle or Maven dependency](../../../java/dependencies/removedependency)
   * groupId: `org.aspectj`
   * artifactId: `aspectjrt`
@@ -91,7 +89,6 @@ recipeList:
       groupId: org.springframework.security
       artifactId: "*"
       newVersion: 5.3.x
-      overrideManagedVersion: false
   - org.openrewrite.java.spring.framework.UseObjectUtilsIsEmpty
   - org.openrewrite.java.spring.framework.MigrateHandlerInterceptor
   - org.openrewrite.java.spring.framework.MigrateInstantiationAwareBeanPostProcessorAdapter
@@ -100,7 +97,6 @@ recipeList:
       groupId: org.hibernate
       artifactId: hibernate-search-orm
       newVersion: 5.11.x
-      overrideManagedVersion: false
   - org.openrewrite.java.dependencies.RemoveDependency:
       groupId: org.aspectj
       artifactId: aspectjrt
@@ -150,6 +146,25 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
+
+### Maven metadata failures
+**org.openrewrite.maven.table.MavenMetadataFailures**
+
+_Attempts to resolve maven metadata that failed._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Group id | The groupId of the artifact for which the metadata download failed. |
+| Artifact id | The artifactId of the artifact for which the metadata download failed. |
+| Version | The version of the artifact for which the metadata download failed. |
+| Maven repository | The URL of the Maven repository that the metadata download failed on. |
+| Snapshots | Does the repository support snapshots. |
+| Releases | Does the repository support releases. |
+| Failure | The reason the metadata download failed. |
+
+</TabItem>
+
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results

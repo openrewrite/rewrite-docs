@@ -28,6 +28,83 @@ This recipe is used as part of the following composite recipes:
 
 * [Replace PowerMock usages with Mockito](/recipes/java/testing/mockito/replacepowermockitousages.md)
 
+## Example
+
+
+###### Unchanged
+```java
+class Converter {
+}
+
+class Facade {
+    private Converter converter;
+}
+```
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.junit.Before;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.powermock.reflect.Whitebox;
+
+public class FacadeTest {
+
+    @InjectMocks
+    private Facade testObj;
+
+    @Mock
+    private Converter converter;
+
+    @Before
+    public void setUp() {
+        Whitebox.setInternalState(testObj, "converter", converter);
+    }
+}
+```
+
+###### After
+```java
+import org.junit.Before;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+
+public class FacadeTest {
+
+    @InjectMocks
+    private Facade testObj;
+
+    @Mock
+    private Converter converter;
+
+    @Before
+    public void setUp() {
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -4,1 +4,0 @@
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+-import org.powermock.reflect.Whitebox;
+
+@@ -16,1 +15,0 @@
+    @Before
+    public void setUp() {
+-       Whitebox.setInternalState(testObj, "converter", converter);
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

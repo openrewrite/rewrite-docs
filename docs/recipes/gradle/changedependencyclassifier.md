@@ -35,7 +35,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 This recipe is used as part of the following composite recipes:
 
-* [Update Apache Shiro Dependencies to 2.0.x](/recipes/java/migrate/jakarta/updateapacheshirodependencies.md)
+* [Update Apache Shiro dependencies to 2.0.x](/recipes/java/migrate/jakarta/updateapacheshirodependencies.md)
 
 ## Example
 

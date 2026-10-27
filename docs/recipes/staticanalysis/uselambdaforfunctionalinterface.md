@@ -16,6 +16,7 @@ _Instead of anonymous class declarations, use a lambda where possible. Using lam
 ### Tags
 
 * [RSPEC-S1604](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S1604&open=java%3AS1604)
+* [RSPEC-S9357](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S9357&open=java%3AS9357)
 
 ## Recipe source
 

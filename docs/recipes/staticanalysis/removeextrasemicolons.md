@@ -11,10 +11,10 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.staticanalysis.RemoveExtraSemicolons**
 
-Removes not needed semicolons. Semicolons are considered not needed:
- * Optional semicolons at the end of try-with-resources,
+Removes unnecessary semicolons. Semicolons are considered unnecessary:
+ * at the end of try-with-resources,
  * after the last enum value if no field or method is defined,
- * no statement between two semicolon.
+ * when there is no statement between two semicolons.
 
 Stray semicolons are typically typos or remnants of refactoring and can mislead readers into thinking a statement is present.
 

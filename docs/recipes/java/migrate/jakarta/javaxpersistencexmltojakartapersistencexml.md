@@ -113,6 +113,73 @@ This recipe is used as part of the following composite recipes:
 * [Migrate to Hibernate 6.0.x (Community Edition)](/recipes/hibernate/migratetohibernate60-community-edition.md)
 * [Migrate to Jakarta EE 9](/recipes/java/migrate/jakarta/javaxmigrationtojakarta.md)
 
+## Examples
+##### Example 1
+`JavaxPersistenceXmlToJakartaPersistenceXmlTest#migratesCustomResourceName`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="src/test/resources/test-persistence.xml" label="src/test/resources/test-persistence.xml">
+
+
+###### Before
+```xml title="src/test/resources/test-persistence.xml"
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0"/>
+```
+
+###### After
+```xml title="src/test/resources/test-persistence.xml"
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence" version="3.0"/>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- src/test/resources/test-persistence.xml
++++ src/test/resources/test-persistence.xml
+@@ -1,1 +1,1 @@
+-<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0"/>
++<persistence xmlns="https://jakarta.ee/xml/ns/persistence" version="3.0"/>
+
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`JavaxPersistenceXmlToJakartaPersistenceXmlTest#migratesCustomResourceName`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="src/test/resources/test-persistence.xml" label="src/test/resources/test-persistence.xml">
+
+
+###### Before
+```xml title="src/test/resources/test-persistence.xml"
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0"/>
+```
+
+###### After
+```xml title="src/test/resources/test-persistence.xml"
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence" version="3.0"/>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- src/test/resources/test-persistence.xml
++++ src/test/resources/test-persistence.xml
+@@ -1,1 +1,1 @@
+-<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0"/>
++<persistence xmlns="https://jakarta.ee/xml/ns/persistence" version="3.0"/>
+
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

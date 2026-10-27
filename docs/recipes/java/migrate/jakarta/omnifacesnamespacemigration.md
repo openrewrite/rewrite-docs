@@ -1,13 +1,13 @@
 ---
-title: "OmniFaces Namespace Migration"
-sidebar_label: "OmniFaces Namespace Migration"
+title: "Migrate OmniFaces namespaces"
+sidebar_label: "Migrate OmniFaces namespaces"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# OmniFaces Namespace Migration
+# Migrate OmniFaces namespaces
 
 **org.openrewrite.java.migrate.jakarta.OmniFacesNamespaceMigration**
 
@@ -60,7 +60,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.jakarta.OmniFacesNamespaceMigration
-displayName: OmniFaces Namespace Migration
+displayName: Migrate OmniFaces namespaces
 description: |
   Find and replace legacy OmniFaces namespaces.
 tags:
@@ -95,7 +95,7 @@ This recipe is used as part of the following composite recipes:
 
 <RunRecipe
   recipeName="org.openrewrite.java.migrate.jakarta.OmniFacesNamespaceMigration"
-  displayName="OmniFaces Namespace Migration"
+  displayName="Migrate OmniFaces namespaces"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-migrate-java"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA"

@@ -50,7 +50,6 @@ This recipe is available under the [Moderne Source Available License](https://do
   * groupId: `org.springframework.boot`
   * artifactId: `*`
   * newVersion: `2.0.x`
-  * overrideManagedVersion: `false`
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `org.springframework.boot`
   * artifactId: `spring-boot-dependencies`
@@ -74,7 +73,6 @@ This recipe is available under the [Moderne Source Available License](https://do
   * groupId: `org.mockito`
   * artifactId: `*`
   * newVersion: `3.x`
-  * overrideManagedVersion: `false`
 * [Remove Maven project property](../../../maven/removeproperty)
   * propertyName: `thymeleaf.version`
 * [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
@@ -100,11 +98,11 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Use `org.springframework.boot.web.server.LocalServerPort`](../../../java/spring/boot2/migratelocalserverportannotation)
 * [Replace `micrometer-spring-legacy` with `spring-boot-starter-actuator`](../../../java/spring/boot2/maybeaddspringbootstarteractuator)
 * [Migrate Spring Boot properties to 2.0](../../../java/spring/boot2/springbootproperties_2_0)
-* [Change the value of a spring application property](../../../java/spring/changespringpropertyvalue)
+* [Change the value of a Spring application property](../../../java/spring/changespringpropertyvalue)
   * propertyKey: `spring.main.banner-mode`
   * newValue: `console`
   * oldValue: `true`
-* [Change the value of a spring application property](../../../java/spring/changespringpropertyvalue)
+* [Change the value of a Spring application property](../../../java/spring/changespringpropertyvalue)
   * propertyKey: `spring.main.banner-mode`
   * newValue: `off`
   * oldValue: `false`
@@ -139,7 +137,6 @@ recipeList:
       groupId: org.springframework.boot
       artifactId: "*"
       newVersion: 2.0.x
-      overrideManagedVersion: false
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: org.springframework.boot
       artifactId: spring-boot-dependencies
@@ -163,7 +160,6 @@ recipeList:
       groupId: org.mockito
       artifactId: "*"
       newVersion: 3.x
-      overrideManagedVersion: false
   - org.openrewrite.maven.RemoveProperty:
       propertyName: thymeleaf.version
   - org.openrewrite.java.dependencies.ChangeDependency:

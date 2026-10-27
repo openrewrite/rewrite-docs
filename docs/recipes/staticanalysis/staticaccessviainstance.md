@@ -16,7 +16,6 @@ _Accessing static fields or calling static methods on an instance reference is m
 ### Tags
 
 * [RSPEC-S2209](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S2209&open=java%3AS2209)
-* [RSPEC-S3252](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S3252&open=java%3AS3252)
 
 ## Recipe source
 

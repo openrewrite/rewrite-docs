@@ -26,7 +26,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 This recipe is used as part of the following composite recipes:
 
-* [Adopt AssertJ Long Assertions](/recipes/java/testing/assertj/assertjlongrulesrecipes.md)
+* [Adopt AssertJ `Long` assertions](/recipes/java/testing/assertj/assertjlongrulesrecipes.md)
 
 
 ## Usage

@@ -1,13 +1,13 @@
 ---
-title: "Mockito 5.x upgrade"
-sidebar_label: "Mockito 5.x upgrade"
+title: "Upgrade to Mockito 5.x"
+sidebar_label: "Upgrade to Mockito 5.x"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Mockito 5.x upgrade
+# Upgrade to Mockito 5.x
 
 **org.openrewrite.java.testing.mockito.Mockito1to5Migration**
 
@@ -41,7 +41,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 **Recipes**
 
-* [Mockito 4.x upgrade](../../../java/testing/mockito/mockito1to4migration)
+* [Upgrade to Mockito 4.x](../../../java/testing/mockito/mockito1to4migration)
 * [Mockito 4 to 5.x upgrade only](../../../java/testing/mockito/mockito4to5only)
 
 </TabItem>
@@ -52,7 +52,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.testing.mockito.Mockito1to5Migration
-displayName: Mockito 5.x upgrade
+displayName: Upgrade to Mockito 5.x
 description: |
   Upgrade Mockito from 1.x to 5.x.
 tags:
@@ -538,7 +538,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 <RunRecipe
   recipeName="org.openrewrite.java.testing.mockito.Mockito1to5Migration"
-  displayName="Mockito 5.x upgrade"
+  displayName="Upgrade to Mockito 5.x"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-testing-frameworks"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_TESTING_FRAMEWORKS"
@@ -571,6 +571,25 @@ _Tests disabled because they use a PowerMock feature with no Mockito equivalent.
 | Disabled element | The test method that was disabled, or the class name when the usage sits outside a test method and the whole class had to be disabled. |
 | Scope | `METHOD` when a single test was disabled, `CLASS` when the whole test class was. |
 | Reason | The PowerMock usage that cannot be migrated. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
+
+### Maven metadata failures
+**org.openrewrite.maven.table.MavenMetadataFailures**
+
+_Attempts to resolve maven metadata that failed._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Group id | The groupId of the artifact for which the metadata download failed. |
+| Artifact id | The artifactId of the artifact for which the metadata download failed. |
+| Version | The version of the artifact for which the metadata download failed. |
+| Maven repository | The URL of the Maven repository that the metadata download failed on. |
+| Snapshots | Does the repository support snapshots. |
+| Releases | Does the repository support releases. |
+| Failure | The reason the metadata download failed. |
 
 </TabItem>
 

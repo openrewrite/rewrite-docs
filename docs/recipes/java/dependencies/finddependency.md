@@ -1,17 +1,17 @@
 ---
-title: "Find Maven and Gradle dependencies"
-sidebar_label: "Find Maven and Gradle dependencies"
+title: "Find Gradle or Maven dependencies"
+sidebar_label: "Find Gradle or Maven dependencies"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Find Maven and Gradle dependencies
+# Find Gradle or Maven dependencies
 
 **org.openrewrite.java.dependencies.FindDependency**
 
-_Finds direct dependencies declared in Maven and Gradle build files. This does *not* search transitive dependencies. To detect both direct and transitive dependencies use `org.openrewrite.java.dependencies.DependencyInsight` This recipe works for both Maven and Gradle projects._
+_Finds direct dependencies declared in Gradle and Maven build files. This does *not* search transitive dependencies. To detect both direct and transitive dependencies use `org.openrewrite.java.dependencies.DependencyInsight`._
 
 ## Recipe source
 
@@ -28,7 +28,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | groupId | The first part of a dependency coordinate identifying its publisher. | `com.google.guava` |
 | `String` | artifactId | The second part of a dependency coordinate uniquely identifying it among artifacts from the same publisher. | `guava` |
 | `String` | version | *Optional*. An exact version number or node-style semver selector used to select the version number. | `3.0.0` |
-| `String` | versionPattern | *Optional*. Allows version selection to be extended beyond the original Node Semver semantics. So for example, setting 'version' to "25-29" can be paired with a metadata pattern of "-jre" to select Guava 29.0-jre | `-jre` |
+| `String` | versionPattern | *Optional*. Allows version selection to be extended beyond the original Node Semver semantics. So for example, setting `version` to "25-29" can be paired with a metadata pattern of "-jre" to select Guava 29.0-jre. | `-jre` |
 | `String` | configuration | *Optional*. For Gradle only, the dependency configuration to search for dependencies in. If omitted then all configurations will be searched. | `api` |
 
 ## Example
@@ -104,7 +104,7 @@ Here's how you can define and customize such a recipe within your rewrite.yml:
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.FindDependencyExample
-displayName: Find Maven and Gradle dependencies example
+displayName: Find Gradle or Maven dependencies example
 recipeList:
   - org.openrewrite.java.dependencies.FindDependency:
       groupId: com.google.guava
@@ -116,7 +116,7 @@ recipeList:
 
 <RunRecipe
   recipeName="org.openrewrite.java.dependencies.FindDependency"
-  displayName="Find Maven and Gradle dependencies"
+  displayName="Find Gradle or Maven dependencies"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-java-dependencies"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JAVA_DEPENDENCIES"
@@ -138,6 +138,25 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.maven.table.DependenciesDeclared" label="DependenciesDeclared">
+
+### Dependencies declared
+**org.openrewrite.maven.table.DependenciesDeclared**
+
+_Direct (first-order) dependencies declared by the project._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Project name | The name of the project that contains the dependency. |
+| Source set | The source set that contains the dependency. |
+| Group | The first part of a dependency coordinate `com.google.guava:guava:VERSION`. |
+| Artifact | The second part of a dependency coordinate `com.google.guava:guava:VERSION`. |
+| Version | The resolved version. |
+| Dated snapshot version | The resolved dated snapshot version or `null` if this dependency is not a snapshot. |
+| Scope | Maven scope (e.g. `compile`, `test`) or Gradle configuration name (e.g. `implementation`, `testImplementation`). For Maven, defaults to `compile` when no scope is declared. |
+
+</TabItem>
+
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results

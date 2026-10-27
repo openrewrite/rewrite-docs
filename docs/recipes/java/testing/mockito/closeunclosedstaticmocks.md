@@ -26,7 +26,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 This recipe is used as part of the following composite recipes:
 
-* [Mockito 4.x upgrade](/recipes/java/testing/mockito/mockito1to4migration.md)
+* [Upgrade to Mockito 4.x](/recipes/java/testing/mockito/mockito1to4migration.md)
 
 ## Example
 

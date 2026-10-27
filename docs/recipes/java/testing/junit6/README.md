@@ -17,7 +17,7 @@ _Recipes that include further recipes, often including the individual recipes be
 
 * [Migrate JUnit JRE conditions](./minimumjreconditions.md)
 * [Migrate `MethodOrderer.Alphanumeric` to `MethodOrderer.MethodName`](./migratemethodordereralphanumeric.md)
-* [Remove `InvocationInterceptor.interceptDynamicTest`](./removeinterceptdynamictest.md)
+* [Migrate the two-argument `InvocationInterceptor.interceptDynamicTest`](./removeinterceptdynamictest.md)
 * [Remove deprecated `JRE.OTHER` from `@EnabledOnJre`/`@DisabledOnJre` arrays](./removejreother.md)
 
 

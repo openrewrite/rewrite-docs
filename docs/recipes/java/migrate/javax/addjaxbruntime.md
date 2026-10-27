@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.migrate.javax.AddJaxbRuntime**
 
-_Update build files to use the latest JAXB runtime from Jakarta EE 8 to maintain compatibility with Java version 11 or greater. The recipe will add a JAXB run-time, in Gradle `compileOnly`+`testImplementation` and Maven `provided` scope, to any project that has a transitive dependency on the JAXB API. **The resulting dependencies still use the `javax` namespace, despite the move to the Jakarta artifact**._
+_Update build files to use the latest JAXB runtime from Jakarta EE 8 to maintain compatibility with Java version 11 or greater. The recipe will add a JAXB run-time, in Gradle `runtimeOnly` and Maven `runtime` scope, to any project that uses `javax.xml.bind` and has a transitive dependency on the JAXB API. **The resulting dependencies still use the `javax` namespace, despite the move to the Jakarta artifact**._
 
 ### Tags
 
@@ -34,7 +34,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 | Type | Name | Description | Example |
 | --- | --- | --- | --- |
-| `String` | runtime | Which implementation of the JAXB run-time that will be added to maven projects that have transitive dependencies on the JAXB API Valid options: `glassfish`, `sun` | `glassfish` |
+| `String` | runtime | Which implementation of the JAXB run-time to add to projects that have transitive dependencies on the JAXB API. Valid options: `glassfish`, `sun` | `glassfish` |
 
 
 ## Used by
@@ -42,6 +42,136 @@ This recipe is available under the [Moderne Source Available License](https://do
 This recipe is used as part of the following composite recipes:
 
 * [Add explicit JAXB API dependencies and runtime](/recipes/java/migrate/javax/addjaxbdependencieswithruntime.md)
+
+## Example
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|runtime|`glassfish`|
+
+
+###### Unchanged
+```mavenProject
+child
+```
+
+###### Unchanged
+```mavenProject
+parent
+```
+
+<Tabs groupId="beforeAfter">
+<TabItem value="pom.xml" label="pom.xml">
+
+
+###### Before
+```xml title="pom.xml"
+<project>
+    <groupId>com.example</groupId>
+    <artifactId>parent</artifactId>
+    <version>1.0.0</version>
+    <packaging>pom</packaging>
+    <properties>
+        <jaxb.version>2.2.11</jaxb.version>
+    </properties>
+    <modules>
+        <module>child</module>
+    </modules>
+</project>
+```
+
+###### After
+```xml title="pom.xml"
+<project>
+    <groupId>com.example</groupId>
+    <artifactId>parent</artifactId>
+    <version>1.0.0</version>
+    <packaging>pom</packaging>
+    <properties>
+        <jaxb.version>2.3.9</jaxb.version>
+    </properties>
+    <modules>
+        <module>child</module>
+    </modules>
+</project>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- pom.xml
++++ pom.xml
+@@ -7,1 +7,1 @@
+    <packaging>pom</packaging>
+    <properties>
+-       <jaxb.version>2.2.11</jaxb.version>
++       <jaxb.version>2.3.9</jaxb.version>
+    </properties>
+```
+</TabItem>
+</Tabs>
+
+<Tabs groupId="beforeAfter">
+<TabItem value="pom.xml" label="pom.xml">
+
+
+###### Before
+```xml title="pom.xml"
+<project>
+    <parent>
+        <groupId>com.example</groupId>
+        <artifactId>parent</artifactId>
+        <version>1.0.0</version>
+    </parent>
+    <artifactId>child</artifactId>
+    <dependencies>
+        <dependency>
+            <groupId>com.sun.xml.bind</groupId>
+            <artifactId>jaxb-impl</artifactId>
+            <version>${jaxb.version}</version>
+        </dependency>
+    </dependencies>
+</project>
+```
+
+###### After
+```xml title="pom.xml"
+<project>
+    <parent>
+        <groupId>com.example</groupId>
+        <artifactId>parent</artifactId>
+        <version>1.0.0</version>
+    </parent>
+    <artifactId>child</artifactId>
+    <dependencies>
+        <dependency>
+            <groupId>org.glassfish.jaxb</groupId>
+            <artifactId>jaxb-runtime</artifactId>
+            <version>${jaxb.version}</version>
+        </dependency>
+    </dependencies>
+</project>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- pom.xml
++++ pom.xml
+@@ -10,2 +10,2 @@
+    <dependencies>
+        <dependency>
+-           <groupId>com.sun.xml.bind</groupId>
+-           <artifactId>jaxb-impl</artifactId>
++           <groupId>org.glassfish.jaxb</groupId>
++           <artifactId>jaxb-runtime</artifactId>
+            <version>${jaxb.version}</version>
+```
+</TabItem>
+</Tabs>
 
 
 ## Usage

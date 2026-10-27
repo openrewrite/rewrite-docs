@@ -108,6 +108,125 @@ This recipe is used as part of the following composite recipes:
 
 * [Migrate to Java 11](/recipes/java/migrate/java8tojava11.md)
 
+## Examples
+##### Example 1
+`JavaAwtAPIsTest#showAndHideWindows`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import javax.swing.JDialog;
+import javax.swing.JFrame;
+
+class Test {
+    void toggle(JFrame frame, JDialog dialog, boolean visible) {
+        frame.show();
+        dialog.show();
+        frame.show(visible);
+        dialog.hide();
+    }
+}
+```
+
+###### After
+```java
+import javax.swing.JDialog;
+import javax.swing.JFrame;
+
+class Test {
+    void toggle(JFrame frame, JDialog dialog, boolean visible) {
+        frame.setVisible(true);
+        dialog.setVisible(true);
+        frame.setVisible(visible);
+        dialog.setVisible(false);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -6,4 +6,4 @@
+class Test {
+    void toggle(JFrame frame, JDialog dialog, boolean visible) {
+-       frame.show();
+-       dialog.show();
+-       frame.show(visible);
+-       dialog.hide();
++       frame.setVisible(true);
++       dialog.setVisible(true);
++       frame.setVisible(visible);
++       dialog.setVisible(false);
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`JavaAwtAPIsTest#showAndHideWindows`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import javax.swing.JDialog;
+import javax.swing.JFrame;
+
+class Test {
+    void toggle(JFrame frame, JDialog dialog, boolean visible) {
+        frame.show();
+        dialog.show();
+        frame.show(visible);
+        dialog.hide();
+    }
+}
+```
+
+###### After
+```java
+import javax.swing.JDialog;
+import javax.swing.JFrame;
+
+class Test {
+    void toggle(JFrame frame, JDialog dialog, boolean visible) {
+        frame.setVisible(true);
+        dialog.setVisible(true);
+        frame.setVisible(visible);
+        dialog.setVisible(false);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -6,4 +6,4 @@
+class Test {
+    void toggle(JFrame frame, JDialog dialog, boolean visible) {
+-       frame.show();
+-       dialog.show();
+-       frame.show(visible);
+-       dialog.hide();
++       frame.setVisible(true);
++       dialog.setVisible(true);
++       frame.setVisible(visible);
++       dialog.setVisible(false);
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

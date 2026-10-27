@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.testing.easymock.EasyMockToMockito**
 
-_This recipe will apply changes commonly needed when migrating from EasyMock to Mockito._
+_Applies changes commonly needed when migrating from EasyMock to Mockito._
 
 ### Tags
 
@@ -49,125 +49,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Remove a Gradle or Maven dependency](../../../java/dependencies/removedependency)
   * groupId: `org.easymock`
   * artifactId: `easymock`
-* [Replace EasyMock `verify` calls with Mockito `verify` calls](../../../java/testing/easymock/easymockverifytomockitoverify)
-* [Remove method invocations](../../../java/removemethodinvocations)
-  * methodPattern: `org.easymock.IExpectationSetters times(..)`
-* [Remove method invocations](../../../java/removemethodinvocations)
-  * methodPattern: `org.easymock.IExpectationSetters once()`
-* [Remove method invocations](../../../java/removemethodinvocations)
-  * methodPattern: `org.easymock.IExpectationSetters atLeastOnce()`
-* [Remove method invocations](../../../java/removemethodinvocations)
-  * methodPattern: `org.easymock.IExpectationSetters anyTimes()`
-* [Remove method invocations](../../../java/removemethodinvocations)
-  * methodPattern: `org.easymock.IMocksControl replay(..)`
-* [Remove method invocations](../../../java/removemethodinvocations)
-  * methodPattern: `org.easymock.EasyMock replay(..)`
-* [Remove method invocations](../../../java/removemethodinvocations)
-  * methodPattern: `org.easymock.IMocksControl verify(..)`
-* [Remove method invocations](../../../java/removemethodinvocations)
-  * methodPattern: `org.easymock.IMocksControl verifyRecording(..)`
-* [Remove method invocations](../../../java/removemethodinvocations)
-  * methodPattern: `org.easymock.IMocksControl verifyUnexpectedCalls(..)`
-* [Remove method invocations](../../../java/removemethodinvocations)
-  * methodPattern: `org.easymock.EasyMockSupport replayAll()`
-* [Remove method invocations](../../../java/removemethodinvocations)
-  * methodPattern: `org.easymock.EasyMockSupport verifyAll()`
-* [Change method name](../../../java/changemethodname)
-  * methodPattern: `org.easymock.IExpectationSetters andReturn(..)`
-  * newMethodName: `thenReturn`
-  * ignoreDefinition: `true`
-* [Change method name](../../../java/changemethodname)
-  * methodPattern: `org.easymock.IExpectationSetters andThrow(java.lang.Throwable)`
-  * newMethodName: `thenThrow`
-* [Change method name](../../../java/changemethodname)
-  * methodPattern: `org.easymock.IExpectationSetters andAnswer(..)`
-  * newMethodName: `thenAnswer`
-  * ignoreDefinition: `true`
-* [Change method name](../../../java/changemethodname)
-  * methodPattern: `org.easymock.IExpectationSetters andStubReturn(..)`
-  * newMethodName: `thenReturn`
-  * ignoreDefinition: `true`
-* [Change method name](../../../java/changemethodname)
-  * methodPattern: `org.easymock.IExpectationSetters andStubThrow(java.lang.Throwable)`
-  * newMethodName: `thenThrow`
-* [Change method name](../../../java/changemethodname)
-  * methodPattern: `org.easymock.IExpectationSetters andStubAnswer(..)`
-  * newMethodName: `thenAnswer`
-  * ignoreDefinition: `true`
-* [Change method target to static](../../../java/changemethodtargettostatic)
-  * methodPattern: `org.easymock.IMocksControl mock(..)`
-  * fullyQualifiedTargetTypeName: `org.mockito.Mockito`
-* [Change method target to static](../../../java/changemethodtargettostatic)
-  * methodPattern: `org.easymock.IMocksControl createMock(..)`
-  * fullyQualifiedTargetTypeName: `org.mockito.Mockito`
-* [Change type](../../../java/changetype)
-  * oldFullyQualifiedTypeName: `org.easymock.IArgumentMatcher`
-  * newFullyQualifiedTypeName: `org.mockito.ArgumentMatcher`
-* [Change method name](../../../java/changemethodname)
-  * methodPattern: `org.easymock.EasyMock anyObject(..)`
-  * newMethodName: `any`
-* [Change method name](../../../java/changemethodname)
-  * methodPattern: `org.easymock.EasyMock capture(..)`
-  * newMethodName: `argThat`
-* [Change method name](../../../java/changemethodname)
-  * methodPattern: `org.easymock.EasyMock reportMatcher(..)`
-  * newMethodName: `argThat`
-* [Change method name](../../../java/changemethodname)
-  * methodPattern: `org.easymock.EasyMock expect(..)`
-  * newMethodName: `when`
-* [Change method name](../../../java/changemethodname)
-  * methodPattern: `org.easymock.EasyMock createNiceMock(..)`
-  * newMethodName: `mock`
-* [Change method name](../../../java/changemethodname)
-  * methodPattern: `org.easymock.EasyMock createStrictMock(..)`
-  * newMethodName: `mock`
-* [Change method name](../../../java/changemethodname)
-  * methodPattern: `org.easymock.EasyMock createMock(..)`
-  * newMethodName: `mock`
-* [Change method name](../../../java/changemethodname)
-  * methodPattern: `org.easymock.EasyMock niceMock(..)`
-  * newMethodName: `mock`
-* [Change method name](../../../java/changemethodname)
-  * methodPattern: `org.easymock.EasyMock strictMock(..)`
-  * newMethodName: `mock`
-* [Reorder method arguments](../../../java/reordermethodarguments)
-  * methodPattern: `org.easymock.EasyMock mock(String, Class)`
-  * newParameterNames: `[classToMock, name]`
-  * oldParameterNames: `[name, classToMock]`
-* [Change method target to static](../../../java/changemethodtargettostatic)
-  * methodPattern: `org.easymock.EasyMock lt(..)`
-  * fullyQualifiedTargetTypeName: `org.mockito.AdditionalMatchers`
-* [Change method target to static](../../../java/changemethodtargettostatic)
-  * methodPattern: `org.easymock.EasyMock leq(..)`
-  * fullyQualifiedTargetTypeName: `org.mockito.AdditionalMatchers`
-* [Change method target to static](../../../java/changemethodtargettostatic)
-  * methodPattern: `org.easymock.EasyMock gt(..)`
-  * fullyQualifiedTargetTypeName: `org.mockito.AdditionalMatchers`
-* [Change method target to static](../../../java/changemethodtargettostatic)
-  * methodPattern: `org.easymock.EasyMock geq(..)`
-  * fullyQualifiedTargetTypeName: `org.mockito.AdditionalMatchers`
-* [Change method target to static](../../../java/changemethodtargettostatic)
-  * methodPattern: `org.easymock.EasyMock and(..)`
-  * fullyQualifiedTargetTypeName: `org.mockito.AdditionalMatchers`
-* [Change method target to static](../../../java/changemethodtargettostatic)
-  * methodPattern: `org.easymock.EasyMock or(..)`
-  * fullyQualifiedTargetTypeName: `org.mockito.AdditionalMatchers`
-* [Change method target to static](../../../java/changemethodtargettostatic)
-  * methodPattern: `org.easymock.EasyMock not(..)`
-  * fullyQualifiedTargetTypeName: `org.mockito.AdditionalMatchers`
-* [Migrate Test classes that extend `org.easymock.EasyMockSupport` to use Mockito](../../../java/testing/easymock/removeextendseasymocksupport)
-* [Change type](../../../java/changetype)
-  * oldFullyQualifiedTypeName: `org.easymock.EasyMock`
-  * newFullyQualifiedTypeName: `org.mockito.Mockito`
-* [Change type](../../../java/changetype)
-  * oldFullyQualifiedTypeName: `org.easymock.EasyMockRunner`
-  * newFullyQualifiedTypeName: `org.mockito.junit.MockitoJUnitRunner`
-* [Change type](../../../java/changetype)
-  * oldFullyQualifiedTypeName: `org.easymock.Mock`
-  * newFullyQualifiedTypeName: `org.mockito.Mock`
-* [Change type](../../../java/changetype)
-  * oldFullyQualifiedTypeName: `org.easymock.TestSubject`
-  * newFullyQualifiedTypeName: `org.mockito.InjectMocks`
+* [Migrate EasyMock code to Mockito](../../../java/testing/easymock/easymockcodetomockito)
 * [Mockito best practices](../../../java/testing/mockito/mockitobestpractices)
 
 </TabItem>
@@ -180,7 +62,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.testing.easymock.EasyMockToMockito
 displayName: Migrate from EasyMock to Mockito
 description: |
-  This recipe will apply changes commonly needed when migrating from EasyMock to Mockito.
+  Applies changes commonly needed when migrating from EasyMock to Mockito.
 tags:
   - easymock
   - testing
@@ -195,129 +77,7 @@ recipeList:
   - org.openrewrite.java.dependencies.RemoveDependency:
       groupId: org.easymock
       artifactId: easymock
-  - org.openrewrite.java.testing.easymock.EasyMockVerifyToMockitoVerify
-  - org.openrewrite.java.RemoveMethodInvocations:
-      methodPattern: org.easymock.IExpectationSetters times(..)
-  - org.openrewrite.java.RemoveMethodInvocations:
-      methodPattern: org.easymock.IExpectationSetters once()
-  - org.openrewrite.java.RemoveMethodInvocations:
-      methodPattern: org.easymock.IExpectationSetters atLeastOnce()
-  - org.openrewrite.java.RemoveMethodInvocations:
-      methodPattern: org.easymock.IExpectationSetters anyTimes()
-  - org.openrewrite.java.RemoveMethodInvocations:
-      methodPattern: org.easymock.IMocksControl replay(..)
-  - org.openrewrite.java.RemoveMethodInvocations:
-      methodPattern: org.easymock.EasyMock replay(..)
-  - org.openrewrite.java.RemoveMethodInvocations:
-      methodPattern: org.easymock.IMocksControl verify(..)
-  - org.openrewrite.java.RemoveMethodInvocations:
-      methodPattern: org.easymock.IMocksControl verifyRecording(..)
-  - org.openrewrite.java.RemoveMethodInvocations:
-      methodPattern: org.easymock.IMocksControl verifyUnexpectedCalls(..)
-  - org.openrewrite.java.RemoveMethodInvocations:
-      methodPattern: org.easymock.EasyMockSupport replayAll()
-  - org.openrewrite.java.RemoveMethodInvocations:
-      methodPattern: org.easymock.EasyMockSupport verifyAll()
-  - org.openrewrite.java.ChangeMethodName:
-      methodPattern: org.easymock.IExpectationSetters andReturn(..)
-      newMethodName: thenReturn
-      ignoreDefinition: true
-  - org.openrewrite.java.ChangeMethodName:
-      methodPattern: org.easymock.IExpectationSetters andThrow(java.lang.Throwable)
-      newMethodName: thenThrow
-  - org.openrewrite.java.ChangeMethodName:
-      methodPattern: org.easymock.IExpectationSetters andAnswer(..)
-      newMethodName: thenAnswer
-      ignoreDefinition: true
-  - org.openrewrite.java.ChangeMethodName:
-      methodPattern: org.easymock.IExpectationSetters andStubReturn(..)
-      newMethodName: thenReturn
-      ignoreDefinition: true
-  - org.openrewrite.java.ChangeMethodName:
-      methodPattern: org.easymock.IExpectationSetters andStubThrow(java.lang.Throwable)
-      newMethodName: thenThrow
-  - org.openrewrite.java.ChangeMethodName:
-      methodPattern: org.easymock.IExpectationSetters andStubAnswer(..)
-      newMethodName: thenAnswer
-      ignoreDefinition: true
-  - org.openrewrite.java.ChangeMethodTargetToStatic:
-      methodPattern: org.easymock.IMocksControl mock(..)
-      fullyQualifiedTargetTypeName: org.mockito.Mockito
-  - org.openrewrite.java.ChangeMethodTargetToStatic:
-      methodPattern: org.easymock.IMocksControl createMock(..)
-      fullyQualifiedTargetTypeName: org.mockito.Mockito
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: org.easymock.IArgumentMatcher
-      newFullyQualifiedTypeName: org.mockito.ArgumentMatcher
-  - org.openrewrite.java.ChangeMethodName:
-      methodPattern: org.easymock.EasyMock anyObject(..)
-      newMethodName: any
-  - org.openrewrite.java.ChangeMethodName:
-      methodPattern: org.easymock.EasyMock capture(..)
-      newMethodName: argThat
-  - org.openrewrite.java.ChangeMethodName:
-      methodPattern: org.easymock.EasyMock reportMatcher(..)
-      newMethodName: argThat
-  - org.openrewrite.java.ChangeMethodName:
-      methodPattern: org.easymock.EasyMock expect(..)
-      newMethodName: when
-  - org.openrewrite.java.ChangeMethodName:
-      methodPattern: org.easymock.EasyMock createNiceMock(..)
-      newMethodName: mock
-  - org.openrewrite.java.ChangeMethodName:
-      methodPattern: org.easymock.EasyMock createStrictMock(..)
-      newMethodName: mock
-  - org.openrewrite.java.ChangeMethodName:
-      methodPattern: org.easymock.EasyMock createMock(..)
-      newMethodName: mock
-  - org.openrewrite.java.ChangeMethodName:
-      methodPattern: org.easymock.EasyMock niceMock(..)
-      newMethodName: mock
-  - org.openrewrite.java.ChangeMethodName:
-      methodPattern: org.easymock.EasyMock strictMock(..)
-      newMethodName: mock
-  - org.openrewrite.java.ReorderMethodArguments:
-      methodPattern: org.easymock.EasyMock mock(String, Class)
-      newParameterNames:
-        - classToMock
-        - name
-      oldParameterNames:
-        - name
-        - classToMock
-  - org.openrewrite.java.ChangeMethodTargetToStatic:
-      methodPattern: org.easymock.EasyMock lt(..)
-      fullyQualifiedTargetTypeName: org.mockito.AdditionalMatchers
-  - org.openrewrite.java.ChangeMethodTargetToStatic:
-      methodPattern: org.easymock.EasyMock leq(..)
-      fullyQualifiedTargetTypeName: org.mockito.AdditionalMatchers
-  - org.openrewrite.java.ChangeMethodTargetToStatic:
-      methodPattern: org.easymock.EasyMock gt(..)
-      fullyQualifiedTargetTypeName: org.mockito.AdditionalMatchers
-  - org.openrewrite.java.ChangeMethodTargetToStatic:
-      methodPattern: org.easymock.EasyMock geq(..)
-      fullyQualifiedTargetTypeName: org.mockito.AdditionalMatchers
-  - org.openrewrite.java.ChangeMethodTargetToStatic:
-      methodPattern: org.easymock.EasyMock and(..)
-      fullyQualifiedTargetTypeName: org.mockito.AdditionalMatchers
-  - org.openrewrite.java.ChangeMethodTargetToStatic:
-      methodPattern: org.easymock.EasyMock or(..)
-      fullyQualifiedTargetTypeName: org.mockito.AdditionalMatchers
-  - org.openrewrite.java.ChangeMethodTargetToStatic:
-      methodPattern: org.easymock.EasyMock not(..)
-      fullyQualifiedTargetTypeName: org.mockito.AdditionalMatchers
-  - org.openrewrite.java.testing.easymock.RemoveExtendsEasyMockSupport
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: org.easymock.EasyMock
-      newFullyQualifiedTypeName: org.mockito.Mockito
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: org.easymock.EasyMockRunner
-      newFullyQualifiedTypeName: org.mockito.junit.MockitoJUnitRunner
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: org.easymock.Mock
-      newFullyQualifiedTypeName: org.mockito.Mock
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: org.easymock.TestSubject
-      newFullyQualifiedTypeName: org.mockito.InjectMocks
+  - org.openrewrite.java.testing.easymock.EasyMockCodeToMockito
   - org.openrewrite.java.testing.mockito.MockitoBestPractices
 
 ```
@@ -738,6 +498,25 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
+
+### Maven metadata failures
+**org.openrewrite.maven.table.MavenMetadataFailures**
+
+_Attempts to resolve maven metadata that failed._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Group id | The groupId of the artifact for which the metadata download failed. |
+| Artifact id | The artifactId of the artifact for which the metadata download failed. |
+| Version | The version of the artifact for which the metadata download failed. |
+| Maven repository | The URL of the Maven repository that the metadata download failed on. |
+| Snapshots | Does the repository support snapshots. |
+| Releases | Does the repository support releases. |
+| Failure | The reason the metadata download failed. |
+
+</TabItem>
+
 <TabItem value="org.openrewrite.java.testing.mockito.table.PowerMockTestsDisabled" label="PowerMockTestsDisabled">
 
 ### PowerMock tests disabled for manual migration

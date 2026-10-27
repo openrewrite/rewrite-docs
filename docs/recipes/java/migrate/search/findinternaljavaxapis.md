@@ -1,13 +1,13 @@
 ---
-title: "Find uses of internal javax APIs"
-sidebar_label: "Find uses of internal javax APIs"
+title: "Find uses of internal `javax` APIs"
+sidebar_label: "Find uses of internal `javax` APIs"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Find uses of internal javax APIs
+# Find uses of internal `javax` APIs
 
 **org.openrewrite.java.migrate.search.FindInternalJavaxApis**
 
@@ -93,7 +93,7 @@ interface Api {
 
 <RunRecipe
   recipeName="org.openrewrite.java.migrate.search.FindInternalJavaxApis"
-  displayName="Find uses of internal javax APIs"
+  displayName="Find uses of internal `javax` APIs"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-migrate-java"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA"

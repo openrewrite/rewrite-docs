@@ -40,7 +40,7 @@ This recipe is used as part of the following composite recipes:
 * [Change the jakarta.xml.bind-api dependency to scope provided when jakartaee-api 9.x is provided.](/recipes/oracle/weblogic/rewrite/changejaxbbindapidependencyscope.md)
 * [Do not package `java.xml.bind` and `java.activation` modules in WebSphere Liberty applications](/recipes/java/migrate/removedjaxbmoduleprovided.md)
 * [Do not package `java.xml.ws` module in WebSphere Liberty applications](/recipes/java/migrate/removedjavaxmlwsmoduleprovided.md)
-* [Lombok Best Practices](/recipes/java/migrate/lombok/lombokbestpractices.md)
+* [Lombok best practices](/recipes/java/migrate/lombok/lombokbestpractices.md)
 * [Migrate database drivers to Quarkus JDBC extensions](/recipes/quarkus/spring/migratedatabasedrivers.md)
 * [Migrate deprecated `javax.xml.ws` packages to `jakarta.xml.ws`](/recipes/java/migrate/jakarta/javaxxmlwsmigrationtojakartaxmlws.md)
 * [Replace Derby driver with Quarkus JDBC Derby](/recipes/quarkus/spring/derbydrivertoquarkus.md)

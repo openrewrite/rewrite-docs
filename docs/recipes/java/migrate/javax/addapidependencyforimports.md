@@ -40,6 +40,22 @@ This recipe is used as part of the following composite recipes:
 * [Migrate deprecated `javax.xml.bind` packages to `jakarta.xml.bind`](/recipes/java/migrate/jakarta/javaxxmlbindmigrationtojakartaxmlbind.md)
 * [Migrate deprecated `javax.xml.ws` packages to `jakarta.xml.ws`](/recipes/java/migrate/jakarta/javaxxmlwsmigrationtojakartaxmlws.md)
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|packageName|`jakarta.xml.bind`|
+|groupId|`jakarta.xml.bind`|
+|artifactId|`jakarta.xml.bind-api`|
+|version|`3.0.1`|
+
+
+###### Unchanged
+```mavenProject
+app
+```
+
 
 ## Usage
 

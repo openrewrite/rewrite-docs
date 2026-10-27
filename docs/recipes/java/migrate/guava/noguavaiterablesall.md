@@ -19,20 +19,97 @@ _Prefer `Collection.stream().allMatch(Predicate)` over `Iterables.all(Collection
 
 ## Recipe source
 
-[GitHub: NoGuavaIterablesAll.java](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/guava/NoGuavaIterablesAll.java),
+[GitHub: no-guava.yml](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/no-guava.yml),
 [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues),
 [Code Genome Project](https://artifacts.codegenomeproject.org/maven/org/openrewrite/recipe/rewrite-migrate-java/)
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license). Moderne customers can download precompiled artifacts from The Code Genome Project. For non-commercial use you can build the artifact from source locally.
 
 
-## Used by
+## Definition
 
-This recipe is used as part of the following composite recipes:
+<Tabs groupId="recipeType">
+<TabItem value="recipe-list" label="Recipe List" >
+* [Prefer `Collection.stream().allMatch(Predicate)`](../../../java/migrate/guava/noguavarefasterrecipes$iterablesallrecipe)
 
-* [Prefer the Java standard library instead of Guava](/recipes/java/migrate/guava/noguava.md)
+</TabItem>
 
-## Example
+<TabItem value="yaml-recipe-list" label="Yaml Recipe List">
+
+```yaml
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: org.openrewrite.java.migrate.guava.NoGuavaIterablesAll
+displayName: Prefer `Collection.stream().allMatch(Predicate)`
+description: |
+  Prefer `Collection.stream().allMatch(Predicate)` over `Iterables.all(Collection, Predicate)`.
+tags:
+  - guava
+recipeList:
+  - org.openrewrite.java.migrate.guava.NoGuavaRefasterRecipes$IterablesAllRecipe
+
+```
+</TabItem>
+</Tabs>
+## Examples
+##### Example 1
+`NoGuavaIterablesAllTest#replaceIterablesAll`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import java.util.Collection;
+
+import com.google.common.base.Predicate;
+import com.google.common.collect.Iterables;
+
+class Test {
+    boolean test(Collection<String> collection, Predicate<String> aPredicate) {
+        return Iterables.all(collection, aPredicate);
+    }
+}
+```
+
+###### After
+```java
+import java.util.Collection;
+
+import com.google.common.base.Predicate;
+
+class Test {
+    boolean test(Collection<String> collection, Predicate<String> aPredicate) {
+        return collection.stream().allMatch(aPredicate);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -4,1 +4,0 @@
+
+import com.google.common.base.Predicate;
+-import com.google.common.collect.Iterables;
+
+@@ -8,1 +7,1 @@
+class Test {
+    boolean test(Collection<String> collection, Predicate<String> aPredicate) {
+-       return Iterables.all(collection, aPredicate);
++       return collection.stream().allMatch(aPredicate);
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`NoGuavaIterablesAllTest#replaceIterablesAll`
 
 
 <Tabs groupId="beforeAfter">

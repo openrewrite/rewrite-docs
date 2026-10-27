@@ -28,6 +28,63 @@ This recipe is used as part of the following composite recipes:
 
 * [Migrate Jackson from javax to jakarta namespace](/recipes/java/migrate/jakarta/jacksonjavaxtojakarta.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.jaxrs.base.ProviderBase;
+import java.lang.annotation.Annotation;
+
+class CustomProvider extends ProviderBase {
+    @Override
+    protected Object _configForWriting(ObjectMapper mapper, Annotation[] annotations) {
+        mapper.configure();
+        return super._configForWriting(mapper, annotations);
+    }
+}
+```
+
+###### After
+```java
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.jaxrs.base.ProviderBase;
+import java.lang.annotation.Annotation;
+
+class CustomProvider extends ProviderBase {
+    @Override
+    protected Object _configForWriting(ObjectMapper mapper, Annotation[] annotations, Class<?> defaultView) {
+        mapper.configure();
+        return super._configForWriting(mapper, annotations, defaultView);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -7,1 +7,1 @@
+class CustomProvider extends ProviderBase {
+    @Override
+-   protected Object _configForWriting(ObjectMapper mapper, Annotation[] annotations) {
++   protected Object _configForWriting(ObjectMapper mapper, Annotation[] annotations, Class<?> defaultView) {
+        mapper.configure();
+@@ -9,1 +9,1 @@
+    protected Object _configForWriting(ObjectMapper mapper, Annotation[] annotations) {
+        mapper.configure();
+-       return super._configForWriting(mapper, annotations);
++       return super._configForWriting(mapper, annotations, defaultView);
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

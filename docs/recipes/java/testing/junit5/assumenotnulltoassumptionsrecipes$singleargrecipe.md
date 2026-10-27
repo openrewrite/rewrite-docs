@@ -1,17 +1,17 @@
 ---
-title: "Transform singlar `assumeNotNull(object)` to `assumeFalse(object == null)`"
-sidebar_label: "Transform singlar `assumeNotNull(object)` to `assumeFalse(object == null)`"
+title: "Transform single-argument `assumeNotNull(object)` to `assumeFalse(object == null)`"
+sidebar_label: "Transform single-argument `assumeNotNull(object)` to `assumeFalse(object == null)`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Transform singlar `assumeNotNull(object)` to `assumeFalse(object == null)`
+# Transform single-argument `assumeNotNull(object)` to `assumeFalse(object == null)`
 
 **org.openrewrite.java.testing.junit5.AssumeNotNullToAssumptionsRecipes$SingleArgRecipe**
 
-_Transform singlar `Assume.assumeNotNull(object)` to `Assumptions.assumeFalse(object == null)`._
+_Transform single-argument `Assume.assumeNotNull(object)` to `Assumptions.assumeFalse(object == null)`._
 
 ## Recipe source
 
@@ -33,7 +33,7 @@ This recipe is used as part of the following composite recipes:
 
 <RunRecipe
   recipeName="org.openrewrite.java.testing.junit5.AssumeNotNullToAssumptionsRecipes$SingleArgRecipe"
-  displayName="Transform singlar `assumeNotNull(object)` to `assumeFalse(object == null)`"
+  displayName="Transform single-argument `assumeNotNull(object)` to `assumeFalse(object == null)`"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-testing-frameworks"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_TESTING_FRAMEWORKS"

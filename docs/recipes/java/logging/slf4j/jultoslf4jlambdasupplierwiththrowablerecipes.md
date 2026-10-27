@@ -1,6 +1,6 @@
 ---
-title: "Replace JUL `log(Level, Throwable, Supplier&lt;String&gt;)` with corresponding SLF4J method calls"
-sidebar_label: "Replace JUL `log(Level, Throwable, Supplier&lt;String&gt;)` with corresponding SLF4J method calls"
+title: "Replace JUL `log(Level, Throwable, Supplier<String>)` with corresponding SLF4J method calls"
+sidebar_label: "Replace JUL `log(Level, Throwable, Supplier<String>)` with corresponding SLF4J method calls"
 ---
 
 import Tabs from '@theme/Tabs';

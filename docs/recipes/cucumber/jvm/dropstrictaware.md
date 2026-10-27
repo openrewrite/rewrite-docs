@@ -28,6 +28,75 @@ This recipe is used as part of the following composite recipes:
 
 * [Upgrade to Cucumber-JVM 7.x](/recipes/cucumber/jvm/upgradecucumber7x.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+package com.example.app;
+
+import io.cucumber.plugin.ConcurrentEventListener;
+import io.cucumber.plugin.StrictAware;
+import io.cucumber.plugin.event.EventPublisher;
+
+public class ReportPlugin implements ConcurrentEventListener, StrictAware {
+
+    @Override
+    public void setEventPublisher(EventPublisher publisher) {
+    }
+
+    @Override
+    public void setStrict(boolean strict) {
+    }
+}
+```
+
+###### After
+```java
+package com.example.app;
+
+import io.cucumber.plugin.ConcurrentEventListener;
+import io.cucumber.plugin.event.EventPublisher;
+
+public class ReportPlugin implements ConcurrentEventListener {
+
+    @Override
+    public void setEventPublisher(EventPublisher publisher) {
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -4,1 +4,0 @@
+
+import io.cucumber.plugin.ConcurrentEventListener;
+-import io.cucumber.plugin.StrictAware;
+import io.cucumber.plugin.event.EventPublisher;
+@@ -7,1 +6,1 @@
+import io.cucumber.plugin.event.EventPublisher;
+
+-public class ReportPlugin implements ConcurrentEventListener, StrictAware {
++public class ReportPlugin implements ConcurrentEventListener {
+
+@@ -12,4 +11,0 @@
+    public void setEventPublisher(EventPublisher publisher) {
+    }
+-
+-   @Override
+-   public void setStrict(boolean strict) {
+-   }
+}
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

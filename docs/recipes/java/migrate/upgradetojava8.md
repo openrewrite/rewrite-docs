@@ -43,10 +43,8 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Migrate to Java 7](../../java/migrate/upgradetojava7)
 * [Upgrade Java version](../../java/migrate/upgradejavaversion)
   * version: `8`
-* [MBean and MXBean interfaces must be public](../../java/migrate/mxbeanrule)
+* [Make MBean and MXBean interfaces public](../../java/migrate/mxbeanrule)
 * [Migrate Bouncy Castle to `jdk18on`](../../java/migrate/bouncecastlefromjdk15ontojdk18on)
-* [Remove method invocations](../../java/removemethodinvocations)
-  * methodPattern: `java.lang.Thread destroy()`
 
 </TabItem>
 
@@ -69,8 +67,6 @@ recipeList:
       version: 8
   - org.openrewrite.java.migrate.MXBeanRule
   - org.openrewrite.java.migrate.BounceCastleFromJdk15OntoJdk18On
-  - org.openrewrite.java.RemoveMethodInvocations:
-      methodPattern: java.lang.Thread destroy()
 
 ```
 </TabItem>

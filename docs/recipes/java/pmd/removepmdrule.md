@@ -34,6 +34,48 @@ This recipe is used as part of the following composite recipes:
 
 * [Migrate a PMD 6 ruleset to PMD 7](/recipes/java/pmd/pmd6to7migration.md)
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|rule|`category/java/codestyle.xml/AvoidFinalLocalVariable`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="xml" label="xml">
+
+
+###### Before
+```xml
+<?xml version="1.0"?>
+<ruleset name="custom">
+    <rule ref="category/java/codestyle.xml/AvoidFinalLocalVariable"/>
+    <rule ref="category/java/codestyle.xml/ControlStatementBraces"/>
+</ruleset>
+```
+
+###### After
+```xml
+<?xml version="1.0"?>
+<ruleset name="custom">
+    <rule ref="category/java/codestyle.xml/ControlStatementBraces"/>
+</ruleset>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,1 +3,0 @@
+<?xml version="1.0"?>
+<ruleset name="custom">
+-   <rule ref="category/java/codestyle.xml/AvoidFinalLocalVariable"/>
+    <rule ref="category/java/codestyle.xml/ControlStatementBraces"/>
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

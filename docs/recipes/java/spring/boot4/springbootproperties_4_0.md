@@ -41,7 +41,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 **Recipes**
 
-* [Change the value of a spring application property](../../../java/spring/changespringpropertyvalue)
+* [Change the value of a Spring application property](../../../java/spring/changespringpropertyvalue)
   * propertyKey: `spring.jpa.hibernate.naming.implicit-strategy`
   * newValue: `org.springframework.boot.hibernate.SpringImplicitNamingStrategy`
   * oldValue: `org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy`

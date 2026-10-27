@@ -1,17 +1,17 @@
 ---
-title: "Replace `@ExtendWith` and `@ContextConfiguration` with `@SpringJunitConfig`"
-sidebar_label: "Replace `@ExtendWith` and `@ContextConfiguration` with `@SpringJunitConfig`"
+title: "Replace `@ExtendWith` and `@ContextConfiguration` with `@SpringJUnitConfig`"
+sidebar_label: "Replace `@ExtendWith` and `@ContextConfiguration` with `@SpringJUnitConfig`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Replace `@ExtendWith` and `@ContextConfiguration` with `@SpringJunitConfig`
+# Replace `@ExtendWith` and `@ContextConfiguration` with `@SpringJUnitConfig`
 
 **org.openrewrite.java.spring.boot2.ReplaceExtendWithAndContextConfiguration**
 
-_Replaces `@ExtendWith(SpringRunner.class)` and `@ContextConfiguration` with `@SpringJunitConfig`, preserving attributes on `@ContextConfiguration`, unless `@ContextConfiguration(loader = ...)` is used._
+_Replaces `@ExtendWith(SpringRunner.class)` and `@ContextConfiguration` with `@SpringJUnitConfig`, preserving attributes on `@ContextConfiguration`, unless `@ContextConfiguration(loader = ...)` is used._
 
 ## Recipe source
 
@@ -100,7 +100,7 @@ public class ExampleClass {
 
 <RunRecipe
   recipeName="org.openrewrite.java.spring.boot2.ReplaceExtendWithAndContextConfiguration"
-  displayName="Replace `@ExtendWith` and `@ContextConfiguration` with `@SpringJunitConfig`"
+  displayName="Replace `@ExtendWith` and `@ContextConfiguration` with `@SpringJUnitConfig`"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-spring"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING"

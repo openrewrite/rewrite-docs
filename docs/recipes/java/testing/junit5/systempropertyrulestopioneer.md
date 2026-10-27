@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.testing.junit5.SystemPropertyRulesToPioneer**
 
-_Replaces System Rules' `ProvideSystemProperty`, `ClearSystemProperties` and `RestoreSystemProperties` rules with JUnit Pioneer's `@SetSystemProperty`, `@ClearSystemProperty` and `@RestoreSystemProperties` class annotations. Only rules that take string literals and are not used elsewhere in the test are migrated; `SystemRulesToSystemStubs` handles the rest._
+_Replaces System Rules' `ProvideSystemProperty`, `ClearSystemProperties` and `RestoreSystemProperties` rules with JUnit Pioneer's `@SetSystemProperty`, `@ClearSystemProperty` and `@RestoreSystemProperties` class annotations. Only rules that take string literals and are not used elsewhere in the test are migrated; the others are left for the migration to System Stubs._
 
 ## Recipe source
 
@@ -27,6 +27,107 @@ This recipe is available under the [Moderne Source Available License](https://do
 This recipe is used as part of the following composite recipes:
 
 * [Migrate System Rules to System Stubs and JUnit Pioneer](/recipes/java/testing/junit5/migratesystemrules.md)
+
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.junit.ClassRule;
+import org.junit.Rule;
+import org.junit.contrib.java.lang.system.ClearSystemProperties;
+import org.junit.contrib.java.lang.system.ProvideSystemProperty;
+import org.junit.contrib.java.lang.system.RestoreSystemProperties;
+import org.junit.jupiter.api.Test;
+
+class ConfigTest {
+    @ClassRule
+    public static final ProvideSystemProperty PROPERTIES = new ProvideSystemProperty("a", "1").and("b", "2");
+
+    @Rule
+    public final ClearSystemProperties cleared = new ClearSystemProperties("c", "d");
+
+    @Rule
+    public final RestoreSystemProperties restore = new RestoreSystemProperties();
+
+    @Test
+    void readsProperties() {
+        System.setProperty("e", "5");
+    }
+}
+```
+
+###### After
+```java
+import org.junit.jupiter.api.Test;
+import org.junitpioneer.jupiter.ClearSystemProperty;
+import org.junitpioneer.jupiter.RestoreSystemProperties;
+import org.junitpioneer.jupiter.SetSystemProperty;
+
+@ClearSystemProperty(key = "c")
+@ClearSystemProperty(key = "d")
+@RestoreSystemProperties
+@SetSystemProperty(key = "a", value = "1")
+@SetSystemProperty(key = "b", value = "2")
+class ConfigTest {
+
+    @Test
+    void readsProperties() {
+        System.setProperty("e", "5");
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,5 +1,0 @@
+-import org.junit.ClassRule;
+-import org.junit.Rule;
+-import org.junit.contrib.java.lang.system.ClearSystemProperties;
+-import org.junit.contrib.java.lang.system.ProvideSystemProperty;
+-import org.junit.contrib.java.lang.system.RestoreSystemProperties;
+import org.junit.jupiter.api.Test;
+@@ -7,0 +2,3 @@
+import org.junit.contrib.java.lang.system.RestoreSystemProperties;
+import org.junit.jupiter.api.Test;
++import org.junitpioneer.jupiter.ClearSystemProperty;
++import org.junitpioneer.jupiter.RestoreSystemProperties;
++import org.junitpioneer.jupiter.SetSystemProperty;
+
+@@ -8,0 +6,5 @@
+import org.junit.jupiter.api.Test;
+
++@ClearSystemProperty(key = "c")
++@ClearSystemProperty(key = "d")
++@RestoreSystemProperties
++@SetSystemProperty(key = "a", value = "1")
++@SetSystemProperty(key = "b", value = "2")
+class ConfigTest {
+@@ -9,2 +12,0 @@
+
+class ConfigTest {
+-   @ClassRule
+-   public static final ProvideSystemProperty PROPERTIES = new ProvideSystemProperty("a", "1").and("b", "2");
+
+@@ -12,6 +13,0 @@
+    public static final ProvideSystemProperty PROPERTIES = new ProvideSystemProperty("a", "1").and("b", "2");
+
+-   @Rule
+-   public final ClearSystemProperties cleared = new ClearSystemProperties("c", "d");
+-
+-   @Rule
+-   public final RestoreSystemProperties restore = new RestoreSystemProperties();
+-
+    @Test
+```
+</TabItem>
+</Tabs>
 
 
 ## Usage

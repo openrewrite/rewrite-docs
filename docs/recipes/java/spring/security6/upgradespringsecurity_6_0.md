@@ -46,17 +46,15 @@ This recipe is available under the [Moderne Source Available License](https://do
   * groupId: `org.springframework.security`
   * artifactId: `*`
   * newVersion: `6.0.x`
-  * overrideManagedVersion: `false`
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `org.springframework.security`
   * artifactId: `spring-security-oauth2-authorization-server`
   * newVersion: `1.0.x`
-  * overrideManagedVersion: `false`
 * [Remove explicit configuration of SHA-256 as encoding and matching algorithm for `TokenBasedRememberMeServices`](../../../java/spring/security6/usesha256inrememberme)
 * [Remove calls matching `AuthenticationEntryPointFailureHandler.setRethrowAuthenticationServiceException(true)`](../../../java/spring/security6/propagateauthenticationserviceexceptions)
 * [Remove explicit `SecurityContextConfigurer.requireExplicitSave(true)` opt-in](../../../java/spring/security6/requireexplicitsavingofsecuritycontextrepository)
-* [Keep the default RequestCache querying behavior in Spring Security 5](../../../java/spring/security6/updaterequestcache)
-* [Remove unnecessary `use-authorization-manager` for message security in Spring security 6](../../../java/spring/security6/removeuseauthorizationmanager)
+* [Keep the Spring Security 5 `RequestCache` querying behavior](../../../java/spring/security6/updaterequestcache)
+* [Remove unnecessary `use-authorization-manager` for message security in Spring Security 6](../../../java/spring/security6/removeuseauthorizationmanager)
 * [Remove the `useAuthorizationManager=true` attribute from `@EnableReactiveMethodSecurity`](../../../java/spring/security6/updateenablereactivemethodsecurity)
 * [Remove unnecessary `filterSecurityInterceptorOncePerRequest(false)` when upgrading to Spring Security 6](../../../java/spring/security6/removefiltersecurityinterceptoronceperrequest)
 
@@ -82,12 +80,10 @@ recipeList:
       groupId: org.springframework.security
       artifactId: "*"
       newVersion: 6.0.x
-      overrideManagedVersion: false
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: org.springframework.security
       artifactId: spring-security-oauth2-authorization-server
       newVersion: 1.0.x
-      overrideManagedVersion: false
   - org.openrewrite.java.spring.security6.UseSha256InRememberMe
   - org.openrewrite.java.spring.security6.PropagateAuthenticationServiceExceptions
   - org.openrewrite.java.spring.security6.RequireExplicitSavingOfSecurityContextRepository
@@ -130,6 +126,25 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
+
+### Maven metadata failures
+**org.openrewrite.maven.table.MavenMetadataFailures**
+
+_Attempts to resolve maven metadata that failed._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Group id | The groupId of the artifact for which the metadata download failed. |
+| Artifact id | The artifactId of the artifact for which the metadata download failed. |
+| Version | The version of the artifact for which the metadata download failed. |
+| Maven repository | The URL of the Maven repository that the metadata download failed on. |
+| Snapshots | Does the repository support snapshots. |
+| Releases | Does the repository support releases. |
+| Failure | The reason the metadata download failed. |
+
+</TabItem>
+
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results

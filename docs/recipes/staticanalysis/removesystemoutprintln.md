@@ -1,13 +1,13 @@
 ---
-title: "Remove `System.out#println` statements"
-sidebar_label: "Remove `System.out#println` statements"
+title: "Remove `System.out#println` and `System.err#println` statements"
+sidebar_label: "Remove `System.out#println` and `System.err#println` statements"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Remove `System.out#println` statements
+# Remove `System.out#println` and `System.err#println` statements
 
 **org.openrewrite.staticanalysis.RemoveSystemOutPrintln**
 
@@ -96,7 +96,7 @@ class Test {
 
 <RunRecipe
   recipeName="org.openrewrite.staticanalysis.RemoveSystemOutPrintln"
-  displayName="Remove `System.out#println` statements"
+  displayName="Remove `System.out#println` and `System.err#println` statements"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-static-analysis"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_STATIC_ANALYSIS"

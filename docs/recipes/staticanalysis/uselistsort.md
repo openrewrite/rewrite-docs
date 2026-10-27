@@ -11,7 +11,11 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.staticanalysis.UseListSort**
 
-_The `java.util.Collections#sort(..)` implementation defers to the `java.util.List#sort(Comparator)`, replaced it with the `java.util.List#sort(Comparator)` implementation for better readability._
+_The `java.util.Collections#sort(..)` implementation defers to `java.util.List#sort(Comparator)`, so call `java.util.List#sort(Comparator)` directly for better readability._
+
+### Tags
+
+* [RSPEC-S9412](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S9412&open=java%3AS9412)
 
 ## Recipe source
 

@@ -1,17 +1,17 @@
 ---
-title: "Change `java.lang.reflect.Modifier` and ` java.lang.invoke.ConstantBootstraps` method calls to static"
-sidebar_label: "Change `java.lang.reflect.Modifier` and ` java.lang.invoke.ConstantBootstraps` method calls to static"
+title: "Change `java.lang.reflect.Modifier` and `java.lang.invoke.ConstantBootstraps` method calls to static"
+sidebar_label: "Change `java.lang.reflect.Modifier` and `java.lang.invoke.ConstantBootstraps` method calls to static"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Change `java.lang.reflect.Modifier` and ` java.lang.invoke.ConstantBootstraps` method calls to static
+# Change `java.lang.reflect.Modifier` and `java.lang.invoke.ConstantBootstraps` method calls to static
 
 **org.openrewrite.java.migrate.RemovedModifierAndConstantBootstrapsConstructors**
 
-_The `java.lang.reflect.Modifier()` and `java.lang.invoke.ConstantBootstraps()` constructors have been removed in Java SE 15 because both classes only contain static methods. This recipe converts the usage of all methods in the two classes to be  static. See https://docs.oracle.com/en/java/javase/15/migrate/index.html#GUID-233853B8-0782-429E-BEF7-7532EE610E63 for more information on these changes._
+_The `java.lang.reflect.Modifier()` and `java.lang.invoke.ConstantBootstraps()` constructors have been removed in Java SE 15 because both classes only contain static methods. This recipe converts the usage of all methods in the two classes to be static. See https://docs.oracle.com/en/java/javase/15/migrate/index.html#GUID-233853B8-0782-429E-BEF7-7532EE610E63 for more information on these changes._
 
 ## Recipe source
 
@@ -51,9 +51,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.RemovedModifierAndConstantBootstrapsConstructors
-displayName: Change `java.lang.reflect.Modifier` and ` java.lang.invoke.ConstantBootstraps` method calls to static
+displayName: Change `java.lang.reflect.Modifier` and `java.lang.invoke.ConstantBootstraps` method calls to static
 description: |
-  The `java.lang.reflect.Modifier()` and `java.lang.invoke.ConstantBootstraps()` constructors have been removed in Java SE 15 because both classes only contain static methods. This recipe converts the usage of all methods in the two classes to be  static. See https://docs.oracle.com/en/java/javase/15/migrate/index.html#GUID-233853B8-0782-429E-BEF7-7532EE610E63 for more information on these changes.
+  The `java.lang.reflect.Modifier()` and `java.lang.invoke.ConstantBootstraps()` constructors have been removed in Java SE 15 because both classes only contain static methods. This recipe converts the usage of all methods in the two classes to be static. See https://docs.oracle.com/en/java/javase/15/migrate/index.html#GUID-233853B8-0782-429E-BEF7-7532EE610E63 for more information on these changes.
 preconditions:
   - org.openrewrite.Singleton
 recipeList:
@@ -238,7 +238,7 @@ class RemovedModifierAndConstantBootstrapsConstructorsApp {
 
 <RunRecipe
   recipeName="org.openrewrite.java.migrate.RemovedModifierAndConstantBootstrapsConstructors"
-  displayName="Change `java.lang.reflect.Modifier` and ` java.lang.invoke.ConstantBootstraps` method calls to static"
+  displayName="Change `java.lang.reflect.Modifier` and `java.lang.invoke.ConstantBootstraps` method calls to static"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-migrate-java"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA"

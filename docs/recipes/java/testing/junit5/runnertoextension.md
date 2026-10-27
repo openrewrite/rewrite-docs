@@ -34,8 +34,8 @@ This recipe is available under the [Moderne Source Available License](https://do
 This recipe is used as part of the following composite recipes:
 
 * [Remove unnecessary Spring `@RunWith`](/recipes/java/spring/boot2/unnecessaryspringrunwith.md)
-* [Use Arquillian JUnit 5 Extension](/recipes/java/testing/arquillian/arquillianjunit4toarquillianjunit5.md)
-* [Use Vert.x JUnit 5 Extension](/recipes/java/testing/junit5/vertxunittovertxjunit5.md)
+* [Use Arquillian JUnit 5 extension](/recipes/java/testing/arquillian/arquillianjunit4toarquillianjunit5.md)
+* [Use Vert.x JUnit 5 extension](/recipes/java/testing/junit5/vertxunittovertxjunit5.md)
 
 ## Example
 

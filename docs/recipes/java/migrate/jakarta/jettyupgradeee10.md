@@ -39,8 +39,8 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
   * oldGroupId: `org.eclipse.jetty.ee9.websocket`
   * oldArtifactId: `jetty-ee9-websocket-jetty-api`
-  * newGroupId: `org.eclipse.jetty.ee10.websocket`
-  * newArtifactId: `jetty-ee10-websocket-jetty-api`
+  * newGroupId: `org.eclipse.jetty.websocket`
+  * newArtifactId: `jetty-websocket-jetty-api`
   * newVersion: `12.0.x`
 * [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
   * oldGroupId: `org.eclipse.jetty.ee9.websocket`
@@ -51,8 +51,8 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
   * oldGroupId: `org.eclipse.jetty.ee9.websocket`
   * oldArtifactId: `jetty-ee9-websocket-jetty-client`
-  * newGroupId: `org.eclipse.jetty.ee10.websocket`
-  * newArtifactId: `jetty-ee10-websocket-jetty-client`
+  * newGroupId: `org.eclipse.jetty.websocket`
+  * newArtifactId: `jetty-websocket-jetty-client`
   * newVersion: `12.0.x`
 * [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
   * oldGroupId: `org.eclipse.jetty.ee9.websocket`
@@ -93,8 +93,8 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
   * oldGroupId: `org.eclipse.jetty.ee9`
   * oldArtifactId: `jetty-ee9-security`
-  * newGroupId: `org.eclipse.jetty.ee10`
-  * newArtifactId: `jetty-ee10-security`
+  * newGroupId: `org.eclipse.jetty`
+  * newArtifactId: `jetty-security`
   * newVersion: `12.0.x`
 * [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
   * oldGroupId: `org.eclipse.jetty.ee9`
@@ -111,6 +111,69 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Change type](../../../java/changetype)
   * oldFullyQualifiedTypeName: `org.eclipse.jetty.util.resource.ResourceCollection`
   * newFullyQualifiedTypeName: `org.eclipse.jetty.util.resource.Resource`
+* [Rename package name](../../../java/changepackage)
+  * oldPackageName: `org.eclipse.jetty.ee9.servlets`
+  * newPackageName: `org.eclipse.jetty.ee10.servlets`
+  * recursive: `true`
+* [Rename package name](../../../java/changepackage)
+  * oldPackageName: `org.eclipse.jetty.ee9.servlet`
+  * newPackageName: `org.eclipse.jetty.ee10.servlet`
+  * recursive: `true`
+* [Rename package name](../../../java/changepackage)
+  * oldPackageName: `org.eclipse.jetty.ee9.webapp`
+  * newPackageName: `org.eclipse.jetty.ee10.webapp`
+  * recursive: `true`
+* [Rename package name](../../../java/changepackage)
+  * oldPackageName: `org.eclipse.jetty.ee9.annotations`
+  * newPackageName: `org.eclipse.jetty.ee10.annotations`
+  * recursive: `true`
+* [Rename package name](../../../java/changepackage)
+  * oldPackageName: `org.eclipse.jetty.ee9.apache.jsp`
+  * newPackageName: `org.eclipse.jetty.ee10.apache.jsp`
+  * recursive: `true`
+* [Rename package name](../../../java/changepackage)
+  * oldPackageName: `org.eclipse.jetty.ee9.jsp`
+  * newPackageName: `org.eclipse.jetty.ee10.jsp`
+  * recursive: `true`
+* [Rename package name](../../../java/changepackage)
+  * oldPackageName: `org.eclipse.jetty.ee9.proxy`
+  * newPackageName: `org.eclipse.jetty.ee10.proxy`
+  * recursive: `true`
+* [Rename package name](../../../java/changepackage)
+  * oldPackageName: `org.eclipse.jetty.ee9.websocket.server`
+  * newPackageName: `org.eclipse.jetty.ee10.websocket.server`
+  * recursive: `true`
+* [Rename package name](../../../java/changepackage)
+  * oldPackageName: `org.eclipse.jetty.ee9.websocket.jakarta`
+  * newPackageName: `org.eclipse.jetty.ee10.websocket.jakarta`
+  * recursive: `true`
+* [Rename package name](../../../java/changepackage)
+  * oldPackageName: `org.eclipse.jetty.ee9.websocket.api`
+  * newPackageName: `org.eclipse.jetty.websocket.api`
+  * recursive: `true`
+* [Rename package name](../../../java/changepackage)
+  * oldPackageName: `org.eclipse.jetty.ee9.websocket.client`
+  * newPackageName: `org.eclipse.jetty.websocket.client`
+  * recursive: `true`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.eclipse.jetty.ee9.security.ConstraintAware`
+  * newFullyQualifiedTypeName: `org.eclipse.jetty.ee10.servlet.security.ConstraintAware`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.eclipse.jetty.ee9.security.ConstraintMapping`
+  * newFullyQualifiedTypeName: `org.eclipse.jetty.ee10.servlet.security.ConstraintMapping`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.eclipse.jetty.ee9.security.ConstraintSecurityHandler`
+  * newFullyQualifiedTypeName: `org.eclipse.jetty.ee10.servlet.security.ConstraintSecurityHandler`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.eclipse.jetty.ee9.security.authentication.LoginCallback`
+  * newFullyQualifiedTypeName: `org.eclipse.jetty.ee10.servlet.security.authentication.LoginCallback`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.eclipse.jetty.ee9.security.authentication.LoginCallbackImpl`
+  * newFullyQualifiedTypeName: `org.eclipse.jetty.ee10.servlet.security.authentication.LoginCallbackImpl`
+* [Rename package name](../../../java/changepackage)
+  * oldPackageName: `org.eclipse.jetty.ee9.security`
+  * newPackageName: `org.eclipse.jetty.security`
+  * recursive: `true`
 
 </TabItem>
 
@@ -129,8 +192,8 @@ recipeList:
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.eclipse.jetty.ee9.websocket
       oldArtifactId: jetty-ee9-websocket-jetty-api
-      newGroupId: org.eclipse.jetty.ee10.websocket
-      newArtifactId: jetty-ee10-websocket-jetty-api
+      newGroupId: org.eclipse.jetty.websocket
+      newArtifactId: jetty-websocket-jetty-api
       newVersion: 12.0.x
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.eclipse.jetty.ee9.websocket
@@ -141,8 +204,8 @@ recipeList:
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.eclipse.jetty.ee9.websocket
       oldArtifactId: jetty-ee9-websocket-jetty-client
-      newGroupId: org.eclipse.jetty.ee10.websocket
-      newArtifactId: jetty-ee10-websocket-jetty-client
+      newGroupId: org.eclipse.jetty.websocket
+      newArtifactId: jetty-websocket-jetty-client
       newVersion: 12.0.x
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.eclipse.jetty.ee9.websocket
@@ -183,8 +246,8 @@ recipeList:
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.eclipse.jetty.ee9
       oldArtifactId: jetty-ee9-security
-      newGroupId: org.eclipse.jetty.ee10
-      newArtifactId: jetty-ee10-security
+      newGroupId: org.eclipse.jetty
+      newArtifactId: jetty-security
       newVersion: 12.0.x
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.eclipse.jetty.ee9
@@ -201,6 +264,69 @@ recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.eclipse.jetty.util.resource.ResourceCollection
       newFullyQualifiedTypeName: org.eclipse.jetty.util.resource.Resource
+  - org.openrewrite.java.ChangePackage:
+      oldPackageName: org.eclipse.jetty.ee9.servlets
+      newPackageName: org.eclipse.jetty.ee10.servlets
+      recursive: true
+  - org.openrewrite.java.ChangePackage:
+      oldPackageName: org.eclipse.jetty.ee9.servlet
+      newPackageName: org.eclipse.jetty.ee10.servlet
+      recursive: true
+  - org.openrewrite.java.ChangePackage:
+      oldPackageName: org.eclipse.jetty.ee9.webapp
+      newPackageName: org.eclipse.jetty.ee10.webapp
+      recursive: true
+  - org.openrewrite.java.ChangePackage:
+      oldPackageName: org.eclipse.jetty.ee9.annotations
+      newPackageName: org.eclipse.jetty.ee10.annotations
+      recursive: true
+  - org.openrewrite.java.ChangePackage:
+      oldPackageName: org.eclipse.jetty.ee9.apache.jsp
+      newPackageName: org.eclipse.jetty.ee10.apache.jsp
+      recursive: true
+  - org.openrewrite.java.ChangePackage:
+      oldPackageName: org.eclipse.jetty.ee9.jsp
+      newPackageName: org.eclipse.jetty.ee10.jsp
+      recursive: true
+  - org.openrewrite.java.ChangePackage:
+      oldPackageName: org.eclipse.jetty.ee9.proxy
+      newPackageName: org.eclipse.jetty.ee10.proxy
+      recursive: true
+  - org.openrewrite.java.ChangePackage:
+      oldPackageName: org.eclipse.jetty.ee9.websocket.server
+      newPackageName: org.eclipse.jetty.ee10.websocket.server
+      recursive: true
+  - org.openrewrite.java.ChangePackage:
+      oldPackageName: org.eclipse.jetty.ee9.websocket.jakarta
+      newPackageName: org.eclipse.jetty.ee10.websocket.jakarta
+      recursive: true
+  - org.openrewrite.java.ChangePackage:
+      oldPackageName: org.eclipse.jetty.ee9.websocket.api
+      newPackageName: org.eclipse.jetty.websocket.api
+      recursive: true
+  - org.openrewrite.java.ChangePackage:
+      oldPackageName: org.eclipse.jetty.ee9.websocket.client
+      newPackageName: org.eclipse.jetty.websocket.client
+      recursive: true
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.eclipse.jetty.ee9.security.ConstraintAware
+      newFullyQualifiedTypeName: org.eclipse.jetty.ee10.servlet.security.ConstraintAware
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.eclipse.jetty.ee9.security.ConstraintMapping
+      newFullyQualifiedTypeName: org.eclipse.jetty.ee10.servlet.security.ConstraintMapping
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.eclipse.jetty.ee9.security.ConstraintSecurityHandler
+      newFullyQualifiedTypeName: org.eclipse.jetty.ee10.servlet.security.ConstraintSecurityHandler
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.eclipse.jetty.ee9.security.authentication.LoginCallback
+      newFullyQualifiedTypeName: org.eclipse.jetty.ee10.servlet.security.authentication.LoginCallback
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.eclipse.jetty.ee9.security.authentication.LoginCallbackImpl
+      newFullyQualifiedTypeName: org.eclipse.jetty.ee10.servlet.security.authentication.LoginCallbackImpl
+  - org.openrewrite.java.ChangePackage:
+      oldPackageName: org.eclipse.jetty.ee9.security
+      newPackageName: org.eclipse.jetty.security
+      recursive: true
 
 ```
 </TabItem>
@@ -211,6 +337,71 @@ recipeList:
 This recipe is used as part of the following composite recipes:
 
 * [Migrate to Jakarta EE 10](/recipes/java/migrate/jakarta/jakartaee10.md)
+
+## Examples
+##### Example 1
+`JettyUpgradeEE10Test#securityAndJettyWebSocketMoveToCoreModules`
+
+
+###### Unchanged
+```xml title="pom.xml"
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.example</groupId>
+    <artifactId>demo</artifactId>
+    <version>1.0</version>
+    <dependencies>
+        <dependency>
+            <groupId>org.eclipse.jetty.ee9</groupId>
+            <artifactId>jetty-ee9-security</artifactId>
+            <version>12.0.16</version>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.jetty.ee9.websocket</groupId>
+            <artifactId>jetty-ee9-websocket-jetty-api</artifactId>
+            <version>12.0.16</version>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.jetty.ee9.websocket</groupId>
+            <artifactId>jetty-ee9-websocket-jetty-client</artifactId>
+            <version>12.0.16</version>
+        </dependency>
+    </dependencies>
+</project>
+```
+
+---
+
+##### Example 2
+`JettyUpgradeEE10Test#securityAndJettyWebSocketMoveToCoreModules`
+
+
+###### Unchanged
+```xml title="pom.xml"
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.example</groupId>
+    <artifactId>demo</artifactId>
+    <version>1.0</version>
+    <dependencies>
+        <dependency>
+            <groupId>org.eclipse.jetty.ee9</groupId>
+            <artifactId>jetty-ee9-security</artifactId>
+            <version>12.0.16</version>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.jetty.ee9.websocket</groupId>
+            <artifactId>jetty-ee9-websocket-jetty-api</artifactId>
+            <version>12.0.16</version>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.jetty.ee9.websocket</groupId>
+            <artifactId>jetty-ee9-websocket-jetty-client</artifactId>
+            <version>12.0.16</version>
+        </dependency>
+    </dependencies>
+</project>
+```
 
 
 ## Usage
@@ -236,6 +427,25 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
+
+### Maven metadata failures
+**org.openrewrite.maven.table.MavenMetadataFailures**
+
+_Attempts to resolve maven metadata that failed._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Group id | The groupId of the artifact for which the metadata download failed. |
+| Artifact id | The artifactId of the artifact for which the metadata download failed. |
+| Version | The version of the artifact for which the metadata download failed. |
+| Maven repository | The URL of the Maven repository that the metadata download failed on. |
+| Snapshots | Does the repository support snapshots. |
+| Releases | Does the repository support releases. |
+| Failure | The reason the metadata download failed. |
+
+</TabItem>
+
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results

@@ -73,12 +73,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * oldArtifactId: `aspectj-maven-plugin`
   * newGroupId: `dev.aspectj`
   * newVersion: `1.14.x`
-* [Add Maven plugin dependencies](../../maven/addplugindependency)
-  * pluginGroupId: `dev.aspectj`
-  * pluginArtifactId: `aspectj-maven-plugin`
-  * groupId: `org.aspectj`
-  * artifactId: `aspectjtools`
-  * version: `1.9.25.1`
+* [Add `aspectjtools` to the AspectJ Maven plugin](../../java/migrate/addaspectjtoolstoaspectjmavenplugin)
 * [Change XML tag value](../../xml/changetagvalue)
   * elementName: `//plugin[artifactId='aspectj-maven-plugin']/configuration/complianceLevel`
   * newValue: `25`
@@ -94,8 +89,8 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Upgrade Gradle or Maven dependency versions](../../java/dependencies/upgradedependencyversion)
   * groupId: `org.mockito`
   * artifactId: `mockito-*`
-  * newVersion: `5.17.x`
-* [Add Mockito Java Agent to Maven Surefire Plugin](../../java/migrate/addmockitojavaagenttomavensurefireplugin)
+  * newVersion: `5.20.x`
+* [Add Mockito Java agent to Maven Surefire plugin](../../java/migrate/addmockitojavaagenttomavensurefireplugin)
 
 </TabItem>
 
@@ -146,12 +141,7 @@ recipeList:
       oldArtifactId: aspectj-maven-plugin
       newGroupId: dev.aspectj
       newVersion: 1.14.x
-  - org.openrewrite.maven.AddPluginDependency:
-      pluginGroupId: dev.aspectj
-      pluginArtifactId: aspectj-maven-plugin
-      groupId: org.aspectj
-      artifactId: aspectjtools
-      version: 1.9.25.1
+  - org.openrewrite.java.migrate.AddAspectJToolsToAspectJMavenPlugin
   - org.openrewrite.xml.ChangeTagValue:
       elementName: //plugin[artifactId='aspectj-maven-plugin']/configuration/complianceLevel
       newValue: 25
@@ -167,7 +157,7 @@ recipeList:
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: org.mockito
       artifactId: mockito-*
-      newVersion: 5.17.x
+      newVersion: 5.20.x
   - org.openrewrite.java.migrate.AddMockitoJavaAgentToMavenSurefirePlugin
 
 ```

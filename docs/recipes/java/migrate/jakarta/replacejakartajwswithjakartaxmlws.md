@@ -84,7 +84,7 @@ recipeList:
 
 This recipe is used as part of the following composite recipes:
 
-* [Update Jakarta EE XML Web Services Dependencies for EE 10](/recipes/java/migrate/jakarta/updatejakartaxmlwsee10.md)
+* [Update Jakarta XML Web Services dependencies for Jakarta EE 10](/recipes/java/migrate/jakarta/updatejakartaxmlwsee10.md)
 
 ## Examples
 ##### Example 1
@@ -155,6 +155,25 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
+
+### Maven metadata failures
+**org.openrewrite.maven.table.MavenMetadataFailures**
+
+_Attempts to resolve maven metadata that failed._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Group id | The groupId of the artifact for which the metadata download failed. |
+| Artifact id | The artifactId of the artifact for which the metadata download failed. |
+| Version | The version of the artifact for which the metadata download failed. |
+| Maven repository | The URL of the Maven repository that the metadata download failed on. |
+| Snapshots | Does the repository support snapshots. |
+| Releases | Does the repository support releases. |
+| Failure | The reason the metadata download failed. |
+
+</TabItem>
+
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results

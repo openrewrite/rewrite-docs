@@ -1,13 +1,13 @@
 ---
-title: "URL Equals and Hash Code"
-sidebar_label: "URL Equals and Hash Code"
+title: "`URL#equals()` and `URL#hashCode()`"
+sidebar_label: "`URL#equals()` and `URL#hashCode()`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# URL Equals and Hash Code
+# `URL#equals()` and `URL#hashCode()`
 
 **org.openrewrite.staticanalysis.URLEqualsHashCodeRecipes**
 
@@ -15,7 +15,7 @@ _Uses of `equals()` and `hashCode()` cause `java.net.URL` to make blocking inter
 
 ### Tags
 
-* [RSPEC-2112](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S2112&open=java%3AS2112)
+* [RSPEC-S2112](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S2112&open=java%3AS2112)
 
 ## Recipe source
 
@@ -34,8 +34,8 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [URL Equals](../staticanalysis/urlequalshashcoderecipes$urlequalsrecipe)
-* [URL Hash Code](../staticanalysis/urlequalshashcoderecipes$urlhashcoderecipe)
+* [`URL#equals()`](../staticanalysis/urlequalshashcoderecipes$urlequalsrecipe)
+* [`URL#hashCode()`](../staticanalysis/urlequalshashcoderecipes$urlhashcoderecipe)
 
 </TabItem>
 
@@ -45,11 +45,11 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.staticanalysis.URLEqualsHashCodeRecipes
-displayName: URL Equals and Hash Code
+displayName: `URL#equals()` and `URL#hashCode()`
 description: |
   Uses of `equals()` and `hashCode()` cause `java.net.URL` to make blocking internet connections. Instead, use `java.net.URI`.
 tags:
-  - RSPEC-2112
+  - RSPEC-S2112
 recipeList:
   - org.openrewrite.staticanalysis.URLEqualsHashCodeRecipes$URLEqualsRecipe
   - org.openrewrite.staticanalysis.URLEqualsHashCodeRecipes$URLHashCodeRecipe
@@ -119,7 +119,7 @@ import java.net.URL;
 
 <RunRecipe
   recipeName="org.openrewrite.staticanalysis.URLEqualsHashCodeRecipes"
-  displayName="URL Equals and Hash Code"
+  displayName="`URL#equals()` and `URL#hashCode()`"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-static-analysis"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_STATIC_ANALYSIS"

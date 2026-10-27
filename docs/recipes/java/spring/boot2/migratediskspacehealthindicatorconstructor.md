@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.spring.boot2.MigrateDiskSpaceHealthIndicatorConstructor**
 
-_`DiskSpaceHealthIndicator(File, long)` was deprecated in Spring Data 2.1 for removal in 2.2._
+_`DiskSpaceHealthIndicator(File, long)` was deprecated in Spring Boot 2.1 for removal in 2.2._
 
 ## Recipe source
 

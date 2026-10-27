@@ -21,6 +21,13 @@ _Replace method declaration `@HttpExchange` annotations with `@GetExchange`, `@P
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license). Moderne customers can download precompiled artifacts from The Code Genome Project. For non-commercial use you can build the artifact from source locally.
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Spring Boot 3.3 best practices (only)](/recipes/java/spring/boot3/springboot3bestpracticesonly.md)
+
 ## Example
 
 

@@ -1,17 +1,17 @@
 ---
-title: "Add `argLine` to surefire and failsafe plugins"
-sidebar_label: "Add `argLine` to surefire and failsafe plugins"
+title: "Add `argLine` to Maven Surefire and Failsafe plugins"
+sidebar_label: "Add `argLine` to Maven Surefire and Failsafe plugins"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Add `argLine` to surefire and failsafe plugins
+# Add `argLine` to Maven Surefire and Failsafe plugins
 
 **org.openrewrite.java.migrate.AddSurefireFailsafeArgLine**
 
-_Adds the specified arguments to the `argLine` configuration of the Maven Surefire and Failsafe plugins, merging with any existing argLine value without duplicating arguments. The `@{argLine}` [late property reference](https://maven.apache.org/surefire/maven-surefire-plugin/faq.html) is prepended so that an agent injected by another plugin during the build, such as the JaCoCo coverage agent from `jacoco-maven-plugin:prepare-agent`, is preserved rather than overwritten. It is not added when the existing `argLine` already references the `argLine` property._
+_Adds the specified arguments to the `argLine` configuration of the Maven Surefire and Failsafe plugins, merging with any existing `argLine` value without duplicating arguments. The `@{argLine}` [late property reference](https://maven.apache.org/surefire/maven-surefire-plugin/faq.html) is prepended so that an agent injected by another plugin during the build, such as the JaCoCo coverage agent from `jacoco-maven-plugin:prepare-agent`, is preserved rather than overwritten. It is not added when the existing `argLine` already references the `argLine` property._
 
 ## Recipe source
 
@@ -25,7 +25,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 | Type | Name | Description | Example |
 | --- | --- | --- | --- |
-| `String` | argLine | The arguments to add to the surefire and failsafe plugin `argLine` configuration. Individual arguments are space-separated. Arguments already present in the existing argLine are not duplicated. | `--add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.util=ALL-UNNAMED` |
+| `String` | argLine | The arguments to add to the Maven Surefire and Failsafe plugin `argLine` configuration. Individual arguments are space-separated. Arguments already present in the existing `argLine` are not duplicated. | `--add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.util=ALL-UNNAMED` |
 
 ## Example
 
@@ -109,7 +109,7 @@ Here's how you can define and customize such a recipe within your rewrite.yml:
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.AddSurefireFailsafeArgLineExample
-displayName: Add `argLine` to surefire and failsafe plugins example
+displayName: Add `argLine` to Maven Surefire and Failsafe plugins example
 recipeList:
   - org.openrewrite.java.migrate.AddSurefireFailsafeArgLine:
       argLine: '--add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.util=ALL-UNNAMED'
@@ -117,7 +117,7 @@ recipeList:
 
 <RunRecipe
   recipeName="org.openrewrite.java.migrate.AddSurefireFailsafeArgLine"
-  displayName="Add `argLine` to surefire and failsafe plugins"
+  displayName="Add `argLine` to Maven Surefire and Failsafe plugins"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-migrate-java"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA"

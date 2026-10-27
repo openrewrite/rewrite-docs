@@ -47,8 +47,8 @@ This recipe is available under the [Moderne Source Available License](https://do
   * oldFullyQualifiedTypeName: `org.springframework.boot.context.embedded.jetty.JettyEmbeddedServletContainerFactory`
   * newFullyQualifiedTypeName: `org.springframework.boot.web.embedded.jetty.JettyServletWebServerFactory`
 * [Change type](../../../java/changetype)
-  * oldFullyQualifiedTypeName: `org.springframework.boot.context.embedded.undertow.UnderTowEmbeddedServletContainerFactory`
-  * newFullyQualifiedTypeName: `org.springframework.boot.web.embedded.undertow.UnderTowServletWebServerFactory`
+  * oldFullyQualifiedTypeName: `org.springframework.boot.context.embedded.undertow.UndertowEmbeddedServletContainerFactory`
+  * newFullyQualifiedTypeName: `org.springframework.boot.web.embedded.undertow.UndertowServletWebServerFactory`
 
 </TabItem>
 
@@ -75,8 +75,8 @@ recipeList:
       oldFullyQualifiedTypeName: org.springframework.boot.context.embedded.jetty.JettyEmbeddedServletContainerFactory
       newFullyQualifiedTypeName: org.springframework.boot.web.embedded.jetty.JettyServletWebServerFactory
   - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: org.springframework.boot.context.embedded.undertow.UnderTowEmbeddedServletContainerFactory
-      newFullyQualifiedTypeName: org.springframework.boot.web.embedded.undertow.UnderTowServletWebServerFactory
+      oldFullyQualifiedTypeName: org.springframework.boot.context.embedded.undertow.UndertowEmbeddedServletContainerFactory
+      newFullyQualifiedTypeName: org.springframework.boot.web.embedded.undertow.UndertowServletWebServerFactory
 
 ```
 </TabItem>

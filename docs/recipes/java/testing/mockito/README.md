@@ -4,20 +4,22 @@ description: Mockito OpenRewrite recipes.
 
 # Mockito
 
+_Recipes for upgrading [Mockito](https://site.mockito.org/), adopting its best practices and migrating from PowerMock._
+
 ## Composite Recipes
 
 _Recipes that include further recipes, often including the individual recipes below._
 
-* [Mockito 3.x migration from 1.x](./mockito1to3migration.md)
 * [Mockito 4 to 5.x upgrade only](./mockito4to5only.md)
-* [Mockito 4.x upgrade](./mockito1to4migration.md)
-* [Mockito 5.x upgrade](./mockito1to5migration.md)
 * [Mockito best practices](./mockitobestpractices.md)
 * [Replace PowerMock `Whitebox` with Java reflection](./powermockwhiteboxtojavareflection.md)
 * [Replace PowerMock usages with Mockito](./replacepowermockitousages.md)
 * [Replace PowerMock with raw Mockito](./replacepowermockito.md)
 * [Swap the PowerMock dependencies for Mockito](./removepowermockdependencies.md)
+* [Upgrade Mockito from 1.x to 3.x](./mockito1to3migration.md)
 * [Upgrade `mockito-core` along with the Mockito that replaces PowerMock](./upgrademockitocorereplacingpowermock.md)
+* [Upgrade to Mockito 4.x](./mockito1to4migration.md)
+* [Upgrade to Mockito 5.x](./mockito1to5migration.md)
 
 ## Recipes
 
@@ -26,7 +28,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Add JUnit 4 where the PowerMock JUnit 4 module provided it](./addjunit4replacingpowermockmodule.md)
 * [Add mockito-junit-jupiter dependency](./addmockitojupiterdependency.md)
 * [Adds Mockito extensions to Mockito tests](./addmockitoextensionifannotationsused.md)
-* [Call to Mockito method &quot;verify&quot;, &quot;when&quot; or &quot;given&quot; should be simplified](./simplifymockitoverifywhengiven.md)
+* [Change `mockito-all` to `mockito-core` along with the Mockito that replaces PowerMock](./changemockitoalltomockitocorereplacingpowermock.md)
 * [Cleanup Mockito imports](./cleanupmockitoimports.md)
 * [Cleanup PowerMock imports](./cleanuppowermockimports.md)
 * [Close unclosed static mocks](./closeunclosedstaticmocks.md)
@@ -41,6 +43,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Remove PowerMock class extensions](./removepowermockclassextensions.md)
 * [Remove `PowerMockRule` fields](./removepowermockrule.md)
 * [Remove `doNothing()` for void methods on `@Mock` fields](./removedonothingfordefaultmocks.md)
+* [Remove `eq()` matchers from Mockito `verify`, `when` and `given` calls](./simplifymockitoverifywhengiven.md)
 * [Replace JUnit 4 MockitoJUnitRunner with junit-jupiter MockitoExtension](./mockitojunitrunnertoextension.md)
 * [Replace Mockito 1.x `anyString()` with `nullable(String.class)`](./anystringtonullable.md)
 * [Replace Mockito 1.x `anyString()`/`any()` with `nullable(Class)`](./anytonullable.md)

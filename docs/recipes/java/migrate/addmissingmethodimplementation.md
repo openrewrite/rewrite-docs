@@ -1,17 +1,17 @@
 ---
-title: "Adds missing method implementations"
-sidebar_label: "Adds missing method implementations"
+title: "Add missing method implementations"
+sidebar_label: "Add missing method implementations"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Adds missing method implementations
+# Add missing method implementations
 
 **org.openrewrite.java.migrate.AddMissingMethodImplementation**
 
-_Check for missing methods required by interfaces and adds them._
+_Add a method to classes that implement the given interface but are missing the method._
 
 ## Recipe source
 
@@ -25,17 +25,17 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 | Type | Name | Description | Example |
 | --- | --- | --- | --- |
-| `String` | fullyQualifiedClassName | A fully qualified class being implemented with missing method. | `com.yourorg.FooBar` |
-| `String` | methodPattern | A method pattern for matching required method definition. | `*..* hello(..)` |
-| `String` | methodTemplateString | Template of method to add | `public String hello() { return \"Hello from #{}!\"; }` |
+| `String` | fullyQualifiedClassName | The fully qualified name of the interface whose method may be missing from its implementations. | `com.yourorg.FooBar` |
+| `String` | methodPattern | A method pattern matching the required method declaration. | `*..* hello(..)` |
+| `String` | methodTemplateString | Template of the method to add. | `public String hello() { return \"Hello from #{}!\"; }` |
 
 
 ## Used by
 
 This recipe is used as part of the following composite recipes:
 
+* [Add missing JDBC interface methods](/recipes/java/migrate/jrejdbcinterfacenewmethods.md)
 * [Add missing `isWrapperFor` and `unwrap` methods](/recipes/java/migrate/jrewrapperinterface.md)
-* [Adds missing JDBC interface methods](/recipes/java/migrate/jrejdbcinterfacenewmethods.md)
 
 ## Example
 
@@ -91,7 +91,7 @@ Here's how you can define and customize such a recipe within your rewrite.yml:
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.AddMissingMethodImplementationExample
-displayName: Adds missing method implementations example
+displayName: Add missing method implementations example
 recipeList:
   - org.openrewrite.java.migrate.AddMissingMethodImplementation:
       fullyQualifiedClassName: com.yourorg.FooBar
@@ -101,7 +101,7 @@ recipeList:
 
 <RunRecipe
   recipeName="org.openrewrite.java.migrate.AddMissingMethodImplementation"
-  displayName="Adds missing method implementations"
+  displayName="Add missing method implementations"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-migrate-java"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA"

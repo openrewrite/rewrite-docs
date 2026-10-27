@@ -1,21 +1,21 @@
 ---
-title: "Simplify constant if branch execution"
-sidebar_label: "Simplify constant if branch execution"
+title: "Simplify constant `if` branch execution"
+sidebar_label: "Simplify constant `if` branch execution"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Simplify constant if branch execution
+# Simplify constant `if` branch execution
 
 **org.openrewrite.staticanalysis.SimplifyConstantIfBranchExecution**
 
-_Checks for if expressions that are always `true` or `false` and simplifies them. Branches that can never execute are dead code that misleads readers and may mask logic errors introduced during refactoring._
+_Checks for `if` conditions that are always `true` or `false` and simplifies them. Branches that can never execute are dead code that misleads readers and may mask logic errors introduced during refactoring._
 
 ### Tags
 
-* [RSPEC-S6646](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S6646&open=java%3AS6646)
+* [RSPEC-S2589](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S2589&open=java%3AS2589)
 
 ## Recipe source
 
@@ -80,7 +80,7 @@ public class A {
 
 <RunRecipe
   recipeName="org.openrewrite.staticanalysis.SimplifyConstantIfBranchExecution"
-  displayName="Simplify constant if branch execution"
+  displayName="Simplify constant `if` branch execution"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-static-analysis"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_STATIC_ANALYSIS"

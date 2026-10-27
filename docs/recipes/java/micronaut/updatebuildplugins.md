@@ -73,6 +73,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
   * oldGroupId: `io.micronaut.build`
   * oldArtifactId: `micronaut-maven-plugin`
   * newGroupId: `io.micronaut.maven`
+  * newVersion: `4.x`
 
 </TabItem>
 
@@ -129,6 +130,7 @@ recipeList:
       oldGroupId: io.micronaut.build
       oldArtifactId: micronaut-maven-plugin
       newGroupId: io.micronaut.maven
+      newVersion: 4.x
 
 ```
 </TabItem>

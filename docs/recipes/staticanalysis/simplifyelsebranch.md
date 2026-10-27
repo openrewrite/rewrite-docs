@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.staticanalysis.SimplifyElseBranch**
 
-_Simplify `else` branch if it only has a single `if`._
+_Replaces an `else` block that contains only a single `if` statement with an `else if`._
 
 ## Recipe source
 

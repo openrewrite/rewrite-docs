@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.migrate.jakarta.AddJakartaXmlBindRuntime**
 
-_Add a Jakarta JAXB 3 runtime when a Maven module calls JAXBContext.newInstance and has no explicit JAXB provider or provided Jakarta platform. Java 8's built-in javax provider cannot serve Jakarta calls. Annotation-only modules are left alone and test-only calls receive a test dependency._
+_Add a Jakarta JAXB 3 runtime when a Maven module calls `JAXBContext.newInstance` and has no explicit JAXB provider or provided Jakarta platform. Java 8's built-in `javax` provider cannot serve Jakarta calls. Annotation-only modules are left alone and test-only calls receive a test dependency._
 
 ## Recipe source
 

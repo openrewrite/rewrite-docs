@@ -35,8 +35,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Upgrade `mockito-core` along with the Mockito that replaces PowerMock](../../../java/testing/mockito/upgrademockitocorereplacingpowermock)
+* [Change `mockito-all` to `mockito-core` along with the Mockito that replaces PowerMock](../../../java/testing/mockito/changemockitoalltomockitocorereplacingpowermock)
 * [Replace PowerMock dependencies with Mockito equivalents](../../../java/testing/mockito/replacepowermockdependencies)
+* [Upgrade `mockito-core` along with the Mockito that replaces PowerMock](../../../java/testing/mockito/upgrademockitocorereplacingpowermock)
 * [Add JUnit 4 where the PowerMock JUnit 4 module provided it](../../../java/testing/mockito/addjunit4replacingpowermockmodule)
 * [Remove a Gradle or Maven dependency](../../../java/dependencies/removedependency)
   * groupId: `org.powermock`
@@ -63,8 +64,9 @@ tags:
   - mockito
   - testing
 recipeList:
-  - org.openrewrite.java.testing.mockito.UpgradeMockitoCoreReplacingPowerMock
+  - org.openrewrite.java.testing.mockito.ChangeMockitoAllToMockitoCoreReplacingPowerMock
   - org.openrewrite.java.testing.mockito.ReplacePowerMockDependencies
+  - org.openrewrite.java.testing.mockito.UpgradeMockitoCoreReplacingPowerMock
   - org.openrewrite.java.testing.mockito.AddJUnit4ReplacingPowerMockModule
   - org.openrewrite.java.dependencies.RemoveDependency:
       groupId: org.powermock
@@ -110,6 +112,25 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
+
+### Maven metadata failures
+**org.openrewrite.maven.table.MavenMetadataFailures**
+
+_Attempts to resolve maven metadata that failed._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Group id | The groupId of the artifact for which the metadata download failed. |
+| Artifact id | The artifactId of the artifact for which the metadata download failed. |
+| Version | The version of the artifact for which the metadata download failed. |
+| Maven repository | The URL of the Maven repository that the metadata download failed on. |
+| Snapshots | Does the repository support snapshots. |
+| Releases | Does the repository support releases. |
+| Failure | The reason the metadata download failed. |
+
+</TabItem>
+
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results

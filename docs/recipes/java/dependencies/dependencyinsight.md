@@ -1,13 +1,13 @@
 ---
-title: "Dependency insight for Gradle and Maven"
-sidebar_label: "Dependency insight for Gradle and Maven"
+title: "Gradle or Maven dependency insight"
+sidebar_label: "Gradle or Maven dependency insight"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Dependency insight for Gradle and Maven
+# Gradle or Maven dependency insight
 
 **org.openrewrite.java.dependencies.DependencyInsight**
 
@@ -28,7 +28,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | groupIdPattern | Group ID glob pattern used to match dependencies. | `com.fasterxml.jackson*` |
 | `String` | artifactIdPattern | Artifact ID glob pattern used to match dependencies. | `jackson-*` |
 | `String` | version | *Optional*. Match only dependencies with the specified version. Node-style [version selectors](https://docs.openrewrite.org/reference/dependency-version-selectors) may be used. All versions are searched by default. | `1.x` |
-| `String` | scope | *Optional*. Match dependencies with the specified Maven scope. All scopes are searched by default. Valid options: `compile`, `test`, `runtime`, `provided`, `system` | `compile` |
+| `String` | scope | *Optional*. For Maven only, match dependencies with the specified scope. All scopes are searched by default. Valid options: `compile`, `test`, `runtime`, `provided`, `system` | `compile` |
 
 
 ## Used by
@@ -111,7 +111,7 @@ Here's how you can define and customize such a recipe within your rewrite.yml:
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.DependencyInsightExample
-displayName: Dependency insight for Gradle and Maven example
+displayName: Gradle or Maven dependency insight example
 recipeList:
   - org.openrewrite.java.dependencies.DependencyInsight:
       groupIdPattern: com.fasterxml.jackson*
@@ -122,7 +122,7 @@ recipeList:
 
 <RunRecipe
   recipeName="org.openrewrite.java.dependencies.DependencyInsight"
-  displayName="Dependency insight for Gradle and Maven"
+  displayName="Gradle or Maven dependency insight"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-java-dependencies"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JAVA_DEPENDENCIES"
@@ -161,6 +161,27 @@ _Direct and transitive dependencies in use._
 | Dated snapshot version | The resolved dated snapshot version or `null` if this dependency is not a snapshot. |
 | Scope | Dependency scope. This will be `compile` if the dependency is direct and a scope is not explicitly specified in the POM. |
 | Count | How many times does this dependency appear. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.maven.table.ExplainDependenciesInUse" label="ExplainDependenciesInUse">
+
+### Explain dependencies in use
+**org.openrewrite.maven.table.ExplainDependenciesInUse**
+
+_A dependency graph explainer similar to that shown by `gradle dependencyInsight` for each matching dependency. This table will contain a row per matching dependency per configuration per (sub)project._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Project name | The name of the project that contains the dependency. |
+| Source set | The source set that contains the dependency. |
+| Group | The first part of a dependency coordinate `com.google.guava:guava:VERSION`. |
+| Artifact | The second part of a dependency coordinate `com.google.guava:guava:VERSION`. |
+| Version | The resolved version. |
+| Dated snapshot version | The resolved dated snapshot version or `null` if this dependency is not a snapshot. |
+| Scope | Dependency scope. This will be `compile` if the dependency is direct and a scope is not explicitly specified in the POM. |
+| Count | How many times does this dependency appear. |
+| Dependency graph | The dependency paths that requested the dependency. |
 
 </TabItem>
 

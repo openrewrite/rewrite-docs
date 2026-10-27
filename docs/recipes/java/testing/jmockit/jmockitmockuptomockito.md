@@ -1,17 +1,17 @@
 ---
-title: "Rewrite JMockit MockUp to Mockito statements"
-sidebar_label: "Rewrite JMockit MockUp to Mockito statements"
+title: "Rewrite JMockit `MockUp` to Mockito statements"
+sidebar_label: "Rewrite JMockit `MockUp` to Mockito statements"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Rewrite JMockit MockUp to Mockito statements
+# Rewrite JMockit `MockUp` to Mockito statements
 
 **org.openrewrite.java.testing.jmockit.JMockitMockUpToMockito**
 
-_Rewrites JMockit `MockUp` blocks to Mockito statements. This recipe will not rewrite private methods in MockUp._
+_Rewrites JMockit `MockUp` blocks that are statements in a method body to Mockito `mockStatic` and `mockConstructionWithAnswer` calls. `@Mock` methods that fake a private method can not be stubbed with Mockito and are dropped._
 
 ## Recipe source
 
@@ -33,7 +33,7 @@ This recipe is used as part of the following composite recipes:
 
 <RunRecipe
   recipeName="org.openrewrite.java.testing.jmockit.JMockitMockUpToMockito"
-  displayName="Rewrite JMockit MockUp to Mockito statements"
+  displayName="Rewrite JMockit `MockUp` to Mockito statements"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-testing-frameworks"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_TESTING_FRAMEWORKS"

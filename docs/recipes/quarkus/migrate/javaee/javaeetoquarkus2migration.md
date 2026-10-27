@@ -33,6 +33,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Migrate JavaEE Maven Dependencies to Quarkus 2](../../../quarkus/migrate/javaee/addquarkus2mavenplugins)
 * [Add Quarkus 2 dependencies](../../../quarkus/migrate/javaee/addquarkus2dependencies)
 * [Remove JavaEE dependencies](../../../quarkus/migrate/javaee/removejavaeedependencies)
+* [Sort dependencies](../../../maven/sortdependencies)
 * [Migrate JavaEE Code to Quarkus 2](../../../quarkus/migrate/javaee/javaeetoquarkus2codemigration)
 
 </TabItem>
@@ -50,6 +51,7 @@ recipeList:
   - org.openrewrite.quarkus.migrate.javaee.AddQuarkus2MavenPlugins
   - org.openrewrite.quarkus.migrate.javaee.AddQuarkus2Dependencies
   - org.openrewrite.quarkus.migrate.javaee.RemoveJavaEEDependencies
+  - org.openrewrite.maven.SortDependencies
   - org.openrewrite.quarkus.migrate.javaee.JavaEEtoQuarkus2CodeMigration
 
 ```

@@ -13,6 +13,10 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 _Finds `catch` blocks that throw a newly created exception without referencing the caught exception, which discards the original exception's stack trace and message. Taint tracking over the local variables of the `catch` block establishes whether the caught exception—or any value derived from it—reaches the thrown exception, so indirect references through local variables, helper calls and string concatenation are not falsely reported. This mirrors PMD's `PreserveStackTrace` rule._
 
+### Tags
+
+* [RSPEC-S1166](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S1166&open=java%3AS1166)
+
 ## Recipe source
 
 [GitHub: FindNewExceptionWithoutCause.java](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/FindNewExceptionWithoutCause.java),

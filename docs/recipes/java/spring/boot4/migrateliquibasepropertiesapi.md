@@ -28,6 +28,53 @@ This recipe is used as part of the following composite recipes:
 
 * [Migrate to Spring Boot 4.0 (Community Edition)](/recipes/java/spring/boot4/upgradespringboot_4_0-community-edition.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import liquibase.integration.spring.SpringLiquibase;
+
+class Config {
+    String getContexts() { return "test"; }
+    void configure(SpringLiquibase liquibase) {
+        liquibase.setContexts(getContexts());
+        liquibase.setLabels("test");
+    }
+}
+```
+
+###### After
+```java
+import liquibase.integration.spring.SpringLiquibase;
+
+class Config {
+    String getContexts() { return "test"; }
+    void configure(SpringLiquibase liquibase) {
+        liquibase.setContexts(getContexts());
+        liquibase.setLabelFilter("test");
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -7,1 +7,1 @@
+    void configure(SpringLiquibase liquibase) {
+        liquibase.setContexts(getContexts());
+-       liquibase.setLabels("test");
++       liquibase.setLabelFilter("test");
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

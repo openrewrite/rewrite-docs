@@ -1,17 +1,17 @@
 ---
-title: "Remove invocations of deprecated invocations from Deflater, Inflater, ZipFile"
-sidebar_label: "Remove invocations of deprecated invocations from Deflater, Inflater, ZipFile"
+title: "Remove `finalize()` invocations on `Deflater`, `Inflater` and `ZipFile`"
+sidebar_label: "Remove `finalize()` invocations on `Deflater`, `Inflater` and `ZipFile`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Remove invocations of deprecated invocations from Deflater, Inflater, ZipFile
+# Remove `finalize()` invocations on `Deflater`, `Inflater` and `ZipFile`
 
 **org.openrewrite.java.migrate.util.RemoveFinalizerFromZip**
 
-_Remove invocations of finalize() deprecated invocations from Deflater, Inflater, ZipFile._
+_Remove invocations of the deprecated `finalize()` method on `Deflater`, `Inflater` and `ZipFile`._
 
 ## Recipe source
 
@@ -76,7 +76,7 @@ class FooInflater extends Inflater {
 
 <RunRecipe
   recipeName="org.openrewrite.java.migrate.util.RemoveFinalizerFromZip"
-  displayName="Remove invocations of deprecated invocations from Deflater, Inflater, ZipFile"
+  displayName="Remove `finalize()` invocations on `Deflater`, `Inflater` and `ZipFile`"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-migrate-java"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA"

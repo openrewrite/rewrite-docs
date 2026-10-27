@@ -34,7 +34,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 This recipe is used as part of the following composite recipes:
 
-* [Explicit container images and versions](/recipes/java/testing/testcontainers/explicitcontainerimages.md)
+* [Use explicit container images and versions](/recipes/java/testing/testcontainers/explicitcontainerimages.md)
 
 ## Example
 

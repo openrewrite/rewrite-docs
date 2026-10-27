@@ -107,7 +107,7 @@ class Test {
         logger.error(marker, "Failed: {}", message, exception);
 
         logger.info("User {} logged in", username);
-        logger.info("isHTML ''{}'', body: {}", username, message);
+        logger.info("isHTML '{}', body: {}", username, message);
         logger.info("part1 part2 {}", username);
     }
 }
@@ -165,7 +165,7 @@ import org.slf4j.MarkerFactory;
 -               + " part2"
 -               + " {0}", username));
 +       logger.info("User {} logged in", username);
-+       logger.info("isHTML ''{}'', body: {}", username, message);
++       logger.info("isHTML '{}', body: {}", username, message);
 +       logger.info("part1 part2 {}", username);
     }
 ```

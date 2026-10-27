@@ -28,6 +28,59 @@ This recipe is used as part of the following composite recipes:
 
 * [Upgrade WireMock to 4.x](/recipes/java/testing/wiremock/wiremock3to4migration.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import com.github.tomakehurst.wiremock.http.ContentTypeHeader;
+
+import java.nio.charset.Charset;
+
+class Headers {
+    Charset of(ContentTypeHeader header) {
+        return header.charset();
+    }
+}
+```
+
+###### After
+```java
+import com.github.tomakehurst.wiremock.http.ContentTypeHeader;
+
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
+
+class Headers {
+    Charset of(ContentTypeHeader header) {
+        return header.charset().orElse(StandardCharsets.UTF_8);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -4,0 +4,1 @@
+
+import java.nio.charset.Charset;
++import java.nio.charset.StandardCharsets;
+
+@@ -7,1 +8,1 @@
+class Headers {
+    Charset of(ContentTypeHeader header) {
+-       return header.charset();
++       return header.charset().orElse(StandardCharsets.UTF_8);
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

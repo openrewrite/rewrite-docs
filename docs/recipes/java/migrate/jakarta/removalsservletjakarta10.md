@@ -1,13 +1,13 @@
 ---
-title: "Replace  deprecated Jakarta Servlet methods and classes"
-sidebar_label: "Replace  deprecated Jakarta Servlet methods and classes"
+title: "Replace deprecated Jakarta Servlet methods and classes"
+sidebar_label: "Replace deprecated Jakarta Servlet methods and classes"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Replace  deprecated Jakarta Servlet methods and classes
+# Replace deprecated Jakarta Servlet methods and classes
 
 **org.openrewrite.java.migrate.jakarta.RemovalsServletJakarta10**
 
@@ -36,27 +36,6 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 **Recipes**
 
-* [Change type](../../../java/changetype)
-  * oldFullyQualifiedTypeName: `javax.servlet.http.HttpServletRequest`
-  * newFullyQualifiedTypeName: `jakarta.servlet.http.HttpServletRequest`
-* [Change type](../../../java/changetype)
-  * oldFullyQualifiedTypeName: `javax.servlet.http.HttpServletRequestWrapper`
-  * newFullyQualifiedTypeName: `jakarta.servlet.http.HttpServletRequestWrapper`
-* [Change type](../../../java/changetype)
-  * oldFullyQualifiedTypeName: `javax.servlet.http.HttpServletResponse`
-  * newFullyQualifiedTypeName: `jakarta.servlet.http.HttpServletResponse`
-* [Change type](../../../java/changetype)
-  * oldFullyQualifiedTypeName: `javax.servlet.http.HttpServletResponseWrapper`
-  * newFullyQualifiedTypeName: `jakarta.servlet.http.HttpServletResponseWrapper`
-* [Change type](../../../java/changetype)
-  * oldFullyQualifiedTypeName: `javax.servlet.http.HttpSession`
-  * newFullyQualifiedTypeName: `jakarta.servlet.http.HttpSession`
-* [Change type](../../../java/changetype)
-  * oldFullyQualifiedTypeName: `javax.servlet.ServletContext`
-  * newFullyQualifiedTypeName: `jakarta.servlet.ServletContext`
-* [Change type](../../../java/changetype)
-  * oldFullyQualifiedTypeName: `javax.servlet.UnavailableException`
-  * newFullyQualifiedTypeName: `jakarta.servlet.UnavailableException`
 * [Change method name](../../../java/changemethodname)
   * methodPattern: `jakarta.servlet.http.HttpServletRequest  isRequestedSessionIdFromUrl()`
   * newMethodName: `isRequestedSessionIdFromURL`
@@ -98,7 +77,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * newParameterNames: `[ex, str]`
   * oldParameterNames: `[str, ex]`
   * matchOverrides: `true`
-* [Updates `getRealPath()` to call `getContext()` followed by `getRealPath()`](../../../java/migrate/jakarta/updategetrealpath)
+* [Replace `ServletRequest.getRealPath(String)` with `getServletContext().getRealPath(String)`](../../../java/migrate/jakarta/updategetrealpath)
 * [Delete method argument](../../../java/deletemethodargument)
   * methodPattern: `jakarta.servlet.UnavailableException <constructor>(jakarta.servlet.Servlet, String)`
   * argumentIndex: `0`
@@ -119,33 +98,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.jakarta.RemovalsServletJakarta10
-displayName: Replace  deprecated Jakarta Servlet methods and classes
+displayName: Replace deprecated Jakarta Servlet methods and classes
 description: |
   This recipe replaces the classes and methods deprecated in Jakarta Servlet 6.0.
 preconditions:
   - org.openrewrite.Singleton
 recipeList:
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: javax.servlet.http.HttpServletRequest
-      newFullyQualifiedTypeName: jakarta.servlet.http.HttpServletRequest
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: javax.servlet.http.HttpServletRequestWrapper
-      newFullyQualifiedTypeName: jakarta.servlet.http.HttpServletRequestWrapper
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: javax.servlet.http.HttpServletResponse
-      newFullyQualifiedTypeName: jakarta.servlet.http.HttpServletResponse
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: javax.servlet.http.HttpServletResponseWrapper
-      newFullyQualifiedTypeName: jakarta.servlet.http.HttpServletResponseWrapper
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: javax.servlet.http.HttpSession
-      newFullyQualifiedTypeName: jakarta.servlet.http.HttpSession
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: javax.servlet.ServletContext
-      newFullyQualifiedTypeName: jakarta.servlet.ServletContext
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: javax.servlet.UnavailableException
-      newFullyQualifiedTypeName: jakarta.servlet.UnavailableException
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: jakarta.servlet.http.HttpServletRequest  isRequestedSessionIdFromUrl()
       newMethodName: isRequestedSessionIdFromURL
@@ -598,7 +556,7 @@ class TestJakarta extends HttpServlet implements SingleThreadModel {
 
 <RunRecipe
   recipeName="org.openrewrite.java.migrate.jakarta.RemovalsServletJakarta10"
-  displayName="Replace  deprecated Jakarta Servlet methods and classes"
+  displayName="Replace deprecated Jakarta Servlet methods and classes"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-migrate-java"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA"

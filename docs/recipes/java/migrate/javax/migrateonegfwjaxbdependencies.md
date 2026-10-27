@@ -121,6 +121,133 @@ This recipe is used as part of the following composite recipes:
 * [Add explicit JAXB API dependencies](/recipes/java/migrate/javax/addjaxbapidependencies.md)
 * [Migrate deprecated `javax.xml.bind` packages to `jakarta.xml.bind`](/recipes/java/migrate/jakarta/javaxxmlbindmigrationtojakartaxmlbind.md)
 
+## Examples
+##### Example 1
+`MigrateOneGfwJaxbDependenciesTest#jaxbApiMaven`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="pom.xml" label="pom.xml">
+
+
+###### Before
+```xml title="pom.xml"
+<project>
+    <groupId>com.example.jaxb</groupId>
+    <artifactId>jaxb-example</artifactId>
+    <version>1.0.0</version>
+    <dependencies>
+        <dependency>
+            <groupId>one.gfw</groupId>
+            <artifactId>jaxb-api</artifactId>
+            <version>2.3.1.1</version>
+        </dependency>
+    </dependencies>
+</project>
+```
+
+###### After
+```xml title="pom.xml"
+<project>
+    <groupId>com.example.jaxb</groupId>
+    <artifactId>jaxb-example</artifactId>
+    <version>1.0.0</version>
+    <dependencies>
+        <dependency>
+            <groupId>javax.xml.bind</groupId>
+            <artifactId>jaxb-api</artifactId>
+            <version>2.3.1</version>
+        </dependency>
+    </dependencies>
+</project>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- pom.xml
++++ pom.xml
+@@ -7,1 +7,1 @@
+    <dependencies>
+        <dependency>
+-           <groupId>one.gfw</groupId>
++           <groupId>javax.xml.bind</groupId>
+            <artifactId>jaxb-api</artifactId>
+@@ -9,1 +9,1 @@
+            <groupId>one.gfw</groupId>
+            <artifactId>jaxb-api</artifactId>
+-           <version>2.3.1.1</version>
++           <version>2.3.1</version>
+        </dependency>
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`MigrateOneGfwJaxbDependenciesTest#jaxbApiMaven`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="pom.xml" label="pom.xml">
+
+
+###### Before
+```xml title="pom.xml"
+<project>
+    <groupId>com.example.jaxb</groupId>
+    <artifactId>jaxb-example</artifactId>
+    <version>1.0.0</version>
+    <dependencies>
+        <dependency>
+            <groupId>one.gfw</groupId>
+            <artifactId>jaxb-api</artifactId>
+            <version>2.3.1.1</version>
+        </dependency>
+    </dependencies>
+</project>
+```
+
+###### After
+```xml title="pom.xml"
+<project>
+    <groupId>com.example.jaxb</groupId>
+    <artifactId>jaxb-example</artifactId>
+    <version>1.0.0</version>
+    <dependencies>
+        <dependency>
+            <groupId>javax.xml.bind</groupId>
+            <artifactId>jaxb-api</artifactId>
+            <version>2.3.1</version>
+        </dependency>
+    </dependencies>
+</project>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- pom.xml
++++ pom.xml
+@@ -7,1 +7,1 @@
+    <dependencies>
+        <dependency>
+-           <groupId>one.gfw</groupId>
++           <groupId>javax.xml.bind</groupId>
+            <artifactId>jaxb-api</artifactId>
+@@ -9,1 +9,1 @@
+            <groupId>one.gfw</groupId>
+            <artifactId>jaxb-api</artifactId>
+-           <version>2.3.1.1</version>
++           <version>2.3.1</version>
+        </dependency>
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
@@ -145,6 +272,25 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
+
+### Maven metadata failures
+**org.openrewrite.maven.table.MavenMetadataFailures**
+
+_Attempts to resolve maven metadata that failed._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Group id | The groupId of the artifact for which the metadata download failed. |
+| Artifact id | The artifactId of the artifact for which the metadata download failed. |
+| Version | The version of the artifact for which the metadata download failed. |
+| Maven repository | The URL of the Maven repository that the metadata download failed on. |
+| Snapshots | Does the repository support snapshots. |
+| Releases | Does the repository support releases. |
+| Failure | The reason the metadata download failed. |
+
+</TabItem>
+
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results

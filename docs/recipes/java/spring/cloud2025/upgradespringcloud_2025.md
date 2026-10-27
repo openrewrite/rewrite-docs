@@ -42,12 +42,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 **Recipes**
 
 * [Upgrade dependencies to Spring Cloud 2025](../../../java/spring/cloud2025/dependencyupgrades)
-* [Migrate to New Spring Cloud Gateway Modules and Starters](../../../java/spring/cloud2025/springcloudgatewaydeprecatedmodulesandstarters)
-* [Migrate Spring Cloud Gateway Properties](../../../java/spring/cloud2025/springcloudgatewayproperties)
-* [Migrate Spring Cloud Gateway Webflux Properties](../../../java/spring/cloud2025/springcloudgatewaywebfluxproperties)
-* [Migrate Spring Cloud Gateway Proxy Webflux Properties](../../../java/spring/cloud2025/springcloudgatewayproxywebfluxproperties)
-* [Migrate Spring Cloud Gateway WebMvc Properties](../../../java/spring/cloud2025/springcloudgatewaywebmvcproperties)
-* [Migrate Spring Cloud Gateway Proxy WebMvc Properties](../../../java/spring/cloud2025/springcloudgatewayproxywebmvcproperties)
+* [Migrate to new Spring Cloud Gateway modules and starters](../../../java/spring/cloud2025/springcloudgatewaydeprecatedmodulesandstarters)
+* [Migrate Spring Cloud Gateway properties](../../../java/spring/cloud2025/springcloudgatewayproperties)
+* [Migrate Spring Cloud Gateway WebFlux properties](../../../java/spring/cloud2025/springcloudgatewaywebfluxproperties)
+* [Migrate Spring Cloud Gateway Proxy WebFlux properties](../../../java/spring/cloud2025/springcloudgatewayproxywebfluxproperties)
+* [Migrate Spring Cloud Gateway WebMvc properties](../../../java/spring/cloud2025/springcloudgatewaywebmvcproperties)
+* [Migrate Spring Cloud Gateway Proxy WebMvc properties](../../../java/spring/cloud2025/springcloudgatewayproxywebmvcproperties)
 
 </TabItem>
 
@@ -218,6 +218,25 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
+
+### Maven metadata failures
+**org.openrewrite.maven.table.MavenMetadataFailures**
+
+_Attempts to resolve maven metadata that failed._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Group id | The groupId of the artifact for which the metadata download failed. |
+| Artifact id | The artifactId of the artifact for which the metadata download failed. |
+| Version | The version of the artifact for which the metadata download failed. |
+| Maven repository | The URL of the Maven repository that the metadata download failed on. |
+| Snapshots | Does the repository support snapshots. |
+| Releases | Does the repository support releases. |
+| Failure | The reason the metadata download failed. |
+
+</TabItem>
+
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results

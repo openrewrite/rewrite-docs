@@ -26,7 +26,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 This recipe is used as part of the following composite recipes:
 
-* [Adopt AssertJ Byte Assertions](/recipes/java/testing/assertj/assertjbyterulesrecipes.md)
+* [Adopt AssertJ `Byte` assertions](/recipes/java/testing/assertj/assertjbyterulesrecipes.md)
 
 
 ## Usage

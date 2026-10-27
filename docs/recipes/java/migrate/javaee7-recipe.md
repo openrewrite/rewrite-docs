@@ -1,17 +1,17 @@
 ---
-title: "Migrate to JavaEE7"
-sidebar_label: "Migrate to JavaEE7"
+title: "Migrate to Java EE 7"
+sidebar_label: "Migrate to Java EE 7"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Migrate to JavaEE7
+# Migrate to Java EE 7
 
 **org.openrewrite.java.migrate.javaee7**
 
-_These recipes help with the Migration to Java EE 7, flagging and updating deprecated methods._
+_Apply changes needed when migrating to Java EE 7, such as replacing the OpenJPA persistence provider with EclipseLink, setting an explicit JPA shared cache mode, aligning the `beans.xml` schema location, and making `@Produces` fields in session beans `static`. Includes the Java EE 6 migration._
 
 ### Tags
 
@@ -41,11 +41,11 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 **Recipes**
 
-* [Migrate to JavaEE6](../../java/migrate/javaee6)
-* [Removed OpenJPA providers in the persistence.xml file](../../java/migrate/javaee7/openjpapersistenceprovider)
+* [Migrate to Java EE 6](../../java/migrate/javaee6)
+* [Replace the OpenJPA persistence provider with EclipseLink in `persistence.xml`](../../java/migrate/javaee7/openjpapersistenceprovider)
 * [Disable the persistence unit second-level cache](../../java/migrate/jpacacheproperties)
 * [Change `beans.xml` `schemaLocation` to match XML namespace](../../java/migrate/beansxmlnamespace)
-* [Adds `static` modifier to `@Produces` fields that are in session beans](../../java/migrate/addstaticvariableonproducersessionbean)
+* [Add `static` modifier to `@Produces` fields in session beans](../../java/migrate/addstaticvariableonproducersessionbean)
 
 </TabItem>
 
@@ -55,9 +55,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.javaee7
-displayName: Migrate to JavaEE7
+displayName: Migrate to Java EE 7
 description: |
-  These recipes help with the Migration to Java EE 7, flagging and updating deprecated methods.
+  Apply changes needed when migrating to Java EE 7, such as replacing the OpenJPA persistence provider with EclipseLink, setting an explicit JPA shared cache mode, aligning the `beans.xml` schema location, and making `@Produces` fields in session beans `static`. Includes the Java EE 6 migration.
 tags:
   - javaee7
   - deprecated
@@ -78,14 +78,14 @@ recipeList:
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrate to JavaEE8](/recipes/java/migrate/javaee8-recipe.md)
+* [Migrate to Java EE 8](/recipes/java/migrate/javaee8-recipe.md)
 
 
 ## Usage
 
 <RunRecipe
   recipeName="org.openrewrite.java.migrate.javaee7"
-  displayName="Migrate to JavaEE7"
+  displayName="Migrate to Java EE 7"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-migrate-java"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA"

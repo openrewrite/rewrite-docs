@@ -25,6 +25,51 @@ _Finds `Thread.start()` invocations reached during construction of a non-`final`
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license). Moderne customers can download precompiled artifacts from The Code Genome Project. For non-commercial use you can build the artifact from source locally.
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+class Worker {
+    private final Thread thread;
+
+    Worker(Runnable r) {
+        thread = new Thread(r);
+        thread.start();
+    }
+}
+```
+
+###### After
+```java
+class Worker {
+    private final Thread thread;
+
+    Worker(Runnable r) {
+        thread = new Thread(r);
+        /*~~(`Thread.start()` called during construction of a non-final class. The new thread can observe a partially-initialised object, and any subclass' fields are guaranteed unset. Move the call to a separate method or declare the class `final`.)~~>*/thread.start();
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -6,1 +6,1 @@
+    Worker(Runnable r) {
+        thread = new Thread(r);
+-       thread.start();
++       /*~~(`Thread.start()` called during construction of a non-final class. The new thread can observe a partially-initialised object, and any subclass' fields are guaranteed unset. Move the call to a separate method or declare the class `final`.)~~>*/thread.start();
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

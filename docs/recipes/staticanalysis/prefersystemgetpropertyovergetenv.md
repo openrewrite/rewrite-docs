@@ -1,17 +1,17 @@
 ---
-title: "Prefer `System.getProperty(&quot;user.home&quot;)` over `System.getenv(&quot;HOME&quot;)`"
-sidebar_label: "Prefer `System.getProperty(&quot;user.home&quot;)` over `System.getenv(&quot;HOME&quot;)`"
+title: "Prefer `System.getProperty(..)` over `System.getenv(..)`"
+sidebar_label: "Prefer `System.getProperty(..)` over `System.getenv(..)`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Prefer `System.getProperty(&quot;user.home&quot;)` over `System.getenv(&quot;HOME&quot;)`
+# Prefer `System.getProperty(..)` over `System.getenv(..)`
 
 **org.openrewrite.staticanalysis.PreferSystemGetPropertyOverGetenv**
 
-_Replaces `System.getenv("HOME")` with `System.getProperty("user.home")` for better portability._
+_Replaces `System.getenv(..)` for `USER`, `USERNAME`, `HOME`, `USERPROFILE`, `TMPDIR`, `TEMP` and `TMP` with `System.getProperty(..)` for `user.name`, `user.home` or `java.io.tmpdir`, for better portability._
 
 ## Recipe source
 
@@ -96,7 +96,7 @@ class A {
 
 <RunRecipe
   recipeName="org.openrewrite.staticanalysis.PreferSystemGetPropertyOverGetenv"
-  displayName="Prefer `System.getProperty(&quot;user.home&quot;)` over `System.getenv(&quot;HOME&quot;)`"
+  displayName="Prefer `System.getProperty(..)` over `System.getenv(..)`"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-static-analysis"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_STATIC_ANALYSIS"

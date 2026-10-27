@@ -42,31 +42,32 @@ This recipe is available under the [Moderne Source Available License](https://do
 **Recipes**
 
 * [Keep a single `Content-Type` response header while still on WireMock 3](../../../java/testing/wiremock/removeduplicatecontenttypeheaders)
+* [Move Jetty EE10 usages to EE11 alongside `wiremock-jetty12`](../../../java/testing/wiremock/migratejettyee10toee11)
 * [Upgrade WireMock to 3.x](../../../java/testing/wiremock/upgradewiremockdependencyversion)
 * [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
   * oldGroupId: `org.wiremock`
   * oldArtifactId: `wiremock-jetty12`
   * newGroupId: `org.wiremock`
   * newArtifactId: `wiremock`
-  * newVersion: `4.0.0-beta.38`
+  * newVersion: `4.0.0-beta.40`
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `org.wiremock`
   * artifactId: `wiremock`
-  * newVersion: `4.0.0-beta.38`
+  * newVersion: `4.0.0-beta.40`
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `org.wiremock`
   * artifactId: `wiremock-standalone`
-  * newVersion: `4.0.0-beta.38`
+  * newVersion: `4.0.0-beta.40`
 * [Add Gradle or Maven dependency](../../../java/dependencies/adddependency)
   * groupId: `org.wiremock`
   * artifactId: `wiremock-junit5`
-  * version: `4.0.0-beta.38`
+  * version: `4.0.0-beta.40`
   * onlyIfUsing: `com.github.tomakehurst.wiremock.junit5.*`
   * scope: `test`
 * [Add Gradle or Maven dependency](../../../java/dependencies/adddependency)
   * groupId: `org.wiremock`
   * artifactId: `wiremock-junit4`
-  * version: `4.0.0-beta.38`
+  * version: `4.0.0-beta.40`
   * onlyIfUsing: `com.github.tomakehurst.wiremock.junit.WireMock*Rule`
   * scope: `test`
 * [Add Gradle or Maven dependency](../../../java/dependencies/adddependency)
@@ -84,151 +85,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * artifactId: `jetty-xml`
   * version: `12.1.x`
   * onlyIfUsing: `org.eclipse.jetty.xml.*`
-* [Add Gradle or Maven dependency](../../../java/dependencies/adddependency)
-  * groupId: `org.eclipse.jetty.ee10`
-  * artifactId: `jetty-ee10-webapp`
-  * version: `12.1.x`
-  * onlyIfUsing: `org.eclipse.jetty.ee10.webapp.*`
-* [Change type](../../../java/changetype)
-  * oldFullyQualifiedTypeName: `com.github.tomakehurst.wiremock.jetty11.CertificateGeneratingSslContextFactory`
-  * newFullyQualifiedTypeName: `com.github.tomakehurst.wiremock.jetty.ssl.CertificateGeneratingSslContextFactory`
-  * ignoreDefinition: `true`
-* [Change type](../../../java/changetype)
-  * oldFullyQualifiedTypeName: `com.github.tomakehurst.wiremock.jetty11.HttpsProxyDetectingHandler`
-  * newFullyQualifiedTypeName: `com.github.tomakehurst.wiremock.jetty.proxy.HttpsProxyDetectingHandler`
-  * ignoreDefinition: `true`
-* [Change type](../../../java/changetype)
-  * oldFullyQualifiedTypeName: `com.github.tomakehurst.wiremock.jetty11.ManInTheMiddleSslConnectHandler`
-  * newFullyQualifiedTypeName: `com.github.tomakehurst.wiremock.jetty.proxy.ManInTheMiddleSslConnectHandler`
-  * ignoreDefinition: `true`
-* [Change type](../../../java/changetype)
-  * oldFullyQualifiedTypeName: `com.github.tomakehurst.wiremock.jetty11.NotFoundHandler`
-  * newFullyQualifiedTypeName: `com.github.tomakehurst.wiremock.jetty.NotFoundHandler`
-  * ignoreDefinition: `true`
-* [Change type](../../../java/changetype)
-  * oldFullyQualifiedTypeName: `com.github.tomakehurst.wiremock.jetty11.SslContexts`
-  * newFullyQualifiedTypeName: `com.github.tomakehurst.wiremock.jetty.ssl.SslContexts`
-  * ignoreDefinition: `true`
-* [Change type](../../../java/changetype)
-  * oldFullyQualifiedTypeName: `com.github.tomakehurst.wiremock.jetty11.WritableFileOrClasspathKeyStoreSource`
-  * newFullyQualifiedTypeName: `com.github.tomakehurst.wiremock.common.ssl.WritableFileOrClasspathKeyStoreSource`
-  * ignoreDefinition: `true`
-* [Change type](../../../java/changetype)
-  * oldFullyQualifiedTypeName: `com.github.tomakehurst.wiremock.jetty12.HttpProxyDetectingHandler`
-  * newFullyQualifiedTypeName: `com.github.tomakehurst.wiremock.jetty.proxy.HttpProxyDetectingHandler`
-  * ignoreDefinition: `true`
-* [Change type](../../../java/changetype)
-  * oldFullyQualifiedTypeName: `com.github.tomakehurst.wiremock.jetty12.HttpsProxyDetectingHandler`
-  * newFullyQualifiedTypeName: `com.github.tomakehurst.wiremock.jetty.proxy.HttpsProxyDetectingHandler`
-  * ignoreDefinition: `true`
-* [Change type](../../../java/changetype)
-  * oldFullyQualifiedTypeName: `com.github.tomakehurst.wiremock.jetty12.Jetty12HttpServer`
-  * newFullyQualifiedTypeName: `com.github.tomakehurst.wiremock.jetty.Jetty12HttpServer`
-  * ignoreDefinition: `true`
-* [Change type](../../../java/changetype)
-  * oldFullyQualifiedTypeName: `com.github.tomakehurst.wiremock.jetty12.Jetty12HttpServerFactory`
-  * newFullyQualifiedTypeName: `com.github.tomakehurst.wiremock.jetty.JettyHttpServerFactory`
-  * ignoreDefinition: `true`
-* [Change type](../../../java/changetype)
-  * oldFullyQualifiedTypeName: `com.github.tomakehurst.wiremock.jetty12.Jetty12HttpUtils`
-  * newFullyQualifiedTypeName: `com.github.tomakehurst.wiremock.jetty.Jetty12HttpUtils`
-  * ignoreDefinition: `true`
-* [Change type](../../../java/changetype)
-  * oldFullyQualifiedTypeName: `com.github.tomakehurst.wiremock.jetty12.ManInTheMiddleSslConnectHandler`
-  * newFullyQualifiedTypeName: `com.github.tomakehurst.wiremock.jetty.proxy.ManInTheMiddleSslConnectHandler`
-  * ignoreDefinition: `true`
-* [Change type](../../../java/changetype)
-  * oldFullyQualifiedTypeName: `com.github.tomakehurst.wiremock.jetty12.NotFoundHandler`
-  * newFullyQualifiedTypeName: `com.github.tomakehurst.wiremock.jetty.NotFoundHandler`
-  * ignoreDefinition: `true`
-* [Change type](../../../java/changetype)
-  * oldFullyQualifiedTypeName: `com.github.tomakehurst.wiremock.jetty.JettyFaultInjector`
-  * newFullyQualifiedTypeName: `com.github.tomakehurst.wiremock.jetty.faults.JettyFaultInjector`
-  * ignoreDefinition: `true`
-* [Change type](../../../java/changetype)
-  * oldFullyQualifiedTypeName: `com.github.tomakehurst.wiremock.jetty.JettyFaultInjectorFactory`
-  * newFullyQualifiedTypeName: `com.github.tomakehurst.wiremock.jetty.faults.JettyFaultInjectorFactory`
-  * ignoreDefinition: `true`
-* [Change type](../../../java/changetype)
-  * oldFullyQualifiedTypeName: `com.github.tomakehurst.wiremock.jetty.JettyHttpsFaultInjector`
-  * newFullyQualifiedTypeName: `com.github.tomakehurst.wiremock.jetty.faults.JettyHttpsFaultInjector`
-  * ignoreDefinition: `true`
-* [Change type](../../../java/changetype)
-  * oldFullyQualifiedTypeName: `com.github.tomakehurst.wiremock.servlet.ContentTypeSettingFilter`
-  * newFullyQualifiedTypeName: `com.github.tomakehurst.wiremock.jetty.servlet.ContentTypeSettingFilter`
-  * ignoreDefinition: `true`
-* [Change type](../../../java/changetype)
-  * oldFullyQualifiedTypeName: `com.github.tomakehurst.wiremock.servlet.FaultInjectorFactory`
-  * newFullyQualifiedTypeName: `com.github.tomakehurst.wiremock.jetty.servlet.FaultInjectorFactory`
-  * ignoreDefinition: `true`
-* [Change type](../../../java/changetype)
-  * oldFullyQualifiedTypeName: `com.github.tomakehurst.wiremock.servlet.NoFaultInjector`
-  * newFullyQualifiedTypeName: `com.github.tomakehurst.wiremock.jetty.servlet.NoFaultInjector`
-  * ignoreDefinition: `true`
-* [Change type](../../../java/changetype)
-  * oldFullyQualifiedTypeName: `com.github.tomakehurst.wiremock.servlet.NoFaultInjectorFactory`
-  * newFullyQualifiedTypeName: `com.github.tomakehurst.wiremock.jetty.servlet.NoFaultInjectorFactory`
-  * ignoreDefinition: `true`
-* [Change type](../../../java/changetype)
-  * oldFullyQualifiedTypeName: `com.github.tomakehurst.wiremock.servlet.NotMatchedServlet`
-  * newFullyQualifiedTypeName: `com.github.tomakehurst.wiremock.jetty.servlet.NotMatchedServlet`
-  * ignoreDefinition: `true`
-* [Change type](../../../java/changetype)
-  * oldFullyQualifiedTypeName: `com.github.tomakehurst.wiremock.servlet.TrailingSlashFilter`
-  * newFullyQualifiedTypeName: `com.github.tomakehurst.wiremock.jetty.servlet.TrailingSlashFilter`
-  * ignoreDefinition: `true`
-* [Change type](../../../java/changetype)
-  * oldFullyQualifiedTypeName: `com.github.tomakehurst.wiremock.servlet.WarConfiguration`
-  * newFullyQualifiedTypeName: `com.github.tomakehurst.wiremock.jetty.servlet.WarConfiguration`
-  * ignoreDefinition: `true`
-* [Change type](../../../java/changetype)
-  * oldFullyQualifiedTypeName: `com.github.tomakehurst.wiremock.servlet.WireMockHandlerDispatchingServlet`
-  * newFullyQualifiedTypeName: `com.github.tomakehurst.wiremock.jetty.WireMockHandlerDispatchingServlet`
-  * ignoreDefinition: `true`
-* [Change type](../../../java/changetype)
-  * oldFullyQualifiedTypeName: `com.github.tomakehurst.wiremock.servlet.WireMockHttpServletMultipartAdapter`
-  * newFullyQualifiedTypeName: `com.github.tomakehurst.wiremock.jetty.servlet.WireMockHttpServletMultipartAdapter`
-  * ignoreDefinition: `true`
-* [Change type](../../../java/changetype)
-  * oldFullyQualifiedTypeName: `com.github.tomakehurst.wiremock.servlet.WireMockHttpServletRequestAdapter`
-  * newFullyQualifiedTypeName: `com.github.tomakehurst.wiremock.jetty.WireMockHttpServletRequestAdapter`
-  * ignoreDefinition: `true`
-* [Change type](../../../java/changetype)
-  * oldFullyQualifiedTypeName: `com.github.tomakehurst.wiremock.servlet.WireMockWebContextListener`
-  * newFullyQualifiedTypeName: `com.github.tomakehurst.wiremock.jetty.servlet.WireMockWebContextListener`
-  * ignoreDefinition: `true`
-* [Change type](../../../java/changetype)
-  * oldFullyQualifiedTypeName: `com.github.tomakehurst.wiremock.common.ServletContextFileSource`
-  * newFullyQualifiedTypeName: `com.github.tomakehurst.wiremock.jetty.servlet.ServletContextFileSource`
-  * ignoreDefinition: `true`
-* [Change type](../../../java/changetype)
-  * oldFullyQualifiedTypeName: `com.github.tomakehurst.wiremock.common.JettySettings`
-  * newFullyQualifiedTypeName: `com.github.tomakehurst.wiremock.jetty.JettySettings`
-  * ignoreDefinition: `true`
-* [Change type](../../../java/changetype)
-  * oldFullyQualifiedTypeName: `com.github.tomakehurst.wiremock.http.client.ApacheBackedHttpClient`
-  * newFullyQualifiedTypeName: `com.github.tomakehurst.wiremock.http.client.apache5.ApacheBackedHttpClient`
-  * ignoreDefinition: `true`
-* [Change type](../../../java/changetype)
-  * oldFullyQualifiedTypeName: `com.github.tomakehurst.wiremock.http.client.ApacheHttpClientFactory`
-  * newFullyQualifiedTypeName: `com.github.tomakehurst.wiremock.http.client.apache5.ApacheHttpClientFactory`
-  * ignoreDefinition: `true`
-* [Change type](../../../java/changetype)
-  * oldFullyQualifiedTypeName: `com.github.tomakehurst.wiremock.http.NetworkAddressRulesAdheringDnsResolver`
-  * newFullyQualifiedTypeName: `com.github.tomakehurst.wiremock.http.client.apache5.NetworkAddressRulesAdheringDnsResolver`
-  * ignoreDefinition: `true`
-* [Change type](../../../java/changetype)
-  * oldFullyQualifiedTypeName: `com.github.tomakehurst.wiremock.http.ssl.TrustSelfSignedStrategy`
-  * newFullyQualifiedTypeName: `com.github.tomakehurst.wiremock.http.client.apache5.TrustSelfSignedStrategy`
-  * ignoreDefinition: `true`
-* [Change type](../../../java/changetype)
-  * oldFullyQualifiedTypeName: `com.github.tomakehurst.wiremock.http.HttpClientFactory`
-  * newFullyQualifiedTypeName: `com.github.tomakehurst.wiremock.http.client.HttpClientFactory`
-  * ignoreDefinition: `true`
-* [Change type](../../../java/changetype)
-  * oldFullyQualifiedTypeName: `com.github.tomakehurst.wiremock.http.MimeType`
-  * newFullyQualifiedTypeName: `com.github.tomakehurst.wiremock.common.entity.MimeType`
-  * ignoreDefinition: `true`
+* [Move WireMock types to their 4.x packages](../../../java/testing/wiremock/wiremock4relocatedtypes)
 * [Replace WireMock constructors removed in 4.x](../../../java/testing/wiremock/replaceremovedconstructors)
 * [Replace WireMock setter calls with `transform()`](../../../java/testing/wiremock/replacesetterswithtransform)
 * [Migrate the `uuid` field in WireMock stub mapping files to `id`](../../../java/testing/wiremock/migratestubmappinguuidtoid)
@@ -259,31 +116,32 @@ preconditions:
   - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.testing.wiremock.RemoveDuplicateContentTypeHeaders
+  - org.openrewrite.java.testing.wiremock.MigrateJettyEE10ToEE11
   - org.openrewrite.java.testing.wiremock.UpgradeWiremockDependencyVersion
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.wiremock
       oldArtifactId: wiremock-jetty12
       newGroupId: org.wiremock
       newArtifactId: wiremock
-      newVersion: 4.0.0-beta.38
+      newVersion: 4.0.0-beta.40
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: org.wiremock
       artifactId: wiremock
-      newVersion: 4.0.0-beta.38
+      newVersion: 4.0.0-beta.40
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: org.wiremock
       artifactId: wiremock-standalone
-      newVersion: 4.0.0-beta.38
+      newVersion: 4.0.0-beta.40
   - org.openrewrite.java.dependencies.AddDependency:
       groupId: org.wiremock
       artifactId: wiremock-junit5
-      version: 4.0.0-beta.38
+      version: 4.0.0-beta.40
       onlyIfUsing: com.github.tomakehurst.wiremock.junit5.*
       scope: test
   - org.openrewrite.java.dependencies.AddDependency:
       groupId: org.wiremock
       artifactId: wiremock-junit4
-      version: 4.0.0-beta.38
+      version: 4.0.0-beta.40
       onlyIfUsing: com.github.tomakehurst.wiremock.junit.WireMock*Rule
       scope: test
   - org.openrewrite.java.dependencies.AddDependency:
@@ -301,151 +159,7 @@ recipeList:
       artifactId: jetty-xml
       version: 12.1.x
       onlyIfUsing: org.eclipse.jetty.xml.*
-  - org.openrewrite.java.dependencies.AddDependency:
-      groupId: org.eclipse.jetty.ee10
-      artifactId: jetty-ee10-webapp
-      version: 12.1.x
-      onlyIfUsing: org.eclipse.jetty.ee10.webapp.*
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: com.github.tomakehurst.wiremock.jetty11.CertificateGeneratingSslContextFactory
-      newFullyQualifiedTypeName: com.github.tomakehurst.wiremock.jetty.ssl.CertificateGeneratingSslContextFactory
-      ignoreDefinition: true
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: com.github.tomakehurst.wiremock.jetty11.HttpsProxyDetectingHandler
-      newFullyQualifiedTypeName: com.github.tomakehurst.wiremock.jetty.proxy.HttpsProxyDetectingHandler
-      ignoreDefinition: true
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: com.github.tomakehurst.wiremock.jetty11.ManInTheMiddleSslConnectHandler
-      newFullyQualifiedTypeName: com.github.tomakehurst.wiremock.jetty.proxy.ManInTheMiddleSslConnectHandler
-      ignoreDefinition: true
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: com.github.tomakehurst.wiremock.jetty11.NotFoundHandler
-      newFullyQualifiedTypeName: com.github.tomakehurst.wiremock.jetty.NotFoundHandler
-      ignoreDefinition: true
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: com.github.tomakehurst.wiremock.jetty11.SslContexts
-      newFullyQualifiedTypeName: com.github.tomakehurst.wiremock.jetty.ssl.SslContexts
-      ignoreDefinition: true
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: com.github.tomakehurst.wiremock.jetty11.WritableFileOrClasspathKeyStoreSource
-      newFullyQualifiedTypeName: com.github.tomakehurst.wiremock.common.ssl.WritableFileOrClasspathKeyStoreSource
-      ignoreDefinition: true
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: com.github.tomakehurst.wiremock.jetty12.HttpProxyDetectingHandler
-      newFullyQualifiedTypeName: com.github.tomakehurst.wiremock.jetty.proxy.HttpProxyDetectingHandler
-      ignoreDefinition: true
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: com.github.tomakehurst.wiremock.jetty12.HttpsProxyDetectingHandler
-      newFullyQualifiedTypeName: com.github.tomakehurst.wiremock.jetty.proxy.HttpsProxyDetectingHandler
-      ignoreDefinition: true
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: com.github.tomakehurst.wiremock.jetty12.Jetty12HttpServer
-      newFullyQualifiedTypeName: com.github.tomakehurst.wiremock.jetty.Jetty12HttpServer
-      ignoreDefinition: true
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: com.github.tomakehurst.wiremock.jetty12.Jetty12HttpServerFactory
-      newFullyQualifiedTypeName: com.github.tomakehurst.wiremock.jetty.JettyHttpServerFactory
-      ignoreDefinition: true
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: com.github.tomakehurst.wiremock.jetty12.Jetty12HttpUtils
-      newFullyQualifiedTypeName: com.github.tomakehurst.wiremock.jetty.Jetty12HttpUtils
-      ignoreDefinition: true
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: com.github.tomakehurst.wiremock.jetty12.ManInTheMiddleSslConnectHandler
-      newFullyQualifiedTypeName: com.github.tomakehurst.wiremock.jetty.proxy.ManInTheMiddleSslConnectHandler
-      ignoreDefinition: true
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: com.github.tomakehurst.wiremock.jetty12.NotFoundHandler
-      newFullyQualifiedTypeName: com.github.tomakehurst.wiremock.jetty.NotFoundHandler
-      ignoreDefinition: true
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: com.github.tomakehurst.wiremock.jetty.JettyFaultInjector
-      newFullyQualifiedTypeName: com.github.tomakehurst.wiremock.jetty.faults.JettyFaultInjector
-      ignoreDefinition: true
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: com.github.tomakehurst.wiremock.jetty.JettyFaultInjectorFactory
-      newFullyQualifiedTypeName: com.github.tomakehurst.wiremock.jetty.faults.JettyFaultInjectorFactory
-      ignoreDefinition: true
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: com.github.tomakehurst.wiremock.jetty.JettyHttpsFaultInjector
-      newFullyQualifiedTypeName: com.github.tomakehurst.wiremock.jetty.faults.JettyHttpsFaultInjector
-      ignoreDefinition: true
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: com.github.tomakehurst.wiremock.servlet.ContentTypeSettingFilter
-      newFullyQualifiedTypeName: com.github.tomakehurst.wiremock.jetty.servlet.ContentTypeSettingFilter
-      ignoreDefinition: true
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: com.github.tomakehurst.wiremock.servlet.FaultInjectorFactory
-      newFullyQualifiedTypeName: com.github.tomakehurst.wiremock.jetty.servlet.FaultInjectorFactory
-      ignoreDefinition: true
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: com.github.tomakehurst.wiremock.servlet.NoFaultInjector
-      newFullyQualifiedTypeName: com.github.tomakehurst.wiremock.jetty.servlet.NoFaultInjector
-      ignoreDefinition: true
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: com.github.tomakehurst.wiremock.servlet.NoFaultInjectorFactory
-      newFullyQualifiedTypeName: com.github.tomakehurst.wiremock.jetty.servlet.NoFaultInjectorFactory
-      ignoreDefinition: true
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: com.github.tomakehurst.wiremock.servlet.NotMatchedServlet
-      newFullyQualifiedTypeName: com.github.tomakehurst.wiremock.jetty.servlet.NotMatchedServlet
-      ignoreDefinition: true
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: com.github.tomakehurst.wiremock.servlet.TrailingSlashFilter
-      newFullyQualifiedTypeName: com.github.tomakehurst.wiremock.jetty.servlet.TrailingSlashFilter
-      ignoreDefinition: true
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: com.github.tomakehurst.wiremock.servlet.WarConfiguration
-      newFullyQualifiedTypeName: com.github.tomakehurst.wiremock.jetty.servlet.WarConfiguration
-      ignoreDefinition: true
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: com.github.tomakehurst.wiremock.servlet.WireMockHandlerDispatchingServlet
-      newFullyQualifiedTypeName: com.github.tomakehurst.wiremock.jetty.WireMockHandlerDispatchingServlet
-      ignoreDefinition: true
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: com.github.tomakehurst.wiremock.servlet.WireMockHttpServletMultipartAdapter
-      newFullyQualifiedTypeName: com.github.tomakehurst.wiremock.jetty.servlet.WireMockHttpServletMultipartAdapter
-      ignoreDefinition: true
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: com.github.tomakehurst.wiremock.servlet.WireMockHttpServletRequestAdapter
-      newFullyQualifiedTypeName: com.github.tomakehurst.wiremock.jetty.WireMockHttpServletRequestAdapter
-      ignoreDefinition: true
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: com.github.tomakehurst.wiremock.servlet.WireMockWebContextListener
-      newFullyQualifiedTypeName: com.github.tomakehurst.wiremock.jetty.servlet.WireMockWebContextListener
-      ignoreDefinition: true
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: com.github.tomakehurst.wiremock.common.ServletContextFileSource
-      newFullyQualifiedTypeName: com.github.tomakehurst.wiremock.jetty.servlet.ServletContextFileSource
-      ignoreDefinition: true
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: com.github.tomakehurst.wiremock.common.JettySettings
-      newFullyQualifiedTypeName: com.github.tomakehurst.wiremock.jetty.JettySettings
-      ignoreDefinition: true
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: com.github.tomakehurst.wiremock.http.client.ApacheBackedHttpClient
-      newFullyQualifiedTypeName: com.github.tomakehurst.wiremock.http.client.apache5.ApacheBackedHttpClient
-      ignoreDefinition: true
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: com.github.tomakehurst.wiremock.http.client.ApacheHttpClientFactory
-      newFullyQualifiedTypeName: com.github.tomakehurst.wiremock.http.client.apache5.ApacheHttpClientFactory
-      ignoreDefinition: true
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: com.github.tomakehurst.wiremock.http.NetworkAddressRulesAdheringDnsResolver
-      newFullyQualifiedTypeName: com.github.tomakehurst.wiremock.http.client.apache5.NetworkAddressRulesAdheringDnsResolver
-      ignoreDefinition: true
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: com.github.tomakehurst.wiremock.http.ssl.TrustSelfSignedStrategy
-      newFullyQualifiedTypeName: com.github.tomakehurst.wiremock.http.client.apache5.TrustSelfSignedStrategy
-      ignoreDefinition: true
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: com.github.tomakehurst.wiremock.http.HttpClientFactory
-      newFullyQualifiedTypeName: com.github.tomakehurst.wiremock.http.client.HttpClientFactory
-      ignoreDefinition: true
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: com.github.tomakehurst.wiremock.http.MimeType
-      newFullyQualifiedTypeName: com.github.tomakehurst.wiremock.common.entity.MimeType
-      ignoreDefinition: true
+  - org.openrewrite.java.testing.wiremock.Wiremock4RelocatedTypes
   - org.openrewrite.java.testing.wiremock.ReplaceRemovedConstructors
   - org.openrewrite.java.testing.wiremock.ReplaceSettersWithTransform
   - org.openrewrite.java.testing.wiremock.MigrateStubMappingUuidToId
@@ -485,6 +199,25 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
+
+### Maven metadata failures
+**org.openrewrite.maven.table.MavenMetadataFailures**
+
+_Attempts to resolve maven metadata that failed._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Group id | The groupId of the artifact for which the metadata download failed. |
+| Artifact id | The artifactId of the artifact for which the metadata download failed. |
+| Version | The version of the artifact for which the metadata download failed. |
+| Maven repository | The URL of the Maven repository that the metadata download failed on. |
+| Snapshots | Does the repository support snapshots. |
+| Releases | Does the repository support releases. |
+| Failure | The reason the metadata download failed. |
+
+</TabItem>
+
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results

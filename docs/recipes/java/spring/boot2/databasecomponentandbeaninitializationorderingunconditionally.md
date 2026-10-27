@@ -1,13 +1,13 @@
 ---
-title: "Unconditionally adds `@DependsOnDatabaseInitialization` to Spring Beans and Components depending on `javax.sql.DataSource`"
-sidebar_label: "Unconditionally adds `@DependsOnDatabaseInitialization` to Spring Beans and Components depending on `javax.sql.DataSource`"
+title: "Unconditionally add `@DependsOnDatabaseInitialization` to Spring beans and components depending on `javax.sql.DataSource`"
+sidebar_label: "Unconditionally add `@DependsOnDatabaseInitialization` to Spring beans and components depending on `javax.sql.DataSource`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Unconditionally adds `@DependsOnDatabaseInitialization` to Spring Beans and Components depending on `javax.sql.DataSource`
+# Unconditionally add `@DependsOnDatabaseInitialization` to Spring beans and components depending on `javax.sql.DataSource`
 
 **org.openrewrite.java.spring.boot2.DatabaseComponentAndBeanInitializationOrderingUnconditionally**
 
@@ -26,14 +26,14 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 This recipe is used as part of the following composite recipes:
 
-* [Adds `@DependsOnDatabaseInitialization` to Spring Beans and Components depending on `javax.sql.DataSource`](/recipes/java/spring/boot2/databasecomponentandbeaninitializationordering.md)
+* [Add `@DependsOnDatabaseInitialization` to Spring beans and components depending on `javax.sql.DataSource`](/recipes/java/spring/boot2/databasecomponentandbeaninitializationordering.md)
 
 
 ## Usage
 
 <RunRecipe
   recipeName="org.openrewrite.java.spring.boot2.DatabaseComponentAndBeanInitializationOrderingUnconditionally"
-  displayName="Unconditionally adds `@DependsOnDatabaseInitialization` to Spring Beans and Components depending on `javax.sql.DataSource`"
+  displayName="Unconditionally add `@DependsOnDatabaseInitialization` to Spring beans and components depending on `javax.sql.DataSource`"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-spring"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING"

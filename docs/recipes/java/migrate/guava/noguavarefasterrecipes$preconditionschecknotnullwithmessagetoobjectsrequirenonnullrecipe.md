@@ -1,13 +1,13 @@
 ---
-title: "`Preconditions.checkNotNull` with `String` message to `Objects.requireNonNull`"
-sidebar_label: "`Preconditions.checkNotNull` with `String` message to `Objects.requireNonNull`"
+title: "Replace `Preconditions.checkNotNull` taking a `String` message with `Objects.requireNonNull`"
+sidebar_label: "Replace `Preconditions.checkNotNull` taking a `String` message with `Objects.requireNonNull`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# `Preconditions.checkNotNull` with `String` message to `Objects.requireNonNull`
+# Replace `Preconditions.checkNotNull` taking a `String` message with `Objects.requireNonNull`
 
 **org.openrewrite.java.migrate.guava.NoGuavaRefasterRecipes$PreconditionsCheckNotNullWithMessageToObjectsRequireNonNullRecipe**
 
@@ -33,7 +33,7 @@ This recipe is used as part of the following composite recipes:
 
 <RunRecipe
   recipeName="org.openrewrite.java.migrate.guava.NoGuavaRefasterRecipes$PreconditionsCheckNotNullWithMessageToObjectsRequireNonNullRecipe"
-  displayName="`Preconditions.checkNotNull` with `String` message to `Objects.requireNonNull`"
+  displayName="Replace `Preconditions.checkNotNull` taking a `String` message with `Objects.requireNonNull`"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-migrate-java"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA"

@@ -1,13 +1,13 @@
 ---
-title: "Migrates Spring Kafka deprecated error handlers"
-sidebar_label: "Migrates Spring Kafka deprecated error handlers"
+title: "Migrate deprecated Spring Kafka error handlers"
+sidebar_label: "Migrate deprecated Spring Kafka error handlers"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Migrates Spring Kafka deprecated error handlers
+# Migrate deprecated Spring Kafka error handlers
 
 **org.openrewrite.java.spring.kafka.UpgradeSpringKafka\_2\_8\_ErrorHandlers**
 
@@ -63,7 +63,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.spring.kafka.UpgradeSpringKafka_2_8_ErrorHandlers
-displayName: Migrates Spring Kafka deprecated error handlers
+displayName: Migrate deprecated Spring Kafka error handlers
 description: |
   Migrate error handlers deprecated in Spring Kafka `2.8.x` to their replacements.
 tags:
@@ -309,7 +309,7 @@ class A {
 
 <RunRecipe
   recipeName="org.openrewrite.java.spring.kafka.UpgradeSpringKafka_2_8_ErrorHandlers"
-  displayName="Migrates Spring Kafka deprecated error handlers"
+  displayName="Migrate deprecated Spring Kafka error handlers"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-spring"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING"

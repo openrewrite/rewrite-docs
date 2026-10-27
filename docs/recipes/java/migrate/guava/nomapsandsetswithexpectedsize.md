@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.migrate.guava.NoMapsAndSetsWithExpectedSize**
 
-_Prefer Java 19+ methods to create Maps and Sets of an expected size instead of using Guava methods._
+_Replace Guava's `Maps.newHashMapWithExpectedSize(int)`, `Maps.newLinkedHashMapWithExpectedSize(int)`, `Sets.newHashSetWithExpectedSize(int)` and `Sets.newLinkedHashSetWithExpectedSize(int)` with the JDK `HashMap`, `LinkedHashMap`, `HashSet` and `LinkedHashSet` constructors._
 
 ## Recipe source
 

@@ -19,20 +19,102 @@ _Prefer `Collection.stream().map(Function)` over `Collections2.transform(Collect
 
 ## Recipe source
 
-[GitHub: NoGuavaCollections2Transform.java](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/guava/NoGuavaCollections2Transform.java),
+[GitHub: no-guava.yml](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/no-guava.yml),
 [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues),
 [Code Genome Project](https://artifacts.codegenomeproject.org/maven/org/openrewrite/recipe/rewrite-migrate-java/)
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license). Moderne customers can download precompiled artifacts from The Code Genome Project. For non-commercial use you can build the artifact from source locally.
 
 
-## Used by
+## Definition
 
-This recipe is used as part of the following composite recipes:
+<Tabs groupId="recipeType">
+<TabItem value="recipe-list" label="Recipe List" >
+* [Prefer `Collection.stream().map(Function)` over `Collections2.transform`](../../../java/migrate/guava/noguavarefasterrecipes$collections2transformrecipe)
 
-* [Prefer the Java standard library instead of Guava](/recipes/java/migrate/guava/noguava.md)
+</TabItem>
 
-## Example
+<TabItem value="yaml-recipe-list" label="Yaml Recipe List">
+
+```yaml
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: org.openrewrite.java.migrate.guava.NoGuavaCollections2Transform
+displayName: Prefer `Collection.stream().map(Function)` over `Collections2.transform`
+description: |
+  Prefer `Collection.stream().map(Function)` over `Collections2.transform(Collection, Function)`.
+tags:
+  - guava
+recipeList:
+  - org.openrewrite.java.migrate.guava.NoGuavaRefasterRecipes$Collections2TransformRecipe
+
+```
+</TabItem>
+</Tabs>
+## Examples
+##### Example 1
+`NoGuavaCollections2TransformTest#replaceCollections2Transform`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import java.util.Collection;
+
+import com.google.common.base.Function;
+import com.google.common.collect.Collections2;
+
+class Test {
+    Iterable<Integer> test(Collection<String> collection, Function<String, Integer> toSize) {
+        return Collections2.transform(collection, toSize);
+    }
+}
+```
+
+###### After
+```java
+import java.util.Collection;
+import java.util.stream.Collectors;
+
+import com.google.common.base.Function;
+
+class Test {
+    Iterable<Integer> test(Collection<String> collection, Function<String, Integer> toSize) {
+        return collection.stream().map(toSize).collect(Collectors.toList());
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -2,0 +2,1 @@
+import java.util.Collection;
++import java.util.stream.Collectors;
+
+@@ -4,1 +5,0 @@
+
+import com.google.common.base.Function;
+-import com.google.common.collect.Collections2;
+
+@@ -8,1 +8,1 @@
+class Test {
+    Iterable<Integer> test(Collection<String> collection, Function<String, Integer> toSize) {
+-       return Collections2.transform(collection, toSize);
++       return collection.stream().map(toSize).collect(Collectors.toList());
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`NoGuavaCollections2TransformTest#replaceCollections2Transform`
 
 
 <Tabs groupId="beforeAfter">

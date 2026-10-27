@@ -1,17 +1,17 @@
 ---
-title: "Adopt AssertJ Long Assertions"
-sidebar_label: "Adopt AssertJ Long Assertions"
+title: "Adopt AssertJ `Long` assertions"
+sidebar_label: "Adopt AssertJ `Long` assertions"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Adopt AssertJ Long Assertions
+# Adopt AssertJ `Long` assertions
 
 **org.openrewrite.java.testing.assertj.AssertJLongRulesRecipes**
 
-_Adopt AssertJ Long Assertions. Favor semantically explicit methods (e.g. `myLong.isZero()` over `myLong.isEqualTo(0)`)._
+_Adopt AssertJ `Long` assertions. Favor semantically explicit methods (e.g. `myLong.isZero()` over `myLong.isEqualTo(0)`)._
 
 ## Recipe source
 
@@ -44,9 +44,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.testing.assertj.AssertJLongRulesRecipes
-displayName: Adopt AssertJ Long Assertions
+displayName: Adopt AssertJ `Long` assertions
 description: |
-  Adopt AssertJ Long Assertions. Favor semantically explicit methods (e.g. `myLong.isZero()` over `myLong.isEqualTo(0)`).
+  Adopt AssertJ `Long` assertions. Favor semantically explicit methods (e.g. `myLong.isZero()` over `myLong.isEqualTo(0)`).
 recipeList:
   - org.openrewrite.java.testing.assertj.AssertJLongRulesRecipes$AbstractLongAssertIsEqualToRecipe
   - org.openrewrite.java.testing.assertj.AssertJLongRulesRecipes$AbstractLongAssertIsNotEqualToRecipe
@@ -116,7 +116,7 @@ class A {
 
 <RunRecipe
   recipeName="org.openrewrite.java.testing.assertj.AssertJLongRulesRecipes"
-  displayName="Adopt AssertJ Long Assertions"
+  displayName="Adopt AssertJ `Long` assertions"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-testing-frameworks"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_TESTING_FRAMEWORKS"

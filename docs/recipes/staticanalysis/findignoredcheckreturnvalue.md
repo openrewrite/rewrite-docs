@@ -13,6 +13,11 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 _Marks invocations whose result is discarded even though the method is annotated with `@CheckReturnValue`, either directly or through its enclosing class or package. Any annotation named `CheckReturnValue` is recognized, and `@CanIgnoreReturnValue` opts a method or class back out. Ignoring such a result is usually a bug, such as calling a method on an immutable object without using the returned copy. Calls expected to throw, Mockito stubbing and verification, calls on the current instance in custom AssertJ assertion constructors, and code under `@SuppressWarnings("CheckReturnValue")` are not marked._
 
+### Tags
+
+* [RSPEC-S2201](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S2201&open=java%3AS2201)
+* [RSPEC-S2970](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S2970&open=java%3AS2970)
+
 ## Recipe source
 
 [GitHub: FindIgnoredCheckReturnValue.java](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/FindIgnoredCheckReturnValue.java),
@@ -33,6 +38,58 @@ This recipe is available under the [Moderne Source Available License](https://do
 This recipe is used as part of the following composite recipes:
 
 * [OpenRewrite recipe best practices](/recipes/recipes/rewrite/openrewriterecipebestpractices.md)
+
+## Example
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|checkReturnValuePackages|`null`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import com.example.Point;
+class Test {
+    Point move(Point p) {
+        p.withX(1);
+        p.validate();
+        p.print();
+        return p.withX(2);
+    }
+}
+```
+
+###### After
+```java
+import com.example.Point;
+class Test {
+    Point move(Point p) {
+        /*~~(Result of `withX` is ignored, but `@CheckReturnValue` on class `Point` requires using it. Use the returned value, remove the call, or annotate the method with `@CanIgnoreReturnValue` if ignoring the result is intended.)~~>*/p.withX(1);
+        p.validate();
+        p.print();
+        return p.withX(2);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -4,1 +4,1 @@
+class Test {
+    Point move(Point p) {
+-       p.withX(1);
++       /*~~(Result of `withX` is ignored, but `@CheckReturnValue` on class `Point` requires using it. Use the returned value, remove the call, or annotate the method with `@CanIgnoreReturnValue` if ignoring the result is intended.)~~>*/p.withX(1);
+        p.validate();
+```
+</TabItem>
+</Tabs>
 
 
 ## Usage

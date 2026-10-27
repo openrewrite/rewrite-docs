@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.dependencies.search.FindMinimumJUnitVersion**
 
-_A recipe to find the minimum version of JUnit dependencies. This recipe is designed to return the minimum version of JUnit in a project. It will search for JUnit 4 and JUnit 5 dependencies in the project. If both versions are found, it will return the minimum version of JUnit 4. If a minimumVersion is provided, the recipe will search to see if the minimum version of JUnit used by the project is no lower than the minimumVersion. For example: if the minimumVersion is 4, and the project has JUnit 4.12 and JUnit 5.7, the recipe will return JUnit 4.12. If the project has only JUnit 5.7, the recipe will return JUnit 5.7. Another example: if the minimumVersion is 5, and the project has JUnit 4.12 and JUnit 5.7, the recipe will not return any results._
+_Finds the minimum version of JUnit dependencies in a project. It will search for JUnit 4 and JUnit 5 dependencies in the project. If both versions are found, it will return the JUnit 4 version. If a `minimumVersion` is provided, the recipe only returns results when that is the minimum version of JUnit used by the project. For example: if the `minimumVersion` is 4, and the project has JUnit 4.12 and JUnit 5.7, the recipe will return JUnit 4.12. If the project has only JUnit 5.7, the recipe will not return any results. Another example: if the `minimumVersion` is 5, and the project has JUnit 4.12 and JUnit 5.7, the recipe will not return any results._
 
 ## Recipe source
 

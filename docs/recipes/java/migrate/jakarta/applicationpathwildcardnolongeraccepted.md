@@ -1,13 +1,13 @@
 ---
-title: "Remove trailing slash from `jakarta.ws.rs.ApplicationPath` values"
-sidebar_label: "Remove trailing slash from `jakarta.ws.rs.ApplicationPath` values"
+title: "Remove trailing `/*` from `jakarta.ws.rs.ApplicationPath` values"
+sidebar_label: "Remove trailing `/*` from `jakarta.ws.rs.ApplicationPath` values"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Remove trailing slash from `jakarta.ws.rs.ApplicationPath` values
+# Remove trailing `/*` from `jakarta.ws.rs.ApplicationPath` values
 
 **org.openrewrite.java.migrate.jakarta.ApplicationPathWildcardNoLongerAccepted**
 
@@ -72,7 +72,7 @@ public class ApplicationPathWithWildcard extends Application {
 
 <RunRecipe
   recipeName="org.openrewrite.java.migrate.jakarta.ApplicationPathWildcardNoLongerAccepted"
-  displayName="Remove trailing slash from `jakarta.ws.rs.ApplicationPath` values"
+  displayName="Remove trailing `/*` from `jakarta.ws.rs.ApplicationPath` values"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-migrate-java"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA"

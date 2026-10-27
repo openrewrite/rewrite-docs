@@ -1,17 +1,17 @@
 ---
-title: "Complete InvocationContext decorators"
-sidebar_label: "Complete InvocationContext decorators"
+title: "Complete `InvocationContext` decorators"
+sidebar_label: "Complete `InvocationContext` decorators"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Complete InvocationContext decorators
+# Complete `InvocationContext` decorators
 
 **org.openrewrite.java.migrate.jakarta.InvocationContextGetConstructor**
 
-_Delegate getConstructor() when a legacy InvocationContext wrapper delegates getMethod()._
+_Delegate `getConstructor()` when a legacy `InvocationContext` wrapper delegates `getMethod()`._
 
 ## Recipe source
 
@@ -28,12 +28,82 @@ This recipe is used as part of the following composite recipes:
 
 * [Migrate deprecated `javax.interceptor` packages to `jakarta.interceptor`](/recipes/java/migrate/jakarta/javaxinterceptortojakartainterceptor.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import jakarta.interceptor.InvocationContext;
+import java.lang.reflect.Method;
+
+class A {
+    InvocationContext wrap(InvocationContext delegate) {
+        return new InvocationContext() {
+            @Override
+            public Method getMethod() {
+                return delegate.getMethod();
+            }
+        };
+    }
+}
+```
+
+###### After
+```java
+import jakarta.interceptor.InvocationContext;
+
+import java.lang.reflect.Constructor;
+import java.lang.reflect.Method;
+
+class A {
+    InvocationContext wrap(InvocationContext delegate) {
+        return new InvocationContext() {
+            @Override
+            public Method getMethod() {
+                return delegate.getMethod();
+            }
+
+            @Override
+            public Constructor<?> getConstructor() {
+                return delegate.getConstructor();
+            }
+        };
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -2,0 +2,2 @@
+import jakarta.interceptor.InvocationContext;
++
++import java.lang.reflect.Constructor;
+import java.lang.reflect.Method;
+@@ -11,0 +13,5 @@
+                return delegate.getMethod();
+            }
++
++           @Override
++           public Constructor<?> getConstructor() {
++               return delegate.getConstructor();
++           }
+        };
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
 <RunRecipe
   recipeName="org.openrewrite.java.migrate.jakarta.InvocationContextGetConstructor"
-  displayName="Complete InvocationContext decorators"
+  displayName="Complete `InvocationContext` decorators"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-migrate-java"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA"

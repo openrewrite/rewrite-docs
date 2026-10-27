@@ -92,12 +92,6 @@ class Test {
         // single statement without braces
         if (LOGGER.isDebugEnabled())
             LOGGER.debug("No braces: {}", name);
-
-        // mixed log levels in guard
-        if (LOGGER.isDebugEnabled()) {
-            LOGGER.debug("Debug: {}", name);
-            LOGGER.info("Also info: {}", name);
-        }
     }
 }
 ```
@@ -135,10 +129,6 @@ class Test {
 
         // single statement without braces
         LOGGER.debug("No braces: {}", name);
-
-        // mixed log levels in guard
-        LOGGER.debug("Debug: {}", name);
-        LOGGER.info("Also info: {}", name);
     }
 }
 ```
@@ -209,16 +199,6 @@ class Test {
 -       if (LOGGER.isDebugEnabled())
 -           LOGGER.debug("No braces: {}", name);
 +       LOGGER.debug("No braces: {}", name);
-
-@@ -53,4 +34,2 @@
-
-        // mixed log levels in guard
--       if (LOGGER.isDebugEnabled()) {
--           LOGGER.debug("Debug: {}", name);
--           LOGGER.info("Also info: {}", name);
--       }
-+       LOGGER.debug("Debug: {}", name);
-+       LOGGER.info("Also info: {}", name);
     }
 ```
 </TabItem>

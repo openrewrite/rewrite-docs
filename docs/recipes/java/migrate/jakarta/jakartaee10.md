@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.migrate.jakarta.JakartaEE10**
 
-_These recipes help with the Migration to Jakarta EE 10, flagging and updating deprecated methods._
+_Migrate to Jakarta EE 10 from Java EE 8 or Jakarta EE 9. Moves `javax` packages to `jakarta`, upgrades the Jakarta EE APIs, implementations and Maven plugins to their Jakarta EE 10 versions, and replaces APIs that were deprecated or removed in Jakarta EE 10._
 
 ### Tags
 
@@ -41,17 +41,17 @@ This recipe is available under the [Moderne Source Available License](https://do
 **Recipes**
 
 * [Migrate to Jakarta EE 9](../../../java/migrate/jakarta/javaxmigrationtojakarta)
-* [Migrate Jakarta EE 9 api dependencies to Jakarta EE 10 versions](../../../java/migrate/jakarta/migrationtojakarta10apis)
-* [Update Plugins for Jakarta EE 10](../../../java/migrate/jakarta/migratepluginsforjakarta10)
+* [Migrate Jakarta EE 9 API dependencies to Jakarta EE 10 versions](../../../java/migrate/jakarta/migrationtojakarta10apis)
+* [Update plugins for Jakarta EE 10](../../../java/migrate/jakarta/migratepluginsforjakarta10)
 * [Update Jetty EE9 to Jetty EE10](../../../java/migrate/jakarta/jettyupgradeee10)
 * [Upgrade to Jakarta Faces 4.x](../../../java/migrate/jakarta/faces3xmigrationtofaces4x)
 * [Use `isParametersProvided()`](../../../java/migrate/jakarta/removedisparmetersprovidedmethod)
 * [Use `jakarta.xml.soap.SOAPFactory` to create `SOAPElements`](../../../java/migrate/jakarta/removedsoapelementfactory)
 * [Replace `doUpgrade(..)` with `ServerContainer.upgradeHttpToWebSocket(..)`](../../../java/migrate/jakarta/wswsocservercontainerdeprecation)
 * [Remove `getComment` and `getVersion` methods](../../../java/migrate/jakarta/servletcookiebehaviorchangerfc6265)
-* [Replace  deprecated Jakarta Servlet methods and classes](../../../java/migrate/jakarta/removalsservletjakarta10)
-* [Remove deprecated API's not supported in CDI4.0](../../../java/migrate/jakarta/deprecatedcdiapisremoved40)
-* [Behavior change to bean discovery in modules with `beans.xml` file with no version specified](../../../java/migrate/beandiscovery)
+* [Replace deprecated Jakarta Servlet methods and classes](../../../java/migrate/jakarta/removalsservletjakarta10)
+* [Remove deprecated APIs not supported in CDI 4.0](../../../java/migrate/jakarta/deprecatedcdiapisremoved40)
+* [Add `version` and `bean-discovery-mode` to `beans.xml` files without a version](../../../java/migrate/beandiscovery)
 * [Update annotation attributes using `javax` to `jakarta`](../../../java/migrate/jakarta/updateannotationattributejavaxtojakarta)
   * signature: `@jakarta.ejb..*`
 * [Update annotation attributes using `javax` to `jakarta`](../../../java/migrate/jakarta/updateannotationattributejavaxtojakarta)
@@ -59,16 +59,16 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Update annotation attributes using `javax` to `jakarta`](../../../java/migrate/jakarta/updateannotationattributejavaxtojakarta)
   * signature: `@jakarta.validation.constraints..*`
 * [Migrate xmlns entries in `beans.xml` files](../../../java/migrate/jakarta/javaxbeansxmltojakartabeansxml)
-* [Migrate xmlns entries and javax. packages in `ejb-jar.xml` files](../../../java/migrate/jakarta/javaxejbjarxmltojakartaejbjarxml)
-* [Migrate xmlns entries and javax. packages in `validation.xml` files](../../../java/migrate/jakarta/javaxbeanvalidationxmltojakartabeanvalidationxml)
-* [Rename CDI Extension to Jakarta](../../../java/migrate/jakarta/javaxtojakartacdiextensions)
-* [Update Jakarta EE Platform Dependencies to 10.0.0](../../../java/migrate/jakarta/updatejakartaplatform10)
-* [Update GlassFish Jersey Dependencies to 3.1.x](../../../java/migrate/jakarta/updatejerseydependencies)
+* [Migrate xmlns entries and `javax` packages in `ejb-jar.xml` files](../../../java/migrate/jakarta/javaxejbjarxmltojakartaejbjarxml)
+* [Migrate xmlns entries and `javax` packages in `validation.xml` files](../../../java/migrate/jakarta/javaxbeanvalidationxmltojakartabeanvalidationxml)
+* [Rename CDI extension service files to Jakarta](../../../java/migrate/jakarta/javaxtojakartacdiextensions)
+* [Update Jakarta EE platform dependencies to 10.0.0](../../../java/migrate/jakarta/updatejakartaplatform10)
+* [Update GlassFish Jersey dependencies to 3.1.x](../../../java/migrate/jakarta/updatejerseydependencies)
 * [Update Apache Commons Email to Email2 for Jakarta](../../../java/migrate/jakarta/updateapachecommonsemaildependencies)
-* [Update Apache Shiro Dependencies to 2.0.x](../../../java/migrate/jakarta/updateapacheshirodependencies)
-* [Update EclipseLink Dependencies to 4.x](../../../java/migrate/jakarta/updateeclipselinkdependencies)
-* [Update Apache Commons FileUpload2 package for EE10](../../../java/migrate/jakarta/updatefileupload2dependencies)
-* [Update Eclipse Yasson Dependencies to 3.0.x](../../../java/migrate/jakarta/updateyassondependencies)
+* [Update Apache Shiro dependencies to 2.0.x](../../../java/migrate/jakarta/updateapacheshirodependencies)
+* [Update EclipseLink dependencies to 4.x](../../../java/migrate/jakarta/updateeclipselinkdependencies)
+* [Update Apache Commons FileUpload2 package for Jakarta EE 10](../../../java/migrate/jakarta/updatefileupload2dependencies)
+* [Update Eclipse Yasson dependencies to 3.0.x](../../../java/migrate/jakarta/updateyassondependencies)
 * [Update Fastjson for Jakarta EE 10](../../../java/migrate/jakarta/migratefastjsonforjakarta10)
 
 </TabItem>
@@ -81,7 +81,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.jakarta.JakartaEE10
 displayName: Migrate to Jakarta EE 10
 description: |
-  These recipes help with the Migration to Jakarta EE 10, flagging and updating deprecated methods.
+  Migrate to Jakarta EE 10 from Java EE 8 or Jakarta EE 9. Moves `javax` packages to `jakarta`, upgrades the Jakarta EE APIs, implementations and Maven plugins to their Jakarta EE 10 versions, and replaces APIs that were deprecated or removed in Jakarta EE 10.
 tags:
   - jakarta
 preconditions:

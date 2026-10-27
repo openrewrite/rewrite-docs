@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.migrate.MigrateZipErrorToZipException**
 
-_Use `ZipException` instead of the deprecated `ZipError` in Java 9 or higher._
+_Use `ZipException` instead of the deprecated `ZipError` in Java 25 or higher._
 
 ## Recipe source
 
@@ -48,7 +48,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.MigrateZipErrorToZipException
 displayName: Use `ZipException` instead of `ZipError`
 description: |
-  Use `ZipException` instead of the deprecated `ZipError` in Java 9 or higher.
+  Use `ZipException` instead of the deprecated `ZipError` in Java 25 or higher.
 preconditions:
   - org.openrewrite.java.search.HasJavaVersion:
       version: [25,)

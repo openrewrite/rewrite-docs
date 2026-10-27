@@ -44,13 +44,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Migrate to Spring Boot 3.4 (Community Edition)](../../../java/spring/boot3/upgradespringboot_3_4-community-edition)
 * [Migrate Spring Boot properties to 3.5](../../../java/spring/boot3/springbootproperties_3_5)
 * [Migrate to Spring Cloud 2025](../../../java/spring/cloud2025/upgradespringcloud_2025)
-* [Update Prometheus Pushgateway Dependency Coordinates](../../../java/spring/boot3/updateprometheuspushgateway)
+* [Update Prometheus Pushgateway dependency coordinates](../../../java/spring/boot3/updateprometheuspushgateway)
 * [Migrate to Spring Security 6.5 (Community Edition)](../../../java/spring/security6/upgradespringsecurity_6_5-community-edition)
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `org.springframework.boot`
   * artifactId: `*`
   * newVersion: `3.5.x`
-  * overrideManagedVersion: `false`
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `org.springframework.boot`
   * artifactId: `spring-boot-dependencies`
@@ -94,7 +93,6 @@ recipeList:
       groupId: org.springframework.boot
       artifactId: "*"
       newVersion: 3.5.x
-      overrideManagedVersion: false
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: org.springframework.boot
       artifactId: spring-boot-dependencies

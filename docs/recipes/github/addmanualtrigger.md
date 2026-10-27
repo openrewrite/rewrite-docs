@@ -34,6 +34,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * key: `$.on`
   * yaml: `workflow_dispatch:`
   * acceptTheirs: `true`
+  * filePattern: `.github/workflows/*.{yml,yaml}`
 
 </TabItem>
 
@@ -53,6 +54,7 @@ recipeList:
       key: $.on
       yaml: workflow_dispatch:
       acceptTheirs: true
+      filePattern: .github/workflows/*.{yml,yaml}
 
 ```
 </TabItem>

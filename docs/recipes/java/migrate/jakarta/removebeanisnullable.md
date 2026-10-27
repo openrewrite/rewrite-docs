@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.migrate.jakarta.RemoveBeanIsNullable**
 
-_`Bean.isNullable()` has been removed in CDI 4.0.0, and now always returns `false`._
+_`Bean.isNullable()` was deprecated in CDI 1.1, after which implementations should always return `false`, and was removed in CDI 4.0. Replace calls with `false` and simplify the resulting conditionals._
 
 ## Recipe source
 
@@ -26,7 +26,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 This recipe is used as part of the following composite recipes:
 
-* [Remove deprecated API's not supported in CDI4.0](/recipes/java/migrate/jakarta/deprecatedcdiapisremoved40.md)
+* [Remove deprecated APIs not supported in CDI 4.0](/recipes/java/migrate/jakarta/deprecatedcdiapisremoved40.md)
 
 ## Example
 

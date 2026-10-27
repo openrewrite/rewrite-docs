@@ -23,11 +23,11 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Migrate `Date` to `LocalDateTime` for Spring Batch timestamp methods](./migratestepexecutiontimestamptypes.md)
 * [Migrate `ItemWriter`](./migrateitemwriterwrite.md)
 * [Migrate `JobBuilderFactory` to `JobBuilder`](./migratejobbuilderfactory.md)
+* [Migrate `JobParameter.toString()` to `JobParameter.getValue().toString()`](./jobparametertostring.md)
 * [Migrate `StepBuilderFactory` to `StepBuilder`](./migratestepbuilderfactory.md)
 * [Migrate method when it annotated by Spring Batch API](./migratemethodannotatedbybatchapi.md)
 * [Migrate to the new chunk-oriented step model](./migratetochunkorientedstepbuilder.md)
-* [Migration invocation of JobParameter.toString to JobParameter.getValue.toString](./jobparametertostring.md)
 * [Remove `DefaultBatchConfigurer`](./removedefaultbatchconfigurer.md)
-* [Transform classes that extend a given Class to implement the given Interface instead](./replacesupportclasswithitsinterface.md)
+* [Transform classes that extend a given class to implement the given interface instead](./replacesupportclasswithitsinterface.md)
 
 

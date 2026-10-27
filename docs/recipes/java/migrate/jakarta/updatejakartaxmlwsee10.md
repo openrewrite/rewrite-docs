@@ -1,17 +1,17 @@
 ---
-title: "Update Jakarta EE XML Web Services Dependencies for EE 10"
-sidebar_label: "Update Jakarta EE XML Web Services Dependencies for EE 10"
+title: "Update Jakarta XML Web Services dependencies for Jakarta EE 10"
+sidebar_label: "Update Jakarta XML Web Services dependencies for Jakarta EE 10"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Update Jakarta EE XML Web Services Dependencies for EE 10
+# Update Jakarta XML Web Services dependencies for Jakarta EE 10
 
 **org.openrewrite.java.migrate.jakarta.UpdateJakartaXmlWsEE10**
 
-_Update Jakarta EE XML Web Services Dependencies for EE 10._
+_Upgrade the Jakarta XML Binding, SOAP and XML Web Services APIs and the `jaxws-rt` implementation to their Jakarta EE 10 versions, replacing the retired `jakarta.jws-api` artifact with `jakarta.xml.ws-api`._
 
 ## Recipe source
 
@@ -62,9 +62,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.jakarta.UpdateJakartaXmlWsEE10
-displayName: Update Jakarta EE XML Web Services Dependencies for EE 10
+displayName: Update Jakarta XML Web Services dependencies for Jakarta EE 10
 description: |
-  Update Jakarta EE XML Web Services Dependencies for EE 10.
+  Upgrade the Jakarta XML Binding, SOAP and XML Web Services APIs and the `jaxws-rt` implementation to their Jakarta EE 10 versions, replacing the retired `jakarta.jws-api` artifact with `jakarta.xml.ws-api`.
 preconditions:
   - org.openrewrite.Singleton
 recipeList:
@@ -94,14 +94,14 @@ recipeList:
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrate Jakarta EE 9 api dependencies to Jakarta EE 10 versions](/recipes/java/migrate/jakarta/migrationtojakarta10apis.md)
+* [Migrate Jakarta EE 9 API dependencies to Jakarta EE 10 versions](/recipes/java/migrate/jakarta/migrationtojakarta10apis.md)
 
 
 ## Usage
 
 <RunRecipe
   recipeName="org.openrewrite.java.migrate.jakarta.UpdateJakartaXmlWsEE10"
-  displayName="Update Jakarta EE XML Web Services Dependencies for EE 10"
+  displayName="Update Jakarta XML Web Services dependencies for Jakarta EE 10"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-migrate-java"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA"
@@ -120,6 +120,25 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
+
+### Maven metadata failures
+**org.openrewrite.maven.table.MavenMetadataFailures**
+
+_Attempts to resolve maven metadata that failed._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Group id | The groupId of the artifact for which the metadata download failed. |
+| Artifact id | The artifactId of the artifact for which the metadata download failed. |
+| Version | The version of the artifact for which the metadata download failed. |
+| Maven repository | The URL of the Maven repository that the metadata download failed on. |
+| Snapshots | Does the repository support snapshots. |
+| Releases | Does the repository support releases. |
+| Failure | The reason the metadata download failed. |
+
+</TabItem>
+
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results

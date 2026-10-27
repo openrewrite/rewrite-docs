@@ -43,6 +43,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Gradle dependency insight](../../../gradle/search/dependencyinsight)
   * groupIdPattern: `org.springframework`
   * artifactIdPattern: `spring-web`
+  * configuration: `compileClasspath`
 
 </TabItem>
 
@@ -65,6 +66,7 @@ recipeList:
   - org.openrewrite.gradle.search.DependencyInsight:
       groupIdPattern: org.springframework
       artifactIdPattern: spring-web
+      configuration: compileClasspath
 
 ```
 </TabItem>

@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.maven.RemoveRedundantProperties**
 
-_Remove properties when a parent POM specifies the same property._
+_Remove properties when a parent POM specifies the same property. When the project is built with Maven 3.10 or later, according to its `BuildTool` marker, the super POM's defaults count as well: `project.build.sourceEncoding` and `project.reporting.outputEncoding` set to `UTF-8`, and `project.build.outputTimestamp` set to `1980-02-01T00:00:00Z` are removed when no parent POM sets them._
 
 ## Recipe source
 
@@ -26,7 +26,8 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | Type | Name | Description | Example |
 | --- | --- | --- | --- |
 | `String` | namePattern | *Optional*. Property name glob expression pattern used to match properties that should be checked. | `*.version` |
-| `Boolean` | onlyIfValuesMatch | *Optional*. Only remove the property if its value exactly matches the property value in the parent pom. Default `false`. |  |
+| `Boolean` | onlyIfValuesMatch | *Optional*. Deprecated; use `onlyIfParentValueIs` instead. Only remove the property if its value exactly matches the property value in the parent pom. Default `false`. |  |
+| `Comparator` | onlyIfParentValueIs | *Optional*. Only remove the property if the value it would inherit from the parent POM has the specified comparative relationship to its own value. For example, `gte` only removes properties pinned to a version that is the same as or older than the parent's. Ordering comparisons only apply when both values are versions; other values only match when they are equal. Default `any`. Valid options: `ANY`, `EQ`, `LT`, `LTE`, `GT`, `GTE` |  |
 
 
 ## Used by
@@ -35,6 +36,7 @@ This recipe is used as part of the following composite recipes:
 
 * [Apache Maven best practices](/recipes/maven/bestpractices.md)
 * [Apache Maven best practices](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/devcenter/apachemavenbestpractices)
+* [Migrate to Maven 3.10](/recipes/maven/migratetomaven3_10.md)
 
 ## Example
 
@@ -43,6 +45,7 @@ This recipe is used as part of the following composite recipes:
 | --- | --- |
 |namePattern|`null`|
 |onlyIfValuesMatch|`null`|
+|onlyIfParentValueIs||
 
 
 ###### Unchanged

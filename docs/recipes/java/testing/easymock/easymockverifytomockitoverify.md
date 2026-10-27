@@ -26,7 +26,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrate from EasyMock to Mockito](/recipes/java/testing/easymock/easymocktomockito.md)
+* [Migrate EasyMock code to Mockito](/recipes/java/testing/easymock/easymockcodetomockito.md)
 
 ## Example
 

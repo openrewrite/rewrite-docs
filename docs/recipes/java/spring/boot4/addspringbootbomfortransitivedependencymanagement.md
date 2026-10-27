@@ -34,6 +34,104 @@ This recipe is used as part of the following composite recipes:
 
 * [Migrate to Spring Boot 4.0 (Community Edition)](/recipes/java/spring/boot4/upgradespringboot_4_0-community-edition.md)
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|newVersion|`4.0.0`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="pom.xml" label="pom.xml">
+
+
+###### Before
+```xml title="pom.xml"
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.example</groupId>
+    <artifactId>app</artifactId>
+    <version>1.0</version>
+    <dependencyManagement>
+        <!-- Preserve management comments too. -->
+        <dependencies>
+            <!-- Keep the vendor BOM and its comment together. -->
+            <dependency>
+                <groupId>io.github.jhipster</groupId>
+                <artifactId>jhipster-dependencies</artifactId>
+                <version>3.7.1</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+    </dependencies>
+</project>
+```
+
+###### After
+```xml title="pom.xml"
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.example</groupId>
+    <artifactId>app</artifactId>
+    <version>1.0</version>
+    <dependencyManagement>
+        <!-- Preserve management comments too. -->
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>4.0.0</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!-- Keep the vendor BOM and its comment together. -->
+            <dependency>
+                <groupId>io.github.jhipster</groupId>
+                <artifactId>jhipster-dependencies</artifactId>
+                <version>3.7.1</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+    </dependencies>
+</project>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- pom.xml
++++ pom.xml
+@@ -9,0 +9,7 @@
+        <!-- Preserve management comments too. -->
+        <dependencies>
++           <dependency>
++               <groupId>org.springframework.boot</groupId>
++               <artifactId>spring-boot-dependencies</artifactId>
++               <version>4.0.0</version>
++               <type>pom</type>
++               <scope>import</scope>
++           </dependency>
+            <!-- Keep the vendor BOM and its comment together. -->
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

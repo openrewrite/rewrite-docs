@@ -1,17 +1,17 @@
 ---
-title: "Maven repository order"
-sidebar_label: "Maven repository order"
+title: "Gradle or Maven repository order"
+sidebar_label: "Gradle or Maven repository order"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Maven repository order
+# Gradle or Maven repository order
 
 **org.openrewrite.java.dependencies.FindRepositoryOrder**
 
-_Determine the order in which dependencies will be resolved for each `pom.xml` or `build.gradle` based on its defined repositories and effective settings._
+_Determine the order in which dependencies will be resolved for each `pom.xml` or `build.gradle` based on its defined repositories. For Maven, the effective `settings.xml` is also taken into account._
 
 ## Recipe source
 
@@ -77,7 +77,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 <RunRecipe
   recipeName="org.openrewrite.java.dependencies.FindRepositoryOrder"
-  displayName="Maven repository order"
+  displayName="Gradle or Maven repository order"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-java-dependencies"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JAVA_DEPENDENCIES"

@@ -1,20 +1,17 @@
 ---
-title: "Prefer `java.util.Optional#or(Supplier&lt;T extends java.util.Optional&lt;T&gt;&gt;)`"
-sidebar_label: "Prefer `java.util.Optional#or(Supplier&lt;T extends java.util.Optional&lt;T&gt;&gt;)`"
+title: "Prefer `java.util.Optional#or(Supplier<? extends Optional<? extends T>>)`"
+sidebar_label: "Prefer `java.util.Optional#or(Supplier<? extends Optional<? extends T>>)`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Prefer `java.util.Optional#or(Supplier&lt;T extends java.util.Optional&lt;T&gt;&gt;)`
+# Prefer `java.util.Optional#or(Supplier&lt;? extends Optional&lt;? extends T&gt;&gt;)`
 
 **org.openrewrite.java.migrate.guava.PreferJavaUtilOptionalOrSupplier**
 
-```
-Prefer `java.util.Optional#or(Supplier<T extends java.util.Optional<T>>)` over `com.google.common.base.Optional#or(com.google.common.base.Optional).
-```
-
+_Prefer `java.util.Optional#or(Supplier<? extends Optional<? extends T>>)` over `com.google.common.base.Optional#or(com.google.common.base.Optional)`._
 
 ### Tags
 
@@ -41,7 +38,7 @@ This recipe is used as part of the following composite recipes:
 
 <RunRecipe
   recipeName="org.openrewrite.java.migrate.guava.PreferJavaUtilOptionalOrSupplier"
-  displayName="Prefer `java.util.Optional#or(Supplier&lt;T extends java.util.Optional&lt;T&gt;&gt;)`"
+  displayName="Prefer `java.util.Optional#or(Supplier&lt;? extends Optional&lt;? extends T&gt;&gt;)`"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-migrate-java"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA"

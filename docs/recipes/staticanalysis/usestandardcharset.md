@@ -1,17 +1,17 @@
 ---
-title: "Use `StandardCharset` constants"
-sidebar_label: "Use `StandardCharset` constants"
+title: "Use `StandardCharsets` constants"
+sidebar_label: "Use `StandardCharsets` constants"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Use `StandardCharset` constants
+# Use `StandardCharsets` constants
 
 **org.openrewrite.staticanalysis.UseStandardCharset**
 
-_Replaces `Charset.forName(java.lang.String)` with the equivalent `StandardCharset` constant. Using the predefined constants is both compile-time safe and avoids the need to handle `UnsupportedEncodingException` for charsets that are guaranteed to exist on every JVM._
+_Replaces `Charset.forName(java.lang.String)` with the equivalent `StandardCharsets` constant. Using the predefined constants is compile-time safe and avoids looking up by name the charsets that are guaranteed to exist on every JVM._
 
 ### Tags
 
@@ -102,7 +102,7 @@ class Test {
 
 <RunRecipe
   recipeName="org.openrewrite.staticanalysis.UseStandardCharset"
-  displayName="Use `StandardCharset` constants"
+  displayName="Use `StandardCharsets` constants"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-static-analysis"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_STATIC_ANALYSIS"

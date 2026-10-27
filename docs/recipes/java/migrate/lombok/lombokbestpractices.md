@@ -1,13 +1,13 @@
 ---
-title: "Lombok Best Practices"
-sidebar_label: "Lombok Best Practices"
+title: "Lombok best practices"
+sidebar_label: "Lombok best practices"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Lombok Best Practices
+# Lombok best practices
 
 **org.openrewrite.java.migrate.lombok.LombokBestPractices**
 
@@ -36,6 +36,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 **Recipes**
 
+* [Enable Lombok annotation processor](../../../java/migrate/enablelombokannotationprocessor)
 * [Migrate Lombok to a Java 11 compatible version](../../../java/migrate/lombok/updatelomboktojava11)
 * [Use Lombok logger annotations instead of explicit fields](../../../java/migrate/lombok/log/uselomboklogannotations)
 * [Convert getter methods to annotations](../../../java/migrate/lombok/uselombokgetter)
@@ -54,7 +55,6 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Exclude Maven dependency](../../../maven/excludedependency)
   * groupId: `org.projectlombok`
   * artifactId: `lombok`
-* [Enable Lombok annotation processor](../../../java/migrate/enablelombokannotationprocessor)
 * [Append to text file](../../../text/appendtotextfile)
   * relativeFileName: `{,**/}lombok.config`
   * content: `lombok.checkReturnValueAnnotation += lombok`
@@ -68,12 +68,13 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.lombok.LombokBestPractices
-displayName: Lombok Best Practices
+displayName: Lombok best practices
 description: |
   Applies all recipes that enforce best practices for using Lombok.
 preconditions:
   - org.openrewrite.Singleton
 recipeList:
+  - org.openrewrite.java.migrate.EnableLombokAnnotationProcessor
   - org.openrewrite.java.migrate.lombok.UpdateLombokToJava11
   - org.openrewrite.java.migrate.lombok.log.UseLombokLogAnnotations
   - org.openrewrite.java.migrate.lombok.UseLombokGetter
@@ -92,7 +93,6 @@ recipeList:
   - org.openrewrite.maven.ExcludeDependency:
       groupId: org.projectlombok
       artifactId: lombok
-  - org.openrewrite.java.migrate.EnableLombokAnnotationProcessor
   - org.openrewrite.text.AppendToTextFile:
       relativeFileName: {,**/}lombok.config
       content: lombok.checkReturnValueAnnotation += lombok
@@ -171,7 +171,7 @@ project
 
 <RunRecipe
   recipeName="org.openrewrite.java.migrate.lombok.LombokBestPractices"
-  displayName="Lombok Best Practices"
+  displayName="Lombok best practices"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-migrate-java"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA"

@@ -1,6 +1,6 @@
 ---
-title: "Use `getProperty(&quot;wlp.server.name&quot;)`"
-sidebar_label: "Use `getProperty(&quot;wlp.server.name&quot;)`"
+title: "Use `getProperty(\"wlp.server.name\")`"
+sidebar_label: "Use `getProperty(\"wlp.server.name\")`"
 ---
 
 import Tabs from '@theme/Tabs';

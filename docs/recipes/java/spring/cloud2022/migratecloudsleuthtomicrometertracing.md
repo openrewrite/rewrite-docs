@@ -44,7 +44,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 **Recipes**
 
-* [Add logging.pattern.level for traceId and spanId](../../../java/spring/cloud2022/addloggingpatternlevelforsleuth)
+* [Add `logging.pattern.level` for `traceId` and `spanId`](../../../java/spring/cloud2022/addloggingpatternlevelforsleuth)
 * [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
   * oldGroupId: `org.springframework.cloud`
   * oldArtifactId: `spring-cloud-starter-sleuth`
@@ -68,11 +68,13 @@ This recipe is available under the [Moderne Source Available License](https://do
   * oldArtifactId: `spring-cloud-sleuth-autoconfigure`
   * newGroupId: `org.springframework.boot`
   * newArtifactId: `spring-boot-actuator-autoconfigure`
+  * newVersion: `3.0.x`
 * [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
   * oldGroupId: `org.springframework.cloud`
   * oldArtifactId: `spring-cloud-sleuth-otel-autoconfigure`
   * newGroupId: `org.springframework.boot`
   * newArtifactId: `spring-boot-actuator-autoconfigure`
+  * newVersion: `3.0.x`
 * [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
   * oldGroupId: `org.springframework.cloud`
   * oldArtifactId: `spring-cloud-sleuth-zipkin`
@@ -127,14 +129,14 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.sleuth.batch.enabled`
   * newPropertyKey: `management.tracing.enabled`
-* [Delete a spring configuration property](../../../java/spring/deletespringproperty)
+* [Delete a Spring configuration property](../../../java/spring/deletespringproperty)
   * propertyKey: `spring.sleuth.supports-join`
-* [Delete a spring configuration property](../../../java/spring/deletespringproperty)
+* [Delete a Spring configuration property](../../../java/spring/deletespringproperty)
   * propertyKey: `spring.sleuth.trace-id128`
 * [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.sleuth.propagation.type`
   * newPropertyKey: `management.tracing.propagation.type`
-* [Delete a spring configuration property](../../../java/spring/deletespringproperty)
+* [Delete a Spring configuration property](../../../java/spring/deletespringproperty)
   * propertyKey: `spring.sleuth.sampler.rate`
 * [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.sleuth.sampler.probability`
@@ -196,11 +198,13 @@ recipeList:
       oldArtifactId: spring-cloud-sleuth-autoconfigure
       newGroupId: org.springframework.boot
       newArtifactId: spring-boot-actuator-autoconfigure
+      newVersion: 3.0.x
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.springframework.cloud
       oldArtifactId: spring-cloud-sleuth-otel-autoconfigure
       newGroupId: org.springframework.boot
       newArtifactId: spring-boot-actuator-autoconfigure
+      newVersion: 3.0.x
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.springframework.cloud
       oldArtifactId: spring-cloud-sleuth-zipkin
@@ -587,6 +591,25 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
+
+### Maven metadata failures
+**org.openrewrite.maven.table.MavenMetadataFailures**
+
+_Attempts to resolve maven metadata that failed._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Group id | The groupId of the artifact for which the metadata download failed. |
+| Artifact id | The artifactId of the artifact for which the metadata download failed. |
+| Version | The version of the artifact for which the metadata download failed. |
+| Maven repository | The URL of the Maven repository that the metadata download failed on. |
+| Snapshots | Does the repository support snapshots. |
+| Releases | Does the repository support releases. |
+| Failure | The reason the metadata download failed. |
+
+</TabItem>
+
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results

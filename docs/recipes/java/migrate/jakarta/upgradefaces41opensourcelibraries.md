@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.migrate.jakarta.UpgradeFaces41OpenSourceLibraries**
 
-_Upgrade OmniFaces and MyFaces/Mojarra libraries to Jakarta EE11 versions._
+_Upgrade OmniFaces and MyFaces/Mojarra libraries to Jakarta EE 11 versions._
 
 ### Tags
 
@@ -71,7 +71,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.jakarta.UpgradeFaces41OpenSourceLibraries
 displayName: Upgrade Faces open source libraries
 description: |
-  Upgrade OmniFaces and MyFaces/Mojarra libraries to Jakarta EE11 versions.
+  Upgrade OmniFaces and MyFaces/Mojarra libraries to Jakarta EE 11 versions.
 tags:
   - faces
   - jsf
@@ -132,6 +132,25 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
+
+### Maven metadata failures
+**org.openrewrite.maven.table.MavenMetadataFailures**
+
+_Attempts to resolve maven metadata that failed._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Group id | The groupId of the artifact for which the metadata download failed. |
+| Artifact id | The artifactId of the artifact for which the metadata download failed. |
+| Version | The version of the artifact for which the metadata download failed. |
+| Maven repository | The URL of the Maven repository that the metadata download failed on. |
+| Snapshots | Does the repository support snapshots. |
+| Releases | Does the repository support releases. |
+| Failure | The reason the metadata download failed. |
+
+</TabItem>
+
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results

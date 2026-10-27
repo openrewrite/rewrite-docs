@@ -13,6 +13,10 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 _Locates `public` method declarations that are not documented with a Javadoc comment, marks them with a search result, and records them in a data table._
 
+### Tags
+
+* [RSPEC-S1176](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S1176&open=java%3AS1176)
+
 ## Recipe source
 
 [GitHub: FindMissingJavadocOnPublicMethods.java](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/FindMissingJavadocOnPublicMethods.java),

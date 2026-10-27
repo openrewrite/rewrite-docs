@@ -28,6 +28,49 @@ This recipe is used as part of the following composite recipes:
 
 * [Update to Micronaut Validation 4.x](/recipes/java/micronaut/updatemicronautvalidation.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="build.gradle" label="build.gradle">
+
+
+###### Before
+```groovy title="build.gradle"
+plugins { id 'java' }
+repositories { mavenCentral() }
+dependencies {
+    implementation 'io.micronaut.validation:micronaut-validation:4.0.0'
+    annotationProcessor 'io.micronaut.validation:micronaut-validation-processor'
+}
+```
+
+###### After
+```groovy title="build.gradle"
+plugins { id 'java' }
+repositories { mavenCentral() }
+dependencies {
+    implementation 'io.micronaut.validation:micronaut-validation:4.0.0'
+    annotationProcessor 'io.micronaut.validation:micronaut-validation-processor:4.0.0'
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- build.gradle
++++ build.gradle
+@@ -5,1 +5,1 @@
+dependencies {
+    implementation 'io.micronaut.validation:micronaut-validation:4.0.0'
+-   annotationProcessor 'io.micronaut.validation:micronaut-validation-processor'
++   annotationProcessor 'io.micronaut.validation:micronaut-validation-processor:4.0.0'
+}
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

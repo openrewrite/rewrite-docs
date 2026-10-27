@@ -43,7 +43,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 **Recipes**
 
 * [Replace `one.gfw` JAXB artifacts with their official coordinates](../../../java/migrate/javax/migrateonegfwjaxbdependencies)
-* [Migrate the JAXB API dependency unless Recorder still needs it](../../../java/migrate/jakarta/changejaxbapidependency)
+* [Migrate the JAXB API dependency unless Recorder or Jackson still needs it](../../../java/migrate/jakarta/changejaxbapidependency)
 * [Retain `javax.xml.bind:jaxb-api` when `jackson-module-jaxb-annotations` is present](../../../java/migrate/jakarta/retainjaxbapiforjackson)
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `jakarta.xml.bind`
@@ -92,7 +92,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * groupId: `org.jvnet.jaxb`
   * artifactId: `jaxb-maven-plugin`
   * newVersion: `3.x`
-* [Migrate XJC Bindings to Jakata XML](../../../java/migrate/jakarta/javaxxmltojakartaxmlxjcbinding)
+* [Migrate XJC bindings to Jakarta XML](../../../java/migrate/jakarta/javaxxmltojakartaxmlxjcbinding)
 
 </TabItem>
 
@@ -176,6 +176,66 @@ This recipe is used as part of the following composite recipes:
 
 ## Examples
 ##### Example 1
+`JakartaXmlBindRuntimeTest#addsRuntimeForContextFactory`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import javax.xml.bind.JAXBContext;
+class A {
+    JAXBContext context = JAXBContext.newInstance(A.class);
+}
+```
+
+###### After
+```java
+import jakarta.xml.bind.JAXBContext;
+class A {
+    JAXBContext context = JAXBContext.newInstance(A.class);
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import javax.xml.bind.JAXBContext;
++import jakarta.xml.bind.JAXBContext;
+class A {
+```
+</TabItem>
+</Tabs>
+
+###### Unchanged
+```mavenProject
+app
+```
+
+###### Unchanged
+```xml title="pom.xml"
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.example</groupId>
+    <artifactId>app</artifactId>
+    <version>1.0</version>
+    <dependencies>
+        <dependency>
+            <groupId>javax.xml.bind</groupId>
+            <artifactId>jaxb-api</artifactId>
+            <version>2.3.1</version>
+        </dependency>
+    </dependencies>
+</project>
+```
+
+---
+
+##### Example 2
 `JavaxXmlBindMigrationToJakartaXmlBindTest#dontRetainJaxbApiWhenJacksonNotPresent`
 
 
@@ -232,7 +292,67 @@ public class Test {
 
 ---
 
-##### Example 2
+##### Example 3
+`JakartaXmlBindRuntimeTest#addsRuntimeForContextFactory`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import javax.xml.bind.JAXBContext;
+class A {
+    JAXBContext context = JAXBContext.newInstance(A.class);
+}
+```
+
+###### After
+```java
+import jakarta.xml.bind.JAXBContext;
+class A {
+    JAXBContext context = JAXBContext.newInstance(A.class);
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import javax.xml.bind.JAXBContext;
++import jakarta.xml.bind.JAXBContext;
+class A {
+```
+</TabItem>
+</Tabs>
+
+###### Unchanged
+```mavenProject
+app
+```
+
+###### Unchanged
+```xml title="pom.xml"
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.example</groupId>
+    <artifactId>app</artifactId>
+    <version>1.0</version>
+    <dependencies>
+        <dependency>
+            <groupId>javax.xml.bind</groupId>
+            <artifactId>jaxb-api</artifactId>
+            <version>2.3.1</version>
+        </dependency>
+    </dependencies>
+</project>
+```
+
+---
+
+##### Example 4
 `JavaxXmlBindMigrationToJakartaXmlBindTest#dontRetainJaxbApiWhenJacksonNotPresent`
 
 

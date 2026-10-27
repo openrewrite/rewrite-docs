@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.staticanalysis.BooleanChecksNotInverted**
 
-_Ensures that boolean checks are not unnecessarily inverted. Also fixes double negative boolean expressions. Negating a comparison and then inverting it adds cognitive overhead; using the direct operator (e.g., `>=` instead of `!(... < ...)`) is clearer and easier to reason about._
+_Ensures that boolean checks are not unnecessarily inverted. Also fixes double negative boolean expressions. Negating a comparison and then inverting it adds cognitive overhead; using the direct operator (e.g., `>=` instead of `!(... < ...)`) is clearer and easier to reason about. Ordered floating-point comparisons retain their negation to preserve NaN behavior._
 
 ### Tags
 

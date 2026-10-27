@@ -1,6 +1,6 @@
 ---
-title: "Prefer `new ArrayList&lt;&gt;()`"
-sidebar_label: "Prefer `new ArrayList&lt;&gt;()`"
+title: "Prefer `new ArrayList<>()`"
+sidebar_label: "Prefer `new ArrayList<>()`"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -19,20 +19,99 @@ _Prefer the Java standard library over third-party usage of Guava in simple case
 
 ## Recipe source
 
-[GitHub: NoGuavaListsNewArrayList.java](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/guava/NoGuavaListsNewArrayList.java),
+[GitHub: no-guava.yml](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/no-guava.yml),
 [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues),
 [Code Genome Project](https://artifacts.codegenomeproject.org/maven/org/openrewrite/recipe/rewrite-migrate-java/)
+
+:::info
+This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
+:::
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license). Moderne customers can download precompiled artifacts from The Code Genome Project. For non-commercial use you can build the artifact from source locally.
 
 
-## Used by
+## Definition
 
-This recipe is used as part of the following composite recipes:
+<Tabs groupId="recipeType">
+<TabItem value="recipe-list" label="Recipe List" >
+* [Prefer `new ArrayList&lt;&gt;()`](../../../java/migrate/guava/noguavarefasterrecipes$listsnewarraylistrecipe)
+* [Prefer `new ArrayList&lt;&gt;(Collection)`](../../../java/migrate/guava/noguavarefasterrecipes$listsnewarraylistfromcollectionrecipe)
+* [Prefer `new ArrayList&lt;&gt;(int)`](../../../java/migrate/guava/noguavarefasterrecipes$listsnewarraylistwithcapacityrecipe)
 
-* [Prefer the Java standard library instead of Guava](/recipes/java/migrate/guava/noguava.md)
+</TabItem>
 
-## Example
+<TabItem value="yaml-recipe-list" label="Yaml Recipe List">
+
+```yaml
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: org.openrewrite.java.migrate.guava.NoGuavaListsNewArrayList
+displayName: Prefer `new ArrayList&lt;&gt;()`
+description: |
+  Prefer the Java standard library over third-party usage of Guava in simple cases like this.
+tags:
+  - guava
+recipeList:
+  - org.openrewrite.java.migrate.guava.NoGuavaRefasterRecipes$ListsNewArrayListRecipe
+  - org.openrewrite.java.migrate.guava.NoGuavaRefasterRecipes$ListsNewArrayListFromCollectionRecipe
+  - org.openrewrite.java.migrate.guava.NoGuavaRefasterRecipes$ListsNewArrayListWithCapacityRecipe
+
+```
+</TabItem>
+</Tabs>
+## Examples
+##### Example 1
+`NoGuavaListsNewArrayListTest#replaceWithNewArrayList`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import com.google.common.collect.*;
+
+import java.util.List;
+
+class Test {
+    List<Integer> cardinalsWorldSeries = Lists.newArrayList();
+}
+```
+
+###### After
+```java
+import java.util.ArrayList;
+import java.util.List;
+
+class Test {
+    List<Integer> cardinalsWorldSeries = new ArrayList<>();
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,2 +1,1 @@
+-import com.google.common.collect.*;
+-
++import java.util.ArrayList;
+import java.util.List;
+@@ -6,1 +5,1 @@
+
+class Test {
+-   List<Integer> cardinalsWorldSeries = Lists.newArrayList();
++   List<Integer> cardinalsWorldSeries = new ArrayList<>();
+}
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`NoGuavaListsNewArrayListTest#replaceWithNewArrayList`
 
 
 <Tabs groupId="beforeAfter">

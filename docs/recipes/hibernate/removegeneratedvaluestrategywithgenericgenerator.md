@@ -28,6 +28,69 @@ This recipe is used as part of the following composite recipes:
 
 * [Migrate to Hibernate 7.0.x (Community Edition)](/recipes/hibernate/migratetohibernate70-community-edition.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.Parameter;
+
+@Entity
+class A {
+    @Id
+    @GenericGenerator(name = "MY_ID_GEN", strategy = "com.example.MyTableGenerator",
+        parameters = { @Parameter(name = "table", value = "MY_ID_SEQ") })
+    @GeneratedValue(strategy = GenerationType.TABLE, generator = "MY_ID_GEN")
+    Long id;
+}
+```
+
+###### After
+```java
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.Parameter;
+
+@Entity
+class A {
+    @Id
+    @GenericGenerator(name = "MY_ID_GEN", strategy = "com.example.MyTableGenerator",
+        parameters = { @Parameter(name = "table", value = "MY_ID_SEQ") })
+    @GeneratedValue(generator = "MY_ID_GEN")
+    Long id;
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,1 +3,0 @@
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+-import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+@@ -13,1 +12,1 @@
+    @GenericGenerator(name = "MY_ID_GEN", strategy = "com.example.MyTableGenerator",
+        parameters = { @Parameter(name = "table", value = "MY_ID_SEQ") })
+-   @GeneratedValue(strategy = GenerationType.TABLE, generator = "MY_ID_GEN")
++   @GeneratedValue(generator = "MY_ID_GEN")
+    Long id;
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

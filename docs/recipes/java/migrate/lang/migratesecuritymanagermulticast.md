@@ -19,12 +19,50 @@ _Use `SecurityManager#checkMulticast(InetAddress)` instead of the deprecated `Se
 
 ## Recipe source
 
-[GitHub: MigrateSecurityManagerMulticast.java](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/lang/MigrateSecurityManagerMulticast.java),
+[GitHub: java-lang-apis.yml](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/java-lang-apis.yml),
 [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues),
 [Code Genome Project](https://artifacts.codegenomeproject.org/maven/org/openrewrite/recipe/rewrite-migrate-java/)
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license). Moderne customers can download precompiled artifacts from The Code Genome Project. For non-commercial use you can build the artifact from source locally.
 
+
+## Definition
+
+<Tabs groupId="recipeType">
+<TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
+* [Delete method argument](../../../java/deletemethodargument)
+  * methodPattern: `java.lang.SecurityManager checkMulticast(java.net.InetAddress, byte)`
+  * argumentIndex: `1`
+
+</TabItem>
+
+<TabItem value="yaml-recipe-list" label="Yaml Recipe List">
+
+```yaml
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: org.openrewrite.java.migrate.lang.MigrateSecurityManagerMulticast
+displayName: Use `SecurityManager#checkMulticast(InetAddress)`
+description: |
+  Use `SecurityManager#checkMulticast(InetAddress)` instead of the deprecated `SecurityManager#checkMulticast(InetAddress, byte)` in Java 1.4 or higher.
+tags:
+  - deprecated
+preconditions:
+  - org.openrewrite.Singleton
+recipeList:
+  - org.openrewrite.java.DeleteMethodArgument:
+      methodPattern: java.lang.SecurityManager checkMulticast(java.net.InetAddress, byte)
+      argumentIndex: 1
+
+```
+</TabItem>
+</Tabs>
 
 ## Used by
 
@@ -32,7 +70,65 @@ This recipe is used as part of the following composite recipes:
 
 * [Use modernized `java.lang` APIs](/recipes/java/migrate/lang/javalangapis.md)
 
-## Example
+## Examples
+##### Example 1
+`MigrateSecurityManagerMulticastTest#migrateCheckMulticast`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+package org.openrewrite;
+
+import java.net.InetAddress;
+import java.lang.SecurityManager;
+
+class Test {
+    public void method() {
+        InetAddress maddr = InetAddress.getByName("127.0.0.1");
+        byte b = 100;
+        new SecurityManager().checkMulticast(maddr, b);
+    }
+}
+```
+
+###### After
+```java
+package org.openrewrite;
+
+import java.net.InetAddress;
+import java.lang.SecurityManager;
+
+class Test {
+    public void method() {
+        InetAddress maddr = InetAddress.getByName("127.0.0.1");
+        byte b = 100;
+        new SecurityManager().checkMulticast(maddr);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -10,1 +10,1 @@
+        InetAddress maddr = InetAddress.getByName("127.0.0.1");
+        byte b = 100;
+-       new SecurityManager().checkMulticast(maddr, b);
++       new SecurityManager().checkMulticast(maddr);
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`MigrateSecurityManagerMulticastTest#migrateCheckMulticast`
 
 
 <Tabs groupId="beforeAfter">

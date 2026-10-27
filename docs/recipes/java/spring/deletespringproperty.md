@@ -1,13 +1,13 @@
 ---
-title: "Delete a spring configuration property"
-sidebar_label: "Delete a spring configuration property"
+title: "Delete a Spring configuration property"
+sidebar_label: "Delete a Spring configuration property"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Delete a spring configuration property
+# Delete a Spring configuration property
 
 **org.openrewrite.java.spring.DeleteSpringProperty**
 
@@ -70,7 +70,7 @@ Here's how you can define and customize such a recipe within your rewrite.yml:
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.DeleteSpringPropertyExample
-displayName: Delete a spring configuration property example
+displayName: Delete a Spring configuration property example
 recipeList:
   - org.openrewrite.java.spring.DeleteSpringProperty:
       propertyKey: management.endpoint.configprops.*
@@ -78,7 +78,7 @@ recipeList:
 
 <RunRecipe
   recipeName="org.openrewrite.java.spring.DeleteSpringProperty"
-  displayName="Delete a spring configuration property"
+  displayName="Delete a Spring configuration property"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-spring"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING"

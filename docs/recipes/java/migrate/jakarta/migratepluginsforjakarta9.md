@@ -1,13 +1,13 @@
 ---
-title: "Update Plugins for Jakarta EE 9"
-sidebar_label: "Update Plugins for Jakarta EE 9"
+title: "Update plugins for Jakarta EE 9"
+sidebar_label: "Update plugins for Jakarta EE 9"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Update Plugins for Jakarta EE 9
+# Update plugins for Jakarta EE 9
 
 **org.openrewrite.java.migrate.jakarta.MigratePluginsForJakarta9**
 
@@ -45,7 +45,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.jakarta.MigratePluginsForJakarta9
-displayName: Update Plugins for Jakarta EE 9
+displayName: Update plugins for Jakarta EE 9
 description: |
   Update plugins to be compatible with Jakarta EE 9.
 preconditions:
@@ -71,7 +71,7 @@ This recipe is used as part of the following composite recipes:
 
 <RunRecipe
   recipeName="org.openrewrite.java.migrate.jakarta.MigratePluginsForJakarta9"
-  displayName="Update Plugins for Jakarta EE 9"
+  displayName="Update plugins for Jakarta EE 9"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-migrate-java"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA"

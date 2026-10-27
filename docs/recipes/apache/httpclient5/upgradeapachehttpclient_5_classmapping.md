@@ -69,6 +69,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Change type](../../java/changetype)
   * oldFullyQualifiedTypeName: `org.apache.hc.client5.http.impl.cookie.DateUtils`
   * newFullyQualifiedTypeName: `org.apache.hc.client5.http.utils.DateUtils`
+* [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.apache.http.impl.client.ProxyAuthenticationStrategy`
+  * newFullyQualifiedTypeName: `org.apache.hc.client5.http.impl.DefaultAuthenticationStrategy`
 * [Rename package name](../../java/changepackage)
   * oldPackageName: `org.apache.http.impl.client`
   * newPackageName: `org.apache.hc.client5.http.impl.classic`
@@ -115,9 +118,6 @@ This recipe is available under the [Moderne Source Available License](https://do
   * oldFullyQualifiedTypeName: `org.apache.hc.client5.http.impl.classic.BasicCredentialsProvider`
   * newFullyQualifiedTypeName: `org.apache.hc.client5.http.impl.auth.BasicCredentialsProvider`
 * [Change type](../../java/changetype)
-  * oldFullyQualifiedTypeName: `org.apache.http.impl.client.ProxyAuthenticationStrategy`
-  * newFullyQualifiedTypeName: `org.apache.hc.client5.http.impl.DefaultAuthenticationStrategy`
-* [Change type](../../java/changetype)
   * oldFullyQualifiedTypeName: `org.apache.http.auth.AuthSchemeProvider`
   * newFullyQualifiedTypeName: `org.apache.hc.client5.http.auth.AuthSchemeFactory`
 * [Change type](../../java/changetype)
@@ -126,9 +126,6 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Rename package name](../../java/changepackage)
   * oldPackageName: `org.apache.http.auth`
   * newPackageName: `org.apache.hc.client5.http.auth`
-* [Rename package name](../../java/changepackage)
-  * oldPackageName: `org.apache.http.cookie`
-  * newPackageName: `org.apache.hc.client5.http.cookie`
 * [Rename package name](../../java/changepackage)
   * oldPackageName: `org.apache.http.cookie`
   * newPackageName: `org.apache.hc.client5.http.cookie`
@@ -423,9 +420,6 @@ This recipe is available under the [Moderne Source Available License](https://do
   * oldFullyQualifiedTypeName: `org.apache.hc.core5.http.RequestLine`
   * newFullyQualifiedTypeName: `org.apache.hc.core5.http.message.RequestLine`
 * [Change type](../../java/changetype)
-  * oldFullyQualifiedTypeName: `org.apache.hc.core5.http.RequestLine`
-  * newFullyQualifiedTypeName: `org.apache.hc.core5.http.message.RequestLine`
-* [Change type](../../java/changetype)
   * oldFullyQualifiedTypeName: `org.apache.hc.core5.http.HttpClientConnection`
   * newFullyQualifiedTypeName: `org.apache.hc.core5.http.io.HttpClientConnection`
 * [Change type](../../java/changetype)
@@ -504,6 +498,9 @@ recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.apache.hc.client5.http.impl.cookie.DateUtils
       newFullyQualifiedTypeName: org.apache.hc.client5.http.utils.DateUtils
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.apache.http.impl.client.ProxyAuthenticationStrategy
+      newFullyQualifiedTypeName: org.apache.hc.client5.http.impl.DefaultAuthenticationStrategy
   - org.openrewrite.java.ChangePackage:
       oldPackageName: org.apache.http.impl.client
       newPackageName: org.apache.hc.client5.http.impl.classic
@@ -550,9 +547,6 @@ recipeList:
       oldFullyQualifiedTypeName: org.apache.hc.client5.http.impl.classic.BasicCredentialsProvider
       newFullyQualifiedTypeName: org.apache.hc.client5.http.impl.auth.BasicCredentialsProvider
   - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: org.apache.http.impl.client.ProxyAuthenticationStrategy
-      newFullyQualifiedTypeName: org.apache.hc.client5.http.impl.DefaultAuthenticationStrategy
-  - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.apache.http.auth.AuthSchemeProvider
       newFullyQualifiedTypeName: org.apache.hc.client5.http.auth.AuthSchemeFactory
   - org.openrewrite.java.ChangeType:
@@ -561,9 +555,6 @@ recipeList:
   - org.openrewrite.java.ChangePackage:
       oldPackageName: org.apache.http.auth
       newPackageName: org.apache.hc.client5.http.auth
-  - org.openrewrite.java.ChangePackage:
-      oldPackageName: org.apache.http.cookie
-      newPackageName: org.apache.hc.client5.http.cookie
   - org.openrewrite.java.ChangePackage:
       oldPackageName: org.apache.http.cookie
       newPackageName: org.apache.hc.client5.http.cookie
@@ -854,9 +845,6 @@ recipeList:
   - org.openrewrite.java.AddCommentToImport:
       comment: No generic migration for classes in the `org.apache.http.params` package exists, please migrate manually
       typePattern: org.apache.http.params..*
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: org.apache.hc.core5.http.RequestLine
-      newFullyQualifiedTypeName: org.apache.hc.core5.http.message.RequestLine
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.apache.hc.core5.http.RequestLine
       newFullyQualifiedTypeName: org.apache.hc.core5.http.message.RequestLine

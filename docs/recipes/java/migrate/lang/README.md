@@ -13,8 +13,8 @@ description: java.lang APIs OpenRewrite recipes.
 _Recipes that include further recipes, often including the individual recipes below._
 
 * [A collection of `String` rules](./stringrulesrecipes.md)
-* [Find Virtual Thread opportunities](./findvirtualthreadopportunities.md)
 * [Find non-virtual `ExecutorService` creation](./findnonvirtualexecutors.md)
+* [Find virtual thread opportunities](./findvirtualthreadopportunities.md)
 * [Use local variable type inference](./usevar.md)
 * [Use modernized `java.lang` APIs](./javalangapis.md)
 
@@ -23,12 +23,11 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Add explicit import for `Record` classes](./explicitrecordimport.md)
 * [Add null check to existing switch cases](./nullcheckasswitchcase.md)
 * [Convert Javadoc to Markdown documentation comments](./javadoctomarkdowndoccomment.md)
-* [Convert assigning Switch statements to Switch expressions](./switchcaseassignmentstoswitchexpression.md)
+* [Convert assigning switch statements to switch expressions](./switchcaseassignmentstoswitchexpression.md)
 * [Convert switch cases where every case returns into a returned switch expression](./switchcasereturnstoswitchexpression.md)
 * [Convert switch expression yield to arrow](./switchexpressionyieldtoarrow.md)
 * [Extract complex `super(..)` and `this(..)` arguments into local variables](./extractexplicitconstructorinvocationarguments.md)
 * [Find `Thread.start()` calls made during construction of a non-final class](./findthreadstartinconstructor.md)
-* [If-else-if-else to switch](./ifelseifconstructtoswitch.md)
 * [Migrate `public static void main(String[] args)` to instance `void main()`](./migratemainmethodtoinstancemain.md)
 * [Prefer `String.formatted(Object...)`](./stringformatted.md)
 * [Rename `_` identifier to `__`](./renameunderscoreidentifier.md)
@@ -36,6 +35,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Replace `String.indexOf(String, 0)` with `String.indexOf(String)`](./stringrulesrecipes$indexofstringrecipe.md)
 * [Replace `String.indexOf(char, 0)` with `String.indexOf(char)`](./stringrulesrecipes$indexofcharrecipe.md)
 * [Replace `Thread.resume()`, `Thread.stop()`, and `Thread.suspend()` with `throw new UnsupportedOperationException()`](./threadstopunsupported.md)
+* [Replace if-else-if-else with switch](./ifelseifconstructtoswitch.md)
 * [Replace lower and upper case `String` comparisons with `String.equalsIgnoreCase(String)`](./stringrulesrecipes$useequalsignorecaserecipe.md)
 * [Replace redundant `String` method calls with self](./stringrulesrecipes$redundantcallrecipe.md)
 * [Replace unused variables with underscore](./replaceunusedvariableswithunderscore.md)

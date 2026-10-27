@@ -112,6 +112,113 @@ This recipe is used as part of the following composite recipes:
 
 * [Migrate to Jakarta EE 9](/recipes/java/migrate/jakarta/javaxmigrationtojakarta.md)
 
+## Examples
+##### Example 1
+`JavaxEnterpriseToJakartaEnterpriseTest#preservesProvidedCdiApi`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+class A { javax.enterprise.inject.spi.BeanManager manager; }
+```
+
+###### After
+```java
+class A { jakarta.enterprise.inject.spi.BeanManager manager; }
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-class A { javax.enterprise.inject.spi.BeanManager manager; }
++class A { jakarta.enterprise.inject.spi.BeanManager manager; }
+```
+</TabItem>
+</Tabs>
+
+###### Unchanged
+```mavenProject
+demo
+```
+
+###### Unchanged
+```xml title="pom.xml"
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.example</groupId>
+    <artifactId>demo</artifactId>
+    <version>1.0</version>
+    <dependencies>
+        <dependency>
+            <groupId>javax.enterprise</groupId>
+            <artifactId>cdi-api</artifactId>
+            <version>1.0</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+</project>
+```
+
+---
+
+##### Example 2
+`JavaxEnterpriseToJakartaEnterpriseTest#preservesProvidedCdiApi`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+class A { javax.enterprise.inject.spi.BeanManager manager; }
+```
+
+###### After
+```java
+class A { jakarta.enterprise.inject.spi.BeanManager manager; }
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-class A { javax.enterprise.inject.spi.BeanManager manager; }
++class A { jakarta.enterprise.inject.spi.BeanManager manager; }
+```
+</TabItem>
+</Tabs>
+
+###### Unchanged
+```mavenProject
+demo
+```
+
+###### Unchanged
+```xml title="pom.xml"
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.example</groupId>
+    <artifactId>demo</artifactId>
+    <version>1.0</version>
+    <dependencies>
+        <dependency>
+            <groupId>javax.enterprise</groupId>
+            <artifactId>cdi-api</artifactId>
+            <version>1.0</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+</project>
+```
+
 
 ## Usage
 
@@ -136,6 +243,25 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
+
+### Maven metadata failures
+**org.openrewrite.maven.table.MavenMetadataFailures**
+
+_Attempts to resolve maven metadata that failed._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Group id | The groupId of the artifact for which the metadata download failed. |
+| Artifact id | The artifactId of the artifact for which the metadata download failed. |
+| Version | The version of the artifact for which the metadata download failed. |
+| Maven repository | The URL of the Maven repository that the metadata download failed on. |
+| Snapshots | Does the repository support snapshots. |
+| Releases | Does the repository support releases. |
+| Failure | The reason the metadata download failed. |
+
+</TabItem>
+
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results

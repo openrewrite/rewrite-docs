@@ -1,17 +1,17 @@
 ---
-title: "Enable Spring Batch Annotation"
-sidebar_label: "Enable Spring Batch Annotation"
+title: "Remove `@EnableBatchProcessing` from Spring Boot applications"
+sidebar_label: "Remove `@EnableBatchProcessing` from Spring Boot applications"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Enable Spring Batch Annotation
+# Remove `@EnableBatchProcessing` from Spring Boot applications
 
 **org.openrewrite.java.spring.boot3.RemoveEnableBatchProcessing**
 
-_Add or remove the `@EnableBatchProcessing` annotation from a Spring Boot application._
+_Remove `@EnableBatchProcessing` from classes annotated with `@SpringBootApplication`, as in Spring Boot 3 it makes the batch auto-configuration back off. An annotation with attributes is kept, so its configuration is not lost._
 
 ## Recipe source
 
@@ -76,7 +76,7 @@ public class Application {
 
 <RunRecipe
   recipeName="org.openrewrite.java.spring.boot3.RemoveEnableBatchProcessing"
-  displayName="Enable Spring Batch Annotation"
+  displayName="Remove `@EnableBatchProcessing` from Spring Boot applications"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-spring"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING"

@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.testing.junit.JupiterBestPractices**
 
-_Applies best practices to tests._
+_Applies best practices to JUnit Jupiter tests, such as statically importing and simplifying assertions, removing the `test` prefix and `public` modifiers from tests, and removing the JUnit Jupiter migration support._
 
 ### Tags
 
@@ -44,7 +44,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Migrate Hamcrest assertions to JUnit Jupiter](../../../java/testing/hamcrest/migratehamcresttojunit5)
 * [Statically import JUnit Jupiter assertions](../../../java/testing/junit5/staticimports)
 * [Remove JUnit 5 static Assertions imports in Kotlin when wildcard import is present](../../../java/testing/junit5/cleanupkotlinjunit5assertionimports)
-* [Clean Up Assertions](../../../java/testing/junit5/cleanupassertions)
+* [Clean up assertions](../../../java/testing/junit5/cleanupassertions)
 * [Replace `@CsvSource` with `@ValueSource` for single method arguments](../../../java/testing/junit5/csvsourcetovaluesource)
 * [Remove unnecessary `assertEquals` delta argument for integral types](../../../java/testing/cleanup/assertequalsintegraldeltatoassertequals)
 * [Replace JUnit `assertTrue(false)` and `assertFalse(true)` with `fail()`](../../../java/testing/cleanup/assertliteralbooleantofailrecipes)
@@ -55,9 +55,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Remove `public` visibility of JUnit 5 tests](../../../java/testing/cleanup/testsshouldnotbepublic)
 * [Test methods should have void return type](../../../java/testing/cleanup/testmethodsshouldbevoid)
 * [Add missing `@ParameterizedTest` annotation when `@ValueSource` is used or replace `@Test` with `@ParameterizedTest`](../../../java/testing/junit5/addparameterizedtestannotation)
-* [Remove duplicates uses of @TestTemplate implementations for a single method](../../../java/testing/junit5/removeduplicatetesttemplates)
+* [Remove duplicate uses of `@TestTemplate` implementations for a single method](../../../java/testing/junit5/removeduplicatetesttemplates)
 * [Replace `fail()` in `try-catch` blocks with `Assertions.assertDoesNotThrow(() -&gt; \{ ... \})`](../../../java/testing/junit5/removetrycatchfailblocks)
-* [Make lifecycle methods non private](../../../java/testing/junit5/lifecyclenonprivate)
+* [Make lifecycle methods non-private](../../../java/testing/junit5/lifecyclenonprivate)
 * [Applies JUnit 5 `assertThrows` on last statement in lambda block only](../../../java/testing/junit5/assertthrowsonlaststatement)
 * [`assertTrue(x instanceof y)` to `assertInstanceOf(y.class, x)`](../../../java/testing/junit5/asserttrueinstanceoftoassertinstanceof)
 * [Make implausibly long `@Timeout` values explicit in minutes](../../../java/testing/junit5/implausibletimeouttominutes)
@@ -74,7 +74,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.testing.junit.JupiterBestPractices
 displayName: JUnit Jupiter best practices
 description: |
-  Applies best practices to tests.
+  Applies best practices to JUnit Jupiter tests, such as statically importing and simplifying assertions, removing the `test` prefix and `public` modifiers from tests, and removing the JUnit Jupiter migration support.
 tags:
   - junit
   - testing

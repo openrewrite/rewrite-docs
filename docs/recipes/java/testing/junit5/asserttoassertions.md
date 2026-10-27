@@ -1,13 +1,13 @@
 ---
-title: "JUnit 4 `Assert` To JUnit Jupiter `Assertions`"
-sidebar_label: "JUnit 4 `Assert` To JUnit Jupiter `Assertions`"
+title: "JUnit 4 `Assert` to JUnit Jupiter `Assertions`"
+sidebar_label: "JUnit 4 `Assert` to JUnit Jupiter `Assertions`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# JUnit 4 `Assert` To JUnit Jupiter `Assertions`
+# JUnit 4 `Assert` to JUnit Jupiter `Assertions`
 
 **org.openrewrite.java.testing.junit5.AssertToAssertions**
 
@@ -102,7 +102,7 @@ import org.junit.Test;
 
 <RunRecipe
   recipeName="org.openrewrite.java.testing.junit5.AssertToAssertions"
-  displayName="JUnit 4 `Assert` To JUnit Jupiter `Assertions`"
+  displayName="JUnit 4 `Assert` to JUnit Jupiter `Assertions`"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-testing-frameworks"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_TESTING_FRAMEWORKS"

@@ -16,7 +16,6 @@ _Refactor local variables or parameters which shadow a field defined in the same
 ### Tags
 
 * [RSPEC-S1117](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S1117&open=java%3AS1117)
-* [RSPEC-S2387](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S2387&open=java%3AS2387)
 
 ## Recipe source
 

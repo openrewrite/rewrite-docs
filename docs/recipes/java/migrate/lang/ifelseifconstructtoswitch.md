@@ -1,13 +1,13 @@
 ---
-title: "If-else-if-else to switch"
-sidebar_label: "If-else-if-else to switch"
+title: "Replace if-else-if-else with switch"
+sidebar_label: "Replace if-else-if-else with switch"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# If-else-if-else to switch
+# Replace if-else-if-else with switch
 
 **org.openrewrite.java.migrate.lang.IfElseIfConstructToSwitch**
 
@@ -120,7 +120,7 @@ class Test {
 
 <RunRecipe
   recipeName="org.openrewrite.java.migrate.lang.IfElseIfConstructToSwitch"
-  displayName="If-else-if-else to switch"
+  displayName="Replace if-else-if-else with switch"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-migrate-java"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA"

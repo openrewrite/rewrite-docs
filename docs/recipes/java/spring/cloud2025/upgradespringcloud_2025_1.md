@@ -41,11 +41,6 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 **Recipes**
 
-* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
-  * groupId: `org.springframework.cloud`
-  * artifactId: `*`
-  * newVersion: `5.0.x`
-  * overrideManagedVersion: `false`
 * [Change Maven parent](../../../maven/changeparentpom)
   * oldGroupId: `org.springframework.cloud`
   * newGroupId: `org.springframework.boot`
@@ -53,12 +48,15 @@ This recipe is available under the [Moderne Source Available License](https://do
   * newArtifactId: `spring-boot-starter-parent`
   * newVersion: `4.0.x`
   * allowVersionDowngrades: `true`
+* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
+  * groupId: `org.springframework.cloud`
+  * artifactId: `*`
+  * newVersion: `5.0.x`
 * [Add Spring Cloud dependencies BOM](../../../java/spring/cloud2025/addspringclouddependenciesbom)
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `org.springframework.cloud`
   * artifactId: `spring-cloud-dependencies`
   * newVersion: `2025.1.x`
-  * overrideManagedVersion: `false`
 
 </TabItem>
 
@@ -77,11 +75,6 @@ tags:
 preconditions:
   - org.openrewrite.Singleton
 recipeList:
-  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
-      groupId: org.springframework.cloud
-      artifactId: "*"
-      newVersion: 5.0.x
-      overrideManagedVersion: false
   - org.openrewrite.maven.ChangeParentPom:
       oldGroupId: org.springframework.cloud
       newGroupId: org.springframework.boot
@@ -89,12 +82,15 @@ recipeList:
       newArtifactId: spring-boot-starter-parent
       newVersion: 4.0.x
       allowVersionDowngrades: true
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: org.springframework.cloud
+      artifactId: "*"
+      newVersion: 5.0.x
   - org.openrewrite.java.spring.cloud2025.AddSpringCloudDependenciesBom
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: org.springframework.cloud
       artifactId: spring-cloud-dependencies
       newVersion: 2025.1.x
-      overrideManagedVersion: false
 
 ```
 </TabItem>
@@ -105,7 +101,7 @@ recipeList:
 This recipe is used as part of the following composite recipes:
 
 * [Migrate to Spring Boot 4.0 (Community Edition)](/recipes/java/spring/boot4/upgradespringboot_4_0-community-edition.md)
-* [Migrate to Spring Boot 4.0 (Moderne Edition)](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/upgradespringboot_4_0-moderne-edition)
+* [Upgrade to Spring Cloud 2025.1](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/cloud20251/upgradespringcloud_2025_1)
 
 ## Examples
 ##### Example 1

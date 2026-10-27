@@ -42,6 +42,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Replace `throw new IOException(..)` inside Jackson serializer / deserializer overrides](../../java/jackson/replaceioexceptionthrowinjacksonoverrides)
 * [Replace `null` type in `StdDeserializer` constructor with actual type](../../java/jackson/stddeserializernullconstructor)
 * [Use `DeserializationContext.readTreeAsValue()` instead of `ObjectCodec.treeToValue()`](../../java/jackson/usereadtreeasvalueindeserializer)
+* [Declare `ObjectCodec` variables as `ObjectReadContext` or `ObjectWriteContext`](../../java/jackson/objectcodectoreadwritecontext)
 * [Update `lombok.config` for Jackson 3 compatibility](../../java/jackson/lombokjacksonizedconfig)
 * [Use format alignment `ObjectMappers`](../../java/jackson/useformatalignedobjectmappers)
 * [Modernize legacy `jackson-core` feature constants](../../java/jackson/upgradejackson_2_3_modernizejacksoncorefeatures)
@@ -66,6 +67,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
   * oldParameterNames: `[msg, cause, gen]`
 * [Add missing Jackson dataformat dependencies](../../java/jackson/addmissingjacksondependencies)
 * [Upgrade Jackson 2.x dependencies to 3.x](../../java/jackson/upgradejackson_2_3_dependencies)
+* [Use the Jackson 3 object mapper factory of REST Assured](../../java/jackson/upgradejackson_2_3_restassured)
 * [Rename Jackson 2.x methods to 3.x equivalents](../../java/jackson/upgradejackson_2_3_methodrenames)
 * [Migrate relocated feature constants to DateTimeFeature and EnumFeature](../../java/jackson/upgradejackson_2_3_relocatedfeatureconstants)
 * [Replace constant with another constant](../../java/replaceconstantwithanotherconstant)
@@ -115,6 +117,7 @@ recipeList:
   - org.openrewrite.java.jackson.ReplaceIOExceptionThrowInJacksonOverrides
   - org.openrewrite.java.jackson.StdDeserializerNullConstructor
   - org.openrewrite.java.jackson.UseReadTreeAsValueInDeserializer
+  - org.openrewrite.java.jackson.ObjectCodecToReadWriteContext
   - org.openrewrite.java.jackson.LombokJacksonizedConfig
   - org.openrewrite.java.jackson.UseFormatAlignedObjectMappers
   - org.openrewrite.java.jackson.UpgradeJackson_2_3_ModernizeJacksonCoreFeatures
@@ -153,6 +156,7 @@ recipeList:
         - gen
   - org.openrewrite.java.jackson.AddMissingJacksonDependencies
   - org.openrewrite.java.jackson.UpgradeJackson_2_3_Dependencies
+  - org.openrewrite.java.jackson.UpgradeJackson_2_3_RestAssured
   - org.openrewrite.java.jackson.UpgradeJackson_2_3_MethodRenames
   - org.openrewrite.java.jackson.UpgradeJackson_2_3_RelocatedFeatureConstants
   - org.openrewrite.java.ReplaceConstantWithAnotherConstant:
@@ -232,7 +236,7 @@ This recipe is used as part of the following composite recipes:
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-annotations</artifactId>
-            <version>2.21</version>
+            <version>2.22</version>
         </dependency>
     </dependencies>
 </project>
@@ -248,7 +252,7 @@ This recipe is used as part of the following composite recipes:
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-annotations</artifactId>
 -           <version>2.19.0</version>
-+           <version>2.21</version>
++           <version>2.22</version>
         </dependency>
 ```
 </TabItem>
@@ -556,6 +560,58 @@ class Test {
 ---
 
 ##### Example 8
+`RestAssuredJackson3Test#jackson3ObjectMapperFactory`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import com.fasterxml.jackson.databind.ObjectMapper;
+import io.restassured.config.ObjectMapperConfig;
+
+class PersonResourceTest {
+    ObjectMapperConfig config() {
+        return new ObjectMapperConfig().jackson2ObjectMapperFactory((type, s) -> new ObjectMapper());
+    }
+}
+```
+
+###### After
+```java
+import tools.jackson.databind.json.JsonMapper;
+import io.restassured.config.ObjectMapperConfig;
+
+class PersonResourceTest {
+    ObjectMapperConfig config() {
+        return new ObjectMapperConfig().jackson3ObjectMapperFactory((type, s) -> new JsonMapper());
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import com.fasterxml.jackson.databind.ObjectMapper;
++import tools.jackson.databind.json.JsonMapper;
+import io.restassured.config.ObjectMapperConfig;
+@@ -6,1 +6,1 @@
+class PersonResourceTest {
+    ObjectMapperConfig config() {
+-       return new ObjectMapperConfig().jackson2ObjectMapperFactory((type, s) -> new ObjectMapper());
++       return new ObjectMapperConfig().jackson3ObjectMapperFactory((type, s) -> new JsonMapper());
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 9
 `StdDeserializerNullConstructorTest#stdDeserializerThisNullPattern`
 
 
@@ -641,7 +697,7 @@ class MyDeserializer extends StdDeserializer<String> {
 
 ---
 
-##### Example 9
+##### Example 10
 `TypeFactoryDefaultInstanceTest#typeFactoryDefaultInstanceRenamed`
 
 
@@ -695,7 +751,7 @@ class Test {
 
 ---
 
-##### Example 10
+##### Example 11
 `UpgradeJackson_2_3Test#jacksonUpgradeToVersion3`
 
 
@@ -806,7 +862,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 ---
 
-##### Example 11
+##### Example 12
 `Jackson3DependenciesTest#jacksonAnnotations`
 
 
@@ -842,7 +898,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-annotations</artifactId>
-            <version>2.21</version>
+            <version>2.22</version>
         </dependency>
     </dependencies>
 </project>
@@ -858,7 +914,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-annotations</artifactId>
 -           <version>2.19.0</version>
-+           <version>2.21</version>
++           <version>2.22</version>
         </dependency>
 ```
 </TabItem>
@@ -866,7 +922,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 ---
 
-##### Example 12
+##### Example 13
 `Jackson3MethodRenamesTest#jsonGeneratorWriteObject`
 
 
@@ -916,7 +972,7 @@ class Test {
 
 ---
 
-##### Example 13
+##### Example 14
 `Jackson3TypeChangesTest#jsonFactory`
 
 
@@ -964,7 +1020,7 @@ class Test {
 
 ---
 
-##### Example 14
+##### Example 15
 `LombokJacksonizedConfigTest#addJacksonVersionToLombokConfig`
 
 
@@ -985,7 +1041,7 @@ class MyDto {
 
 ---
 
-##### Example 15
+##### Example 16
 `RemoveThrowsIOExceptionFromJacksonOverridesTest#removeThrowsIOExceptionFromSerializer`
 
 
@@ -1053,7 +1109,7 @@ class MySerializer extends JsonSerializer<String> {
 
 ---
 
-##### Example 16
+##### Example 17
 `RenameJsonTokenFieldNameTest#renameFieldNameToPropertyName`
 
 
@@ -1111,7 +1167,7 @@ class Test {
 
 ---
 
-##### Example 17
+##### Example 18
 `ReorderStreamWriteExceptionArgumentsTest#reorderStringAndGenerator`
 
 
@@ -1165,7 +1221,59 @@ class Test {
 
 ---
 
-##### Example 18
+##### Example 19
+`RestAssuredJackson3Test#jackson3ObjectMapperFactory`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import com.fasterxml.jackson.databind.ObjectMapper;
+import io.restassured.config.ObjectMapperConfig;
+
+class PersonResourceTest {
+    ObjectMapperConfig config() {
+        return new ObjectMapperConfig().jackson2ObjectMapperFactory((type, s) -> new ObjectMapper());
+    }
+}
+```
+
+###### After
+```java
+import tools.jackson.databind.json.JsonMapper;
+import io.restassured.config.ObjectMapperConfig;
+
+class PersonResourceTest {
+    ObjectMapperConfig config() {
+        return new ObjectMapperConfig().jackson3ObjectMapperFactory((type, s) -> new JsonMapper());
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import com.fasterxml.jackson.databind.ObjectMapper;
++import tools.jackson.databind.json.JsonMapper;
+import io.restassured.config.ObjectMapperConfig;
+@@ -6,1 +6,1 @@
+class PersonResourceTest {
+    ObjectMapperConfig config() {
+-       return new ObjectMapperConfig().jackson2ObjectMapperFactory((type, s) -> new ObjectMapper());
++       return new ObjectMapperConfig().jackson3ObjectMapperFactory((type, s) -> new JsonMapper());
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 20
 `StdDeserializerNullConstructorTest#stdDeserializerThisNullPattern`
 
 
@@ -1251,7 +1359,7 @@ class MyDeserializer extends StdDeserializer<String> {
 
 ---
 
-##### Example 19
+##### Example 21
 `TypeFactoryDefaultInstanceTest#typeFactoryDefaultInstanceRenamed`
 
 
@@ -1305,7 +1413,7 @@ class Test {
 
 ---
 
-##### Example 20
+##### Example 22
 `UpgradeJackson_2_3Test#jacksonUpgradeToVersion3`
 
 
@@ -1438,6 +1546,25 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
+
+### Maven metadata failures
+**org.openrewrite.maven.table.MavenMetadataFailures**
+
+_Attempts to resolve maven metadata that failed._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Group id | The groupId of the artifact for which the metadata download failed. |
+| Artifact id | The artifactId of the artifact for which the metadata download failed. |
+| Version | The version of the artifact for which the metadata download failed. |
+| Maven repository | The URL of the Maven repository that the metadata download failed on. |
+| Snapshots | Does the repository support snapshots. |
+| Releases | Does the repository support releases. |
+| Failure | The reason the metadata download failed. |
+
+</TabItem>
+
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results

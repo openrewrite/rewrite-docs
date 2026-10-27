@@ -1,13 +1,13 @@
 ---
-title: "Changes code to use Java 17's `instanceof` pattern matching"
-sidebar_label: "Changes code to use Java 17's `instanceof` pattern matching"
+title: "Change code to use Java 17's `instanceof` pattern matching"
+sidebar_label: "Change code to use Java 17's `instanceof` pattern matching"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Changes code to use Java 17's `instanceof` pattern matching
+# Change code to use Java 17's `instanceof` pattern matching
 
 **org.openrewrite.staticanalysis.InstanceOfPatternMatch**
 
@@ -126,7 +126,7 @@ class Foo {
 
 <RunRecipe
   recipeName="org.openrewrite.staticanalysis.InstanceOfPatternMatch"
-  displayName="Changes code to use Java 17's `instanceof` pattern matching"
+  displayName="Change code to use Java 17's `instanceof` pattern matching"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-static-analysis"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_STATIC_ANALYSIS"

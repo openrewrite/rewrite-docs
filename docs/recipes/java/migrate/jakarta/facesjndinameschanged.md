@@ -1,13 +1,13 @@
 ---
-title: "JNDI name `jsf/ClientSideSecretKey` has been renamed to `faces/ClientSideSecretKey`, and the `jsf/FlashSecretKey` JNDI name has been renamed to `faces/FlashSecretKey`"
-sidebar_label: "JNDI name `jsf/ClientSideSecretKey` has been renamed to `faces/ClientSideSecretKey`, and the `jsf/FlashSecretKey` JNDI name has been renamed to `faces/FlashSecretKey`"
+title: "Rename the `jsf/ClientSideSecretKey` and `jsf/FlashSecretKey` JNDI names to `faces/*`"
+sidebar_label: "Rename the `jsf/ClientSideSecretKey` and `jsf/FlashSecretKey` JNDI names to `faces/*`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# JNDI name `jsf/ClientSideSecretKey` has been renamed to `faces/ClientSideSecretKey`, and the `jsf/FlashSecretKey` JNDI name has been renamed to `faces/FlashSecretKey`
+# Rename the `jsf/ClientSideSecretKey` and `jsf/FlashSecretKey` JNDI names to `faces/*`
 
 **org.openrewrite.java.migrate.jakarta.FacesJNDINamesChanged**
 
@@ -30,12 +30,6 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-**Preconditions**
-
-* [Singleton](../../../core/singleton)
-
-**Recipes**
-
 * [Change XML tag value](../../../xml/changetagvalue)
   * elementName: `//env-entry-name`
   * oldValue: `jsf/ClientSideSecretKey`
@@ -53,11 +47,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.jakarta.FacesJNDINamesChanged
-displayName: JNDI name `jsf/ClientSideSecretKey` has been renamed to `faces/ClientSideSecretKey`, and the `jsf/FlashSecretKey` JNDI name has been renamed to `faces/FlashSecretKey`
+displayName: Rename the `jsf/ClientSideSecretKey` and `jsf/FlashSecretKey` JNDI names to `faces/*`
 description: |
   The `jsf/ClientSideSecretKey` JNDI name has been renamed to `faces/ClientSideSecretKey`, and the `jsf/FlashSecretKey` JNDI name has been renamed to `faces/FlashSecretKey`. The JNDI keys that have been renamed are updated to allow use of the keys.
-preconditions:
-  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.xml.ChangeTagValue:
       elementName: //env-entry-name
@@ -210,7 +202,7 @@ This recipe is used as part of the following composite recipes:
 
 <RunRecipe
   recipeName="org.openrewrite.java.migrate.jakarta.FacesJNDINamesChanged"
-  displayName="JNDI name `jsf/ClientSideSecretKey` has been renamed to `faces/ClientSideSecretKey`, and the `jsf/FlashSecretKey` JNDI name has been renamed to `faces/FlashSecretKey`"
+  displayName="Rename the `jsf/ClientSideSecretKey` and `jsf/FlashSecretKey` JNDI names to `faces/*`"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-migrate-java"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA"

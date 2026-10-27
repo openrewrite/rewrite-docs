@@ -1,17 +1,17 @@
 ---
-title: "Use %n instead of \n in format strings"
-sidebar_label: "Use %n instead of \n in format strings"
+title: "Use `%n` instead of `\\n` in format strings"
+sidebar_label: "Use `%n` instead of `\\n` in format strings"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Use %n instead of \n in format strings
+# Use `%n` instead of `\n` in format strings
 
 **org.openrewrite.staticanalysis.UsePortableNewlines**
 
-_Format strings should use %n rather than \n to produce platform-specific line separators. Hard-coded `\n` characters produce incorrect line endings on Windows, whereas `%n` adapts to the runtime platform automatically._
+_Format strings should use `%n` rather than `\n` to produce platform-specific line separators. Hard-coded `\n` characters produce incorrect line endings on Windows, whereas `%n` adapts to the runtime platform automatically._
 
 ### Tags
 
@@ -76,7 +76,7 @@ class Test {
 
 <RunRecipe
   recipeName="org.openrewrite.staticanalysis.UsePortableNewlines"
-  displayName="Use %n instead of \n in format strings"
+  displayName="Use `%n` instead of `\n` in format strings"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-static-analysis"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_STATIC_ANALYSIS"

@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.migrate.IllegalArgumentExceptionToAlreadyConnectedException**
 
-_Replace `IllegalArgumentException` with `AlreadyConnectedException` for DatagramChannel.send() to ensure compatibility with Java 11+._
+_Replace `IllegalArgumentException` with `AlreadyConnectedException` for `DatagramChannel.send()` to ensure compatibility with Java 11+._
 
 ## Recipe source
 

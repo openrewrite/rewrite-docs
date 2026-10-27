@@ -10,6 +10,6 @@ _Recipes for [Spring Security](https://spring.io/projects/spring-security)._
 
 _Recipes that include further recipes, often including the individual recipes below._
 
-* [Spring security best practices](./springsecuritybestpractices.md)
+* [Spring Security best practices](./springsecuritybestpractices.md)
 
 

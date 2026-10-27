@@ -1,13 +1,13 @@
 ---
-title: "Spring security best practices"
-sidebar_label: "Spring security best practices"
+title: "Spring Security best practices"
+sidebar_label: "Spring Security best practices"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Spring security best practices
+# Spring Security best practices
 
 **org.openrewrite.java.spring.security.SpringSecurityBestPractices**
 
@@ -52,7 +52,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.spring.security.SpringSecurityBestPractices
-displayName: Spring security best practices
+displayName: Spring Security best practices
 description: |
   Applies security best practices to Spring applications, including TLS for database and message broker connections.
 tags:
@@ -79,7 +79,7 @@ This recipe is used as part of the following composite recipes:
 
 <RunRecipe
   recipeName="org.openrewrite.java.spring.security.SpringSecurityBestPractices"
-  displayName="Spring security best practices"
+  displayName="Spring Security best practices"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-spring"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING"

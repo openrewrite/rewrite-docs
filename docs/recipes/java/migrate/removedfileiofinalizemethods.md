@@ -1,13 +1,13 @@
 ---
-title: "Replace `finalize` method in `java.io.FileInputStream`  and `java.io.FileOutputStream`"
-sidebar_label: "Replace `finalize` method in `java.io.FileInputStream`  and `java.io.FileOutputStream`"
+title: "Replace `finalize` method in `java.io.FileInputStream` and `java.io.FileOutputStream`"
+sidebar_label: "Replace `finalize` method in `java.io.FileInputStream` and `java.io.FileOutputStream`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Replace `finalize` method in `java.io.FileInputStream`  and `java.io.FileOutputStream`
+# Replace `finalize` method in `java.io.FileInputStream` and `java.io.FileOutputStream`
 
 **org.openrewrite.java.migrate.RemovedFileIOFinalizeMethods**
 
@@ -57,7 +57,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.RemovedFileIOFinalizeMethods
-displayName: Replace `finalize` method in `java.io.FileInputStream`  and `java.io.FileOutputStream`
+displayName: Replace `finalize` method in `java.io.FileInputStream` and `java.io.FileOutputStream`
 description: |
   The `finalize` method in `java.io.FileInputStream` and `java.io.FileOutputStream` is no longer available in Java SE 12 and later. The recipe replaces it with the `close` method.
 tags:
@@ -89,7 +89,7 @@ This recipe is used as part of the following composite recipes:
 
 <RunRecipe
   recipeName="org.openrewrite.java.migrate.RemovedFileIOFinalizeMethods"
-  displayName="Replace `finalize` method in `java.io.FileInputStream`  and `java.io.FileOutputStream`"
+  displayName="Replace `finalize` method in `java.io.FileInputStream` and `java.io.FileOutputStream`"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-migrate-java"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA"

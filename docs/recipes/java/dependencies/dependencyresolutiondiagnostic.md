@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.dependencies.DependencyResolutionDiagnostic**
 
-_Recipes which manipulate dependencies must be able to successfully access the artifact repositories and resolve dependencies from them. This recipe produces two data tables used to understand the state of dependency resolution.   The Repository accessibility report lists all the artifact repositories known to the project and whether respond to network access. The network access is attempted while the recipe is run and so is representative of current conditions.   The Gradle dependency configuration errors lists all the dependency configurations that failed to resolve one or more dependencies when the project was parsed. This is representative of conditions at the time the LST was parsed._
+_Recipes which manipulate dependencies must be able to successfully access the artifact repositories and resolve dependencies from them. This recipe produces two data tables used to understand the state of dependency resolution.  The Repository accessibility report lists all the artifact repositories known to the project and whether they respond to network access. The network access is attempted while the recipe is run and so is representative of current conditions.  The Gradle dependency configuration errors lists all the dependency configurations that failed to resolve one or more dependencies when the project was parsed. This is representative of conditions at the time the LST was parsed._
 
 ## Recipe source
 
@@ -105,12 +105,12 @@ _Listing of all dependency repositories and whether they are accessible._
 
 | Column Name | Description |
 | ----------- | ----------- |
-| Repository URI | The URI of the repository |
+| Repository URI | The URI of the repository. |
 | Ping exception type | Empty if the repository responded to a ping. Otherwise, the type of exception encountered when attempting to access the repository. |
 | Ping error message | Empty if the repository was accessible. Otherwise, the error message encountered when attempting to access the repository. |
 | Ping HTTP code | The HTTP response code returned by the repository. May be empty for non-HTTP repositories. |
-| Dependency resolution exception type | Empty if ping failed, or if the repository successfully downloaded the specified dependency. Otherwise, the type of exception encountered when attempting to access the repository. |
-| Dependency resolution error message | Empty if ping failed, or if the repository successfully downloaded the specified dependency. Otherwise, the error message encountered when attempting to access the repository. |
+| Dependency resolution exception type | Empty if ping failed, or if the repository successfully downloaded the specified dependency. Otherwise, the type of exception encountered when downloading the dependency. |
+| Dependency resolution error message | Empty if ping failed, or if the repository successfully downloaded the specified dependency. Otherwise, the error message encountered when downloading the dependency. |
 
 </TabItem>
 
@@ -119,7 +119,7 @@ _Listing of all dependency repositories and whether they are accessible._
 ### Gradle dependency configuration errors
 **org.openrewrite.java.dependencies.table.GradleDependencyConfigurationErrors**
 
-_Records Gradle dependency configurations which failed to resolve during parsing. Partial success/failure is common, a failure in this list does not mean that every dependency failed to resolve._
+_Records Gradle dependency configurations which failed to resolve during parsing. Partial success/failure is common; a failure in this list does not mean that every dependency failed to resolve._
 
 | Column Name | Description |
 | ----------- | ----------- |

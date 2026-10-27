@@ -1,6 +1,6 @@
 ---
-title: "Replace JUL `Logger.severe(Supplier&lt;String&gt;)` with SLF4J's `Logger.atError().log(Supplier&lt;String&gt;)`"
-sidebar_label: "Replace JUL `Logger.severe(Supplier&lt;String&gt;)` with SLF4J's `Logger.atError().log(Supplier&lt;String&gt;)`"
+title: "Replace JUL `Logger.severe(Supplier<String>)` with SLF4J's `Logger.atError().log(Supplier<String>)`"
+sidebar_label: "Replace JUL `Logger.severe(Supplier<String>)` with SLF4J's `Logger.atError().log(Supplier<String>)`"
 ---
 
 import Tabs from '@theme/Tabs';

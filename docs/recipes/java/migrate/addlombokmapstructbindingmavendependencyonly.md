@@ -11,62 +11,16 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.migrate.AddLombokMapstructBindingMavenDependencyOnly**
 
-_Add the `lombok-mapstruct-binding` when both MapStruct and Lombok are used, and the dependency does not already exist. Only to be called from `org.openrewrite.java.migrate.AddLombokMapstructBinding` to reduce redundant checks._
+_Add the `lombok-mapstruct-binding` Maven dependency when this module uses both Lombok and MapStruct and the binding is not already a dependency or configured on the compiler annotation processor path._
 
 ## Recipe source
 
-[GitHub: java-version-17.yml](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/java-version-17.yml),
+[GitHub: AddLombokMapstructBindingMavenDependencyOnly.java](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/AddLombokMapstructBindingMavenDependencyOnly.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues),
 [Code Genome Project](https://artifacts.codegenomeproject.org/maven/org/openrewrite/recipe/rewrite-migrate-java/)
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license). Moderne customers can download precompiled artifacts from The Code Genome Project. For non-commercial use you can build the artifact from source locally.
 
-
-## Definition
-
-<Tabs groupId="recipeType">
-<TabItem value="recipe-list" label="Recipe List" >
-**Preconditions**
-
-* [Does not include dependency for Gradle and Maven](../../java/dependencies/search/doesnotincludedependency)
-  * groupId: `org.projectlombok`
-  * artifactId: `lombok-mapstruct-binding`
-* [Singleton](../../core/singleton)
-
-**Recipes**
-
-* [Add Maven dependency](../../maven/adddependency)
-  * groupId: `org.projectlombok`
-  * artifactId: `lombok-mapstruct-binding`
-  * version: `0.2.0`
-  * acceptTransitive: `false`
-
-</TabItem>
-
-<TabItem value="yaml-recipe-list" label="Yaml Recipe List">
-
-```yaml
----
-type: specs.openrewrite.org/v1beta/recipe
-name: org.openrewrite.java.migrate.AddLombokMapstructBindingMavenDependencyOnly
-displayName: Add `lombok-mapstruct-binding` dependency for Maven when both MapStruct and Lombok are used
-description: |
-  Add the `lombok-mapstruct-binding` when both MapStruct and Lombok are used, and the dependency does not already exist. Only to be called from `org.openrewrite.java.migrate.AddLombokMapstructBinding` to reduce redundant checks.
-preconditions:
-  - org.openrewrite.java.dependencies.search.DoesNotIncludeDependency:
-      groupId: org.projectlombok
-      artifactId: lombok-mapstruct-binding
-  - org.openrewrite.Singleton
-recipeList:
-  - org.openrewrite.maven.AddDependency:
-      groupId: org.projectlombok
-      artifactId: lombok-mapstruct-binding
-      version: 0.2.0
-      acceptTransitive: false
-
-```
-</TabItem>
-</Tabs>
 
 ## Used by
 
@@ -98,25 +52,6 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
-<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
-
-### Maven metadata failures
-**org.openrewrite.maven.table.MavenMetadataFailures**
-
-_Attempts to resolve maven metadata that failed._
-
-| Column Name | Description |
-| ----------- | ----------- |
-| Group id | The groupId of the artifact for which the metadata download failed. |
-| Artifact id | The artifactId of the artifact for which the metadata download failed. |
-| Version | The version of the artifact for which the metadata download failed. |
-| Maven repository | The URL of the Maven repository that the metadata download failed on. |
-| Snapshots | Does the repository support snapshots. |
-| Releases | Does the repository support releases. |
-| Failure | The reason the metadata download failed. |
-
-</TabItem>
-
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results

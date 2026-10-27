@@ -32,7 +32,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 **Recipes**
 
-* [Remove JUnit 4 `@RunWith` annotations that do not require an `@ExtendsWith` replacement](../../../java/testing/junit5/removeobsoleterunners)
+* [Remove JUnit 4 `@RunWith` annotations that do not require an `@ExtendWith` replacement](../../../java/testing/junit5/removeobsoleterunners)
   * obsoleteRunners: `[org.springframework.boot.junit.runner.classpath.ModifiedClassPathRunner, org.springframework.boot.testsupport.runner.classpath.ModifiedClassPathRunner]`
 
 </TabItem>

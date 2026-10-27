@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.maven.MigrateToMaven3\_10**
 
-_Migrates a project to Maven 3.10. Maven 3.10 rejects some POMs that earlier Maven 3 versions built with a warning, such as POMs with duplicate dependency or plugin declarations. This recipe fixes those POMs and updates an existing Maven wrapper to Maven 3.10._
+_Migrates a project to Maven 3.10. Maven 3.10 rejects some POMs that earlier Maven 3 versions built with a warning, such as POMs with duplicate dependency or plugin declarations, or with a parent `relativePath` that holds coordinates instead of a path. This recipe fixes those POMs, updates an existing Maven wrapper to Maven 3.10, and then removes encoding and output timestamp properties that equal the Maven 3.10 super POM defaults._
 
 ## Recipe source
 
@@ -32,9 +32,19 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 <TabItem value="recipe-list" label="Recipe List" >
 * [Remove duplicate plugin declarations](../maven/removeduplicateplugindeclarations)
 * [Remove duplicate Maven dependencies](../maven/removeduplicatedependencies)
+* [Remove invalid parent `relativePath`](../maven/removeinvalidparentrelativepath)
 * [Update Maven wrapper](../maven/updatemavenwrapper)
   * distributionVersion: `3.10.x`
   * addIfMissing: `false`
+* [Remove redundant properties](../maven/removeredundantproperties)
+  * namePattern: `project.build.sourceEncoding`
+  * onlyIfParentValueIs: `EQ`
+* [Remove redundant properties](../maven/removeredundantproperties)
+  * namePattern: `project.reporting.outputEncoding`
+  * onlyIfParentValueIs: `EQ`
+* [Remove redundant properties](../maven/removeredundantproperties)
+  * namePattern: `project.build.outputTimestamp`
+  * onlyIfParentValueIs: `EQ`
 
 </TabItem>
 
@@ -46,13 +56,23 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.maven.MigrateToMaven3_10
 displayName: Migrate to Maven 3.10
 description: |
-  Migrates a project to Maven 3.10. Maven 3.10 rejects some POMs that earlier Maven 3 versions built with a warning, such as POMs with duplicate dependency or plugin declarations. This recipe fixes those POMs and updates an existing Maven wrapper to Maven 3.10.
+  Migrates a project to Maven 3.10. Maven 3.10 rejects some POMs that earlier Maven 3 versions built with a warning, such as POMs with duplicate dependency or plugin declarations, or with a parent `relativePath` that holds coordinates instead of a path. This recipe fixes those POMs, updates an existing Maven wrapper to Maven 3.10, and then removes encoding and output timestamp properties that equal the Maven 3.10 super POM defaults.
 recipeList:
   - org.openrewrite.maven.RemoveDuplicatePluginDeclarations
   - org.openrewrite.maven.RemoveDuplicateDependencies
+  - org.openrewrite.maven.RemoveInvalidParentRelativePath
   - org.openrewrite.maven.UpdateMavenWrapper:
       distributionVersion: 3.10.x
       addIfMissing: false
+  - org.openrewrite.maven.RemoveRedundantProperties:
+      namePattern: project.build.sourceEncoding
+      onlyIfParentValueIs: EQ
+  - org.openrewrite.maven.RemoveRedundantProperties:
+      namePattern: project.reporting.outputEncoding
+      onlyIfParentValueIs: EQ
+  - org.openrewrite.maven.RemoveRedundantProperties:
+      namePattern: project.build.outputTimestamp
+      onlyIfParentValueIs: EQ
 
 ```
 </TabItem>

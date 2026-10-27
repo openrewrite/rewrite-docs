@@ -19,8 +19,66 @@ _Replace JUnit 4's `@Before`, `@BeforeClass`, `@After`, and `@AfterClass` annota
 [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues),
 [Code Genome Project](https://artifacts.codegenomeproject.org/maven/org/openrewrite/recipe/rewrite-testing-frameworks/)
 
+:::info
+This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
+:::
+
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license). Moderne customers can download precompiled artifacts from The Code Genome Project. For non-commercial use you can build the artifact from source locally.
 
+
+## Definition
+
+<Tabs groupId="recipeType">
+<TabItem value="recipe-list" label="Recipe List" >
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.junit.Before`
+  * newFullyQualifiedTypeName: `org.junit.jupiter.api.BeforeEach`
+  * ignoreDefinition: `true`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.junit.After`
+  * newFullyQualifiedTypeName: `org.junit.jupiter.api.AfterEach`
+  * ignoreDefinition: `true`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.junit.BeforeClass`
+  * newFullyQualifiedTypeName: `org.junit.jupiter.api.BeforeAll`
+  * ignoreDefinition: `true`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.junit.AfterClass`
+  * newFullyQualifiedTypeName: `org.junit.jupiter.api.AfterAll`
+  * ignoreDefinition: `true`
+
+</TabItem>
+
+<TabItem value="yaml-recipe-list" label="Yaml Recipe List">
+
+```yaml
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: org.openrewrite.java.testing.junit5.UpdateBeforeAfterAnnotations
+displayName: Migrate JUnit 4 lifecycle annotations to JUnit Jupiter
+description: |
+  Replace JUnit 4's `@Before`, `@BeforeClass`, `@After`, and `@AfterClass` annotations with their JUnit Jupiter equivalents.
+recipeList:
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.junit.Before
+      newFullyQualifiedTypeName: org.junit.jupiter.api.BeforeEach
+      ignoreDefinition: true
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.junit.After
+      newFullyQualifiedTypeName: org.junit.jupiter.api.AfterEach
+      ignoreDefinition: true
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.junit.BeforeClass
+      newFullyQualifiedTypeName: org.junit.jupiter.api.BeforeAll
+      ignoreDefinition: true
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.junit.AfterClass
+      newFullyQualifiedTypeName: org.junit.jupiter.api.AfterAll
+      ignoreDefinition: true
+
+```
+</TabItem>
+</Tabs>
 
 ## Used by
 

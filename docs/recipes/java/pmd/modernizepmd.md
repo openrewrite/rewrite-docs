@@ -51,6 +51,125 @@ recipeList:
 ```
 </TabItem>
 </Tabs>
+## Examples
+##### Example 1
+`ModernizePmdTest#modernizeRulesetWrittenForPmd6`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="xml" label="xml">
+
+
+###### Before
+```xml
+<?xml version="1.0"?>
+<ruleset name="custom"
+         xmlns="http://pmd.sourceforge.net/ruleset/2.0.0">
+    <description>Our rules</description>
+    <rule ref="category/java/bestpractices.xml/UnusedImports"/>
+    <rule ref="category/java/bestpractices.xml/JUnitTestsShouldIncludeAssert"/>
+    <rule ref="category/java/design.xml/NcssTypeCount"/>
+    <rule ref="category/java/design.xml/UseUtilityClass"/>
+    <rule ref="category/java/errorprone.xml/CloneThrowsCloneNotSupportedException"/>
+    <rule ref="category/java/bestpractices.xml/AvoidReassigningParameters"/>
+</ruleset>
+```
+
+###### After
+```xml
+<?xml version="1.0"?>
+<ruleset name="custom"
+         xmlns="http://pmd.sourceforge.net/ruleset/2.0.0">
+    <description>Our rules</description>
+    <rule ref="category/java/codestyle.xml/UnnecessaryImport"/>
+    <rule ref="category/java/bestpractices.xml/UnitTestShouldIncludeAssert"/>
+    <rule ref="category/java/design.xml/NcssCount"/>
+    <rule ref="category/java/design.xml/InstantiableUtilityClass"/>
+    <rule ref="category/java/bestpractices.xml/AvoidReassigningParameters"/>
+</ruleset>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -5,5 +5,4 @@
+         xmlns="http://pmd.sourceforge.net/ruleset/2.0.0">
+    <description>Our rules</description>
+-   <rule ref="category/java/bestpractices.xml/UnusedImports"/>
+-   <rule ref="category/java/bestpractices.xml/JUnitTestsShouldIncludeAssert"/>
+-   <rule ref="category/java/design.xml/NcssTypeCount"/>
+-   <rule ref="category/java/design.xml/UseUtilityClass"/>
+-   <rule ref="category/java/errorprone.xml/CloneThrowsCloneNotSupportedException"/>
++   <rule ref="category/java/codestyle.xml/UnnecessaryImport"/>
++   <rule ref="category/java/bestpractices.xml/UnitTestShouldIncludeAssert"/>
++   <rule ref="category/java/design.xml/NcssCount"/>
++   <rule ref="category/java/design.xml/InstantiableUtilityClass"/>
+    <rule ref="category/java/bestpractices.xml/AvoidReassigningParameters"/>
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`ModernizePmdTest#modernizeRulesetWrittenForPmd6`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="xml" label="xml">
+
+
+###### Before
+```xml
+<?xml version="1.0"?>
+<ruleset name="custom"
+         xmlns="http://pmd.sourceforge.net/ruleset/2.0.0">
+    <description>Our rules</description>
+    <rule ref="category/java/bestpractices.xml/UnusedImports"/>
+    <rule ref="category/java/bestpractices.xml/JUnitTestsShouldIncludeAssert"/>
+    <rule ref="category/java/design.xml/NcssTypeCount"/>
+    <rule ref="category/java/design.xml/UseUtilityClass"/>
+    <rule ref="category/java/errorprone.xml/CloneThrowsCloneNotSupportedException"/>
+    <rule ref="category/java/bestpractices.xml/AvoidReassigningParameters"/>
+</ruleset>
+```
+
+###### After
+```xml
+<?xml version="1.0"?>
+<ruleset name="custom"
+         xmlns="http://pmd.sourceforge.net/ruleset/2.0.0">
+    <description>Our rules</description>
+    <rule ref="category/java/codestyle.xml/UnnecessaryImport"/>
+    <rule ref="category/java/bestpractices.xml/UnitTestShouldIncludeAssert"/>
+    <rule ref="category/java/design.xml/NcssCount"/>
+    <rule ref="category/java/design.xml/InstantiableUtilityClass"/>
+    <rule ref="category/java/bestpractices.xml/AvoidReassigningParameters"/>
+</ruleset>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -5,5 +5,4 @@
+         xmlns="http://pmd.sourceforge.net/ruleset/2.0.0">
+    <description>Our rules</description>
+-   <rule ref="category/java/bestpractices.xml/UnusedImports"/>
+-   <rule ref="category/java/bestpractices.xml/JUnitTestsShouldIncludeAssert"/>
+-   <rule ref="category/java/design.xml/NcssTypeCount"/>
+-   <rule ref="category/java/design.xml/UseUtilityClass"/>
+-   <rule ref="category/java/errorprone.xml/CloneThrowsCloneNotSupportedException"/>
++   <rule ref="category/java/codestyle.xml/UnnecessaryImport"/>
++   <rule ref="category/java/bestpractices.xml/UnitTestShouldIncludeAssert"/>
++   <rule ref="category/java/design.xml/NcssCount"/>
++   <rule ref="category/java/design.xml/InstantiableUtilityClass"/>
+    <rule ref="category/java/bestpractices.xml/AvoidReassigningParameters"/>
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

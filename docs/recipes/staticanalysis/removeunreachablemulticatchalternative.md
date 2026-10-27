@@ -13,6 +13,10 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 _When an earlier `catch` clause already covers a type, any later `catch` (including a multi-catch alternative) for the same type or a subtype is unreachable and is a Java compile error. This commonly appears after type-substitution migrations (for example, renaming an exception so that two `catch` clauses end up overlapping). This recipe drops the unreachable alternatives from later multi-catches, collapses a multi-catch to a regular `catch` when only one alternative remains, and removes the entire `catch` clause when all of its declared types are already covered._
 
+### Tags
+
+* [RSPEC-S4970](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S4970&open=java%3AS4970)
+
 ## Recipe source
 
 [GitHub: RemoveUnreachableMultiCatchAlternative.java](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/RemoveUnreachableMultiCatchAlternative.java),

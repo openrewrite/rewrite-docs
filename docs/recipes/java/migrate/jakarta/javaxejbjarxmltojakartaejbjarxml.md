@@ -1,13 +1,13 @@
 ---
-title: "Migrate xmlns entries and javax. packages in `ejb-jar.xml` files"
-sidebar_label: "Migrate xmlns entries and javax. packages in `ejb-jar.xml` files"
+title: "Migrate xmlns entries and `javax` packages in `ejb-jar.xml` files"
+sidebar_label: "Migrate xmlns entries and `javax` packages in `ejb-jar.xml` files"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Migrate xmlns entries and javax. packages in `ejb-jar.xml` files
+# Migrate xmlns entries and `javax` packages in `ejb-jar.xml` files
 
 **org.openrewrite.java.migrate.jakarta.JavaxEjbJarXmlToJakartaEjbJarXml**
 
@@ -68,7 +68,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.jakarta.JavaxEjbJarXmlToJakartaEjbJarXml
-displayName: Migrate xmlns entries and javax. packages in `ejb-jar.xml` files
+displayName: Migrate xmlns entries and `javax` packages in `ejb-jar.xml` files
 description: |
   Java EE has been rebranded to Jakarta EE, necessitating an XML namespace relocation.
 tags:
@@ -400,7 +400,7 @@ This recipe is used as part of the following composite recipes:
 
 <RunRecipe
   recipeName="org.openrewrite.java.migrate.jakarta.JavaxEjbJarXmlToJakartaEjbJarXml"
-  displayName="Migrate xmlns entries and javax. packages in `ejb-jar.xml` files"
+  displayName="Migrate xmlns entries and `javax` packages in `ejb-jar.xml` files"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-migrate-java"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA"

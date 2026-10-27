@@ -10,9 +10,9 @@ _Recipes for [Spring for Apache Kafka](https://spring.io/projects/spring-kafka) 
 
 _Recipes that include further recipes, often including the individual recipes below._
 
+* [Migrate deprecated Spring Kafka error handlers](./upgradespringkafka_2_8_errorhandlers.md)
 * [Migrate to Spring Kafka 3.0](./upgradespringkafka_3_0.md)
 * [Migrate to Spring Kafka 4.0](./upgradespringkafka_4_0.md)
-* [Migrates Spring Kafka deprecated error handlers](./upgradespringkafka_2_8_errorhandlers.md)
 
 ## Recipes
 

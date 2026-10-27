@@ -45,7 +45,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate to Spring Kafka 4.0](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/upgradespringkafka_4_0)
 * [Remove debug mode from Spring Security](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/spring/removeenablewebsecuritydebug)
 * [Replace `@MockBean` and `@SpyBean`](/recipes/java/spring/boot4/replacemockbeanandspybean.md)
-* [Substitute removed Faces Managed Beans](/recipes/java/migrate/jakarta/facesmanagedbeansremoved.md)
+* [Substitute removed Faces managed beans](/recipes/java/migrate/jakarta/facesmanagedbeansremoved.md)
 
 ## Examples
 ##### Example 1

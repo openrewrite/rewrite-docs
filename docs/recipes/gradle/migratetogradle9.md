@@ -46,6 +46,9 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Update a Gradle plugin by id](../gradle/plugins/upgradepluginversion)
   * pluginIdPattern: `com.gradle.develocity`
   * newVersion: `4.x`
+* [Update a Gradle plugin by id](../gradle/plugins/upgradepluginversion)
+  * pluginIdPattern: `io.spring.dependency-management`
+  * newVersion: `1.1.7`
 * [Remove the deprecated PMD `targetJdk` property](../gradle/gradle9/removepmdtargetjdk)
 * [Remove the deprecated `exitEnvironmentVar` start script property](../gradle/gradle9/removeexitenvironmentvar)
 * [Use the `Action` overloads of `flatDir` and `mavenCentral`](../gradle/gradle9/userepositoryhandleractionoverloads)
@@ -79,6 +82,9 @@ recipeList:
   - org.openrewrite.gradle.plugins.UpgradePluginVersion:
       pluginIdPattern: com.gradle.develocity
       newVersion: 4.x
+  - org.openrewrite.gradle.plugins.UpgradePluginVersion:
+      pluginIdPattern: io.spring.dependency-management
+      newVersion: 1.1.7
   - org.openrewrite.gradle.gradle9.RemovePmdTargetJdk
   - org.openrewrite.gradle.gradle9.RemoveExitEnvironmentVar
   - org.openrewrite.gradle.gradle9.UseRepositoryHandlerActionOverloads

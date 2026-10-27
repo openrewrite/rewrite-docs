@@ -1,17 +1,17 @@
 ---
-title: "Use `@Slf4` instead of explicit fields"
-sidebar_label: "Use `@Slf4` instead of explicit fields"
+title: "Use `@Slf4j` instead of explicit fields"
+sidebar_label: "Use `@Slf4j` instead of explicit fields"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Use `@Slf4` instead of explicit fields
+# Use `@Slf4j` instead of explicit fields
 
 **org.openrewrite.java.migrate.lombok.log.UseSlf4j**
 
-_Prefer the lombok annotation `@Slf4` over explicitly written out `org.slf4j.Logger` fields._
+_Prefer the Lombok annotation `@Slf4j` over explicitly written out `org.slf4j.Logger` fields._
 
 ## Recipe source
 
@@ -84,7 +84,7 @@ class A {
 
 <RunRecipe
   recipeName="org.openrewrite.java.migrate.lombok.log.UseSlf4j"
-  displayName="Use `@Slf4` instead of explicit fields"
+  displayName="Use `@Slf4j` instead of explicit fields"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-migrate-java"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA"

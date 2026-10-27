@@ -1,13 +1,13 @@
 ---
-title: "Prefer `new ConcurrentHashMap&lt;&gt;()`"
-sidebar_label: "Prefer `new ConcurrentHashMap&lt;&gt;()`"
+title: "Prefer `Collections.newSetFromMap(new ConcurrentHashMap<>())`"
+sidebar_label: "Prefer `Collections.newSetFromMap(new ConcurrentHashMap<>())`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Prefer `new ConcurrentHashMap&lt;&gt;()`
+# Prefer `Collections.newSetFromMap(new ConcurrentHashMap&lt;&gt;())`
 
 **org.openrewrite.java.migrate.guava.NoGuavaSetsNewConcurrentHashSet**
 
@@ -19,20 +19,97 @@ _Prefer the Java standard library over third-party usage of Guava in simple case
 
 ## Recipe source
 
-[GitHub: NoGuavaSetsNewConcurrentHashSet.java](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/guava/NoGuavaSetsNewConcurrentHashSet.java),
+[GitHub: no-guava.yml](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/no-guava.yml),
 [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues),
 [Code Genome Project](https://artifacts.codegenomeproject.org/maven/org/openrewrite/recipe/rewrite-migrate-java/)
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license). Moderne customers can download precompiled artifacts from The Code Genome Project. For non-commercial use you can build the artifact from source locally.
 
 
-## Used by
+## Definition
 
-This recipe is used as part of the following composite recipes:
+<Tabs groupId="recipeType">
+<TabItem value="recipe-list" label="Recipe List" >
+* [Prefer `Collections.newSetFromMap(new ConcurrentHashMap&lt;&gt;())`](../../../java/migrate/guava/noguavarefasterrecipes$setsnewconcurrenthashsetrecipe)
 
-* [Prefer the Java standard library instead of Guava](/recipes/java/migrate/guava/noguava.md)
+</TabItem>
 
-## Example
+<TabItem value="yaml-recipe-list" label="Yaml Recipe List">
+
+```yaml
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: org.openrewrite.java.migrate.guava.NoGuavaSetsNewConcurrentHashSet
+displayName: Prefer `Collections.newSetFromMap(new ConcurrentHashMap&lt;&gt;())`
+description: |
+  Prefer the Java standard library over third-party usage of Guava in simple cases like this.
+tags:
+  - guava
+recipeList:
+  - org.openrewrite.java.migrate.guava.NoGuavaRefasterRecipes$SetsNewConcurrentHashSetRecipe
+
+```
+</TabItem>
+</Tabs>
+## Examples
+##### Example 1
+`NoGuavaSetsNewConcurrentHashSetTest#replaceWithNewConcurrentHashSet`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import com.google.common.collect.*;
+
+import java.util.Set;
+
+class Test {
+    Set<Integer> cardinalsWorldSeries = Sets.newConcurrentHashSet();
+}
+```
+
+###### After
+```java
+import java.util.Collections;
+import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
+
+class Test {
+    Set<Integer> cardinalsWorldSeries = Collections.newSetFromMap(new ConcurrentHashMap<>());
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,2 +1,1 @@
+-import com.google.common.collect.*;
+-
++import java.util.Collections;
+import java.util.Set;
+@@ -4,0 +3,1 @@
+
+import java.util.Set;
++import java.util.concurrent.ConcurrentHashMap;
+
+@@ -6,1 +6,1 @@
+
+class Test {
+-   Set<Integer> cardinalsWorldSeries = Sets.newConcurrentHashSet();
++   Set<Integer> cardinalsWorldSeries = Collections.newSetFromMap(new ConcurrentHashMap<>());
+}
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`NoGuavaSetsNewConcurrentHashSetTest#replaceWithNewConcurrentHashSet`
 
 
 <Tabs groupId="beforeAfter">
@@ -90,7 +167,7 @@ class Test {
 
 <RunRecipe
   recipeName="org.openrewrite.java.migrate.guava.NoGuavaSetsNewConcurrentHashSet"
-  displayName="Prefer `new ConcurrentHashMap&lt;&gt;()`"
+  displayName="Prefer `Collections.newSetFromMap(new ConcurrentHashMap&lt;&gt;())`"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-migrate-java"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA"

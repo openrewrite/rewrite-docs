@@ -25,7 +25,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 | Type | Name | Description | Example |
 | --- | --- | --- | --- |
-| `boolean` | convertStringsWithoutNewlines | *Optional*. Whether or not strings without newlines should be converted to text block when processing code. The default value is true. | `true` |
+| `boolean` | convertStringsWithoutNewlines | *Optional*. Whether strings without newlines should be converted to text blocks. The default value is true. | `true` |
 | `boolean` | avoidLineContinuations | *Optional*. When enabled, the recipe avoids using `\` line continuation escapes in text blocks where the content contains newlines. Non-newline-joined strings are placed on the same text block line instead. The default value is false. | `true` |
 
 
@@ -35,6 +35,52 @@ This recipe is used as part of the following composite recipes:
 
 * [Java best practices](/recipes/java/migrate/javabestpractices.md)
 * [Migrate to Java 17](/recipes/java/migrate/upgradetojava17.md)
+
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+class Test {
+    String query = "SELECT * FROM\n" +
+            "my_table\n" +
+            "WHERE something = 1;";
+}
+```
+
+###### After
+```java
+class Test {
+    String query = """
+            SELECT * FROM
+            my_table
+            WHERE something = 1;\
+            """;
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -2,3 +2,5 @@
+class Test {
+-   String query = "SELECT * FROM\n" +
+-           "my_table\n" +
+-           "WHERE something = 1;";
++   String query = """
++           SELECT * FROM
++           my_table
++           WHERE something = 1;\
++           """;
+}
+```
+</TabItem>
+</Tabs>
 
 
 ## Usage

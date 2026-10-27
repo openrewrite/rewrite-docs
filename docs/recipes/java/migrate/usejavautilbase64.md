@@ -25,7 +25,8 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 | Type | Name | Description | Example |
 | --- | --- | --- | --- |
-| `boolean` | useMimeCoder | *Optional*. Use `Base64.getMimeEncoder()/getMimeDecoder()` instead of `Base64.getEncoder()/getDecoder()`. | `false` |
+| `String` | sunPackage | *Optional*. The package of the `BASE64Encoder` and `BASE64Decoder` classes to replace. | `sun.misc` |
+| `boolean` | useMimeCoder | *Optional*. Use `Base64.getMimeEncoder()`/`getMimeDecoder()` instead of `Base64.getEncoder()`/`getDecoder()`. | `false` |
 
 
 ## Used by
@@ -39,7 +40,8 @@ This recipe is used as part of the following composite recipes:
 ###### Parameters
 | Parameter | Value |
 | --- | --- |
-|useMimeCoder|`test.sun.misc`|
+|sunPackage|`test.sun.misc`|
+|useMimeCoder|`false`|
 
 
 <Tabs groupId="beforeAfter">
@@ -125,7 +127,7 @@ class Test {
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-migrate-java"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA"
-  optionalCliOptions={' --recipe-option "useMimeCoder=false"'}
+  optionalCliOptions={' --recipe-option "sunPackage=sun.misc" --recipe-option "useMimeCoder=false"'}
   hasDataTables
 />
 

@@ -1756,6 +1756,143 @@ This recipe is used as part of the following composite recipes:
 
 * [Migrate from Spring Boot 1.x to 2.0](/recipes/java/spring/boot2/upgradespringboot_2_0.md)
 
+## Examples
+##### Example 1
+`SpringBoot20ActuatorPathTest#preservesEndpointPrefixOnApplicationPort`
+
+
+###### Unchanged
+```mavenProject
+app
+```
+
+<Tabs groupId="beforeAfter">
+<TabItem value="properties" label="properties">
+
+
+###### Before
+```properties
+management.context-path=/management
+```
+
+###### After
+```properties
+management.endpoints.web.base-path=/management
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-management.context-path=/management
++management.endpoints.web.base-path=/management
+```
+</TabItem>
+</Tabs>
+
+<Tabs groupId="beforeAfter">
+<TabItem value="yaml" label="yaml">
+
+
+###### Before
+```yaml
+management:
+  context-path: /management
+```
+
+###### After
+```yaml
+management:
+  endpoints:
+    web:
+      base-path: /management
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -2,1 +2,3 @@
+management:
+- context-path: /management
++ endpoints:
++   web:
++     base-path: /management
+
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`SpringBoot20ActuatorPathTest#preservesEndpointPrefixOnApplicationPort`
+
+
+###### Unchanged
+```mavenProject
+app
+```
+
+<Tabs groupId="beforeAfter">
+<TabItem value="properties" label="properties">
+
+
+###### Before
+```properties
+management.context-path=/management
+```
+
+###### After
+```properties
+management.endpoints.web.base-path=/management
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-management.context-path=/management
++management.endpoints.web.base-path=/management
+```
+</TabItem>
+</Tabs>
+
+<Tabs groupId="beforeAfter">
+<TabItem value="yaml" label="yaml">
+
+
+###### Before
+```yaml
+management:
+  context-path: /management
+```
+
+###### After
+```yaml
+management:
+  endpoints:
+    web:
+      base-path: /management
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -2,1 +2,3 @@
+management:
+- context-path: /management
++ endpoints:
++   web:
++     base-path: /management
+
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

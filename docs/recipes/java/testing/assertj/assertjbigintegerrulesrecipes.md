@@ -1,17 +1,17 @@
 ---
-title: "Adopt AssertJ BigInteger Assertions"
-sidebar_label: "Adopt AssertJ BigInteger Assertions"
+title: "Adopt AssertJ `BigInteger` assertions"
+sidebar_label: "Adopt AssertJ `BigInteger` assertions"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Adopt AssertJ BigInteger Assertions
+# Adopt AssertJ `BigInteger` assertions
 
 **org.openrewrite.java.testing.assertj.AssertJBigIntegerRulesRecipes**
 
-_Adopt AssertJ BigInteger Assertions. Favor semantically explicit methods (e.g. `myBigInteger.isZero()` over `myBigInteger.isEqualTo(0)`)._
+_Adopt AssertJ `BigInteger` assertions. Favor semantically explicit methods (e.g. `myBigInteger.isZero()` over `myBigInteger.isEqualTo(0)`)._
 
 ## Recipe source
 
@@ -44,9 +44,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.testing.assertj.AssertJBigIntegerRulesRecipes
-displayName: Adopt AssertJ BigInteger Assertions
+displayName: Adopt AssertJ `BigInteger` assertions
 description: |
-  Adopt AssertJ BigInteger Assertions. Favor semantically explicit methods (e.g. `myBigInteger.isZero()` over `myBigInteger.isEqualTo(0)`).
+  Adopt AssertJ `BigInteger` assertions. Favor semantically explicit methods (e.g. `myBigInteger.isZero()` over `myBigInteger.isEqualTo(0)`).
 recipeList:
   - org.openrewrite.java.testing.assertj.AssertJBigIntegerRulesRecipes$AbstractBigIntegerAssertIsEqualToRecipe
   - org.openrewrite.java.testing.assertj.AssertJBigIntegerRulesRecipes$AbstractBigIntegerAssertIsNotEqualToRecipe
@@ -122,7 +122,7 @@ class A {
 
 <RunRecipe
   recipeName="org.openrewrite.java.testing.assertj.AssertJBigIntegerRulesRecipes"
-  displayName="Adopt AssertJ BigInteger Assertions"
+  displayName="Adopt AssertJ `BigInteger` assertions"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-testing-frameworks"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_TESTING_FRAMEWORKS"

@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.jackson.RemoveBuiltInModuleRegistrations**
 
-_In Jackson 3, `ParameterNamesModule`, `Jdk8Module`, and `JavaTimeModule` are built into `jackson-databind` and no longer need to be registered manually. This recipe removes `ObjectMapper.registerModule()` and `MapperBuilder.addModule()` calls for these modules._
+_In Jackson 3, `ParameterNamesModule`, `Jdk8Module`, and `JavaTimeModule` are built into `jackson-databind` and no longer need to be registered manually. This recipe removes `ObjectMapper.registerModule()` and `MapperBuilder.addModule()` calls for these modules. A `ParameterNamesModule` created with `JsonCreator.Mode.PROPERTIES` or `DELEGATING` is replaced with the matching `ConstructorDetector` instead, as that mode is not the Jackson 3 default._
 
 ### Tags
 

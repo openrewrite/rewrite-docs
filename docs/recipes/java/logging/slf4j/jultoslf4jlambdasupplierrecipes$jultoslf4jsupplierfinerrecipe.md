@@ -1,6 +1,6 @@
 ---
-title: "Replace JUL `Logger.finer(Supplier&lt;String&gt;)` with SLF4J's `Logger.atTrace().log(Supplier&lt;String&gt;)`"
-sidebar_label: "Replace JUL `Logger.finer(Supplier&lt;String&gt;)` with SLF4J's `Logger.atTrace().log(Supplier&lt;String&gt;)`"
+title: "Replace JUL `Logger.finer(Supplier<String>)` with SLF4J's `Logger.atTrace().log(Supplier<String>)`"
+sidebar_label: "Replace JUL `Logger.finer(Supplier<String>)` with SLF4J's `Logger.atTrace().log(Supplier<String>)`"
 ---
 
 import Tabs from '@theme/Tabs';

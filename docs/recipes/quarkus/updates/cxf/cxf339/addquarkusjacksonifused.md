@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **io.quarkus.updates.cxf.cxf339.AddQuarkusJacksonIfUsed**
 
-_Adds io.quarkus:quarkus-jackson to applications that use Jackson types in their sources, because quarkus-cxf stopped pulling quarkus-jackson transitively in 3.39.0. The detection is source based only: the dependency is not added when it is already available directly or transitively through another extension. The update tooling applies this recipe only to projects depending on io.quarkiverse.cxf:quarkus-cxf._
+_Adds io.quarkus:quarkus-jackson to applications that use Jackson types in their sources, because quarkus-cxf stopped pulling quarkus-jackson transitively in 3.39.0. The detection is source based only: the dependency is not added when it is already declared directly. The update tooling applies this recipe only to projects depending on io.quarkiverse.cxf:quarkus-cxf._
 
 ## Recipe source
 
@@ -29,9 +29,9 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Add Maven dependency](../../../../maven/adddependency)
   * groupId: `io.quarkus`
   * artifactId: `quarkus-jackson`
-  * version: `latest.release`
+  * version: `latest.integration`
   * onlyIfUsing: `com.fasterxml.jackson..*`
-  * acceptTransitive: `true`
+  * acceptTransitive: `false`
 
 </TabItem>
 
@@ -43,14 +43,14 @@ type: specs.openrewrite.org/v1beta/recipe
 name: io.quarkus.updates.cxf.cxf339.AddQuarkusJacksonIfUsed
 displayName: Add quarkus-jackson if Jackson is used
 description: |
-  Adds io.quarkus:quarkus-jackson to applications that use Jackson types in their sources, because quarkus-cxf stopped pulling quarkus-jackson transitively in 3.39.0. The detection is source based only: the dependency is not added when it is already available directly or transitively through another extension. The update tooling applies this recipe only to projects depending on io.quarkiverse.cxf:quarkus-cxf.
+  Adds io.quarkus:quarkus-jackson to applications that use Jackson types in their sources, because quarkus-cxf stopped pulling quarkus-jackson transitively in 3.39.0. The detection is source based only: the dependency is not added when it is already declared directly. The update tooling applies this recipe only to projects depending on io.quarkiverse.cxf:quarkus-cxf.
 recipeList:
   - org.openrewrite.maven.AddDependency:
       groupId: io.quarkus
       artifactId: quarkus-jackson
-      version: latest.release
+      version: latest.integration
       onlyIfUsing: com.fasterxml.jackson..*
-      acceptTransitive: true
+      acceptTransitive: false
 
 ```
 </TabItem>

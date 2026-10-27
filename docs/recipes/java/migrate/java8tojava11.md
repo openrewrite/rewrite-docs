@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.migrate.Java8toJava11**
 
-_This recipe will apply changes commonly needed when upgrading to Java 11. Specifically, for those applications that are built on Java 8, this recipe will update and add dependencies on J2EE libraries that are no longer directly bundled with the JDK. This recipe will also replace deprecated API with equivalents when there is a clear migration strategy. Build files will also be updated to use Java 11 as the target/source and plugins will be also be upgraded to versions that are compatible with Java 11._
+_This recipe will apply changes commonly needed when upgrading to Java 11. Specifically, for those applications that are built on Java 8, this recipe will update and add dependencies on J2EE libraries that are no longer directly bundled with the JDK. This recipe will also replace deprecated API with equivalents when there is a clear migration strategy. Build files will also be updated to use Java 11 as the target/source and plugins will also be upgraded to versions that are compatible with Java 11._
 
 ### Tags
 
@@ -47,11 +47,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Migrate to Java 8](../../java/migrate/upgradetojava8)
 * [Rename `_` identifier to `__`](../../java/migrate/lang/renameunderscoreidentifier)
 * [Prefer `java.util.Base64` instead of `sun.misc`](../../java/migrate/usejavautilbase64)
+  * sunPackage: `sun.misc`
   * useMimeCoder: `false`
 * [Remove explicit casts on `Arrays.asList(..).toArray()`](../../java/migrate/castarraysaslisttolist)
 * [Add explicit JAXB API dependencies and runtime](../../java/migrate/javax/addjaxbdependencieswithruntime)
 * [Add explicit JAX-WS dependencies](../../java/migrate/javax/addjaxwsdependencies)
-* [Migrate JAXB-WS Plugin](../../java/migrate/javax/migratejaxbwsplugin)
+* [Migrate the JAX-WS Maven plugin](../../java/migrate/javax/migratejaxbwsplugin)
 * [Add explicit Inject dependencies](../../java/migrate/javax/addinjectdependencies)
 * [Add explicit Common Annotations dependencies](../../java/migrate/javax/addcommonannotationsdependencies)
 * [`BigDecimal` rounding constants to `RoundingMode` enums](../../staticanalysis/bigdecimalroundingconstantstoenums)
@@ -73,13 +74,14 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Use modernized `javax.management.monitor` APIs](../../java/migrate/javax/javaxmanagementmonitorapis)
 * [Use modernized `javax.xml.stream` APIs](../../java/migrate/javax/javaxxmlstreamapis)
 * [Remove Cobertura Maven plugin](../../java/migrate/cobertura/removecoberturamavenplugin)
+* [Replace `KeyStore.getDefaultType()` with `&quot;jks&quot;`](../../java/migrate/changedefaultkeystore)
 * [Upgrade build to Java 11](../../java/migrate/upgradebuildtojava11)
 * [Prefer `Optional.isEmpty()`](../../java/migrate/util/optionalnotpresenttoisempty)
 * [Prefer `Optional.isPresent()`](../../java/migrate/util/optionalnotemptytoispresent)
-* [`Stream&lt;Optional&gt;` idiom recipe](../../java/migrate/util/optionalstreamrecipe)
+* [Replace `filter(Optional::isPresent).map(Optional::get)` with `flatMap(Optional::stream)`](../../java/migrate/util/optionalstreamrecipe)
 * [Prefer `Predicate.not(..)` over casting to `Predicate` and calling `negate()`](../../java/migrate/util/usepredicatenot)
 * [Use `com.sun.xml.bind.*` instead of `com.sun.xml.internal.bind.*`](../../java/migrate/internalbindpackages)
-* [Replace deprecated methods in`SecurityManager`](../../java/migrate/removedsecuritymanagermethods)
+* [Replace deprecated methods in `SecurityManager`](../../java/migrate/removedsecuritymanagermethods)
 * [Upgrade plugins to Java 11 compatible versions](../../java/migrate/upgradepluginsforjava11)
 * [Replace `javax.security.auth.Policy` with `java.security.Policy`](../../java/migrate/removedpolicy)
 * [Replace `java.lang.ref.Reference.clone()` with constructor call](../../java/migrate/referenceclonemethod)
@@ -102,7 +104,6 @@ This recipe is available under the [Moderne Source Available License](https://do
   * localizedOutputStreamMethodMatcher: `java.lang.Runtime getLocalizedOutputStream(java.io.OutputStream)`
 * [Catch `TypeNotPresentException` thrown by `Class.getAnnotation()`](../../java/migrate/arraystoreexceptiontotypenotpresentexception)
 * [Replace `IllegalArgumentException` with `AlreadyConnectedException` in `DatagramChannel.send()` method](../../java/migrate/illegalargumentexceptiontoalreadyconnectedexception)
-* [Return String `jks` when  `KeyStore.getDefaultType()` is called](../../java/migrate/changedefaultkeystore)
 
 </TabItem>
 
@@ -114,7 +115,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.Java8toJava11
 displayName: Migrate to Java 11
 description: |
-  This recipe will apply changes commonly needed when upgrading to Java 11. Specifically, for those applications that are built on Java 8, this recipe will update and add dependencies on J2EE libraries that are no longer directly bundled with the JDK. This recipe will also replace deprecated API with equivalents when there is a clear migration strategy. Build files will also be updated to use Java 11 as the target/source and plugins will be also be upgraded to versions that are compatible with Java 11.
+  This recipe will apply changes commonly needed when upgrading to Java 11. Specifically, for those applications that are built on Java 8, this recipe will update and add dependencies on J2EE libraries that are no longer directly bundled with the JDK. This recipe will also replace deprecated API with equivalents when there is a clear migration strategy. Build files will also be updated to use Java 11 as the target/source and plugins will also be upgraded to versions that are compatible with Java 11.
 tags:
   - jaxb
   - java11
@@ -127,6 +128,7 @@ recipeList:
   - org.openrewrite.java.migrate.UpgradeToJava8
   - org.openrewrite.java.migrate.lang.RenameUnderscoreIdentifier
   - org.openrewrite.java.migrate.UseJavaUtilBase64:
+      sunPackage: sun.misc
       useMimeCoder: false
   - org.openrewrite.java.migrate.CastArraysAsListToList
   - org.openrewrite.java.migrate.javax.AddJaxbDependenciesWithRuntime
@@ -153,6 +155,7 @@ recipeList:
   - org.openrewrite.java.migrate.javax.JavaxManagementMonitorAPIs
   - org.openrewrite.java.migrate.javax.JavaxXmlStreamAPIs
   - org.openrewrite.java.migrate.cobertura.RemoveCoberturaMavenPlugin
+  - org.openrewrite.java.migrate.ChangeDefaultKeyStore
   - org.openrewrite.java.migrate.UpgradeBuildToJava11
   - org.openrewrite.java.migrate.util.OptionalNotPresentToIsEmpty
   - org.openrewrite.java.migrate.util.OptionalNotEmptyToIsPresent
@@ -182,7 +185,6 @@ recipeList:
       localizedOutputStreamMethodMatcher: java.lang.Runtime getLocalizedOutputStream(java.io.OutputStream)
   - org.openrewrite.java.migrate.ArrayStoreExceptionToTypeNotPresentException
   - org.openrewrite.java.migrate.IllegalArgumentExceptionToAlreadyConnectedException
-  - org.openrewrite.java.migrate.ChangeDefaultKeyStore
 
 ```
 </TabItem>

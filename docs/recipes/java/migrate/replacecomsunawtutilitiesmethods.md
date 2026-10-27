@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.migrate.ReplaceComSunAWTUtilitiesMethods**
 
-_This recipe replaces several static calls  in `com.sun.awt.AWTUtilities` with the JavaSE 11 equivalent. The methods replaced are `AWTUtilities.isTranslucencySupported()`, `AWTUtilities.setWindowOpacity()`, `AWTUtilities.getWindowOpacity()`, `AWTUtilities.getWindowShape()`, `AWTUtilities.isWindowOpaque()`, `AWTUtilities.isTranslucencyCapable()` and `AWTUtilities.setComponentMixingCutoutShape()`._
+_This recipe replaces several static calls in `com.sun.awt.AWTUtilities` with the JavaSE 11 equivalent. The methods replaced are `AWTUtilities.isTranslucencySupported()`, `AWTUtilities.setWindowOpacity()`, `AWTUtilities.getWindowOpacity()`, `AWTUtilities.getWindowShape()`, `AWTUtilities.isWindowOpaque()`, `AWTUtilities.isTranslucencyCapable()` and `AWTUtilities.setComponentMixingCutoutShape()`._
 
 ## Recipe source
 
@@ -25,13 +25,13 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 | Type | Name | Description | Example |
 | --- | --- | --- | --- |
-| `String` | getAWTIsWindowsTranslucencyPattern | *Optional*. The method pattern to match and replace. | `com.sun.awt.AWTUtilities isTranslucencySupported(com.sun.awt.AWTUtilities.Translucency)` |
-| `String` | isWindowOpaquePattern | *Optional*. The method pattern to match and replace. | `com.test.AWTUtilities isWindowOpaque(java.awt.Window)` |
-| `String` | isTranslucencyCapablePattern | *Optional*. The method pattern to match and replace. | `com.test.AWTUtilities isTranslucencyCapable(java.awt.GraphicsConfiguration)` |
-| `String` | setWindowOpacityPattern | *Optional*. The method pattern to match and replace. | `com.test.AWTUtilities setWindowOpacity(java.awt.Window, float)` |
-| `String` | getWindowOpacityPattern | *Optional*. The method pattern to match and replace. | `com.test.AWTUtilities getWindowOpacity(java.awt.Window)` |
-| `String` | getWindowShapePattern | *Optional*. The method pattern to match and replace. | `com.test.AWTUtilitiesTest getWindowShape(java.awt.Window)` |
-| `String` | setComponentMixingCutoutShapePattern | *Optional*. The method pattern to match and replace. | `com.test.AWTUtilities setComponentMixingCutoutShape(java.awt.Component,java.awt.Shape)` |
+| `String` | getAWTIsWindowsTranslucencyPattern | *Optional*. A method pattern matching the `AWTUtilities.isTranslucencySupported(Translucency)` method to replace. Defaults to the method on `com.sun.awt.AWTUtilities`. | `com.sun.awt.AWTUtilities isTranslucencySupported(com.sun.awt.AWTUtilities.Translucency)` |
+| `String` | isWindowOpaquePattern | *Optional*. A method pattern matching the `AWTUtilities.isWindowOpaque(Window)` method to replace. Defaults to the method on `com.sun.awt.AWTUtilities`. | `com.test.AWTUtilities isWindowOpaque(java.awt.Window)` |
+| `String` | isTranslucencyCapablePattern | *Optional*. A method pattern matching the `AWTUtilities.isTranslucencyCapable(GraphicsConfiguration)` method to replace. Defaults to the method on `com.sun.awt.AWTUtilities`. | `com.test.AWTUtilities isTranslucencyCapable(java.awt.GraphicsConfiguration)` |
+| `String` | setWindowOpacityPattern | *Optional*. A method pattern matching the `AWTUtilities.setWindowOpacity(Window, float)` method to replace. Defaults to the method on `com.sun.awt.AWTUtilities`. | `com.test.AWTUtilities setWindowOpacity(java.awt.Window, float)` |
+| `String` | getWindowOpacityPattern | *Optional*. A method pattern matching the `AWTUtilities.getWindowOpacity(Window)` method to replace. Defaults to the method on `com.sun.awt.AWTUtilities`. | `com.test.AWTUtilities getWindowOpacity(java.awt.Window)` |
+| `String` | getWindowShapePattern | *Optional*. A method pattern matching the `AWTUtilities.getWindowShape(Window)` method to replace. Defaults to the method on `com.sun.awt.AWTUtilities`. | `com.test.AWTUtilitiesTest getWindowShape(java.awt.Window)` |
+| `String` | setComponentMixingCutoutShapePattern | *Optional*. A method pattern matching the `AWTUtilities.setComponentMixingCutoutShape(Component, Shape)` method to replace. Defaults to the method on `com.sun.awt.AWTUtilities`. | `com.test.AWTUtilities setComponentMixingCutoutShape(java.awt.Component,java.awt.Shape)` |
 
 
 ## Used by

@@ -30,6 +30,12 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+* [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `javax.annotation.Nullable`
+  * newFullyQualifiedTypeName: `io.micronaut.core.annotation.Nullable`
+* [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `javax.annotation.Nonnull`
+  * newFullyQualifiedTypeName: `io.micronaut.core.annotation.NonNull`
 * [Migrate to Jakarta EE 9](../../java/migrate/jakarta/javaxmigrationtojakarta)
 * [De-capitalize `BeanIntrospection` `getProperty(..)` and `getRequiredProperty(..)` name arguments](../../java/micronaut/beanpropertycapitalizationstrategy)
 * [Copy non-inherited annotations from super class](../../java/micronaut/copynoninheritedannotations)
@@ -140,12 +146,6 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
   * methodPattern: `io.micronaut.web.router.RouteMatch explicitAccept(io.micronaut.http.MediaType)`
   * newMethodName: `explicitlyConsumes`
 * [Change type](../../java/changetype)
-  * oldFullyQualifiedTypeName: `javax.annotation.Nullable`
-  * newFullyQualifiedTypeName: `io.micronaut.core.annotation.Nullable`
-* [Change type](../../java/changetype)
-  * oldFullyQualifiedTypeName: `javax.annotation.Nonnull`
-  * newFullyQualifiedTypeName: `io.micronaut.core.annotation.NonNull`
-* [Change type](../../java/changetype)
   * oldFullyQualifiedTypeName: `io.micronaut.test.annotation.MicronautTest`
   * newFullyQualifiedTypeName: `io.micronaut.test.extensions.junit5.annotation.MicronautTest`
 
@@ -161,6 +161,12 @@ displayName: Migrate from Micronaut 2.x to 3.x
 description: |
   This recipe will apply changes required for migrating from Micronaut 2 to Micronaut 3.
 recipeList:
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: javax.annotation.Nullable
+      newFullyQualifiedTypeName: io.micronaut.core.annotation.Nullable
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: javax.annotation.Nonnull
+      newFullyQualifiedTypeName: io.micronaut.core.annotation.NonNull
   - org.openrewrite.java.migrate.jakarta.JavaxMigrationToJakarta
   - org.openrewrite.java.micronaut.BeanPropertyCapitalizationStrategy
   - org.openrewrite.java.micronaut.CopyNonInheritedAnnotations
@@ -270,12 +276,6 @@ recipeList:
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: io.micronaut.web.router.RouteMatch explicitAccept(io.micronaut.http.MediaType)
       newMethodName: explicitlyConsumes
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: javax.annotation.Nullable
-      newFullyQualifiedTypeName: io.micronaut.core.annotation.Nullable
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: javax.annotation.Nonnull
-      newFullyQualifiedTypeName: io.micronaut.core.annotation.NonNull
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: io.micronaut.test.annotation.MicronautTest
       newFullyQualifiedTypeName: io.micronaut.test.extensions.junit5.annotation.MicronautTest

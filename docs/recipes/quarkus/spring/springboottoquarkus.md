@@ -42,7 +42,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Module has dependency](../../java/dependencies/search/modulehasdependency)
   * groupIdPattern: `org.springframework.boot`
   * artifactIdPattern: `spring-*`
-  * version: `3.x`
+* [Module is part of a Spring Boot 3 or 4 application](../../quarkus/spring/moduleisspringbootapplication)
 
 **Recipes**
 
@@ -64,7 +64,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Migrate Spring annotations to CDI](../../quarkus/spring/stereotypeannotationstocdi)
 * [Replace Spring `@Value` with CDI `@ConfigProperty`](../../quarkus/spring/valuetocdiconfigproperty)
 * [Convert Spring Web annotations to JAX-RS](../../quarkus/spring/webtojaxrs)
-* [Remove Spring Boot 3.x parent POM](../../quarkus/spring/removespringbootparent)
+* [Remove Spring Boot parent POM](../../quarkus/spring/removespringbootparent)
 * [Migrate Spring Validation to Quarkus](../../quarkus/spring/migratespringvalidation)
 * [Migrate Spring Boot Actuator to Quarkus Health and Metrics](../../quarkus/spring/migratespringactuator)
 * [Migrate Spring Boot Testing to Quarkus Testing](../../quarkus/spring/migratespringtesting)
@@ -99,7 +99,7 @@ preconditions:
   - org.openrewrite.java.dependencies.search.ModuleHasDependency:
       groupIdPattern: org.springframework.boot
       artifactIdPattern: spring-*
-      version: 3.x
+  - org.openrewrite.quarkus.spring.ModuleIsSpringBootApplication
 recipeList:
   - org.openrewrite.maven.AddManagedDependency:
       groupId: io.quarkus.platform
@@ -142,6 +142,62 @@ recipeList:
 `SpringBootToQuarkusTest#migrateSpringBootParentToQuarkusBOM`
 
 
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class DemoApplication {
+    public static void main(String[] args) {
+        SpringApplication.run(DemoApplication.class, args);
+    }
+}
+```
+
+###### After
+```java
+import io.quarkus.runtime.Quarkus;
+import io.quarkus.runtime.annotations.QuarkusMain;
+
+@QuarkusMain
+public class DemoApplication {
+    public static void main(String[] args) {
+        Quarkus.run(args);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,2 +1,2 @@
+-import org.springframework.boot.SpringApplication;
+-import org.springframework.boot.autoconfigure.SpringBootApplication;
++import io.quarkus.runtime.Quarkus;
++import io.quarkus.runtime.annotations.QuarkusMain;
+
+@@ -4,1 +4,1 @@
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+-@SpringBootApplication
++@QuarkusMain
+public class DemoApplication {
+@@ -7,1 +7,1 @@
+public class DemoApplication {
+    public static void main(String[] args) {
+-       SpringApplication.run(DemoApplication.class, args);
++       Quarkus.run(args);
+    }
+```
+</TabItem>
+</Tabs>
+
 ###### Unchanged
 ```mavenProject
 project
@@ -167,6 +223,14 @@ project
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
     </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 </project>
 ```
 
@@ -176,6 +240,62 @@ project
 `SpringBootToQuarkusTest#migrateSpringBootParentToQuarkusBOM`
 
 
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class DemoApplication {
+    public static void main(String[] args) {
+        SpringApplication.run(DemoApplication.class, args);
+    }
+}
+```
+
+###### After
+```java
+import io.quarkus.runtime.Quarkus;
+import io.quarkus.runtime.annotations.QuarkusMain;
+
+@QuarkusMain
+public class DemoApplication {
+    public static void main(String[] args) {
+        Quarkus.run(args);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,2 +1,2 @@
+-import org.springframework.boot.SpringApplication;
+-import org.springframework.boot.autoconfigure.SpringBootApplication;
++import io.quarkus.runtime.Quarkus;
++import io.quarkus.runtime.annotations.QuarkusMain;
+
+@@ -4,1 +4,1 @@
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+-@SpringBootApplication
++@QuarkusMain
+public class DemoApplication {
+@@ -7,1 +7,1 @@
+public class DemoApplication {
+    public static void main(String[] args) {
+-       SpringApplication.run(DemoApplication.class, args);
++       Quarkus.run(args);
+    }
+```
+</TabItem>
+</Tabs>
+
 ###### Unchanged
 ```mavenProject
 project
@@ -201,6 +321,14 @@ project
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
     </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 </project>
 ```
 

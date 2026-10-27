@@ -1,17 +1,17 @@
 ---
-title: "Add logging.pattern.level for traceId and spanId"
-sidebar_label: "Add logging.pattern.level for traceId and spanId"
+title: "Add `logging.pattern.level` for `traceId` and `spanId`"
+sidebar_label: "Add `logging.pattern.level` for `traceId` and `spanId`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Add logging.pattern.level for traceId and spanId
+# Add `logging.pattern.level` for `traceId` and `spanId`
 
 **org.openrewrite.java.spring.cloud2022.AddLoggingPatternLevelForSleuth**
 
-_Add `logging.pattern.level` for traceId and spanId which was previously set by default, if not already set._
+_Add `logging.pattern.level` for `traceId` and `spanId` which was previously set by default, if not already set._
 
 ## Recipe source
 
@@ -99,7 +99,7 @@ logging:
 
 <RunRecipe
   recipeName="org.openrewrite.java.spring.cloud2022.AddLoggingPatternLevelForSleuth"
-  displayName="Add logging.pattern.level for traceId and spanId"
+  displayName="Add `logging.pattern.level` for `traceId` and `spanId`"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-spring"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING"

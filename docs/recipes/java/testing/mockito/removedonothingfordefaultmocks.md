@@ -26,8 +26,8 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 This recipe is used as part of the following composite recipes:
 
-* [Mockito 3.x migration from 1.x](/recipes/java/testing/mockito/mockito1to3migration.md)
 * [Mockito best practices](/recipes/java/testing/mockito/mockitobestpractices.md)
+* [Upgrade Mockito from 1.x to 3.x](/recipes/java/testing/mockito/mockito1to3migration.md)
 
 ## Example
 
@@ -69,8 +69,6 @@ import org.mockito.junit.MockitoJUnitRunner;
 import java.io.BufferedWriter;
 import java.io.IOException;
 
-import static org.mockito.ArgumentMatchers.anyString;
-
 @RunWith(MockitoJUnitRunner.class)
 class MyTest {
     @Mock
@@ -86,12 +84,14 @@ class MyTest {
 <TabItem value="diff" label="Diff" >
 
 ```diff
-@@ -8,1 +8,0 @@
+@@ -8,3 +8,0 @@
 import java.io.IOException;
 
 -import static org.mockito.Mockito.doNothing;
-import static org.mockito.ArgumentMatchers.anyString;
-@@ -18,1 +17,0 @@
+-import static org.mockito.ArgumentMatchers.anyString;
+-
+@RunWith(MockitoJUnitRunner.class)
+@@ -18,1 +15,0 @@
     @Test
     public void test() throws IOException {
 -       doNothing().when(bufferedWriter).write(anyString());

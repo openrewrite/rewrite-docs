@@ -30,14 +30,8 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-**Preconditions**
-
-* [Singleton](../core/singleton)
-
-**Recipes**
-
-* [Replace `org.apache.commons.lang3.Validate#notNull` with `Objects#requireNonNull`](../staticanalysis/replacevalidatenotnullhavingvarargswithobjectsrequirenonnull)
-* [Replace `org.apache.commons.lang3.Validate#notNull` with `Objects#requireNonNull`](../staticanalysis/replacevalidatenotnullhavingsingleargwithobjectsrequirenonnull)
+* [Replace varargs `org.apache.commons.lang3.Validate#notNull` with `Objects#requireNonNull`](../staticanalysis/replacevalidatenotnullhavingvarargswithobjectsrequirenonnull)
+* [Replace single-argument `org.apache.commons.lang3.Validate#notNull` with `Objects#requireNonNull`](../staticanalysis/replacevalidatenotnullhavingsingleargwithobjectsrequirenonnull)
 
 </TabItem>
 
@@ -50,8 +44,6 @@ name: org.openrewrite.staticanalysis.ReplaceApacheCommonsLang3ValidateNotNullWit
 displayName: Replace `org.apache.commons.lang3.Validate#notNull` with `Objects#requireNonNull`
 description: |
   Replace `org.apache.commons.lang3.Validate.notNull(..)` with `Objects.requireNonNull(..)`.
-preconditions:
-  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.staticanalysis.ReplaceValidateNotNullHavingVarargsWithObjectsRequireNonNull
   - org.openrewrite.staticanalysis.ReplaceValidateNotNullHavingSingleArgWithObjectsRequireNonNull

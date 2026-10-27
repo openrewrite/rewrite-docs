@@ -1,17 +1,17 @@
 ---
-title: "Replace `java.lang.Math random()` with `ThreadLocalRandom nextDouble()`"
-sidebar_label: "Replace `java.lang.Math random()` with `ThreadLocalRandom nextDouble()`"
+title: "Replace `Math.random()` with `ThreadLocalRandom.current().nextDouble()`"
+sidebar_label: "Replace `Math.random()` with `ThreadLocalRandom.current().nextDouble()`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Replace `java.lang.Math random()` with `ThreadLocalRandom nextDouble()`
+# Replace `Math.random()` with `ThreadLocalRandom.current().nextDouble()`
 
 **org.openrewrite.java.migrate.util.ReplaceMathRandomWithThreadLocalRandomRecipe**
 
-_Replace `java.lang.Math random()` with `ThreadLocalRandom nextDouble()` to reduce contention._
+_Replace `Math.random()` with `ThreadLocalRandom.current().nextDouble()` to reduce contention._
 
 ## Recipe source
 
@@ -79,7 +79,7 @@ class Example {
 
 <RunRecipe
   recipeName="org.openrewrite.java.migrate.util.ReplaceMathRandomWithThreadLocalRandomRecipe"
-  displayName="Replace `java.lang.Math random()` with `ThreadLocalRandom nextDouble()`"
+  displayName="Replace `Math.random()` with `ThreadLocalRandom.current().nextDouble()`"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-migrate-java"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA"

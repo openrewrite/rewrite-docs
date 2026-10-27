@@ -1,6 +1,6 @@
 ---
-title: "Prefer `new TreeMap&lt;&gt;()`"
-sidebar_label: "Prefer `new TreeMap&lt;&gt;()`"
+title: "Prefer `new TreeMap<>()`"
+sidebar_label: "Prefer `new TreeMap<>()`"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -19,20 +19,101 @@ _Prefer the Java standard library over third-party usage of Guava in simple case
 
 ## Recipe source
 
-[GitHub: NoGuavaMapsNewTreeMap.java](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/guava/NoGuavaMapsNewTreeMap.java),
+[GitHub: no-guava.yml](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/no-guava.yml),
 [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues),
 [Code Genome Project](https://artifacts.codegenomeproject.org/maven/org/openrewrite/recipe/rewrite-migrate-java/)
+
+:::info
+This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
+:::
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license). Moderne customers can download precompiled artifacts from The Code Genome Project. For non-commercial use you can build the artifact from source locally.
 
 
-## Used by
+## Definition
 
-This recipe is used as part of the following composite recipes:
+<Tabs groupId="recipeType">
+<TabItem value="recipe-list" label="Recipe List" >
+* [Prefer `new TreeMap&lt;&gt;()`](../../../java/migrate/guava/noguavarefasterrecipes$mapsnewtreemaprecipe)
+* [Prefer `new TreeMap&lt;&gt;(Comparator)`](../../../java/migrate/guava/noguavarefasterrecipes$mapsnewtreemapwithcomparatorrecipe)
+* [Prefer `new TreeMap&lt;&gt;(SortedMap)`](../../../java/migrate/guava/noguavarefasterrecipes$mapsnewtreemapfromsortedmaprecipe)
 
-* [Prefer the Java standard library instead of Guava](/recipes/java/migrate/guava/noguava.md)
+</TabItem>
 
-## Example
+<TabItem value="yaml-recipe-list" label="Yaml Recipe List">
+
+```yaml
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: org.openrewrite.java.migrate.guava.NoGuavaMapsNewTreeMap
+displayName: Prefer `new TreeMap&lt;&gt;()`
+description: |
+  Prefer the Java standard library over third-party usage of Guava in simple cases like this.
+tags:
+  - guava
+recipeList:
+  - org.openrewrite.java.migrate.guava.NoGuavaRefasterRecipes$MapsNewTreeMapRecipe
+  - org.openrewrite.java.migrate.guava.NoGuavaRefasterRecipes$MapsNewTreeMapWithComparatorRecipe
+  - org.openrewrite.java.migrate.guava.NoGuavaRefasterRecipes$MapsNewTreeMapFromSortedMapRecipe
+
+```
+</TabItem>
+</Tabs>
+## Examples
+##### Example 1
+`NoGuavaMapsNewTreeMapTest#replaceWithNewTreeMap`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import com.google.common.collect.*;
+import java.util.Map;
+
+class Test {
+    Map<Integer, Integer> cardinalsWorldSeries = Maps.newTreeMap();
+}
+```
+
+###### After
+```java
+import java.util.Map;
+import java.util.TreeMap;
+
+class Test {
+    Map<Integer, Integer> cardinalsWorldSeries = new TreeMap<>();
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,0 @@
+-import com.google.common.collect.*;
+import java.util.Map;
+@@ -3,0 +2,1 @@
+import com.google.common.collect.*;
+import java.util.Map;
++import java.util.TreeMap;
+
+@@ -5,1 +5,1 @@
+
+class Test {
+-   Map<Integer, Integer> cardinalsWorldSeries = Maps.newTreeMap();
++   Map<Integer, Integer> cardinalsWorldSeries = new TreeMap<>();
+}
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`NoGuavaMapsNewTreeMapTest#replaceWithNewTreeMap`
 
 
 <Tabs groupId="beforeAfter">

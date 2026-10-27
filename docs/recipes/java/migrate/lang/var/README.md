@@ -6,7 +6,7 @@ description: Var OpenRewrite recipes.
 
 ## Recipes
 
-* [Apply `var` to Generic Constructors](./usevarforgenericsconstructors.md)
+* [Apply `var` to generic constructors](./usevarforgenericsconstructors.md)
 * [Apply `var` to generic method invocations](./usevarforgenericmethodinvocations.md)
 * [Use `var` for constructor call assignments](./usevarforconstructors.md)
 * [Use `var` for primitive and String variables](./usevarforprimitive.md)

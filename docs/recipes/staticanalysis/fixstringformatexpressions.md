@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.staticanalysis.FixStringFormatExpressions**
 
-_Fix `String#format` and `String#formatted` expressions by replacing `\n` newline characters with `%n` and removing any unused arguments. Note this recipe is scoped to only transform format expressions which do not specify the argument index. Using `%n` ensures the correct platform-specific line separator, and removing unused arguments eliminates dead code that may mask a mismatch between the format string and its parameters._
+_Fix `String#format` and `String#formatted` expressions by removing any unused arguments. Note this recipe is scoped to only transform format expressions which do not specify the argument index. Removing unused arguments eliminates dead code that may mask a mismatch between the format string and its parameters._
 
 ### Tags
 
@@ -43,8 +43,8 @@ This recipe is used as part of the following composite recipes:
 ```java
 class T {
     static {
-        String s = String.format("hello world\n%s", "again");
-        String s2 = "hello world\n%s".formatted("again");
+        String s = String.format("count: %d, %d, %d, %d", 1, 3, 2, 4, 5);
+        String f = "count: %d, %d, %d, %d".formatted(1, 3, 2, 4, 5);
     }
 }
 ```
@@ -53,8 +53,8 @@ class T {
 ```java
 class T {
     static {
-        String s = String.format("hello world%n%s", "again");
-        String s2 = "hello world%n%s".formatted("again");
+        String s = String.format("count: %d, %d, %d, %d", 1, 3, 2, 4);
+        String f = "count: %d, %d, %d, %d".formatted(1, 3, 2, 4);
     }
 }
 ```
@@ -66,10 +66,10 @@ class T {
 @@ -3,2 +3,2 @@
 class T {
     static {
--       String s = String.format("hello world\n%s", "again");
--       String s2 = "hello world\n%s".formatted("again");
-+       String s = String.format("hello world%n%s", "again");
-+       String s2 = "hello world%n%s".formatted("again");
+-       String s = String.format("count: %d, %d, %d, %d", 1, 3, 2, 4, 5);
+-       String f = "count: %d, %d, %d, %d".formatted(1, 3, 2, 4, 5);
++       String s = String.format("count: %d, %d, %d, %d", 1, 3, 2, 4);
++       String f = "count: %d, %d, %d, %d".formatted(1, 3, 2, 4);
     }
 ```
 </TabItem>

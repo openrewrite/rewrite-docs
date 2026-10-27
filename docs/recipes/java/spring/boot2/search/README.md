@@ -15,6 +15,6 @@ _Recipes that include further recipes, often including the individual recipes be
 
 * [Applications using logging shutdown hooks](./loggingshutdownhooks.md)
 * [In Spring Boot 2.5 a `DefaultConfigurationCustomizer` can now be used in favour of defining one or more `*Provider` beans](./customizingjooqdefaultconfiguration.md)
-* [Integration scheduler pool size](./integrationschedulerpoolrecipe.md)
+* [Integration scheduler pool size](./findintegrationschedulerpool.md)
 
 

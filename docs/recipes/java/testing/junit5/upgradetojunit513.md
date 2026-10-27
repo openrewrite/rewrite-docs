@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.testing.junit5.UpgradeToJUnit513**
 
-_Upgrades JUnit 5 to 5.13.x and migrates all deprecated APIs._
+_Upgrades JUnit 5 to 5.13.x and replaces the deprecated `ParameterizedTest` placeholder constants with those of `ParameterizedInvocationConstants`._
 
 ### Tags
 
@@ -89,7 +89,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.testing.junit5.UpgradeToJUnit513
 displayName: Upgrade to JUnit 5.13
 description: |
-  Upgrades JUnit 5 to 5.13.x and migrates all deprecated APIs.
+  Upgrades JUnit 5 to 5.13.x and replaces the deprecated `ParameterizedTest` placeholder constants with those of `ParameterizedInvocationConstants`.
 tags:
   - junit
   - testing
@@ -168,6 +168,25 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
+
+### Maven metadata failures
+**org.openrewrite.maven.table.MavenMetadataFailures**
+
+_Attempts to resolve maven metadata that failed._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Group id | The groupId of the artifact for which the metadata download failed. |
+| Artifact id | The artifactId of the artifact for which the metadata download failed. |
+| Version | The version of the artifact for which the metadata download failed. |
+| Maven repository | The URL of the Maven repository that the metadata download failed on. |
+| Snapshots | Does the repository support snapshots. |
+| Releases | Does the repository support releases. |
+| Failure | The reason the metadata download failed. |
+
+</TabItem>
+
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results

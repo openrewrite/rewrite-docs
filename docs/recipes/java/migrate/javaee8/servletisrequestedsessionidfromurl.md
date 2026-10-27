@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.migrate.javaee8.ServletIsRequestedSessionIdFromURL**
 
-_The  method `HttpServletRequestWrapper.isRequestedSessionIdFromUrl()` is deprecated in JavaEE8 and is replaced by `HttpServletRequestWrapper.isRequestedSessionIdFromURL()`._
+_The method `HttpServletRequestWrapper.isRequestedSessionIdFromUrl()` is deprecated in Java EE 8 and is replaced by `HttpServletRequestWrapper.isRequestedSessionIdFromURL()`._
 
 ## Recipe source
 
@@ -47,7 +47,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.javaee8.ServletIsRequestedSessionIdFromURL
 displayName: Replace `HttpServletRequestWrapper.isRequestedSessionIdFromUrl()` with `isRequestedSessionIdFromURL()`
 description: |
-  The  method `HttpServletRequestWrapper.isRequestedSessionIdFromUrl()` is deprecated in JavaEE8 and is replaced by `HttpServletRequestWrapper.isRequestedSessionIdFromURL()`.
+  The method `HttpServletRequestWrapper.isRequestedSessionIdFromUrl()` is deprecated in Java EE 8 and is replaced by `HttpServletRequestWrapper.isRequestedSessionIdFromURL()`.
 preconditions:
   - org.openrewrite.Singleton
 recipeList:
@@ -64,7 +64,7 @@ recipeList:
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrate to JavaEE8](/recipes/java/migrate/javaee8-recipe.md)
+* [Migrate to Java EE 8](/recipes/java/migrate/javaee8-recipe.md)
 
 ## Examples
 ##### Example 1

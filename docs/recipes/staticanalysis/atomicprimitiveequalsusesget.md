@@ -1,13 +1,13 @@
 ---
-title: "Atomic Boolean, Integer, and Long equality checks compare their values"
-sidebar_label: "Atomic Boolean, Integer, and Long equality checks compare their values"
+title: "`AtomicBoolean`, `AtomicInteger`, and `AtomicLong` equality checks compare their values"
+sidebar_label: "`AtomicBoolean`, `AtomicInteger`, and `AtomicLong` equality checks compare their values"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Atomic Boolean, Integer, and Long equality checks compare their values
+# `AtomicBoolean`, `AtomicInteger`, and `AtomicLong` equality checks compare their values
 
 **org.openrewrite.staticanalysis.AtomicPrimitiveEqualsUsesGet**
 
@@ -108,7 +108,7 @@ class A {
 
 <RunRecipe
   recipeName="org.openrewrite.staticanalysis.AtomicPrimitiveEqualsUsesGet"
-  displayName="Atomic Boolean, Integer, and Long equality checks compare their values"
+  displayName="`AtomicBoolean`, `AtomicInteger`, and `AtomicLong` equality checks compare their values"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-static-analysis"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_STATIC_ANALYSIS"

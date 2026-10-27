@@ -11,12 +11,12 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.dependencies.UpgradeDependencyVersion**
 
-For Gradle projects, upgrade the version of a dependency in a `build.gradle` file. Supports updating dependency declarations of various forms:
- * `String` notation: `"group:artifact:version"` 
+For Gradle projects, upgrade the version of a dependency in a `build.gradle` or `build.gradle.kts` file. Supports updating dependency declarations of various forms:
+ * `String` notation: `"group:artifact:version"`
  * `Map` notation: `group: 'group', name: 'artifact', version: 'version'`
-It is possible to update version numbers which are defined earlier in the same file in variable declarations.
+It is possible to update version numbers which are defined earlier in the same file in variable declarations, in `gradle.properties`, or in a version catalog.
 
-For Maven projects, upgrade the version of a dependency by specifying a group ID and (optionally) an artifact ID using Node Semver advanced range selectors, allowing more precise control over version updates to patch or minor releases.
+For Maven projects, upgrade the version of a dependency by specifying a group ID and an artifact ID using Node Semver advanced range selectors, allowing more precise control over version updates to patch or minor releases.
 
 ## Recipe source
 
@@ -32,10 +32,10 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | --- | --- | --- | --- |
 | `String` | groupId | The first part of a dependency coordinate `com.google.guava:guava:VERSION`. This can be a glob expression. | `com.fasterxml.jackson*` |
 | `String` | artifactId | The second part of a dependency coordinate `com.google.guava:guava:VERSION`. This can be a glob expression. | `jackson-module*` |
-| `String` | newVersion | An exact version number or node-style semver selector used to select the version number.  | `29.X` |
-| `String` | versionPattern | *Optional*. Allows version selection to be extended beyond the original Node Semver semantics. So for example,Setting 'version' to "25-29" can be paired with a metadata pattern of "-jre" to select Guava 29.0-jre | `-jre` |
-| `Boolean` | overrideManagedVersion | *Optional*. For Maven project only, This flag can be set to explicitly override a managed dependency's version. The default for this flag is `false`. |  |
-| `List` | retainVersions | *Optional*. For Maven project only, accepts a list of GAVs. For each GAV, if it is a project direct dependency, and it is removed from dependency management after the changes from this recipe, then it will be retained with an explicit version. The version can be omitted from the GAV to use the old value from dependency management. | `com.jcraft:jsch` |
+| `String` | newVersion | An exact version number or node-style semver selector used to select the version number. You can also use `latest.release` for the latest available release version, `latest.integration` to include pre-release and snapshot versions, and `latest.patch` for patch updates if the current version is a valid semantic version. For more details, you can look at the documentation page of [version selectors](https://docs.openrewrite.org/reference/dependency-version-selectors). | `29.x` |
+| `String` | versionPattern | *Optional*. Allows version selection to be extended beyond the original Node Semver semantics. So for example, setting `newVersion` to "25-29" can be paired with a metadata pattern of "-jre" to select Guava 29.0-jre. | `-jre` |
+| `Boolean` | overrideManagedVersion | *Optional*. For Maven only, this flag can be set to explicitly override a managed dependency's version. The default for this flag is `false`. |  |
+| `List` | retainVersions | *Optional*. For Maven only, accepts a list of GAVs. For each GAV, if it is a project direct dependency, and it is removed from dependency management after the changes from this recipe, then it will be retained with an explicit version. The version can be omitted from the GAV to use the old value from dependency management. | `com.jcraft:jsch` |
 
 
 ## Used by
@@ -55,19 +55,18 @@ This recipe is used as part of the following composite recipes:
 * [Migrate Ehcache from javax to jakarta namespace](/recipes/java/migrate/jakarta/ehcachejavaxtojakarta.md)
 * [Migrate Hibernate dependencies to 6.0.x](/recipes/hibernate/migratetohibernatedependencies60.md)
 * [Migrate Jackson from javax to jakarta namespace](/recipes/java/migrate/jakarta/jacksonjavaxtojakarta.md)
-* [Migrate Jakarta EE 9 api dependencies to Jakarta EE 10 versions](/recipes/java/migrate/jakarta/migrationtojakarta10apis.md)
+* [Migrate Jakarta EE 9 API dependencies to Jakarta EE 10 versions](/recipes/java/migrate/jakarta/migrationtojakarta10apis.md)
 * [Migrate Johnzon from javax to jakarta namespace](/recipes/java/migrate/jakarta/johnzonjavaxtojakarta.md)
 * [Migrate Log4j to SLF4J](/recipes/java/logging/slf4j/log4jtoslf4j.md)
 * [Migrate Lombok to a Java 11 compatible version](/recipes/java/migrate/lombok/updatelomboktojava11.md)
 * [Migrate OkHttp dependencies to 4.x](/recipes/okhttp/upgradeokhttp4dependencies.md)
 * [Migrate OkHttp dependencies to 5.x](/recipes/okhttp/upgradeokhttp5dependencies.md)
 * [Migrate Okio dependencies to 3.x](/recipes/okio/upgradeokio3dependencies.md)
-* [Migrate RestAssured from javax to jakarta namespace by upgrading to a version compatible with J2EE9](/recipes/java/migrate/jakarta/restassuredjavaxtojakarta.md)
+* [Migrate RestAssured from javax to jakarta namespace by upgrading to a version compatible with Jakarta EE 9](/recipes/java/migrate/jakarta/restassuredjavaxtojakarta.md)
 * [Migrate RichFaces 3.x to 4.5](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/jsf/richfaces/migraterichfaces_4_5)
 * [Migrate Spring Cloud AWS (awspring) to 4.0](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/upgradeawspringcloud_4_0)
 * [Migrate Spring Cloud Azure to 6.x](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot3/upgradespringcloudazure_6)
 * [Migrate Spring Cloud Azure to 7.x](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/upgradespringcloudazure_7)
-* [Migrate Spring Retry to Spring Resilience](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/migratespringretry)
 * [Migrate Weld implementations to Jakarta CDI](/recipes/java/migrate/jakarta/weldtojakarta.md)
 * [Migrate `jackson-datatype-hibernate6` to `jackson-datatype-hibernate7`](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/hibernate/update70/migratejacksondatatypehibernate6to7)
 * [Migrate deprecated `javaee-api` dependencies to `jakarta.platform`](/recipes/java/migrate/jakarta/javaxeeapitojakarta.md)
@@ -136,8 +135,6 @@ This recipe is used as part of the following composite recipes:
 * [Migrate to Kafka 3.3](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kafka/migratetokafka33)
 * [Migrate to Kafka 4.0](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kafka/migratetokafka40)
 * [Migrate to Kafka 4.1](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kafka/migratetokafka41)
-* [Migrate to LaunchDarkly 6.x](/recipes/featureflags/launchdarkly/upgradelaunchdarkly6.md)
-* [Migrate to LaunchDarkly 7.x](/recipes/featureflags/launchdarkly/upgradelaunchdarkly7.md)
 * [Migrate to Micrometer 1.13](/recipes/micrometer/upgrademicrometer_1_13.md)
 * [Migrate to Reactor 3.5](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/reactive/reactor/upgradereactor_3_5)
 * [Migrate to Scala 2.12.+](/recipes/scala/migrate/upgradescala_2_12.md)
@@ -188,6 +185,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate to Spring Security 6.4](/recipes/java/spring/security6/upgradespringsecurity_6_4.md)
 * [Migrate to Spring Security 6.5 (Community Edition)](/recipes/java/spring/security6/upgradespringsecurity_6_5-community-edition.md)
 * [Migrate to Spring Security 7.0](/recipes/java/spring/security7/upgradespringsecurity_7_0.md)
+* [Migrate to Spring WS 5.0](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/ws/upgradespringws_5_0)
 * [Migrate to Spring for GraphQL 2.0](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/upgradespringgraphql_2_0)
 * [Migrate to `kotlinx-datetime` 0.7](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kotlin/migrate/upgradekotlinxdatetime_0_7)
 * [Migrates from Netty 4.1.x to Netty 4.2.x](/recipes/netty/upgradenetty_4_1_to_4_2.md)
@@ -195,26 +193,24 @@ This recipe is used as part of the following composite recipes:
 * [Migrates to Apache POI 4.1.2](/recipes/apache/poi/upgradeapachepoi_4_1.md)
 * [Migrates to Apache POI 5.x](/recipes/apache/poi/upgradeapachepoi_5.md)
 * [Migrates to ApacheHttpClient 4.5.x](/recipes/apache/httpclient4/upgradeapachehttpclient_4_5.md)
-* [Mockito 3.x migration from 1.x](/recipes/java/testing/mockito/mockito1to3migration.md)
 * [Mockito 4 to 5.x upgrade only](/recipes/java/testing/mockito/mockito4to5only.md)
-* [Mockito 4.x upgrade](/recipes/java/testing/mockito/mockito1to4migration.md)
-* [OkHttp 3.x `MockWebServer` `@Rule` To 4.x `MockWebServer`](/recipes/java/testing/junit5/updatemockwebserver.md)
+* [OkHttp 3.x `MockWebServer` `@Rule` to 4.x `MockWebServer`](/recipes/java/testing/junit5/updatemockwebserver.md)
 * [Prefer the Java standard library instead of Guava](/recipes/java/migrate/guava/noguava.md)
 * [Quarkus 2.x migration from Quarkus 1.x](/recipes/quarkus/quarkus2/quarkus1to2migration.md)
 * [Rename Testcontainers dependencies](/recipes/java/testing/testcontainers/testcontainers2dependencies.md)
-* [Update Apache Shiro Dependencies to 2.0.x](/recipes/java/migrate/jakarta/updateapacheshirodependencies.md)
-* [Update Eclipse Yasson Dependencies to 3.0.x](/recipes/java/migrate/jakarta/updateyassondependencies.md)
-* [Update EclipseLink Dependencies to 4.x](/recipes/java/migrate/jakarta/updateeclipselinkdependencies.md)
-* [Update GlassFish Jersey Dependencies to 3.1.x](/recipes/java/migrate/jakarta/updatejerseydependencies.md)
-* [Update Jakarta EE Java Faces Dependencies to 4.0.x](/recipes/java/migrate/jakarta/updatejakartafacesapi4.md)
-* [Update Jakarta EE Java Faces Dependencies to 4.1.x](/recipes/java/migrate/jakarta/updatejakartafacesapi41.md)
-* [Update Jakarta EE Platform Dependencies to 10.0.0](/recipes/java/migrate/jakarta/updatejakartaplatform10.md)
-* [Update Jakarta EE Platform Dependencies to 11.0.x](/recipes/java/migrate/jakarta/updatejakartaplatform11.md)
+* [Update Apache Shiro dependencies to 2.0.x](/recipes/java/migrate/jakarta/updateapacheshirodependencies.md)
+* [Update Eclipse Yasson dependencies to 3.0.x](/recipes/java/migrate/jakarta/updateyassondependencies.md)
+* [Update EclipseLink dependencies to 4.x](/recipes/java/migrate/jakarta/updateeclipselinkdependencies.md)
+* [Update GlassFish Jersey dependencies to 3.1.x](/recipes/java/migrate/jakarta/updatejerseydependencies.md)
 * [Update Jakarta EE Platform Dependencies to 9.1.0](/recipes/oracle/weblogic/rewrite/jakarta/updatejakartaplatform9_1.md)
-* [Update Jakarta EE XML Web Services Dependencies for EE 10](/recipes/java/migrate/jakarta/updatejakartaxmlwsee10.md)
+* [Update Jakarta EE platform dependencies to 10.0.0](/recipes/java/migrate/jakarta/updatejakartaplatform10.md)
+* [Update Jakarta EE platform dependencies to 11.0.x](/recipes/java/migrate/jakarta/updatejakartaplatform11.md)
+* [Update Jakarta Faces dependencies to 4.0.x](/recipes/java/migrate/jakarta/updatejakartafacesapi4.md)
+* [Update Jakarta Faces dependencies to 4.1.x](/recipes/java/migrate/jakarta/updatejakartafacesapi41.md)
 * [Update Jakarta Persistence to 3.1](/recipes/oracle/weblogic/rewrite/jakarta/updatejakartapersistenceto31.md)
 * [Update Jakarta Persistence to 3.2](/recipes/oracle/weblogic/rewrite/jakarta/updatejakartapersistenceto32.md)
-* [Update RestLet to 2.6.0](/recipes/java/migrate/jakarta/updaterestlet2_6.md)
+* [Update Jakarta XML Web Services dependencies for Jakarta EE 10](/recipes/java/migrate/jakarta/updatejakartaxmlwsee10.md)
+* [Update Restlet to 2.6.x](/recipes/java/migrate/jakarta/updaterestlet2_6.md)
 * [Update the WebLogic version to 14.1.2](/recipes/oracle/weblogic/rewrite/updatebuildtoweblogic1412.md)
 * [Update the WebLogic version to 15.1.1](/recipes/oracle/weblogic/rewrite/updatebuildtoweblogic1511.md)
 * [Upgrade Common open source libraries](/recipes/oracle/weblogic/rewrite/jakarta/upgradecommonopensourcelibraries.md)
@@ -229,6 +225,7 @@ This recipe is used as part of the following composite recipes:
 * [Upgrade Jackson 2.x dependencies to 3.x](/recipes/java/jackson/upgradejackson_2_3_dependencies.md)
 * [Upgrade Kotlin to 2.3 for Java 25 compatibility](/recipes/java/migrate/upgradekotlinforjava25.md)
 * [Upgrade Log4j 2.x dependency version](/recipes/java/logging/log4j/upgradelog4j2dependencyversion.md)
+* [Upgrade Mockito from 1.x to 3.x](/recipes/java/testing/mockito/mockito1to3migration.md)
 * [Upgrade MyBatis to Spring Boot 2.0](/recipes/java/spring/boot3/upgrademybatistospringboot_2_0.md)
 * [Upgrade MyBatis to Spring Boot 2.1](/recipes/java/spring/boot3/upgrademybatistospringboot_2_1.md)
 * [Upgrade MyBatis to Spring Boot 2.2](/recipes/java/spring/boot3/upgrademybatistospringboot_2_2.md)
@@ -258,8 +255,8 @@ This recipe is used as part of the following composite recipes:
 * [Upgrade to Cucumber-JVM 7.x](/recipes/cucumber/jvm/upgradecucumber7x.md)
 * [Upgrade to JUnit 5.13](/recipes/java/testing/junit5/upgradetojunit513.md)
 * [Upgrade to JUnit 5.14](/recipes/java/testing/junit5/upgradetojunit514.md)
+* [Upgrade to Mockito 4.x](/recipes/java/testing/mockito/mockito1to4migration.md)
 * [Upgrade to Spring Boot 2.5](/recipes/java/spring/boot2/upgradespringboot_2_5.md)
-* [Upgrade to Spring Cloud 2025.1](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/cloud20251/upgradespringcloud_2025_1)
 * [Upgrade to SpringDoc 2.1](/recipes/java/springdoc/upgradespringdoc_2.md)
 * [Upgrade to SpringDoc 2.2](/recipes/java/springdoc/upgradespringdoc_2_2.md)
 * [Upgrade to SpringDoc 2.5](/recipes/java/springdoc/upgradespringdoc_2_5.md)
@@ -350,7 +347,7 @@ recipeList:
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: com.fasterxml.jackson*
       artifactId: jackson-module*
-      newVersion: 29.X
+      newVersion: 29.x
       versionPattern: '-jre'
       retainVersions:
         - com.jcraft:jsch
@@ -363,7 +360,7 @@ recipeList:
   artifactId="rewrite-java-dependencies"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JAVA_DEPENDENCIES"
   requiresConfiguration
-  cliOptions={' --recipe-option "groupId=com.fasterxml.jackson*" --recipe-option "artifactId=jackson-module*" --recipe-option "newVersion=29.X"'}
+  cliOptions={' --recipe-option "groupId=com.fasterxml.jackson*" --recipe-option "artifactId=jackson-module*" --recipe-option "newVersion=29.x"'}
   optionalCliOptions={' --recipe-option "versionPattern=\'-jre\'" --recipe-option "overrideManagedVersion=true" --recipe-option "retainVersions=com.jcraft:jsch"'}
   hasDataTables
 />
@@ -380,6 +377,25 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
+
+### Maven metadata failures
+**org.openrewrite.maven.table.MavenMetadataFailures**
+
+_Attempts to resolve maven metadata that failed._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Group id | The groupId of the artifact for which the metadata download failed. |
+| Artifact id | The artifactId of the artifact for which the metadata download failed. |
+| Version | The version of the artifact for which the metadata download failed. |
+| Maven repository | The URL of the Maven repository that the metadata download failed on. |
+| Snapshots | Does the repository support snapshots. |
+| Releases | Does the repository support releases. |
+| Failure | The reason the metadata download failed. |
+
+</TabItem>
+
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results

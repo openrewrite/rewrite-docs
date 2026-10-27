@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.staticanalysis.ExplicitThis**
 
-_Add explicit 'this.' prefix to field and method access._
+_Add explicit `this.` prefix to field and method access._
 
 ## Recipe source
 

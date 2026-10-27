@@ -1,6 +1,6 @@
 ---
-title: "Use `Uni&lt;T extends ReactivePanacheMongoEntityBase&gt;`"
-sidebar_label: "Use `Uni&lt;T extends ReactivePanacheMongoEntityBase&gt;`"
+title: "Use `Uni<T extends ReactivePanacheMongoEntityBase>`"
+sidebar_label: "Use `Uni<T extends ReactivePanacheMongoEntityBase>`"
 ---
 
 import Tabs from '@theme/Tabs';

@@ -1,13 +1,13 @@
 ---
-title: "Migrate from IBM Runtimes to Oracle Runtimes"
-sidebar_label: "Migrate from IBM Runtimes to Oracle Runtimes"
+title: "Migrate from IBM runtimes to Oracle runtimes"
+sidebar_label: "Migrate from IBM runtimes to Oracle runtimes"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Migrate from IBM Runtimes to Oracle Runtimes
+# Migrate from IBM runtimes to Oracle runtimes
 
 **org.openrewrite.java.migrate.IBMJDKtoOracleJDK**
 
@@ -46,7 +46,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.IBMJDKtoOracleJDK
-displayName: Migrate from IBM Runtimes to Oracle Runtimes
+displayName: Migrate from IBM runtimes to Oracle runtimes
 description: |
   This recipe will apply changes commonly needed when upgrading Java versions. The solutions provided in this list are solutions necessary for migrating from IBM Runtimes to Oracle Runtimes.
 tags:
@@ -155,7 +155,7 @@ class TestClass {
 
 <RunRecipe
   recipeName="org.openrewrite.java.migrate.IBMJDKtoOracleJDK"
-  displayName="Migrate from IBM Runtimes to Oracle Runtimes"
+  displayName="Migrate from IBM runtimes to Oracle runtimes"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-migrate-java"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA"

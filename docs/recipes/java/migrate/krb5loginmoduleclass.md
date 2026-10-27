@@ -70,7 +70,7 @@ recipeList:
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrate from IBM Runtimes to Oracle Runtimes](/recipes/java/migrate/ibmjdktooraclejdk.md)
+* [Migrate from IBM runtimes to Oracle runtimes](/recipes/java/migrate/ibmjdktooraclejdk.md)
 
 
 ## Usage

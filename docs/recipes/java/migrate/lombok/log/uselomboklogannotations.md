@@ -40,7 +40,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Use `@JBossLog` instead of explicit fields](../../../../java/migrate/lombok/log/usejbosslog)
 * [Use `@Log` instead of explicit fields](../../../../java/migrate/lombok/log/uselog)
 * [Use `@Log4j2` instead of explicit fields](../../../../java/migrate/lombok/log/uselog4j2)
-* [Use `@Slf4` instead of explicit fields](../../../../java/migrate/lombok/log/useslf4j)
+* [Use `@Slf4j` instead of explicit fields](../../../../java/migrate/lombok/log/useslf4j)
 
 </TabItem>
 
@@ -70,7 +70,7 @@ recipeList:
 
 This recipe is used as part of the following composite recipes:
 
-* [Lombok Best Practices](/recipes/java/migrate/lombok/lombokbestpractices.md)
+* [Lombok best practices](/recipes/java/migrate/lombok/lombokbestpractices.md)
 
 ## Examples
 ##### Example 1

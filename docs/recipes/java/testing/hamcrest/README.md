@@ -17,13 +17,13 @@ _Recipes that include further recipes, often including the individual recipes be
 ## Recipes
 
 * [Add `org.hamcrest:hamcrest` if it is used](./addhamcrestifused.md)
-* [Migrate Hamcrest `assertThat(boolean, Matcher)` to AssertJ](./assertthatbooleantoassertj.md)
+* [Migrate Hamcrest `assertThat(String, boolean)` to AssertJ](./assertthatbooleantoassertj.md)
 * [Migrate Hamcrest `everyItem` to AssertJ](./hamcresteveryitemtoassertj.md)
 * [Migrate Hamcrest `hasItem(Matcher)` to AssertJ](./hamcresthasitemmatchertoassertj.md)
 * [Migrate Hamcrest `hasProperty` to AssertJ](./hamcresthaspropertytoassertj.md)
 * [Migrate Hamcrest `is(Object)` to AssertJ](./hamcrestismatchertoassertj.md)
 * [Migrate Hamcrest `not(Matcher)` to AssertJ](./hamcrestnotmatchertoassertj.md)
-* [Migrate `anyOf` Hamcrest Matcher to AssertJ](./hamcrestofmatcherstoassertj.md)
+* [Migrate `anyOf` and `allOf` Hamcrest matchers to AssertJ](./hamcrestofmatcherstoassertj.md)
 * [Migrate from Hamcrest `Matcher` to AssertJ](./hamcrestmatchertoassertj.md)
 * [Migrate from Hamcrest `Matcher` to JUnit 5](./hamcrestmatchertojunit5.md)
 * [Migrate from Hamcrest `instanceOf` matcher to JUnit 5](./hamcrestinstanceoftojunit5.md)

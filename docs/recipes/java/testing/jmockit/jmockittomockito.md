@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.testing.jmockit.JMockitToMockito**
 
-_This recipe will apply changes commonly needed when migrating from JMockit to Mockito._
+_Applies changes commonly needed when migrating from JMockit to Mockito._
 
 ### Tags
 
@@ -42,7 +42,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 **Recipes**
 
 * [Rewrite JMockit Expectations, NonStrictExpectations, Verifications, VerificationsInOrder, FullVerifications](../../../java/testing/jmockit/jmockitblocktomockito)
-* [Rewrite JMockit MockUp to Mockito statements](../../../java/testing/jmockit/jmockitmockuptomockito)
+* [Rewrite JMockit `MockUp` to Mockito statements](../../../java/testing/jmockit/jmockitmockuptomockito)
 * [Convert JMockit `@Mocked` and `@Injectable` annotated arguments](../../../java/testing/jmockit/jmockitannotatedargumenttomockito)
 * [Change type](../../../java/changetype)
   * oldFullyQualifiedTypeName: `mockit.Mocked`
@@ -90,7 +90,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.testing.jmockit.JMockitToMockito
 displayName: Migrate from JMockit to Mockito
 description: |
-  This recipe will apply changes commonly needed when migrating from JMockit to Mockito.
+  Applies changes commonly needed when migrating from JMockit to Mockito.
 tags:
   - jmockit
   - testing
@@ -163,6 +163,25 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
+
+### Maven metadata failures
+**org.openrewrite.maven.table.MavenMetadataFailures**
+
+_Attempts to resolve maven metadata that failed._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Group id | The groupId of the artifact for which the metadata download failed. |
+| Artifact id | The artifactId of the artifact for which the metadata download failed. |
+| Version | The version of the artifact for which the metadata download failed. |
+| Maven repository | The URL of the Maven repository that the metadata download failed on. |
+| Snapshots | Does the repository support snapshots. |
+| Releases | Does the repository support releases. |
+| Failure | The reason the metadata download failed. |
+
+</TabItem>
+
 <TabItem value="org.openrewrite.java.testing.mockito.table.PowerMockTestsDisabled" label="PowerMockTestsDisabled">
 
 ### PowerMock tests disabled for manual migration

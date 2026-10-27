@@ -45,7 +45,6 @@ This recipe is available under the [Moderne Source Available License](https://do
   * groupId: `org.springframework.batch`
   * artifactId: `*`
   * newVersion: `5.0.x`
-  * overrideManagedVersion: `false`
 * [Transform classes that extend `*ListenerSupport` to implement the `*Listener` interfaces instead](../../../java/spring/batch/listenersupportclasstointerface)
 * [Migrate `JobBuilderFactory` to `JobBuilder`](../../../java/spring/batch/migratejobbuilderfactory)
 * [Migrate `StepBuilderFactory` to `StepBuilder`](../../../java/spring/batch/migratestepbuilderfactory)
@@ -64,7 +63,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * newFullyQualifiedTypeName: `org.springframework.batch.core.configuration.support.ScopeConfiguration`
 * [Convert receive type in some invocation of StepExecution.xx()](../../../java/spring/batch/convertreceivetypewhencallstepexecutionmethod)
 * [Migrate `Date` to `LocalDateTime` for Spring Batch timestamp methods](../../../java/spring/batch/migratestepexecutiontimestamptypes)
-* [Migration invocation of JobParameter.toString to JobParameter.getValue.toString](../../../java/spring/batch/jobparametertostring)
+* [Migrate `JobParameter.toString()` to `JobParameter.getValue().toString()`](../../../java/spring/batch/jobparametertostring)
 * [Add class argument to `JobParameters`](../../../java/spring/batch/migratejobparameter)
 * [Migrate method when it annotated by Spring Batch API](../../../java/spring/batch/migratemethodannotatedbybatchapi)
 * [Change type](../../../java/changetype)
@@ -92,7 +91,6 @@ recipeList:
       groupId: org.springframework.batch
       artifactId: "*"
       newVersion: 5.0.x
-      overrideManagedVersion: false
   - org.openrewrite.java.spring.batch.ListenerSupportClassToInterface
   - org.openrewrite.java.spring.batch.MigrateJobBuilderFactory
   - org.openrewrite.java.spring.batch.MigrateStepBuilderFactory
@@ -153,6 +151,25 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
+
+### Maven metadata failures
+**org.openrewrite.maven.table.MavenMetadataFailures**
+
+_Attempts to resolve maven metadata that failed._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Group id | The groupId of the artifact for which the metadata download failed. |
+| Artifact id | The artifactId of the artifact for which the metadata download failed. |
+| Version | The version of the artifact for which the metadata download failed. |
+| Maven repository | The URL of the Maven repository that the metadata download failed on. |
+| Snapshots | Does the repository support snapshots. |
+| Releases | Does the repository support releases. |
+| Failure | The reason the metadata download failed. |
+
+</TabItem>
+
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results

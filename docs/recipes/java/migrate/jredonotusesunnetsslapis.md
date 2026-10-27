@@ -39,7 +39,6 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Rename package name](../../java/changepackage)
   * oldPackageName: `com.sun.net.ssl`
   * newPackageName: `javax.net.ssl`
-  * recursive: `false`
 
 </TabItem>
 
@@ -60,7 +59,6 @@ recipeList:
   - org.openrewrite.java.ChangePackage:
       oldPackageName: com.sun.net.ssl
       newPackageName: javax.net.ssl
-      recursive: false
 
 ```
 </TabItem>

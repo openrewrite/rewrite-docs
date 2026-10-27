@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.dependencies.RemoveDependency**
 
-_For Gradle project, removes a single dependency from the dependencies section of the `build.gradle`. For Maven project, removes a single dependency from the `<dependencies>` section of the pom.xml._
+_For a Gradle project, removes a single dependency from the `dependencies` section of the `build.gradle` or `build.gradle.kts`. For a Maven project, removes a single dependency from the `<dependencies>` section of the `pom.xml`._
 
 ## Recipe source
 
@@ -28,8 +28,8 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | groupId | The first part of a dependency coordinate `com.google.guava:guava:VERSION`. This can be a glob expression. | `com.fasterxml.jackson*` |
 | `String` | artifactId | The second part of a dependency coordinate `com.google.guava:guava:VERSION`. This can be a glob expression. | `jackson-module*` |
 | `String` | unlessUsing | *Optional*. Do not remove if type is in use. Supports glob expressions. | `org.aspectj.lang.*` |
-| `String` | configuration | *Optional*. The dependency configuration to remove from. | `api` |
-| `String` | scope | *Optional*. Only remove dependencies if they are in this scope. If 'runtime', this willalso remove dependencies in the 'compile' scope because 'compile' dependencies are part of the runtime dependency set Valid options: `compile`, `test`, `runtime`, `provided` | `compile` |
+| `String` | configuration | *Optional*. For Gradle only, the dependency configuration to remove from. | `api` |
+| `String` | scope | *Optional*. For Maven only, only remove dependencies if they are in this scope. If `runtime`, this will also remove dependencies in the `compile` scope because `compile` dependencies are part of the runtime dependency set. Valid options: `compile`, `test`, `runtime`, `provided` | `compile` |
 
 
 ## Used by
@@ -57,7 +57,6 @@ This recipe is used as part of the following composite recipes:
 * [Migrate Spring Cloud Config Client to Quarkus Config](/recipes/quarkus/spring/migratespringcloudconfig.md)
 * [Migrate Spring Cloud Service Discovery to Quarkus](/recipes/quarkus/spring/migratespringcloudservicediscovery.md)
 * [Migrate Spring Cloud Sleuth 3.1 to Micrometer Tracing 1.0](/recipes/java/spring/cloud2022/migratecloudsleuthtomicrometertracing.md)
-* [Migrate Spring Retry to Spring Resilience](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/migratespringretry)
 * [Migrate Spring WS Axiom to SAAJ](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/ws/migrateaxiomtosaaj)
 * [Migrate from EasyMock to Mockito](/recipes/java/testing/easymock/easymocktomockito.md)
 * [Migrate from Elasticsearch 8 to 9](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/elastic/elastic9/migratetoelasticsearch9)
@@ -83,7 +82,6 @@ This recipe is used as part of the following composite recipes:
 * [Migrates to Apache POI 5.x](/recipes/apache/poi/upgradeapachepoi_5.md)
 * [Modernize a Jenkins plugin to the latest recommended versions](/recipes/jenkins/modernizeplugin.md)
 * [Modularize legacy raw Spring Data Redis dependency](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/modularizelegacyrawspringdataredis)
-* [Remove JUnit Jupiter migrationsupport](/recipes/java/testing/junit/removejupitermigrationsupport.md)
 * [Remove JavaEE dependencies](/recipes/quarkus/migrate/javaee/removejavaeedependencies.md)
 * [Remove Spring Boot DevTools](/recipes/quarkus/spring/migratespringbootdevtools.md)
 * [Remove Spring Pulsar Reactive support](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/removespringpulsarreactive)
@@ -119,13 +117,14 @@ This recipe is used as part of the following composite recipes:
 * [Replace Spring Boot WebSocket with Quarkus WebSockets](/recipes/quarkus/spring/springbootwebsockettoquarkus.md)
 * [Replace Spring Kafka with Quarkus Kafka Client](/recipes/quarkus/spring/springkafkatoquarkusclassic.md)
 * [Replace Spring Kafka with Quarkus Messaging Kafka](/recipes/quarkus/spring/springkafkatoquarkusreactive.md)
-* [Replace SpringFox Dependencies](/recipes/java/springdoc/replacespringfoxdependencies.md)
+* [Replace SpringFox dependencies](/recipes/java/springdoc/replacespringfoxdependencies.md)
 * [Replace `micrometer-spring-legacy` with `spring-boot-starter-actuator`](/recipes/java/spring/boot2/maybeaddspringbootstarteractuator.md)
 * [Swap the PowerMock dependencies for Mockito](/recipes/java/testing/mockito/removepowermockdependencies.md)
-* [Update RestLet to 2.6.0](/recipes/java/migrate/jakarta/updaterestlet2_6.md)
+* [Update Restlet to 2.6.x](/recipes/java/migrate/jakarta/updaterestlet2_6.md)
 * [Update Tapestry dependencies](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/tapestry/updatetapestrydependencies)
 * [Update jakarta annotations dependency](/recipes/java/micronaut/updatejakartaannotations.md)
 * [Update to Micronaut Validation 4.x](/recipes/java/micronaut/updatemicronautvalidation.md)
+* [Upgrade Jackson 2.x dependencies to 3.x](/recipes/java/jackson/upgradejackson_2_3_dependencies.md)
 * [Upgrade Struts 6.0 dependencies](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/struts/migrate6/upgradestruts6dependencies)
 * [Upgrade to SpringDoc 2.1](/recipes/java/springdoc/upgradespringdoc_2.md)
 * [io.quarkus.updates.core.quarkus31.RemoveMockitoInline](/recipes/quarkus/updates/core/quarkus31/removemockitoinline.md)

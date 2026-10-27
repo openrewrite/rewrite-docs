@@ -32,7 +32,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 This recipe is used as part of the following composite recipes:
 
-* [Find Virtual Thread opportunities](/recipes/java/migrate/lang/findvirtualthreadopportunities.md)
+* [Find virtual thread opportunities](/recipes/java/migrate/lang/findvirtualthreadopportunities.md)
 
 ## Example
 

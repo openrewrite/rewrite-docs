@@ -1,17 +1,17 @@
 ---
-title: "Find Virtual Thread opportunities"
-sidebar_label: "Find Virtual Thread opportunities"
+title: "Find virtual thread opportunities"
+sidebar_label: "Find virtual thread opportunities"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Find Virtual Thread opportunities
+# Find virtual thread opportunities
 
 **org.openrewrite.java.migrate.lang.FindVirtualThreadOpportunities**
 
-_Find opportunities to convert existing code to use Virtual Threads._
+_Find opportunities to convert existing code to use virtual threads._
 
 ### Tags
 
@@ -55,9 +55,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.lang.FindVirtualThreadOpportunities
-displayName: Find Virtual Thread opportunities
+displayName: Find virtual thread opportunities
 description: |
-  Find opportunities to convert existing code to use Virtual Threads.
+  Find opportunities to convert existing code to use virtual threads.
 tags:
   - java21
   - virtual_threads
@@ -163,7 +163,7 @@ class Test {
 
 <RunRecipe
   recipeName="org.openrewrite.java.migrate.lang.FindVirtualThreadOpportunities"
-  displayName="Find Virtual Thread opportunities"
+  displayName="Find virtual thread opportunities"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-migrate-java"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA"

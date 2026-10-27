@@ -25,8 +25,8 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 | Type | Name | Description | Example |
 | --- | --- | --- | --- |
-| `String` | nullableAnnotationClass | *Optional*. The fully qualified name of the @Nullable annotation to add. Both `@Target(TYPE_USE)` and declaration annotations (e.g. `javax.annotation.CheckForNull`) are supported. Defaults to `org.jspecify.annotations.Nullable`. | `org.jspecify.annotations.Nullable` |
-| `List` | additionalNullCheckingMethods | *Optional*. A list of method patterns (in OpenRewrite MethodMatcher format) that should be considered as null-checking methods. These will be added to the built-in list of known null-checking methods. Use `..` for any parameters, e.g., `com.mycompany.utils.StringUtil isEmpty(..)` or `com.mycompany.utils.CollectionUtil isNullOrEmpty(java.util.Collection)` | `com.mycompany.utils.StringUtil isEmpty(..), com.mycompany.utils.CollectionUtil isNullOrEmpty(..)` |
+| `String` | nullableAnnotationClass | *Optional*. The fully qualified name of the `@Nullable` annotation to add. Both `@Target(TYPE_USE)` and declaration annotations (e.g. `javax.annotation.CheckForNull`) are supported. Defaults to `org.jspecify.annotations.Nullable`. | `org.jspecify.annotations.Nullable` |
+| `List` | additionalNullCheckingMethods | *Optional*. A list of method patterns (in OpenRewrite MethodMatcher format) that should be considered as null-checking methods. These will be added to the built-in list of known null-checking methods. Use `..` for any parameters, e.g., `com.mycompany.utils.StringUtil isEmpty(..)` or `com.mycompany.utils.CollectionUtil isNullOrEmpty(java.util.Collection)`. | `com.mycompany.utils.StringUtil isEmpty(..), com.mycompany.utils.CollectionUtil isNullOrEmpty(..)` |
 
 
 ## Used by

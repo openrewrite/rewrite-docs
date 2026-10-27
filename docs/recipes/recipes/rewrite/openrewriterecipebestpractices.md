@@ -48,9 +48,11 @@ This recipe is available under the [Moderne Source Available License](https://do
   * existingFileStrategy: `Merge`
 * [Inline calls to deprecated OpenRewrite methods](../../recipes/rewrite/inlinemethods)
 * [Generate `InlineMethodCalls` recipes for deprecated delegating methods](../../java/recipes/generatedeprecatedmethodrecipes)
+* [Find visitor instances shared across `getVisitor()` calls](../../java/recipes/findsharedvisitorinstances)
 * [Java Recipe best practices](../../java/recipes/javarecipebestpractices)
 * [Recipe testing best practices](../../java/recipes/recipetestingbestpractices)
 * [Recipe nullability best practices](../../java/recipes/recipenullabilitybestpractices)
+* [Declarative recipe best practices](../../java/recipes/declarativerecipebestpractices)
 * [Remove elements annotated with `@ToBeRemoved` past their date](../../java/recipes/removetoberemoved)
 * [Migrate tests to Java 21](../../java/recipes/upgradeteststojava21)
 * [Extract documentation examples from tests](../../java/recipes/examplesextractor)
@@ -71,23 +73,23 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Week Year (YYYY) should not be used for date formatting](../../staticanalysis/replaceweekyearwithyear)
 * [`hashCode()` should not be called on array instances](../../staticanalysis/removehashcodecallsfromarrayinstances)
 * [Remove `toString()` calls on arrays](../../staticanalysis/removetostringcallsfromarrayinstances)
-* [Replaces `Object.notify()` with `Object.notifyAll()`](../../staticanalysis/useobjectnotifyall)
+* [Replace `Object.notify()` with `Object.notifyAll()`](../../staticanalysis/useobjectnotifyall)
 * [Remove garbage collection invocations](../../staticanalysis/removecallstosystemgc)
 * [Remove `Object.finalize()` invocations](../../staticanalysis/removecallstoobjectfinalize)
-* [URL Equals and Hash Code](../../staticanalysis/urlequalshashcoderecipes)
+* [`URL#equals()` and `URL#hashCode()`](../../staticanalysis/urlequalshashcoderecipes)
 * [Find ignored results of `@CheckReturnValue` methods](../../staticanalysis/findignoredcheckreturnvalue)
-  * checkReturnValuePackages: `[org.openrewrite.tree, org.openrewrite.groovy.tree, org.openrewrite.hcl.tree, org.openrewrite.java.tree, org.openrewrite.javascript.tree, org.openrewrite.json.tree, org.openrewrite.kotlin.tree, org.openrewrite.maven.tree, org.openrewrite.properties.tree, org.openrewrite.protobuf.tree, org.openrewrite.toml.tree, org.openrewrite.xml.tree, org.openrewrite.yaml.tree]`
+  * checkReturnValuePackages: `[org.openrewrite.marker, org.openrewrite.tree, org.openrewrite.csharp.tree, org.openrewrite.docker.tree, org.openrewrite.golang.tree, org.openrewrite.groovy.tree, org.openrewrite.hcl.tree, org.openrewrite.java.tree, org.openrewrite.javascript.tree, org.openrewrite.json.tree, org.openrewrite.kotlin.tree, org.openrewrite.maven.tree, org.openrewrite.properties.tree, org.openrewrite.protobuf.tree, org.openrewrite.python.tree, org.openrewrite.ruby.tree, org.openrewrite.scala.tree, org.openrewrite.toml.tree, org.openrewrite.xml.tree, org.openrewrite.yaml.tree]`
 * [Simplify lambda blocks to expressions](../../staticanalysis/lambdablocktoexpression)
 * [Use method references in lambda](../../staticanalysis/replacelambdawithmethodreference)
 * [Use the diamond operator](../../staticanalysis/usediamondoperator)
 * [Remove unnecessary parentheses](../../staticanalysis/unnecessaryparentheses)
-* [Remove redundant null checks before instanceof](../../staticanalysis/removeredundantnullcheckbeforeinstanceof)
+* [Remove redundant null checks before `instanceof`](../../staticanalysis/removeredundantnullcheckbeforeinstanceof)
 * [Replace `StringBuilder#append` with `String`](../../staticanalysis/replacestringbuilderwithstring)
 * [Use `Collection` interfaces](../../staticanalysis/usecollectioninterfaces)
-* [Enum values should be compared with &quot;==&quot;](../../staticanalysis/compareenumswithequalityoperator)
+* [Enum values should be compared with `==`](../../staticanalysis/compareenumswithequalityoperator)
 * [Combine semantically equal catch blocks](../../staticanalysis/combinesemanticallyequalcatchblocks)
 * [Use `String::replace()` when first parameter is not a real regular expression](../../staticanalysis/usestringreplace)
-* [Use `StandardCharset` constants](../../staticanalysis/usestandardcharset)
+* [Use `StandardCharsets` constants](../../staticanalysis/usestandardcharset)
 * [Use `System.lineSeparator()`](../../staticanalysis/usesystemlineseparator)
 * [Remove redundant casts](../../staticanalysis/removeredundanttypecast)
 * [Replace `java.util.Stack` with `java.util.Deque`](../../staticanalysis/replacestackwithdeque)
@@ -124,9 +126,11 @@ recipeList:
       existingFileStrategy: Merge
   - org.openrewrite.recipes.rewrite.InlineMethods
   - org.openrewrite.java.recipes.GenerateDeprecatedMethodRecipes
+  - org.openrewrite.java.recipes.FindSharedVisitorInstances
   - org.openrewrite.java.recipes.JavaRecipeBestPractices
   - org.openrewrite.java.recipes.RecipeTestingBestPractices
   - org.openrewrite.java.recipes.RecipeNullabilityBestPractices
+  - org.openrewrite.java.recipes.DeclarativeRecipeBestPractices
   - org.openrewrite.java.recipes.RemoveToBeRemoved
   - org.openrewrite.java.recipes.UpgradeTestsToJava21
   - org.openrewrite.java.recipes.ExamplesExtractor
@@ -152,7 +156,7 @@ recipeList:
   - org.openrewrite.staticanalysis.RemoveCallsToObjectFinalize
   - org.openrewrite.staticanalysis.URLEqualsHashCodeRecipes
   - org.openrewrite.staticanalysis.FindIgnoredCheckReturnValue:
-      checkReturnValuePackages: [org.openrewrite.tree, org.openrewrite.groovy.tree, org.openrewrite.hcl.tree, org.openrewrite.java.tree, org.openrewrite.javascript.tree, org.openrewrite.json.tree, org.openrewrite.kotlin.tree, org.openrewrite.maven.tree, org.openrewrite.properties.tree, org.openrewrite.protobuf.tree, org.openrewrite.toml.tree, org.openrewrite.xml.tree, org.openrewrite.yaml.tree]
+      checkReturnValuePackages: [org.openrewrite.marker, org.openrewrite.tree, org.openrewrite.csharp.tree, org.openrewrite.docker.tree, org.openrewrite.golang.tree, org.openrewrite.groovy.tree, org.openrewrite.hcl.tree, org.openrewrite.java.tree, org.openrewrite.javascript.tree, org.openrewrite.json.tree, org.openrewrite.kotlin.tree, org.openrewrite.maven.tree, org.openrewrite.properties.tree, org.openrewrite.protobuf.tree, org.openrewrite.python.tree, org.openrewrite.ruby.tree, org.openrewrite.scala.tree, org.openrewrite.toml.tree, org.openrewrite.xml.tree, org.openrewrite.yaml.tree]
   - org.openrewrite.staticanalysis.LambdaBlockToExpression
   - org.openrewrite.staticanalysis.ReplaceLambdaWithMethodReference
   - org.openrewrite.staticanalysis.UseDiamondOperator

@@ -30,7 +30,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 This recipe is used as part of the following composite recipes:
 
-* [Lombok Best Practices](/recipes/java/migrate/lombok/lombokbestpractices.md)
+* [Lombok best practices](/recipes/java/migrate/lombok/lombokbestpractices.md)
 
 ## Example
 

@@ -4,10 +4,13 @@ description: Google Truth OpenRewrite recipes.
 
 # Google Truth
 
+_Recipes for migrating from [Google Truth](https://truth.dev/) to AssertJ._
+
 ## Composite Recipes
 
 _Recipes that include further recipes, often including the individual recipes below._
 
+* [Migrate Google Truth code to AssertJ](./truthcodetoassertj.md)
 * [Migrate Google Truth to AssertJ](./migratetruthtoassertj.md)
 
 ## Recipes

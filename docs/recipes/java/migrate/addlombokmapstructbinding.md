@@ -36,10 +36,10 @@ This recipe is available under the [Moderne Source Available License](https://do
 <TabItem value="recipe-list" label="Recipe List" >
 **Preconditions**
 
-* [Dependency insight for Gradle and Maven](../../java/dependencies/dependencyinsight)
+* [Gradle or Maven dependency insight](../../java/dependencies/dependencyinsight)
   * groupIdPattern: `org.projectlombok`
   * artifactIdPattern: `lombok`
-* [Dependency insight for Gradle and Maven](../../java/dependencies/dependencyinsight)
+* [Gradle or Maven dependency insight](../../java/dependencies/dependencyinsight)
   * groupIdPattern: `org.mapstruct`
   * artifactIdPattern: `mapstruct`
 * [Singleton](../../core/singleton)
@@ -51,8 +51,8 @@ This recipe is available under the [Moderne Source Available License](https://do
   * artifactId: `lombok-mapstruct-binding`
   * version: `0.2.0`
   * configuration: `annotationProcessor`
-  * acceptTransitive: `false`
 * [Add `lombok-mapstruct-binding` dependency for Maven when both MapStruct and Lombok are used](../../java/migrate/addlombokmapstructbindingmavendependencyonly)
+* [Add `lombok` to the `maven-compiler-plugin` annotation processor paths](../../java/migrate/addlombokannotationprocessorpath)
 * [Add an annotation processor to `maven-compiler-plugin`](../../maven/addannotationprocessor)
   * groupId: `org.projectlombok`
   * artifactId: `lombok-mapstruct-binding`
@@ -86,8 +86,8 @@ recipeList:
       artifactId: lombok-mapstruct-binding
       version: 0.2.0
       configuration: annotationProcessor
-      acceptTransitive: false
   - org.openrewrite.java.migrate.AddLombokMapstructBindingMavenDependencyOnly
+  - org.openrewrite.java.migrate.AddLombokAnnotationProcessorPath
   - org.openrewrite.maven.AddAnnotationProcessor:
       groupId: org.projectlombok
       artifactId: lombok-mapstruct-binding

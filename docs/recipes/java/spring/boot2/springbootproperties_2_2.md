@@ -85,7 +85,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * newPropertyKey: `spring.datasource.tomcat.jmx-enabled`
 * [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.jackson.joda-date-time-format`
-  * newPropertyKey: `dateFormat`
+  * newPropertyKey: `spring.jackson.date-format`
 * [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.rabbitmq.listener.simple.transaction-size`
   * newPropertyKey: `spring.rabbitmq.listener.simple.batch-size`
@@ -230,7 +230,7 @@ recipeList:
       newPropertyKey: spring.datasource.tomcat.jmx-enabled
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
       oldPropertyKey: spring.jackson.joda-date-time-format
-      newPropertyKey: dateFormat
+      newPropertyKey: spring.jackson.date-format
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
       oldPropertyKey: spring.rabbitmq.listener.simple.transaction-size
       newPropertyKey: spring.rabbitmq.listener.simple.batch-size

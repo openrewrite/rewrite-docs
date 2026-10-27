@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.testing.junit5.AssertTrueInstanceofToAssertInstanceOf**
 
-_Migration of JUnit4 (or potentially JUnit5) test case in form of assertTrue(x instanceof y) to assertInstanceOf(y.class, x)._
+_Migrate JUnit 4 (or JUnit 5) assertions in the form of `assertTrue(x instanceof y)` to `assertInstanceOf(y.class, x)`._
 
 ## Recipe source
 

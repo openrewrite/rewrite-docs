@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.migrate.UpgradeUnmodeledMavenJavaVersion**
 
-_Update explicit Java version properties and compiler settings in pom.xml files parsed as XML without a Maven model, for example in a repository built with Gradle. Property references are left intact._
+_Update explicit Java version properties and compiler settings in `pom.xml` files parsed as XML without a Maven model, for example in a repository built with Gradle. Property references are left intact._
 
 ## Recipe source
 

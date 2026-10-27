@@ -26,7 +26,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 This recipe is used as part of the following composite recipes:
 
-* [Adopt AssertJ Integer Assertions](/recipes/java/testing/assertj/assertjintegerrulesrecipes.md)
+* [Adopt AssertJ `Integer` assertions](/recipes/java/testing/assertj/assertjintegerrulesrecipes.md)
 
 
 ## Usage

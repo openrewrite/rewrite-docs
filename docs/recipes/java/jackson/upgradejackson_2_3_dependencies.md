@@ -40,6 +40,33 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 **Recipes**
 
+* [Add Jackson 3 `jackson-databind` for sources that use it transitively](../../java/jackson/upgradejackson_2_3_adddatabinddependency)
+* [Add Jackson 3 `jackson-dataformat-xml` for sources that use it transitively](../../java/jackson/upgradejackson_2_3_adddataformatxmldependency)
+* [Add Jackson 3 `jackson-dataformat-yaml` for sources that use it transitively](../../java/jackson/upgradejackson_2_3_adddataformatyamldependency)
+* [Add Jackson 3 `jackson-dataformat-csv` for sources that use it transitively](../../java/jackson/upgradejackson_2_3_adddataformatcsvdependency)
+* [Add Jackson 3 `jackson-dataformat-cbor` for sources that use it transitively](../../java/jackson/upgradejackson_2_3_adddataformatcbordependency)
+* [Add Jackson 3 `jackson-dataformat-smile` for sources that use it transitively](../../java/jackson/upgradejackson_2_3_adddataformatsmiledependency)
+* [Add Jackson 3 `jackson-dataformat-avro` for sources that use it transitively](../../java/jackson/upgradejackson_2_3_adddataformatavrodependency)
+* [Add Jackson 3 `jackson-dataformat-ion` for sources that use it transitively](../../java/jackson/upgradejackson_2_3_adddataformationdependency)
+* [Add Jackson 3 `jackson-dataformat-protobuf` for sources that use it transitively](../../java/jackson/upgradejackson_2_3_adddataformatprotobufdependency)
+* [Remove a Gradle or Maven dependency](../../java/dependencies/removedependency)
+  * groupId: `com.fasterxml.jackson.module`
+  * artifactId: `jackson-module-parameter-names`
+* [Remove a Gradle or Maven dependency](../../java/dependencies/removedependency)
+  * groupId: `com.fasterxml.jackson.datatype`
+  * artifactId: `jackson-datatype-jdk8`
+* [Remove a Gradle or Maven dependency](../../java/dependencies/removedependency)
+  * groupId: `com.fasterxml.jackson.datatype`
+  * artifactId: `jackson-datatype-jsr310`
+* [Remove Maven managed dependency](../../maven/removemanageddependency)
+  * groupId: `com.fasterxml.jackson.module`
+  * artifactId: `jackson-module-parameter-names`
+* [Remove Maven managed dependency](../../maven/removemanageddependency)
+  * groupId: `com.fasterxml.jackson.datatype`
+  * artifactId: `jackson-datatype-jdk8`
+* [Remove Maven managed dependency](../../maven/removemanageddependency)
+  * groupId: `com.fasterxml.jackson.datatype`
+  * artifactId: `jackson-datatype-jsr310`
 * [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
   * oldGroupId: `com.fasterxml.jackson.core`
   * oldArtifactId: `jackson-core`
@@ -55,12 +82,6 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
   * oldGroupId: `com.fasterxml.jackson.core`
   * oldArtifactId: `jackson-databind`
-  * newGroupId: `tools.jackson.core`
-  * newArtifactId: `jackson-databind`
-  * newVersion: `3.1.x`
-* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
-  * oldGroupId: `com.fasterxml.jackson.module`
-  * oldArtifactId: `jackson-module-parameter-names`
   * newGroupId: `tools.jackson.core`
   * newArtifactId: `jackson-databind`
   * newVersion: `3.1.x`
@@ -161,18 +182,6 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
   * newVersion: `3.1.x`
 * [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
   * oldGroupId: `com.fasterxml.jackson.datatype`
-  * oldArtifactId: `jackson-datatype-jdk8`
-  * newGroupId: `tools.jackson.core`
-  * newArtifactId: `jackson-databind`
-  * newVersion: `3.1.x`
-* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
-  * oldGroupId: `com.fasterxml.jackson.datatype`
-  * oldArtifactId: `jackson-datatype-jsr310`
-  * newGroupId: `tools.jackson.core`
-  * newArtifactId: `jackson-databind`
-  * newVersion: `3.1.x`
-* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
-  * oldGroupId: `com.fasterxml.jackson.datatype`
   * oldArtifactId: `jackson-datatype-*`
   * newGroupId: `tools.jackson.datatype`
   * newVersion: `3.1.x`
@@ -194,8 +203,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Upgrade Gradle or Maven dependency versions](../../java/dependencies/upgradedependencyversion)
   * groupId: `com.fasterxml.jackson.core`
   * artifactId: `jackson-annotations`
-  * newVersion: `2.21`
-  * overrideManagedVersion: `true`
+  * newVersion: `2.22`
 * [Upgrade Gradle or Maven dependency versions](../../java/dependencies/upgradedependencyversion)
   * groupId: `org.projectlombok`
   * artifactId: `lombok`
@@ -217,6 +225,33 @@ tags:
 preconditions:
   - org.openrewrite.java.jackson.ModuleStillOnJackson2
 recipeList:
+  - org.openrewrite.java.jackson.UpgradeJackson_2_3_AddDatabindDependency
+  - org.openrewrite.java.jackson.UpgradeJackson_2_3_AddDataformatXmlDependency
+  - org.openrewrite.java.jackson.UpgradeJackson_2_3_AddDataformatYamlDependency
+  - org.openrewrite.java.jackson.UpgradeJackson_2_3_AddDataformatCsvDependency
+  - org.openrewrite.java.jackson.UpgradeJackson_2_3_AddDataformatCborDependency
+  - org.openrewrite.java.jackson.UpgradeJackson_2_3_AddDataformatSmileDependency
+  - org.openrewrite.java.jackson.UpgradeJackson_2_3_AddDataformatAvroDependency
+  - org.openrewrite.java.jackson.UpgradeJackson_2_3_AddDataformatIonDependency
+  - org.openrewrite.java.jackson.UpgradeJackson_2_3_AddDataformatProtobufDependency
+  - org.openrewrite.java.dependencies.RemoveDependency:
+      groupId: com.fasterxml.jackson.module
+      artifactId: jackson-module-parameter-names
+  - org.openrewrite.java.dependencies.RemoveDependency:
+      groupId: com.fasterxml.jackson.datatype
+      artifactId: jackson-datatype-jdk8
+  - org.openrewrite.java.dependencies.RemoveDependency:
+      groupId: com.fasterxml.jackson.datatype
+      artifactId: jackson-datatype-jsr310
+  - org.openrewrite.maven.RemoveManagedDependency:
+      groupId: com.fasterxml.jackson.module
+      artifactId: jackson-module-parameter-names
+  - org.openrewrite.maven.RemoveManagedDependency:
+      groupId: com.fasterxml.jackson.datatype
+      artifactId: jackson-datatype-jdk8
+  - org.openrewrite.maven.RemoveManagedDependency:
+      groupId: com.fasterxml.jackson.datatype
+      artifactId: jackson-datatype-jsr310
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: com.fasterxml.jackson.core
       oldArtifactId: jackson-core
@@ -232,12 +267,6 @@ recipeList:
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: com.fasterxml.jackson.core
       oldArtifactId: jackson-databind
-      newGroupId: tools.jackson.core
-      newArtifactId: jackson-databind
-      newVersion: 3.1.x
-  - org.openrewrite.java.dependencies.ChangeDependency:
-      oldGroupId: com.fasterxml.jackson.module
-      oldArtifactId: jackson-module-parameter-names
       newGroupId: tools.jackson.core
       newArtifactId: jackson-databind
       newVersion: 3.1.x
@@ -338,18 +367,6 @@ recipeList:
       newVersion: 3.1.x
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: com.fasterxml.jackson.datatype
-      oldArtifactId: jackson-datatype-jdk8
-      newGroupId: tools.jackson.core
-      newArtifactId: jackson-databind
-      newVersion: 3.1.x
-  - org.openrewrite.java.dependencies.ChangeDependency:
-      oldGroupId: com.fasterxml.jackson.datatype
-      oldArtifactId: jackson-datatype-jsr310
-      newGroupId: tools.jackson.core
-      newArtifactId: jackson-databind
-      newVersion: 3.1.x
-  - org.openrewrite.java.dependencies.ChangeDependency:
-      oldGroupId: com.fasterxml.jackson.datatype
       oldArtifactId: jackson-datatype-*
       newGroupId: tools.jackson.datatype
       newVersion: 3.1.x
@@ -371,8 +388,7 @@ recipeList:
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: com.fasterxml.jackson.core
       artifactId: jackson-annotations
-      newVersion: 2.21
-      overrideManagedVersion: true
+      newVersion: 2.22
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: org.projectlombok
       artifactId: lombok
@@ -412,6 +428,25 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
+
+### Maven metadata failures
+**org.openrewrite.maven.table.MavenMetadataFailures**
+
+_Attempts to resolve maven metadata that failed._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Group id | The groupId of the artifact for which the metadata download failed. |
+| Artifact id | The artifactId of the artifact for which the metadata download failed. |
+| Version | The version of the artifact for which the metadata download failed. |
+| Maven repository | The URL of the Maven repository that the metadata download failed on. |
+| Snapshots | Does the repository support snapshots. |
+| Releases | Does the repository support releases. |
+| Failure | The reason the metadata download failed. |
+
+</TabItem>
+
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results

@@ -1,17 +1,17 @@
 ---
-title: "Redundant file creation"
-sidebar_label: "Redundant file creation"
+title: "Redundant `File` creation"
+sidebar_label: "Redundant `File` creation"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Redundant file creation
+# Redundant `File` creation
 
 **org.openrewrite.staticanalysis.RedundantFileCreation**
 
-_Remove unnecessary intermediate creations of files._
+_Removes the unnecessary intermediate `File` from `new FileInputStream(new File(name))`._
 
 ## Recipe source
 
@@ -80,7 +80,7 @@ class Test {
 
 <RunRecipe
   recipeName="org.openrewrite.staticanalysis.RedundantFileCreation"
-  displayName="Redundant file creation"
+  displayName="Redundant `File` creation"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-static-analysis"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_STATIC_ANALYSIS"

@@ -36,19 +36,19 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 **Recipes**
 
-* [Transform classes that extend a given Class to implement the given Interface instead](../../../java/spring/batch/replacesupportclasswithitsinterface)
+* [Transform classes that extend a given class to implement the given interface instead](../../../java/spring/batch/replacesupportclasswithitsinterface)
   * fullyQualifiedClassName: `org.springframework.batch.core.listener.JobExecutionListenerSupport`
   * fullyQualifiedInterfaceName: `org.springframework.batch.core.JobExecutionListener`
-* [Transform classes that extend a given Class to implement the given Interface instead](../../../java/spring/batch/replacesupportclasswithitsinterface)
+* [Transform classes that extend a given class to implement the given interface instead](../../../java/spring/batch/replacesupportclasswithitsinterface)
   * fullyQualifiedClassName: `org.springframework.batch.core.listener.StepExecutionListenerSupport`
   * fullyQualifiedInterfaceName: `org.springframework.batch.core.StepExecutionListener`
-* [Transform classes that extend a given Class to implement the given Interface instead](../../../java/spring/batch/replacesupportclasswithitsinterface)
+* [Transform classes that extend a given class to implement the given interface instead](../../../java/spring/batch/replacesupportclasswithitsinterface)
   * fullyQualifiedClassName: `org.springframework.batch.core.listener.ChunkListenerSupport`
   * fullyQualifiedInterfaceName: `org.springframework.batch.core.ChunkListener`
-* [Transform classes that extend a given Class to implement the given Interface instead](../../../java/spring/batch/replacesupportclasswithitsinterface)
+* [Transform classes that extend a given class to implement the given interface instead](../../../java/spring/batch/replacesupportclasswithitsinterface)
   * fullyQualifiedClassName: `org.springframework.batch.core.listener.SkipListenerSupport`
   * fullyQualifiedInterfaceName: `org.springframework.batch.core.SkipListener`
-* [Transform classes that extend a given Class to implement the given Interface instead](../../../java/spring/batch/replacesupportclasswithitsinterface)
+* [Transform classes that extend a given class to implement the given interface instead](../../../java/spring/batch/replacesupportclasswithitsinterface)
   * fullyQualifiedClassName: `org.springframework.batch.repeat.listener.RepeatListenerSupport`
   * fullyQualifiedInterfaceName: `org.springframework.batch.repeat.RepeatListener`
 

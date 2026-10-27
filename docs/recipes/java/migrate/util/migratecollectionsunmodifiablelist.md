@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.migrate.util.MigrateCollectionsUnmodifiableList**
 
-_Prefer `List.Of(..)` instead of using `unmodifiableList(java.util.Arrays asList(<args>))` in Java 9 or higher._
+_Prefer `List.of(..)` instead of using `Collections.unmodifiableList(Arrays.asList(..))` in Java 9 or higher._
 
 ## Recipe source
 

@@ -80,11 +80,6 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Remove redundant explicit dependency and plugin versions](../../../maven/removeredundantdependencyversions)
   * groupPattern: `jakarta.xml.bind`
   * artifactPattern: `*`
-  * onlyIfVersionsMatch: `true`
-* [Upgrade Maven plugin version](../../../maven/upgradepluginversion)
-  * groupId: `org.codehaus.mojo`
-  * artifactId: `jaxb2-maven-plugin`
-  * newVersion: `2.5.x`
 
 </TabItem>
 
@@ -142,11 +137,6 @@ recipeList:
   - org.openrewrite.maven.RemoveRedundantDependencyVersions:
       groupPattern: jakarta.xml.bind
       artifactPattern: "*"
-      onlyIfVersionsMatch: true
-  - org.openrewrite.maven.UpgradePluginVersion:
-      groupId: org.codehaus.mojo
-      artifactId: jaxb2-maven-plugin
-      newVersion: 2.5.x
 
 ```
 </TabItem>
@@ -158,6 +148,141 @@ This recipe is used as part of the following composite recipes:
 
 * [Add explicit JAXB API dependencies and remove runtimes](/recipes/java/migrate/javax/addjaxbdependencieswithoutruntime.md)
 * [Add explicit JAXB API dependencies and runtime](/recipes/java/migrate/javax/addjaxbdependencieswithruntime.md)
+
+## Examples
+##### Example 1
+`AddJaxbApiForUnattributedImportsTest#addApiForUnresolvedImport`
+
+
+###### Unchanged
+```java title="src/main/java/Test.java"
+import javax.xml.bind.DatatypeConverter;
+class Test {
+    String encode(byte[] bytes) {
+        return DatatypeConverter.printBase64Binary(bytes);
+    }
+}
+```
+
+<Tabs groupId="beforeAfter">
+<TabItem value="pom.xml" label="pom.xml">
+
+
+###### Before
+```xml title="pom.xml"
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>example</groupId>
+    <artifactId>app</artifactId>
+    <version>1</version>
+</project>
+```
+
+###### After
+```xml title="pom.xml"
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>example</groupId>
+    <artifactId>app</artifactId>
+    <version>1</version>
+    <dependencies>
+        <dependency>
+            <groupId>jakarta.xml.bind</groupId>
+            <artifactId>jakarta.xml.bind-api</artifactId>
+            <version>2.3.3</version>
+        </dependency>
+    </dependencies>
+</project>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- pom.xml
++++ pom.xml
+@@ -6,0 +6,7 @@
+    <artifactId>app</artifactId>
+    <version>1</version>
++   <dependencies>
++       <dependency>
++           <groupId>jakarta.xml.bind</groupId>
++           <artifactId>jakarta.xml.bind-api</artifactId>
++           <version>2.3.3</version>
++       </dependency>
++   </dependencies>
+</project>
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`AddJaxbApiForUnattributedImportsTest#addApiForUnresolvedImport`
+
+
+###### Unchanged
+```java title="src/main/java/Test.java"
+import javax.xml.bind.DatatypeConverter;
+class Test {
+    String encode(byte[] bytes) {
+        return DatatypeConverter.printBase64Binary(bytes);
+    }
+}
+```
+
+<Tabs groupId="beforeAfter">
+<TabItem value="pom.xml" label="pom.xml">
+
+
+###### Before
+```xml title="pom.xml"
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>example</groupId>
+    <artifactId>app</artifactId>
+    <version>1</version>
+</project>
+```
+
+###### After
+```xml title="pom.xml"
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>example</groupId>
+    <artifactId>app</artifactId>
+    <version>1</version>
+    <dependencies>
+        <dependency>
+            <groupId>jakarta.xml.bind</groupId>
+            <artifactId>jakarta.xml.bind-api</artifactId>
+            <version>2.3.3</version>
+        </dependency>
+    </dependencies>
+</project>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- pom.xml
++++ pom.xml
+@@ -6,0 +6,7 @@
+    <artifactId>app</artifactId>
+    <version>1</version>
++   <dependencies>
++       <dependency>
++           <groupId>jakarta.xml.bind</groupId>
++           <artifactId>jakarta.xml.bind-api</artifactId>
++           <version>2.3.3</version>
++       </dependency>
++   </dependencies>
+</project>
+```
+</TabItem>
+</Tabs>
 
 
 ## Usage

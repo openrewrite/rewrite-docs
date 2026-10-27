@@ -26,7 +26,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 This recipe is used as part of the following composite recipes:
 
-* [Adopt AssertJ Short Assertions](/recipes/java/testing/assertj/assertjshortrulesrecipes.md)
+* [Adopt AssertJ `Short` assertions](/recipes/java/testing/assertj/assertjshortrulesrecipes.md)
 
 
 ## Usage

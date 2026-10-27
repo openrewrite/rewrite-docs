@@ -1,6 +1,6 @@
 ---
-title: "Replace JUL `Logger.log(Level.WARNING, Supplier&lt;String&gt;)` with `Logger.warning(Supplier&lt;String&gt;)`"
-sidebar_label: "Replace JUL `Logger.log(Level.WARNING, Supplier&lt;String&gt;)` with `Logger.warning(Supplier&lt;String&gt;)`"
+title: "Replace JUL `Logger.log(Level.WARNING, Supplier<String>)` with `Logger.warning(Supplier<String>)`"
+sidebar_label: "Replace JUL `Logger.log(Level.WARNING, Supplier<String>)` with `Logger.warning(Supplier<String>)`"
 ---
 
 import Tabs from '@theme/Tabs';

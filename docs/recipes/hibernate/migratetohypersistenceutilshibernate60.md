@@ -150,6 +150,89 @@ This recipe is used as part of the following composite recipes:
 
 * [Migrate to Hibernate 6.0.x (Community Edition)](/recipes/hibernate/migratetohibernate60-community-edition.md)
 
+## Examples
+##### Example 1
+`MigrateToHypersistenceUtilsHibernate60Test#hibernateTypesPackagesRenamed`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import com.vladmihalcea.hibernate.type.json.JsonBinaryType;
+import com.vladmihalcea.spring.repository.BaseJpaRepository;
+
+class A {
+}
+```
+
+###### After
+```java
+import io.hypersistence.utils.hibernate.type.json.JsonBinaryType;
+import io.hypersistence.utils.spring.repository.BaseJpaRepository;
+
+class A {
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,2 +1,2 @@
+-import com.vladmihalcea.hibernate.type.json.JsonBinaryType;
+-import com.vladmihalcea.spring.repository.BaseJpaRepository;
++import io.hypersistence.utils.hibernate.type.json.JsonBinaryType;
++import io.hypersistence.utils.spring.repository.BaseJpaRepository;
+
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`MigrateToHypersistenceUtilsHibernate60Test#hibernateTypesPackagesRenamed`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import com.vladmihalcea.hibernate.type.json.JsonBinaryType;
+import com.vladmihalcea.spring.repository.BaseJpaRepository;
+
+class A {
+}
+```
+
+###### After
+```java
+import io.hypersistence.utils.hibernate.type.json.JsonBinaryType;
+import io.hypersistence.utils.spring.repository.BaseJpaRepository;
+
+class A {
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,2 +1,2 @@
+-import com.vladmihalcea.hibernate.type.json.JsonBinaryType;
+-import com.vladmihalcea.spring.repository.BaseJpaRepository;
++import io.hypersistence.utils.hibernate.type.json.JsonBinaryType;
++import io.hypersistence.utils.spring.repository.BaseJpaRepository;
+
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
@@ -174,6 +257,25 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
+
+### Maven metadata failures
+**org.openrewrite.maven.table.MavenMetadataFailures**
+
+_Attempts to resolve maven metadata that failed._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Group id | The groupId of the artifact for which the metadata download failed. |
+| Artifact id | The artifactId of the artifact for which the metadata download failed. |
+| Version | The version of the artifact for which the metadata download failed. |
+| Maven repository | The URL of the Maven repository that the metadata download failed on. |
+| Snapshots | Does the repository support snapshots. |
+| Releases | Does the repository support releases. |
+| Failure | The reason the metadata download failed. |
+
+</TabItem>
+
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results

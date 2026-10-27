@@ -28,6 +28,49 @@ This recipe is used as part of the following composite recipes:
 
 * [Upgrade WireMock to 4.x](/recipes/java/testing/wiremock/wiremock3to4migration.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import com.github.tomakehurst.wiremock.client.WireMock;
+
+class Client {
+    WireMock remote() {
+        return new WireMock("localhost", 8080);
+    }
+}
+```
+
+###### After
+```java
+import com.github.tomakehurst.wiremock.client.WireMock;
+
+class Client {
+    WireMock remote() {
+        return WireMock.create().host("localhost").port(8080).build();
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -5,1 +5,1 @@
+class Client {
+    WireMock remote() {
+-       return new WireMock("localhost", 8080);
++       return WireMock.create().host("localhost").port(8080).build();
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

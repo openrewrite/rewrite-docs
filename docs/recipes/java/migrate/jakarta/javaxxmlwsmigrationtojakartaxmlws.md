@@ -140,6 +140,103 @@ This recipe is used as part of the following composite recipes:
 
 * [Migrate to Jakarta EE 9](/recipes/java/migrate/jakarta/javaxmigrationtojakarta.md)
 
+## Examples
+##### Example 1
+`JavaxXmlWsMigrationToJakartaXmlWsTest#addApiForTypesPreviouslySuppliedByJavaEight`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import javax.xml.ws.http.HTTPException;
+class A { HTTPException error; }
+```
+
+###### After
+```java
+import jakarta.xml.ws.http.HTTPException;
+class A { HTTPException error; }
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import javax.xml.ws.http.HTTPException;
++import jakarta.xml.ws.http.HTTPException;
+class A { HTTPException error; }
+```
+</TabItem>
+</Tabs>
+
+###### Unchanged
+```mavenProject
+app
+```
+
+###### Unchanged
+```xml title="pom.xml"
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.example</groupId>
+    <artifactId>app</artifactId>
+    <version>1</version>
+</project>
+```
+
+---
+
+##### Example 2
+`JavaxXmlWsMigrationToJakartaXmlWsTest#addApiForTypesPreviouslySuppliedByJavaEight`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import javax.xml.ws.http.HTTPException;
+class A { HTTPException error; }
+```
+
+###### After
+```java
+import jakarta.xml.ws.http.HTTPException;
+class A { HTTPException error; }
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import javax.xml.ws.http.HTTPException;
++import jakarta.xml.ws.http.HTTPException;
+class A { HTTPException error; }
+```
+</TabItem>
+</Tabs>
+
+###### Unchanged
+```mavenProject
+app
+```
+
+###### Unchanged
+```xml title="pom.xml"
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.example</groupId>
+    <artifactId>app</artifactId>
+    <version>1</version>
+</project>
+```
+
 
 ## Usage
 
@@ -164,6 +261,25 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
+
+### Maven metadata failures
+**org.openrewrite.maven.table.MavenMetadataFailures**
+
+_Attempts to resolve maven metadata that failed._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Group id | The groupId of the artifact for which the metadata download failed. |
+| Artifact id | The artifactId of the artifact for which the metadata download failed. |
+| Version | The version of the artifact for which the metadata download failed. |
+| Maven repository | The URL of the Maven repository that the metadata download failed on. |
+| Snapshots | Does the repository support snapshots. |
+| Releases | Does the repository support releases. |
+| Failure | The reason the metadata download failed. |
+
+</TabItem>
+
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results

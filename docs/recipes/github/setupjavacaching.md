@@ -28,6 +28,59 @@ This recipe is used as part of the following composite recipes:
 
 * [GitHub Actions best practices](/recipes/github/githubactionsbestpractices.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value=".github/actions/build/action.yml" label=".github/actions/build/action.yml">
+
+
+###### Before
+```yaml title=".github/actions/build/action.yml"
+name: Build
+description: Composite action
+runs:
+  using: composite
+  steps:
+    - uses: actions/setup-java
+      with:
+        distribution: 'temurin'
+        java-version: '11'
+    - run: ./gradlew build
+      shell: bash
+```
+
+###### After
+```yaml title=".github/actions/build/action.yml"
+name: Build
+description: Composite action
+runs:
+  using: composite
+  steps:
+    - uses: actions/setup-java
+      with:
+        distribution: 'temurin'
+        java-version: '11'
+        cache: 'gradle'
+    - run: ./gradlew build
+      shell: bash
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- .github/actions/build/action.yml
++++ .github/actions/build/action.yml
+@@ -10,0 +10,1 @@
+        distribution: 'temurin'
+        java-version: '11'
++       cache: 'gradle'
+    - run: ./gradlew build
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

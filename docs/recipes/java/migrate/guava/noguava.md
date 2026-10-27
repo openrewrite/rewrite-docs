@@ -40,7 +40,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 **Recipes**
 
-* [Inline `guava` methods annotated with `@InlineMe`](../../../google/guava/inlineguavamethods)
+* [Inline Guava methods annotated with `@InlineMe`](../../../google/guava/inlineguavamethods)
 * [Prefer the Java 11 standard library instead of Guava](../../../java/migrate/guava/noguavajava11)
 * [Prefer the Java 21 standard library instead of Guava](../../../java/migrate/guava/noguavajava21)
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
@@ -51,25 +51,15 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Prefer `Files#createTempDirectory()`](../../../java/migrate/guava/noguavacreatetempdir)
 * [Prefer `Runnable::run`](../../../java/migrate/guava/noguavadirectexecutor)
 * [Prefer `Function.compose(Function)`](../../../java/migrate/guava/noguavafunctionscompose)
-* [Prefer `Collection.stream().allMatch(Predicate)`](../../../java/migrate/guava/noguavaiterablesall)
 * [Prefer `Collection.stream().anyMatch(Predicate)`](../../../java/migrate/guava/noguavaiterablesanyfilter)
 * [Prefer `Collection.stream().map(Function)` over `Iterables.transform`](../../../java/migrate/guava/noguavaiterablestransform)
-* [Prefer `Collection.stream().map(Function)` over `Collections2.transform`](../../../java/migrate/guava/noguavacollections2transform)
-* [Prefer `new ArrayList&lt;&gt;()`](../../../java/migrate/guava/noguavalistsnewarraylist)
-* [Prefer `new CopyOnWriteArrayList&lt;&gt;()`](../../../java/migrate/guava/noguavalistsnewcopyonwritearraylist)
-* [Prefer `new LinkedList&lt;&gt;()`](../../../java/migrate/guava/noguavalistsnewlinkedlist)
-* [Prefer `new LinkedHashMap&lt;&gt;()`](../../../java/migrate/guava/noguavamapsnewlinkedhashmap)
-* [Prefer `new TreeMap&lt;&gt;()`](../../../java/migrate/guava/noguavamapsnewtreemap)
 * [Prefer `Predicate.and(Predicate)`](../../../java/migrate/guava/noguavapredicatesandor)
 * [Prefer `Predicate.isEqual(Object)`](../../../java/migrate/guava/noguavapredicatesequalto)
 * [Prefer `A.class::isInstance`](../../../java/migrate/guava/noguavapredicatesinstanceof)
 * [Prefer `Arrays.asList(..)` over Guava primitives](../../../java/migrate/guava/noguavaprimitiveaslist)
 * [Refaster style Guava to Java migration recipes](../../../java/migrate/guava/noguavarefasterrecipes)
-* [Prefer `new HashMap&lt;&gt;()`](../../../java/migrate/guava/noguavamapsnewhashmap)
 * [Prefer `Collection.stream().filter(Predicate)`](../../../java/migrate/guava/noguavasetsfilter)
 * [Prefer `new HashSet&lt;&gt;()`](../../../java/migrate/guava/noguavasetsnewhashset)
-* [Prefer `new ConcurrentHashMap&lt;&gt;()`](../../../java/migrate/guava/noguavasetsnewconcurrenthashset)
-* [Prefer `new LinkedHashSet&lt;&gt;()`](../../../java/migrate/guava/noguavasetsnewlinkedhashset)
 * [Prefer `java.nio.charset.StandardCharsets`](../../../java/migrate/guava/preferjavaniocharsetstandardcharsets)
 * [Prefer `java.util.Optional`](../../../java/migrate/guava/preferjavautiloptional)
 * [Prefer `java.util.function.Function`](../../../java/migrate/guava/preferjavautilfunction)
@@ -79,7 +69,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Prefer `java.util.Objects#hash`](../../../java/migrate/guava/preferjavautilobjectshashcode)
 * [Prefer `java.util.Collections#unmodifiableNavigableMap`](../../../java/migrate/guava/preferjavautilcollectionsunmodifiablenavigablemap)
 * [Prefer `java.util.Collections#synchronizedNavigableMap`](../../../java/migrate/guava/preferjavautilcollectionssynchronizednavigablemap)
-* [Prefer `java.lang.Char#compare`](../../../java/migrate/guava/prefercharcompare)
+* [Prefer `Character#compare`](../../../java/migrate/guava/prefercharcompare)
 * [Prefer `Integer#compare`](../../../java/migrate/guava/preferintegercompare)
 * [Prefer `Long#compare`](../../../java/migrate/guava/preferlongcompare)
 * [Prefer `Short#compare`](../../../java/migrate/guava/prefershortcompare)
@@ -124,25 +114,15 @@ recipeList:
   - org.openrewrite.java.migrate.guava.NoGuavaCreateTempDir
   - org.openrewrite.java.migrate.guava.NoGuavaDirectExecutor
   - org.openrewrite.java.migrate.guava.NoGuavaFunctionsCompose
-  - org.openrewrite.java.migrate.guava.NoGuavaIterablesAll
   - org.openrewrite.java.migrate.guava.NoGuavaIterablesAnyFilter
   - org.openrewrite.java.migrate.guava.NoGuavaIterablesTransform
-  - org.openrewrite.java.migrate.guava.NoGuavaCollections2Transform
-  - org.openrewrite.java.migrate.guava.NoGuavaListsNewArrayList
-  - org.openrewrite.java.migrate.guava.NoGuavaListsNewCopyOnWriteArrayList
-  - org.openrewrite.java.migrate.guava.NoGuavaListsNewLinkedList
-  - org.openrewrite.java.migrate.guava.NoGuavaMapsNewLinkedHashMap
-  - org.openrewrite.java.migrate.guava.NoGuavaMapsNewTreeMap
   - org.openrewrite.java.migrate.guava.NoGuavaPredicatesAndOr
   - org.openrewrite.java.migrate.guava.NoGuavaPredicatesEqualTo
   - org.openrewrite.java.migrate.guava.NoGuavaPredicatesInstanceOf
   - org.openrewrite.java.migrate.guava.NoGuavaPrimitiveAsList
   - org.openrewrite.java.migrate.guava.NoGuavaRefasterRecipes
-  - org.openrewrite.java.migrate.guava.NoGuavaMapsNewHashMap
   - org.openrewrite.java.migrate.guava.NoGuavaSetsFilter
   - org.openrewrite.java.migrate.guava.NoGuavaSetsNewHashSet
-  - org.openrewrite.java.migrate.guava.NoGuavaSetsNewConcurrentHashSet
-  - org.openrewrite.java.migrate.guava.NoGuavaSetsNewLinkedHashSet
   - org.openrewrite.java.migrate.guava.PreferJavaNioCharsetStandardCharsets
   - org.openrewrite.java.migrate.guava.PreferJavaUtilOptional
   - org.openrewrite.java.migrate.guava.PreferJavaUtilFunction
@@ -957,6 +937,25 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
+
+### Maven metadata failures
+**org.openrewrite.maven.table.MavenMetadataFailures**
+
+_Attempts to resolve maven metadata that failed._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Group id | The groupId of the artifact for which the metadata download failed. |
+| Artifact id | The artifactId of the artifact for which the metadata download failed. |
+| Version | The version of the artifact for which the metadata download failed. |
+| Maven repository | The URL of the Maven repository that the metadata download failed on. |
+| Snapshots | Does the repository support snapshots. |
+| Releases | Does the repository support releases. |
+| Failure | The reason the metadata download failed. |
+
+</TabItem>
+
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results

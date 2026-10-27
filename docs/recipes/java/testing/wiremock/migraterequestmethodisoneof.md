@@ -28,6 +28,49 @@ This recipe is used as part of the following composite recipes:
 
 * [Upgrade WireMock to 4.x](/recipes/java/testing/wiremock/wiremock3to4migration.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import com.github.tomakehurst.wiremock.http.RequestMethod;
+
+class Methods {
+    boolean readOnly(RequestMethod method) {
+        return method.isOneOf(RequestMethod.GET, RequestMethod.HEAD);
+    }
+}
+```
+
+###### After
+```java
+import com.github.tomakehurst.wiremock.http.RequestMethod;
+
+class Methods {
+    boolean readOnly(RequestMethod method) {
+        return RequestMethod.isOneOf(RequestMethod.GET, RequestMethod.HEAD).match(method).isExactMatch();
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -5,1 +5,1 @@
+class Methods {
+    boolean readOnly(RequestMethod method) {
+-       return method.isOneOf(RequestMethod.GET, RequestMethod.HEAD);
++       return RequestMethod.isOneOf(RequestMethod.GET, RequestMethod.HEAD).match(method).isExactMatch();
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

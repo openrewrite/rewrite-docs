@@ -76,7 +76,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Replace annotation](../java/replaceannotation)
   * annotationPatternToReplace: `@org.jboss.netty.channel.ChannelPipelineCoverage(org.jboss.netty.channel.ChannelPipelineCoverage.ONE)`
   * annotationTemplateToInsert: `@io.netty.channel.ChannelHandler.Sharable`
-  * classpathResourceName: `netty-transport`
+  * classpathResourceName: `netty-transport-4`
 * [Change type](../java/changetype)
   * oldFullyQualifiedTypeName: `org.jboss.netty.channel.SimpleChannelHandler`
   * newFullyQualifiedTypeName: `io.netty.channel.ChannelInboundHandlerAdapter`
@@ -177,7 +177,7 @@ recipeList:
   - org.openrewrite.java.ReplaceAnnotation:
       annotationPatternToReplace: @org.jboss.netty.channel.ChannelPipelineCoverage(org.jboss.netty.channel.ChannelPipelineCoverage.ONE)
       annotationTemplateToInsert: @io.netty.channel.ChannelHandler.Sharable
-      classpathResourceName: netty-transport
+      classpathResourceName: netty-transport-4
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.jboss.netty.channel.SimpleChannelHandler
       newFullyQualifiedTypeName: io.netty.channel.ChannelInboundHandlerAdapter

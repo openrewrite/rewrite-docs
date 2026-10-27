@@ -42,12 +42,15 @@ This recipe is available under the [Moderne Source Available License](https://do
 **Recipes**
 
 * [Normalize Spring properties to kebab-case](../../../java/spring/propertiestokebabcase)
-* [Enable Virtual Threads on Java 21](../../../java/spring/boot3/enablevirtualthreads)
+* [Enable virtual threads on Java 21](../../../java/spring/boot3/enablevirtualthreads)
 * [Remove `public` from `@Bean` methods](../../../java/spring/framework/beanmethodsnotpublic)
 * [Bean methods should return concrete types](../../../java/spring/boot3/precisebeantype)
 * [Replace String literals with Spring constants](../../../java/spring/boot3/replacestringliteralswithconstants)
+* [Simplify unnecessary `MediaType.parseMediaType()` and `MediaType.valueOf()` calls](../../../java/spring/http/simplifymediatypeparsecalls)
+* [Simplify `WebTestClient` expressions](../../../java/spring/http/simplifywebtestclientcalls)
 * [Remove unnecessary `@Repository` annotation from Spring Data `Repository` sub-interface](../../../java/spring/norepoannotationonrepointerface)
-* [Spring security best practices](../../../java/spring/security/springsecuritybestpractices)
+* [Remove `HttpExchange` annotations](../../../java/spring/nohttpexchangeannotation)
+* [Spring Security best practices](../../../java/spring/security/springsecuritybestpractices)
 
 </TabItem>
 
@@ -71,7 +74,10 @@ recipeList:
   - org.openrewrite.java.spring.framework.BeanMethodsNotPublic
   - org.openrewrite.java.spring.boot3.PreciseBeanType
   - org.openrewrite.java.spring.boot3.ReplaceStringLiteralsWithConstants
+  - org.openrewrite.java.spring.http.SimplifyMediaTypeParseCalls
+  - org.openrewrite.java.spring.http.SimplifyWebTestClientCalls
   - org.openrewrite.java.spring.NoRepoAnnotationOnRepoInterface
+  - org.openrewrite.java.spring.NoHttpExchangeAnnotation
   - org.openrewrite.java.spring.security.SpringSecurityBestPractices
 
 ```
@@ -82,6 +88,7 @@ recipeList:
 
 This recipe is used as part of the following composite recipes:
 
+* [Spring Boot 3.3 best practices](/recipes/java/spring/boot3/springboot33bestpractices.md)
 * [Spring Boot 3.5 best practices](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot3/springboot3bestpractices)
 
 

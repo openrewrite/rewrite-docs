@@ -37,6 +37,7 @@ This recipe is used as part of the following composite recipes:
 
 * [Update Prethink context](/recipes/prethink/updateprethinkcontext.md)
 * [Update Prethink context](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/updateprethinkcontextstarter)
+* [Update mainframe Prethink context](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/mainframe/prethink/updatemainframeprethinkcontext)
 
 
 ## Usage

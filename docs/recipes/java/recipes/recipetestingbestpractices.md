@@ -49,10 +49,11 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [New line at the end of `SourceSpecs` text blocks](../../java/recipes/sourcespectextblocknewline)
 * [Minimal indentation for `SourceSpecs` text blocks](../../java/recipes/sourcespectextblockindentation)
 * [Refactor RewriteTest to use defaults method](../../java/recipes/userewritetestdefaults)
+* [Remove `RecipeSpec.cycles(int)` calls that restate the default](../../java/recipes/simplifyrecipespeccycles)
 * [Use `StringUtils` utility methods](../../java/recipes/usestringutilsrecipes)
 * [Use `var` for variables initialized with type casts](../../java/migrate/lang/var/usevarfortypecast)
 * [Use `var` for constructor call assignments](../../java/migrate/lang/var/usevarforconstructors)
-* [Apply `var` to Generic Constructors](../../java/migrate/lang/var/usevarforgenericsconstructors)
+* [Apply `var` to generic constructors](../../java/migrate/lang/var/usevarforgenericsconstructors)
 * [Apply `var` to generic method invocations](../../java/migrate/lang/var/usevarforgenericmethodinvocations)
 * [Use `var` for primitive and String variables](../../java/migrate/lang/var/usevarforprimitive)
 * [Use modernized `java.util` APIs](../../java/migrate/util/javautilapis)
@@ -60,7 +61,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [JUnit 6 best practices](../../java/testing/junit/junit6bestpractices)
 * [AssertJ best practices](../../java/testing/assertj/assertj-best-practices)
 * [Fix missing braces](../../staticanalysis/needbraces)
-* [Remove `System.out#println` statements](../../staticanalysis/removesystemoutprintln)
+* [Remove `System.out#println` and `System.err#println` statements](../../staticanalysis/removesystemoutprintln)
 * [Reorder annotations alphabetically](../../staticanalysis/reorderannotations)
 * [Use static import](../../java/usestaticimport)
   * methodPattern: `org.openrewrite..Assertions *(..)`
@@ -102,6 +103,7 @@ recipeList:
   - org.openrewrite.java.recipes.SourceSpecTextBlockNewLine
   - org.openrewrite.java.recipes.SourceSpecTextBlockIndentation
   - org.openrewrite.java.recipes.UseRewriteTestDefaults
+  - org.openrewrite.java.recipes.SimplifyRecipeSpecCycles
   - org.openrewrite.java.recipes.UseStringUtilsRecipes
   - org.openrewrite.java.migrate.lang.var.UseVarForTypeCast
   - org.openrewrite.java.migrate.lang.var.UseVarForConstructors

@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.dependencies.search.FindDuplicateClasses**
 
-_Detects classes that appear in multiple dependencies on the classpath. This is similar to what the Maven duplicate-finder-maven-plugin does. Duplicate classes can cause runtime issues when different versions of the same class are loaded._
+_Detects classes that appear in multiple dependencies on the classpath. This is similar to what the Maven `duplicate-finder-maven-plugin` does. Duplicate classes can cause runtime issues when different versions of the same class are loaded._
 
 ## Recipe source
 
@@ -50,7 +50,7 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ### Duplicate classes report
 **org.openrewrite.java.dependencies.table.DuplicateClassesReport**
 
-_Lists classes that appear in multiple dependencies on the classpath_
+_Lists classes that appear in multiple dependencies on the classpath._
 
 | Column Name | Description |
 | ----------- | ----------- |

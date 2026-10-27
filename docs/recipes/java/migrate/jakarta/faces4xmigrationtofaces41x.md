@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.migrate.jakarta.Faces4xMigrationToFaces41x**
 
-_Jakarta EE 11 uses Faces 4.1 a minor upgrade._
+_Jakarta EE 11 uses Faces 4.1, a minor upgrade._
 
 ### Tags
 
@@ -42,10 +42,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 **Recipes**
 
-* [JSF 2.x to Jakarta Faces 3.x](../../../java/migrate/jakarta/faces2xmigrationtojakartafaces3x)
 * [Upgrade to Jakarta Faces 4.x](../../../java/migrate/jakarta/faces3xmigrationtofaces4x)
-* [Update Jakarta EE Java Faces Dependencies to 4.1.x](../../../java/migrate/jakarta/updatejakartafacesapi41)
-* [OmniFaces Namespace Migration](../../../java/migrate/jakarta/omnifacesnamespacemigration)
+* [Update Jakarta Faces dependencies to 4.1.x](../../../java/migrate/jakarta/updatejakartafacesapi41)
+* [Migrate OmniFaces namespaces](../../../java/migrate/jakarta/omnifacesnamespacemigration)
 * [Upgrade Faces open source libraries](../../../java/migrate/jakarta/upgradefaces41opensourcelibraries)
 
 </TabItem>
@@ -58,7 +57,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.jakarta.Faces4xMigrationToFaces41x
 displayName: Jakarta Faces 4.0 to 4.1
 description: |
-  Jakarta EE 11 uses Faces 4.1 a minor upgrade.
+  Jakarta EE 11 uses Faces 4.1, a minor upgrade.
 tags:
   - faces
   - jsf
@@ -66,7 +65,6 @@ tags:
 preconditions:
   - org.openrewrite.Singleton
 recipeList:
-  - org.openrewrite.java.migrate.jakarta.Faces2xMigrationToJakartaFaces3x
   - org.openrewrite.java.migrate.jakarta.Faces3xMigrationToFaces4x
   - org.openrewrite.java.migrate.jakarta.UpdateJakartaFacesApi41
   - org.openrewrite.java.migrate.jakarta.OmniFacesNamespaceMigration
@@ -106,6 +104,25 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
+
+### Maven metadata failures
+**org.openrewrite.maven.table.MavenMetadataFailures**
+
+_Attempts to resolve maven metadata that failed._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Group id | The groupId of the artifact for which the metadata download failed. |
+| Artifact id | The artifactId of the artifact for which the metadata download failed. |
+| Version | The version of the artifact for which the metadata download failed. |
+| Maven repository | The URL of the Maven repository that the metadata download failed on. |
+| Snapshots | Does the repository support snapshots. |
+| Releases | Does the repository support releases. |
+| Failure | The reason the metadata download failed. |
+
+</TabItem>
+
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results

@@ -1,17 +1,17 @@
 ---
-title: "Adopt AssertJ Integer Assertions"
-sidebar_label: "Adopt AssertJ Integer Assertions"
+title: "Adopt AssertJ `Integer` assertions"
+sidebar_label: "Adopt AssertJ `Integer` assertions"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Adopt AssertJ Integer Assertions
+# Adopt AssertJ `Integer` assertions
 
 **org.openrewrite.java.testing.assertj.AssertJIntegerRulesRecipes**
 
-_Adopt AssertJ Integer Assertions. Favor semantically explicit methods (e.g. `myInteger.isZero()` over `myInteger.isEqualTo(0)`)._
+_Adopt AssertJ `Integer` assertions. Favor semantically explicit methods (e.g. `myInteger.isZero()` over `myInteger.isEqualTo(0)`)._
 
 ## Recipe source
 
@@ -44,9 +44,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.testing.assertj.AssertJIntegerRulesRecipes
-displayName: Adopt AssertJ Integer Assertions
+displayName: Adopt AssertJ `Integer` assertions
 description: |
-  Adopt AssertJ Integer Assertions. Favor semantically explicit methods (e.g. `myInteger.isZero()` over `myInteger.isEqualTo(0)`).
+  Adopt AssertJ `Integer` assertions. Favor semantically explicit methods (e.g. `myInteger.isZero()` over `myInteger.isEqualTo(0)`).
 recipeList:
   - org.openrewrite.java.testing.assertj.AssertJIntegerRulesRecipes$AbstractIntegerAssertIsEqualToRecipe
   - org.openrewrite.java.testing.assertj.AssertJIntegerRulesRecipes$AbstractIntegerAssertIsNotEqualToRecipe
@@ -116,7 +116,7 @@ class A {
 
 <RunRecipe
   recipeName="org.openrewrite.java.testing.assertj.AssertJIntegerRulesRecipes"
-  displayName="Adopt AssertJ Integer Assertions"
+  displayName="Adopt AssertJ `Integer` assertions"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-testing-frameworks"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_TESTING_FRAMEWORKS"

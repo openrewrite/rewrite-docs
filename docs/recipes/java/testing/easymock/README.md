@@ -10,11 +10,12 @@ _Recipes for migrating from [EasyMock](https://easymock.org/) to Mockito._
 
 _Recipes that include further recipes, often including the individual recipes below._
 
+* [Migrate EasyMock code to Mockito](./easymockcodetomockito.md)
 * [Migrate from EasyMock to Mockito](./easymocktomockito.md)
 
 ## Recipes
 
-* [Migrate Test classes that extend `org.easymock.EasyMockSupport` to use Mockito](./removeextendseasymocksupport.md)
+* [Remove `extends EasyMockSupport` from test classes](./removeextendseasymocksupport.md)
 * [Replace EasyMock `verify` calls with Mockito `verify` calls](./easymockverifytomockitoverify.md)
 
 

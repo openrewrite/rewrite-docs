@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.migrate.lombok.log.UseLog**
 
-_Prefer the lombok annotation `@Log` over explicitly written out `java.util.logging.Logger` fields._
+_Prefer the Lombok annotation `@Log` over explicitly written out `java.util.logging.Logger` fields._
 
 ## Recipe source
 

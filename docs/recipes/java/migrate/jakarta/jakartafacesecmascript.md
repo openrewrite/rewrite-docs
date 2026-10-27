@@ -1,17 +1,17 @@
 ---
-title: "Migrate JSF values inside EcmaScript files"
-sidebar_label: "Migrate JSF values inside EcmaScript files"
+title: "Migrate JSF values inside ECMAScript files"
+sidebar_label: "Migrate JSF values inside ECMAScript files"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Migrate JSF values inside EcmaScript files
+# Migrate JSF values inside ECMAScript files
 
 **org.openrewrite.java.migrate.jakarta.JakartaFacesEcmaScript**
 
-_Convert JSF to Faces values inside JavaScript,TypeScript, and Properties files._
+_Convert JSF to Faces values inside JavaScript, TypeScript, and properties files._
 
 ### Tags
 
@@ -36,15 +36,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-**Preconditions**
-
-* [Singleton](../../../core/singleton)
-
-**Recipes**
-
 * [Find and replace](../../../text/findandreplace)
-  * find: `javax.`
-  * replace: `jakarta.`
+  * find: `javax.faces.`
+  * replace: `jakarta.faces.`
   * filePattern: `**/*.js;**/*.ts;**/*.properties`
 * [Find and replace](../../../text/findandreplace)
   * find: `window.jsf`
@@ -63,19 +57,17 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.jakarta.JakartaFacesEcmaScript
-displayName: Migrate JSF values inside EcmaScript files
+displayName: Migrate JSF values inside ECMAScript files
 description: |
-  Convert JSF to Faces values inside JavaScript,TypeScript, and Properties files.
+  Convert JSF to Faces values inside JavaScript, TypeScript, and properties files.
 tags:
   - faces
   - jsf
   - jakarta
-preconditions:
-  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.text.FindAndReplace:
-      find: javax.
-      replace: jakarta.
+      find: javax.faces.
+      replace: jakarta.faces.
       filePattern: **/*.js;**/*.ts;**/*.properties
   - org.openrewrite.text.FindAndReplace:
       find: window.jsf
@@ -102,7 +94,7 @@ This recipe is used as part of the following composite recipes:
 
 <RunRecipe
   recipeName="org.openrewrite.java.migrate.jakarta.JakartaFacesEcmaScript"
-  displayName="Migrate JSF values inside EcmaScript files"
+  displayName="Migrate JSF values inside ECMAScript files"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-migrate-java"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA"

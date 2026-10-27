@@ -25,7 +25,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 | Type | Name | Description | Example |
 | --- | --- | --- | --- |
-| `Boolean` | addParentheses | *Optional*. Add parentheses around the first argument if it is not a simple expression. Default true; if false no change will be made.  |  |
+| `Boolean` | addParentheses | *Optional*. Add parentheses around the first argument if it is not a simple expression. Default true; if false, calls whose first argument would need parentheses are left unchanged. |  |
 
 
 ## Used by

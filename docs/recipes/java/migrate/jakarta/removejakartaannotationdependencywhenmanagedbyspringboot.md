@@ -29,7 +29,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 **Preconditions**
 
 * [Project has no Jakarta annotations](../../../java/migrate/jakarta/hasnojakartaannotations)
-* [Dependency insight for Gradle and Maven](../../../java/dependencies/dependencyinsight)
+* [Gradle or Maven dependency insight](../../../java/dependencies/dependencyinsight)
   * groupIdPattern: `org.springframework.boot`
   * artifactIdPattern: `spring-boot-starter`
 * [Singleton](../../../core/singleton)

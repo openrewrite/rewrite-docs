@@ -56,7 +56,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Migrate JUnit asserts to AssertJ](../../../java/testing/assertj/junittoassertj)
 * [Migrate TestNG assertions to AssertJ](../../../java/testing/testng/testngtoassertj)
 * [Adopt AssertJ Duration assertions](../../../java/testing/assertj/adoptassertjdurationassertions)
-* [Replace `AbstractDateAssert#isEqualToIgnoringMillis(java.util.Date)` by `by isCloseTo(Date, long)`](../../../java/testing/assertj/isequaltoignoringmillistoisclosetorecipe)
+* [Replace `AbstractDateAssert#isEqualToIgnoringMillis(java.util.Date)` with `isCloseTo(Date, long)`](../../../java/testing/assertj/isequaltoignoringmillistoisclosetorecipe)
 * [Decompose `assertThat` on conjunctions into separate assertions](../../../java/testing/assertj/decomposeconjunctionassertion)
 * [Simplify AssertJ chained assertions](../../../java/testing/assertj/simplifychainedassertjassertions)
 * [Shorten AssertJ assertions](../../../java/testing/assertj/simplifyassertjassertions)
@@ -65,29 +65,29 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Simplify AssertJ assertions with `hasSize` argument](../../../java/testing/assertj/simplifyhassizeassertion)
 * [Simplify literal-first AssertJ size assertions to `hasSize`](../../../java/testing/assertj/simplifyhassizefromisequaltoassertion)
 * [Simplify AssertJ assertions on an array's `length`](../../../java/testing/assertj/simplifyarraylengthassertion)
-* [Simplify AssertJ assertions on SequencedCollection](../../../java/testing/assertj/simplifysequencedcollectionassertions)
+* [Simplify AssertJ assertions on `SequencedCollection`](../../../java/testing/assertj/simplifysequencedcollectionassertions)
 * [Simplify `assertThat(collection.stream().map(...))` to `assertThat(collection).extracting(...)`](../../../java/testing/assertj/simplifystreammaptoextracting)
 * [Refaster rules related to AssertJ assertions over `BigDecimal`s](../../../picnic/errorprone/refasterrules/assertjbigdecimalrulesrecipes)
-* [Adopt AssertJ BigInteger Assertions](../../../java/testing/assertj/assertjbigintegerrulesrecipes)
+* [Adopt AssertJ `BigInteger` assertions](../../../java/testing/assertj/assertjbigintegerrulesrecipes)
 * [`AssertJBooleanRules` Refaster recipes](../../../picnic/errorprone/refasterrules/assertjbooleanrulesrecipes)
-* [Adopt AssertJ Byte Assertions](../../../java/testing/assertj/assertjbyterulesrecipes)
+* [Adopt AssertJ `Byte` assertions](../../../java/testing/assertj/assertjbyterulesrecipes)
 * [`AssertJCharSequenceRules` Refaster recipes](../../../picnic/errorprone/refasterrules/assertjcharsequencerulesrecipes)
 * [`AssertJComparableRules` Refaster recipes](../../../picnic/errorprone/refasterrules/assertjcomparablerulesrecipes)
-* [Adopt AssertJ Double Assertions](../../../java/testing/assertj/assertjdoublerulesrecipes)
+* [Adopt AssertJ `Double` assertions](../../../java/testing/assertj/assertjdoublerulesrecipes)
 * [`AssertJEnumerableRules` Refaster recipes](../../../picnic/errorprone/refasterrules/assertjenumerablerulesrecipes)
 * [`AssertJDurationRules` Refaster recipes](../../../picnic/errorprone/refasterrules/assertjdurationrulesrecipes)
-* [Adopt AssertJ Float Assertions](../../../java/testing/assertj/assertjfloatrulesrecipes)
+* [Adopt AssertJ `Float` assertions](../../../java/testing/assertj/assertjfloatrulesrecipes)
 * [`AssertJInstantRules` Refaster recipes](../../../picnic/errorprone/refasterrules/assertjinstantrulesrecipes)
-* [Adopt AssertJ Integer Assertions](../../../java/testing/assertj/assertjintegerrulesrecipes)
+* [Adopt AssertJ `Integer` assertions](../../../java/testing/assertj/assertjintegerrulesrecipes)
 * [`AssertJIterableRules` Refaster recipes](../../../picnic/errorprone/refasterrules/assertjiterablerulesrecipes)
 * [`AssertJIteratorRules` Refaster recipes](../../../picnic/errorprone/refasterrules/assertjiteratorrulesrecipes)
-* [Adopt AssertJ Long Assertions](../../../java/testing/assertj/assertjlongrulesrecipes)
+* [Adopt AssertJ `Long` assertions](../../../java/testing/assertj/assertjlongrulesrecipes)
 * [`AssertJMapRules` Refaster recipes](../../../picnic/errorprone/refasterrules/assertjmaprulesrecipes)
 * [`AssertJNumberRules` Refaster recipes](../../../picnic/errorprone/refasterrules/assertjnumberrulesrecipes)
 * [`AssertJObjectRules` Refaster recipes](../../../picnic/errorprone/refasterrules/assertjobjectrulesrecipes)
 * [`AssertJOptionalRules` Refaster recipes](../../../picnic/errorprone/refasterrules/assertjoptionalrulesrecipes)
 * [`AssertJPathRules` Refaster recipes](../../../picnic/errorprone/refasterrules/assertjpathrulesrecipes)
-* [Adopt AssertJ Short Assertions](../../../java/testing/assertj/assertjshortrulesrecipes)
+* [Adopt AssertJ `Short` assertions](../../../java/testing/assertj/assertjshortrulesrecipes)
 * [`AssertJPrimitiveRules` Refaster recipes](../../../picnic/errorprone/refasterrules/assertjprimitiverulesrecipes)
 * [`AssertJRules` Refaster recipes](../../../picnic/errorprone/refasterrules/assertjrulesrecipes)
 * [`AssertJStringRules` Refaster recipes](../../../picnic/errorprone/refasterrules/assertjstringrulesrecipes)
@@ -391,23 +391,6 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
-<TabItem value="org.openrewrite.java.testing.mockito.table.PowerMockTestsDisabled" label="PowerMockTestsDisabled">
-
-### PowerMock tests disabled for manual migration
-**org.openrewrite.java.testing.mockito.table.PowerMockTestsDisabled**
-
-_Tests disabled because they use a PowerMock feature with no Mockito equivalent. Each row is an action item: rework the test so it does not reach into private members, then re-enable it._
-
-| Column Name | Description |
-| ----------- | ----------- |
-| Source path | The path of the test source file. |
-| Test class | The test class the disabled test belongs to. |
-| Disabled element | The test method that was disabled, or the class name when the usage sits outside a test method and the whole class had to be disabled. |
-| Scope | `METHOD` when a single test was disabled, `CLASS` when the whole test class was. |
-| Reason | The PowerMock usage that cannot be migrated. |
-
-</TabItem>
-
 <TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
 
 ### Maven metadata failures
@@ -424,6 +407,23 @@ _Attempts to resolve maven metadata that failed._
 | Snapshots | Does the repository support snapshots. |
 | Releases | Does the repository support releases. |
 | Failure | The reason the metadata download failed. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.java.testing.mockito.table.PowerMockTestsDisabled" label="PowerMockTestsDisabled">
+
+### PowerMock tests disabled for manual migration
+**org.openrewrite.java.testing.mockito.table.PowerMockTestsDisabled**
+
+_Tests disabled because they use a PowerMock feature with no Mockito equivalent. Each row is an action item: rework the test so it does not reach into private members, then re-enable it._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Source path | The path of the test source file. |
+| Test class | The test class the disabled test belongs to. |
+| Disabled element | The test method that was disabled, or the class name when the usage sits outside a test method and the whole class had to be disabled. |
+| Scope | `METHOD` when a single test was disabled, `CLASS` when the whole test class was. |
+| Reason | The PowerMock usage that cannot be migrated. |
 
 </TabItem>
 

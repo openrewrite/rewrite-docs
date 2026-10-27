@@ -41,7 +41,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 **Recipes**
 
-* [Migrate Enabled to Access Spring Boot Properties](../../../java/spring/boot3/springbootproperties_3_4_enabledtoaccess)
+* [Migrate `enabled` to `access` Spring Boot properties](../../../java/spring/boot3/springbootproperties_3_4_enabledtoaccess)
 * [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.gson.lenient`
   * newPropertyKey: `spring.gson.strictness`

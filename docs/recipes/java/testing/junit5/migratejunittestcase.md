@@ -72,7 +72,8 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.fail;
 
 public class MathTest {
     protected long value1;
@@ -110,15 +111,16 @@ public class MathTest {
 +import org.junit.jupiter.api.BeforeEach;
 +import org.junit.jupiter.api.Test;
 
-@@ -3,1 +5,3 @@
+@@ -3,1 +5,4 @@
 import junit.framework.TestCase;
 
 -public class MathTest extends TestCase {
-+import static org.junit.jupiter.api.Assertions.*;
++import static org.junit.jupiter.api.Assertions.assertEquals;
++import static org.junit.jupiter.api.Assertions.fail;
 +
 +public class MathTest {
     protected long value1;
-@@ -7,3 +11,2 @@
+@@ -7,3 +12,2 @@
     protected long value2;
 
 -   @Override
@@ -127,18 +129,18 @@ import junit.framework.TestCase;
 +   @BeforeEach
 +   public void setUp() {
         value1 = 2;
-@@ -14,0 +17,1 @@
+@@ -14,0 +18,1 @@
     }
 
 +   @Test
     public void testAdd() {
-@@ -15,1 +19,1 @@
+@@ -15,1 +20,1 @@
 
     public void testAdd() {
 -       setName("primitive test");
 +       //setName("primitive test");
         long result = value1 + value2;
-@@ -21,3 +25,2 @@
+@@ -21,3 +26,2 @@
     }
 
 -   @Override

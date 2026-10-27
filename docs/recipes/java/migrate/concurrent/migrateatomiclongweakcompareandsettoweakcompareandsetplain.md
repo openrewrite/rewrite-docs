@@ -28,6 +28,8 @@ This recipe is available under the [Moderne Source Available License](https://do
 <TabItem value="recipe-list" label="Recipe List" >
 **Preconditions**
 
+* [Find files compiled at a specific Java version](../../../java/search/hasjavaversion)
+  * version: `[9,)`
 * [Singleton](../../../core/singleton)
 
 **Recipes**
@@ -48,6 +50,8 @@ displayName: Use `AtomicLong#weakCompareAndSetPlain(long, long)`
 description: |
   Use `AtomicLong#weakCompareAndSetPlain(long, long)` instead of the deprecated `AtomicLong#weakCompareAndSet(long, long)` in Java 9 or higher.
 preconditions:
+  - org.openrewrite.java.search.HasJavaVersion:
+      version: [9,)
   - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.ChangeMethodName:

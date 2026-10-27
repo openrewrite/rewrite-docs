@@ -46,13 +46,6 @@ recipeList:
 </TabItem>
 </Tabs>
 
-## Used by
-
-This recipe is used as part of the following composite recipes:
-
-* [Migrate to Java 21](/recipes/java/migrate/upgradetojava21.md)
-
-
 ## Usage
 
 <RunRecipe

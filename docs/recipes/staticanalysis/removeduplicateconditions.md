@@ -1,6 +1,6 @@
 ---
-title: "Related &quot;if/else if&quot; conditions should not be the same"
-sidebar_label: "Related &quot;if/else if&quot; conditions should not be the same"
+title: "Related \"if/else if\" conditions should not be the same"
+sidebar_label: "Related \"if/else if\" conditions should not be the same"
 ---
 
 import Tabs from '@theme/Tabs';

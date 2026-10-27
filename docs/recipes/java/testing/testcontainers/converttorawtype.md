@@ -32,7 +32,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 This recipe is used as part of the following composite recipes:
 
-* [Testcontainers 2 container classes](/recipes/java/testing/testcontainers/testcontainers2containerclasses.md)
+* [Move container classes to their Testcontainers 2 packages](/recipes/java/testing/testcontainers/testcontainers2containerclasses.md)
 
 
 ## Usage

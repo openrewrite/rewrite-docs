@@ -1,17 +1,17 @@
 ---
-title: "Adopt AssertJ Float Assertions"
-sidebar_label: "Adopt AssertJ Float Assertions"
+title: "Adopt AssertJ `Float` assertions"
+sidebar_label: "Adopt AssertJ `Float` assertions"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Adopt AssertJ Float Assertions
+# Adopt AssertJ `Float` assertions
 
 **org.openrewrite.java.testing.assertj.AssertJFloatRulesRecipes**
 
-_Adopt AssertJ Float Assertions. Favor semantically explicit methods (e.g. `myFloat.isZero()` over `myFloat.isEqualTo(0.0f)`)._
+_Adopt AssertJ `Float` assertions. Favor semantically explicit methods (e.g. `myFloat.isZero()` over `myFloat.isEqualTo(0.0f)`)._
 
 ## Recipe source
 
@@ -45,9 +45,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.testing.assertj.AssertJFloatRulesRecipes
-displayName: Adopt AssertJ Float Assertions
+displayName: Adopt AssertJ `Float` assertions
 description: |
-  Adopt AssertJ Float Assertions. Favor semantically explicit methods (e.g. `myFloat.isZero()` over `myFloat.isEqualTo(0.0f)`).
+  Adopt AssertJ `Float` assertions. Favor semantically explicit methods (e.g. `myFloat.isZero()` over `myFloat.isEqualTo(0.0f)`).
 recipeList:
   - org.openrewrite.java.testing.assertj.AssertJFloatRulesRecipes$AbstractFloatAssertIsCloseToWithOffsetRecipe
   - org.openrewrite.java.testing.assertj.AssertJFloatRulesRecipes$AbstractFloatAssertIsEqualToRecipe
@@ -138,7 +138,7 @@ class A {
 
 <RunRecipe
   recipeName="org.openrewrite.java.testing.assertj.AssertJFloatRulesRecipes"
-  displayName="Adopt AssertJ Float Assertions"
+  displayName="Adopt AssertJ `Float` assertions"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-testing-frameworks"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_TESTING_FRAMEWORKS"

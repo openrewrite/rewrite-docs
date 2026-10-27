@@ -4,17 +4,19 @@ description: AssertJ OpenRewrite recipes.
 
 # AssertJ
 
+_Recipes for migrating to [AssertJ](https://assertj.github.io/doc/) and adopting its more expressive assertions._
+
 ## Composite Recipes
 
 _Recipes that include further recipes, often including the individual recipes below._
 
-* [Adopt AssertJ BigInteger Assertions](./assertjbigintegerrulesrecipes.md)
-* [Adopt AssertJ Byte Assertions](./assertjbyterulesrecipes.md)
-* [Adopt AssertJ Double Assertions](./assertjdoublerulesrecipes.md)
-* [Adopt AssertJ Float Assertions](./assertjfloatrulesrecipes.md)
-* [Adopt AssertJ Integer Assertions](./assertjintegerrulesrecipes.md)
-* [Adopt AssertJ Long Assertions](./assertjlongrulesrecipes.md)
-* [Adopt AssertJ Short Assertions](./assertjshortrulesrecipes.md)
+* [Adopt AssertJ `BigInteger` assertions](./assertjbigintegerrulesrecipes.md)
+* [Adopt AssertJ `Byte` assertions](./assertjbyterulesrecipes.md)
+* [Adopt AssertJ `Double` assertions](./assertjdoublerulesrecipes.md)
+* [Adopt AssertJ `Float` assertions](./assertjfloatrulesrecipes.md)
+* [Adopt AssertJ `Integer` assertions](./assertjintegerrulesrecipes.md)
+* [Adopt AssertJ `Long` assertions](./assertjlongrulesrecipes.md)
+* [Adopt AssertJ `Short` assertions](./assertjshortrulesrecipes.md)
 * [AssertJ best practices](./assertj-best-practices.md)
 * [Migrate `AssertionsForClassTypes` and `AssertionsForInterfaceTypes` to `Assertions`](./migrateassertionsforclassandinterfacetypes.md)
 * [Migrate Fest 2.x to AssertJ](./festtoassertj.md)
@@ -31,7 +33,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Convert try-catch-fail blocks to AssertJ's assertThatThrownBy](./junittryfailtoassertthatthrownby.md)
 * [Decompose `assertThat` on conjunctions into separate assertions](./decomposeconjunctionassertion.md)
 * [JUnit AssertThrows to AssertJ exceptionType](./junitassertthrowstoassertexceptiontype.md)
-* [JUnit `assertArrayEquals` to assertJ](./junitassertarrayequalstoassertthat.md)
+* [JUnit `assertArrayEquals` to AssertJ](./junitassertarrayequalstoassertthat.md)
 * [JUnit `assertEquals` to AssertJ](./junitassertequalstoassertthat.md)
 * [JUnit `assertFalse` to AssertJ](./junitassertfalsetoassertthat.md)
 * [JUnit `assertInstanceOf` to AssertJ](./junitassertinstanceoftoassertthat.md)
@@ -40,9 +42,9 @@ _Recipes that include further recipes, often including the individual recipes be
 * [JUnit `assertNull` to AssertJ](./junitassertnulltoassertthat.md)
 * [JUnit `assertSame` to AssertJ](./junitassertsametoassertthat.md)
 * [JUnit `assertTrue` to AssertJ](./junitasserttruetoassertthat.md)
-* [JUnit fail to AssertJ](./junitfailtoassertjfail.md)
+* [JUnit `fail` to AssertJ](./junitfailtoassertjfail.md)
 * [Place AssertJ descriptions and failure messages before the assertion](./placeassertjdescriptionbeforeassertion.md)
-* [Replace `AbstractDateAssert#isEqualToIgnoringMillis(java.util.Date)` by `by isCloseTo(Date, long)`](./isequaltoignoringmillistoisclosetorecipe.md)
+* [Replace `AbstractDateAssert#isEqualToIgnoringMillis(java.util.Date)` with `isCloseTo(Date, long)`](./isequaltoignoringmillistoisclosetorecipe.md)
 * [Replace `isCloseTo` with `isEqualTo`](./assertjfloatrulesrecipes$abstractfloatassertisequaltorecipe.md)
 * [Replace `isCloseTo` with `isEqualTo`](./assertjintegerrulesrecipes$abstractintegerassertisequaltorecipe.md)
 * [Replace `isCloseTo` with `isEqualTo`](./assertjbyterulesrecipes$abstractbyteassertisequaltorecipe.md)
@@ -81,7 +83,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Replace `isNotEqualTo(0)` with `isNotZero()`](./assertjbyterulesrecipes$abstractbyteassertisnotzerorecipe.md)
 * [Replace `isNotEqualTo(0)` with `isNotZero()`](./assertjlongrulesrecipes$abstractlongassertisnotzerorecipe.md)
 * [Simplify AssertJ assertions on `==` and `!=` comparisons](./simplifyassertjequalityassertion.md)
-* [Simplify AssertJ assertions on SequencedCollection](./simplifysequencedcollectionassertions.md)
+* [Simplify AssertJ assertions on `SequencedCollection`](./simplifysequencedcollectionassertions.md)
 * [Simplify AssertJ assertions on an array's `length`](./simplifyarraylengthassertion.md)
 * [Simplify AssertJ assertions on `instanceof` expressions](./simplifyassertjinstanceofassertion.md)
 * [Simplify AssertJ assertions with `hasSize` argument](./simplifyhassizeassertion.md)

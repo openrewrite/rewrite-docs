@@ -37,7 +37,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Migrate JSF values inside EcmaScript files](../../../../java/migrate/jakarta/jakartafacesecmascript)
+* [Migrate JSF values inside ECMAScript files](../../../../java/migrate/jakarta/jakartafacesecmascript)
 * [Replace `CURRENT_COMPONENT` and `CURRENT_COMPOSITE_COMPONENT` with `getCurrentComponent()` and `getCurrentCompositeComponent()`](../../../../java/migrate/jakarta/removeduicomponentconstant)
 * [Faces XHTML migration for Jakarta EE 9](../../../../oracle/weblogic/rewrite/jakarta/jakartafaces3xhtml)
 * [Migrate xmlns entries in `faces-config.xml` files for Jakarta Server Faces 3](../../../../oracle/weblogic/rewrite/jakarta/javaxfacesconfigxmltojakartafaces3configxml)
@@ -120,6 +120,25 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
+
+### Maven metadata failures
+**org.openrewrite.maven.table.MavenMetadataFailures**
+
+_Attempts to resolve maven metadata that failed._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Group id | The groupId of the artifact for which the metadata download failed. |
+| Artifact id | The artifactId of the artifact for which the metadata download failed. |
+| Version | The version of the artifact for which the metadata download failed. |
+| Maven repository | The URL of the Maven repository that the metadata download failed on. |
+| Snapshots | Does the repository support snapshots. |
+| Releases | Does the repository support releases. |
+| Failure | The reason the metadata download failed. |
+
+</TabItem>
+
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results

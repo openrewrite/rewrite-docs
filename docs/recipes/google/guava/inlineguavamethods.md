@@ -1,13 +1,13 @@
 ---
-title: "Inline `guava` methods annotated with `@InlineMe`"
-sidebar_label: "Inline `guava` methods annotated with `@InlineMe`"
+title: "Inline Guava methods annotated with `@InlineMe`"
+sidebar_label: "Inline Guava methods annotated with `@InlineMe`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Inline `guava` methods annotated with `@InlineMe`
+# Inline Guava methods annotated with `@InlineMe`
 
 **com.google.guava.InlineGuavaMethods**
 
@@ -350,7 +350,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: com.google.guava.InlineGuavaMethods
-displayName: Inline `guava` methods annotated with `@InlineMe`
+displayName: Inline Guava methods annotated with `@InlineMe`
 description: |
   Automatically generated recipes to inline method calls based on `@InlineMe` annotations discovered in the type table.
 preconditions:
@@ -768,7 +768,7 @@ class Regular {
 
 <RunRecipe
   recipeName="com.google.guava.InlineGuavaMethods"
-  displayName="Inline `guava` methods annotated with `@InlineMe`"
+  displayName="Inline Guava methods annotated with `@InlineMe`"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-migrate-java"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA"

@@ -61,9 +61,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Remove a Gradle or Maven dependency](../../../java/dependencies/removedependency)
   * groupId: `org.junit.platform`
   * artifactId: `junit-platform-suite-commons`
-* [Remove a Gradle or Maven dependency](../../../java/dependencies/removedependency)
-  * groupId: `org.junit.jupiter`
-  * artifactId: `junit-jupiter-migrationsupport`
+* [Remove JUnit Jupiter migrationsupport](../../../java/testing/junit/removejupitermigrationsupport)
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `org.junit`
   * artifactId: `junit-bom`
@@ -99,14 +97,13 @@ This recipe is available under the [Moderne Source Available License](https://do
   * ignoreDefinition: `true`
 * [Migrate `MethodOrderer.Alphanumeric` to `MethodOrderer.MethodName`](../../../java/testing/junit6/migratemethodordereralphanumeric)
 * [Migrate JUnit Pioneer extensions to native JUnit Jupiter equivalents](../../../java/testing/junit6/migratejunitpioneertojupiter)
-* [Remove `InvocationInterceptor.interceptDynamicTest`](../../../java/testing/junit6/removeinterceptdynamictest)
+* [Migrate the two-argument `InvocationInterceptor.interceptDynamicTest`](../../../java/testing/junit6/removeinterceptdynamictest)
 * [Change type](../../../java/changetype)
   * oldFullyQualifiedTypeName: `org.junit.jupiter.engine.Constants`
   * newFullyQualifiedTypeName: `org.junit.jupiter.api.Constants`
 * [Change method name](../../../java/changemethodname)
   * methodPattern: `org.junit.platform.testkit.engine.Executions started()`
   * newMethodName: `finished`
-  * matchOverrides: `false`
   * ignoreDefinition: `true`
 * [Delete property by key](../../../properties/deleteproperty)
   * propertyKey: `junit.jupiter.tempdir.scope`
@@ -151,9 +148,7 @@ recipeList:
   - org.openrewrite.java.dependencies.RemoveDependency:
       groupId: org.junit.platform
       artifactId: junit-platform-suite-commons
-  - org.openrewrite.java.dependencies.RemoveDependency:
-      groupId: org.junit.jupiter
-      artifactId: junit-jupiter-migrationsupport
+  - org.openrewrite.java.testing.junit.RemoveJupiterMigrationSupport
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: org.junit
       artifactId: junit-bom
@@ -196,7 +191,6 @@ recipeList:
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: org.junit.platform.testkit.engine.Executions started()
       newMethodName: finished
-      matchOverrides: false
       ignoreDefinition: true
   - org.openrewrite.properties.DeleteProperty:
       propertyKey: junit.jupiter.tempdir.scope
@@ -214,6 +208,113 @@ This recipe is used as part of the following composite recipes:
 
 * [JUnit 6 best practices](/recipes/java/testing/junit/junit6bestpractices.md)
 * [Migrate to Spring Framework 7.0](/recipes/java/spring/framework/upgradespringframework_7_0.md)
+
+## Examples
+##### Example 1
+`JUnit5to6MigrationTest#renamesStoreGetOrComputeIfAbsent`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.junit.jupiter.api.extension.ExtensionContext;
+
+class FooExtension {
+    void store(ExtensionContext.Store store) {
+        store.getOrComputeIfAbsent(StringBuilder.class);
+        store.getOrComputeIfAbsent("key", k -> new StringBuilder());
+        store.getOrComputeIfAbsent("key", k -> new StringBuilder(), StringBuilder.class);
+    }
+}
+```
+
+###### After
+```java
+import org.junit.jupiter.api.extension.ExtensionContext;
+
+class FooExtension {
+    void store(ExtensionContext.Store store) {
+        store.computeIfAbsent(StringBuilder.class);
+        store.computeIfAbsent("key", k -> new StringBuilder());
+        store.computeIfAbsent("key", k -> new StringBuilder(), StringBuilder.class);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -5,3 +5,3 @@
+class FooExtension {
+    void store(ExtensionContext.Store store) {
+-       store.getOrComputeIfAbsent(StringBuilder.class);
+-       store.getOrComputeIfAbsent("key", k -> new StringBuilder());
+-       store.getOrComputeIfAbsent("key", k -> new StringBuilder(), StringBuilder.class);
++       store.computeIfAbsent(StringBuilder.class);
++       store.computeIfAbsent("key", k -> new StringBuilder());
++       store.computeIfAbsent("key", k -> new StringBuilder(), StringBuilder.class);
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`JUnit5to6MigrationTest#renamesStoreGetOrComputeIfAbsent`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.junit.jupiter.api.extension.ExtensionContext;
+
+class FooExtension {
+    void store(ExtensionContext.Store store) {
+        store.getOrComputeIfAbsent(StringBuilder.class);
+        store.getOrComputeIfAbsent("key", k -> new StringBuilder());
+        store.getOrComputeIfAbsent("key", k -> new StringBuilder(), StringBuilder.class);
+    }
+}
+```
+
+###### After
+```java
+import org.junit.jupiter.api.extension.ExtensionContext;
+
+class FooExtension {
+    void store(ExtensionContext.Store store) {
+        store.computeIfAbsent(StringBuilder.class);
+        store.computeIfAbsent("key", k -> new StringBuilder());
+        store.computeIfAbsent("key", k -> new StringBuilder(), StringBuilder.class);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -5,3 +5,3 @@
+class FooExtension {
+    void store(ExtensionContext.Store store) {
+-       store.getOrComputeIfAbsent(StringBuilder.class);
+-       store.getOrComputeIfAbsent("key", k -> new StringBuilder());
+-       store.getOrComputeIfAbsent("key", k -> new StringBuilder(), StringBuilder.class);
++       store.computeIfAbsent(StringBuilder.class);
++       store.computeIfAbsent("key", k -> new StringBuilder());
++       store.computeIfAbsent("key", k -> new StringBuilder(), StringBuilder.class);
+    }
+```
+</TabItem>
+</Tabs>
 
 
 ## Usage

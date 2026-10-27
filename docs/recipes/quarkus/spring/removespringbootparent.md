@@ -1,17 +1,17 @@
 ---
-title: "Remove Spring Boot 3.x parent POM"
-sidebar_label: "Remove Spring Boot 3.x parent POM"
+title: "Remove Spring Boot parent POM"
+sidebar_label: "Remove Spring Boot parent POM"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Remove Spring Boot 3.x parent POM
+# Remove Spring Boot parent POM
 
 **org.openrewrite.quarkus.spring.RemoveSpringBootParent**
 
-_Removes the Spring Boot 3.x starter parent POM from Maven projects._
+_Removes the Spring Boot 3.x or 4.x starter parent POM from Maven projects._
 
 ## Recipe source
 
@@ -104,7 +104,7 @@ This recipe is used as part of the following composite recipes:
 
 <RunRecipe
   recipeName="org.openrewrite.quarkus.spring.RemoveSpringBootParent"
-  displayName="Remove Spring Boot 3.x parent POM"
+  displayName="Remove Spring Boot parent POM"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-spring-to-quarkus"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING_TO_QUARKUS"

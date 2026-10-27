@@ -59,7 +59,63 @@ This recipe is available under the [Moderne Source Available License](https://do
   * groupId: `jakarta.annotation`
   * artifactId: `jakarta.annotation-api`
   * version: `1.3.x`
-  * onlyIfUsing: `javax.annotation..*`
+  * onlyIfUsing: `javax.annotation.Generated`
+  * scope: `provided`
+  * acceptTransitive: `true`
+* [Add Gradle or Maven dependency](../../../java/dependencies/adddependency)
+  * groupId: `jakarta.annotation`
+  * artifactId: `jakarta.annotation-api`
+  * version: `1.3.x`
+  * onlyIfUsing: `javax.annotation.ManagedBean`
+  * scope: `provided`
+  * acceptTransitive: `true`
+* [Add Gradle or Maven dependency](../../../java/dependencies/adddependency)
+  * groupId: `jakarta.annotation`
+  * artifactId: `jakarta.annotation-api`
+  * version: `1.3.x`
+  * onlyIfUsing: `javax.annotation.PostConstruct`
+  * scope: `provided`
+  * acceptTransitive: `true`
+* [Add Gradle or Maven dependency](../../../java/dependencies/adddependency)
+  * groupId: `jakarta.annotation`
+  * artifactId: `jakarta.annotation-api`
+  * version: `1.3.x`
+  * onlyIfUsing: `javax.annotation.PreDestroy`
+  * scope: `provided`
+  * acceptTransitive: `true`
+* [Add Gradle or Maven dependency](../../../java/dependencies/adddependency)
+  * groupId: `jakarta.annotation`
+  * artifactId: `jakarta.annotation-api`
+  * version: `1.3.x`
+  * onlyIfUsing: `javax.annotation.Priority`
+  * scope: `provided`
+  * acceptTransitive: `true`
+* [Add Gradle or Maven dependency](../../../java/dependencies/adddependency)
+  * groupId: `jakarta.annotation`
+  * artifactId: `jakarta.annotation-api`
+  * version: `1.3.x`
+  * onlyIfUsing: `javax.annotation.Resource`
+  * scope: `provided`
+  * acceptTransitive: `true`
+* [Add Gradle or Maven dependency](../../../java/dependencies/adddependency)
+  * groupId: `jakarta.annotation`
+  * artifactId: `jakarta.annotation-api`
+  * version: `1.3.x`
+  * onlyIfUsing: `javax.annotation.Resources`
+  * scope: `provided`
+  * acceptTransitive: `true`
+* [Add Gradle or Maven dependency](../../../java/dependencies/adddependency)
+  * groupId: `jakarta.annotation`
+  * artifactId: `jakarta.annotation-api`
+  * version: `1.3.x`
+  * onlyIfUsing: `javax.annotation.security.*`
+  * scope: `provided`
+  * acceptTransitive: `true`
+* [Add Gradle or Maven dependency](../../../java/dependencies/adddependency)
+  * groupId: `jakarta.annotation`
+  * artifactId: `jakarta.annotation-api`
+  * version: `1.3.x`
+  * onlyIfUsing: `javax.annotation.sql.*`
   * scope: `provided`
   * acceptTransitive: `true`
 
@@ -98,7 +154,63 @@ recipeList:
       groupId: jakarta.annotation
       artifactId: jakarta.annotation-api
       version: 1.3.x
-      onlyIfUsing: javax.annotation..*
+      onlyIfUsing: javax.annotation.Generated
+      scope: provided
+      acceptTransitive: true
+  - org.openrewrite.java.dependencies.AddDependency:
+      groupId: jakarta.annotation
+      artifactId: jakarta.annotation-api
+      version: 1.3.x
+      onlyIfUsing: javax.annotation.ManagedBean
+      scope: provided
+      acceptTransitive: true
+  - org.openrewrite.java.dependencies.AddDependency:
+      groupId: jakarta.annotation
+      artifactId: jakarta.annotation-api
+      version: 1.3.x
+      onlyIfUsing: javax.annotation.PostConstruct
+      scope: provided
+      acceptTransitive: true
+  - org.openrewrite.java.dependencies.AddDependency:
+      groupId: jakarta.annotation
+      artifactId: jakarta.annotation-api
+      version: 1.3.x
+      onlyIfUsing: javax.annotation.PreDestroy
+      scope: provided
+      acceptTransitive: true
+  - org.openrewrite.java.dependencies.AddDependency:
+      groupId: jakarta.annotation
+      artifactId: jakarta.annotation-api
+      version: 1.3.x
+      onlyIfUsing: javax.annotation.Priority
+      scope: provided
+      acceptTransitive: true
+  - org.openrewrite.java.dependencies.AddDependency:
+      groupId: jakarta.annotation
+      artifactId: jakarta.annotation-api
+      version: 1.3.x
+      onlyIfUsing: javax.annotation.Resource
+      scope: provided
+      acceptTransitive: true
+  - org.openrewrite.java.dependencies.AddDependency:
+      groupId: jakarta.annotation
+      artifactId: jakarta.annotation-api
+      version: 1.3.x
+      onlyIfUsing: javax.annotation.Resources
+      scope: provided
+      acceptTransitive: true
+  - org.openrewrite.java.dependencies.AddDependency:
+      groupId: jakarta.annotation
+      artifactId: jakarta.annotation-api
+      version: 1.3.x
+      onlyIfUsing: javax.annotation.security.*
+      scope: provided
+      acceptTransitive: true
+  - org.openrewrite.java.dependencies.AddDependency:
+      groupId: jakarta.annotation
+      artifactId: jakarta.annotation-api
+      version: 1.3.x
+      onlyIfUsing: javax.annotation.sql.*
       scope: provided
       acceptTransitive: true
 
@@ -283,6 +395,25 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
+
+### Maven metadata failures
+**org.openrewrite.maven.table.MavenMetadataFailures**
+
+_Attempts to resolve maven metadata that failed._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Group id | The groupId of the artifact for which the metadata download failed. |
+| Artifact id | The artifactId of the artifact for which the metadata download failed. |
+| Version | The version of the artifact for which the metadata download failed. |
+| Maven repository | The URL of the Maven repository that the metadata download failed on. |
+| Snapshots | Does the repository support snapshots. |
+| Releases | Does the repository support releases. |
+| Failure | The reason the metadata download failed. |
+
+</TabItem>
+
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results

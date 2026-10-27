@@ -25,6 +25,59 @@ _Finds zero-argument `Object.wait()` invocations whose enclosing method holds tw
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license). Moderne customers can download precompiled artifacts from The Code Genome Project. For non-commercial use you can build the artifact from source locally.
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+class A {
+    private final Object outer = new Object();
+    private final Object inner = new Object();
+
+    void await() throws InterruptedException {
+        synchronized (outer) {
+            synchronized (inner) {
+                inner.wait();
+            }
+        }
+    }
+}
+```
+
+###### After
+```java
+class A {
+    private final Object outer = new Object();
+    private final Object inner = new Object();
+
+    void await() throws InterruptedException {
+        synchronized (outer) {
+            synchronized (inner) {
+                /*~~(`wait()` called while holding multiple monitors. Only the receiver's monitor is released; other held monitors continue to block their waiters and can deadlock.)~~>*/inner.wait();
+            }
+        }
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -8,1 +8,1 @@
+        synchronized (outer) {
+            synchronized (inner) {
+-               inner.wait();
++               /*~~(`wait()` called while holding multiple monitors. Only the receiver's monitor is released; other held monitors continue to block their waiters and can deadlock.)~~>*/inner.wait();
+            }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

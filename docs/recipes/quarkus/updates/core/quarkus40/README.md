@@ -9,6 +9,9 @@ description: Quarkus40 OpenRewrite recipes.
 _Recipes that include further recipes, often including the individual recipes below._
 
 * [Change Maven and Gradle Java version property values to 21](./javaversion21.md)
+* [Handle dropped relocations in Quarkus 4.0](./droppedrelocations.md)
+* [Migrate removed ArC and Quarkus deployment APIs](./arcextensionapiremovals.md)
+* [Migrate to the Prometheus client 1.x based Micrometer registry](./micrometerprometheusmetrics.md)
 * [Rename deprecated HTTP SSL configuration properties](./httpsslconfigproperties.md)
 * [Rename deprecated Hibernate ORM configuration properties](./hibernateormconfigproperties.md)
 * [Rename deprecated Infinispan configuration properties](./infinispanconfigproperties.md)
@@ -19,11 +22,14 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Rename deprecated REST Client configuration properties](./restclientconfigproperties.md)
 * [Rename deprecated Redis Cache configuration properties](./rediscacheconfigproperties.md)
 * [Rename miscellaneous deprecated configuration properties](./miscconfigproperties.md)
+* [Replace @DefaultBean with @Reserve](./arcdefaultbeantoreserve.md)
 
 ## Recipes
 
+* [Add `@Priority(0)` to beans annotated with `@Reserve`](./addprioritytoreserveannotation.md)
 * [Migrate Jackson from 2.x to 3.x](./jackson3migration.md)
 * [Migrate to Java 21](./upgradetojava21.md)
+* [Rename Flyway MongoDB artifact](./flywaymongodbdependencyrename.md)
 * [Rename deprecated Kubernetes configuration properties](./kubernetesconfigproperties.md)
 * [Rename deprecated SmallRye configuration properties](./smallryeconfigproperties.md)
 

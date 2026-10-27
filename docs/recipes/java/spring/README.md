@@ -40,13 +40,13 @@ _Recipes that include further recipes, often including the individual recipes be
 
 ## Recipes
 
-* [Add a spring configuration property](./addspringproperty.md)
+* [Add a Spring configuration property](./addspringproperty.md)
 * [Change parameter type for a method declaration](./changemethodparameter.md)
 * [Change the key of a Spring application property](./changespringpropertykey.md)
-* [Change the value of a spring application property](./changespringpropertyvalue.md)
+* [Change the value of a Spring application property](./changespringpropertyvalue.md)
 * [Comment out Spring properties](./commentoutspringpropertykey.md)
 * [Convert auto-configuration `exclude` to `excludeName`](./convertautoconfigurationexcludetoexcludename.md)
-* [Delete a spring configuration property](./deletespringproperty.md)
+* [Delete a Spring configuration property](./deletespringproperty.md)
 * [Expand Spring YAML properties](./expandproperties.md)
 * [Mark additional files as Spring configuration](./markadditionalspringconfigfiles.md)
 * [Normalize Spring `application*.properties` properties to kebab-case](./propertiestokebabcaseproperties.md)

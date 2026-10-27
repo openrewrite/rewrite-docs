@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.spring.security5.AuthorizeHttpRequests**
 
-_Replace `HttpSecurity.authorizeRequests(...)` deprecated in Spring Security 6 with `HttpSecurity.authorizeHttpRequests(...)` and all method calls on the resultant object respectively. Replace deprecated `AbstractInterceptUrlConfigurer` and its deprecated subclasses with `AuthorizeHttpRequestsConfigurer` and its corresponding subclasses._
+_Replace `HttpSecurity.authorizeRequests(...)` deprecated in Spring Security 6 with `HttpSecurity.authorizeHttpRequests(...)` and all method calls on the resultant object respectively. Replace deprecated `AbstractInterceptUrlConfigurer` and its deprecated subclasses with `AuthorizeHttpRequestsConfigurer` and its corresponding subclasses. Literal `access(String)` and `hasIpAddress(String)` expressions are wrapped in a `WebExpressionAuthorizationManager`. Files using expression-based authorization that can't be converted faithfully, such as `not()`, `expressionHandler(..)` or a custom `accessDecisionManager(..)`, are left unchanged, as `authorizeRequests` is still available in Spring Security 6._
 
 ## Recipe source
 

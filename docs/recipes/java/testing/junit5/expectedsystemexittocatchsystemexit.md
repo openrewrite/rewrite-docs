@@ -28,6 +28,111 @@ This recipe is used as part of the following composite recipes:
 
 * [Migrate System Rules to System Stubs and JUnit Pioneer](/recipes/java/testing/junit5/migratesystemrules.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.junit.Rule;
+import org.junit.contrib.java.lang.system.ExpectedSystemExit;
+import org.junit.jupiter.api.Test;
+
+import java.io.File;
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+class CliTest {
+    @Rule
+    public final ExpectedSystemExit exit = ExpectedSystemExit.none();
+
+    @Test
+    void exitsWithError() {
+        String[] args = {"--bogus"};
+        exit.expectSystemExitWithStatus(2);
+        exit.checkAssertionAfterwards(() -> assertTrue(new File("error.log").exists()));
+        run(args);
+    }
+
+    private static void run(String[] args) {
+        System.exit(2);
+    }
+}
+```
+
+###### After
+```java
+import org.junit.jupiter.api.Test;
+
+import java.io.File;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static uk.org.webcompere.systemstubs.SystemStubs.catchSystemExit;
+
+class CliTest {
+
+    @Test
+    void exitsWithError() throws Exception {
+        String[] args = {"--bogus"};
+        int status = catchSystemExit(() -> run(args));
+        assertEquals(2, status);
+        assertTrue(new File("error.log").exists());
+    }
+
+    private static void run(String[] args) {
+        System.exit(2);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,2 +1,0 @@
+-import org.junit.Rule;
+-import org.junit.contrib.java.lang.system.ExpectedSystemExit;
+import org.junit.jupiter.api.Test;
+@@ -7,0 +5,1 @@
+import java.io.File;
+
++import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+@@ -8,0 +7,1 @@
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
++import static uk.org.webcompere.systemstubs.SystemStubs.catchSystemExit;
+
+@@ -10,2 +10,0 @@
+
+class CliTest {
+-   @Rule
+-   public final ExpectedSystemExit exit = ExpectedSystemExit.none();
+
+@@ -14,1 +12,1 @@
+
+    @Test
+-   void exitsWithError() {
++   void exitsWithError() throws Exception {
+        String[] args = {"--bogus"};
+@@ -16,3 +14,3 @@
+    void exitsWithError() {
+        String[] args = {"--bogus"};
+-       exit.expectSystemExitWithStatus(2);
+-       exit.checkAssertionAfterwards(() -> assertTrue(new File("error.log").exists()));
+-       run(args);
++       int status = catchSystemExit(() -> run(args));
++       assertEquals(2, status);
++       assertTrue(new File("error.log").exists());
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

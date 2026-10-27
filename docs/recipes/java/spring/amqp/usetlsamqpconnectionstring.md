@@ -36,7 +36,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 This recipe is used as part of the following composite recipes:
 
-* [Spring security best practices](/recipes/java/spring/security/springsecuritybestpractices.md)
+* [Spring Security best practices](/recipes/java/spring/security/springsecuritybestpractices.md)
 
 ## Example
 

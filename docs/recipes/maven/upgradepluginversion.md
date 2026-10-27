@@ -37,7 +37,6 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 This recipe is used as part of the following composite recipes:
 
-* [Add explicit JAXB API dependencies](/recipes/java/migrate/javax/addjaxbapidependencies.md)
 * [Apache Maven reproducible builds](/recipes/maven/reproduciblebuilds.md)
 * [Customize Quarkus BOM Version](/recipes/quarkus/spring/customizequarkusversion.md)
 * [JUnit 6 migration from JUnit 5.x](/recipes/java/testing/junit6/junit5to6migration.md)
@@ -73,9 +72,9 @@ This recipe is used as part of the following composite recipes:
 * [Migrate to Spring Framework 6.0 (Community Edition)](/recipes/java/spring/framework/upgradespringframework_6_0-community-edition.md)
 * [Migrate to WebLogic 14.1.1](/recipes/oracle/weblogic/rewrite/upgradeto1411.md)
 * [Quarkus 2.x migration from Quarkus 1.x](/recipes/quarkus/quarkus2/quarkus1to2migration.md)
-* [Update Plugins for Jakarta EE 10](/recipes/java/migrate/jakarta/migratepluginsforjakarta10.md)
-* [Update Plugins for Jakarta EE 11](/recipes/java/migrate/jakarta/migratepluginsforjakarta11.md)
-* [Update Plugins for Jakarta EE 9](/recipes/java/migrate/jakarta/migratepluginsforjakarta9.md)
+* [Update plugins for Jakarta EE 10](/recipes/java/migrate/jakarta/migratepluginsforjakarta10.md)
+* [Update plugins for Jakarta EE 11](/recipes/java/migrate/jakarta/migratepluginsforjakarta11.md)
+* [Update plugins for Jakarta EE 9](/recipes/java/migrate/jakarta/migratepluginsforjakarta9.md)
 * [Update the WebLogic version to 14.1.2](/recipes/oracle/weblogic/rewrite/updatebuildtoweblogic1412.md)
 * [Update the WebLogic version to 15.1.1](/recipes/oracle/weblogic/rewrite/updatebuildtoweblogic1511.md)
 * [Upgrade JaCoCo](/recipes/java/migrate/jacoco/upgradejacoco.md)

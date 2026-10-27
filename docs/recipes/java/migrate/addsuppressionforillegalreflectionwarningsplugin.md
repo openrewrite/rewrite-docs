@@ -1,17 +1,17 @@
 ---
-title: "Add maven jar plugin to suppress illegal reflection warnings"
-sidebar_label: "Add maven jar plugin to suppress illegal reflection warnings"
+title: "Add `maven-jar-plugin` to suppress illegal reflection warnings"
+sidebar_label: "Add `maven-jar-plugin` to suppress illegal reflection warnings"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Add maven jar plugin to suppress illegal reflection warnings
+# Add `maven-jar-plugin` to suppress illegal reflection warnings
 
 **org.openrewrite.java.migrate.AddSuppressionForIllegalReflectionWarningsPlugin**
 
-_Adds a maven jar plugin that's configured to suppress Illegal Reflection Warnings._
+_Adds a `maven-jar-plugin` with `Add-Opens` manifest entries to `war` and `ear` modules to suppress illegal reflection warnings._
 
 ## Recipe source
 
@@ -32,7 +32,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <RunRecipe
   recipeName="org.openrewrite.java.migrate.AddSuppressionForIllegalReflectionWarningsPlugin"
-  displayName="Add maven jar plugin to suppress illegal reflection warnings"
+  displayName="Add `maven-jar-plugin` to suppress illegal reflection warnings"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-migrate-java"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA"

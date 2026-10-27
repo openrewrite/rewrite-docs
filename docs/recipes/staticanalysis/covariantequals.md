@@ -11,11 +11,11 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.staticanalysis.CovariantEquals**
 
-_Checks that classes and records which define a covariant `equals()` method also override method `equals(Object)`. Covariant `equals()` means a method that is similar to `equals(Object)`, but with a covariant parameter type (any subtype of `Object`). Without a proper `equals(Object)` override, collections and other framework code that rely on the standard signature will silently use `Object.equals`, leading to incorrect behavior._
+_Checks that classes and records which define a covariant `equals()` method also override method `equals(Object)`. Covariant `equals()` means a method that is similar to `equals(Object)`, but with a covariant parameter type (any subtype of `Object`). Without a proper `equals(Object)` override, collections and other framework code that rely on the standard signature will silently use `Object.equals`, leading to incorrect behavior. Adds an `equals(Object)` that delegates to the covariant `equals()`, so overrides and callers of the covariant method keep compiling. Classes that do not also declare `hashCode()` are left unchanged._
 
 ### Tags
 
-* [RSPEC-S2162](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S2162&open=java%3AS2162)
+* [RSPEC-S1201](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S1201&open=java%3AS1201)
 
 ## Recipe source
 
@@ -47,6 +47,11 @@ class Test {
     public boolean equals(Test tee) {
         return n == tee.n;
     }
+
+    @Override
+    public int hashCode() {
+        return n;
+    }
 }
 ```
 
@@ -55,12 +60,18 @@ class Test {
 class Test {
     int n;
 
+    public boolean equals(Test tee) {
+        return n == tee.n;
+    }
+
     @Override
     public boolean equals(Object obj) {
-        if (obj == this) return true;
-        if (obj == null || getClass() != obj.getClass()) return false;
-        Test tee = (Test) obj;
-        return n == tee.n;
+        return obj instanceof Test && equals((Test) obj);
+    }
+
+    @Override
+    public int hashCode() {
+        return n;
     }
 }
 ```
@@ -69,16 +80,15 @@ class Test {
 <TabItem value="diff" label="Diff" >
 
 ```diff
-@@ -4,1 +4,5 @@
-    int n;
+@@ -9,0 +9,5 @@
 
--   public boolean equals(Test tee) {
-+   @Override
+    @Override
 +   public boolean equals(Object obj) {
-+       if (obj == this) return true;
-+       if (obj == null || getClass() != obj.getClass()) return false;
-+       Test tee = (Test) obj;
-        return n == tee.n;
++       return obj instanceof Test && equals((Test) obj);
++   }
++
++   @Override
+    public int hashCode() {
 ```
 </TabItem>
 </Tabs>

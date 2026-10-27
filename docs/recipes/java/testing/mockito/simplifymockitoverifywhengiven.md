@@ -1,13 +1,13 @@
 ---
-title: "Call to Mockito method &quot;verify&quot;, &quot;when&quot; or &quot;given&quot; should be simplified"
-sidebar_label: "Call to Mockito method &quot;verify&quot;, &quot;when&quot; or &quot;given&quot; should be simplified"
+title: "Remove `eq()` matchers from Mockito `verify`, `when` and `given` calls"
+sidebar_label: "Remove `eq()` matchers from Mockito `verify`, `when` and `given` calls"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Call to Mockito method &quot;verify&quot;, &quot;when&quot; or &quot;given&quot; should be simplified
+# Remove `eq()` matchers from Mockito `verify`, `when` and `given` calls
 
 **org.openrewrite.java.testing.mockito.SimplifyMockitoVerifyWhenGiven**
 
@@ -90,7 +90,7 @@ import static org.mockito.Mockito.mock;
 
 <RunRecipe
   recipeName="org.openrewrite.java.testing.mockito.SimplifyMockitoVerifyWhenGiven"
-  displayName="Call to Mockito method &quot;verify&quot;, &quot;when&quot; or &quot;given&quot; should be simplified"
+  displayName="Remove `eq()` matchers from Mockito `verify`, `when` and `given` calls"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-testing-frameworks"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_TESTING_FRAMEWORKS"

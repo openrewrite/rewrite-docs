@@ -1,13 +1,13 @@
 ---
-title: "Update Prometheus Pushgateway Dependency Coordinates"
-sidebar_label: "Update Prometheus Pushgateway Dependency Coordinates"
+title: "Update Prometheus Pushgateway dependency coordinates"
+sidebar_label: "Update Prometheus Pushgateway dependency coordinates"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Update Prometheus Pushgateway Dependency Coordinates
+# Update Prometheus Pushgateway dependency coordinates
 
 **org.openrewrite.java.spring.boot3.UpdatePrometheusPushgateway**
 
@@ -37,6 +37,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * oldArtifactId: `simpleclient_pushgateway`
   * newGroupId: `io.prometheus`
   * newArtifactId: `prometheus-metrics-exporter-pushgateway`
+  * newVersion: `1.3.x`
 
 </TabItem>
 
@@ -46,7 +47,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.spring.boot3.UpdatePrometheusPushgateway
-displayName: Update Prometheus Pushgateway Dependency Coordinates
+displayName: Update Prometheus Pushgateway dependency coordinates
 description: |
   Update the Prometheus Pushgateway artifact ID for Spring Boot 3.5 compatibility.
 preconditions:
@@ -57,6 +58,7 @@ recipeList:
       oldArtifactId: simpleclient_pushgateway
       newGroupId: io.prometheus
       newArtifactId: prometheus-metrics-exporter-pushgateway
+      newVersion: 1.3.x
 
 ```
 </TabItem>
@@ -69,12 +71,57 @@ This recipe is used as part of the following composite recipes:
 * [Migrate to Spring Boot 3.5 (Community Edition)](/recipes/java/spring/boot3/upgradespringboot_3_5-community-edition.md)
 * [Migrate to Spring Boot 3.5 (Moderne Edition)](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot3/upgradespringboot_3_5-moderne-edition)
 
+## Examples
+##### Example 1
+`UpdatePrometheusPushgatewayTest#explicitVersionMovesToResolvableVersion`
+
+
+###### Unchanged
+```xml title="pom.xml"
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.example</groupId>
+  <artifactId>demo</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <dependencies>
+    <dependency>
+      <groupId>io.prometheus</groupId>
+      <artifactId>simpleclient_pushgateway</artifactId>
+      <version>0.16.0</version>
+    </dependency>
+  </dependencies>
+</project>
+```
+
+---
+
+##### Example 2
+`UpdatePrometheusPushgatewayTest#explicitVersionMovesToResolvableVersion`
+
+
+###### Unchanged
+```xml title="pom.xml"
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.example</groupId>
+  <artifactId>demo</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <dependencies>
+    <dependency>
+      <groupId>io.prometheus</groupId>
+      <artifactId>simpleclient_pushgateway</artifactId>
+      <version>0.16.0</version>
+    </dependency>
+  </dependencies>
+</project>
+```
+
 
 ## Usage
 
 <RunRecipe
   recipeName="org.openrewrite.java.spring.boot3.UpdatePrometheusPushgateway"
-  displayName="Update Prometheus Pushgateway Dependency Coordinates"
+  displayName="Update Prometheus Pushgateway dependency coordinates"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-spring"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING"
@@ -93,6 +140,25 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
+
+### Maven metadata failures
+**org.openrewrite.maven.table.MavenMetadataFailures**
+
+_Attempts to resolve maven metadata that failed._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Group id | The groupId of the artifact for which the metadata download failed. |
+| Artifact id | The artifactId of the artifact for which the metadata download failed. |
+| Version | The version of the artifact for which the metadata download failed. |
+| Maven repository | The URL of the Maven repository that the metadata download failed on. |
+| Snapshots | Does the repository support snapshots. |
+| Releases | Does the repository support releases. |
+| Failure | The reason the metadata download failed. |
+
+</TabItem>
+
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results

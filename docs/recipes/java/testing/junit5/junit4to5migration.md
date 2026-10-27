@@ -46,6 +46,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 **Recipes**
 
 * [Migrate System Rules to System Stubs and JUnit Pioneer](../../../java/testing/junit5/migratesystemrules)
+* [Use `WireMockServer` for a `WireMockRule` used as a server](../../../java/testing/junit5/wiremockruletowiremockserver)
 * [Use wiremock extension](../../../java/testing/junit5/usewiremockextension)
 * [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
   * oldGroupId: `com.github.tomakehurst`
@@ -64,7 +65,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * overrideManagedVersion: `true`
 * [Use JUnit Jupiter `@Disabled`](../../../java/testing/junit5/ignoretodisabled)
 * [Use JUnit Jupiter `Executable`](../../../java/testing/junit5/throwingrunnabletoexecutable)
-* [Remove JUnit 4 `@RunWith` annotations that do not require an `@ExtendsWith` replacement](../../../java/testing/junit5/removeobsoleterunners)
+* [Remove JUnit 4 `@RunWith` annotations that do not require an `@ExtendWith` replacement](../../../java/testing/junit5/removeobsoleterunners)
   * obsoleteRunners: `[org.junit.runners.JUnit4, org.junit.runners.BlockJUnit4ClassRunner]`
 * [Upgrade to Cucumber-JVM 7.x](../../../cucumber/jvm/upgradecucumber7x)
 * [Remove Maven plugin dependency](../../../maven/removeplugindependency)
@@ -72,7 +73,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * pluginArtifactId: `maven-surefire-plugin`
   * groupId: `org.apache.maven.surefire`
   * artifactId: `surefire-junit*`
-* [Upgrade Surefire Plugin](../../../java/testing/junit5/upgradesurefireplugin)
+* [Upgrade the Maven Surefire plugin](../../../java/testing/junit5/upgradesurefireplugin)
 * [Add Hamcrest JUnit dependency](../../../java/testing/junit5/addhamcrestjunitdependency)
 * [Use `MatcherAssert#assertThat(..)`](../../../java/testing/junit5/usehamcrestassertthat)
 * [Use `Assertions#assume*(..)` and Hamcrest's `MatcherAssume#assume*(..)`](../../../java/testing/junit5/migrateassumptions)
@@ -81,27 +82,27 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Change method name](../../../java/changemethodname)
   * methodPattern: `org.junit.Assert assertEquals(.., Object[], Object[])`
   * newMethodName: `assertArrayEquals`
-* [JUnit 4 `Assert` To JUnit Jupiter `Assertions`](../../../java/testing/junit5/asserttoassertions)
+* [JUnit 4 `Assert` to JUnit Jupiter `Assertions`](../../../java/testing/junit5/asserttoassertions)
 * [JUnit 4 `@Category` to JUnit Jupiter `@Tag`](../../../java/testing/junit5/categorytotag)
 * [Migrate JUnit 4 assertion failure exceptions to JUnit Jupiter](../../../java/testing/junit5/migrateassertionfailederror)
 * [Cleanup JUnit imports](../../../java/testing/junit5/cleanupjunitimports)
 * [Use JUnit Jupiter `@TempDir`](../../../java/testing/junit5/temporaryfoldertotempdir)
-* [Make `@TempDir` fields non final](../../../java/testing/junit5/tempdirnonfinal)
-* [JUnit TestName @Rule to JUnit Jupiter TestInfo](../../../java/testing/junit5/testruletotestinfo)
+* [Make `@TempDir` fields non-final](../../../java/testing/junit5/tempdirnonfinal)
+* [JUnit `TestName` `@Rule` to JUnit Jupiter `TestInfo`](../../../java/testing/junit5/testruletotestinfo)
 * [Migrate JUnit 4 lifecycle annotations to JUnit Jupiter](../../../java/testing/junit5/updatebeforeafterannotations)
 * [Migrate JUnit 4 `@Test` annotations to JUnit 5](../../../java/testing/junit5/updatetestannotation)
 * [JUnit 4 `@Rule Timeout` to JUnit Jupiter's `Timeout`](../../../java/testing/junit5/timeoutruletoclassannotation)
 * [Add missing `@BeforeEach`, `@AfterEach`, `@Test` to overriding methods](../../../java/testing/junit5/addmissingtestbeforeafterannotations)
 * [JUnit 4 `@RunWith(Parameterized.class)` to JUnit Jupiter parameterized tests](../../../java/testing/junit5/parameterizedrunnertoparameterized)
-* [Pragmatists `@RunWith(JUnitParamsRunner.class)` to JUnit Jupiter `@Parameterized` tests](../../../java/testing/junit5/junitparamsrunnertoparameterized)
-* [JUnit 4 `ExpectedException` To JUnit Jupiter's `assertThrows()`](../../../java/testing/junit5/expectedexceptiontoassertthrows)
-* [OkHttp 3.x `MockWebServer` `@Rule` To 4.x `MockWebServer`](../../../java/testing/junit5/updatemockwebserver)
-* [Use Vert.x JUnit 5 Extension](../../../java/testing/junit5/vertxunittovertxjunit5)
+* [Pragmatists `@RunWith(JUnitParamsRunner.class)` to JUnit Jupiter `@ParameterizedTest` tests](../../../java/testing/junit5/junitparamsrunnertoparameterized)
+* [JUnit 4 `ExpectedException` to JUnit Jupiter's `assertThrows()`](../../../java/testing/junit5/expectedexceptiontoassertthrows)
+* [OkHttp 3.x `MockWebServer` `@Rule` to 4.x `MockWebServer`](../../../java/testing/junit5/updatemockwebserver)
+* [Use Vert.x JUnit 5 extension](../../../java/testing/junit5/vertxunittovertxjunit5)
 * [JUnit 4 `@RunWith(Enclosed.class)` to JUnit Jupiter `@Nested`](../../../java/testing/junit5/enclosedtonested)
 * [Use OkHttp 3 MockWebServer for JUnit 5](../../../java/testing/junit5/upgradeokhttpmockwebserver)
 * [Use Mockito JUnit Jupiter extension](../../../java/testing/junit5/usemockitoextension)
 * [Add `org.hamcrest:hamcrest` if it is used](../../../java/testing/hamcrest/addhamcrestifused)
-* [Use XMLUnit Legacy for JUnit 5](../../../java/testing/junit5/usexmlunitlegacy)
+* [Use XMLUnit legacy for JUnit 5](../../../java/testing/junit5/usexmlunitlegacy)
 * [Remove a Gradle or Maven dependency](../../../java/dependencies/removedependency)
   * groupId: `junit`
   * artifactId: `junit`
@@ -138,11 +139,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Change type](../../../java/changetype)
   * oldFullyQualifiedTypeName: `org.jbehave.core.junit.JUnitStories`
   * newFullyQualifiedTypeName: `org.jbehave.core.junit.JupiterStories`
-* [Use Arquillian JUnit 5 Extension](../../../java/testing/arquillian/arquillianjunit4toarquillianjunit5)
+* [Use Arquillian JUnit 5 extension](../../../java/testing/arquillian/arquillianjunit4toarquillianjunit5)
 * [Use Byteman JUnit 5 dependency](../../../java/testing/byteman/bytemanjunit4tobytemanjunit5)
 * [Migrate rider-spring (JUnit4) to rider-junit5 (JUnit5)](../../../java/testing/dbrider/migratedbriderspringtodbriderjunit5)
 * [AssertJ `@Rule` soft assertions to `SoftAssertionsExtension`](../../../java/testing/junit5/junitsoftassertionstosoftassertionsextension)
-* [Handle the usage of ExternalResourceRule fields using @ExtendWith(ExternalResourceSupport.class)](../../../java/testing/junit5/handleexternalresourcerules)
+* [Handle the usage of `ExternalResource` rule fields using `@ExtendWith(ExternalResourceSupport.class)`](../../../java/testing/junit5/handleexternalresourcerules)
+* [Add JUnit Jupiter migrationsupport](../../../java/testing/junit5/addjupitermigrationsupport)
 
 </TabItem>
 
@@ -166,6 +168,7 @@ preconditions:
       invertMarking: true
 recipeList:
   - org.openrewrite.java.testing.junit5.MigrateSystemRules
+  - org.openrewrite.java.testing.junit5.WireMockRuleToWireMockServer
   - org.openrewrite.java.testing.junit5.UseWiremockExtension
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: com.github.tomakehurst
@@ -263,6 +266,7 @@ recipeList:
   - org.openrewrite.java.testing.dbrider.MigrateDbRiderSpringToDbRiderJUnit5
   - org.openrewrite.java.testing.junit5.JUnitSoftAssertionsToSoftAssertionsExtension
   - org.openrewrite.java.testing.junit5.HandleExternalResourceRules
+  - org.openrewrite.java.testing.junit5.AddJupiterMigrationSupport
 
 ```
 </TabItem>
@@ -278,6 +282,54 @@ This recipe is used as part of the following composite recipes:
 
 ## Examples
 ##### Example 1
+`AddHamcrestIfUsedTest#migrationAddsDependencyForExpectedExceptionMessage`
+
+
+###### Unchanged
+```java
+import org.junit.Rule;
+import org.junit.Test;
+import org.junit.rules.ExpectedException;
+
+class T {
+    @Rule public ExpectedException thrown = ExpectedException.none();
+    @Test public void test() {
+        thrown.expect(IllegalStateException.class);
+        thrown.expectMessage("bad");
+        failOperation();
+    }
+    void failOperation() {
+        throw new IllegalStateException("bad");
+    }
+}
+```
+
+###### Unchanged
+```mavenProject
+example
+```
+
+###### Unchanged
+```xml title="pom.xml"
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.example</groupId>
+    <artifactId>example</artifactId>
+    <version>1.0</version>
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.2</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+</project>
+```
+
+---
+
+##### Example 2
 `EnclosedToNestedTest#oneInnerClass`
 
 
@@ -339,76 +391,6 @@ public class RootTest {
 +   @Nested
 +   public class InnerTest {
         @Test
-```
-</TabItem>
-</Tabs>
-
----
-
-##### Example 2
-`JUnit5MigrationTest#assertThatReceiver`
-
-
-<Tabs groupId="beforeAfter">
-<TabItem value="java" label="java">
-
-
-###### Before
-```java
-import org.junit.Assert;
-import org.junit.Test;
-
-import static java.util.Arrays.asList;
-import static org.hamcrest.Matchers.containsInAnyOrder;
-
-public class SampleTest {
-    @SuppressWarnings("ALL")
-    @Test
-    public void filterShouldRemoveUnusedConfig() {
-        Assert.assertThat(asList("1", "2", "3"),
-                containsInAnyOrder("3", "2", "1"));
-    }
-}
-```
-
-###### After
-```java
-import org.junit.jupiter.api.Test;
-
-import static java.util.Arrays.asList;
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.containsInAnyOrder;
-
-public class SampleTest {
-    @SuppressWarnings("ALL")
-    @Test
-    public void filterShouldRemoveUnusedConfig() {
-        assertThat(asList("1", "2", "3"),
-                containsInAnyOrder("3", "2", "1"));
-    }
-}
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
-@@ -1,2 +1,1 @@
--import org.junit.Assert;
--import org.junit.Test;
-+import org.junit.jupiter.api.Test;
-
-@@ -5,0 +4,1 @@
-
-import static java.util.Arrays.asList;
-+import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.containsInAnyOrder;
-@@ -11,1 +11,1 @@
-    @Test
-    public void filterShouldRemoveUnusedConfig() {
--       Assert.assertThat(asList("1", "2", "3"),
-+       assertThat(asList("1", "2", "3"),
-                containsInAnyOrder("3", "2", "1"));
 ```
 </TabItem>
 </Tabs>
@@ -416,202 +398,6 @@ import static org.hamcrest.Matchers.containsInAnyOrder;
 ---
 
 ##### Example 3
-`JunitMockitoUpgradeIntegrationTest#replaceMockAnnotation`
-
-
-<Tabs groupId="beforeAfter">
-<TabItem value="java" label="java">
-
-
-###### Before
-```java
-package org.openrewrite.java.testing.junit5;
-
-import org.junit.Before;
-import org.junit.Test;
-import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
-
-import java.util.List;
-
-import static org.mockito.Mockito.verify;
-
-public class MockitoTests {
-    @Mock
-    List<String> mockedList;
-
-    @Before
-    public void initMocks() {
-        MockitoAnnotations.initMocks(this);
-    }
-
-    @Test
-    public void usingAnnotationBasedMock() {
-
-        mockedList.add("one");
-        mockedList.clear();
-
-        verify(mockedList).add("one");
-        verify(mockedList).clear();
-    }
-}
-```
-
-###### After
-```java
-package org.openrewrite.java.testing.junit5;
-
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
-
-import java.util.List;
-
-import static org.mockito.Mockito.verify;
-
-public class MockitoTests {
-    private AutoCloseable mocks;
-    @Mock
-    List<String> mockedList;
-
-    @BeforeEach
-    public void initMocks() {
-        mocks = MockitoAnnotations.openMocks(this);
-    }
-
-    @Test
-    public void usingAnnotationBasedMock() {
-
-        mockedList.add("one");
-        mockedList.clear();
-
-        verify(mockedList).add("one");
-        verify(mockedList).clear();
-    }
-
-    @AfterEach
-    void tearDown() throws Exception {
-        mocks.close();
-    }
-}
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
-@@ -3,2 +3,3 @@
-package org.openrewrite.java.testing.junit5;
-
--import org.junit.Before;
--import org.junit.Test;
-+import org.junit.jupiter.api.AfterEach;
-+import org.junit.jupiter.api.BeforeEach;
-+import org.junit.jupiter.api.Test;
-import org.mockito.Mock;
-@@ -13,0 +14,1 @@
-
-public class MockitoTests {
-+   private AutoCloseable mocks;
-    @Mock
-@@ -16,1 +18,1 @@
-    List<String> mockedList;
-
--   @Before
-+   @BeforeEach
-    public void initMocks() {
-@@ -18,1 +20,1 @@
-    @Before
-    public void initMocks() {
--       MockitoAnnotations.initMocks(this);
-+       mocks = MockitoAnnotations.openMocks(this);
-    }
-@@ -30,0 +32,5 @@
-        verify(mockedList).clear();
-    }
-+
-+   @AfterEach
-+   void tearDown() throws Exception {
-+       mocks.close();
-+   }
-}
-```
-</TabItem>
-</Tabs>
-
----
-
-##### Example 4
-`EnclosedToNestedTest#oneInnerClass`
-
-
-<Tabs groupId="beforeAfter">
-<TabItem value="java" label="java">
-
-
-###### Before
-```java
-import org.junit.Test;
-import org.junit.experimental.runners.Enclosed;
-import org.junit.runner.RunWith;
-
-@RunWith(Enclosed.class)
-public class RootTest {
-    public static class InnerTest {
-        @Test
-        public void test() {
-        }
-    }
-}
-```
-
-###### After
-```java
-import org.junit.jupiter.api.Nested;
-import org.junit.jupiter.api.Test;
-
-public class RootTest {
-    @Nested
-    public class InnerTest {
-        @Test
-        public void test() {
-        }
-    }
-}
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
-@@ -1,3 +1,2 @@
--import org.junit.Test;
--import org.junit.experimental.runners.Enclosed;
--import org.junit.runner.RunWith;
-+import org.junit.jupiter.api.Nested;
-+import org.junit.jupiter.api.Test;
-
-@@ -5,1 +4,0 @@
-import org.junit.runner.RunWith;
-
--@RunWith(Enclosed.class)
-public class RootTest {
-@@ -7,1 +5,2 @@
-@RunWith(Enclosed.class)
-public class RootTest {
--   public static class InnerTest {
-+   @Nested
-+   public class InnerTest {
-        @Test
-```
-</TabItem>
-</Tabs>
-
----
-
-##### Example 5
 `JUnit5MigrationTest#assertThatReceiver`
 
 
@@ -681,7 +467,7 @@ import static org.hamcrest.Matchers.containsInAnyOrder;
 
 ---
 
-##### Example 6
+##### Example 4
 `JunitMockitoUpgradeIntegrationTest#replaceMockAnnotation`
 
 
@@ -806,6 +592,658 @@ public class MockitoTests {
 ```
 </TabItem>
 </Tabs>
+
+---
+
+##### Example 5
+`SystemRulesMigrationTest#migrateRulesAndDependencies`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.junit.Rule;
+import org.junit.contrib.java.lang.system.EnvironmentVariables;
+import org.junit.contrib.java.lang.system.ExpectedSystemExit;
+import org.junit.contrib.java.lang.system.ProvideSystemProperty;
+import org.junit.contrib.java.lang.system.SystemOutRule;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+class CliTest {
+    @Rule
+    public final ProvideSystemProperty properties = new ProvideSystemProperty("mode", "test");
+
+    @Rule
+    public final EnvironmentVariables environment = new EnvironmentVariables();
+
+    @Rule
+    public final SystemOutRule out = new SystemOutRule().enableLog().mute();
+
+    @Rule
+    public final ExpectedSystemExit exit = ExpectedSystemExit.none();
+
+    @Test
+    void printsUsageAndExits() {
+        environment.set("HOME", "/tmp");
+        exit.expectSystemExitWithStatus(1);
+        exit.checkAssertionAfterwards(() -> assertEquals("usage", out.getLog()));
+        System.out.print("usage");
+        System.exit(1);
+    }
+}
+```
+
+###### After
+```java
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.junitpioneer.jupiter.SetSystemProperty;
+import uk.org.webcompere.systemstubs.environment.EnvironmentVariables;
+import uk.org.webcompere.systemstubs.jupiter.SystemStub;
+import uk.org.webcompere.systemstubs.jupiter.SystemStubsExtension;
+import uk.org.webcompere.systemstubs.stream.SystemOut;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static uk.org.webcompere.systemstubs.SystemStubs.catchSystemExit;
+
+@ExtendWith(SystemStubsExtension.class)
+@SetSystemProperty(key = "mode", value = "test")
+class CliTest {
+
+    @SystemStub
+    public final EnvironmentVariables environment = new EnvironmentVariables();
+
+    @SystemStub
+    public final SystemOut out = new SystemOut();
+
+    @Test
+    void printsUsageAndExits() throws Exception {
+        environment.set("HOME", "/tmp");
+        int status = catchSystemExit(() -> {
+            System.out.print("usage");
+            System.exit(1);
+        });
+        assertEquals(1, status);
+        assertEquals("usage", out.getText());
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,5 +1,0 @@
+-import org.junit.Rule;
+-import org.junit.contrib.java.lang.system.EnvironmentVariables;
+-import org.junit.contrib.java.lang.system.ExpectedSystemExit;
+-import org.junit.contrib.java.lang.system.ProvideSystemProperty;
+-import org.junit.contrib.java.lang.system.SystemOutRule;
+import org.junit.jupiter.api.Test;
+@@ -7,0 +2,6 @@
+import org.junit.contrib.java.lang.system.SystemOutRule;
+import org.junit.jupiter.api.Test;
++import org.junit.jupiter.api.extension.ExtendWith;
++import org.junitpioneer.jupiter.SetSystemProperty;
++import uk.org.webcompere.systemstubs.environment.EnvironmentVariables;
++import uk.org.webcompere.systemstubs.jupiter.SystemStub;
++import uk.org.webcompere.systemstubs.jupiter.SystemStubsExtension;
++import uk.org.webcompere.systemstubs.stream.SystemOut;
+
+@@ -9,0 +10,1 @@
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
++import static uk.org.webcompere.systemstubs.SystemStubs.catchSystemExit;
+
+@@ -10,0 +12,2 @@
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
++@ExtendWith(SystemStubsExtension.class)
++@SetSystemProperty(key = "mode", value = "test")
+class CliTest {
+@@ -11,2 +15,0 @@
+
+class CliTest {
+-   @Rule
+-   public final ProvideSystemProperty properties = new ProvideSystemProperty("mode", "test");
+
+@@ -14,1 +16,1 @@
+    public final ProvideSystemProperty properties = new ProvideSystemProperty("mode", "test");
+
+-   @Rule
++   @SystemStub
+    public final EnvironmentVariables environment = new EnvironmentVariables();
+@@ -17,2 +19,2 @@
+    public final EnvironmentVariables environment = new EnvironmentVariables();
+
+-   @Rule
+-   public final SystemOutRule out = new SystemOutRule().enableLog().mute();
++   @SystemStub
++   public final SystemOut out = new SystemOut();
+
+@@ -20,3 +22,0 @@
+    public final SystemOutRule out = new SystemOutRule().enableLog().mute();
+
+-   @Rule
+-   public final ExpectedSystemExit exit = ExpectedSystemExit.none();
+-
+    @Test
+@@ -24,1 +23,1 @@
+
+    @Test
+-   void printsUsageAndExits() {
++   void printsUsageAndExits() throws Exception {
+        environment.set("HOME", "/tmp");
+@@ -26,4 +25,6 @@
+    void printsUsageAndExits() {
+        environment.set("HOME", "/tmp");
+-       exit.expectSystemExitWithStatus(1);
+-       exit.checkAssertionAfterwards(() -> assertEquals("usage", out.getLog()));
+-       System.out.print("usage");
+-       System.exit(1);
++       int status = catchSystemExit(() -> {
++           System.out.print("usage");
++           System.exit(1);
++       });
++       assertEquals(1, status);
++       assertEquals("usage", out.getText());
+    }
+```
+</TabItem>
+</Tabs>
+
+###### Unchanged
+```mavenProject
+example
+```
+
+---
+
+##### Example 6
+`AddHamcrestIfUsedTest#migrationAddsDependencyForExpectedExceptionMessage`
+
+
+###### Unchanged
+```java
+import org.junit.Rule;
+import org.junit.Test;
+import org.junit.rules.ExpectedException;
+
+class T {
+    @Rule public ExpectedException thrown = ExpectedException.none();
+    @Test public void test() {
+        thrown.expect(IllegalStateException.class);
+        thrown.expectMessage("bad");
+        failOperation();
+    }
+    void failOperation() {
+        throw new IllegalStateException("bad");
+    }
+}
+```
+
+###### Unchanged
+```mavenProject
+example
+```
+
+###### Unchanged
+```xml title="pom.xml"
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.example</groupId>
+    <artifactId>example</artifactId>
+    <version>1.0</version>
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.2</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+</project>
+```
+
+---
+
+##### Example 7
+`EnclosedToNestedTest#oneInnerClass`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.junit.Test;
+import org.junit.experimental.runners.Enclosed;
+import org.junit.runner.RunWith;
+
+@RunWith(Enclosed.class)
+public class RootTest {
+    public static class InnerTest {
+        @Test
+        public void test() {
+        }
+    }
+}
+```
+
+###### After
+```java
+import org.junit.jupiter.api.Nested;
+import org.junit.jupiter.api.Test;
+
+public class RootTest {
+    @Nested
+    public class InnerTest {
+        @Test
+        public void test() {
+        }
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,3 +1,2 @@
+-import org.junit.Test;
+-import org.junit.experimental.runners.Enclosed;
+-import org.junit.runner.RunWith;
++import org.junit.jupiter.api.Nested;
++import org.junit.jupiter.api.Test;
+
+@@ -5,1 +4,0 @@
+import org.junit.runner.RunWith;
+
+-@RunWith(Enclosed.class)
+public class RootTest {
+@@ -7,1 +5,2 @@
+@RunWith(Enclosed.class)
+public class RootTest {
+-   public static class InnerTest {
++   @Nested
++   public class InnerTest {
+        @Test
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 8
+`JUnit5MigrationTest#assertThatReceiver`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.junit.Assert;
+import org.junit.Test;
+
+import static java.util.Arrays.asList;
+import static org.hamcrest.Matchers.containsInAnyOrder;
+
+public class SampleTest {
+    @SuppressWarnings("ALL")
+    @Test
+    public void filterShouldRemoveUnusedConfig() {
+        Assert.assertThat(asList("1", "2", "3"),
+                containsInAnyOrder("3", "2", "1"));
+    }
+}
+```
+
+###### After
+```java
+import org.junit.jupiter.api.Test;
+
+import static java.util.Arrays.asList;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.containsInAnyOrder;
+
+public class SampleTest {
+    @SuppressWarnings("ALL")
+    @Test
+    public void filterShouldRemoveUnusedConfig() {
+        assertThat(asList("1", "2", "3"),
+                containsInAnyOrder("3", "2", "1"));
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,2 +1,1 @@
+-import org.junit.Assert;
+-import org.junit.Test;
++import org.junit.jupiter.api.Test;
+
+@@ -5,0 +4,1 @@
+
+import static java.util.Arrays.asList;
++import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.containsInAnyOrder;
+@@ -11,1 +11,1 @@
+    @Test
+    public void filterShouldRemoveUnusedConfig() {
+-       Assert.assertThat(asList("1", "2", "3"),
++       assertThat(asList("1", "2", "3"),
+                containsInAnyOrder("3", "2", "1"));
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 9
+`JunitMockitoUpgradeIntegrationTest#replaceMockAnnotation`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+package org.openrewrite.java.testing.junit5;
+
+import org.junit.Before;
+import org.junit.Test;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
+
+import java.util.List;
+
+import static org.mockito.Mockito.verify;
+
+public class MockitoTests {
+    @Mock
+    List<String> mockedList;
+
+    @Before
+    public void initMocks() {
+        MockitoAnnotations.initMocks(this);
+    }
+
+    @Test
+    public void usingAnnotationBasedMock() {
+
+        mockedList.add("one");
+        mockedList.clear();
+
+        verify(mockedList).add("one");
+        verify(mockedList).clear();
+    }
+}
+```
+
+###### After
+```java
+package org.openrewrite.java.testing.junit5;
+
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
+
+import java.util.List;
+
+import static org.mockito.Mockito.verify;
+
+public class MockitoTests {
+    private AutoCloseable mocks;
+    @Mock
+    List<String> mockedList;
+
+    @BeforeEach
+    public void initMocks() {
+        mocks = MockitoAnnotations.openMocks(this);
+    }
+
+    @Test
+    public void usingAnnotationBasedMock() {
+
+        mockedList.add("one");
+        mockedList.clear();
+
+        verify(mockedList).add("one");
+        verify(mockedList).clear();
+    }
+
+    @AfterEach
+    void tearDown() throws Exception {
+        mocks.close();
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,2 +3,3 @@
+package org.openrewrite.java.testing.junit5;
+
+-import org.junit.Before;
+-import org.junit.Test;
++import org.junit.jupiter.api.AfterEach;
++import org.junit.jupiter.api.BeforeEach;
++import org.junit.jupiter.api.Test;
+import org.mockito.Mock;
+@@ -13,0 +14,1 @@
+
+public class MockitoTests {
++   private AutoCloseable mocks;
+    @Mock
+@@ -16,1 +18,1 @@
+    List<String> mockedList;
+
+-   @Before
++   @BeforeEach
+    public void initMocks() {
+@@ -18,1 +20,1 @@
+    @Before
+    public void initMocks() {
+-       MockitoAnnotations.initMocks(this);
++       mocks = MockitoAnnotations.openMocks(this);
+    }
+@@ -30,0 +32,5 @@
+        verify(mockedList).clear();
+    }
++
++   @AfterEach
++   void tearDown() throws Exception {
++       mocks.close();
++   }
+}
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 10
+`SystemRulesMigrationTest#migrateRulesAndDependencies`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.junit.Rule;
+import org.junit.contrib.java.lang.system.EnvironmentVariables;
+import org.junit.contrib.java.lang.system.ExpectedSystemExit;
+import org.junit.contrib.java.lang.system.ProvideSystemProperty;
+import org.junit.contrib.java.lang.system.SystemOutRule;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+class CliTest {
+    @Rule
+    public final ProvideSystemProperty properties = new ProvideSystemProperty("mode", "test");
+
+    @Rule
+    public final EnvironmentVariables environment = new EnvironmentVariables();
+
+    @Rule
+    public final SystemOutRule out = new SystemOutRule().enableLog().mute();
+
+    @Rule
+    public final ExpectedSystemExit exit = ExpectedSystemExit.none();
+
+    @Test
+    void printsUsageAndExits() {
+        environment.set("HOME", "/tmp");
+        exit.expectSystemExitWithStatus(1);
+        exit.checkAssertionAfterwards(() -> assertEquals("usage", out.getLog()));
+        System.out.print("usage");
+        System.exit(1);
+    }
+}
+```
+
+###### After
+```java
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.junitpioneer.jupiter.SetSystemProperty;
+import uk.org.webcompere.systemstubs.environment.EnvironmentVariables;
+import uk.org.webcompere.systemstubs.jupiter.SystemStub;
+import uk.org.webcompere.systemstubs.jupiter.SystemStubsExtension;
+import uk.org.webcompere.systemstubs.stream.SystemOut;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static uk.org.webcompere.systemstubs.SystemStubs.catchSystemExit;
+
+@ExtendWith(SystemStubsExtension.class)
+@SetSystemProperty(key = "mode", value = "test")
+class CliTest {
+
+    @SystemStub
+    public final EnvironmentVariables environment = new EnvironmentVariables();
+
+    @SystemStub
+    public final SystemOut out = new SystemOut();
+
+    @Test
+    void printsUsageAndExits() throws Exception {
+        environment.set("HOME", "/tmp");
+        int status = catchSystemExit(() -> {
+            System.out.print("usage");
+            System.exit(1);
+        });
+        assertEquals(1, status);
+        assertEquals("usage", out.getText());
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,5 +1,0 @@
+-import org.junit.Rule;
+-import org.junit.contrib.java.lang.system.EnvironmentVariables;
+-import org.junit.contrib.java.lang.system.ExpectedSystemExit;
+-import org.junit.contrib.java.lang.system.ProvideSystemProperty;
+-import org.junit.contrib.java.lang.system.SystemOutRule;
+import org.junit.jupiter.api.Test;
+@@ -7,0 +2,6 @@
+import org.junit.contrib.java.lang.system.SystemOutRule;
+import org.junit.jupiter.api.Test;
++import org.junit.jupiter.api.extension.ExtendWith;
++import org.junitpioneer.jupiter.SetSystemProperty;
++import uk.org.webcompere.systemstubs.environment.EnvironmentVariables;
++import uk.org.webcompere.systemstubs.jupiter.SystemStub;
++import uk.org.webcompere.systemstubs.jupiter.SystemStubsExtension;
++import uk.org.webcompere.systemstubs.stream.SystemOut;
+
+@@ -9,0 +10,1 @@
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
++import static uk.org.webcompere.systemstubs.SystemStubs.catchSystemExit;
+
+@@ -10,0 +12,2 @@
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
++@ExtendWith(SystemStubsExtension.class)
++@SetSystemProperty(key = "mode", value = "test")
+class CliTest {
+@@ -11,2 +15,0 @@
+
+class CliTest {
+-   @Rule
+-   public final ProvideSystemProperty properties = new ProvideSystemProperty("mode", "test");
+
+@@ -14,1 +16,1 @@
+    public final ProvideSystemProperty properties = new ProvideSystemProperty("mode", "test");
+
+-   @Rule
++   @SystemStub
+    public final EnvironmentVariables environment = new EnvironmentVariables();
+@@ -17,2 +19,2 @@
+    public final EnvironmentVariables environment = new EnvironmentVariables();
+
+-   @Rule
+-   public final SystemOutRule out = new SystemOutRule().enableLog().mute();
++   @SystemStub
++   public final SystemOut out = new SystemOut();
+
+@@ -20,3 +22,0 @@
+    public final SystemOutRule out = new SystemOutRule().enableLog().mute();
+
+-   @Rule
+-   public final ExpectedSystemExit exit = ExpectedSystemExit.none();
+-
+    @Test
+@@ -24,1 +23,1 @@
+
+    @Test
+-   void printsUsageAndExits() {
++   void printsUsageAndExits() throws Exception {
+        environment.set("HOME", "/tmp");
+@@ -26,4 +25,6 @@
+    void printsUsageAndExits() {
+        environment.set("HOME", "/tmp");
+-       exit.expectSystemExitWithStatus(1);
+-       exit.checkAssertionAfterwards(() -> assertEquals("usage", out.getLog()));
+-       System.out.print("usage");
+-       System.exit(1);
++       int status = catchSystemExit(() -> {
++           System.out.print("usage");
++           System.exit(1);
++       });
++       assertEquals(1, status);
++       assertEquals("usage", out.getText());
+    }
+```
+</TabItem>
+</Tabs>
+
+###### Unchanged
+```mavenProject
+example
+```
 
 
 ## Usage
@@ -831,23 +1269,6 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
-<TabItem value="org.openrewrite.java.testing.mockito.table.PowerMockTestsDisabled" label="PowerMockTestsDisabled">
-
-### PowerMock tests disabled for manual migration
-**org.openrewrite.java.testing.mockito.table.PowerMockTestsDisabled**
-
-_Tests disabled because they use a PowerMock feature with no Mockito equivalent. Each row is an action item: rework the test so it does not reach into private members, then re-enable it._
-
-| Column Name | Description |
-| ----------- | ----------- |
-| Source path | The path of the test source file. |
-| Test class | The test class the disabled test belongs to. |
-| Disabled element | The test method that was disabled, or the class name when the usage sits outside a test method and the whole class had to be disabled. |
-| Scope | `METHOD` when a single test was disabled, `CLASS` when the whole test class was. |
-| Reason | The PowerMock usage that cannot be migrated. |
-
-</TabItem>
-
 <TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
 
 ### Maven metadata failures
@@ -864,6 +1285,23 @@ _Attempts to resolve maven metadata that failed._
 | Snapshots | Does the repository support snapshots. |
 | Releases | Does the repository support releases. |
 | Failure | The reason the metadata download failed. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.java.testing.mockito.table.PowerMockTestsDisabled" label="PowerMockTestsDisabled">
+
+### PowerMock tests disabled for manual migration
+**org.openrewrite.java.testing.mockito.table.PowerMockTestsDisabled**
+
+_Tests disabled because they use a PowerMock feature with no Mockito equivalent. Each row is an action item: rework the test so it does not reach into private members, then re-enable it._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Source path | The path of the test source file. |
+| Test class | The test class the disabled test belongs to. |
+| Disabled element | The test method that was disabled, or the class name when the usage sits outside a test method and the whole class had to be disabled. |
+| Scope | `METHOD` when a single test was disabled, `CLASS` when the whole test class was. |
+| Reason | The PowerMock usage that cannot be migrated. |
 
 </TabItem>
 

@@ -14,14 +14,14 @@ _Recipes for working with [Lombok](https://projectlombok.org/)._
 
 _Recipes that include further recipes, often including the individual recipes below._
 
-* [Lombok Best Practices](./lombokbestpractices.md)
+* [Lombok best practices](./lombokbestpractices.md)
 * [Migrate Lombok to a Java 11 compatible version](./updatelomboktojava11.md)
 
 ## Recipes
 
 * [Add `config.stopBubbling` to the root `lombok.config`](./addstopbubblingtolombokconfig.md)
 * [Consolidate `lombok.config` files](./consolidatelombokconfig.md)
-* [Convert `@lombok.Value` class to Record](./lombokvaluetorecord.md)
+* [Convert `@lombok.Value` class to record](./lombokvaluetorecord.md)
 * [Convert getter methods to annotations](./uselombokgetter.md)
 * [Convert setter methods to annotations](./uselomboksetter.md)
 * [Flag usage of a Lombok feature](./flagusage.md)

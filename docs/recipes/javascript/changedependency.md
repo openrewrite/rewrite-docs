@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.javascript.ChangeDependency**
 
-_Renames an npm dependency in `package.json` and optionally updates its version constraint. After modifying the package.json, the lock file is regenerated natively, without executing the package manager. Not safe to use as a precondition: consults the package registry over the network and publishes per-project state shared with other dependency recipes._
+_Renames an npm dependency in `package.json` and optionally updates its version constraint. A `catalog:` reference keeps its catalog, which gains the new name's entry. After modifying the package.json, the lock file is regenerated natively, without executing the package manager. Not safe to use as a precondition: consults the package registry over the network and publishes per-project state shared with other dependency recipes._
 
 ## Recipe source
 
@@ -29,6 +29,13 @@ This recipe is available under the [Moderne Source Available License](https://do
 | `String` | newPackageName | The new name to use for the package. | `lodash-es` |
 | `String` | newVersion | *Optional*. Optional new version constraint to set on the renamed package. | `^5.0.0` |
 | `String` | scope | *Optional*. The dependency scope: `dependencies`, `devDependencies`, etc. When omitted, all scopes are searched. Valid options: `dependencies`, `devDependencies`, `peerDependencies`, `optionalDependencies`, `bundledDependencies` | `dependencies` |
+
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Swap the `hpagent` dependency for `https-proxy-agent`](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/hpagent/swap-hpagent-dependency)
 
 
 ## Usage
@@ -84,8 +91,43 @@ _Lock files that could not be regenerated after a dependency edit, and why._
 | ----------- | ----------- |
 | Source path | The path of the package.json whose lock could not be regenerated. |
 | Package name | The package that caused the failure, when attributable to one. |
-| Reason | The structured failure reason, e.g. REGISTRY_UNREACHABLE or RESOLUTION_REQUIRED. Absent for unstructured failures. |
+| Kind | CANNOT_KNOW when the outcome depends on what the engine is not given, PM_REJECTS or PM_FAILS when the package manager itself rejects or fails on the edit, SECOND_INSTALL when its next install would reject or rewrite the lock. |
+| Reason | The structured failure reason, e.g. REGISTRY_UNREACHABLE, RESOLUTION_REQUIRED or PEER_CONFLICT. |
 | Detail | A human-readable description of the failure. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.javascript.table.NodeDependencyEditsDeclined" label="NodeDependencyEditsDeclined">
+
+### Node.js dependency edits declined
+**org.openrewrite.javascript.table.NodeDependencyEditsDeclined**
+
+_Edits a recipe did not make, or that the package manager applies only in part, and why._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Source path | The file the edit belongs in. |
+| Package name | The dependency the edit was for. |
+| Reason | Why the edit was not made, or why the package manager would not read it as asked. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.javascript.table.NodeDependencyProtocolsSkipped" label="NodeDependencyProtocolsSkipped">
+
+### Node.js dependencies skipped for their protocol
+**org.openrewrite.javascript.table.NodeDependencyProtocolsSkipped**
+
+_Dependencies a recipe left unchanged because their value is not a version range._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Source path | The package.json the recipe left unchanged. |
+| Declared in | The package.json declaring the value. |
+| Package name | The dependency left unchanged. |
+| Dependency scope | The manifest field declaring it. |
+| Protocol | The protocol the value names or expands to. |
+| Current value | The declared value. |
+| Requested version | The version the recipe was asked for. |
 
 </TabItem>
 

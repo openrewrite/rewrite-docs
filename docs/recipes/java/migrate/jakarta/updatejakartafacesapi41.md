@@ -1,17 +1,17 @@
 ---
-title: "Update Jakarta EE Java Faces Dependencies to 4.1.x"
-sidebar_label: "Update Jakarta EE Java Faces Dependencies to 4.1.x"
+title: "Update Jakarta Faces dependencies to 4.1.x"
+sidebar_label: "Update Jakarta Faces dependencies to 4.1.x"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Update Jakarta EE Java Faces Dependencies to 4.1.x
+# Update Jakarta Faces dependencies to 4.1.x
 
 **org.openrewrite.java.migrate.jakarta.UpdateJakartaFacesApi41**
 
-_Update Jakarta EE Java Faces Dependencies to 4.1.x._
+_Upgrade the Jakarta Faces API to 4.1.x._
 
 ## Recipe source
 
@@ -45,9 +45,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.jakarta.UpdateJakartaFacesApi41
-displayName: Update Jakarta EE Java Faces Dependencies to 4.1.x
+displayName: Update Jakarta Faces dependencies to 4.1.x
 description: |
-  Update Jakarta EE Java Faces Dependencies to 4.1.x.
+  Upgrade the Jakarta Faces API to 4.1.x.
 preconditions:
   - org.openrewrite.Singleton
 recipeList:
@@ -71,7 +71,7 @@ This recipe is used as part of the following composite recipes:
 
 <RunRecipe
   recipeName="org.openrewrite.java.migrate.jakarta.UpdateJakartaFacesApi41"
-  displayName="Update Jakarta EE Java Faces Dependencies to 4.1.x"
+  displayName="Update Jakarta Faces dependencies to 4.1.x"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-migrate-java"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA"
@@ -90,6 +90,25 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
+
+### Maven metadata failures
+**org.openrewrite.maven.table.MavenMetadataFailures**
+
+_Attempts to resolve maven metadata that failed._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Group id | The groupId of the artifact for which the metadata download failed. |
+| Artifact id | The artifactId of the artifact for which the metadata download failed. |
+| Version | The version of the artifact for which the metadata download failed. |
+| Maven repository | The URL of the Maven repository that the metadata download failed on. |
+| Snapshots | Does the repository support snapshots. |
+| Releases | Does the repository support releases. |
+| Failure | The reason the metadata download failed. |
+
+</TabItem>
+
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results

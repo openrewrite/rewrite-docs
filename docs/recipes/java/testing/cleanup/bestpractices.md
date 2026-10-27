@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.testing.cleanup.BestPractices**
 
-_Applies best practices to tests._
+_Wraps the statements of tests without assertions in `assertDoesNotThrow(..)` and removes the `test` prefix from JUnit 5 test method names._
 
 ### Tags
 
@@ -53,7 +53,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.testing.cleanup.BestPractices
 displayName: Testing best practices
 description: |
-  Applies best practices to tests.
+  Wraps the statements of tests without assertions in `assertDoesNotThrow(..)` and removes the `test` prefix from JUnit 5 test method names.
 tags:
   - testing
 preconditions:

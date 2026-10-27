@@ -1,17 +1,17 @@
 ---
-title: "Removed OpenJPA providers in the persistence.xml file"
-sidebar_label: "Removed OpenJPA providers in the persistence.xml file"
+title: "Replace the OpenJPA persistence provider with EclipseLink in `persistence.xml`"
+sidebar_label: "Replace the OpenJPA persistence provider with EclipseLink in `persistence.xml`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Removed OpenJPA providers in the persistence.xml file
+# Replace the OpenJPA persistence provider with EclipseLink in `persistence.xml`
 
 **org.openrewrite.java.migrate.javaee7.OpenJPAPersistenceProvider**
 
-_When migrating  to EclipseLink, using OpenJPA providers in EclipseLink results in runtime errors. To resolve these errors, the recipe removes the flagged OpenJPA provider from the persistence.xml._
+_When migrating to EclipseLink, using OpenJPA providers in EclipseLink results in runtime errors. To resolve these errors, this recipe replaces the OpenJPA `PersistenceProviderImpl` in `persistence.xml` with the EclipseLink `PersistenceProvider`._
 
 ## Recipe source
 
@@ -45,9 +45,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.javaee7.OpenJPAPersistenceProvider
-displayName: Removed OpenJPA providers in the persistence.xml file
+displayName: Replace the OpenJPA persistence provider with EclipseLink in `persistence.xml`
 description: |
-  When migrating  to EclipseLink, using OpenJPA providers in EclipseLink results in runtime errors. To resolve these errors, the recipe removes the flagged OpenJPA provider from the persistence.xml.
+  When migrating to EclipseLink, using OpenJPA providers in EclipseLink results in runtime errors. To resolve these errors, this recipe replaces the OpenJPA `PersistenceProviderImpl` in `persistence.xml` with the EclipseLink `PersistenceProvider`.
 preconditions:
   - org.openrewrite.Singleton
 recipeList:
@@ -64,7 +64,7 @@ recipeList:
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrate to JavaEE7](/recipes/java/migrate/javaee7-recipe.md)
+* [Migrate to Java EE 7](/recipes/java/migrate/javaee7-recipe.md)
 
 ## Examples
 ##### Example 1
@@ -250,7 +250,7 @@ This recipe is used as part of the following composite recipes:
 
 <RunRecipe
   recipeName="org.openrewrite.java.migrate.javaee7.OpenJPAPersistenceProvider"
-  displayName="Removed OpenJPA providers in the persistence.xml file"
+  displayName="Replace the OpenJPA persistence provider with EclipseLink in `persistence.xml`"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-migrate-java"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA"

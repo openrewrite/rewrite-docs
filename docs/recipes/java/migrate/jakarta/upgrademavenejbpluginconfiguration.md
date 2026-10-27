@@ -1,13 +1,13 @@
 ---
-title: "Set `maven-ejb-plugin` ejbVersion to 4.0"
-sidebar_label: "Set `maven-ejb-plugin` ejbVersion to 4.0"
+title: "Set `maven-ejb-plugin` `ejbVersion` to `4.0`"
+sidebar_label: "Set `maven-ejb-plugin` `ejbVersion` to `4.0`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Set `maven-ejb-plugin` ejbVersion to 4.0
+# Set `maven-ejb-plugin` `ejbVersion` to `4.0`
 
 **org.openrewrite.java.migrate.jakarta.UpgradeMavenEjbPluginConfiguration**
 
@@ -33,7 +33,7 @@ This recipe is used as part of the following composite recipes:
 
 <RunRecipe
   recipeName="org.openrewrite.java.migrate.jakarta.UpgradeMavenEjbPluginConfiguration"
-  displayName="Set `maven-ejb-plugin` ejbVersion to 4.0"
+  displayName="Set `maven-ejb-plugin` `ejbVersion` to `4.0`"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-migrate-java"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA"

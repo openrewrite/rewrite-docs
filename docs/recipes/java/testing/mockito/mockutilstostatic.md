@@ -22,11 +22,41 @@ _Best-effort attempt to remove Mockito `MockUtil` instances._
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license). Moderne customers can download precompiled artifacts from The Code Genome Project. For non-commercial use you can build the artifact from source locally.
 
 
+## Definition
+
+<Tabs groupId="recipeType">
+<TabItem value="recipe-list" label="Recipe List" >
+* [Change method target to static](../../../java/changemethodtargettostatic)
+  * methodPattern: `org.mockito.internal.util.MockUtil *(..)`
+  * fullyQualifiedTargetTypeName: `org.mockito.internal.util.MockUtil`
+  * matchUnknownTypes: `false`
+
+</TabItem>
+
+<TabItem value="yaml-recipe-list" label="Yaml Recipe List">
+
+```yaml
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: org.openrewrite.java.testing.mockito.MockUtilsToStatic
+displayName: Use static form of Mockito `MockUtil`
+description: |
+  Best-effort attempt to remove Mockito `MockUtil` instances.
+recipeList:
+  - org.openrewrite.java.ChangeMethodTargetToStatic:
+      methodPattern: org.mockito.internal.util.MockUtil *(..)
+      fullyQualifiedTargetTypeName: org.mockito.internal.util.MockUtil
+      matchUnknownTypes: false
+
+```
+</TabItem>
+</Tabs>
+
 ## Used by
 
 This recipe is used as part of the following composite recipes:
 
-* [Mockito 3.x migration from 1.x](/recipes/java/testing/mockito/mockito1to3migration.md)
+* [Upgrade Mockito from 1.x to 3.x](/recipes/java/testing/mockito/mockito1to3migration.md)
 
 ## Example
 

@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.testing.cleanup.AssertEqualsIntegralDeltaToAssertEquals**
 
-_Remove the delta argument from `assertEquals()` when both expected and actual are `int` or `long` types, since the delta is meaningless for exact integer comparison. Integer arguments get unnecessarily upcasted to `double` when a delta is provided._
+_Remove a literal zero delta argument from `assertEquals()` when both expected and actual are `int` or `long` types, since a zero delta already asks for an exact comparison. Integer arguments get unnecessarily upcasted to `double` when a delta is provided; a non-zero delta is a tolerance and is kept._
 
 ## Recipe source
 

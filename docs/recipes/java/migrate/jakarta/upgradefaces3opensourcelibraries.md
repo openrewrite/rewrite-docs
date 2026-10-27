@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.migrate.jakarta.UpgradeFaces3OpenSourceLibraries**
 
-_Upgrade PrimeFaces, OmniFaces, and MyFaces libraries to Jakarta EE9 versions._
+_Upgrade PrimeFaces, OmniFaces, and MyFaces libraries to Jakarta EE 9 versions._
 
 ### Tags
 
@@ -39,12 +39,6 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-**Preconditions**
-
-* [Singleton](../../../core/singleton)
-
-**Recipes**
-
 * [Change Maven dependency classifier](../../../maven/changedependencyclassifier)
   * groupId: `org.primefaces`
   * artifactId: `primefaces`
@@ -86,7 +80,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.jakarta.UpgradeFaces3OpenSourceLibraries
 displayName: Upgrade Faces open source libraries
 description: |
-  Upgrade PrimeFaces, OmniFaces, and MyFaces libraries to Jakarta EE9 versions.
+  Upgrade PrimeFaces, OmniFaces, and MyFaces libraries to Jakarta EE 9 versions.
 tags:
   - faces
   - jsf
@@ -94,8 +88,6 @@ tags:
   - jakarta
   - myfaces
   - primefaces
-preconditions:
-  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.maven.ChangeDependencyClassifier:
       groupId: org.primefaces
@@ -162,6 +154,25 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
+
+### Maven metadata failures
+**org.openrewrite.maven.table.MavenMetadataFailures**
+
+_Attempts to resolve maven metadata that failed._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Group id | The groupId of the artifact for which the metadata download failed. |
+| Artifact id | The artifactId of the artifact for which the metadata download failed. |
+| Version | The version of the artifact for which the metadata download failed. |
+| Maven repository | The URL of the Maven repository that the metadata download failed on. |
+| Snapshots | Does the repository support snapshots. |
+| Releases | Does the repository support releases. |
+| Failure | The reason the metadata download failed. |
+
+</TabItem>
+
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results

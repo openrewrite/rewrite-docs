@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.jspecify.MigrateFromMicrometerAnnotations**
 
-_Migrate from Micrometer annotations to JSpecify._
+_Replace the `io.micrometer.core.lang` `@Nullable` and `@NonNull` annotations with their JSpecify equivalents, adding the JSpecify dependency where needed._
 
 ## Recipe source
 
@@ -40,8 +40,10 @@ This recipe is available under the [Moderne Source Available License](https://do
   * groupId: `org.jspecify`
   * artifactId: `jspecify`
   * version: `1.0.0`
-  * onlyIfUsing: `org.springframework.lang.*ull*`
+  * onlyIfUsing: `io.micrometer.core.lang.*ull*`
   * acceptTransitive: `true`
+* [Remove annotation from `void` method](../../java/migrate/jspecify/removeannotationfromvoidmethod)
+  * annotationType: `io.micrometer.core.lang.*ull*`
 * [Move annotation to array type](../../java/migrate/jspecify/moveannotationtoarraytype)
   * annotationType: `io.micrometer.core.lang.*ull*`
 * [Change type](../../java/changetype)
@@ -67,7 +69,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.jspecify.MigrateFromMicrometerAnnotations
 displayName: Migrate from Micrometer annotations to JSpecify
 description: |
-  Migrate from Micrometer annotations to JSpecify.
+  Replace the `io.micrometer.core.lang` `@Nullable` and `@NonNull` annotations with their JSpecify equivalents, adding the JSpecify dependency where needed.
 preconditions:
   - org.openrewrite.Singleton
 recipeList:
@@ -75,8 +77,10 @@ recipeList:
       groupId: org.jspecify
       artifactId: jspecify
       version: 1.0.0
-      onlyIfUsing: org.springframework.lang.*ull*
+      onlyIfUsing: io.micrometer.core.lang.*ull*
       acceptTransitive: true
+  - org.openrewrite.java.migrate.jspecify.RemoveAnnotationFromVoidMethod:
+      annotationType: io.micrometer.core.lang.*ull*
   - org.openrewrite.java.migrate.jspecify.MoveAnnotationToArrayType:
       annotationType: io.micrometer.core.lang.*ull*
   - org.openrewrite.java.ChangeType:
@@ -126,6 +130,25 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
+
+### Maven metadata failures
+**org.openrewrite.maven.table.MavenMetadataFailures**
+
+_Attempts to resolve maven metadata that failed._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Group id | The groupId of the artifact for which the metadata download failed. |
+| Artifact id | The artifactId of the artifact for which the metadata download failed. |
+| Version | The version of the artifact for which the metadata download failed. |
+| Maven repository | The URL of the Maven repository that the metadata download failed on. |
+| Snapshots | Does the repository support snapshots. |
+| Releases | Does the repository support releases. |
+| Failure | The reason the metadata download failed. |
+
+</TabItem>
+
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results

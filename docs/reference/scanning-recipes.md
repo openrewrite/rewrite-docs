@@ -60,6 +60,9 @@ _This doc contains all [scanning recipes](/concepts-and-explanations/recipes#sca
 * [org.openrewrite.gradle.AddDependency](/recipes/gradle/adddependency.md)
   * **Add Gradle dependency**
   * Add a gradle dependency to a `build.gradle` file in the correct configuration based on where it is used.
+* [org.openrewrite.gradle.AddJUnitPlatformLauncher](/recipes/gradle/addjunitplatformlauncher.md)
+  * **Add JUnit Platform Launcher**
+  * Add the JUnit Platform Launcher to the test runtime dependencies, aligned with the resolved JUnit Platform version.
 * [org.openrewrite.gradle.AddPlatformDependency](/recipes/gradle/addplatformdependency.md)
   * **Add Gradle platform dependency**
   * Add a gradle platform dependency to a `build.gradle` file in the correct configuration based on where it is used.
@@ -131,19 +134,22 @@ _This doc contains all [scanning recipes](/concepts-and-explanations/recipes#sca
 
 * [org.openrewrite.javascript.AddDependency](/recipes/javascript/adddependency.md)
   * **Add npm dependency**
-  * Add an npm dependency to `package.json` and regenerate the lock file natively, without executing the package manager. If the dependency already exists in any scope, the recipe is a no-op. Not safe to use as a precondition: consults the package registry over the network and publishes per-project state shared with other dependency recipes.
+  * Add an npm dependency to `package.json` and regenerate the lock file natively, without executing the package manager. In a pnpm workspace with catalogs it writes what `pnpm add` writes under the workspace's `catalogMode` and `saveCatalogName`. If the dependency already exists in any scope, the recipe is a no-op. Not safe to use as a precondition: consults the package registry over the network and publishes per-project state shared with other dependency recipes.
 * [org.openrewrite.javascript.ChangeDependency](/recipes/javascript/changedependency.md)
   * **Change npm dependency**
-  * Renames an npm dependency in `package.json` and optionally updates its version constraint. After modifying the package.json, the lock file is regenerated natively, without executing the package manager. Not safe to use as a precondition: consults the package registry over the network and publishes per-project state shared with other dependency recipes.
+  * Renames an npm dependency in `package.json` and optionally updates its version constraint. A `catalog:` reference keeps its catalog, which gains the new name's entry. After modifying the package.json, the lock file is regenerated natively, without executing the package manager. Not safe to use as a precondition: consults the package registry over the network and publishes per-project state shared with other dependency recipes.
 * [org.openrewrite.javascript.RemoveDependency](/recipes/javascript/removedependency.md)
   * **Remove npm dependency**
-  * Remove an npm dependency from `package.json` and regenerate the lock file natively, without executing the package manager. If the dependency does not exist in any scope, the recipe is a no-op.
+  * Remove an npm dependency from `package.json` and regenerate the lock file natively, without executing the package manager. A pnpm workspace with `cleanupUnusedCatalogs` also loses the catalog entries no project references any more. If the dependency does not exist in any scope, the recipe is a no-op.
 * [org.openrewrite.javascript.UpgradeDependencyVersion](/recipes/javascript/upgradedependencyversion.md)
   * **Upgrade npm dependency version**
-  * Upgrades the version constraint of matching npm dependencies in `package.json` and regenerates the lock file natively, without executing the package manager. Matching is by exact package name or glob pattern. v1 uses simple string inequality for the upgrade check (always overwrites). A future version will use semver to skip already-up-to-date constraints. Not safe to use as a precondition: consults the package registry over the network and publishes per-project state shared with other dependency recipes.
+  * Upgrades the version constraint of matching npm dependencies in `package.json` and regenerates the lock file natively, without executing the package manager. Matching is by exact package name or glob pattern. A version range is replaced when it admits a version below the new range's lowest; one that already starts at or above it is left, and so is a `peerDependencies` range that admits every version the new one does. A `catalog:` reference is upgraded in its catalog entry by the same rule, and any other value is left as it is. Not safe to use as a precondition: consults the package registry over the network and publishes per-project state shared with other dependency recipes.
 * [org.openrewrite.javascript.UpgradeTransitiveDependencyVersion](/recipes/javascript/upgradetransitivedependencyversion.md)
   * **Upgrade transitive npm dependency**
-  * Pins or upgrades a transitive npm dependency by adding an override entry to `package.json` and regenerating the lock file natively, without executing the package manager. For npm and Bun, adds to the `overrides` field; for Yarn, adds to `resolutions`; for pnpm, adds to `pnpm.overrides`. The override is idempotent — if the entry already exists with the same version, no change is made. Not safe to use as a precondition: consults the package registry over the network and publishes per-project state shared with other dependency recipes.
+  * Pins or upgrades a transitive npm dependency with an override at the workspace root, where its package manager reads it, and regenerates the lock file natively, without executing the package manager: npm's `overrides`, Bun's `overrides` or `resolutions`, Yarn's `resolutions`, and for pnpm `pnpm-workspace.yaml` or `pnpm.overrides` by the pnpm release the project names. An override the package manager cannot read is not written, and the reason is recorded. None is written for a package the lock does not resolve. Not safe to use as a precondition: consults the package registry over the network and publishes per-project state shared with other dependency recipes.
+* [org.openrewrite.javascript.search.ModuleHasDependency](/recipes/javascript/search/modulehasdependency.md)
+  * **Module has dependency**
+  * Searches for Node.js packages that have an npm dependency matching the specified package name. Places a `SearchResult` marker on all sources within a package with a matching dependency. A source belongs to the `package.json` in its nearest enclosing directory, so each member of a workspace is its own module. This recipe is intended to be used as a precondition for other recipes. For example this could be used to limit the application of a migration to only packages that use a specific version of a library. If the search result you want is instead just the dependency entry in `package.json`, use the `DependencyInsight` recipe instead.
 
 ### rewrite-json
 
@@ -275,7 +281,7 @@ _This doc contains all [scanning recipes](/concepts-and-explanations/recipes#sca
   * Upgrades actions from the official `actions` and `github` organizations to the newest known version, working entirely offline. Each reference is upgraded while preserving its existing precision: a major version (`v4`) moves to the newest major, a full version (`v4.1.2`) to the newest full version, and a commit SHA to the latest known commit. Actions that are not official, not known, or already up to date are left untouched.
 * [org.openrewrite.github.security.PinGitHubActionsToSha](/recipes/github/security/pingithubactionstosha.md)
   * **Pin GitHub Actions to commit SHAs**
-  * Replaces mutable tag or branch references in GitHub Actions `uses:` declarations with immutable commit SHAs. A static mapping of well-known actions is checked first; if the action is not found, the GitHub API is used to resolve the reference at recipe run time. By default only third-party actions are pinned; set `pinOfficialActions` to include actions from the `actions` and `github` organizations. To pin only a specific allow-list of actions, set `includedActions`.
+  * Replaces mutable tag or branch references in GitHub Actions `uses:` declarations with immutable commit SHAs, using a built-in mapping of well-known actions. The recipe makes no network calls; references not found in the mapping are left unchanged and listed in a data table. By default only third-party actions are pinned; set `pinOfficialActions` to include actions from the `actions` and `github` organizations. To pin only a subset of the mapped actions, set `includedActions`.
 
 ### rewrite-jackson
 
@@ -293,43 +299,43 @@ _This doc contains all [scanning recipes](/concepts-and-explanations/recipes#sca
 
 * [org.openrewrite.java.dependencies.AddDependency](/recipes/java/dependencies/adddependency.md)
   * **Add Gradle or Maven dependency**
-  * For a Gradle project, add a gradle dependency to a `build.gradle` file in the correct configuration based on where it is used. Or For a maven project, Add a Maven dependency to a `pom.xml` file in the correct scope based on where it is used.
+  * For a Gradle project, add a dependency to a `build.gradle` or `build.gradle.kts` file in the correct configuration based on where it is used. For a Maven project, add a dependency to a `pom.xml` file in the correct scope based on where it is used.
 * [org.openrewrite.java.dependencies.ChangeDependency](/recipes/java/dependencies/changedependency.md)
   * **Change Gradle or Maven dependency**
   * Change the group ID, artifact ID, and/or the version of a specified Gradle or Maven dependency.
 * [org.openrewrite.java.dependencies.DependencyResolutionDiagnostic](/recipes/java/dependencies/dependencyresolutiondiagnostic.md)
   * **Dependency resolution diagnostic**
-  * Recipes which manipulate dependencies must be able to successfully access the artifact repositories and resolve dependencies from them. This recipe produces two data tables used to understand the state of dependency resolution.   The Repository accessibility report lists all the artifact repositories known to the project and whether respond to network access. The network access is attempted while the recipe is run and so is representative of current conditions.   The Gradle dependency configuration errors lists all the dependency configurations that failed to resolve one or more dependencies when the project was parsed. This is representative of conditions at the time the LST was parsed.
+  * Recipes which manipulate dependencies must be able to successfully access the artifact repositories and resolve dependencies from them. This recipe produces two data tables used to understand the state of dependency resolution.  The Repository accessibility report lists all the artifact repositories known to the project and whether they respond to network access. The network access is attempted while the recipe is run and so is representative of current conditions.  The Gradle dependency configuration errors lists all the dependency configurations that failed to resolve one or more dependencies when the project was parsed. This is representative of conditions at the time the LST was parsed.
 * [org.openrewrite.java.dependencies.RelocatedDependencyCheck](/recipes/java/dependencies/relocateddependencycheck.md)
   * **Find relocated dependencies**
-  * Find Maven and Gradle dependencies and Maven plugins that have relocated to a new `groupId` or `artifactId`. Relocation information comes from the [oga-maven-plugin](https://github.com/jonathanlermitage/oga-maven-plugin/) maintained by Jonathan Lermitage, Filipe Roque and others.  This recipe makes no changes to any source file by default. Add `changeDependencies=true` to change dependencies, but note that you might need to run additional recipes to update imports and adopt other breaking changes.
+  * Find Maven and Gradle dependencies, version catalog entries, Maven plugins, parents and extensions that have relocated to a new `groupId` or `artifactId`. Relocation information comes from the [oga-maven-plugin](https://github.com/jonathanlermitage/oga-maven-plugin/) maintained by Jonathan Lermitage, Filipe Roque and others.  This recipe makes no changes to any source file by default. Add `changeDependencies=true` to change dependencies whose relocated artifact publishes the same version, but note that you might need to run additional recipes to update imports and adopt other breaking changes.
 * [org.openrewrite.java.dependencies.RemoveDependency](/recipes/java/dependencies/removedependency.md)
   * **Remove a Gradle or Maven dependency**
-  * For Gradle project, removes a single dependency from the dependencies section of the `build.gradle`. For Maven project, removes a single dependency from the `&lt;dependencies&gt;` section of the pom.xml.
+  * For a Gradle project, removes a single dependency from the `dependencies` section of the `build.gradle` or `build.gradle.kts`. For a Maven project, removes a single dependency from the `&lt;dependencies&gt;` section of the `pom.xml`.
 * [org.openrewrite.java.dependencies.RemoveRedundantDependencies](/recipes/java/dependencies/removeredundantdependencies.md)
   * **Remove redundant explicit dependencies**
   * Remove explicit dependencies that are already provided transitively by a specified dependency. This recipe downloads and resolves the parent dependency's POM to determine its true transitive dependencies, allowing it to detect redundancies even when both dependencies are explicitly declared. A direct dependency is only removed when the transitive one provides it at the exact same scope and with the same declared exclusions, so that removing it does not change the effective classpath. Declarations that constrain resolution through a version range or dynamic version, such as a Gradle `version \{ strictly ... \}` block, are never removed.
 * [org.openrewrite.java.dependencies.UpgradeDependencyVersion](/recipes/java/dependencies/upgradedependencyversion.md)
   * **Upgrade Gradle or Maven dependency versions**
-  * For Gradle projects, upgrade the version of a dependency in a `build.gradle` file. Supports updating dependency declarations of various forms:  * `String` notation: `&quot;group:artifact:version&quot;`   * `Map` notation: `group: 'group', name: 'artifact', version: 'version'` It is possible to update version numbers which are defined earlier in the same file in variable declarations.  For Maven projects, upgrade the version of a dependency by specifying a group ID and (optionally) an artifact ID using Node Semver advanced range selectors, allowing more precise control over version updates to patch or minor releases.
+  * For Gradle projects, upgrade the version of a dependency in a `build.gradle` or `build.gradle.kts` file. Supports updating dependency declarations of various forms:  * `String` notation: `&quot;group:artifact:version&quot;`  * `Map` notation: `group: 'group', name: 'artifact', version: 'version'` It is possible to update version numbers which are defined earlier in the same file in variable declarations, in `gradle.properties`, or in a version catalog.  For Maven projects, upgrade the version of a dependency by specifying a group ID and an artifact ID using Node Semver advanced range selectors, allowing more precise control over version updates to patch or minor releases.
 * [org.openrewrite.java.dependencies.UpgradeTransitiveDependencyVersion](/recipes/java/dependencies/upgradetransitivedependencyversion.md)
   * **Upgrade transitive Gradle or Maven dependencies**
-  * Upgrades the version of a transitive dependency in a Maven pom.xml or Gradle build.gradle. Leaves direct dependencies unmodified. Can be paired with the regular Upgrade Dependency Version recipe to upgrade a dependency everywhere, regardless of whether it is direct or transitive.
+  * Upgrades the version of a transitive dependency in a Maven `pom.xml` or Gradle `build.gradle` or `build.gradle.kts`. Leaves direct dependencies unmodified. Can be paired with `UpgradeDependencyVersion` to upgrade a dependency everywhere, regardless of whether it is direct or transitive.
 * [org.openrewrite.java.dependencies.search.FindDuplicateClasses](/recipes/java/dependencies/search/findduplicateclasses.md)
   * **Find duplicate classes on the classpath**
-  * Detects classes that appear in multiple dependencies on the classpath. This is similar to what the Maven duplicate-finder-maven-plugin does. Duplicate classes can cause runtime issues when different versions of the same class are loaded.
+  * Detects classes that appear in multiple dependencies on the classpath. This is similar to what the Maven `duplicate-finder-maven-plugin` does. Duplicate classes can cause runtime issues when different versions of the same class are loaded.
 * [org.openrewrite.java.dependencies.search.FindMinimumDependencyVersion](/recipes/java/dependencies/search/findminimumdependencyversion.md)
   * **Find the oldest matching dependency version in use**
-  * The oldest dependency version in use is the lowest dependency version in use in any source set of any subproject of a repository. It is possible that, for example, the main source set of a project uses Jackson 2.11, but a test source set uses Jackson 2.16. In this case, the oldest Jackson version in use is Java 2.11.
+  * The oldest dependency version in use is the lowest dependency version in use in any source set of any subproject of a repository. It is possible that, for example, the main source set of a project uses Jackson 2.11, but a test source set uses Jackson 2.16. In this case, the oldest Jackson version in use is Jackson 2.11.
 * [org.openrewrite.java.dependencies.search.FindMinimumJUnitVersion](/recipes/java/dependencies/search/findminimumjunitversion.md)
   * **Find minimum JUnit version**
-  * A recipe to find the minimum version of JUnit dependencies. This recipe is designed to return the minimum version of JUnit in a project. It will search for JUnit 4 and JUnit 5 dependencies in the project. If both versions are found, it will return the minimum version of JUnit 4. If a minimumVersion is provided, the recipe will search to see if the minimum version of JUnit used by the project is no lower than the minimumVersion. For example: if the minimumVersion is 4, and the project has JUnit 4.12 and JUnit 5.7, the recipe will return JUnit 4.12. If the project has only JUnit 5.7, the recipe will return JUnit 5.7. Another example: if the minimumVersion is 5, and the project has JUnit 4.12 and JUnit 5.7, the recipe will not return any results.
+  * Finds the minimum version of JUnit dependencies in a project. It will search for JUnit 4 and JUnit 5 dependencies in the project. If both versions are found, it will return the JUnit 4 version. If a `minimumVersion` is provided, the recipe only returns results when that is the minimum version of JUnit used by the project. For example: if the `minimumVersion` is 4, and the project has JUnit 4.12 and JUnit 5.7, the recipe will return JUnit 4.12. If the project has only JUnit 5.7, the recipe will not return any results. Another example: if the `minimumVersion` is 5, and the project has JUnit 4.12 and JUnit 5.7, the recipe will not return any results.
 * [org.openrewrite.java.dependencies.search.ModuleHasDependency](/recipes/java/dependencies/search/modulehasdependency.md)
   * **Module has dependency**
-  * Searches for both Gradle and Maven modules that have a dependency matching the specified groupId and artifactId. Places a `SearchResult` marker on all sources within a module with a matching dependency. This recipe is intended to be used as a precondition for other recipes. For example this could be used to limit the application of a spring boot migration to only projects that use spring-boot-starter, limiting unnecessary upgrading. If the search result you want is instead just the build.gradle(.kts) or pom.xml file applying the plugin, use the `FindDependency` recipe instead.
+  * Searches for both Gradle and Maven modules that have a dependency matching the specified `groupId` and `artifactId`. Places a `SearchResult` marker on all sources within a module with a matching dependency. This recipe is intended to be used as a precondition for other recipes. For example this could be used to limit the application of a Spring Boot migration to only projects that use `spring-boot-starter`, limiting unnecessary upgrading. If the search result you want is instead just the `build.gradle(.kts)` or `pom.xml` file declaring the dependency, use the `FindDependency` recipe instead.
 * [org.openrewrite.java.dependencies.search.RepositoryHasDependency](/recipes/java/dependencies/search/repositoryhasdependency.md)
   * **Repository has dependency**
-  * Searches for both Gradle and Maven modules that have a dependency matching the specified groupId and artifactId. Places a `SearchResult` marker on all sources within a repository with a matching dependency. This recipe is intended to be used as a precondition for other recipes. For example this could be used to limit the application of a spring boot migration to only projects that use a springframework dependency, limiting unnecessary upgrading. If the search result you want is instead just the build.gradle(.kts) or pom.xml file applying the plugin, use the `FindDependency` recipe instead.
+  * Searches for both Gradle and Maven modules that have a dependency matching the specified `groupId` and `artifactId`. Places a `SearchResult` marker on all sources within a repository with a matching dependency. This recipe is intended to be used as a precondition for other recipes. For example this could be used to limit the application of a Spring Boot migration to only projects that use a Spring Framework dependency, limiting unnecessary upgrading. If the search result you want is instead just the `build.gradle(.kts)` or `pom.xml` file declaring the dependency, use the `FindDependency` recipe instead.
 
 ### rewrite-jenkins
 
@@ -348,6 +354,12 @@ _This doc contains all [scanning recipes](/concepts-and-explanations/recipes#sca
 * [org.openrewrite.java.liberty.RemoveWas2LibertyNonPortableJndiLookup](/recipes/java/liberty/removewas2libertynonportablejndilookup.md)
   * **Removes invalid JNDI properties**
   * Remove the use of invalid JNDI properties from Hashtable.
+
+### rewrite-logging-frameworks
+
+* [org.openrewrite.java.logging.ChangeLoggersToPrivate](/recipes/java/logging/changeloggerstoprivate.md)
+  * **Change logger fields to `private`**
+  * Ensures that logger fields are declared as `private` to encapsulate logging mechanics within the class.
 
 ### rewrite-micronaut
 
@@ -372,18 +384,21 @@ _This doc contains all [scanning recipes](/concepts-and-explanations/recipes#sca
 
 ### rewrite-migrate-java
 
+* [org.openrewrite.java.migrate.AddLombokAnnotationProcessorPath](/recipes/java/migrate/addlombokannotationprocessorpath.md)
+  * **Add `lombok` to the `maven-compiler-plugin` annotation processor paths**
+  * Add the `lombok` annotation processor path, matching the version of the `lombok` dependency. Once `annotationProcessorPaths` is configured, javac no longer discovers annotation processors on the classpath, so Lombok has to be listed there explicitly to keep running.
 * [org.openrewrite.java.migrate.AddMapstructAnnotationProcessorPath](/recipes/java/migrate/addmapstructannotationprocessorpath.md)
   * **Add `mapstruct-processor` to the `maven-compiler-plugin` annotation processor paths**
   * Add the `mapstruct-processor` annotation processor path, matching the version of the `mapstruct` dependency, so that MapStruct mappers are generated when annotation processing is configured explicitly.
 * [org.openrewrite.java.migrate.AddStaticVariableOnProducerSessionBean](/recipes/java/migrate/addstaticvariableonproducersessionbean.md)
-  * **Adds `static` modifier to `@Produces` fields that are in session beans**
+  * **Add `static` modifier to `@Produces` fields in session beans**
   * Ensures that the fields annotated with `@Produces` which is inside the session bean (`@Stateless`, `@Stateful`, or `@Singleton`) are declared `static`.
 * [org.openrewrite.java.migrate.jakarta.AddJakartaXmlBindRuntime](/recipes/java/migrate/jakarta/addjakartaxmlbindruntime.md)
   * **Add a Jakarta JAXB runtime for Maven applications**
-  * Add a Jakarta JAXB 3 runtime when a Maven module calls JAXBContext.newInstance and has no explicit JAXB provider or provided Jakarta platform. Java 8's built-in javax provider cannot serve Jakarta calls. Annotation-only modules are left alone and test-only calls receive a test dependency.
+  * Add a Jakarta JAXB 3 runtime when a Maven module calls `JAXBContext.newInstance` and has no explicit JAXB provider or provided Jakarta platform. Java 8's built-in `javax` provider cannot serve Jakarta calls. Annotation-only modules are left alone and test-only calls receive a test dependency.
 * [org.openrewrite.java.migrate.jakarta.ChangeJaxbApiDependency](/recipes/java/migrate/jakarta/changejaxbapidependency.md)
-  * **Migrate the JAXB API dependency unless Recorder still needs it**
-  * Migrate JAXB API coordinates while preserving the legacy API needed alongside Jakarta JAXB by external Arquillian Recorder 1.x binaries. Recorder modules migrated in the same reactor are excluded.
+  * **Migrate the JAXB API dependency unless Recorder or Jackson still needs it**
+  * Migrate JAXB API coordinates while preserving the legacy API needed alongside Jakarta JAXB by external Arquillian Recorder 1.x binaries or by Jackson's JAXB annotations module. Recorder modules migrated in the same reactor are excluded.
 * [org.openrewrite.java.migrate.jakarta.HasJettyDependency](/recipes/java/migrate/jakarta/hasjettydependency.md)
   * **Build uses Jetty before version 12**
   * Mark the source set when a Maven or Gradle module depends on servlet or WebSocket artifacts relocated by the Jetty 12 migration. This permits updating the Java baseline in parent build files as well as the module using Jetty.
@@ -392,21 +407,21 @@ _This doc contains all [scanning recipes](/concepts-and-explanations/recipes#sca
   * Mark all source as found per `JavaProject` where no Jakarta annotations are found. This is useful mostly as a precondition for recipes that require Jakarta annotations to be present.
 * [org.openrewrite.java.migrate.jakarta.RetainJaxbApiForArquillianRecorder](/recipes/java/migrate/jakarta/retainjaxbapiforarquillianrecorder.md)
   * **Retain the JAXB 2 API for Arquillian Recorder 1.x**
-  * Retain the legacy JAXB API in Maven modules using Arquillian Recorder 1.x binaries, which still reference javax.xml.bind classes after the application's Jakarta migration.
+  * Retain the legacy JAXB API in Maven modules using Arquillian Recorder 1.x binaries, which still reference `javax.xml.bind` classes after the application's Jakarta migration.
 * [org.openrewrite.java.migrate.javax.AddApiDependencyForImports](/recipes/java/migrate/javax/addapidependencyforimports.md)
   * **Add an API dependency for explicit imports**
   * Add an API dependency to the nearest Maven module importing the package, including imports whose types could not be resolved by the parser because the JDK used to provide them. A module that already has the API in the needed scope, or from a dependency it declares as provided, is left alone.
 * [org.openrewrite.java.migrate.javax.AddJaxbRuntime](/recipes/java/migrate/javax/addjaxbruntime.md)
   * **Use latest JAXB API and runtime for Jakarta EE 8**
-  * Update build files to use the latest JAXB runtime from Jakarta EE 8 to maintain compatibility with Java version 11 or greater. The recipe will add a JAXB run-time, in Gradle `compileOnly`+`testImplementation` and Maven `provided` scope, to any project that has a transitive dependency on the JAXB API. **The resulting dependencies still use the `javax` namespace, despite the move to the Jakarta artifact**.
+  * Update build files to use the latest JAXB runtime from Jakarta EE 8 to maintain compatibility with Java version 11 or greater. The recipe will add a JAXB run-time, in Gradle `runtimeOnly` and Maven `runtime` scope, to any project that uses `javax.xml.bind` and has a transitive dependency on the JAXB API. **The resulting dependencies still use the `javax` namespace, despite the move to the Jakarta artifact**.
 * [org.openrewrite.java.migrate.javax.AddScopeToInjectedClass](/recipes/java/migrate/javax/addscopetoinjectedclass.md)
   * **Add scope annotation to injected classes**
-  * Finds member variables annotated with `@Inject' and applies `@Dependent` scope annotation to the variable's type.
+  * Finds member variables annotated with `@Inject` and applies `@Dependent` scope annotation to the variable's type.
 * [org.openrewrite.java.migrate.javax.AddTransientAnnotationToEntity](/recipes/java/migrate/javax/addtransientannotationtoentity.md)
-  * **Unannotated entity attributes require a Transient annotation**
+  * **Add `@Transient` to unannotated entity attributes**
   * In OpenJPA, attributes that are themselves entity classes are not persisted by default. EclipseLink has a different default behavior and tries to persist these attributes to the database. To keep the OpenJPA behavior of ignoring unannotated entity attributes, add the `javax.persistence.Transient` annotation to these attributes in EclipseLink.
 * [org.openrewrite.java.migrate.javax.RemoveEmbeddableId](/recipes/java/migrate/javax/removeembeddableid.md)
-  * **`@Embeddable` classes cannot have an `@Id` annotation when referenced by an `@EmbeddedId` annotation**
+  * **Remove `@Id` from `@Embeddable` classes referenced by an `@EmbeddedId`**
   * According to the Java Persistence API (JPA) specification, if an entity defines an attribute with an `@EmbeddedId` annotation, the embeddable class cannot contain an attribute with an `@Id` annotation. If both the `@EmbeddedId` annotation and the `@Id` annotation are defined, OpenJPA ignores the `@Id` annotation, whereas EclipseLink throws an exception.
 * [org.openrewrite.java.migrate.lang.MigrateMainMethodToInstanceMain](/recipes/java/migrate/lang/migratemainmethodtoinstancemain.md)
   * **Migrate `public static void main(String[] args)` to instance `void main()`**
@@ -424,8 +439,11 @@ _This doc contains all [scanning recipes](/concepts-and-explanations/recipes#sca
   * **Consolidate `lombok.config` files**
   * Merge the directives of every nested `lombok.config` into the root `lombok.config` and delete the nested files, so that a project has a single place where Lombok is configured. A root `lombok.config` is created when the project has none. Directives are appended to the root file; what it already declares, itself or through an `import`, is left as written and not repeated. Note that hoisting a directive widens its scope from the directory that declared it to the whole project, so a directive only some directories can satisfy, such as `lombok.val.flagUsage = error`, will start to apply to all of them. A nested file is left in place when moving its directives would change what Lombok does: when it declares `config.stopBubbling`, `import`, `clear` or `-=`, when a `lombok.config` between it and the root would outrank the root once the directive moved there, when another `lombok.config` imports it, or when no Java source sits at or below it. No changes are made at all when two files assign conflicting values to the same key, or when the root imports a file that is not among the sources.
 * [org.openrewrite.java.migrate.lombok.LombokValueToRecord](/recipes/java/migrate/lombok/lombokvaluetorecord.md)
-  * **Convert `@lombok.Value` class to Record**
-  * Convert Lombok `@Value` annotated classes to standard Java Records.
+  * **Convert `@lombok.Value` class to record**
+  * Convert Lombok `@Value` annotated classes to standard Java records.
+* [org.openrewrite.java.migrate.search.AboutJavaVersion](/recipes/java/migrate/search/aboutjavaversion.md)
+  * **Find which Java version is in use**
+  * A diagnostic for studying the distribution of Java language version levels (both source and target compatibility across files and source sets).
 * [org.openrewrite.java.migrate.search.FindJavaVersion](/recipes/java/migrate/search/findjavaversion.md)
   * **Find Java versions in use**
   * Finds Java versions in use, emitting one row per git repository (the lowest source/target compatibility across modules in that repository).
@@ -468,6 +486,18 @@ _This doc contains all [scanning recipes](/concepts-and-explanations/recipes#sca
 
 ### rewrite-spring
 
+* [org.openrewrite.java.spring.ChangeSpringPropertyKey](/recipes/java/spring/changespringpropertykey.md)
+  * **Change the key of a Spring application property**
+  * Change Spring application property keys existing in either Properties or YAML files, and in `@Value`, `@ConditionalOnProperty` or `@SpringBootTest` annotations.
+* [org.openrewrite.java.spring.ChangeSpringPropertyValue](/recipes/java/spring/changespringpropertyvalue.md)
+  * **Change the value of a Spring application property**
+  * Change Spring application property values existing in either Properties or YAML files, and in `@Value`, `@ConditionalOnProperty`, `@SpringBootTest`, or `@TestPropertySource` annotations.
+* [org.openrewrite.java.spring.CommentOutSpringPropertyKey](/recipes/java/spring/commentoutspringpropertykey.md)
+  * **Comment out Spring properties**
+  * Add comment to specified Spring properties, and optionally comment out the property.
+* [org.openrewrite.java.spring.DeleteSpringProperty](/recipes/java/spring/deletespringproperty.md)
+  * **Delete a Spring configuration property**
+  * Delete a spring configuration property from any configuration file that contains a matching key.
 * [org.openrewrite.java.spring.RenameBean](/recipes/java/spring/renamebean.md)
   * **Rename bean**
   * Renames a Spring bean, both declaration and references.
@@ -486,10 +516,13 @@ _This doc contains all [scanning recipes](/concepts-and-explanations/recipes#sca
 * [org.openrewrite.java.spring.boot2.MergeBootstrapYamlWithApplicationYaml](/recipes/java/spring/boot2/mergebootstrapyamlwithapplicationyaml.md)
   * **Merge Spring `bootstrap.yml` with `application.yml`**
   * In Spring Boot 2.4, the bootstrap context that loads `bootstrap.yml` is [disabled by default](https://docs.spring.io/spring-cloud-config/reference/client.html). Its properties should be merged with `application.yml` unless `spring-cloud-starter-bootstrap` is present as a dependency. Profile-specific `bootstrap-\{profile\}.yml` files are also merged into their matching `application-\{profile\}.yml`. A bootstrap file without a matching application file is renamed instead.
+* [org.openrewrite.java.spring.boot2.MigrateArtemisProperties](/recipes/java/spring/boot2/migrateartemisproperties.md)
+  * **Migrate `spring.artemis.host` and `spring.artemis.port` to `spring.artemis.broker-url`**
+  * Combines `spring.artemis.host` and `spring.artemis.port` into `spring.artemis.broker-url` in the format `tcp://host:port`.
 * [org.openrewrite.java.spring.boot2.MoveAutoConfigurationToImportsFile](/recipes/java/spring/boot2/moveautoconfigurationtoimportsfile.md)
   * **Use `AutoConfiguration#imports`**
   * Use `AutoConfiguration#imports` instead of the deprecated entry `EnableAutoConfiguration` in `spring.factories` when defining autoconfiguration classes.
-* [org.openrewrite.java.spring.boot2.search.IntegrationSchedulerPoolRecipe](/recipes/java/spring/boot2/search/integrationschedulerpoolrecipe.md)
+* [org.openrewrite.java.spring.boot2.search.FindIntegrationSchedulerPool](/recipes/java/spring/boot2/search/findintegrationschedulerpool.md)
   * **Integration scheduler pool size**
   * Spring Integration now reuses an available `TaskScheduler` rather than configuring its own. In a typical application setup relying on the auto-configuration, this means that Spring Integration uses the auto-configured task scheduler that has a pool size of 1. To restore Spring Integration’s default of 10 threads, use the `spring.task.scheduling.pool.size` property.
 * [org.openrewrite.java.spring.boot2.search.LoggingShutdownHooks](/recipes/java/spring/boot2/search/loggingshutdownhooks.md)
@@ -505,8 +538,8 @@ _This doc contains all [scanning recipes](/concepts-and-explanations/recipes#sca
   * **Find Spring Boot repositories**
   * Find every source file of a repository in which some build uses Spring Boot: a Spring Boot dependency, direct or transitive, the Spring Boot Gradle plugin, a Spring Boot parent POM, or an imported `spring-boot-dependencies` BOM. A repository without build files matches.
 * [org.openrewrite.java.spring.cloud2022.AddLoggingPatternLevelForSleuth](/recipes/java/spring/cloud2022/addloggingpatternlevelforsleuth.md)
-  * **Add logging.pattern.level for traceId and spanId**
-  * Add `logging.pattern.level` for traceId and spanId which was previously set by default, if not already set.
+  * **Add `logging.pattern.level` for `traceId` and `spanId`**
+  * Add `logging.pattern.level` for `traceId` and `spanId` which was previously set by default, if not already set.
 * [org.openrewrite.java.spring.doc.MigrateDocketBeanToGroupedOpenApiBean](/recipes/java/spring/doc/migratedocketbeantogroupedopenapibean.md)
   * **Migrate `Docket` to `GroupedOpenAPI`**
   * Migrate a `Docket` bean to a `GroupedOpenAPI` bean preserving group name, packages and paths. When possible the recipe will prefer property based configuration.
@@ -517,6 +550,12 @@ _This doc contains all [scanning recipes](/concepts-and-explanations/recipes#sca
   * **Upgrade Spring dependencies**
   * Upgrades dependencies according to the specified version of spring boot. Spring boot has many direct and transitive dependencies. When a module has an explicit dependency on one of these it may also need to be upgraded to match the version used by spring boot.
 
+### rewrite-spring-to-quarkus
+
+* [org.openrewrite.quarkus.spring.ModuleIsSpringBootApplication](/recipes/quarkus/spring/moduleisspringbootapplication.md)
+  * **Module is part of a Spring Boot 3 or 4 application**
+  * Marks all sources in modules that run on Spring Boot 3.x or 4.x (including snapshots and milestones), apply the Spring Boot build plugin and have a `main` method on a class annotated with `@SpringBootApplication` or `@SpringBootConfiguration` in the main source set, as well as the Maven parents of those modules and the modules they depend on at runtime. Projects nested under `src/*/resources`, such as test fixtures, are never marked; only configuration files directly in a resources directory or its `config` directory are. Intended as a precondition, so that libraries and framework code are not migrated as if they were applications.
+
 ### rewrite-static-analysis
 
 * [org.openrewrite.staticanalysis.FindIgnoredCheckReturnValue](/recipes/staticanalysis/findignoredcheckreturnvalue.md)
@@ -524,31 +563,43 @@ _This doc contains all [scanning recipes](/concepts-and-explanations/recipes#sca
   * Marks invocations whose result is discarded even though the method is annotated with `@CheckReturnValue`, either directly or through its enclosing class or package. Any annotation named `CheckReturnValue` is recognized, and `@CanIgnoreReturnValue` opts a method or class back out. Ignoring such a result is usually a bug, such as calling a method on an immutable object without using the returned copy. Calls expected to throw, Mockito stubbing and verification, calls on the current instance in custom AssertJ assertion constructors, and code under `@SuppressWarnings(&quot;CheckReturnValue&quot;)` are not marked.
 * [org.openrewrite.staticanalysis.LowercasePackage](/recipes/staticanalysis/lowercasepackage.md)
   * **Rename packages to lowercase**
-  * By convention all Java package names should contain only lowercase letters, numbers, and dashes. This recipe converts any uppercase letters in package names to be lowercase. Consistent package naming prevents confusion and potential issues on case-insensitive file systems.
+  * By convention all Java package names should contain only lowercase letters, numbers, and underscores. This recipe converts any uppercase letters in package names to be lowercase. Consistent package naming prevents confusion and potential issues on case-insensitive file systems.
 * [org.openrewrite.staticanalysis.MethodNameCasing](/recipes/staticanalysis/methodnamecasing.md)
   * **Standardize method name casing**
   * Fixes method names that do not follow standard naming conventions. For example, `String getFoo_bar()` would be adjusted to `String getFooBar()` and `int DoSomething()` would be adjusted to `int doSomething()`. Following a consistent casing convention for method names improves code readability and helps developers quickly distinguish methods from classes or constants.
 
 ### rewrite-testing-frameworks
 
+* [org.openrewrite.java.testing.cleanup.FindTestClassesWithoutTests](/recipes/java/testing/cleanup/findtestclasseswithouttests.md)
+  * **Find test classes without tests**
+  * Finds classes in test sources that are named `*Test`, `*Tests` or `*TestCase`, or extend JUnit 3 `TestCase`, but contain no tests. Such classes suggest that code is tested when it is not.
 * [org.openrewrite.java.testing.cleanup.TestsShouldNotBePublic](/recipes/java/testing/cleanup/testsshouldnotbepublic.md)
   * **Remove `public` visibility of JUnit 5 tests**
   * Remove `public` and optionally `protected` modifiers from methods with `@Test`, `@ParameterizedTest`, `@RepeatedTest`, `@TestFactory`, `@BeforeEach`, `@AfterEach`, `@BeforeAll`, or `@AfterAll`. They no longer have to be public visibility to be usable by JUnit 5.
 * [org.openrewrite.java.testing.hamcrest.AddHamcrestIfUsed](/recipes/java/testing/hamcrest/addhamcrestifused.md)
   * **Add `org.hamcrest:hamcrest` if it is used**
   * JUnit Jupiter does not include Hamcrest as a transitive dependency. Add a direct dependency for existing Hamcrest usage or ExpectedException assertions that generate Hamcrest usage during migration.
+* [org.openrewrite.java.testing.junit.RemoveJupiterMigrationSupport](/recipes/java/testing/junit/removejupitermigrationsupport.md)
+  * **Remove JUnit Jupiter migrationsupport**
+  * Removes `junit-jupiter-migrationsupport` from modules that don't use its `@EnableRuleMigrationSupport`, `ExternalResourceSupport` or other types, and its managed version once no module uses them.
 * [org.openrewrite.java.testing.junit5.AddHamcrestJUnitDependency](/recipes/java/testing/junit5/addhamcrestjunitdependency.md)
   * **Add Hamcrest JUnit dependency**
   * Add Hamcrest JUnit dependency only if JUnit 4's `assertThat` or `assumeThat` is used.
 * [org.openrewrite.java.testing.junit5.AddJupiterDependencies](/recipes/java/testing/junit5/addjupiterdependencies.md)
   * **Add JUnit Jupiter dependencies**
   * Adds JUnit Jupiter dependencies to a Maven or Gradle project. JUnit Jupiter can be added either with the artifact `junit-jupiter`, or both of `junit-jupiter-api` and `junit-jupiter-engine`. This adds `junit-jupiter` dependency unless `junit-jupiter-api` or `junit-jupiter-engine` are already present. Maven projects running dependency analysis receive explicit API, engine and, when used, parameterized-test dependencies.
+* [org.openrewrite.java.testing.junit5.AddJupiterMigrationSupport](/recipes/java/testing/junit5/addjupitermigrationsupport.md)
+  * **Add JUnit Jupiter migrationsupport**
+  * Adds `junit-jupiter-migrationsupport` to modules whose JUnit 4 `ExternalResource` rules the JUnit 4 to 5 migration keeps with `@ExtendWith(ExternalResourceSupport.class)`.
 * [org.openrewrite.java.testing.junit5.AddMockitoJupiterForRules](/recipes/java/testing/junit5/addmockitojupiterforrules.md)
   * **Add Mockito Jupiter integration for migrated Mockito rules**
   * Adds the Mockito Jupiter dependency for annotated MockitoRule and MockitoTestRule fields, matching the project's Mockito version even when Mockito is already up to date.
 * [org.openrewrite.java.testing.junit5.SystemRulesDependencies](/recipes/java/testing/junit5/systemrulesdependencies.md)
   * **Update dependencies for the System Rules migration**
   * Adds System Stubs and JUnit Pioneer where the System Rules migration introduces them, upgrades JUnit Pioneer to 2.x in modules that get its `@RestoreSystemProperties`, and removes System Rules from modules that no longer use it.
+* [org.openrewrite.java.testing.junit5.WireMockRuleToWireMockServer](/recipes/java/testing/junit5/wiremockruletowiremockserver.md)
+  * **Use `WireMockServer` for a `WireMockRule` used as a server**
+  * Replace a `WireMockRule` that is started, stopped or passed on as a `WireMockServer` with a plain `WireMockServer`, as the JUnit 5 `WireMockExtension` has no such methods. The server is started and stopped around each test, or around all tests for a `@ClassRule`.
 * [org.openrewrite.java.testing.mockito.AddMockitoJupiterDependency](/recipes/java/testing/mockito/addmockitojupiterdependency.md)
   * **Add mockito-junit-jupiter dependency**
   * Adds `org.mockito:mockito-junit-jupiter` dependency if `@ExtendWith(MockitoExtension.class)` will be added to any test class, i.e. when Mockito annotations are used in JUnit 5 tests without the extension already present.

@@ -117,8 +117,8 @@ class Test {
 
         LOGGER.info("String: {}", username);
         LOGGER.info("Decimal: {}", count);
-        LOGGER.info("Hex: {}", count);
-        LOGGER.info("Octal: {}", count);
+        LOGGER.info(String.format("Hex: %x", count));
+        LOGGER.info(String.format("Octal: %o", count));
         LOGGER.info("Float: {}", value);
         LOGGER.info("Boolean: {}", true);
         LOGGER.info("Char: {}", 'x');
@@ -166,20 +166,20 @@ class Test {
 +       LOGGER.info("User {} has {} items", username, count);
 +       LOGGER.info("User {} has {} items worth ${}", username, count, value);
 
-@@ -24,7 +24,7 @@
+@@ -24,2 +24,2 @@
         LOGGER.info(String.format("User %s has %d items worth $%f", username, count, value));
 
 -       LOGGER.info(String.format("String: %s", username));
 -       LOGGER.info(String.format("Decimal: %d", count));
--       LOGGER.info(String.format("Hex: %x", count));
--       LOGGER.info(String.format("Octal: %o", count));
++       LOGGER.info("String: {}", username);
++       LOGGER.info("Decimal: {}", count);
+        LOGGER.info(String.format("Hex: %x", count));
+@@ -28,3 +28,3 @@
+        LOGGER.info(String.format("Hex: %x", count));
+        LOGGER.info(String.format("Octal: %o", count));
 -       LOGGER.info(String.format("Float: %f", value));
 -       LOGGER.info(String.format("Boolean: %b", true));
 -       LOGGER.info(String.format("Char: %c", 'x'));
-+       LOGGER.info("String: {}", username);
-+       LOGGER.info("Decimal: {}", count);
-+       LOGGER.info("Hex: {}", count);
-+       LOGGER.info("Octal: {}", count);
 +       LOGGER.info("Float: {}", value);
 +       LOGGER.info("Boolean: {}", true);
 +       LOGGER.info("Char: {}", 'x');

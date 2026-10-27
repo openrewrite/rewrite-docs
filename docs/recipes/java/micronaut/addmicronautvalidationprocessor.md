@@ -28,6 +28,24 @@ This recipe is used as part of the following composite recipes:
 
 * [Update to Micronaut Validation 4.x](/recipes/java/micronaut/updatemicronautvalidation.md)
 
+## Example
+
+
+###### Unchanged
+```mavenProject
+mainUse
+```
+
+###### Unchanged
+```mavenProject
+noUse
+```
+
+###### Unchanged
+```mavenProject
+testUse
+```
+
 
 ## Usage
 

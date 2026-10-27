@@ -27,6 +27,67 @@ This recipe is available under the [Moderne Source Available License](https://do
 | --- | --- | --- | --- |
 | `String` | filePattern | *Optional*. A glob expression that can be used to constrain which directories or source files should be searched. Multiple patterns may be specified, separated by a semicolon `;`. If multiple patterns are supplied any of the patterns matching will be interpreted as a match. When not set, `**/logback*.xml` is used. | `**/logback-spring.xml` |
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|filePattern|`null`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="logback.xml" label="logback.xml">
+
+
+###### Before
+```xml title="logback.xml"
+<configuration>
+    <if condition='property("pretty").equals("false")'>
+        <then>
+            <root level="INFO">
+                <appender-ref ref="STDOUT"/>
+            </root>
+        </then>
+    </if>
+</configuration>
+```
+
+###### After
+```xml title="logback.xml"
+<configuration>
+    <condition class="ch.qos.logback.core.boolex.PropertyEqualityCondition">
+        <key>pretty</key>
+        <value>false</value>
+    </condition>
+    <if>
+        <then>
+            <root level="INFO">
+                <appender-ref ref="STDOUT"/>
+            </root>
+        </then>
+    </if>
+</configuration>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- logback.xml
++++ logback.xml
+@@ -2,1 +2,5 @@
+<configuration>
+-   <if condition='property("pretty").equals("false")'>
++   <condition class="ch.qos.logback.core.boolex.PropertyEqualityCondition">
++       <key>pretty</key>
++       <value>false</value>
++   </condition>
++   <if>
+        <then>
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

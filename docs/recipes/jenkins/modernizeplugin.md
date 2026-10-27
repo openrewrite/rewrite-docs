@@ -33,7 +33,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Change Maven parent](../maven/changeparentpom)
   * oldGroupId: `org.jenkins-ci.plugins`
   * oldArtifactId: `plugin`
-  * newVersion: `4.X`
+  * newVersion: `4.x`
   * allowVersionDowngrades: `false`
 * [Remove annotation](../java/removeannotation)
   * annotationPattern: `@org.codehaus.mojo.animal_sniffer.IgnoreJRERequirement`
@@ -72,7 +72,7 @@ recipeList:
   - org.openrewrite.maven.ChangeParentPom:
       oldGroupId: org.jenkins-ci.plugins
       oldArtifactId: plugin
-      newVersion: 4.X
+      newVersion: 4.x
       allowVersionDowngrades: false
   - org.openrewrite.java.RemoveAnnotation:
       annotationPattern: @org.codehaus.mojo.animal_sniffer.IgnoreJRERequirement

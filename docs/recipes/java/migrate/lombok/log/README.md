@@ -16,6 +16,6 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Use `@JBossLog` instead of explicit fields](./usejbosslog.md)
 * [Use `@Log` instead of explicit fields](./uselog.md)
 * [Use `@Log4j2` instead of explicit fields](./uselog4j2.md)
-* [Use `@Slf4` instead of explicit fields](./useslf4j.md)
+* [Use `@Slf4j` instead of explicit fields](./useslf4j.md)
 
 

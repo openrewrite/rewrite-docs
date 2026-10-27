@@ -1,13 +1,13 @@
 ---
-title: "Remove deprecated API's not supported in CDI4.0"
-sidebar_label: "Remove deprecated API's not supported in CDI4.0"
+title: "Remove deprecated APIs not supported in CDI 4.0"
+sidebar_label: "Remove deprecated APIs not supported in CDI 4.0"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Remove deprecated API's not supported in CDI4.0
+# Remove deprecated APIs not supported in CDI 4.0
 
 **org.openrewrite.java.migrate.jakarta.DeprecatedCDIAPIsRemoved40**
 
@@ -48,7 +48,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.jakarta.DeprecatedCDIAPIsRemoved40
-displayName: Remove deprecated API's not supported in CDI4.0
+displayName: Remove deprecated APIs not supported in CDI 4.0
 description: |
   Deprecated APIs have been removed in CDI 4.0. This recipe removes and updates the corresponding deprecated methods.
 preconditions:
@@ -73,7 +73,7 @@ This recipe is used as part of the following composite recipes:
 
 <RunRecipe
   recipeName="org.openrewrite.java.migrate.jakarta.DeprecatedCDIAPIsRemoved40"
-  displayName="Remove deprecated API's not supported in CDI4.0"
+  displayName="Remove deprecated APIs not supported in CDI 4.0"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-migrate-java"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA"

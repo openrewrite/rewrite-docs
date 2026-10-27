@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.migrate.lang.ThreadStopUnsupported**
 
-_`Thread.resume()`, `Thread.stop()`, and `Thread.suspend()` always throws a `new UnsupportedOperationException` in Java 21+. This recipe makes that explicit, as the migration is more complicated. See https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/doc-files/threadPrimitiveDeprecation.html ._
+_`Thread.resume()`, `Thread.stop()`, and `Thread.suspend()` always throw an `UnsupportedOperationException` in Java 21+. This recipe makes that explicit, and adds a comment pointing to the [migration guide](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/doc-files/threadPrimitiveDeprecation.html), as the migration is more complicated. On earlier Java versions only the comment is added._
 
 ## Recipe source
 

@@ -1,13 +1,13 @@
 ---
-title: "No primitive wrappers for #toString() or #compareTo(..)"
-sidebar_label: "No primitive wrappers for #toString() or #compareTo(..)"
+title: "No primitive wrappers for `#toString()` or `#compareTo(..)`"
+sidebar_label: "No primitive wrappers for `#toString()` or `#compareTo(..)`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# No primitive wrappers for #toString() or #compareTo(..)
+# No primitive wrappers for `#toString()` or `#compareTo(..)`
 
 **org.openrewrite.staticanalysis.NoPrimitiveWrappersForToStringOrCompareTo**
 
@@ -93,7 +93,7 @@ class T {
 
 <RunRecipe
   recipeName="org.openrewrite.staticanalysis.NoPrimitiveWrappersForToStringOrCompareTo"
-  displayName="No primitive wrappers for #toString() or #compareTo(..)"
+  displayName="No primitive wrappers for `#toString()` or `#compareTo(..)`"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-static-analysis"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_STATIC_ANALYSIS"

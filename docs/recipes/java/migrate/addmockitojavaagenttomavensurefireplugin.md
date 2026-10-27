@@ -1,13 +1,13 @@
 ---
-title: "Add Mockito Java Agent to Maven Surefire Plugin"
-sidebar_label: "Add Mockito Java Agent to Maven Surefire Plugin"
+title: "Add Mockito Java agent to Maven Surefire plugin"
+sidebar_label: "Add Mockito Java agent to Maven Surefire plugin"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Add Mockito Java Agent to Maven Surefire Plugin
+# Add Mockito Java agent to Maven Surefire plugin
 
 **org.openrewrite.java.migrate.AddMockitoJavaAgentToMavenSurefirePlugin**
 
@@ -161,7 +161,7 @@ test-project
 
 <RunRecipe
   recipeName="org.openrewrite.java.migrate.AddMockitoJavaAgentToMavenSurefirePlugin"
-  displayName="Add Mockito Java Agent to Maven Surefire Plugin"
+  displayName="Add Mockito Java agent to Maven Surefire plugin"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-migrate-java"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA"

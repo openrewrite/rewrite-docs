@@ -25,8 +25,8 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 | Type | Name | Description | Example |
 | --- | --- | --- | --- |
-| `boolean` | includeJavaLangException | *Optional*. Whether to include `java.lang.Exception` in the list of checked exceptions to remove. Unlike other checked exceptions, `java.lang.Exception` is also the superclass of unchecked exceptions. So removing `catch(Exception e)` may result in changed runtime behavior in the presence of unchecked exceptions. Default `false` |  |
-| `boolean` | includeJavaLangThrowable | *Optional*. Whether to include `java.lang.Throwable` in the list of exceptions to remove. Unlike other checked exceptions, `java.lang.Throwable` is also the superclass of unchecked exceptions. So removing `catch(Throwable e)` may result in changed runtime behavior in the presence of unchecked exceptions. Default `false` |  |
+| `boolean` | includeJavaLangException | *Optional*. Whether to include `java.lang.Exception` in the list of checked exceptions to remove. Unlike other checked exceptions, `java.lang.Exception` is also the superclass of unchecked exceptions. So removing `catch(Exception e)` may result in changed runtime behavior in the presence of unchecked exceptions. Default `false`. |  |
+| `boolean` | includeJavaLangThrowable | *Optional*. Whether to include `java.lang.Throwable` in the list of exceptions to remove. Unlike other checked exceptions, `java.lang.Throwable` is also the superclass of unchecked exceptions. So removing `catch(Throwable e)` may result in changed runtime behavior in the presence of unchecked exceptions. Default `false`. |  |
 
 
 ## Used by
@@ -34,9 +34,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 This recipe is used as part of the following composite recipes:
 
 * [Remediate OWASP A10:2025 Mishandling of exceptional conditions](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/owasp2025a10)
-* [Remove Security AccessController](/recipes/java/migrate/accesscontroller.md)
-* [Remove Security Policy](/recipes/java/migrate/removesecuritypolicy.md)
-* [Remove Security SecurityManager](/recipes/java/migrate/removesecuritymanager.md)
+* [Remove `AccessController.checkPermission(..)` calls](/recipes/java/migrate/accesscontroller.md)
+* [Remove `Policy.setPolicy(..)` calls](/recipes/java/migrate/removesecuritypolicy.md)
+* [Remove `SecurityManager` permission checks](/recipes/java/migrate/removesecuritymanager.md)
 
 ## Example
 

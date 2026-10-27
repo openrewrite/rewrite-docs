@@ -1,17 +1,17 @@
 ---
-title: "Migrate `org.apache.ws.security` and `org.apache.ws.security.components.crypto` packages to  `org.apache.wss4j.common.ext` and `org.apache.wss4j.common.crypto` packages"
-sidebar_label: "Migrate `org.apache.ws.security` and `org.apache.ws.security.components.crypto` packages to  `org.apache.wss4j.common.ext` and `org.apache.wss4j.common.crypto` packages"
+title: "Migrate `org.apache.ws.security` and `org.apache.ws.security.components.crypto` packages to `org.apache.wss4j.common.ext` and `org.apache.wss4j.common.crypto` packages"
+sidebar_label: "Migrate `org.apache.ws.security` and `org.apache.ws.security.components.crypto` packages to `org.apache.wss4j.common.ext` and `org.apache.wss4j.common.crypto` packages"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Migrate `org.apache.ws.security` and `org.apache.ws.security.components.crypto` packages to  `org.apache.wss4j.common.ext` and `org.apache.wss4j.common.crypto` packages
+# Migrate `org.apache.ws.security` and `org.apache.ws.security.components.crypto` packages to `org.apache.wss4j.common.ext` and `org.apache.wss4j.common.crypto` packages
 
 **org.openrewrite.java.migrate.jakarta.UpdateApacheWSSecurityPackages**
 
-_Java EE has been rebranded to Jakarta EE.  This recipe replaces Apache security packages to migrate to Apache `wss4j`._
+_Java EE has been rebranded to Jakarta EE. This recipe replaces Apache security packages to migrate to Apache `wss4j`._
 
 ## Recipe source
 
@@ -91,12 +91,12 @@ This recipe is available under the [Moderne Source Available License](https://do
   * oldFullyQualifiedTypeName: `org.apache.ws.security.message.token.KerberosServiceExceptionAction`
   * newFullyQualifiedTypeName: `org.apache.wss4j.common.kerberos.KerberosServiceExceptionAction`
 * [Rename package name](../../../java/changepackage)
-  * oldPackageName: `org.apache.ws.security`
-  * newPackageName: `org.apache.wss4j.common.ext`
-  * recursive: `true`
-* [Rename package name](../../../java/changepackage)
   * oldPackageName: `org.apache.ws.security.components.crypto`
   * newPackageName: `org.apache.wss4j.common.crypto`
+  * recursive: `true`
+* [Rename package name](../../../java/changepackage)
+  * oldPackageName: `org.apache.ws.security`
+  * newPackageName: `org.apache.wss4j.common.ext`
   * recursive: `true`
 
 </TabItem>
@@ -107,9 +107,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.jakarta.UpdateApacheWSSecurityPackages
-displayName: Migrate `org.apache.ws.security` and `org.apache.ws.security.components.crypto` packages to  `org.apache.wss4j.common.ext` and `org.apache.wss4j.common.crypto` packages
+displayName: Migrate `org.apache.ws.security` and `org.apache.ws.security.components.crypto` packages to `org.apache.wss4j.common.ext` and `org.apache.wss4j.common.crypto` packages
 description: |
-  Java EE has been rebranded to Jakarta EE.  This recipe replaces Apache security packages to migrate to Apache `wss4j`.
+  Java EE has been rebranded to Jakarta EE. This recipe replaces Apache security packages to migrate to Apache `wss4j`.
 preconditions:
   - org.openrewrite.Singleton
 recipeList:
@@ -168,12 +168,12 @@ recipeList:
       oldFullyQualifiedTypeName: org.apache.ws.security.message.token.KerberosServiceExceptionAction
       newFullyQualifiedTypeName: org.apache.wss4j.common.kerberos.KerberosServiceExceptionAction
   - org.openrewrite.java.ChangePackage:
-      oldPackageName: org.apache.ws.security
-      newPackageName: org.apache.wss4j.common.ext
-      recursive: true
-  - org.openrewrite.java.ChangePackage:
       oldPackageName: org.apache.ws.security.components.crypto
       newPackageName: org.apache.wss4j.common.crypto
+      recursive: true
+  - org.openrewrite.java.ChangePackage:
+      oldPackageName: org.apache.ws.security
+      newPackageName: org.apache.wss4j.common.ext
       recursive: true
 
 ```
@@ -210,7 +210,7 @@ class Test {
 ###### After
 ```java
 import org.apache.wss4j.common.ext.WSSecurityException;
-import org.apache.wss4j.common.ext.components.crypto.CryptoBase;
+import org.apache.wss4j.common.crypto.CryptoBase;
 class Test {
     void foo() {
         WSSecurityException x = new WSSecurityException(1,"");
@@ -227,7 +227,7 @@ class Test {
 -import org.apache.ws.security.WSSecurityException;
 -import org.apache.ws.security.components.crypto.CryptoBase;
 +import org.apache.wss4j.common.ext.WSSecurityException;
-+import org.apache.wss4j.common.ext.components.crypto.CryptoBase;
++import org.apache.wss4j.common.crypto.CryptoBase;
 class Test {
 ```
 </TabItem>
@@ -258,7 +258,7 @@ class Test {
 ###### After
 ```java
 import org.apache.wss4j.common.ext.WSSecurityException;
-import org.apache.wss4j.common.ext.components.crypto.CryptoBase;
+import org.apache.wss4j.common.crypto.CryptoBase;
 class Test {
     void foo() {
         WSSecurityException x = new WSSecurityException(1,"");
@@ -275,7 +275,7 @@ class Test {
 -import org.apache.ws.security.WSSecurityException;
 -import org.apache.ws.security.components.crypto.CryptoBase;
 +import org.apache.wss4j.common.ext.WSSecurityException;
-+import org.apache.wss4j.common.ext.components.crypto.CryptoBase;
++import org.apache.wss4j.common.crypto.CryptoBase;
 class Test {
 ```
 </TabItem>
@@ -286,7 +286,7 @@ class Test {
 
 <RunRecipe
   recipeName="org.openrewrite.java.migrate.jakarta.UpdateApacheWSSecurityPackages"
-  displayName="Migrate `org.apache.ws.security` and `org.apache.ws.security.components.crypto` packages to  `org.apache.wss4j.common.ext` and `org.apache.wss4j.common.crypto` packages"
+  displayName="Migrate `org.apache.ws.security` and `org.apache.ws.security.components.crypto` packages to `org.apache.wss4j.common.ext` and `org.apache.wss4j.common.crypto` packages"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-migrate-java"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA"

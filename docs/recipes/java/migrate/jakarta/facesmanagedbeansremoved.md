@@ -1,13 +1,13 @@
 ---
-title: "Substitute removed Faces Managed Beans"
-sidebar_label: "Substitute removed Faces Managed Beans"
+title: "Substitute removed Faces managed beans"
+sidebar_label: "Substitute removed Faces managed beans"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Substitute removed Faces Managed Beans
+# Substitute removed Faces managed beans
 
 **org.openrewrite.java.migrate.jakarta.FacesManagedBeansRemoved**
 
@@ -97,7 +97,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.jakarta.FacesManagedBeansRemoved
-displayName: Substitute removed Faces Managed Beans
+displayName: Substitute removed Faces managed beans
 description: |
   This recipe substitutes Faces Managed Beans, which were deprecated in JavaServer Faces 2.3 and have been removed from Jakarta Faces 4.0.
 preconditions:
@@ -322,7 +322,7 @@ public class ApplicationBean2 {
 
 <RunRecipe
   recipeName="org.openrewrite.java.migrate.jakarta.FacesManagedBeansRemoved"
-  displayName="Substitute removed Faces Managed Beans"
+  displayName="Substitute removed Faces managed beans"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-migrate-java"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA"

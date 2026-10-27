@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.testing.cleanup.TestMethodsShouldBeVoid**
 
-_Test methods annotated with `@Test`, `@ParameterizedTest`, `@RepeatedTest`, `@TestTemplate` should have `void` return type. Non-void return types can cause test discovery issues, and warnings as of JUnit 5.13+. This recipe changes the return type to `void` and removes `return` statements._
+_Test methods annotated with `@Test`, `@ParameterizedTest`, `@RepeatedTest`, `@TestTemplate` should have `void` return type. Non-void return types can cause test discovery issues, and warnings as of JUnit 5.13+. This recipe changes the return type to `void` and drops the returned values. Test methods that override a method or are called elsewhere in the same file are left unchanged._
 
 ## Recipe source
 

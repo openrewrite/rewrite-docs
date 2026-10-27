@@ -49,10 +49,12 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
   * oldGroupId: `io.micronaut.security`
   * oldArtifactId: `micronaut-security-annotations`
   * newArtifactId: `micronaut-security-processor`
+  * newVersion: `5.x`
 * [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
   * oldGroupId: `io.micronaut.eclipsestore`
   * oldArtifactId: `micronaut-eclipsestore-annotations`
   * newArtifactId: `micronaut-eclipsestore-processor`
+  * newVersion: `2.x`
 * [Change type](../../java/changetype)
   * oldFullyQualifiedTypeName: `io.micronaut.views.turbo.TurboView`
   * newFullyQualifiedTypeName: `io.micronaut.views.turbo.TurboStreamView`
@@ -63,9 +65,10 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
   * configuration: `implementation`
   * scope: `compile`
 * [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
-  * oldGroupId: `io.micronaut.testresources`
+  * oldGroupId: `org.testcontainers`
   * oldArtifactId: `junit-jupiter`
   * newArtifactId: `testcontainers-junit-jupiter`
+  * newVersion: `2.x`
 * [Migrates from Jackson 2.x to Jackson 3.x](../../java/jackson/upgradejackson_2_3)
 * [Migrate to JSpecify](../../java/jspecify/migratetojspecify)
 
@@ -100,10 +103,12 @@ recipeList:
       oldGroupId: io.micronaut.security
       oldArtifactId: micronaut-security-annotations
       newArtifactId: micronaut-security-processor
+      newVersion: 5.x
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: io.micronaut.eclipsestore
       oldArtifactId: micronaut-eclipsestore-annotations
       newArtifactId: micronaut-eclipsestore-processor
+      newVersion: 2.x
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: io.micronaut.views.turbo.TurboView
       newFullyQualifiedTypeName: io.micronaut.views.turbo.TurboStreamView
@@ -114,9 +119,10 @@ recipeList:
       configuration: implementation
       scope: compile
   - org.openrewrite.java.dependencies.ChangeDependency:
-      oldGroupId: io.micronaut.testresources
+      oldGroupId: org.testcontainers
       oldArtifactId: junit-jupiter
       newArtifactId: testcontainers-junit-jupiter
+      newVersion: 2.x
   - org.openrewrite.java.jackson.UpgradeJackson_2_3
   - org.openrewrite.java.jspecify.MigrateToJSpecify
 

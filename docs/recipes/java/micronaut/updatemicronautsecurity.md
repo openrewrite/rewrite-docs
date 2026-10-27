@@ -91,9 +91,6 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
   * oldFullyQualifiedTypeName: `io.micronaut.security.token.jwt.cookie.JwtCookieLoginHandler`
   * newFullyQualifiedTypeName: `io.micronaut.security.token.cookie.TokenCookieLoginHandler`
 * [Change type](../../java/changetype)
-  * oldFullyQualifiedTypeName: `io.micronaut.security.token.jwt.cookie.JwtCookieTokenReader`
-  * newFullyQualifiedTypeName: `io.micronaut.security.token.cookie.TokenCookieTokenReader`
-* [Change type](../../java/changetype)
   * oldFullyQualifiedTypeName: `io.micronaut.security.token.jwt.generator.AccessRefreshTokenGenerator`
   * newFullyQualifiedTypeName: `io.micronaut.security.token.generator.AccessRefreshTokenGenerator`
 * [Change type](../../java/changetype)
@@ -204,9 +201,6 @@ recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: io.micronaut.security.token.jwt.cookie.JwtCookieLoginHandler
       newFullyQualifiedTypeName: io.micronaut.security.token.cookie.TokenCookieLoginHandler
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: io.micronaut.security.token.jwt.cookie.JwtCookieTokenReader
-      newFullyQualifiedTypeName: io.micronaut.security.token.cookie.TokenCookieTokenReader
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: io.micronaut.security.token.jwt.generator.AccessRefreshTokenGenerator
       newFullyQualifiedTypeName: io.micronaut.security.token.generator.AccessRefreshTokenGenerator

@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.javascript.UpgradeTransitiveDependencyVersion**
 
-_Pins or upgrades a transitive npm dependency by adding an override entry to `package.json` and regenerating the lock file natively, without executing the package manager. For npm and Bun, adds to the `overrides` field; for Yarn, adds to `resolutions`; for pnpm, adds to `pnpm.overrides`. The override is idempotent — if the entry already exists with the same version, no change is made. Not safe to use as a precondition: consults the package registry over the network and publishes per-project state shared with other dependency recipes._
+_Pins or upgrades a transitive npm dependency with an override at the workspace root, where its package manager reads it, and regenerates the lock file natively, without executing the package manager: npm's `overrides`, Bun's `overrides` or `resolutions`, Yarn's `resolutions`, and for pnpm `pnpm-workspace.yaml` or `pnpm.overrides` by the pnpm release the project names. An override the package manager cannot read is not written, and the reason is recorded. None is written for a package the lock does not resolve. Not safe to use as a precondition: consults the package registry over the network and publishes per-project state shared with other dependency recipes._
 
 ## Recipe source
 
@@ -82,8 +82,43 @@ _Lock files that could not be regenerated after a dependency edit, and why._
 | ----------- | ----------- |
 | Source path | The path of the package.json whose lock could not be regenerated. |
 | Package name | The package that caused the failure, when attributable to one. |
-| Reason | The structured failure reason, e.g. REGISTRY_UNREACHABLE or RESOLUTION_REQUIRED. Absent for unstructured failures. |
+| Kind | CANNOT_KNOW when the outcome depends on what the engine is not given, PM_REJECTS or PM_FAILS when the package manager itself rejects or fails on the edit, SECOND_INSTALL when its next install would reject or rewrite the lock. |
+| Reason | The structured failure reason, e.g. REGISTRY_UNREACHABLE, RESOLUTION_REQUIRED or PEER_CONFLICT. |
 | Detail | A human-readable description of the failure. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.javascript.table.NodeDependencyProtocolsSkipped" label="NodeDependencyProtocolsSkipped">
+
+### Node.js dependencies skipped for their protocol
+**org.openrewrite.javascript.table.NodeDependencyProtocolsSkipped**
+
+_Dependencies a recipe left unchanged because their value is not a version range._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Source path | The package.json the recipe left unchanged. |
+| Declared in | The package.json declaring the value. |
+| Package name | The dependency left unchanged. |
+| Dependency scope | The manifest field declaring it. |
+| Protocol | The protocol the value names or expands to. |
+| Current value | The declared value. |
+| Requested version | The version the recipe was asked for. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.javascript.table.NodeDependencyEditsDeclined" label="NodeDependencyEditsDeclined">
+
+### Node.js dependency edits declined
+**org.openrewrite.javascript.table.NodeDependencyEditsDeclined**
+
+_Edits a recipe did not make, or that the package manager applies only in part, and why._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Source path | The file the edit belongs in. |
+| Package name | The dependency the edit was for. |
+| Reason | Why the edit was not made, or why the package manager would not read it as asked. |
 
 </TabItem>
 

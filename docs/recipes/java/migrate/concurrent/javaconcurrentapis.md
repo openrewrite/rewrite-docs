@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.migrate.concurrent.JavaConcurrentAPIs**
 
-_The Java concurrent APIs were updated in Java 9 and those changes resulted in certain APIs being deprecated. This recipe update an application to replace the deprecated APIs with their modern alternatives._
+_The Java concurrent APIs were updated in Java 9 and those changes resulted in certain APIs being deprecated. This recipe updates an application to replace the deprecated APIs with their modern alternatives._
 
 ## Recipe source
 
@@ -54,7 +54,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.concurrent.JavaConcurrentAPIs
 displayName: Use modernized `java.util.concurrent` APIs
 description: |
-  The Java concurrent APIs were updated in Java 9 and those changes resulted in certain APIs being deprecated. This recipe update an application to replace the deprecated APIs with their modern alternatives.
+  The Java concurrent APIs were updated in Java 9 and those changes resulted in certain APIs being deprecated. This recipe updates an application to replace the deprecated APIs with their modern alternatives.
 preconditions:
   - org.openrewrite.Singleton
 recipeList:

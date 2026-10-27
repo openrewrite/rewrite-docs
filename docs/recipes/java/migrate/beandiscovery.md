@@ -1,17 +1,17 @@
 ---
-title: "Behavior change to bean discovery in modules with `beans.xml` file with no version specified"
-sidebar_label: "Behavior change to bean discovery in modules with `beans.xml` file with no version specified"
+title: "Add `version` and `bean-discovery-mode` to `beans.xml` files without a version"
+sidebar_label: "Add `version` and `bean-discovery-mode` to `beans.xml` files without a version"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Behavior change to bean discovery in modules with `beans.xml` file with no version specified
+# Add `version` and `bean-discovery-mode` to `beans.xml` files without a version
 
 **org.openrewrite.java.migrate.BeanDiscovery**
 
-_Alters beans with missing version attribute to include this attribute as well as the bean-discovery-mode="all" attribute to maintain an explicit bean archive._
+_Alters `beans.xml` files with a missing `version` attribute to include this attribute as well as `bean-discovery-mode="all"`, to maintain an explicit bean archive._
 
 ## Recipe source
 
@@ -74,7 +74,7 @@ This recipe is used as part of the following composite recipes:
 
 <RunRecipe
   recipeName="org.openrewrite.java.migrate.BeanDiscovery"
-  displayName="Behavior change to bean discovery in modules with `beans.xml` file with no version specified"
+  displayName="Add `version` and `bean-discovery-mode` to `beans.xml` files without a version"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-migrate-java"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA"

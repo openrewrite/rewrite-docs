@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.javascript.RemoveDependency**
 
-_Remove an npm dependency from `package.json` and regenerate the lock file natively, without executing the package manager. If the dependency does not exist in any scope, the recipe is a no-op._
+_Remove an npm dependency from `package.json` and regenerate the lock file natively, without executing the package manager. A pnpm workspace with `cleanupUnusedCatalogs` also loses the catalog entries no project references any more. If the dependency does not exist in any scope, the recipe is a no-op._
 
 ## Recipe source
 
@@ -33,6 +33,10 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 This recipe is used as part of the following composite recipes:
 
+* [Migrate `@angular/http` to `@angular/common/http`](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migrateangularhttptocommonhttp)
+* [Remove the `express-request-id` dependency](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/express-request-id/remove-unused-express-request-id-dependency)
+* [Remove the `fs-extra` dependency](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/fs-extra/remove-unused-fs-extra-dependency)
+* [Remove the `source-map-support` dependency](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/source-map-support/remove-unused-source-map-support-dependency)
 * [Replace `node-sass` with `sass`](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/replace-node-sass-with-sass)
 
 
@@ -87,8 +91,24 @@ _Lock files that could not be regenerated after a dependency edit, and why._
 | ----------- | ----------- |
 | Source path | The path of the package.json whose lock could not be regenerated. |
 | Package name | The package that caused the failure, when attributable to one. |
-| Reason | The structured failure reason, e.g. REGISTRY_UNREACHABLE or RESOLUTION_REQUIRED. Absent for unstructured failures. |
+| Kind | CANNOT_KNOW when the outcome depends on what the engine is not given, PM_REJECTS or PM_FAILS when the package manager itself rejects or fails on the edit, SECOND_INSTALL when its next install would reject or rewrite the lock. |
+| Reason | The structured failure reason, e.g. REGISTRY_UNREACHABLE, RESOLUTION_REQUIRED or PEER_CONFLICT. |
 | Detail | A human-readable description of the failure. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.javascript.table.NodeDependencyEditsDeclined" label="NodeDependencyEditsDeclined">
+
+### Node.js dependency edits declined
+**org.openrewrite.javascript.table.NodeDependencyEditsDeclined**
+
+_Edits a recipe did not make, or that the package manager applies only in part, and why._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Source path | The file the edit belongs in. |
+| Package name | The dependency the edit was for. |
+| Reason | Why the edit was not made, or why the package manager would not read it as asked. |
 
 </TabItem>
 

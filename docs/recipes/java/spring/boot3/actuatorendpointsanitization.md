@@ -41,9 +41,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 **Recipes**
 
-* [Delete a spring configuration property](../../../java/spring/deletespringproperty)
+* [Delete a Spring configuration property](../../../java/spring/deletespringproperty)
   * propertyKey: `management.endpoint.configprops.additional-keys-to-sanitize`
-* [Delete a spring configuration property](../../../java/spring/deletespringproperty)
+* [Delete a Spring configuration property](../../../java/spring/deletespringproperty)
   * propertyKey: `management.endpoint.env.additional-keys-to-sanitize`
 
 </TabItem>

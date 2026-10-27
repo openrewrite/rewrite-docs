@@ -86,10 +86,22 @@ This recipe is available under the [Moderne Source Available License](https://do
   * newFullyQualifiedTypeName: `com.alibaba.fastjson2.filter.ValueFilter`
 * [Change type](../../../java/changetype)
   * oldFullyQualifiedTypeName: `com.alibaba.fastjson.serializer.SerializerFeature`
-  * newFullyQualifiedTypeName: `com.alibaba.fastjson2.JSONReader.Feature`
+  * newFullyQualifiedTypeName: `com.alibaba.fastjson2.JSONWriter$Feature`
 * [Change type](../../../java/changetype)
   * oldFullyQualifiedTypeName: `com.alibaba.fastjson.parser.Feature`
-  * newFullyQualifiedTypeName: `com.alibaba.fastjson2.JSONWriter.Feature`
+  * newFullyQualifiedTypeName: `com.alibaba.fastjson2.JSONReader$Feature`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `com.alibaba.fastjson.annotation.JSONCreator`
+  * newFullyQualifiedTypeName: `com.alibaba.fastjson2.annotation.JSONCreator`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `com.alibaba.fastjson.annotation.JSONField`
+  * newFullyQualifiedTypeName: `com.alibaba.fastjson2.annotation.JSONField`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `com.alibaba.fastjson.annotation.JSONPOJOBuilder`
+  * newFullyQualifiedTypeName: `com.alibaba.fastjson2.annotation.JSONBuilder`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `com.alibaba.fastjson.annotation.JSONType`
+  * newFullyQualifiedTypeName: `com.alibaba.fastjson2.annotation.JSONType`
 * [Rename package name](../../../java/changepackage)
   * oldPackageName: `com.alibaba.fastjson`
   * newPackageName: `com.alibaba.fastjson2`
@@ -158,10 +170,22 @@ recipeList:
       newFullyQualifiedTypeName: com.alibaba.fastjson2.filter.ValueFilter
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: com.alibaba.fastjson.serializer.SerializerFeature
-      newFullyQualifiedTypeName: com.alibaba.fastjson2.JSONReader.Feature
+      newFullyQualifiedTypeName: com.alibaba.fastjson2.JSONWriter$Feature
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: com.alibaba.fastjson.parser.Feature
-      newFullyQualifiedTypeName: com.alibaba.fastjson2.JSONWriter.Feature
+      newFullyQualifiedTypeName: com.alibaba.fastjson2.JSONReader$Feature
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: com.alibaba.fastjson.annotation.JSONCreator
+      newFullyQualifiedTypeName: com.alibaba.fastjson2.annotation.JSONCreator
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: com.alibaba.fastjson.annotation.JSONField
+      newFullyQualifiedTypeName: com.alibaba.fastjson2.annotation.JSONField
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: com.alibaba.fastjson.annotation.JSONPOJOBuilder
+      newFullyQualifiedTypeName: com.alibaba.fastjson2.annotation.JSONBuilder
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: com.alibaba.fastjson.annotation.JSONType
+      newFullyQualifiedTypeName: com.alibaba.fastjson2.annotation.JSONType
   - org.openrewrite.java.ChangePackage:
       oldPackageName: com.alibaba.fastjson
       newPackageName: com.alibaba.fastjson2
@@ -200,6 +224,25 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
+
+### Maven metadata failures
+**org.openrewrite.maven.table.MavenMetadataFailures**
+
+_Attempts to resolve maven metadata that failed._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Group id | The groupId of the artifact for which the metadata download failed. |
+| Artifact id | The artifactId of the artifact for which the metadata download failed. |
+| Version | The version of the artifact for which the metadata download failed. |
+| Maven repository | The URL of the Maven repository that the metadata download failed on. |
+| Snapshots | Does the repository support snapshots. |
+| Releases | Does the repository support releases. |
+| Failure | The reason the metadata download failed. |
+
+</TabItem>
+
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results

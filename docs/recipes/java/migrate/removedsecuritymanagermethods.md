@@ -1,13 +1,13 @@
 ---
-title: "Replace deprecated methods in`SecurityManager`"
-sidebar_label: "Replace deprecated methods in`SecurityManager`"
+title: "Replace deprecated methods in `SecurityManager`"
+sidebar_label: "Replace deprecated methods in `SecurityManager`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Replace deprecated methods in`SecurityManager`
+# Replace deprecated methods in `SecurityManager`
 
 **org.openrewrite.java.migrate.RemovedSecurityManagerMethods**
 
@@ -33,7 +33,7 @@ This recipe is used as part of the following composite recipes:
 
 <RunRecipe
   recipeName="org.openrewrite.java.migrate.RemovedSecurityManagerMethods"
-  displayName="Replace deprecated methods in`SecurityManager`"
+  displayName="Replace deprecated methods in `SecurityManager`"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-migrate-java"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA"

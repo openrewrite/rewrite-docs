@@ -1,0 +1,255 @@
+---
+title: "Move Jetty EE10 usages to EE11 alongside `wiremock-jetty12`"
+sidebar_label: "Move Jetty EE10 usages to EE11 alongside `wiremock-jetty12`"
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import RunRecipe from '@site/src/components/RunRecipe';
+
+# Move Jetty EE10 usages to EE11 alongside `wiremock-jetty12`
+
+**org.openrewrite.java.testing.wiremock.MigrateJettyEE10ToEE11**
+
+_WireMock 3's `wiremock-jetty12` module ran on Jetty's EE10 servlet environment, whereas WireMock 4.x runs on EE11, so EE10 types such as the `ServletContextHandler` handed to `NotFoundHandler` no longer line up. Move EE10 packages and dependencies over to their EE11 counterparts, but only in modules depending on `wiremock-jetty12`, where EE10 arrived through WireMock in the first place._
+
+### Tags
+
+* [wiremock](/reference/recipes-by-tag#wiremock)
+* [testing](/reference/recipes-by-tag#testing)
+* [jetty](/reference/recipes-by-tag#jetty)
+
+## Recipe source
+
+[GitHub: wiremock4.yml](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/resources/META-INF/rewrite/wiremock4.yml),
+[Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues),
+[Code Genome Project](https://artifacts.codegenomeproject.org/maven/org/openrewrite/recipe/rewrite-testing-frameworks/)
+
+:::info
+This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
+:::
+
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license). Moderne customers can download precompiled artifacts from The Code Genome Project. For non-commercial use you can build the artifact from source locally.
+
+
+## Definition
+
+<Tabs groupId="recipeType">
+<TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Module has dependency](../../../java/dependencies/search/modulehasdependency)
+  * groupIdPattern: `org.wiremock`
+  * artifactIdPattern: `wiremock-jetty12`
+
+**Recipes**
+
+* [Rename package name](../../../java/changepackage)
+  * oldPackageName: `org.eclipse.jetty.ee10`
+  * newPackageName: `org.eclipse.jetty.ee11`
+  * recursive: `true`
+* [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
+  * oldGroupId: `org.eclipse.jetty.ee10`
+  * oldArtifactId: `jetty-ee10-servlet`
+  * newGroupId: `org.eclipse.jetty.ee11`
+  * newArtifactId: `jetty-ee11-servlet`
+  * newVersion: `12.1.x`
+* [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
+  * oldGroupId: `org.eclipse.jetty.ee10`
+  * oldArtifactId: `jetty-ee10-servlets`
+  * newGroupId: `org.eclipse.jetty.ee11`
+  * newArtifactId: `jetty-ee11-servlets`
+  * newVersion: `12.1.x`
+* [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
+  * oldGroupId: `org.eclipse.jetty.ee10`
+  * oldArtifactId: `jetty-ee10-webapp`
+  * newGroupId: `org.eclipse.jetty.ee11`
+  * newArtifactId: `jetty-ee11-webapp`
+  * newVersion: `12.1.x`
+* [Add Gradle or Maven dependency](../../../java/dependencies/adddependency)
+  * groupId: `org.eclipse.jetty.ee11`
+  * artifactId: `jetty-ee11-webapp`
+  * version: `12.1.x`
+  * onlyIfUsing: `org.eclipse.jetty.ee10.webapp.*`
+* [Add Gradle or Maven dependency](../../../java/dependencies/adddependency)
+  * groupId: `org.eclipse.jetty.ee11`
+  * artifactId: `jetty-ee11-servlets`
+  * version: `12.1.x`
+  * onlyIfUsing: `org.eclipse.jetty.ee10.servlets.*`
+
+</TabItem>
+
+<TabItem value="yaml-recipe-list" label="Yaml Recipe List">
+
+```yaml
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: org.openrewrite.java.testing.wiremock.MigrateJettyEE10ToEE11
+displayName: Move Jetty EE10 usages to EE11 alongside `wiremock-jetty12`
+description: |
+  WireMock 3's `wiremock-jetty12` module ran on Jetty's EE10 servlet environment, whereas WireMock 4.x runs on EE11, so EE10 types such as the `ServletContextHandler` handed to `NotFoundHandler` no longer line up. Move EE10 packages and dependencies over to their EE11 counterparts, but only in modules depending on `wiremock-jetty12`, where EE10 arrived through WireMock in the first place.
+tags:
+  - wiremock
+  - testing
+  - jetty
+preconditions:
+  - org.openrewrite.java.dependencies.search.ModuleHasDependency:
+      groupIdPattern: org.wiremock
+      artifactIdPattern: wiremock-jetty12
+recipeList:
+  - org.openrewrite.java.ChangePackage:
+      oldPackageName: org.eclipse.jetty.ee10
+      newPackageName: org.eclipse.jetty.ee11
+      recursive: true
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: org.eclipse.jetty.ee10
+      oldArtifactId: jetty-ee10-servlet
+      newGroupId: org.eclipse.jetty.ee11
+      newArtifactId: jetty-ee11-servlet
+      newVersion: 12.1.x
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: org.eclipse.jetty.ee10
+      oldArtifactId: jetty-ee10-servlets
+      newGroupId: org.eclipse.jetty.ee11
+      newArtifactId: jetty-ee11-servlets
+      newVersion: 12.1.x
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: org.eclipse.jetty.ee10
+      oldArtifactId: jetty-ee10-webapp
+      newGroupId: org.eclipse.jetty.ee11
+      newArtifactId: jetty-ee11-webapp
+      newVersion: 12.1.x
+  - org.openrewrite.java.dependencies.AddDependency:
+      groupId: org.eclipse.jetty.ee11
+      artifactId: jetty-ee11-webapp
+      version: 12.1.x
+      onlyIfUsing: org.eclipse.jetty.ee10.webapp.*
+  - org.openrewrite.java.dependencies.AddDependency:
+      groupId: org.eclipse.jetty.ee11
+      artifactId: jetty-ee11-servlets
+      version: 12.1.x
+      onlyIfUsing: org.eclipse.jetty.ee10.servlets.*
+
+```
+</TabItem>
+</Tabs>
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Upgrade WireMock to 4.x](/recipes/java/testing/wiremock/wiremock3to4migration.md)
+
+
+## Usage
+
+<RunRecipe
+  recipeName="org.openrewrite.java.testing.wiremock.MigrateJettyEE10ToEE11"
+  displayName="Move Jetty EE10 usages to EE11 alongside `wiremock-jetty12`"
+  groupId="org.openrewrite.recipe"
+  artifactId="rewrite-testing-frameworks"
+  versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_TESTING_FRAMEWORKS"
+  hasDataTables
+/>
+
+## See how this recipe works across multiple open-source repositories
+
+import RecipeCallout from '@site/src/components/ModerneLink';
+
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.java.testing.wiremock.MigrateJettyEE10ToEE11" />
+
+The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
+
+Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
+## Data Tables
+
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
+
+### Maven metadata failures
+**org.openrewrite.maven.table.MavenMetadataFailures**
+
+_Attempts to resolve maven metadata that failed._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Group id | The groupId of the artifact for which the metadata download failed. |
+| Artifact id | The artifactId of the artifact for which the metadata download failed. |
+| Version | The version of the artifact for which the metadata download failed. |
+| Maven repository | The URL of the Maven repository that the metadata download failed on. |
+| Snapshots | Does the repository support snapshots. |
+| Releases | Does the repository support releases. |
+| Failure | The reason the metadata download failed. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
+
+### Source files that had results
+**org.openrewrite.table.SourcesFileResults**
+
+_Source files that were modified by the recipe run._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Source path before the run | The source path of the file before the run. `null` when a source file was created during the run. |
+| Source path after the run | A recipe may modify the source path. This is the path after the run. `null` when a source file was deleted during the run. |
+| Parent of the recipe that made changes | In a hierarchical recipe, the parent of the recipe that made a change. Empty if this is the root of a hierarchy or if the recipe is not hierarchical at all. |
+| Recipe that made changes | The specific recipe that made a change. |
+| Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
+| Cycle | The recipe cycle in which the change was made. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SearchResults" label="SearchResults">
+
+### Source files that had search results
+**org.openrewrite.table.SearchResults**
+
+_Search results that were found during the recipe run._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Source path of search result before the run | The source path of the file with the search result markers present. |
+| Source path of search result after run the run | A recipe may modify the source path. This is the path after the run. `null` when a source file was deleted during the run. |
+| Result | The trimmed printed tree of the LST element that the marker is attached to. |
+| Description | The content of the description of the marker. |
+| Recipe that added the search marker | The specific recipe that added the Search marker. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
+### Source files that errored on a recipe
+**org.openrewrite.table.SourcesFileErrors**
+
+_The details of all errors produced by a recipe run._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Source path | The file that failed to parse. |
+| Recipe that made changes | The specific recipe that made a change. |
+| Stack trace | The stack trace of the failure. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
+
+### Recipe performance
+**org.openrewrite.table.RecipeRunStats**
+
+_Statistics used in analyzing the performance of recipes._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| The recipe | The recipe whose stats are being measured both individually and cumulatively. |
+| Source file count | The number of source files the recipe ran over. |
+| Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
+| Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
+| Max scanning time (ns) | The max time scanning any one source file. |
+| Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
+| Max edit time (ns) | The max time editing any one source file. |
+
+</TabItem>
+
+</Tabs>

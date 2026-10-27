@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.testing.junit5.ExcludeJUnit4UnlessUsingTestcontainers**
 
-_Excludes JUnit 4 unless Testcontainers 1.x or Guava testlib requires it at runtime, even when tests use JUnit Jupiter._
+_Excludes JUnit 4 unless Testcontainers 1.x, Guava testlib or JUnit Jupiter migrationsupport requires it at runtime, even when tests use JUnit Jupiter._
 
 ## Recipe source
 
@@ -36,6 +36,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Does not include Maven dependency](../../../maven/search/doesnotincludedependency)
   * groupId: `com.google.guava`
   * artifactId: `guava-testlib`
+* [Does not include Maven dependency](../../../maven/search/doesnotincludedependency)
+  * groupId: `org.junit.jupiter`
+  * artifactId: `junit-jupiter-migrationsupport`
 
 **Recipes**
 
@@ -53,7 +56,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.testing.junit5.ExcludeJUnit4UnlessUsingTestcontainers
 displayName: Exclude JUnit 4, unless a test library requires it
 description: |
-  Excludes JUnit 4 unless Testcontainers 1.x or Guava testlib requires it at runtime, even when tests use JUnit Jupiter.
+  Excludes JUnit 4 unless Testcontainers 1.x, Guava testlib or JUnit Jupiter migrationsupport requires it at runtime, even when tests use JUnit Jupiter.
 preconditions:
   - org.openrewrite.Singleton
   - org.openrewrite.maven.search.DoesNotIncludeDependency:
@@ -63,6 +66,9 @@ preconditions:
   - org.openrewrite.maven.search.DoesNotIncludeDependency:
       groupId: com.google.guava
       artifactId: guava-testlib
+  - org.openrewrite.maven.search.DoesNotIncludeDependency:
+      groupId: org.junit.jupiter
+      artifactId: junit-jupiter-migrationsupport
 recipeList:
   - org.openrewrite.maven.ExcludeDependency:
       groupId: junit

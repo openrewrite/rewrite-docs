@@ -26,7 +26,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrates Spring Kafka deprecated error handlers](/recipes/java/spring/kafka/upgradespringkafka_2_8_errorhandlers.md)
+* [Migrate deprecated Spring Kafka error handlers](/recipes/java/spring/kafka/upgradespringkafka_2_8_errorhandlers.md)
 
 
 ## Usage

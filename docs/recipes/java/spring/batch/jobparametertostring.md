@@ -1,17 +1,17 @@
 ---
-title: "Migration invocation of JobParameter.toString to JobParameter.getValue.toString"
-sidebar_label: "Migration invocation of JobParameter.toString to JobParameter.getValue.toString"
+title: "Migrate `JobParameter.toString()` to `JobParameter.getValue().toString()`"
+sidebar_label: "Migrate `JobParameter.toString()` to `JobParameter.getValue().toString()`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Migration invocation of JobParameter.toString to JobParameter.getValue.toString
+# Migrate `JobParameter.toString()` to `JobParameter.getValue().toString()`
 
 **org.openrewrite.java.spring.batch.JobParameterToString**
 
-_JobParameter.toString() logic is quite different in spring batch 5, need take JobParameter.getValue.toString replace the JobParameter.toString._
+_The `JobParameter.toString()` output changed in Spring Batch 5, so replace it with `JobParameter.getValue().toString()`._
 
 ## Recipe source
 
@@ -76,7 +76,7 @@ class Foo {
 
 <RunRecipe
   recipeName="org.openrewrite.java.spring.batch.JobParameterToString"
-  displayName="Migration invocation of JobParameter.toString to JobParameter.getValue.toString"
+  displayName="Migrate `JobParameter.toString()` to `JobParameter.getValue().toString()`"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-spring"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING"

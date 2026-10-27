@@ -1,13 +1,13 @@
 ---
-title: "Private accessor methods must have a `@Transient` annotation"
-sidebar_label: "Private accessor methods must have a `@Transient` annotation"
+title: "Add `@Transient` to private accessor methods"
+sidebar_label: "Add `@Transient` to private accessor methods"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Private accessor methods must have a `@Transient` annotation
+# Add `@Transient` to private accessor methods
 
 **org.openrewrite.java.migrate.javax.AddTransientAnnotationToPrivateAccessor**
 
@@ -106,7 +106,7 @@ import javax.persistence.Id;
 
 <RunRecipe
   recipeName="org.openrewrite.java.migrate.javax.AddTransientAnnotationToPrivateAccessor"
-  displayName="Private accessor methods must have a `@Transient` annotation"
+  displayName="Add `@Transient` to private accessor methods"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-migrate-java"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA"

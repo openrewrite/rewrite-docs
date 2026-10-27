@@ -28,6 +28,83 @@ This recipe is used as part of the following composite recipes:
 
 * [JUnit Jupiter migration from JUnit 4.x](/recipes/java/testing/junit5/junit4to5migration.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.assertj.core.api.JUnitSoftAssertions;
+import org.junit.Rule;
+import org.junit.Test;
+
+public class SoftlyTest {
+    @Rule
+    public final JUnitSoftAssertions softly = new JUnitSoftAssertions();
+
+    @Test
+    public void multipleAssertions() {
+        softly.assertThat("foo").isEqualTo("bar");
+    }
+}
+```
+
+###### After
+```java
+import org.assertj.core.api.SoftAssertions;
+import org.assertj.core.api.junit.jupiter.InjectSoftAssertions;
+import org.assertj.core.api.junit.jupiter.SoftAssertionsExtension;
+import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+
+@ExtendWith(SoftAssertionsExtension.class)
+public class SoftlyTest {
+    @InjectSoftAssertions
+    public SoftAssertions softly;
+
+    @Test
+    public void multipleAssertions() {
+        softly.assertThat("foo").isEqualTo("bar");
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,2 +1,3 @@
+-import org.assertj.core.api.JUnitSoftAssertions;
+-import org.junit.Rule;
++import org.assertj.core.api.SoftAssertions;
++import org.assertj.core.api.junit.jupiter.InjectSoftAssertions;
++import org.assertj.core.api.junit.jupiter.SoftAssertionsExtension;
+import org.junit.Test;
+@@ -4,0 +5,1 @@
+import org.junit.Rule;
+import org.junit.Test;
++import org.junit.jupiter.api.extension.ExtendWith;
+
+@@ -5,0 +7,1 @@
+import org.junit.Test;
+
++@ExtendWith(SoftAssertionsExtension.class)
+public class SoftlyTest {
+@@ -6,2 +9,2 @@
+
+public class SoftlyTest {
+-   @Rule
+-   public final JUnitSoftAssertions softly = new JUnitSoftAssertions();
++   @InjectSoftAssertions
++   public SoftAssertions softly;
+
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

@@ -11,62 +11,16 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.migrate.jakarta.RemovedUIComponentConstant**
 
-_Replace `jakarta.faces.component.UIComponent.CURRENT_COMPONENT` and `CURRENT_COMPOSITE_COMPONENT` constants with `jakarta.faces.component.UIComponent.getCurrentComponent()` and `getCurrentCompositeComponent()`. that were added in JSF 2.0._
+_Replace lookups of the `jakarta.faces.component.UIComponent.CURRENT_COMPONENT` and `CURRENT_COMPOSITE_COMPONENT` keys in the `FacesContext` attributes with `UIComponent.getCurrentComponent(FacesContext)` and `UIComponent.getCurrentCompositeComponent(FacesContext)`, which were added in JSF 2.0._
 
 ## Recipe source
 
-[GitHub: jakarta-faces-3.yml](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/jakarta-faces-3.yml),
+[GitHub: RemovedUIComponentConstant.java](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/jakarta/RemovedUIComponentConstant.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues),
 [Code Genome Project](https://artifacts.codegenomeproject.org/maven/org/openrewrite/recipe/rewrite-migrate-java/)
 
-:::info
-This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
-:::
-
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license). Moderne customers can download precompiled artifacts from The Code Genome Project. For non-commercial use you can build the artifact from source locally.
 
-
-## Definition
-
-<Tabs groupId="recipeType">
-<TabItem value="recipe-list" label="Recipe List" >
-**Preconditions**
-
-* [Singleton](../../../core/singleton)
-
-**Recipes**
-
-* [Replace constant with another constant](../../../java/replaceconstantwithanotherconstant)
-  * existingFullyQualifiedConstantName: `jakarta.faces.component.UIComponent.CURRENT_COMPONENT`
-  * fullyQualifiedConstantName: `jakarta.faces.component.UIComponent.getCurrentComponent()`
-* [Replace constant with another constant](../../../java/replaceconstantwithanotherconstant)
-  * existingFullyQualifiedConstantName: `jakarta.faces.component.UIComponent.CURRENT_COMPOSITE_COMPONENT`
-  * fullyQualifiedConstantName: `jakarta.faces.component.UIComponent.getCurrentCompositeComponent()`
-
-</TabItem>
-
-<TabItem value="yaml-recipe-list" label="Yaml Recipe List">
-
-```yaml
----
-type: specs.openrewrite.org/v1beta/recipe
-name: org.openrewrite.java.migrate.jakarta.RemovedUIComponentConstant
-displayName: Replace `CURRENT_COMPONENT` and `CURRENT_COMPOSITE_COMPONENT` with `getCurrentComponent()` and `getCurrentCompositeComponent()`
-description: |
-  Replace `jakarta.faces.component.UIComponent.CURRENT_COMPONENT` and `CURRENT_COMPOSITE_COMPONENT` constants with `jakarta.faces.component.UIComponent.getCurrentComponent()` and `getCurrentCompositeComponent()`. that were added in JSF 2.0.
-preconditions:
-  - org.openrewrite.Singleton
-recipeList:
-  - org.openrewrite.java.ReplaceConstantWithAnotherConstant:
-      existingFullyQualifiedConstantName: jakarta.faces.component.UIComponent.CURRENT_COMPONENT
-      fullyQualifiedConstantName: jakarta.faces.component.UIComponent.getCurrentComponent()
-  - org.openrewrite.java.ReplaceConstantWithAnotherConstant:
-      existingFullyQualifiedConstantName: jakarta.faces.component.UIComponent.CURRENT_COMPOSITE_COMPONENT
-      fullyQualifiedConstantName: jakarta.faces.component.UIComponent.getCurrentCompositeComponent()
-
-```
-</TabItem>
-</Tabs>
 
 ## Used by
 
@@ -75,9 +29,7 @@ This recipe is used as part of the following composite recipes:
 * [JSF 2.x to Jakarta Faces 3.x](/recipes/java/migrate/jakarta/faces2xmigrationtojakartafaces3x.md)
 * [JSF 2.x to Jakarta Server Faces 3.x](/recipes/oracle/weblogic/rewrite/jakarta/faces2xmigrationtojakartafaces3x.md)
 
-## Examples
-##### Example 1
-`RemovedUIComponentConstantTest#removedUIComponentConstant_1`
+## Example
 
 
 <Tabs groupId="beforeAfter">
@@ -87,13 +39,14 @@ This recipe is used as part of the following composite recipes:
 ###### Before
 ```java
 import jakarta.faces.component.UIComponent;
+import jakarta.faces.context.FacesContext;
 
 class Bar {
-    void foo() {
-        String str = UIComponent.CURRENT_COMPONENT;
-        String str2 = UIComponent.CURRENT_COMPOSITE_COMPONENT;
-        System.out.println(str);
-        System.out.println(str2);
+    void foo(FacesContext context) {
+        UIComponent component = (UIComponent) context.getAttributes().get(UIComponent.CURRENT_COMPONENT);
+        Object composite = FacesContext.getCurrentInstance().getAttributes().get(UIComponent.CURRENT_COMPOSITE_COMPONENT);
+        System.out.println(component);
+        System.out.println(composite);
     }
 }
 ```
@@ -101,13 +54,14 @@ class Bar {
 ###### After
 ```java
 import jakarta.faces.component.UIComponent;
+import jakarta.faces.context.FacesContext;
 
 class Bar {
-    void foo() {
-        String str = UIComponent.getCurrentComponent();
-        String str2 = UIComponent.getCurrentCompositeComponent();
-        System.out.println(str);
-        System.out.println(str2);
+    void foo(FacesContext context) {
+        UIComponent component = UIComponent.getCurrentComponent(context);
+        Object composite = UIComponent.getCurrentCompositeComponent(FacesContext.getCurrentInstance());
+        System.out.println(component);
+        System.out.println(composite);
     }
 }
 ```
@@ -116,68 +70,14 @@ class Bar {
 <TabItem value="diff" label="Diff" >
 
 ```diff
-@@ -5,2 +5,2 @@
+@@ -6,2 +6,2 @@
 class Bar {
-    void foo() {
--       String str = UIComponent.CURRENT_COMPONENT;
--       String str2 = UIComponent.CURRENT_COMPOSITE_COMPONENT;
-+       String str = UIComponent.getCurrentComponent();
-+       String str2 = UIComponent.getCurrentCompositeComponent();
-        System.out.println(str);
-```
-</TabItem>
-</Tabs>
-
----
-
-##### Example 2
-`RemovedUIComponentConstantTest#removedUIComponentConstant_1`
-
-
-<Tabs groupId="beforeAfter">
-<TabItem value="java" label="java">
-
-
-###### Before
-```java
-import jakarta.faces.component.UIComponent;
-
-class Bar {
-    void foo() {
-        String str = UIComponent.CURRENT_COMPONENT;
-        String str2 = UIComponent.CURRENT_COMPOSITE_COMPONENT;
-        System.out.println(str);
-        System.out.println(str2);
-    }
-}
-```
-
-###### After
-```java
-import jakarta.faces.component.UIComponent;
-
-class Bar {
-    void foo() {
-        String str = UIComponent.getCurrentComponent();
-        String str2 = UIComponent.getCurrentCompositeComponent();
-        System.out.println(str);
-        System.out.println(str2);
-    }
-}
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
-@@ -5,2 +5,2 @@
-class Bar {
-    void foo() {
--       String str = UIComponent.CURRENT_COMPONENT;
--       String str2 = UIComponent.CURRENT_COMPOSITE_COMPONENT;
-+       String str = UIComponent.getCurrentComponent();
-+       String str2 = UIComponent.getCurrentCompositeComponent();
-        System.out.println(str);
+    void foo(FacesContext context) {
+-       UIComponent component = (UIComponent) context.getAttributes().get(UIComponent.CURRENT_COMPONENT);
+-       Object composite = FacesContext.getCurrentInstance().getAttributes().get(UIComponent.CURRENT_COMPOSITE_COMPONENT);
++       UIComponent component = UIComponent.getCurrentComponent(context);
++       Object composite = UIComponent.getCurrentCompositeComponent(FacesContext.getCurrentInstance());
+        System.out.println(component);
 ```
 </TabItem>
 </Tabs>

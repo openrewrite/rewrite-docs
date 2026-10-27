@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.migrate.jakarta.RetainJaxbApiForArquillianRecorder**
 
-_Retain the legacy JAXB API in Maven modules using Arquillian Recorder 1.x binaries, which still reference javax.xml.bind classes after the application's Jakarta migration._
+_Retain the legacy JAXB API in Maven modules using Arquillian Recorder 1.x binaries, which still reference `javax.xml.bind` classes after the application's Jakarta migration._
 
 ## Recipe source
 

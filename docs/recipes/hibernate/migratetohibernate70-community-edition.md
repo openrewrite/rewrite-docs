@@ -37,6 +37,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 **Recipes**
 
 * [Migrate to Hibernate 6.6.x (Community Edition)](../hibernate/migratetohibernate66-community-edition)
+* [Migrate `persistence.xml` to Jakarta Persistence 3.2](../hibernate/migratepersistencexmltojakartapersistence32)
 * [Migrate Hibernate Types to Hypersistence Utils for Hibernate 7.0](../hibernate/migratetohypersistenceutilshibernate70)
 * [Migrate dialects removed in Hibernate 7.0 to their generic equivalents](../hibernate/migrateremoveddialectshibernate70)
 * [Upgrade Gradle or Maven dependency versions](../java/dependencies/upgradedependencyversion)
@@ -100,6 +101,7 @@ preconditions:
   - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.hibernate.MigrateToHibernate66
+  - org.openrewrite.hibernate.MigratePersistenceXmlToJakartaPersistence32
   - org.openrewrite.hibernate.MigrateToHypersistenceUtilsHibernate70
   - org.openrewrite.hibernate.MigrateRemovedDialectsHibernate70
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
@@ -271,6 +273,25 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
+
+### Maven metadata failures
+**org.openrewrite.maven.table.MavenMetadataFailures**
+
+_Attempts to resolve maven metadata that failed._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Group id | The groupId of the artifact for which the metadata download failed. |
+| Artifact id | The artifactId of the artifact for which the metadata download failed. |
+| Version | The version of the artifact for which the metadata download failed. |
+| Maven repository | The URL of the Maven repository that the metadata download failed on. |
+| Snapshots | Does the repository support snapshots. |
+| Releases | Does the repository support releases. |
+| Failure | The reason the metadata download failed. |
+
+</TabItem>
+
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results

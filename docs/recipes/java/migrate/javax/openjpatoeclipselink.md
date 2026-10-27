@@ -41,15 +41,15 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 **Recipes**
 
-* [`@ElementCollection` annotations must be accompanied by a defined `@Column` annotation](../../../java/migrate/javax/addcolumnannotation)
-* [`@Entity` objects with constructors must also have a default constructor](../../../java/migrate/javax/adddefaultconstructortoentityclass)
-* [Attributes with automatically generated values require configuration](../../../java/migrate/javax/addtablegenerator)
-* [Unannotated collection attributes require a Transient annotation](../../../java/migrate/javax/addtransientannotationtocollections)
-* [Unannotated entity attributes require a Transient annotation](../../../java/migrate/javax/addtransientannotationtoentity)
-* [Private accessor methods must have a `@Transient` annotation](../../../java/migrate/javax/addtransientannotationtoprivateaccessor)
-* [`@Embeddable` classes cannot have an `@Id` annotation when referenced by an `@EmbeddedId` annotation](../../../java/migrate/javax/removeembeddableid)
+* [Set `@Column(name = &quot;element&quot;)` on `@ElementCollection` attributes](../../../java/migrate/javax/addcolumnannotation)
+* [Add a default constructor to `@Entity` and `@MappedSuperclass` classes](../../../java/migrate/javax/adddefaultconstructortoentityclass)
+* [Add a `@TableGenerator` to automatically generated `@GeneratedValue` attributes](../../../java/migrate/javax/addtablegenerator)
+* [Add `@Transient` to unannotated collection attributes](../../../java/migrate/javax/addtransientannotationtocollections)
+* [Add `@Transient` to unannotated entity attributes](../../../java/migrate/javax/addtransientannotationtoentity)
+* [Add `@Transient` to private accessor methods](../../../java/migrate/javax/addtransientannotationtoprivateaccessor)
+* [Remove `@Id` from `@Embeddable` classes referenced by an `@EmbeddedId`](../../../java/migrate/javax/removeembeddableid)
 * [Remove the `@Temporal` annotation for some `java.sql` attributes](../../../java/migrate/javax/removetemporalannotation)
-* [`@JoinColumn` annotations must be used with relationship mappings](../../../java/migrate/javax/usejoincolumnformapping)
+* [Replace `@Column` with `@JoinColumn` on relationship mappings](../../../java/migrate/javax/usejoincolumnformapping)
 
 </TabItem>
 

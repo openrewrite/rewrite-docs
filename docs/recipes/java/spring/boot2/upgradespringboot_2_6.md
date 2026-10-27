@@ -46,7 +46,6 @@ This recipe is available under the [Moderne Source Available License](https://do
   * groupId: `org.springframework.boot`
   * artifactId: `*`
   * newVersion: `2.6.x`
-  * overrideManagedVersion: `false`
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `org.springframework.boot`
   * artifactId: `spring-boot-dependencies`
@@ -72,8 +71,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `org.springframework.cloud`
   * artifactId: `spring-cloud-dependencies`
-  * newVersion: `2021.0.X`
-  * overrideManagedVersion: `false`
+  * newVersion: `2021.0.x`
 * [Upgrade MyBatis to Spring Boot 2.6](../../../java/spring/boot3/upgrademybatistospringboot_2_6)
 
 </TabItem>
@@ -98,7 +96,6 @@ recipeList:
       groupId: org.springframework.boot
       artifactId: "*"
       newVersion: 2.6.x
-      overrideManagedVersion: false
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: org.springframework.boot
       artifactId: spring-boot-dependencies
@@ -124,8 +121,7 @@ recipeList:
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: org.springframework.cloud
       artifactId: spring-cloud-dependencies
-      newVersion: 2021.0.X
-      overrideManagedVersion: false
+      newVersion: 2021.0.x
   - org.openrewrite.java.spring.boot3.UpgradeMyBatisToSpringBoot_2_6
 
 ```

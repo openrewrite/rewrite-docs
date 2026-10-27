@@ -19,12 +19,50 @@ _Use `java.net.HttpURLConnection.HTTP_INTERNAL_ERROR` instead of the deprecated 
 
 ## Recipe source
 
-[GitHub: MigrateHttpURLConnectionHttpServerErrorToHttpInternalError.java](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/net/MigrateHttpURLConnectionHttpServerErrorToHttpInternalError.java),
+[GitHub: java-net-apis.yml](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/java-net-apis.yml),
 [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues),
 [Code Genome Project](https://artifacts.codegenomeproject.org/maven/org/openrewrite/recipe/rewrite-migrate-java/)
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license). Moderne customers can download precompiled artifacts from The Code Genome Project. For non-commercial use you can build the artifact from source locally.
 
+
+## Definition
+
+<Tabs groupId="recipeType">
+<TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
+* [Replace constant with another constant](../../../java/replaceconstantwithanotherconstant)
+  * existingFullyQualifiedConstantName: `java.net.HttpURLConnection.HTTP_SERVER_ERROR`
+  * fullyQualifiedConstantName: `java.net.HttpURLConnection.HTTP_INTERNAL_ERROR`
+
+</TabItem>
+
+<TabItem value="yaml-recipe-list" label="Yaml Recipe List">
+
+```yaml
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: org.openrewrite.java.migrate.net.MigrateHttpURLConnectionHttpServerErrorToHttpInternalError
+displayName: Use `java.net.HttpURLConnection.HTTP_INTERNAL_ERROR`
+description: |
+  Use `java.net.HttpURLConnection.HTTP_INTERNAL_ERROR` instead of the deprecated `java.net.HttpURLConnection.HTTP_SERVER_ERROR`.
+tags:
+  - deprecated
+preconditions:
+  - org.openrewrite.Singleton
+recipeList:
+  - org.openrewrite.java.ReplaceConstantWithAnotherConstant:
+      existingFullyQualifiedConstantName: java.net.HttpURLConnection.HTTP_SERVER_ERROR
+      fullyQualifiedConstantName: java.net.HttpURLConnection.HTTP_INTERNAL_ERROR
+
+```
+</TabItem>
+</Tabs>
 
 ## Used by
 
@@ -32,7 +70,65 @@ This recipe is used as part of the following composite recipes:
 
 * [Use modernized `java.net` APIs](/recipes/java/migrate/net/javanetapis.md)
 
-## Example
+## Examples
+##### Example 1
+`MigrateHttpURLConnectionHttpServerErrorToHttpInternalErrorTest#httpUrlConnectionHttpServerErrorToHttpInternalError`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import java.net.HttpURLConnection;
+
+class Test {
+    private static final int ERROR = HttpURLConnection.HTTP_SERVER_ERROR;
+
+    public static int method() {
+        return HttpURLConnection.HTTP_SERVER_ERROR;
+    }
+}
+```
+
+###### After
+```java
+import java.net.HttpURLConnection;
+
+class Test {
+    private static final int ERROR = HttpURLConnection.HTTP_INTERNAL_ERROR;
+
+    public static int method() {
+        return HttpURLConnection.HTTP_INTERNAL_ERROR;
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -4,1 +4,1 @@
+
+class Test {
+-   private static final int ERROR = HttpURLConnection.HTTP_SERVER_ERROR;
++   private static final int ERROR = HttpURLConnection.HTTP_INTERNAL_ERROR;
+
+@@ -7,1 +7,1 @@
+
+    public static int method() {
+-       return HttpURLConnection.HTTP_SERVER_ERROR;
++       return HttpURLConnection.HTTP_INTERNAL_ERROR;
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`MigrateHttpURLConnectionHttpServerErrorToHttpInternalErrorTest#httpUrlConnectionHttpServerErrorToHttpInternalError`
 
 
 <Tabs groupId="beforeAfter">

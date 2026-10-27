@@ -1,6 +1,6 @@
 ---
-title: "Prefer `new LinkedList&lt;&gt;()`"
-sidebar_label: "Prefer `new LinkedList&lt;&gt;()`"
+title: "Prefer `new LinkedList<>()`"
+sidebar_label: "Prefer `new LinkedList<>()`"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -19,20 +19,97 @@ _Prefer the Java standard library over third-party usage of Guava in simple case
 
 ## Recipe source
 
-[GitHub: NoGuavaListsNewLinkedList.java](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/guava/NoGuavaListsNewLinkedList.java),
+[GitHub: no-guava.yml](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/no-guava.yml),
 [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues),
 [Code Genome Project](https://artifacts.codegenomeproject.org/maven/org/openrewrite/recipe/rewrite-migrate-java/)
+
+:::info
+This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
+:::
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license). Moderne customers can download precompiled artifacts from The Code Genome Project. For non-commercial use you can build the artifact from source locally.
 
 
-## Used by
+## Definition
 
-This recipe is used as part of the following composite recipes:
+<Tabs groupId="recipeType">
+<TabItem value="recipe-list" label="Recipe List" >
+* [Prefer `new LinkedList&lt;&gt;()`](../../../java/migrate/guava/noguavarefasterrecipes$listsnewlinkedlistrecipe)
+* [Prefer `new LinkedList&lt;&gt;(Collection)`](../../../java/migrate/guava/noguavarefasterrecipes$listsnewlinkedlistfromcollectionrecipe)
 
-* [Prefer the Java standard library instead of Guava](/recipes/java/migrate/guava/noguava.md)
+</TabItem>
 
-## Example
+<TabItem value="yaml-recipe-list" label="Yaml Recipe List">
+
+```yaml
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: org.openrewrite.java.migrate.guava.NoGuavaListsNewLinkedList
+displayName: Prefer `new LinkedList&lt;&gt;()`
+description: |
+  Prefer the Java standard library over third-party usage of Guava in simple cases like this.
+tags:
+  - guava
+recipeList:
+  - org.openrewrite.java.migrate.guava.NoGuavaRefasterRecipes$ListsNewLinkedListRecipe
+  - org.openrewrite.java.migrate.guava.NoGuavaRefasterRecipes$ListsNewLinkedListFromCollectionRecipe
+
+```
+</TabItem>
+</Tabs>
+## Examples
+##### Example 1
+`NoGuavaListsNewLinkedListTest#replaceWithNewLinkedList`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import com.google.common.collect.*;
+
+import java.util.List;
+
+class Test {
+    List<Integer> cardinalsWorldSeries = Lists.newLinkedList();
+}
+```
+
+###### After
+```java
+import java.util.LinkedList;
+import java.util.List;
+
+class Test {
+    List<Integer> cardinalsWorldSeries = new LinkedList<>();
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,2 +1,1 @@
+-import com.google.common.collect.*;
+-
++import java.util.LinkedList;
+import java.util.List;
+@@ -6,1 +5,1 @@
+
+class Test {
+-   List<Integer> cardinalsWorldSeries = Lists.newLinkedList();
++   List<Integer> cardinalsWorldSeries = new LinkedList<>();
+}
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`NoGuavaListsNewLinkedListTest#replaceWithNewLinkedList`
 
 
 <Tabs groupId="beforeAfter">

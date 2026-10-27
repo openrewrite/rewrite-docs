@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.migrate.javax.AddScopeToInjectedClass**
 
-_Finds member variables annotated with `@Inject' and applies `@Dependent` scope annotation to the variable's type._
+_Finds member variables annotated with `@Inject` and applies `@Dependent` scope annotation to the variable's type._
 
 ## Recipe source
 

@@ -26,7 +26,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 This recipe is used as part of the following composite recipes:
 
-* [Adopt AssertJ Double Assertions](/recipes/java/testing/assertj/assertjdoublerulesrecipes.md)
+* [Adopt AssertJ `Double` assertions](/recipes/java/testing/assertj/assertjdoublerulesrecipes.md)
 
 
 ## Usage

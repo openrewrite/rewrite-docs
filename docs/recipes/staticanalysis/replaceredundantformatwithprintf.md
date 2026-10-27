@@ -1,17 +1,21 @@
 ---
-title: "Replace redundant String format invocations that are wrapped with PrintStream operations"
-sidebar_label: "Replace redundant String format invocations that are wrapped with PrintStream operations"
+title: "Replace redundant `String.format()` invocations that are wrapped with `PrintStream` operations"
+sidebar_label: "Replace redundant `String.format()` invocations that are wrapped with `PrintStream` operations"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Replace redundant String format invocations that are wrapped with PrintStream operations
+# Replace redundant `String.format()` invocations that are wrapped with `PrintStream` operations
 
 **org.openrewrite.staticanalysis.ReplaceRedundantFormatWithPrintf**
 
 _Replaces `PrintStream.print(String.format(format, ...args))` with `PrintStream.printf(format, ...args)` (and for `println`, appends a newline to the format string)._
+
+### Tags
+
+* [RSPEC-S9413](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S9413&open=java%3AS9413)
 
 ## Recipe source
 
@@ -67,7 +71,7 @@ class Test {
 
 <RunRecipe
   recipeName="org.openrewrite.staticanalysis.ReplaceRedundantFormatWithPrintf"
-  displayName="Replace redundant String format invocations that are wrapped with PrintStream operations"
+  displayName="Replace redundant `String.format()` invocations that are wrapped with `PrintStream` operations"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-static-analysis"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_STATIC_ANALYSIS"

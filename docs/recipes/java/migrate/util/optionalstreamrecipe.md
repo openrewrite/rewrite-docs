@@ -1,17 +1,17 @@
 ---
-title: "`Stream&lt;Optional&gt;` idiom recipe"
-sidebar_label: "`Stream&lt;Optional&gt;` idiom recipe"
+title: "Replace `filter(Optional::isPresent).map(Optional::get)` with `flatMap(Optional::stream)`"
+sidebar_label: "Replace `filter(Optional::isPresent).map(Optional::get)` with `flatMap(Optional::stream)`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# `Stream&lt;Optional&gt;` idiom recipe
+# Replace `filter(Optional::isPresent).map(Optional::get)` with `flatMap(Optional::stream)`
 
 **org.openrewrite.java.migrate.util.OptionalStreamRecipe**
 
-_Migrate Java 8 `Optional<Stream>.filter(Optional::isPresent).map(Optional::get)` to Java 11 `.flatMap(Optional::stream)`._
+_Replace `Stream<Optional>.filter(Optional::isPresent).map(Optional::get)` with `.flatMap(Optional::stream)` in Java 9 or higher._
 
 ## Recipe source
 
@@ -83,7 +83,7 @@ class Scratch {
 
 <RunRecipe
   recipeName="org.openrewrite.java.migrate.util.OptionalStreamRecipe"
-  displayName="`Stream&lt;Optional&gt;` idiom recipe"
+  displayName="Replace `filter(Optional::isPresent).map(Optional::get)` with `flatMap(Optional::stream)`"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-migrate-java"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA"

@@ -26,7 +26,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 This recipe is used as part of the following composite recipes:
 
-* [Adopt AssertJ Float Assertions](/recipes/java/testing/assertj/assertjfloatrulesrecipes.md)
+* [Adopt AssertJ `Float` assertions](/recipes/java/testing/assertj/assertjfloatrulesrecipes.md)
 
 
 ## Usage

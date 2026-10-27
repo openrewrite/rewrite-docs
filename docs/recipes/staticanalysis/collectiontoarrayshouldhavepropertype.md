@@ -1,13 +1,13 @@
 ---
-title: "'Collection.toArray()' should be passed an array of the proper type"
-sidebar_label: "'Collection.toArray()' should be passed an array of the proper type"
+title: "`Collection.toArray()` should be passed an array of the proper type"
+sidebar_label: "`Collection.toArray()` should be passed an array of the proper type"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# 'Collection.toArray()' should be passed an array of the proper type
+# `Collection.toArray()` should be passed an array of the proper type
 
 **org.openrewrite.staticanalysis.CollectionToArrayShouldHaveProperType**
 
@@ -80,7 +80,7 @@ class Test {
 
 <RunRecipe
   recipeName="org.openrewrite.staticanalysis.CollectionToArrayShouldHaveProperType"
-  displayName="'Collection.toArray()' should be passed an array of the proper type"
+  displayName="`Collection.toArray()` should be passed an array of the proper type"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-static-analysis"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_STATIC_ANALYSIS"

@@ -32,7 +32,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 <TabItem value="recipe-list" label="Recipe List" >
 **Preconditions**
 
-* [Dependency insight for Gradle and Maven](../../../java/dependencies/dependencyinsight)
+* [Gradle or Maven dependency insight](../../../java/dependencies/dependencyinsight)
   * groupIdPattern: `jakarta.platform`
   * artifactIdPattern: `jakarta.jakartaee-api`
   * version: `9.x`

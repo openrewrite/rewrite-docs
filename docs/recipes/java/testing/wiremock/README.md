@@ -11,6 +11,8 @@ _Recipes for [WireMock](https://wiremock.org/) HTTP service mocking._
 _Recipes that include further recipes, often including the individual recipes below._
 
 * [Keep a single `Content-Type` response header while still on WireMock 3](./removeduplicatecontenttypeheaders.md)
+* [Move Jetty EE10 usages to EE11 alongside `wiremock-jetty12`](./migratejettyee10toee11.md)
+* [Move WireMock types to their 4.x packages](./wiremock4relocatedtypes.md)
 * [Upgrade WireMock to 3.x](./upgradewiremockdependencyversion.md)
 * [Upgrade WireMock to 4.x](./wiremock3to4migration.md)
 

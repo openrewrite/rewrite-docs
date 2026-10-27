@@ -13,10 +13,6 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 _Applies De Morgan's laws to simplify boolean expressions with negation. Transforms `!(a && b)` to `!a || !b` and `!(a || b)` to `!a && !b`. Distributing negations inward eliminates the outer `!` and makes each individual condition's polarity immediately visible, which aids comprehension._
 
-### Tags
-
-* [RSPEC-S1125](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S1125&open=java%3AS1125)
-
 ## Recipe source
 
 [GitHub: SimplifyBooleanExpressionWithDeMorgan.java](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/SimplifyBooleanExpressionWithDeMorgan.java),

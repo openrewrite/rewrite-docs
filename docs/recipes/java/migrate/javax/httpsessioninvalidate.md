@@ -1,17 +1,17 @@
 ---
-title: "Use HttpServletRequest `logout` method for programmatic security logout in Servlet 3.0"
-sidebar_label: "Use HttpServletRequest `logout` method for programmatic security logout in Servlet 3.0"
+title: "Call `HttpServletRequest.logout()` before `HttpSession.invalidate()`"
+sidebar_label: "Call `HttpServletRequest.logout()` before `HttpSession.invalidate()`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Use HttpServletRequest `logout` method for programmatic security logout in Servlet 3.0
+# Call `HttpServletRequest.logout()` before `HttpSession.invalidate()`
 
 **org.openrewrite.java.migrate.javax.HttpSessionInvalidate**
 
-_Do not rely on HttpSession `invalidate` method for programmatic security logout. Add the HttpServletRequest `logout` method which was introduced in Java EE 6 as part of the Servlet 3.0 specification._
+_Add a call to `HttpServletRequest#logout()`, introduced in Servlet 3.0, before `HttpSession#invalidate()`, so that a programmatic logout also clears the authenticated user, not only the session. Only applies to standalone `invalidate()` statements in methods with an `HttpServletRequest` parameter where the `ServletException` thrown by `logout()` is already declared or caught._
 
 ## Recipe source
 
@@ -26,7 +26,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrate to JavaEE6](/recipes/java/migrate/javaee6.md)
+* [Migrate to Java EE 6](/recipes/java/migrate/javaee6.md)
 
 ## Example
 
@@ -84,7 +84,7 @@ class Foo {
 
 <RunRecipe
   recipeName="org.openrewrite.java.migrate.javax.HttpSessionInvalidate"
-  displayName="Use HttpServletRequest `logout` method for programmatic security logout in Servlet 3.0"
+  displayName="Call `HttpServletRequest.logout()` before `HttpSession.invalidate()`"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-migrate-java"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA"

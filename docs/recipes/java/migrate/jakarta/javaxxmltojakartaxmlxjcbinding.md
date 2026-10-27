@@ -1,13 +1,13 @@
 ---
-title: "Migrate XJC Bindings to Jakata XML"
-sidebar_label: "Migrate XJC Bindings to Jakata XML"
+title: "Migrate XJC bindings to Jakarta XML"
+sidebar_label: "Migrate XJC bindings to Jakarta XML"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Migrate XJC Bindings to Jakata XML
+# Migrate XJC bindings to Jakarta XML
 
 **org.openrewrite.java.migrate.jakarta.JavaxXmlToJakartaXmlXJCBinding**
 
@@ -64,7 +64,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.jakarta.JavaxXmlToJakartaXmlXJCBinding
-displayName: Migrate XJC Bindings to Jakata XML
+displayName: Migrate XJC bindings to Jakarta XML
 description: |
   Java EE has been rebranded to Jakarta EE, migrates the namespace and version in XJC bindings.
 tags:
@@ -188,7 +188,7 @@ This recipe is used as part of the following composite recipes:
 
 <RunRecipe
   recipeName="org.openrewrite.java.migrate.jakarta.JavaxXmlToJakartaXmlXJCBinding"
-  displayName="Migrate XJC Bindings to Jakata XML"
+  displayName="Migrate XJC bindings to Jakarta XML"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-migrate-java"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA"

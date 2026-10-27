@@ -1,17 +1,17 @@
 ---
-title: "Prefer `java.lang.Char#compare`"
-sidebar_label: "Prefer `java.lang.Char#compare`"
+title: "Prefer `Character#compare`"
+sidebar_label: "Prefer `Character#compare`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Prefer `java.lang.Char#compare`
+# Prefer `Character#compare`
 
 **org.openrewrite.java.migrate.guava.PreferCharCompare**
 
-_Prefer `java.lang.Char#compare` instead of using `com.google.common.primitives.Chars#compare`._
+_Prefer `java.lang.Character#compare` instead of using `com.google.common.primitives.Chars#compare`._
 
 ### Tags
 
@@ -38,7 +38,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 * [Change method target to static](../../../java/changemethodtargettostatic)
   * methodPattern: `com.google.common.primitives.Chars compare(char, char)`
-  * fullyQualifiedTargetTypeName: `java.lang.Char`
+  * fullyQualifiedTargetTypeName: `java.lang.Character`
 
 </TabItem>
 
@@ -48,9 +48,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.guava.PreferCharCompare
-displayName: Prefer `java.lang.Char#compare`
+displayName: Prefer `Character#compare`
 description: |
-  Prefer `java.lang.Char#compare` instead of using `com.google.common.primitives.Chars#compare`.
+  Prefer `java.lang.Character#compare` instead of using `com.google.common.primitives.Chars#compare`.
 tags:
   - guava
 preconditions:
@@ -58,7 +58,7 @@ preconditions:
 recipeList:
   - org.openrewrite.java.ChangeMethodTargetToStatic:
       methodPattern: com.google.common.primitives.Chars compare(char, char)
-      fullyQualifiedTargetTypeName: java.lang.Char
+      fullyQualifiedTargetTypeName: java.lang.Character
 
 ```
 </TabItem>
@@ -75,7 +75,7 @@ This recipe is used as part of the following composite recipes:
 
 <RunRecipe
   recipeName="org.openrewrite.java.migrate.guava.PreferCharCompare"
-  displayName="Prefer `java.lang.Char#compare`"
+  displayName="Prefer `Character#compare`"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-migrate-java"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA"

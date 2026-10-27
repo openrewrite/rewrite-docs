@@ -25,7 +25,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 | Type | Name | Description | Example |
 | --- | --- | --- | --- |
-| `String` | signature | *Optional*. An annotation signature to match. | `@javax.jms..*` |
+| `String` | signature | An annotation signature to match. | `@jakarta.jms..*` |
 
 
 ## Used by
@@ -37,13 +37,26 @@ This recipe is used as part of the following composite recipes:
 
 ## Usage
 
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.UpdateAnnotationAttributeJavaxToJakartaExample`.
+Here's how you can define and customize such a recipe within your rewrite.yml:
+```yaml title="rewrite.yml"
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: com.yourorg.UpdateAnnotationAttributeJavaxToJakartaExample
+displayName: Update annotation attributes using `javax` to `jakarta` example
+recipeList:
+  - org.openrewrite.java.migrate.jakarta.UpdateAnnotationAttributeJavaxToJakarta:
+      signature: '@jakarta.jms..*'
+```
+
 <RunRecipe
   recipeName="org.openrewrite.java.migrate.jakarta.UpdateAnnotationAttributeJavaxToJakarta"
   displayName="Update annotation attributes using `javax` to `jakarta`"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-migrate-java"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA"
-  optionalCliOptions={' --recipe-option "signature=\'@javax.jms..*\'"'}
+  requiresConfiguration
+  cliOptions={' --recipe-option "signature=\'@jakarta.jms..*\'"'}
   hasDataTables
 />
 

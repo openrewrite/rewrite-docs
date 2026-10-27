@@ -50,8 +50,8 @@ public class CustomHealthIndicator implements HealthIndicator {
 
 ###### After
 ```java
-import org.springframework.boot.actuate.health.HealthCheckResponse;
-import org.springframework.boot.actuate.health.HealthCheck;
+import org.eclipse.microprofile.health.HealthCheck;
+import org.eclipse.microprofile.health.HealthCheckResponse;
 
 public class CustomHealthIndicator implements HealthCheck {
     @Override
@@ -68,8 +68,8 @@ public class CustomHealthIndicator implements HealthCheck {
 @@ -1,2 +1,2 @@
 -import org.springframework.boot.actuate.health.Health;
 -import org.springframework.boot.actuate.health.HealthIndicator;
-+import org.springframework.boot.actuate.health.HealthCheckResponse;
-+import org.springframework.boot.actuate.health.HealthCheck;
++import org.eclipse.microprofile.health.HealthCheck;
++import org.eclipse.microprofile.health.HealthCheckResponse;
 
 @@ -4,1 +4,1 @@
 import org.springframework.boot.actuate.health.HealthIndicator;

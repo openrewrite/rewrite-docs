@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.staticanalysis.ReplaceThreadRunWithThreadStart**
 
-_`Thread.run()` should not be called directly._
+_Replaces calls to `Thread.run()` with `Thread.start()`, so that the code runs on a new thread instead of the calling thread._
 
 ### Tags
 
@@ -30,12 +30,6 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-**Preconditions**
-
-* [Singleton](../core/singleton)
-
-**Recipes**
-
 * [Change method name](../java/changemethodname)
   * methodPattern: `java.lang.Thread run()`
   * newMethodName: `start`
@@ -50,11 +44,9 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.staticanalysis.ReplaceThreadRunWithThreadStart
 displayName: Replace calls to `Thread.run()` with `Thread.start()`
 description: |
-  `Thread.run()` should not be called directly.
+  Replaces calls to `Thread.run()` with `Thread.start()`, so that the code runs on a new thread instead of the calling thread.
 tags:
   - RSPEC-S1217
-preconditions:
-  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: java.lang.Thread run()

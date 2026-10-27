@@ -11,9 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.testing.junit6.MinimumJreConditions**
 
-This recipe will:
- - Remove tests that are only active on JREs that are below the specified version.
- - Adjust ranges to use minimum the specified version.
+_Remove tests that can not run on the specified minimum JRE version or later, and drop JRE versions below that minimum from the `@EnabledOnJre`, `@DisabledOnJre`, `@EnabledForJreRange` and `@DisabledForJreRange` conditions of the remaining tests._
 
 ## Recipe source
 

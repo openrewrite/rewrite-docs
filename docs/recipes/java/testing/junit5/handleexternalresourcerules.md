@@ -1,17 +1,17 @@
 ---
-title: "Handle the usage of ExternalResourceRule fields using @ExtendWith(ExternalResourceSupport.class)"
-sidebar_label: "Handle the usage of ExternalResourceRule fields using @ExtendWith(ExternalResourceSupport.class)"
+title: "Handle the usage of `ExternalResource` rule fields using `@ExtendWith(ExternalResourceSupport.class)`"
+sidebar_label: "Handle the usage of `ExternalResource` rule fields using `@ExtendWith(ExternalResourceSupport.class)`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Handle the usage of ExternalResourceRule fields using @ExtendWith(ExternalResourceSupport.class)
+# Handle the usage of `ExternalResource` rule fields using `@ExtendWith(ExternalResourceSupport.class)`
 
 **org.openrewrite.java.testing.junit5.HandleExternalResourceRules**
 
-_Handles the usage of the ExternalResourceRule fields by adding the @ExtendWith(ExternalResourceSupport.class) annotation to the test class._
+_Handles the usage of `ExternalResource` rule fields by adding the `@ExtendWith(ExternalResourceSupport.class)` annotation to the test class._
 
 ## Recipe source
 
@@ -81,7 +81,7 @@ public class EmptyTestClassWithExternalResourceRule {
 
 <RunRecipe
   recipeName="org.openrewrite.java.testing.junit5.HandleExternalResourceRules"
-  displayName="Handle the usage of ExternalResourceRule fields using @ExtendWith(ExternalResourceSupport.class)"
+  displayName="Handle the usage of `ExternalResource` rule fields using `@ExtendWith(ExternalResourceSupport.class)`"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-testing-frameworks"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_TESTING_FRAMEWORKS"

@@ -16,7 +16,7 @@ _Recipes that include further recipes, often including the individual recipes be
 
 ## Recipes
 
-* [Simplify WebTestClient expressions](./simplifywebtestclientcalls.md)
+* [Simplify `WebTestClient` expressions](./simplifywebtestclientcalls.md)
 * [Simplify unnecessary `MediaType.parseMediaType()` and `MediaType.valueOf()` calls](./simplifymediatypeparsecalls.md)
 
 

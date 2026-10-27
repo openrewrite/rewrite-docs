@@ -1,13 +1,13 @@
 ---
-title: "Unannotated collection attributes require a Transient annotation"
-sidebar_label: "Unannotated collection attributes require a Transient annotation"
+title: "Add `@Transient` to unannotated collection attributes"
+sidebar_label: "Add `@Transient` to unannotated collection attributes"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Unannotated collection attributes require a Transient annotation
+# Add `@Transient` to unannotated collection attributes
 
 **org.openrewrite.java.migrate.javax.AddTransientAnnotationToCollections**
 
@@ -102,7 +102,7 @@ import javax.persistence.Id;
 
 <RunRecipe
   recipeName="org.openrewrite.java.migrate.javax.AddTransientAnnotationToCollections"
-  displayName="Unannotated collection attributes require a Transient annotation"
+  displayName="Add `@Transient` to unannotated collection attributes"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-migrate-java"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA"

@@ -1,13 +1,13 @@
 ---
-title: "Convert assigning Switch statements to Switch expressions"
-sidebar_label: "Convert assigning Switch statements to Switch expressions"
+title: "Convert assigning switch statements to switch expressions"
+sidebar_label: "Convert assigning switch statements to switch expressions"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Convert assigning Switch statements to Switch expressions
+# Convert assigning switch statements to switch expressions
 
 **org.openrewrite.java.migrate.lang.SwitchCaseAssignmentsToSwitchExpression**
 
@@ -90,7 +90,7 @@ class Test {
 
 <RunRecipe
   recipeName="org.openrewrite.java.migrate.lang.SwitchCaseAssignmentsToSwitchExpression"
-  displayName="Convert assigning Switch statements to Switch expressions"
+  displayName="Convert assigning switch statements to switch expressions"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-migrate-java"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA"

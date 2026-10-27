@@ -56,6 +56,7 @@ class Foo {
 ###### After
 ```java
 import java.lang.ref.WeakReference;
+import java.lang.ref.ReferenceQueue;
 import java.lang.ref.SoftReference;
 import java.lang.ref.PhantomReference;
 
@@ -75,19 +76,23 @@ class Foo {
 <TabItem value="diff" label="Diff" >
 
 ```diff
-@@ -8,1 +8,1 @@
+@@ -2,0 +2,1 @@
+import java.lang.ref.WeakReference;
++import java.lang.ref.ReferenceQueue;
+import java.lang.ref.SoftReference;
+@@ -8,1 +9,1 @@
     void foo() throws Exception{
         WeakReference<Object> ref = new WeakReference<Object>(null);
 -       WeakReference<Object> ref1 = (WeakReference<Object>) ref.clone();
 +       WeakReference<Object> ref1 = new WeakReference<Object>(ref, new ReferenceQueue<>());
         SoftReference<Object> ref3 = new SoftReference<Object>(null);
-@@ -10,1 +10,1 @@
+@@ -10,1 +11,1 @@
         WeakReference<Object> ref1 = (WeakReference<Object>) ref.clone();
         SoftReference<Object> ref3 = new SoftReference<Object>(null);
 -       SoftReference<Object> ref4 = (SoftReference<Object>) ref3.clone();
 +       SoftReference<Object> ref4 = new SoftReference<Object>(ref3, new ReferenceQueue<>());
         PhantomReference<Object> ref5 = new PhantomReference<Object>(null,null);
-@@ -12,1 +12,1 @@
+@@ -12,1 +13,1 @@
         SoftReference<Object> ref4 = (SoftReference<Object>) ref3.clone();
         PhantomReference<Object> ref5 = new PhantomReference<Object>(null,null);
 -       PhantomReference<Object> ref6 = (PhantomReference<Object>) ref5.clone();

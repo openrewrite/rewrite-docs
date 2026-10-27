@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.spring.boot3.UpgradeSpringBoot\_3\_0**
 
-_Migrate applications to the latest Spring Boot 3.0 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 2.7._
+_Migrate applications to the latest Spring Boot 3.0 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 3.0._
 
 ### Tags
 
@@ -42,7 +42,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 **Recipes**
 
 * [Migrate to Spring Boot 2.7](../../../java/spring/boot2/upgradespringboot_2_7)
-* [Enable Spring Batch Annotation](../../../java/spring/boot3/removeenablebatchprocessing)
+* [Remove `@EnableBatchProcessing` from Spring Boot applications](../../../java/spring/boot3/removeenablebatchprocessing)
 * [Change type](../../../java/changetype)
   * oldFullyQualifiedTypeName: `org.hibernate.validator.internal.constraintvalidators.hv.EmailValidator`
   * newFullyQualifiedTypeName: `org.hibernate.validator.internal.constraintvalidators.bv.EmailValidator`
@@ -51,7 +51,6 @@ This recipe is available under the [Moderne Source Available License](https://do
   * groupId: `org.springframework.boot`
   * artifactId: `*`
   * newVersion: `3.0.x`
-  * overrideManagedVersion: `false`
   * retainVersions: `[org.thymeleaf:thymeleaf-spring5, org.thymeleaf.extras:thymeleaf-extras-springsecurity5]`
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `org.springframework.boot`
@@ -92,8 +91,8 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Add `@Configuration` to classes with `@EnableXXXSecurity` annotations](../../../java/spring/boot3/configurationoverenablesecurity)
   * forceAddConfiguration: `false`
 * [Migrate Spring Boot properties to 3.0](../../../java/spring/boot3/springbootproperties_3_0)
-* [Migrate thymeleaf dependencies to Spring Boot 3.x](../../../java/spring/boot3/migratethymeleafdependencies)
-* [Migrate dropWizard dependencies to Spring Boot 3.x](../../../java/spring/boot3/migratedropwizarddependencies)
+* [Migrate Thymeleaf dependencies to Spring Boot 3.x](../../../java/spring/boot3/migratethymeleafdependencies)
+* [Migrate Dropwizard dependencies to Spring Boot 3.x](../../../java/spring/boot3/migratedropwizarddependencies)
 * [Rename `logback.xml` to `logback-spring.xml`](../../../java/spring/boot3/renamelogbacktologbackspring)
 * [Remove `SolrAutoConfiguration`](../../../java/spring/boot3/removesolrautoconfigurationexclude)
 * [Migrate `WebMvcTagsProvider` to `DefaultServerRequestObservationConvention`](../../../java/spring/boot3/migratewebmvctagstoobservationconvention)
@@ -104,7 +103,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Upgrade to SpringDoc 2.1](../../../java/springdoc/upgradespringdoc_2)
 * [Migrate to Hibernate 6.1.x](../../../hibernate/migratetohibernate61)
 * [Upgrade MyBatis to Spring Boot 3.0](../../../java/spring/boot3/upgrademybatistospringboot_3_0)
-* [Migrate SAP cloud foundry logging support to Spring Boot 3.x](../../../java/spring/boot3/migratesapcfjavaloggingsupport)
+* [Migrate SAP Cloud Foundry logging support to Spring Boot 3.x](../../../java/spring/boot3/migratesapcfjavaloggingsupport)
 
 </TabItem>
 
@@ -116,7 +115,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_0
 displayName: Migrate to Spring Boot 3.0 (Community Edition)
 description: |
-  Migrate applications to the latest Spring Boot 3.0 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 2.7.
+  Migrate applications to the latest Spring Boot 3.0 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 3.0.
 tags:
   - spring
   - boot
@@ -133,7 +132,6 @@ recipeList:
       groupId: org.springframework.boot
       artifactId: "*"
       newVersion: 3.0.x
-      overrideManagedVersion: false
       retainVersions: [org.thymeleaf:thymeleaf-spring5, org.thymeleaf.extras:thymeleaf-extras-springsecurity5]
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: org.springframework.boot
@@ -716,6 +714,50 @@ project
 ---
 
 ##### Example 2
+`MigrateHibernateEmailValidatorTest#migrateDirectEmailValidation`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.hibernate.validator.internal.constraintvalidators.hv.EmailValidator;
+
+class A {
+    boolean valid(String value) {
+        return new EmailValidator().isValid(value, null);
+    }
+}
+```
+
+###### After
+```java
+import org.hibernate.validator.internal.constraintvalidators.bv.EmailValidator;
+
+class A {
+    boolean valid(String value) {
+        return new EmailValidator().isValid(value, null);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import org.hibernate.validator.internal.constraintvalidators.hv.EmailValidator;
++import org.hibernate.validator.internal.constraintvalidators.bv.EmailValidator;
+
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 3
 `Boot3UpgradeTest#xmlBindMissing`
 
 
@@ -1224,6 +1266,50 @@ project
       <artifactId>ehcache</artifactId>
 +     <classifier>jakarta</classifier>
     </dependency>
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 4
+`MigrateHibernateEmailValidatorTest#migrateDirectEmailValidation`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.hibernate.validator.internal.constraintvalidators.hv.EmailValidator;
+
+class A {
+    boolean valid(String value) {
+        return new EmailValidator().isValid(value, null);
+    }
+}
+```
+
+###### After
+```java
+import org.hibernate.validator.internal.constraintvalidators.bv.EmailValidator;
+
+class A {
+    boolean valid(String value) {
+        return new EmailValidator().isValid(value, null);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import org.hibernate.validator.internal.constraintvalidators.hv.EmailValidator;
++import org.hibernate.validator.internal.constraintvalidators.bv.EmailValidator;
+
 ```
 </TabItem>
 </Tabs>

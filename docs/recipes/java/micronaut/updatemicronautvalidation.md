@@ -43,14 +43,14 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Add Gradle or Maven dependency](../../java/dependencies/adddependency)
   * groupId: `io.micronaut.validation`
   * artifactId: `micronaut-validation`
-  * onlyIfUsing: `jakarta.validation.constraints.*`
+  * onlyIfUsing: `*.validation.constraints.*`
 * [Add the Micronaut validation processor to Gradle source sets](../../java/micronaut/addmicronautvalidationprocessor)
 * [Add missing Micronaut validation dependency versions](../../java/micronaut/addmicronautvalidationdependencyversion)
 * [Add Maven annotation processor path](../../java/micronaut/addannotationprocessorpath)
   * groupId: `io.micronaut.validation`
   * artifactId: `micronaut-validation-processor`
   * version: `${micronaut.validation.version}`
-  * onlyIfUsing: `jakarta.validation.constraints.*`
+  * onlyIfUsing: `*.validation.constraints.*`
   * exclusions: `[io.micronaut:micronaut-inject]`
 
 </TabItem>
@@ -78,14 +78,14 @@ recipeList:
   - org.openrewrite.java.dependencies.AddDependency:
       groupId: io.micronaut.validation
       artifactId: micronaut-validation
-      onlyIfUsing: jakarta.validation.constraints.*
+      onlyIfUsing: *.validation.constraints.*
   - org.openrewrite.java.micronaut.AddMicronautValidationProcessor
   - org.openrewrite.java.micronaut.AddMicronautValidationDependencyVersion
   - org.openrewrite.java.micronaut.AddAnnotationProcessorPath:
       groupId: io.micronaut.validation
       artifactId: micronaut-validation-processor
       version: ${micronaut.validation.version}
-      onlyIfUsing: jakarta.validation.constraints.*
+      onlyIfUsing: *.validation.constraints.*
       exclusions: [io.micronaut:micronaut-inject]
 
 ```

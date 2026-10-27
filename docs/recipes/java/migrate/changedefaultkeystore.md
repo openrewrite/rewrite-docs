@@ -1,17 +1,17 @@
 ---
-title: "Return String `jks` when  `KeyStore.getDefaultType()` is called"
-sidebar_label: "Return String `jks` when  `KeyStore.getDefaultType()` is called"
+title: "Replace `KeyStore.getDefaultType()` with `\"jks\"`"
+sidebar_label: "Replace `KeyStore.getDefaultType()` with `\"jks\"`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Return String `jks` when  `KeyStore.getDefaultType()` is called
+# Replace `KeyStore.getDefaultType()` with `&quot;jks&quot;`
 
 **org.openrewrite.java.migrate.ChangeDefaultKeyStore**
 
-_In Java 11 the default keystore was updated from JKS to PKCS12. As a result, applications relying on KeyStore.getDefaultType() may encounter issues after migrating, unless their JKS keystore has been converted to PKCS12. This recipe returns default key store of `jks` when `KeyStore.getDefaultType()` method is called to use the pre Java 11 default keystore._
+_In Java 9 the default keystore type changed from JKS to PKCS12. As a result, applications relying on `KeyStore.getDefaultType()` may encounter issues after migrating, unless their JKS keystore has been converted to PKCS12. This recipe replaces `KeyStore.getDefaultType()` with `"jks"` in projects still on Java 8 or earlier, so that they keep the pre Java 9 default keystore type once upgraded._
 
 ## Recipe source
 
@@ -60,7 +60,7 @@ class Foo {
 
 <RunRecipe
   recipeName="org.openrewrite.java.migrate.ChangeDefaultKeyStore"
-  displayName="Return String `jks` when  `KeyStore.getDefaultType()` is called"
+  displayName="Replace `KeyStore.getDefaultType()` with `&quot;jks&quot;`"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-migrate-java"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA"

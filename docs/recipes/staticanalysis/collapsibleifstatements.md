@@ -1,13 +1,13 @@
 ---
-title: "Mergeable &quot;if&quot; statements should be combined"
-sidebar_label: "Mergeable &quot;if&quot; statements should be combined"
+title: "Mergeable `if` statements should be combined"
+sidebar_label: "Mergeable `if` statements should be combined"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Mergeable &quot;if&quot; statements should be combined
+# Mergeable `if` statements should be combined
 
 **org.openrewrite.staticanalysis.CollapsibleIfStatements**
 
@@ -79,7 +79,7 @@ class Test {
 
 <RunRecipe
   recipeName="org.openrewrite.staticanalysis.CollapsibleIfStatements"
-  displayName="Mergeable &quot;if&quot; statements should be combined"
+  displayName="Mergeable `if` statements should be combined"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-static-analysis"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_STATIC_ANALYSIS"

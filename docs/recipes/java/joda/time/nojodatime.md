@@ -465,7 +465,6 @@ class A {
 ```java
 import java.time.Duration;
 import java.time.Instant;
-import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
@@ -474,16 +473,16 @@ class A {
     public void foo() {
         ZonedDateTime.now().equals(ZonedDateTime.now());
         ZonedDateTime.now().getZone();
-        ZonedDateTime.now().isAfter(Instant.ofEpochMilli(1234567890L).atZone(ZoneId.systemDefault()));
+        ZonedDateTime.now().toInstant().isAfter(Instant.ofEpochMilli(1234567890L));
         Instant.now().isAfter(Instant.ofEpochMilli(1234567890L));
         ZonedDateTime.now().isAfter(ZonedDateTime.now().minusDays(1));
         Instant.now().isAfter(Instant.now().minus(Duration.ofDays(1)));
-        ZonedDateTime.now().isBefore(Instant.ofEpochMilli(1234567890L).atZone(ZoneId.systemDefault()));
+        ZonedDateTime.now().toInstant().isBefore(Instant.ofEpochMilli(1234567890L));
         Instant.now().isBefore(Instant.ofEpochMilli(1234567890L));
         ZonedDateTime.now().isBefore(ZonedDateTime.now().plusDays(1));
         Instant.now().isBefore(Instant.now().plus(Duration.ofDays(1)));
         ZonedDateTime.now().isBefore(ZonedDateTime.now());
-        ZonedDateTime.now().isEqual(Instant.ofEpochMilli(1234567890L).atZone(ZoneId.systemDefault()));
+        ZonedDateTime.now().toInstant().equals(Instant.ofEpochMilli(1234567890L));
         ZonedDateTime.now().isEqual(ZonedDateTime.now().plusDays(1));
         Date.from(ZonedDateTime.now().toInstant());
         ZonedDateTime.now().toInstant();
@@ -497,19 +496,18 @@ class A {
 <TabItem value="diff" label="Diff" >
 
 ```diff
-@@ -1,4 +1,6 @@
+@@ -1,4 +1,5 @@
 -import org.joda.time.DateTime;
 -import org.joda.time.Duration;
 -import org.joda.time.Instant;
 -import org.joda.time.format.DateTimeFormat;
 +import java.time.Duration;
 +import java.time.Instant;
-+import java.time.ZoneId;
 +import java.time.ZonedDateTime;
 +import java.time.format.DateTimeFormatter;
 +import java.util.Date;
 
-@@ -8,17 +10,17 @@
+@@ -8,17 +9,17 @@
 class A {
     public void foo() {
 -       new DateTime().equals(DateTime.now());
@@ -531,16 +529,16 @@ class A {
 -       new DateTime().toString(DateTimeFormat.forPattern("yyyy-MM-dd'T'HH:mm:ss"));
 +       ZonedDateTime.now().equals(ZonedDateTime.now());
 +       ZonedDateTime.now().getZone();
-+       ZonedDateTime.now().isAfter(Instant.ofEpochMilli(1234567890L).atZone(ZoneId.systemDefault()));
++       ZonedDateTime.now().toInstant().isAfter(Instant.ofEpochMilli(1234567890L));
 +       Instant.now().isAfter(Instant.ofEpochMilli(1234567890L));
 +       ZonedDateTime.now().isAfter(ZonedDateTime.now().minusDays(1));
 +       Instant.now().isAfter(Instant.now().minus(Duration.ofDays(1)));
-+       ZonedDateTime.now().isBefore(Instant.ofEpochMilli(1234567890L).atZone(ZoneId.systemDefault()));
++       ZonedDateTime.now().toInstant().isBefore(Instant.ofEpochMilli(1234567890L));
 +       Instant.now().isBefore(Instant.ofEpochMilli(1234567890L));
 +       ZonedDateTime.now().isBefore(ZonedDateTime.now().plusDays(1));
 +       Instant.now().isBefore(Instant.now().plus(Duration.ofDays(1)));
 +       ZonedDateTime.now().isBefore(ZonedDateTime.now());
-+       ZonedDateTime.now().isEqual(Instant.ofEpochMilli(1234567890L).atZone(ZoneId.systemDefault()));
++       ZonedDateTime.now().toInstant().equals(Instant.ofEpochMilli(1234567890L));
 +       ZonedDateTime.now().isEqual(ZonedDateTime.now().plusDays(1));
 +       Date.from(ZonedDateTime.now().toInstant());
 +       ZonedDateTime.now().toInstant();
@@ -576,11 +574,10 @@ class A {
 ```java
 import java.time.LocalDate;
 import java.time.ZoneId;
-import java.time.ZoneOffset;
 
 class A {
     public void foo() {
-        LocalDate.now().atStartOfDay(ZoneOffset.of(ZoneId.systemDefault().getId()));
+        LocalDate.now().atStartOfDay(ZoneId.systemDefault());
     }
 }
 ```
@@ -589,17 +586,16 @@ class A {
 <TabItem value="diff" label="Diff" >
 
 ```diff
-@@ -1,1 +1,3 @@
+@@ -1,1 +1,2 @@
 -import org.joda.time.DateMidnight;
 +import java.time.LocalDate;
 +import java.time.ZoneId;
-+import java.time.ZoneOffset;
 
-@@ -5,1 +7,1 @@
+@@ -5,1 +6,1 @@
 class A {
     public void foo() {
 -       new DateMidnight();
-+       LocalDate.now().atStartOfDay(ZoneOffset.of(ZoneId.systemDefault().getId()));
++       LocalDate.now().atStartOfDay(ZoneId.systemDefault());
     }
 ```
 </TabItem>
@@ -655,8 +651,8 @@ class A {
         ZonedDateTime.of(2024, 9, 30, 12, 58, 0, 0, ZoneOffset.ofHours(2));
         ZonedDateTime.of(2024, 9, 30, 13, 3, 15, 0, ZoneId.systemDefault());
         ZonedDateTime.of(2024, 9, 30, 13, 3, 15, 0, ZoneOffset.ofHoursMinutes(5, 30));
-        ZonedDateTime.of(2024, 9, 30, 13, 49, 15, 545 * 1_000_000, ZoneId.systemDefault());
-        ZonedDateTime.of(2024, 9, 30, 13, 49, 15, 545 * 1_000_000, TimeZone.getTimeZone("America/New_York").toZoneId());
+        ZonedDateTime.of(2024, 9, 30, 13, 49, 15, 545_000_000, ZoneId.systemDefault());
+        ZonedDateTime.of(2024, 9, 30, 13, 49, 15, 545_000_000, TimeZone.getTimeZone("America/New_York").toZoneId());
     }
 }
 ```
@@ -694,8 +690,8 @@ class A {
 +       ZonedDateTime.of(2024, 9, 30, 12, 58, 0, 0, ZoneOffset.ofHours(2));
 +       ZonedDateTime.of(2024, 9, 30, 13, 3, 15, 0, ZoneId.systemDefault());
 +       ZonedDateTime.of(2024, 9, 30, 13, 3, 15, 0, ZoneOffset.ofHoursMinutes(5, 30));
-+       ZonedDateTime.of(2024, 9, 30, 13, 49, 15, 545 * 1_000_000, ZoneId.systemDefault());
-+       ZonedDateTime.of(2024, 9, 30, 13, 49, 15, 545 * 1_000_000, TimeZone.getTimeZone("America/New_York").toZoneId());
++       ZonedDateTime.of(2024, 9, 30, 13, 49, 15, 545_000_000, ZoneId.systemDefault());
++       ZonedDateTime.of(2024, 9, 30, 13, 49, 15, 545_000_000, TimeZone.getTimeZone("America/New_York").toZoneId());
     }
 ```
 </TabItem>
@@ -1032,7 +1028,7 @@ class A {
         Instant.now().getMillis();
         Instant.now().minus(Duration.standardDays(1L));
         Instant.ofEpochMilli(1234567890L);
-        Instant.parse("2024-10-25T15:45:00");
+        Instant.parse("2024-10-25T15:45:00Z");
         Instant.now().plus(Duration.standardDays(1L));
     }
 }
@@ -1049,7 +1045,7 @@ class A {
         Instant.now().toEpochMilli();
         Instant.now().minus(Duration.ofDays(1L));
         Instant.ofEpochMilli(1234567890L);
-        Instant.parse("2024-10-25T15:45:00");
+        Instant.parse("2024-10-25T15:45:00Z");
         Instant.now().plus(Duration.ofDays(1L));
     }
 }
@@ -1077,7 +1073,7 @@ class A {
         Instant.ofEpochMilli(1234567890L);
 @@ -11,1 +11,1 @@
         Instant.ofEpochMilli(1234567890L);
-        Instant.parse("2024-10-25T15:45:00");
+        Instant.parse("2024-10-25T15:45:00Z");
 -       Instant.now().plus(Duration.standardDays(1L));
 +       Instant.now().plus(Duration.ofDays(1L));
     }
@@ -1396,6 +1392,100 @@ class A {
 ---
 
 ##### Example 11
+`JodaPropertyToJavaTimeTest#propertyIdioms`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.joda.time.DateTime;
+import org.joda.time.LocalDate;
+
+import java.util.Locale;
+
+class A {
+    LocalDate endOfMonth(LocalDate d) {
+        return d.dayOfMonth().withMaximumValue();
+    }
+
+    DateTime hour(DateTime d) {
+        return d.hourOfDay().roundFloorCopy();
+    }
+
+    String month(LocalDate d, Locale locale) {
+        return d.monthOfYear().getAsText(locale);
+    }
+}
+```
+
+###### After
+```java
+import java.time.LocalDate;
+import java.time.ZonedDateTime;
+import java.time.format.TextStyle;
+import java.time.temporal.ChronoUnit;
+import java.time.temporal.TemporalAdjusters;
+import java.util.Locale;
+
+class A {
+    LocalDate endOfMonth(LocalDate d) {
+        return d.with(TemporalAdjusters.lastDayOfMonth());
+    }
+
+    ZonedDateTime hour(ZonedDateTime d) {
+        return d.truncatedTo(ChronoUnit.HOURS);
+    }
+
+    String month(LocalDate d, Locale locale) {
+        return d.getMonth().getDisplayName(TextStyle.FULL, locale);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,3 +1,5 @@
+-import org.joda.time.DateTime;
+-import org.joda.time.LocalDate;
+-
++import java.time.LocalDate;
++import java.time.ZonedDateTime;
++import java.time.format.TextStyle;
++import java.time.temporal.ChronoUnit;
++import java.time.temporal.TemporalAdjusters;
+import java.util.Locale;
+@@ -8,1 +10,1 @@
+class A {
+    LocalDate endOfMonth(LocalDate d) {
+-       return d.dayOfMonth().withMaximumValue();
++       return d.with(TemporalAdjusters.lastDayOfMonth());
+    }
+@@ -11,2 +13,2 @@
+    }
+
+-   DateTime hour(DateTime d) {
+-       return d.hourOfDay().roundFloorCopy();
++   ZonedDateTime hour(ZonedDateTime d) {
++       return d.truncatedTo(ChronoUnit.HOURS);
+    }
+@@ -16,1 +18,1 @@
+
+    String month(LocalDate d, Locale locale) {
+-       return d.monthOfYear().getAsText(locale);
++       return d.getMonth().getDisplayName(TextStyle.FULL, locale);
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 12
 `JodaTimePeriodToJavaTimeTest#daysBetweenGetDays`
 
 
@@ -1451,7 +1541,7 @@ class A {
 
 ---
 
-##### Example 12
+##### Example 13
 `JodaTimeRecipeTest#migrateSafeVariable`
 
 
@@ -1505,7 +1595,7 @@ class A {
 
 ---
 
-##### Example 13
+##### Example 14
 `NoJodaTimeTest#migrateJodaTime`
 
 
@@ -1642,7 +1732,7 @@ foo
 
 ---
 
-##### Example 14
+##### Example 15
 `JodaAbstractInstantToJavaTimeTest#migrateAbstractInstant`
 
 
@@ -1684,7 +1774,6 @@ class A {
 ```java
 import java.time.Duration;
 import java.time.Instant;
-import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
@@ -1693,16 +1782,16 @@ class A {
     public void foo() {
         ZonedDateTime.now().equals(ZonedDateTime.now());
         ZonedDateTime.now().getZone();
-        ZonedDateTime.now().isAfter(Instant.ofEpochMilli(1234567890L).atZone(ZoneId.systemDefault()));
+        ZonedDateTime.now().toInstant().isAfter(Instant.ofEpochMilli(1234567890L));
         Instant.now().isAfter(Instant.ofEpochMilli(1234567890L));
         ZonedDateTime.now().isAfter(ZonedDateTime.now().minusDays(1));
         Instant.now().isAfter(Instant.now().minus(Duration.ofDays(1)));
-        ZonedDateTime.now().isBefore(Instant.ofEpochMilli(1234567890L).atZone(ZoneId.systemDefault()));
+        ZonedDateTime.now().toInstant().isBefore(Instant.ofEpochMilli(1234567890L));
         Instant.now().isBefore(Instant.ofEpochMilli(1234567890L));
         ZonedDateTime.now().isBefore(ZonedDateTime.now().plusDays(1));
         Instant.now().isBefore(Instant.now().plus(Duration.ofDays(1)));
         ZonedDateTime.now().isBefore(ZonedDateTime.now());
-        ZonedDateTime.now().isEqual(Instant.ofEpochMilli(1234567890L).atZone(ZoneId.systemDefault()));
+        ZonedDateTime.now().toInstant().equals(Instant.ofEpochMilli(1234567890L));
         ZonedDateTime.now().isEqual(ZonedDateTime.now().plusDays(1));
         Date.from(ZonedDateTime.now().toInstant());
         ZonedDateTime.now().toInstant();
@@ -1716,19 +1805,18 @@ class A {
 <TabItem value="diff" label="Diff" >
 
 ```diff
-@@ -1,4 +1,6 @@
+@@ -1,4 +1,5 @@
 -import org.joda.time.DateTime;
 -import org.joda.time.Duration;
 -import org.joda.time.Instant;
 -import org.joda.time.format.DateTimeFormat;
 +import java.time.Duration;
 +import java.time.Instant;
-+import java.time.ZoneId;
 +import java.time.ZonedDateTime;
 +import java.time.format.DateTimeFormatter;
 +import java.util.Date;
 
-@@ -8,17 +10,17 @@
+@@ -8,17 +9,17 @@
 class A {
     public void foo() {
 -       new DateTime().equals(DateTime.now());
@@ -1750,16 +1838,16 @@ class A {
 -       new DateTime().toString(DateTimeFormat.forPattern("yyyy-MM-dd'T'HH:mm:ss"));
 +       ZonedDateTime.now().equals(ZonedDateTime.now());
 +       ZonedDateTime.now().getZone();
-+       ZonedDateTime.now().isAfter(Instant.ofEpochMilli(1234567890L).atZone(ZoneId.systemDefault()));
++       ZonedDateTime.now().toInstant().isAfter(Instant.ofEpochMilli(1234567890L));
 +       Instant.now().isAfter(Instant.ofEpochMilli(1234567890L));
 +       ZonedDateTime.now().isAfter(ZonedDateTime.now().minusDays(1));
 +       Instant.now().isAfter(Instant.now().minus(Duration.ofDays(1)));
-+       ZonedDateTime.now().isBefore(Instant.ofEpochMilli(1234567890L).atZone(ZoneId.systemDefault()));
++       ZonedDateTime.now().toInstant().isBefore(Instant.ofEpochMilli(1234567890L));
 +       Instant.now().isBefore(Instant.ofEpochMilli(1234567890L));
 +       ZonedDateTime.now().isBefore(ZonedDateTime.now().plusDays(1));
 +       Instant.now().isBefore(Instant.now().plus(Duration.ofDays(1)));
 +       ZonedDateTime.now().isBefore(ZonedDateTime.now());
-+       ZonedDateTime.now().isEqual(Instant.ofEpochMilli(1234567890L).atZone(ZoneId.systemDefault()));
++       ZonedDateTime.now().toInstant().equals(Instant.ofEpochMilli(1234567890L));
 +       ZonedDateTime.now().isEqual(ZonedDateTime.now().plusDays(1));
 +       Date.from(ZonedDateTime.now().toInstant());
 +       ZonedDateTime.now().toInstant();
@@ -1772,7 +1860,7 @@ class A {
 
 ---
 
-##### Example 15
+##### Example 16
 `JodaDateMidnightToJavaTimeTest#dateMidnightConstructor`
 
 
@@ -1795,11 +1883,10 @@ class A {
 ```java
 import java.time.LocalDate;
 import java.time.ZoneId;
-import java.time.ZoneOffset;
 
 class A {
     public void foo() {
-        LocalDate.now().atStartOfDay(ZoneOffset.of(ZoneId.systemDefault().getId()));
+        LocalDate.now().atStartOfDay(ZoneId.systemDefault());
     }
 }
 ```
@@ -1808,17 +1895,16 @@ class A {
 <TabItem value="diff" label="Diff" >
 
 ```diff
-@@ -1,1 +1,3 @@
+@@ -1,1 +1,2 @@
 -import org.joda.time.DateMidnight;
 +import java.time.LocalDate;
 +import java.time.ZoneId;
-+import java.time.ZoneOffset;
 
-@@ -5,1 +7,1 @@
+@@ -5,1 +6,1 @@
 class A {
     public void foo() {
 -       new DateMidnight();
-+       LocalDate.now().atStartOfDay(ZoneOffset.of(ZoneId.systemDefault().getId()));
++       LocalDate.now().atStartOfDay(ZoneId.systemDefault());
     }
 ```
 </TabItem>
@@ -1826,7 +1912,7 @@ class A {
 
 ---
 
-##### Example 16
+##### Example 17
 `JodaDateTimeToJavaTimeTest#migrateNewDateTime`
 
 
@@ -1874,8 +1960,8 @@ class A {
         ZonedDateTime.of(2024, 9, 30, 12, 58, 0, 0, ZoneOffset.ofHours(2));
         ZonedDateTime.of(2024, 9, 30, 13, 3, 15, 0, ZoneId.systemDefault());
         ZonedDateTime.of(2024, 9, 30, 13, 3, 15, 0, ZoneOffset.ofHoursMinutes(5, 30));
-        ZonedDateTime.of(2024, 9, 30, 13, 49, 15, 545 * 1_000_000, ZoneId.systemDefault());
-        ZonedDateTime.of(2024, 9, 30, 13, 49, 15, 545 * 1_000_000, TimeZone.getTimeZone("America/New_York").toZoneId());
+        ZonedDateTime.of(2024, 9, 30, 13, 49, 15, 545_000_000, ZoneId.systemDefault());
+        ZonedDateTime.of(2024, 9, 30, 13, 49, 15, 545_000_000, TimeZone.getTimeZone("America/New_York").toZoneId());
     }
 }
 ```
@@ -1913,8 +1999,8 @@ class A {
 +       ZonedDateTime.of(2024, 9, 30, 12, 58, 0, 0, ZoneOffset.ofHours(2));
 +       ZonedDateTime.of(2024, 9, 30, 13, 3, 15, 0, ZoneId.systemDefault());
 +       ZonedDateTime.of(2024, 9, 30, 13, 3, 15, 0, ZoneOffset.ofHoursMinutes(5, 30));
-+       ZonedDateTime.of(2024, 9, 30, 13, 49, 15, 545 * 1_000_000, ZoneId.systemDefault());
-+       ZonedDateTime.of(2024, 9, 30, 13, 49, 15, 545 * 1_000_000, TimeZone.getTimeZone("America/New_York").toZoneId());
++       ZonedDateTime.of(2024, 9, 30, 13, 49, 15, 545_000_000, ZoneId.systemDefault());
++       ZonedDateTime.of(2024, 9, 30, 13, 49, 15, 545_000_000, TimeZone.getTimeZone("America/New_York").toZoneId());
     }
 ```
 </TabItem>
@@ -1922,7 +2008,7 @@ class A {
 
 ---
 
-##### Example 17
+##### Example 18
 `JodaDateTimeZoneToJavaTimeTest#migrateDateTimeZone`
 
 
@@ -1992,7 +2078,7 @@ class A {
 
 ---
 
-##### Example 18
+##### Example 19
 `JodaDurationToJavaTimeTest#migrateJodaDuration`
 
 
@@ -2132,7 +2218,7 @@ class A {
 
 ---
 
-##### Example 19
+##### Example 20
 `JodaFormatterToJavaTimeTest#migrateDateTimeFormat`
 
 
@@ -2232,7 +2318,7 @@ class A {
 
 ---
 
-##### Example 20
+##### Example 21
 `JodaInstantToJavaTimeTest#migrateInstant`
 
 
@@ -2251,7 +2337,7 @@ class A {
         Instant.now().getMillis();
         Instant.now().minus(Duration.standardDays(1L));
         Instant.ofEpochMilli(1234567890L);
-        Instant.parse("2024-10-25T15:45:00");
+        Instant.parse("2024-10-25T15:45:00Z");
         Instant.now().plus(Duration.standardDays(1L));
     }
 }
@@ -2268,7 +2354,7 @@ class A {
         Instant.now().toEpochMilli();
         Instant.now().minus(Duration.ofDays(1L));
         Instant.ofEpochMilli(1234567890L);
-        Instant.parse("2024-10-25T15:45:00");
+        Instant.parse("2024-10-25T15:45:00Z");
         Instant.now().plus(Duration.ofDays(1L));
     }
 }
@@ -2296,7 +2382,7 @@ class A {
         Instant.ofEpochMilli(1234567890L);
 @@ -11,1 +11,1 @@
         Instant.ofEpochMilli(1234567890L);
-        Instant.parse("2024-10-25T15:45:00");
+        Instant.parse("2024-10-25T15:45:00Z");
 -       Instant.now().plus(Duration.standardDays(1L));
 +       Instant.now().plus(Duration.ofDays(1L));
     }
@@ -2306,7 +2392,7 @@ class A {
 
 ---
 
-##### Example 21
+##### Example 22
 `JodaIntervalToJavaTimeTest#migrateInterval`
 
 
@@ -2386,7 +2472,7 @@ class A {
 
 ---
 
-##### Example 22
+##### Example 23
 `JodaLocalDateToJavaTimeTest#migrateLocalDate`
 
 
@@ -2486,7 +2572,7 @@ class A {
 
 ---
 
-##### Example 23
+##### Example 24
 `JodaLocalTimeToJavaTimeTest#migrateLocalTime`
 
 
@@ -2614,7 +2700,101 @@ class A {
 
 ---
 
-##### Example 24
+##### Example 25
+`JodaPropertyToJavaTimeTest#propertyIdioms`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.joda.time.DateTime;
+import org.joda.time.LocalDate;
+
+import java.util.Locale;
+
+class A {
+    LocalDate endOfMonth(LocalDate d) {
+        return d.dayOfMonth().withMaximumValue();
+    }
+
+    DateTime hour(DateTime d) {
+        return d.hourOfDay().roundFloorCopy();
+    }
+
+    String month(LocalDate d, Locale locale) {
+        return d.monthOfYear().getAsText(locale);
+    }
+}
+```
+
+###### After
+```java
+import java.time.LocalDate;
+import java.time.ZonedDateTime;
+import java.time.format.TextStyle;
+import java.time.temporal.ChronoUnit;
+import java.time.temporal.TemporalAdjusters;
+import java.util.Locale;
+
+class A {
+    LocalDate endOfMonth(LocalDate d) {
+        return d.with(TemporalAdjusters.lastDayOfMonth());
+    }
+
+    ZonedDateTime hour(ZonedDateTime d) {
+        return d.truncatedTo(ChronoUnit.HOURS);
+    }
+
+    String month(LocalDate d, Locale locale) {
+        return d.getMonth().getDisplayName(TextStyle.FULL, locale);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,3 +1,5 @@
+-import org.joda.time.DateTime;
+-import org.joda.time.LocalDate;
+-
++import java.time.LocalDate;
++import java.time.ZonedDateTime;
++import java.time.format.TextStyle;
++import java.time.temporal.ChronoUnit;
++import java.time.temporal.TemporalAdjusters;
+import java.util.Locale;
+@@ -8,1 +10,1 @@
+class A {
+    LocalDate endOfMonth(LocalDate d) {
+-       return d.dayOfMonth().withMaximumValue();
++       return d.with(TemporalAdjusters.lastDayOfMonth());
+    }
+@@ -11,2 +13,2 @@
+    }
+
+-   DateTime hour(DateTime d) {
+-       return d.hourOfDay().roundFloorCopy();
++   ZonedDateTime hour(ZonedDateTime d) {
++       return d.truncatedTo(ChronoUnit.HOURS);
+    }
+@@ -16,1 +18,1 @@
+
+    String month(LocalDate d, Locale locale) {
+-       return d.monthOfYear().getAsText(locale);
++       return d.getMonth().getDisplayName(TextStyle.FULL, locale);
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 26
 `JodaTimePeriodToJavaTimeTest#daysBetweenGetDays`
 
 
@@ -2670,7 +2850,7 @@ class A {
 
 ---
 
-##### Example 25
+##### Example 27
 `JodaTimeRecipeTest#migrateSafeVariable`
 
 
@@ -2724,7 +2904,7 @@ class A {
 
 ---
 
-##### Example 26
+##### Example 28
 `NoJodaTimeTest#migrateJodaTime`
 
 
@@ -2883,6 +3063,25 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
+
+### Maven metadata failures
+**org.openrewrite.maven.table.MavenMetadataFailures**
+
+_Attempts to resolve maven metadata that failed._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Group id | The groupId of the artifact for which the metadata download failed. |
+| Artifact id | The artifactId of the artifact for which the metadata download failed. |
+| Version | The version of the artifact for which the metadata download failed. |
+| Maven repository | The URL of the Maven repository that the metadata download failed on. |
+| Snapshots | Does the repository support snapshots. |
+| Releases | Does the repository support releases. |
+| Failure | The reason the metadata download failed. |
+
+</TabItem>
+
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results

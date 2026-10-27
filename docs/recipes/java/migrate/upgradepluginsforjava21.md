@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.migrate.UpgradePluginsForJava21**
 
-_Updates plugins and dependencies to version compatible with Java 21._
+_Updates plugins and dependencies to versions compatible with Java 21._
 
 ### Tags
 
@@ -71,7 +71,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.UpgradePluginsForJava21
 displayName: Upgrade plugins to Java 21 compatible versions
 description: |
-  Updates plugins and dependencies to version compatible with Java 21.
+  Updates plugins and dependencies to versions compatible with Java 21.
 tags:
   - java21
 preconditions:

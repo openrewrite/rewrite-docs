@@ -1,17 +1,17 @@
 ---
-title: "Migrate `anyOf` Hamcrest Matcher to AssertJ"
-sidebar_label: "Migrate `anyOf` Hamcrest Matcher to AssertJ"
+title: "Migrate `anyOf` and `allOf` Hamcrest matchers to AssertJ"
+sidebar_label: "Migrate `anyOf` and `allOf` Hamcrest matchers to AssertJ"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Migrate `anyOf` Hamcrest Matcher to AssertJ
+# Migrate `anyOf` and `allOf` Hamcrest matchers to AssertJ
 
 **org.openrewrite.java.testing.hamcrest.HamcrestOfMatchersToAssertJ**
 
-_Migrate the `anyOf` Hamcrest Matcher to AssertJ's `satisfiesAnyOf` assertion._
+_Migrate Hamcrest `assertThat(actual, anyOf(..))` to AssertJ's `satisfiesAnyOf(..)` and `assertThat(actual, allOf(..))` to `satisfies(..)`, keeping each nested matcher as a Hamcrest `assertThat` inside a lambda. Matchers that take an `Iterable` are left unchanged._
 
 ## Recipe source
 
@@ -100,7 +100,7 @@ import static org.hamcrest.Matchers.equalTo;
 
 <RunRecipe
   recipeName="org.openrewrite.java.testing.hamcrest.HamcrestOfMatchersToAssertJ"
-  displayName="Migrate `anyOf` Hamcrest Matcher to AssertJ"
+  displayName="Migrate `anyOf` and `allOf` Hamcrest matchers to AssertJ"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-testing-frameworks"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_TESTING_FRAMEWORKS"

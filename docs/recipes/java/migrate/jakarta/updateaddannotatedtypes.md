@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.migrate.jakarta.UpdateAddAnnotatedTypes**
 
-_`BeforeBeanDiscovery.addAnnotatedType(AnnotatedType)` is deprecated in CDI 1.1. It is Replaced by `BeforeBeanDiscovery.addAnnotatedType(AnnotatedType, String)`._
+_`BeforeBeanDiscovery.addAnnotatedType(AnnotatedType)` is deprecated in CDI 1.1. It is replaced by `BeforeBeanDiscovery.addAnnotatedType(AnnotatedType, String)`._
 
 ## Recipe source
 
@@ -26,7 +26,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 This recipe is used as part of the following composite recipes:
 
-* [Remove deprecated API's not supported in CDI4.0](/recipes/java/migrate/jakarta/deprecatedcdiapisremoved40.md)
+* [Remove deprecated APIs not supported in CDI 4.0](/recipes/java/migrate/jakarta/deprecatedcdiapisremoved40.md)
 
 ## Example
 

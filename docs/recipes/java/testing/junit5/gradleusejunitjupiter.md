@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.testing.junit5.GradleUseJunitJupiter**
 
-_By default Gradle's `Test` tasks use JUnit 4. Gradle `Test` tasks must be configured with `useJUnitPlatform()` to run JUnit Jupiter tests. This recipe adds the `useJUnitPlatform()` method call to the `Test` task configuration._
+_By default Gradle's `Test` tasks use JUnit 4. Gradle `Test` tasks must be configured with `useJUnitPlatform()` to run JUnit Jupiter tests. This recipe adds the `useJUnitPlatform()` method call to the `Test` task configuration in `build.gradle` and `build.gradle.kts` files._
 
 ## Recipe source
 

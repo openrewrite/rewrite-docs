@@ -55,6 +55,11 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Rename deprecated HTTP SSL configuration properties](../quarkus/updates/core/quarkus40/httpsslconfigproperties)
 * [Rename deprecated Keycloak Policy Enforcer configuration properties](../quarkus/updates/core/quarkus40/keycloakpolicyenforcerconfigproperties)
 * [Rename miscellaneous deprecated configuration properties](../quarkus/updates/core/quarkus40/miscconfigproperties)
+* [Replace @DefaultBean with @Reserve](../quarkus/updates/core/quarkus40/arcdefaultbeantoreserve)
+* [Migrate removed ArC and Quarkus deployment APIs](../quarkus/updates/core/quarkus40/arcextensionapiremovals)
+* [Migrate to the Prometheus client 1.x based Micrometer registry](../quarkus/updates/core/quarkus40/micrometerprometheusmetrics)
+* [Handle dropped relocations in Quarkus 4.0](../quarkus/updates/core/quarkus40/droppedrelocations)
+* [Rename Flyway MongoDB artifact](../quarkus/updates/core/quarkus40/flywaymongodbdependencyrename)
 
 </TabItem>
 
@@ -89,6 +94,11 @@ recipeList:
   - io.quarkus.updates.core.quarkus40.HttpSslConfigProperties
   - io.quarkus.updates.core.quarkus40.KeycloakPolicyEnforcerConfigProperties
   - io.quarkus.updates.core.quarkus40.MiscConfigProperties
+  - io.quarkus.updates.core.quarkus40.ArcDefaultBeanToReserve
+  - io.quarkus.updates.core.quarkus40.ArcExtensionApiRemovals
+  - io.quarkus.updates.core.quarkus40.MicrometerPrometheusMetrics
+  - io.quarkus.updates.core.quarkus40.DroppedRelocations
+  - io.quarkus.updates.core.quarkus40.FlywayMongoDBDependencyRename
 
 ```
 </TabItem>

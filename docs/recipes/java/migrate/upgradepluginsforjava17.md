@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.migrate.UpgradePluginsForJava17**
 
-_Updates plugins to version compatible with Java 17._
+_Updates plugins to versions compatible with Java 17._
 
 ### Tags
 
@@ -84,7 +84,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.UpgradePluginsForJava17
 displayName: Upgrade plugins to Java 17 compatible versions
 description: |
-  Updates plugins to version compatible with Java 17.
+  Updates plugins to versions compatible with Java 17.
 tags:
   - java17
 preconditions:

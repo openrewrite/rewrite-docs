@@ -1,13 +1,13 @@
 ---
-title: "Use Empty Array for `Collection.toArray()`"
-sidebar_label: "Use Empty Array for `Collection.toArray()`"
+title: "Use empty array for `Collection.toArray()`"
+sidebar_label: "Use empty array for `Collection.toArray()`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Use Empty Array for `Collection.toArray()`
+# Use empty array for `Collection.toArray()`
 
 **org.openrewrite.staticanalysis.ReplaceCollectionToArrayArgWithEmptyArray**
 
@@ -80,7 +80,7 @@ class A {
 
 <RunRecipe
   recipeName="org.openrewrite.staticanalysis.ReplaceCollectionToArrayArgWithEmptyArray"
-  displayName="Use Empty Array for `Collection.toArray()`"
+  displayName="Use empty array for `Collection.toArray()`"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-static-analysis"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_STATIC_ANALYSIS"

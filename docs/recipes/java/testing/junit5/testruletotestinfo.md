@@ -1,17 +1,17 @@
 ---
-title: "JUnit TestName @Rule to JUnit Jupiter TestInfo"
-sidebar_label: "JUnit TestName @Rule to JUnit Jupiter TestInfo"
+title: "JUnit `TestName` `@Rule` to JUnit Jupiter `TestInfo`"
+sidebar_label: "JUnit `TestName` `@Rule` to JUnit Jupiter `TestInfo`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# JUnit TestName @Rule to JUnit Jupiter TestInfo
+# JUnit `TestName` `@Rule` to JUnit Jupiter `TestInfo`
 
 **org.openrewrite.java.testing.junit5.TestRuleToTestInfo**
 
-_Replace usages of JUnit 4's `@Rule TestName` with JUnit 5's TestInfo._
+_Replace usages of JUnit 4's `@Rule TestName` with JUnit 5's `TestInfo`._
 
 ## Recipe source
 
@@ -132,7 +132,7 @@ public class SomeTest {
 
 <RunRecipe
   recipeName="org.openrewrite.java.testing.junit5.TestRuleToTestInfo"
-  displayName="JUnit TestName @Rule to JUnit Jupiter TestInfo"
+  displayName="JUnit `TestName` `@Rule` to JUnit Jupiter `TestInfo`"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-testing-frameworks"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_TESTING_FRAMEWORKS"

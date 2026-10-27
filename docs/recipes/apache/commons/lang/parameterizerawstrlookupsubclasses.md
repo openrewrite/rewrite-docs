@@ -33,6 +33,51 @@ This recipe is used as part of the following composite recipes:
 
 * [Migrate `WordUtils` to Apache Commons Text](/recipes/apache/commons/lang/wordutilstocommonstext.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.apache.commons.text.StrLookup;
+
+class EnvironmentLookup extends StrLookup {
+    @Override
+    public String lookup(String key) {
+        return System.getenv(key);
+    }
+}
+```
+
+###### After
+```java
+import org.apache.commons.text.StrLookup;
+
+class EnvironmentLookup extends StrLookup<String> {
+    @Override
+    public String lookup(String key) {
+        return System.getenv(key);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,1 +3,1 @@
+import org.apache.commons.text.StrLookup;
+
+-class EnvironmentLookup extends StrLookup {
++class EnvironmentLookup extends StrLookup<String> {
+    @Override
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

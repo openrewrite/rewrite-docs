@@ -1,17 +1,17 @@
 ---
-title: "Adopt AssertJ Short Assertions"
-sidebar_label: "Adopt AssertJ Short Assertions"
+title: "Adopt AssertJ `Short` assertions"
+sidebar_label: "Adopt AssertJ `Short` assertions"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Adopt AssertJ Short Assertions
+# Adopt AssertJ `Short` assertions
 
 **org.openrewrite.java.testing.assertj.AssertJShortRulesRecipes**
 
-_Adopt AssertJ Short Assertions. Favor semantically explicit methods (e.g. `myShort.isZero()` over `myShort.isEqualTo(0)`)._
+_Adopt AssertJ `Short` assertions. Favor semantically explicit methods (e.g. `myShort.isZero()` over `myShort.isEqualTo(0)`)._
 
 ## Recipe source
 
@@ -44,9 +44,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.testing.assertj.AssertJShortRulesRecipes
-displayName: Adopt AssertJ Short Assertions
+displayName: Adopt AssertJ `Short` assertions
 description: |
-  Adopt AssertJ Short Assertions. Favor semantically explicit methods (e.g. `myShort.isZero()` over `myShort.isEqualTo(0)`).
+  Adopt AssertJ `Short` assertions. Favor semantically explicit methods (e.g. `myShort.isZero()` over `myShort.isEqualTo(0)`).
 recipeList:
   - org.openrewrite.java.testing.assertj.AssertJShortRulesRecipes$AbstractShortAssertIsEqualToRecipe
   - org.openrewrite.java.testing.assertj.AssertJShortRulesRecipes$AbstractShortAssertIsNotEqualToRecipe
@@ -116,7 +116,7 @@ class A {
 
 <RunRecipe
   recipeName="org.openrewrite.java.testing.assertj.AssertJShortRulesRecipes"
-  displayName="Adopt AssertJ Short Assertions"
+  displayName="Adopt AssertJ `Short` assertions"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-testing-frameworks"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_TESTING_FRAMEWORKS"

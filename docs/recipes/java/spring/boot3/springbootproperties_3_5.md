@@ -45,7 +45,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * oldPropertyKey: `management.metrics.export.prometheus.pushgateway.base-url`
   * newPropertyKey: `management.prometheus.metrics.export.pushgateway.address`
 * [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
-  * oldPropertyKey: `management.promethus.metrics.export.pushgateway.base-url`
+  * oldPropertyKey: `management.prometheus.metrics.export.pushgateway.base-url`
   * newPropertyKey: `management.prometheus.metrics.export.pushgateway.address`
 * [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.codec.log-request-details`
@@ -150,7 +150,7 @@ recipeList:
       oldPropertyKey: management.metrics.export.prometheus.pushgateway.base-url
       newPropertyKey: management.prometheus.metrics.export.pushgateway.address
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: management.promethus.metrics.export.pushgateway.base-url
+      oldPropertyKey: management.prometheus.metrics.export.pushgateway.base-url
       newPropertyKey: management.prometheus.metrics.export.pushgateway.address
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
       oldPropertyKey: spring.codec.log-request-details

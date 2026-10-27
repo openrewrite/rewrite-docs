@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.cucumber.jvm.CucumberRunWithToSuite**
 
-_Replaces the Cucumber JUnit 4 runner with a JUnit Platform `@Suite` that runs the Cucumber engine. The `@CucumberOptions` become `@ConfigurationParameter` annotations, and the features become `@SelectClasspathResource` selectors where they are on the classpath. The JUnit 4 runner looks for glue in the package of the annotated class by default, and the Cucumber engine in the whole classpath, so that package becomes the explicit glue when none is configured. Class-level setup and teardown methods become `@BeforeSuite` and `@AfterSuite` methods, as a `@Suite` does not run `@BeforeClass` or `@BeforeAll`. A class that extends another class, which may contribute `@CucumberOptions`, or that has an option that cannot be carried over, such as one that refers to a constant, keeps the JUnit 4 runner, with a comment explaining why._
+_Replaces the Cucumber JUnit 4 runner with a JUnit Platform `@Suite` that runs the Cucumber engine. The `@CucumberOptions` become `@ConfigurationParameter` annotations, and the features become `@SelectClasspathResource` selectors where they are on the classpath. The JUnit 4 runner looks for glue in the package of the annotated class by default, and the Cucumber engine in the whole classpath, so that package becomes the explicit glue when none is configured. Class-level setup and teardown methods become `@BeforeSuite` and `@AfterSuite` methods, as a `@Suite` does not run `@BeforeClass` or `@BeforeAll`. A class that runs with a subclass of the runner, that extends another class, which may contribute `@CucumberOptions`, or that has an option that cannot be carried over, such as one that refers to a constant, keeps the JUnit 4 runner, with a comment explaining why._
 
 ## Recipe source
 
@@ -27,6 +27,89 @@ This recipe is available under the [Moderne Source Available License](https://do
 This recipe is used as part of the following composite recipes:
 
 * [Cucumber to JUnit test `@Suite`](/recipes/cucumber/jvm/cucumbertojunitplatformsuite.md)
+
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+package com.example.retry.acceptance;
+
+import io.cucumber.junit.Cucumber;
+import io.cucumber.junit.CucumberOptions;
+import org.junit.runner.RunWith;
+
+@RunWith(Cucumber.class)
+@CucumberOptions(
+  plugin = {"pretty", "html:target/cucumber-html-reports", "json:target/cucumber.json"},
+  features = "src/test/resources/acceptance/",
+  glue = "com.example.retry.acceptance.steps",
+  tags = "@component_tests")
+public class AcceptanceTest {
+}
+```
+
+###### After
+```java
+package com.example.retry.acceptance;
+
+import org.junit.platform.suite.api.ConfigurationParameter;
+import org.junit.platform.suite.api.IncludeEngines;
+import org.junit.platform.suite.api.SelectClasspathResource;
+import org.junit.platform.suite.api.Suite;
+
+import static io.cucumber.junit.platform.engine.Constants.*;
+
+@Suite
+@IncludeEngines("cucumber")
+@SelectClasspathResource("acceptance")
+@ConfigurationParameter(key = PLUGIN_PROPERTY_NAME, value = "pretty, html:target/cucumber-html-reports, json:target/cucumber.json")
+@ConfigurationParameter(key = FILTER_TAGS_PROPERTY_NAME, value = "@component_tests")
+@ConfigurationParameter(key = GLUE_PROPERTY_NAME, value = "com.example.retry.acceptance.steps")
+public class AcceptanceTest {
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,3 +3,4 @@
+package com.example.retry.acceptance;
+
+-import io.cucumber.junit.Cucumber;
+-import io.cucumber.junit.CucumberOptions;
+-import org.junit.runner.RunWith;
++import org.junit.platform.suite.api.ConfigurationParameter;
++import org.junit.platform.suite.api.IncludeEngines;
++import org.junit.platform.suite.api.SelectClasspathResource;
++import org.junit.platform.suite.api.Suite;
+
+@@ -7,6 +8,8 @@
+import org.junit.runner.RunWith;
+
+-@RunWith(Cucumber.class)
+-@CucumberOptions(
+- plugin = {"pretty", "html:target/cucumber-html-reports", "json:target/cucumber.json"},
+- features = "src/test/resources/acceptance/",
+- glue = "com.example.retry.acceptance.steps",
+- tags = "@component_tests")
++import static io.cucumber.junit.platform.engine.Constants.*;
++
++@Suite
++@IncludeEngines("cucumber")
++@SelectClasspathResource("acceptance")
++@ConfigurationParameter(key = PLUGIN_PROPERTY_NAME, value = "pretty, html:target/cucumber-html-reports, json:target/cucumber.json")
++@ConfigurationParameter(key = FILTER_TAGS_PROPERTY_NAME, value = "@component_tests")
++@ConfigurationParameter(key = GLUE_PROPERTY_NAME, value = "com.example.retry.acceptance.steps")
+public class AcceptanceTest {
+```
+</TabItem>
+</Tabs>
 
 
 ## Usage

@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.spring.boot3.UpgradeSpringBoot\_3\_2**
 
-_Migrate applications to the latest Spring Boot 3.2 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 3.1._
+_Migrate applications to the latest Spring Boot 3.2 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 3.2._
 
 ### Tags
 
@@ -46,7 +46,6 @@ This recipe is available under the [Moderne Source Available License](https://do
   * groupId: `org.springframework.boot`
   * artifactId: `*`
   * newVersion: `3.2.x`
-  * overrideManagedVersion: `false`
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `org.springframework.boot`
   * artifactId: `spring-boot-dependencies`
@@ -70,7 +69,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Add Gradle or Maven dependency](../../../java/dependencies/adddependency)
   * groupId: `commons-codec`
   * artifactId: `commons-codec`
-  * version: `1.7.x`
+  * version: `1.17.x`
   * onlyIfUsing: `org.apache.commons.codec..*`
   * acceptTransitive: `true`
 * [Migrate to Spring Security 6.2](../../../java/spring/security6/upgradespringsecurity_6_2)
@@ -98,7 +97,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * newVersion: `2.5.x`
 * [Migrate to Hibernate 6.4.x](../../../hibernate/migratetohibernate64)
 * [Use `spring.reactor.context-propagation` property](../../../java/spring/boot3/migratehookstoreactorcontextproperty)
-* [Relocate Launcher Classes](../../../java/spring/boot3/relocatelauncherclasses)
+* [Relocate launcher classes](../../../java/spring/boot3/relocatelauncherclasses)
 * [Upgrade MyBatis to Spring Boot 3.2](../../../java/spring/boot3/upgrademybatistospringboot_3_2)
 * [Upgrade to SpringDoc 2.5](../../../java/springdoc/upgradespringdoc_2_5)
 * [Remove Maven project property](../../../maven/removeproperty)
@@ -114,7 +113,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_2
 displayName: Migrate to Spring Boot 3.2
 description: |
-  Migrate applications to the latest Spring Boot 3.2 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 3.1.
+  Migrate applications to the latest Spring Boot 3.2 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 3.2.
 tags:
   - spring
   - boot
@@ -126,7 +125,6 @@ recipeList:
       groupId: org.springframework.boot
       artifactId: "*"
       newVersion: 3.2.x
-      overrideManagedVersion: false
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: org.springframework.boot
       artifactId: spring-boot-dependencies
@@ -150,7 +148,7 @@ recipeList:
   - org.openrewrite.java.dependencies.AddDependency:
       groupId: commons-codec
       artifactId: commons-codec
-      version: 1.7.x
+      version: 1.17.x
       onlyIfUsing: org.apache.commons.codec..*
       acceptTransitive: true
   - org.openrewrite.java.spring.security6.UpgradeSpringSecurity_6_2

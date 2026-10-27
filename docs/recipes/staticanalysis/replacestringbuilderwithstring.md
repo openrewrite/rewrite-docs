@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.staticanalysis.ReplaceStringBuilderWithString**
 
-_Replace `StringBuilder.append()` with String if you are only concatenating a small number of strings and the code is simple and easy to read, as the compiler can optimize simple string concatenation expressions into a single String object, which can be more efficient than using StringBuilder._
+_Replace `StringBuilder.append()` with `String` concatenation if you are only concatenating a small number of strings and the code is simple and easy to read, as the compiler can optimize simple string concatenation expressions into a single `String` object, which can be more efficient than using `StringBuilder`._
 
 ## Recipe source
 

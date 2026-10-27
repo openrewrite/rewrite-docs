@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.staticanalysis.RenameExceptionInEmptyCatch**
 
-_Renames caught exceptions in empty catch blocks to `ignored`. `ignored` will be incremented by 1 if a namespace conflict exists._
+_Renames caught exceptions in empty catch blocks to `ignored`. A numeric suffix is appended to `ignored` if that name is already taken._
 
 ## Recipe source
 

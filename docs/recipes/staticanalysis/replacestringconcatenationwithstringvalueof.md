@@ -1,13 +1,13 @@
 ---
-title: "Replace String concatenation with `String.valueOf()`"
-sidebar_label: "Replace String concatenation with `String.valueOf()`"
+title: "Replace `String` concatenation with `String.valueOf()`"
+sidebar_label: "Replace `String` concatenation with `String.valueOf()`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Replace String concatenation with `String.valueOf()`
+# Replace `String` concatenation with `String.valueOf()`
 
 **org.openrewrite.staticanalysis.ReplaceStringConcatenationWithStringValueOf**
 
@@ -15,7 +15,7 @@ _Replace inefficient string concatenation patterns like `"" + ...` with `String.
 
 ### Tags
 
-* [RSPEC-S1153](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S1153&open=java%3AS1153)
+* [RSPEC-S9433](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S9433&open=java%3AS9433)
 
 ## Recipe source
 
@@ -76,7 +76,7 @@ class Test {
 
 <RunRecipe
   recipeName="org.openrewrite.staticanalysis.ReplaceStringConcatenationWithStringValueOf"
-  displayName="Replace String concatenation with `String.valueOf()`"
+  displayName="Replace `String` concatenation with `String.valueOf()`"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-static-analysis"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_STATIC_ANALYSIS"

@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.migrate.UpgradePluginsForJava11**
 
-_Updates plugins to version compatible with Java 11._
+_Updates plugins to versions compatible with Java 11._
 
 ### Tags
 
@@ -58,7 +58,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Upgrade Maven plugin version](../../maven/upgradepluginversion)
   * groupId: `org.jvnet.jaxb`
   * artifactId: `jaxb-maven-plugin`
-  * newVersion: `2.0.X`
+  * newVersion: `2.0.x`
 
 </TabItem>
 
@@ -70,7 +70,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.UpgradePluginsForJava11
 displayName: Upgrade plugins to Java 11 compatible versions
 description: |
-  Updates plugins to version compatible with Java 11.
+  Updates plugins to versions compatible with Java 11.
 tags:
   - java11
 preconditions:
@@ -94,7 +94,7 @@ recipeList:
   - org.openrewrite.maven.UpgradePluginVersion:
       groupId: org.jvnet.jaxb
       artifactId: jaxb-maven-plugin
-      newVersion: 2.0.X
+      newVersion: 2.0.x
 
 ```
 </TabItem>

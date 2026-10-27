@@ -45,12 +45,10 @@ This recipe is available under the [Moderne Source Available License](https://do
   * groupId: `org.springframework.security`
   * artifactId: `*`
   * newVersion: `6.4.x`
-  * overrideManagedVersion: `false`
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `org.springframework.security`
   * artifactId: `spring-security-oauth2-authorization-server`
   * newVersion: `1.4.x`
-  * overrideManagedVersion: `false`
 * [Change method name](../../../java/changemethodname)
   * methodPattern: `org.springframework.security.config.annotation.web.configurers.HeadersConfigurer permissionsPolicy(org.springframework.security.config.Customizer)`
   * newMethodName: `permissionsPolicyHeader`
@@ -76,12 +74,10 @@ recipeList:
       groupId: org.springframework.security
       artifactId: "*"
       newVersion: 6.4.x
-      overrideManagedVersion: false
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: org.springframework.security
       artifactId: spring-security-oauth2-authorization-server
       newVersion: 1.4.x
-      overrideManagedVersion: false
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: org.springframework.security.config.annotation.web.configurers.HeadersConfigurer permissionsPolicy(org.springframework.security.config.Customizer)
       newMethodName: permissionsPolicyHeader
@@ -95,6 +91,105 @@ recipeList:
 This recipe is used as part of the following composite recipes:
 
 * [Migrate to Spring Boot 3.4 (Community Edition)](/recipes/java/spring/boot3/upgradespringboot_3_4-community-edition.md)
+
+## Examples
+##### Example 1
+`MigratePermissionsPolicyTest#keepsFollowingHeaderConfigurationOnHeadersConfigurer`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+class Security {
+    void configure(HttpSecurity http) throws Exception {
+        http.headers(headers -> headers
+            .permissionsPolicy().policy("camera=()").and()
+            .frameOptions().sameOrigin());
+    }
+}
+```
+
+###### After
+```java
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+class Security {
+    void configure(HttpSecurity http) throws Exception {
+        http.headers(headers -> headers
+                .permissionsPolicyHeader(policy -> policy.policy("camera=()"))
+                .frameOptions(options -> options.sameOrigin()));
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -5,2 +5,2 @@
+    void configure(HttpSecurity http) throws Exception {
+        http.headers(headers -> headers
+-           .permissionsPolicy().policy("camera=()").and()
+-           .frameOptions().sameOrigin());
++               .permissionsPolicyHeader(policy -> policy.policy("camera=()"))
++               .frameOptions(options -> options.sameOrigin()));
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`MigratePermissionsPolicyTest#keepsFollowingHeaderConfigurationOnHeadersConfigurer`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+class Security {
+    void configure(HttpSecurity http) throws Exception {
+        http.headers(headers -> headers
+            .permissionsPolicy().policy("camera=()").and()
+            .frameOptions().sameOrigin());
+    }
+}
+```
+
+###### After
+```java
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+class Security {
+    void configure(HttpSecurity http) throws Exception {
+        http.headers(headers -> headers
+                .permissionsPolicyHeader(policy -> policy.policy("camera=()"))
+                .frameOptions(options -> options.sameOrigin()));
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -5,2 +5,2 @@
+    void configure(HttpSecurity http) throws Exception {
+        http.headers(headers -> headers
+-           .permissionsPolicy().policy("camera=()").and()
+-           .frameOptions().sameOrigin());
++               .permissionsPolicyHeader(policy -> policy.policy("camera=()"))
++               .frameOptions(options -> options.sameOrigin()));
+    }
+```
+</TabItem>
+</Tabs>
 
 
 ## Usage
@@ -120,6 +215,25 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
+
+### Maven metadata failures
+**org.openrewrite.maven.table.MavenMetadataFailures**
+
+_Attempts to resolve maven metadata that failed._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Group id | The groupId of the artifact for which the metadata download failed. |
+| Artifact id | The artifactId of the artifact for which the metadata download failed. |
+| Version | The version of the artifact for which the metadata download failed. |
+| Maven repository | The URL of the Maven repository that the metadata download failed on. |
+| Snapshots | Does the repository support snapshots. |
+| Releases | Does the repository support releases. |
+| Failure | The reason the metadata download failed. |
+
+</TabItem>
+
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results

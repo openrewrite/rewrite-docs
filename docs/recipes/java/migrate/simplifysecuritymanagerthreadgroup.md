@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.migrate.SimplifySecurityManagerThreadGroup**
 
-_Remove a null SecurityManager local used only by the immediately following thread group conditional._
+_Remove a `null` `SecurityManager` local used only by the immediately following thread group conditional._
 
 ## Recipe source
 

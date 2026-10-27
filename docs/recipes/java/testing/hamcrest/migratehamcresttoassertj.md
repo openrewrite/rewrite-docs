@@ -49,12 +49,12 @@ This recipe is available under the [Moderne Source Available License](https://do
   * onlyIfUsing: `org.hamcrest.*`
   * acceptTransitive: `true`
 * [Use consistent Hamcrest matcher imports](../../../java/testing/hamcrest/consistenthamcrestmatcherimports)
-* [Migrate `anyOf` Hamcrest Matcher to AssertJ](../../../java/testing/hamcrest/hamcrestofmatcherstoassertj)
+* [Migrate `anyOf` and `allOf` Hamcrest matchers to AssertJ](../../../java/testing/hamcrest/hamcrestofmatcherstoassertj)
 * [Migrate Hamcrest `hasProperty` to AssertJ](../../../java/testing/hamcrest/hamcresthaspropertytoassertj)
 * [Migrate Hamcrest `everyItem` to AssertJ](../../../java/testing/hamcrest/hamcresteveryitemtoassertj)
 * [Migrate Hamcrest `hasItem(Matcher)` to AssertJ](../../../java/testing/hamcrest/hamcresthasitemmatchertoassertj)
 * [Migrate Hamcrest `is(Object)` to AssertJ](../../../java/testing/hamcrest/hamcrestismatchertoassertj)
-* [Migrate Hamcrest `assertThat(boolean, Matcher)` to AssertJ](../../../java/testing/hamcrest/assertthatbooleantoassertj)
+* [Migrate Hamcrest `assertThat(String, boolean)` to AssertJ](../../../java/testing/hamcrest/assertthatbooleantoassertj)
 * [Migrate from Hamcrest `Matcher` to AssertJ](../../../java/testing/hamcrest/hamcrestmatchertoassertj)
   * matcher: `comparesEqualTo`
   * assertion: `isEqualTo`
@@ -823,6 +823,25 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
+
+### Maven metadata failures
+**org.openrewrite.maven.table.MavenMetadataFailures**
+
+_Attempts to resolve maven metadata that failed._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Group id | The groupId of the artifact for which the metadata download failed. |
+| Artifact id | The artifactId of the artifact for which the metadata download failed. |
+| Version | The version of the artifact for which the metadata download failed. |
+| Maven repository | The URL of the Maven repository that the metadata download failed on. |
+| Snapshots | Does the repository support snapshots. |
+| Releases | Does the repository support releases. |
+| Failure | The reason the metadata download failed. |
+
+</TabItem>
+
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results

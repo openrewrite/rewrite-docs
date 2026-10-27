@@ -1,6 +1,6 @@
 ---
-title: "Use `QuerydslPredicateExecutor&lt;T&gt;`"
-sidebar_label: "Use `QuerydslPredicateExecutor&lt;T&gt;`"
+title: "Use `QuerydslPredicateExecutor<T>`"
+sidebar_label: "Use `QuerydslPredicateExecutor<T>`"
 ---
 
 import Tabs from '@theme/Tabs';

@@ -25,8 +25,8 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 | Type | Name | Description | Example |
 | --- | --- | --- | --- |
-| `String` | localizedInputStreamMethodMatcher | *Optional*. The method pattern to match and replace. | `java.lang.Runtime getLocalizedInputStream(java.io.InputStream)` |
-| `String` | localizedOutputStreamMethodMatcher | *Optional*. The method pattern to match and replace. | `java.lang.Runtime getLocalizedOutputStream(java.io.OutputStream)` |
+| `String` | localizedInputStreamMethodMatcher | *Optional*. A method pattern matching the `getLocalizedInputStream(InputStream)` method to replace. Defaults to the method on `java.lang.Runtime`. | `java.lang.Runtime getLocalizedInputStream(java.io.InputStream)` |
+| `String` | localizedOutputStreamMethodMatcher | *Optional*. A method pattern matching the `getLocalizedOutputStream(OutputStream)` method to replace. Defaults to the method on `java.lang.Runtime`. | `java.lang.Runtime getLocalizedOutputStream(java.io.OutputStream)` |
 
 
 ## Used by

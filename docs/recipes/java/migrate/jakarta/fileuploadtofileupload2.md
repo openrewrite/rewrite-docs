@@ -1,17 +1,17 @@
 ---
-title: "Migrate deprecated `org.apache.commons.fileload` packages to `org.apache.commons.fileload.core`"
-sidebar_label: "Migrate deprecated `org.apache.commons.fileload` packages to `org.apache.commons.fileload.core`"
+title: "Migrate `commons-fileupload` to `commons-fileupload2-jakarta-servlet5`"
+sidebar_label: "Migrate `commons-fileupload` to `commons-fileupload2-jakarta-servlet5`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Migrate deprecated `org.apache.commons.fileload` packages to `org.apache.commons.fileload.core`
+# Migrate `commons-fileupload` to `commons-fileupload2-jakarta-servlet5`
 
 **org.openrewrite.java.migrate.jakarta.FileuploadToFileUpload2**
 
-_Migrate deprecated `org.apache.commons.fileload` packages to `org.apache.commons.fileload.core`._
+_Migrate Apache Commons FileUpload 1.x and the `commons-fileupload2-jakarta` milestone to `commons-fileupload2-jakarta-servlet5`, moving `org.apache.commons.fileupload` packages and servlet types to their FileUpload 2 equivalents._
 
 ## Recipe source
 
@@ -41,22 +41,35 @@ This recipe is available under the [Moderne Source Available License](https://do
   * oldArtifactId: `commons-fileupload`
   * newGroupId: `org.apache.commons`
   * newArtifactId: `commons-fileupload2-jakarta-servlet5`
-  * newVersion: `2.0.0-M4`
+  * newVersion: `2.0.0-M5`
 * [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
   * oldGroupId: `org.apache.commons`
   * oldArtifactId: `commons-fileupload2-jakarta`
   * newArtifactId: `commons-fileupload2-jakarta-servlet5`
+  * newVersion: `2.0.0-M5`
 * [Rename package name](../../../java/changepackage)
-  * oldPackageName: `org.apache.commons.fileload.disk`
-  * newPackageName: `org.apache.commons.fileload2.core`
+  * oldPackageName: `org.apache.commons.fileupload2.jakarta`
+  * newPackageName: `org.apache.commons.fileupload2.jakarta.servlet5`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.apache.commons.fileupload.servlet.ServletFileUpload`
+  * newFullyQualifiedTypeName: `org.apache.commons.fileupload2.jakarta.servlet5.JakartaServletFileUpload`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.apache.commons.fileupload.servlet.ServletRequestContext`
+  * newFullyQualifiedTypeName: `org.apache.commons.fileupload2.jakarta.servlet5.JakartaServletRequestContext`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.apache.commons.fileupload.servlet.FileCleanerCleanup`
+  * newFullyQualifiedTypeName: `org.apache.commons.fileupload2.jakarta.servlet5.JakartaFileCleaner`
+* [Rename package name](../../../java/changepackage)
+  * oldPackageName: `org.apache.commons.fileupload.disk`
+  * newPackageName: `org.apache.commons.fileupload2.core`
   * recursive: `true`
 * [Rename package name](../../../java/changepackage)
-  * oldPackageName: `org.apache.commons.fileload.servlet`
+  * oldPackageName: `org.apache.commons.fileupload.servlet`
   * newPackageName: `org.apache.commons.fileupload2.jakarta.servlet5`
   * recursive: `true`
 * [Rename package name](../../../java/changepackage)
-  * oldPackageName: `org.apache.commons.fileload`
-  * newPackageName: `org.apache.commons.fileload2.core`
+  * oldPackageName: `org.apache.commons.fileupload`
+  * newPackageName: `org.apache.commons.fileupload2.core`
   * recursive: `true`
 
 </TabItem>
@@ -67,9 +80,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.jakarta.FileuploadToFileUpload2
-displayName: Migrate deprecated `org.apache.commons.fileload` packages to `org.apache.commons.fileload.core`
+displayName: Migrate `commons-fileupload` to `commons-fileupload2-jakarta-servlet5`
 description: |
-  Migrate deprecated `org.apache.commons.fileload` packages to `org.apache.commons.fileload.core`.
+  Migrate Apache Commons FileUpload 1.x and the `commons-fileupload2-jakarta` milestone to `commons-fileupload2-jakarta-servlet5`, moving `org.apache.commons.fileupload` packages and servlet types to their FileUpload 2 equivalents.
 preconditions:
   - org.openrewrite.Singleton
 recipeList:
@@ -78,22 +91,35 @@ recipeList:
       oldArtifactId: commons-fileupload
       newGroupId: org.apache.commons
       newArtifactId: commons-fileupload2-jakarta-servlet5
-      newVersion: 2.0.0-M4
+      newVersion: 2.0.0-M5
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.apache.commons
       oldArtifactId: commons-fileupload2-jakarta
       newArtifactId: commons-fileupload2-jakarta-servlet5
+      newVersion: 2.0.0-M5
   - org.openrewrite.java.ChangePackage:
-      oldPackageName: org.apache.commons.fileload.disk
-      newPackageName: org.apache.commons.fileload2.core
+      oldPackageName: org.apache.commons.fileupload2.jakarta
+      newPackageName: org.apache.commons.fileupload2.jakarta.servlet5
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.apache.commons.fileupload.servlet.ServletFileUpload
+      newFullyQualifiedTypeName: org.apache.commons.fileupload2.jakarta.servlet5.JakartaServletFileUpload
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.apache.commons.fileupload.servlet.ServletRequestContext
+      newFullyQualifiedTypeName: org.apache.commons.fileupload2.jakarta.servlet5.JakartaServletRequestContext
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.apache.commons.fileupload.servlet.FileCleanerCleanup
+      newFullyQualifiedTypeName: org.apache.commons.fileupload2.jakarta.servlet5.JakartaFileCleaner
+  - org.openrewrite.java.ChangePackage:
+      oldPackageName: org.apache.commons.fileupload.disk
+      newPackageName: org.apache.commons.fileupload2.core
       recursive: true
   - org.openrewrite.java.ChangePackage:
-      oldPackageName: org.apache.commons.fileload.servlet
+      oldPackageName: org.apache.commons.fileupload.servlet
       newPackageName: org.apache.commons.fileupload2.jakarta.servlet5
       recursive: true
   - org.openrewrite.java.ChangePackage:
-      oldPackageName: org.apache.commons.fileload
-      newPackageName: org.apache.commons.fileload2.core
+      oldPackageName: org.apache.commons.fileupload
+      newPackageName: org.apache.commons.fileupload2.core
       recursive: true
 
 ```
@@ -106,12 +132,139 @@ This recipe is used as part of the following composite recipes:
 
 * [Migrate to Jakarta EE 9](/recipes/java/migrate/jakarta/javaxmigrationtojakarta.md)
 
+## Examples
+##### Example 1
+`FileuploadToFileUpload2Test#changeCommonsFileuploadToJakartaServlet5`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="pom.xml" label="pom.xml">
+
+
+###### Before
+```xml title="pom.xml"
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.example</groupId>
+    <artifactId>demo</artifactId>
+    <version>1.0</version>
+    <dependencies>
+        <dependency>
+            <groupId>commons-fileupload</groupId>
+            <artifactId>commons-fileupload</artifactId>
+            <version>1.5</version>
+        </dependency>
+    </dependencies>
+</project>
+```
+
+###### After
+```xml title="pom.xml"
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.example</groupId>
+    <artifactId>demo</artifactId>
+    <version>1.0</version>
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-fileupload2-jakarta-servlet5</artifactId>
+            <version>2.0.0-M5</version>
+        </dependency>
+    </dependencies>
+</project>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- pom.xml
++++ pom.xml
+@@ -8,3 +8,3 @@
+    <dependencies>
+        <dependency>
+-           <groupId>commons-fileupload</groupId>
+-           <artifactId>commons-fileupload</artifactId>
+-           <version>1.5</version>
++           <groupId>org.apache.commons</groupId>
++           <artifactId>commons-fileupload2-jakarta-servlet5</artifactId>
++           <version>2.0.0-M5</version>
+        </dependency>
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`FileuploadToFileUpload2Test#changeCommonsFileuploadToJakartaServlet5`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="pom.xml" label="pom.xml">
+
+
+###### Before
+```xml title="pom.xml"
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.example</groupId>
+    <artifactId>demo</artifactId>
+    <version>1.0</version>
+    <dependencies>
+        <dependency>
+            <groupId>commons-fileupload</groupId>
+            <artifactId>commons-fileupload</artifactId>
+            <version>1.5</version>
+        </dependency>
+    </dependencies>
+</project>
+```
+
+###### After
+```xml title="pom.xml"
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.example</groupId>
+    <artifactId>demo</artifactId>
+    <version>1.0</version>
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-fileupload2-jakarta-servlet5</artifactId>
+            <version>2.0.0-M5</version>
+        </dependency>
+    </dependencies>
+</project>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- pom.xml
++++ pom.xml
+@@ -8,3 +8,3 @@
+    <dependencies>
+        <dependency>
+-           <groupId>commons-fileupload</groupId>
+-           <artifactId>commons-fileupload</artifactId>
+-           <version>1.5</version>
++           <groupId>org.apache.commons</groupId>
++           <artifactId>commons-fileupload2-jakarta-servlet5</artifactId>
++           <version>2.0.0-M5</version>
+        </dependency>
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
 <RunRecipe
   recipeName="org.openrewrite.java.migrate.jakarta.FileuploadToFileUpload2"
-  displayName="Migrate deprecated `org.apache.commons.fileload` packages to `org.apache.commons.fileload.core`"
+  displayName="Migrate `commons-fileupload` to `commons-fileupload2-jakarta-servlet5`"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-migrate-java"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA"
@@ -130,6 +283,25 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
+
+### Maven metadata failures
+**org.openrewrite.maven.table.MavenMetadataFailures**
+
+_Attempts to resolve maven metadata that failed._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Group id | The groupId of the artifact for which the metadata download failed. |
+| Artifact id | The artifactId of the artifact for which the metadata download failed. |
+| Version | The version of the artifact for which the metadata download failed. |
+| Maven repository | The URL of the Maven repository that the metadata download failed on. |
+| Snapshots | Does the repository support snapshots. |
+| Releases | Does the repository support releases. |
+| Failure | The reason the metadata download failed. |
+
+</TabItem>
+
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results

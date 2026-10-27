@@ -1,17 +1,17 @@
 ---
-title: "Make `@TempDir` fields non final"
-sidebar_label: "Make `@TempDir` fields non final"
+title: "Make `@TempDir` fields non-final"
+sidebar_label: "Make `@TempDir` fields non-final"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Make `@TempDir` fields non final
+# Make `@TempDir` fields non-final
 
 **org.openrewrite.java.testing.junit5.TempDirNonFinal**
 
-_Make JUnit 5's `org.junit.jupiter.api.io.TempDir` fields non final._
+_Make JUnit 5's `org.junit.jupiter.api.io.TempDir` fields non-final._
 
 ## Recipe source
 
@@ -33,7 +33,7 @@ This recipe is used as part of the following composite recipes:
 
 <RunRecipe
   recipeName="org.openrewrite.java.testing.junit5.TempDirNonFinal"
-  displayName="Make `@TempDir` fields non final"
+  displayName="Make `@TempDir` fields non-final"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-testing-frameworks"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_TESTING_FRAMEWORKS"

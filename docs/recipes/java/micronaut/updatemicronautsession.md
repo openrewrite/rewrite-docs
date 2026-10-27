@@ -19,10 +19,6 @@ _This recipe will update the Micronaut Session dependency if needed._
 [Issue Tracker](https://github.com/openrewrite/rewrite-micronaut/issues),
 [Code Genome Project](https://artifacts.codegenomeproject.org/maven/org/openrewrite/recipe/rewrite-micronaut/)
 
-:::info
-This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
-:::
-
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
 
@@ -30,16 +26,11 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Change Gradle dependency group](../../gradle/changedependencygroupid)
-  * groupId: `io.micronaut`
-  * artifactId: `micronaut-session`
-  * newGroupId: `io.micronaut.session`
-  * configuration: `implementation`
-* [Change Maven dependency](../../maven/changedependencygroupidandartifactid)
+* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
   * oldGroupId: `io.micronaut`
   * oldArtifactId: `micronaut-session`
   * newGroupId: `io.micronaut.session`
-  * newVersion: `LATEST`
+  * newVersion: `4.x`
 
 </TabItem>
 
@@ -53,16 +44,11 @@ displayName: Update the Micronaut Session support
 description: |
   This recipe will update the Micronaut Session dependency if needed.
 recipeList:
-  - org.openrewrite.gradle.ChangeDependencyGroupId:
-      groupId: io.micronaut
-      artifactId: micronaut-session
-      newGroupId: io.micronaut.session
-      configuration: implementation
-  - org.openrewrite.maven.ChangeDependencyGroupIdAndArtifactId:
+  - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: io.micronaut
       oldArtifactId: micronaut-session
       newGroupId: io.micronaut.session
-      newVersion: LATEST
+      newVersion: 4.x
 
 ```
 </TabItem>

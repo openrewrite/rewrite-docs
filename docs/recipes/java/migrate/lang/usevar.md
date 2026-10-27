@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.migrate.lang.UseVar**
 
-_Apply local variable type inference (`var`) for primitives and objects. These recipes can cause unused imports, be advised to run `org.openrewrite.java.RemoveUnusedImports afterwards._
+_Apply local variable type inference (`var`) for primitives and objects. This can leave imports of the replaced types unused, so remove unused imports afterwards._
 
 ### Tags
 
@@ -46,7 +46,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Use `var` for variables initialized with type casts](../../../java/migrate/lang/var/usevarfortypecast)
 * [Use `var` for constructor call assignments](../../../java/migrate/lang/var/usevarforconstructors)
 * [Use `var` for primitive and String variables](../../../java/migrate/lang/var/usevarforprimitive)
-* [Apply `var` to Generic Constructors](../../../java/migrate/lang/var/usevarforgenericsconstructors)
+* [Apply `var` to generic constructors](../../../java/migrate/lang/var/usevarforgenericsconstructors)
 * [Apply `var` to generic method invocations](../../../java/migrate/lang/var/usevarforgenericmethodinvocations)
 
 </TabItem>
@@ -59,7 +59,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.lang.UseVar
 displayName: Use local variable type inference
 description: |
-  Apply local variable type inference (`var`) for primitives and objects. These recipes can cause unused imports, be advised to run `org.openrewrite.java.RemoveUnusedImports afterwards.
+  Apply local variable type inference (`var`) for primitives and objects. This can leave imports of the replaced types unused, so remove unused imports afterwards.
 tags:
   - refactoring
   - java10

@@ -1,13 +1,13 @@
 ---
-title: "`@Entity` objects with constructors must also have a default constructor"
-sidebar_label: "`@Entity` objects with constructors must also have a default constructor"
+title: "Add a default constructor to `@Entity` and `@MappedSuperclass` classes"
+sidebar_label: "Add a default constructor to `@Entity` and `@MappedSuperclass` classes"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# `@Entity` objects with constructors must also have a default constructor
+# Add a default constructor to `@Entity` and `@MappedSuperclass` classes
 
 **org.openrewrite.java.migrate.javax.AddDefaultConstructorToEntityClass**
 
@@ -90,7 +90,7 @@ public class MissingNoArgConstructorEntity {
 
 <RunRecipe
   recipeName="org.openrewrite.java.migrate.javax.AddDefaultConstructorToEntityClass"
-  displayName="`@Entity` objects with constructors must also have a default constructor"
+  displayName="Add a default constructor to `@Entity` and `@MappedSuperclass` classes"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-migrate-java"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA"

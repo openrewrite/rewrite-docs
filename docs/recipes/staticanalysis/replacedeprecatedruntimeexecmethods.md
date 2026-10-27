@@ -11,7 +11,11 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.staticanalysis.ReplaceDeprecatedRuntimeExecMethods**
 
-_Replace `Runtime#exec(String)` methods to use `exec(String[])` instead because the former is deprecated after Java 18 and is no longer recommended for use by the Java documentation._
+_Replace `Runtime#exec(String)` methods to use `exec(String[])` instead because the former is deprecated since Java 18 and is no longer recommended for use by the Java documentation._
+
+### Tags
+
+* [RSPEC-S1874](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S1874&open=java%3AS1874)
 
 ## Recipe source
 

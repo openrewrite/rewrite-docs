@@ -1,13 +1,13 @@
 ---
-title: "Migrate Hamcrest `assertThat(boolean, Matcher)` to AssertJ"
-sidebar_label: "Migrate Hamcrest `assertThat(boolean, Matcher)` to AssertJ"
+title: "Migrate Hamcrest `assertThat(String, boolean)` to AssertJ"
+sidebar_label: "Migrate Hamcrest `assertThat(String, boolean)` to AssertJ"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Migrate Hamcrest `assertThat(boolean, Matcher)` to AssertJ
+# Migrate Hamcrest `assertThat(String, boolean)` to AssertJ
 
 **org.openrewrite.java.testing.hamcrest.AssertThatBooleanToAssertJ**
 
@@ -88,7 +88,7 @@ import org.junit.jupiter.api.Test;
 
 <RunRecipe
   recipeName="org.openrewrite.java.testing.hamcrest.AssertThatBooleanToAssertJ"
-  displayName="Migrate Hamcrest `assertThat(boolean, Matcher)` to AssertJ"
+  displayName="Migrate Hamcrest `assertThat(String, boolean)` to AssertJ"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-testing-frameworks"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_TESTING_FRAMEWORKS"

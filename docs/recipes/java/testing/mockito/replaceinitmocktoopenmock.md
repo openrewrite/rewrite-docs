@@ -26,7 +26,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 This recipe is used as part of the following composite recipes:
 
-* [Mockito 4.x upgrade](/recipes/java/testing/mockito/mockito1to4migration.md)
+* [Upgrade to Mockito 4.x](/recipes/java/testing/mockito/mockito1to4migration.md)
 
 ## Example
 
@@ -64,7 +64,6 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 
 class A {
-
     private AutoCloseable mocks;
 
     @BeforeEach
@@ -95,19 +94,18 @@ class A {
 import org.mockito.MockitoAnnotations;
 +import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
-@@ -6,0 +7,2 @@
-class A {
+@@ -5,0 +6,1 @@
 
+class A {
 +   private AutoCloseable mocks;
-+
-    @BeforeEach
-@@ -9,1 +12,1 @@
+
+@@ -9,1 +11,1 @@
     public void setUp() {
         test1();
 -       MockitoAnnotations.initMocks(this);
 +       mocks = MockitoAnnotations.openMocks(this);
         test2();
-@@ -18,0 +21,5 @@
+@@ -18,0 +20,5 @@
     public void test2() {
     }
 +

@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.migrate.UpgradeToJava25**
 
-_This recipe will apply changes commonly needed when migrating to Java 25. This recipe will also replace deprecated API with equivalents when there is a clear migration strategy. Build files will also be updated to use Java 25 as the target/source and plugins will be also be upgraded to versions that are compatible with Java 25._
+_This recipe will apply changes commonly needed when migrating to Java 25. This recipe will also replace deprecated API with equivalents when there is a clear migration strategy. Build files will also be updated to use Java 25 as the target/source and plugins will also be upgraded to versions that are compatible with Java 25._
 
 ### Tags
 
@@ -50,13 +50,14 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Use `Process#waitFor(Duration)`](../../java/migrate/lang/migrateprocesswaitforduration)
 * [Replace `Inflater` and `Deflater` `end()` calls with `close()`](../../java/migrate/util/migrateinflaterdeflatertoclose)
 * [Use `Reader.of(CharSequence)` for non-synchronized readers](../../java/migrate/util/migratestringreadertoreaderof)
-* [Remove Security AccessController](../../java/migrate/accesscontroller)
-* [Remove Security Policy](../../java/migrate/removesecuritypolicy)
-* [Remove Security SecurityManager](../../java/migrate/removesecuritymanager)
+* [Remove `AccessController.checkPermission(..)` calls](../../java/migrate/accesscontroller)
+* [Remove `Policy.setPolicy(..)` calls](../../java/migrate/removesecuritypolicy)
+* [Remove `SecurityManager` permission checks](../../java/migrate/removesecuritymanager)
 * [Replace `System.getSecurityManager()` with `null`](../../java/migrate/systemgetsecuritymanagertonull)
 * [Use `ZipException` instead of `ZipError`](../../java/migrate/migrateziperrortozipexception)
-* [Migrate GraalVM resource-config.json to glob patterns](../../java/migrate/migrategraalvmresourceconfig)
+* [Migrate GraalVM `resource-config.json` to glob patterns](../../java/migrate/migrategraalvmresourceconfig)
 * [Turn dangling documentation comments into block comments](../../java/migrate/danglingdoccommenttoblockcomment)
+* [Find `CompletableFuture` async calls without an `Executor`](../../java/migrate/search/findcompletablefuturedefaultexecutor)
 * [Comment Kotlin modules capped at Java 24](../../java/migrate/commentkotlinmodulescappedatjava24)
 
 </TabItem>
@@ -69,7 +70,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.UpgradeToJava25
 displayName: Migrate to Java 25
 description: |
-  This recipe will apply changes commonly needed when migrating to Java 25. This recipe will also replace deprecated API with equivalents when there is a clear migration strategy. Build files will also be updated to use Java 25 as the target/source and plugins will be also be upgraded to versions that are compatible with Java 25.
+  This recipe will apply changes commonly needed when migrating to Java 25. This recipe will also replace deprecated API with equivalents when there is a clear migration strategy. Build files will also be updated to use Java 25 as the target/source and plugins will also be upgraded to versions that are compatible with Java 25.
 tags:
   - java25
 preconditions:
@@ -92,6 +93,7 @@ recipeList:
   - org.openrewrite.java.migrate.MigrateZipErrorToZipException
   - org.openrewrite.java.migrate.MigrateGraalVMResourceConfig
   - org.openrewrite.java.migrate.DanglingDocCommentToBlockComment
+  - org.openrewrite.java.migrate.search.FindCompletableFutureDefaultExecutor
   - org.openrewrite.java.migrate.CommentKotlinModulesCappedAtJava24
 
 ```

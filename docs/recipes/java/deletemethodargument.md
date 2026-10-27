@@ -40,11 +40,13 @@ This recipe is used as part of the following composite recipes:
 * [Migrate to ApacheHttpClient 5.x](/recipes/apache/httpclient5/upgradeapachehttpclient_5.md)
 * [Migrate to Hibernate 7.2.x](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/hibernate/migratetohibernate72)
 * [Migrate to Kafka 4.0](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kafka/migratetokafka40)
+* [Migrate to the Prometheus client 1.x based Micrometer registry](/recipes/quarkus/updates/core/quarkus40/micrometerprometheusmetrics.md)
 * [Migrates to Apache Commons Collections 4.x](/recipes/apache/commons/collections/upgradeapachecommonscollections_3_4.md)
-* [Mockito 3.x migration from 1.x](/recipes/java/testing/mockito/mockito1to3migration.md)
 * [Remove `SslBundles` parameter from `KafkaProperties` build methods](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/removekafkapropertiessslbundlesparameter)
-* [Replace  deprecated Jakarta Servlet methods and classes](/recipes/java/migrate/jakarta/removalsservletjakarta10.md)
+* [Replace deprecated Jakarta Servlet methods and classes](/recipes/java/migrate/jakarta/removalsservletjakarta10.md)
 * [Replace deprecated Jakarta Servlet methods and classes](/recipes/oracle/weblogic/rewrite/jakarta/removalsservletjakarta9.md)
+* [Upgrade Mockito from 1.x to 3.x](/recipes/java/testing/mockito/mockito1to3migration.md)
+* [Use `SecurityManager#checkMulticast(InetAddress)`](/recipes/java/migrate/lang/migratesecuritymanagermulticast.md)
 
 ## Example
 

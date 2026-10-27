@@ -28,6 +28,57 @@ This recipe is used as part of the following composite recipes:
 
 * [Migrate to Java 25](/recipes/java/migrate/upgradetojava25.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+class A {
+    /** The field name. */
+    private String fieldName;
+
+    /** The request. */
+    // private transient Object request = null;
+
+    /** Instantiates a new A. */
+    A() {
+    }
+}
+```
+
+###### After
+```java
+class A {
+    /** The field name. */
+    private String fieldName;
+
+    /* The request. */
+    // private transient Object request = null;
+
+    /** Instantiates a new A. */
+    A() {
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -5,1 +5,1 @@
+    private String fieldName;
+
+-   /** The request. */
++   /* The request. */
+    // private transient Object request = null;
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

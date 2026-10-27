@@ -34,7 +34,6 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrate Enabled to Access Spring Boot Properties](/recipes/java/spring/boot3/springbootproperties_3_4_enabledtoaccess.md)
 * [Migrate Spring Boot properties to 2.0](/recipes/java/spring/boot2/springbootproperties_2_0.md)
 * [Migrate Spring Boot properties to 2.1](/recipes/java/spring/boot2/springbootproperties_2_1.md)
 * [Migrate Spring Boot properties to 2.2](/recipes/java/spring/boot2/springbootproperties_2_2.md)
@@ -51,11 +50,11 @@ This recipe is used as part of the following composite recipes:
 * [Migrate Spring Boot properties to 3.5](/recipes/java/spring/boot3/springbootproperties_3_5.md)
 * [Migrate Spring Boot properties to 4.0](/recipes/java/spring/boot4/springbootproperties_4_0.md)
 * [Migrate Spring Boot properties to 4.1 (Community Edition)](/recipes/java/spring/boot4/springbootproperties_4_1-community-edition.md)
-* [Migrate Spring Cloud Gateway Properties](/recipes/java/spring/cloud2025/springcloudgatewayproperties.md)
-* [Migrate Spring Cloud Gateway Proxy WebMvc Properties](/recipes/java/spring/cloud2025/springcloudgatewayproxywebmvcproperties.md)
-* [Migrate Spring Cloud Gateway Proxy Webflux Properties](/recipes/java/spring/cloud2025/springcloudgatewayproxywebfluxproperties.md)
-* [Migrate Spring Cloud Gateway WebMvc Properties](/recipes/java/spring/cloud2025/springcloudgatewaywebmvcproperties.md)
-* [Migrate Spring Cloud Gateway Webflux Properties](/recipes/java/spring/cloud2025/springcloudgatewaywebfluxproperties.md)
+* [Migrate Spring Cloud Gateway Proxy WebFlux properties](/recipes/java/spring/cloud2025/springcloudgatewayproxywebfluxproperties.md)
+* [Migrate Spring Cloud Gateway Proxy WebMvc properties](/recipes/java/spring/cloud2025/springcloudgatewayproxywebmvcproperties.md)
+* [Migrate Spring Cloud Gateway WebFlux properties](/recipes/java/spring/cloud2025/springcloudgatewaywebfluxproperties.md)
+* [Migrate Spring Cloud Gateway WebMvc properties](/recipes/java/spring/cloud2025/springcloudgatewaywebmvcproperties.md)
+* [Migrate Spring Cloud Gateway properties](/recipes/java/spring/cloud2025/springcloudgatewayproperties.md)
 * [Migrate Spring Cloud Sleuth 3.1 to Micrometer Tracing 1.0](/recipes/java/spring/cloud2022/migratecloudsleuthtomicrometertracing.md)
 * [Migrate Spring Cloud properties to 2020](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/cloud2020/springcloudproperties_2020)
 * [Migrate Spring Cloud properties to 2023](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/cloud2023/springcloudproperties_2023)
@@ -64,6 +63,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate Spring Cloud properties to 2025](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/cloud2025/springcloudproperties_2025)
 * [Migrate Spring Security OAuth clients to Spring Security](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/security/oauth/migratespringsecurityoauthclient)
 * [Migrate Spring Security OAuth resource servers to Spring Security](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/security/oauth/migratespringsecurityoauthresourceserver)
+* [Migrate `enabled` to `access` Spring Boot properties](/recipes/java/spring/boot3/springbootproperties_3_4_enabledtoaccess.md)
 * [Migrate from Spring Cloud Sleuth to OpenTelemetry](/recipes/java/spring/opentelemetry/migratesleuthtoopentelemetry.md)
 * [Migrate from standalone Spring gRPC 1.0 to Spring Boot 4.1 (Spring gRPC 1.1)](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/migratespringgrpc_1_1)
 * [Rename `server.max-http-header-size` to `server.max-http-request-header-size`](/recipes/java/spring/boot3/migratemaxhttpheadersize.md)
@@ -148,7 +148,7 @@ server:
 ---
 
 ##### Example 2
-`MarkAdditionalSpringConfigFilesTest#enablesChangeSpringPropertyKeyOnFileOutsideSourceSet`
+`SpringConfigFilesTest#changesFileImportedByApplicationYaml`
 
 ###### Parameters
 | Parameter | Value |
@@ -159,16 +159,16 @@ server:
 
 
 <Tabs groupId="beforeAfter">
-<TabItem value="properties" label="properties">
+<TabItem value="config/extra.properties" label="config/extra.properties">
 
 
 ###### Before
-```properties
+```properties title="config/extra.properties"
 server.servlet-path=/tmp/my-server-path
 ```
 
 ###### After
-```properties
+```properties title="config/extra.properties"
 server.servlet.path=/tmp/my-server-path
 ```
 
@@ -176,6 +176,8 @@ server.servlet.path=/tmp/my-server-path
 <TabItem value="diff" label="Diff" >
 
 ```diff
+--- config/extra.properties
++++ config/extra.properties
 @@ -1,1 +1,1 @@
 -server.servlet-path=/tmp/my-server-path
 +server.servlet.path=/tmp/my-server-path
@@ -183,6 +185,13 @@ server.servlet.path=/tmp/my-server-path
 ```
 </TabItem>
 </Tabs>
+
+###### Unchanged
+```yaml title="application.yml"
+spring:
+  config:
+    import: optional:file:./config/extra.properties
+```
 
 
 ## Usage

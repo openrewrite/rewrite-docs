@@ -28,6 +28,65 @@ This recipe is used as part of the following composite recipes:
 
 * [Migrates from Jackson 2.x to Jackson 3.x](/recipes/java/jackson/upgradejackson_2_3.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.springframework.context.annotation.Bean;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+import com.fasterxml.jackson.datatype.jdk8.Jdk8Module;
+
+class Config {
+    @Bean
+    JavaTimeModule javaTimeModule() {
+        return new JavaTimeModule();
+    }
+
+    @Bean
+    Jdk8Module jdk8Module() {
+        return new Jdk8Module();
+    }
+}
+```
+
+###### After
+```java
+class Config {
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,4 +1,0 @@
+-import org.springframework.context.annotation.Bean;
+-import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+-import com.fasterxml.jackson.datatype.jdk8.Jdk8Module;
+-
+class Config {
+@@ -6,9 +2,0 @@
+
+class Config {
+-   @Bean
+-   JavaTimeModule javaTimeModule() {
+-       return new JavaTimeModule();
+-   }
+-
+-   @Bean
+-   Jdk8Module jdk8Module() {
+-       return new Jdk8Module();
+-   }
+}
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

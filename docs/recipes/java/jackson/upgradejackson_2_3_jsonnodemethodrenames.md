@@ -50,6 +50,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
   * methodPattern: `com.fasterxml.jackson.databind.JsonNode isTextual()`
   * newMethodName: `isString`
   * matchOverrides: `true`
+* [Replace `JsonNode.textValue()` with `stringValue(null)`](../../java/jackson/jsonnodetextvaluetostringvalue)
 * [Change method name](../../java/changemethodname)
   * methodPattern: `com.fasterxml.jackson.databind.JsonNode textValue()`
   * newMethodName: `stringValue`
@@ -90,6 +91,7 @@ recipeList:
       methodPattern: com.fasterxml.jackson.databind.JsonNode isTextual()
       newMethodName: isString
       matchOverrides: true
+  - org.openrewrite.java.jackson.JsonNodeTextValueToStringValue
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: com.fasterxml.jackson.databind.JsonNode textValue()
       newMethodName: stringValue

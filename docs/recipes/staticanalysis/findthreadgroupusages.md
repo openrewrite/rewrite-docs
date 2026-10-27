@@ -25,6 +25,49 @@ _Marks uses of `java.lang.ThreadGroup`. `ThreadGroup` was originally intended to
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license). Moderne customers can download precompiled artifacts from The Code Genome Project. For non-commercial use you can build the artifact from source locally.
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+class A {
+    void go() {
+        ThreadGroup group = new ThreadGroup("workers");
+        Thread t = new Thread(group, () -> {});
+        t.start();
+    }
+}
+```
+
+###### After
+```java
+class A {
+    void go() {
+        ThreadGroup group = /*~~(`ThreadGroup` is superseded by `java.util.concurrent.ExecutorService`.)~~>*/new ThreadGroup("workers");
+        Thread t = new Thread(group, () -> {});
+        t.start();
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,1 +3,1 @@
+class A {
+    void go() {
+-       ThreadGroup group = new ThreadGroup("workers");
++       ThreadGroup group = /*~~(`ThreadGroup` is superseded by `java.util.concurrent.ExecutorService`.)~~>*/new ThreadGroup("workers");
+        Thread t = new Thread(group, () -> {});
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

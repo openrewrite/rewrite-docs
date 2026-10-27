@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.staticanalysis.ReplaceOptionalIsPresentWithIfPresent**
 
-_Replace `Optional#isPresent()` with `Optional#ifPresent()`. Please note that this recipe is only suitable for if-blocks that lack an Else-block and have a single condition applied._
+_Replace `Optional#isPresent()` with `Optional#ifPresent()`. This recipe only applies to `if` statements without an `else` branch and with a single condition._
 
 ## Recipe source
 

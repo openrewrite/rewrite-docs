@@ -1,13 +1,13 @@
 ---
-title: "Adds `static` modifier to `@Produces` fields that are in session beans"
-sidebar_label: "Adds `static` modifier to `@Produces` fields that are in session beans"
+title: "Add `static` modifier to `@Produces` fields in session beans"
+sidebar_label: "Add `static` modifier to `@Produces` fields in session beans"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Adds `static` modifier to `@Produces` fields that are in session beans
+# Add `static` modifier to `@Produces` fields in session beans
 
 **org.openrewrite.java.migrate.AddStaticVariableOnProducerSessionBean**
 
@@ -26,7 +26,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrate to JavaEE7](/recipes/java/migrate/javaee7-recipe.md)
+* [Migrate to Java EE 7](/recipes/java/migrate/javaee7-recipe.md)
 
 ## Example
 
@@ -86,7 +86,7 @@ public class MySessionBean {
 
 <RunRecipe
   recipeName="org.openrewrite.java.migrate.AddStaticVariableOnProducerSessionBean"
-  displayName="Adds `static` modifier to `@Produces` fields that are in session beans"
+  displayName="Add `static` modifier to `@Produces` fields in session beans"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-migrate-java"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA"

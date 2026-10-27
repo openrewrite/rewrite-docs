@@ -34,6 +34,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../core/singleton)
+
+**Recipes**
+
 * [Replace `java.util.Hashtable` with `java.util.HashMap`](../staticanalysis/replacehashtablewithhashmap)
 * [Replace `java.util.Vector` with `java.util.ArrayList`](../staticanalysis/replacevectorwitharraylist)
 * [Replace `java.util.Stack` with `java.util.Deque`](../staticanalysis/replacestackwithdeque)
@@ -52,6 +58,8 @@ description: |
   Replace the legacy synchronized types `Hashtable`, `Vector`, `Stack`, and `StringBuffer` with their modern unsynchronized counterparts `HashMap`, `ArrayList`, `Deque`/`ArrayDeque`, and `StringBuilder`. Each replacement is only applied when data flow analysis can prove the instance is a local variable that never escapes its method, so the synchronization it provided is redundant.
 tags:
   - RSPEC-S1149
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.staticanalysis.ReplaceHashtableWithHashMap
   - org.openrewrite.staticanalysis.ReplaceVectorWithArrayList

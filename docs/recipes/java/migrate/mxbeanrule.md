@@ -1,13 +1,13 @@
 ---
-title: "MBean and MXBean interfaces must be public"
-sidebar_label: "MBean and MXBean interfaces must be public"
+title: "Make MBean and MXBean interfaces public"
+sidebar_label: "Make MBean and MXBean interfaces public"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# MBean and MXBean interfaces must be public
+# Make MBean and MXBean interfaces public
 
 **org.openrewrite.java.migrate.MXBeanRule**
 
@@ -82,7 +82,7 @@ class TestClassAndNonPublicInterface {
 
 <RunRecipe
   recipeName="org.openrewrite.java.migrate.MXBeanRule"
-  displayName="MBean and MXBean interfaces must be public"
+  displayName="Make MBean and MXBean interfaces public"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-migrate-java"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA"

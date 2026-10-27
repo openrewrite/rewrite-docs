@@ -104,6 +104,73 @@ This recipe is used as part of the following composite recipes:
 
 * [Migrate to Hibernate 7.0.x (Community Edition)](/recipes/hibernate/migratetohibernate70-community-edition.md)
 
+## Examples
+##### Example 1
+`MigrateRemovedDialectsHibernate70Test#replacesDB2400DialectWithDB2iNotGenericDB2`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="src/main/resources/application.properties" label="src/main/resources/application.properties">
+
+
+###### Before
+```properties title="src/main/resources/application.properties"
+spring.jpa.database-platform=org.hibernate.dialect.DB2400Dialect
+```
+
+###### After
+```properties title="src/main/resources/application.properties"
+spring.jpa.database-platform=org.hibernate.dialect.DB2iDialect
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- src/main/resources/application.properties
++++ src/main/resources/application.properties
+@@ -1,1 +1,1 @@
+-spring.jpa.database-platform=org.hibernate.dialect.DB2400Dialect
++spring.jpa.database-platform=org.hibernate.dialect.DB2iDialect
+
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`MigrateRemovedDialectsHibernate70Test#replacesDB2400DialectWithDB2iNotGenericDB2`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="src/main/resources/application.properties" label="src/main/resources/application.properties">
+
+
+###### Before
+```properties title="src/main/resources/application.properties"
+spring.jpa.database-platform=org.hibernate.dialect.DB2400Dialect
+```
+
+###### After
+```properties title="src/main/resources/application.properties"
+spring.jpa.database-platform=org.hibernate.dialect.DB2iDialect
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- src/main/resources/application.properties
++++ src/main/resources/application.properties
+@@ -1,1 +1,1 @@
+-spring.jpa.database-platform=org.hibernate.dialect.DB2400Dialect
++spring.jpa.database-platform=org.hibernate.dialect.DB2iDialect
+
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

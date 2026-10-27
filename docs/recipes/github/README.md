@@ -50,6 +50,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Replace runners for a job](./replacerunners.md)
 * [Replace secret key names in GitHub Actions](./replacesecretkeys.md)
 * [Setup Java dependency caching](./setupjavacaching.md)
+* [Upgrade `actions/setup-go` `go-version`](./setupgoupgradegoversion.md)
 * [Upgrade `actions/setup-java` `java-version`](./setupjavaupgradejavaversion.md)
 * [Upgrade `actions/setup-node` `node-version`](./setupnodeupgradenodeversion.md)
 * [Upgrade `actions/setup-python` `python-version`](./setuppythonupgradepythonversion.md)

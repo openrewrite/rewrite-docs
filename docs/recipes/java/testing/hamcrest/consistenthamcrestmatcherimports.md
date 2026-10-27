@@ -16,7 +16,6 @@ _Use consistent imports for Hamcrest matchers, and remove wrapping `is(Matcher)`
 ### Tags
 
 * [hamcrest](/reference/recipes-by-tag#hamcrest)
-* [assertj](/reference/recipes-by-tag#assertj)
 * [testing](/reference/recipes-by-tag#testing)
 
 ## Recipe source
@@ -63,7 +62,6 @@ description: |
   Use consistent imports for Hamcrest matchers, and remove wrapping `is(Matcher)` calls ahead of further changes.
 tags:
   - hamcrest
-  - assertj
   - testing
 preconditions:
   - org.openrewrite.Singleton

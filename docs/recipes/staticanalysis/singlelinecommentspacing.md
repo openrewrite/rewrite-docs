@@ -1,17 +1,17 @@
 ---
-title: "Add space after // in single-line comments"
-sidebar_label: "Add space after // in single-line comments"
+title: "Add space after `//` in single-line comments"
+sidebar_label: "Add space after `//` in single-line comments"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Add space after // in single-line comments
+# Add space after `//` in single-line comments
 
 **org.openrewrite.staticanalysis.SingleLineCommentSpacing**
 
-_Ensures there is exactly one space after // in single-line comments when missing._
+_Adds a space after `//` in single-line comments that do not start with one._
 
 ### Tags
 
@@ -71,7 +71,7 @@ class Test {
 
 <RunRecipe
   recipeName="org.openrewrite.staticanalysis.SingleLineCommentSpacing"
-  displayName="Add space after // in single-line comments"
+  displayName="Add space after `//` in single-line comments"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-static-analysis"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_STATIC_ANALYSIS"

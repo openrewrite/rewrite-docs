@@ -28,6 +28,8 @@ This recipe is available under the [Moderne Source Available License](https://do
 <TabItem value="recipe-list" label="Recipe List" >
 **Preconditions**
 
+* [Find files compiled at a specific Java version](../../../java/search/hasjavaversion)
+  * version: `[9,)`
 * [Singleton](../../../core/singleton)
 
 **Recipes**
@@ -48,6 +50,8 @@ displayName: Use `AtomicReferenceArray#weakCompareAndSetPlain(int, T, T)`
 description: |
   Use `AtomicReferenceArray#weakCompareAndSetPlain(int, T, T)` instead of the deprecated `AtomicReferenceArray#weakCompareAndSet(int, T, T)` in Java 9 or higher.
 preconditions:
+  - org.openrewrite.java.search.HasJavaVersion:
+      version: [9,)
   - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.ChangeMethodName:

@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.dependencies.RelocatedDependencyCheck**
 
-_Find Maven and Gradle dependencies and Maven plugins that have relocated to a new `groupId` or `artifactId`. Relocation information comes from the [oga-maven-plugin](https://github.com/jonathanlermitage/oga-maven-plugin/) maintained by Jonathan Lermitage, Filipe Roque and others.  This recipe makes no changes to any source file by default. Add `changeDependencies=true` to change dependencies, but note that you might need to run additional recipes to update imports and adopt other breaking changes._
+_Find Maven and Gradle dependencies, version catalog entries, Maven plugins, parents and extensions that have relocated to a new `groupId` or `artifactId`. Relocation information comes from the [oga-maven-plugin](https://github.com/jonathanlermitage/oga-maven-plugin/) maintained by Jonathan Lermitage, Filipe Roque and others.  This recipe makes no changes to any source file by default. Add `changeDependencies=true` to change dependencies whose relocated artifact publishes the same version, but note that you might need to run additional recipes to update imports and adopt other breaking changes._
 
 ## Recipe source
 
@@ -25,7 +25,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 | Type | Name | Description | Example |
 | --- | --- | --- | --- |
-| `Boolean` | changeDependencies | *Optional*. Whether to change dependencies to their relocated groupId and artifactId. |  |
+| `Boolean` | changeDependencies | *Optional*. Whether to change dependencies and Maven plugins to their relocated groupId and artifactId. A declaration is only changed when the relocated artifact publishes the version in use, so that the build resolves the same code under its new coordinates. Otherwise it is marked, as are `<parent>` and `<extension>` declarations. |  |
 
 ## Example
 
@@ -74,7 +74,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
       <artifactId>commons-lang</artifactId>
       <version>2.6</version>
     </dependency>
-    <!--~~(Relocated to org.apache.groovy)~~>--><dependency>
+    <!--~~(Relocated to org.apache.groovy:groovy)~~>--><dependency>
       <groupId>org.codehaus.groovy</groupId>
       <artifactId>groovy</artifactId>
       <version>2.5.6</version>
@@ -99,7 +99,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
       <version>2.6</version>
     </dependency>
 -   <dependency>
-+   <!--~~(Relocated to org.apache.groovy)~~>--><dependency>
++   <!--~~(Relocated to org.apache.groovy:groovy)~~>--><dependency>
       <groupId>org.codehaus.groovy</groupId>
 ```
 </TabItem>
@@ -139,10 +139,10 @@ _A list of dependencies in use that have relocated._
 
 | Column Name | Description |
 | ----------- | ----------- |
-| Dependency group id | The Group ID of the dependency in use. |
-| Dependency artifact id | The Artifact ID of the dependency in use. |
-| Relocated dependency group id | The Group ID of the relocated dependency. |
-| Relocated ependency artifact id | The Artifact ID of the relocated dependency. |
+| Dependency group ID | The Group ID of the dependency in use. |
+| Dependency artifact ID | The Artifact ID of the dependency in use. |
+| Relocated dependency group ID | The Group ID of the relocated dependency. |
+| Relocated dependency artifact ID | The Artifact ID of the relocated dependency. |
 | Context | Context for the relocation, if any. |
 
 </TabItem>

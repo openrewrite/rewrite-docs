@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.testing.junit.JUnit6BestPractices**
 
-_Applies best practices to tests._
+_Migrates JUnit 5 tests to JUnit 6 and applies the JUnit Jupiter best practices._
 
 ### Tags
 
@@ -54,7 +54,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.testing.junit.JUnit6BestPractices
 displayName: JUnit 6 best practices
 description: |
-  Applies best practices to tests.
+  Migrates JUnit 5 tests to JUnit 6 and applies the JUnit Jupiter best practices.
 tags:
   - junit
   - testing

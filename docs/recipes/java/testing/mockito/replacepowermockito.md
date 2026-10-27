@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.testing.mockito.ReplacePowerMockito**
 
-_PowerMockito with raw Mockito; best executed as part of a Mockito upgrade.  Tests that mock, stub or verify private members are disabled rather than migrated. Mockito does not support reaching into private state by design, and a test that depends on it is testing an implementation detail, so the intended follow-up is a review that reworks each one to exercise the type through its public API -- not a like-for-like translation. Each disabled test keeps its original body as a comment for that review, is annotated `@Disabled`, `@Ignore` or TestNG's `@Ignore`, and is listed as an action item in the `PowerMockTestsDisabled` data table. Commenting the body out is what lets the PowerMock dependency be removed, so the rest of the repository moves off PowerMock and its tests keep running: PowerMock registers its own Mockito `MockMaker`, which cannot create the static and construction mocks the migrated tests rely on, so the two cannot share a classpath._
+_Replace PowerMockito with raw Mockito; best executed as part of a Mockito upgrade.  Tests that mock, stub or verify private members are disabled rather than migrated. Mockito does not support reaching into private state by design, and a test that depends on it is testing an implementation detail, so the intended follow-up is a review that reworks each one to exercise the type through its public API -- not a like-for-like translation. Each disabled test keeps its original body as a comment for that review, is annotated `@Disabled`, `@Ignore` or TestNG's `@Ignore`, and is listed as an action item in the `PowerMockTestsDisabled` data table. Commenting the body out is what lets the PowerMock dependency be removed, so the rest of the repository moves off PowerMock and its tests keep running: PowerMock registers its own Mockito `MockMaker`, which cannot create the static and construction mocks the migrated tests rely on, so the two cannot share a classpath._
 
 ### Tags
 
@@ -56,7 +56,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.testing.mockito.ReplacePowerMockito
 displayName: Replace PowerMock with raw Mockito
 description: |
-  PowerMockito with raw Mockito; best executed as part of a Mockito upgrade.  Tests that mock, stub or verify private members are disabled rather than migrated. Mockito does not support reaching into private state by design, and a test that depends on it is testing an implementation detail, so the intended follow-up is a review that reworks each one to exercise the type through its public API -- not a like-for-like translation. Each disabled test keeps its original body as a comment for that review, is annotated `@Disabled`, `@Ignore` or TestNG's `@Ignore`, and is listed as an action item in the `PowerMockTestsDisabled` data table. Commenting the body out is what lets the PowerMock dependency be removed, so the rest of the repository moves off PowerMock and its tests keep running: PowerMock registers its own Mockito `MockMaker`, which cannot create the static and construction mocks the migrated tests rely on, so the two cannot share a classpath.
+  Replace PowerMockito with raw Mockito; best executed as part of a Mockito upgrade.  Tests that mock, stub or verify private members are disabled rather than migrated. Mockito does not support reaching into private state by design, and a test that depends on it is testing an implementation detail, so the intended follow-up is a review that reworks each one to exercise the type through its public API -- not a like-for-like translation. Each disabled test keeps its original body as a comment for that review, is annotated `@Disabled`, `@Ignore` or TestNG's `@Ignore`, and is listed as an action item in the `PowerMockTestsDisabled` data table. Commenting the body out is what lets the PowerMock dependency be removed, so the rest of the repository moves off PowerMock and its tests keep running: PowerMock registers its own Mockito `MockMaker`, which cannot create the static and construction mocks the migrated tests rely on, so the two cannot share a classpath.
 tags:
   - mockito
   - testing
@@ -76,7 +76,7 @@ recipeList:
 
 This recipe is used as part of the following composite recipes:
 
-* [Mockito 3.x migration from 1.x](/recipes/java/testing/mockito/mockito1to3migration.md)
+* [Upgrade Mockito from 1.x to 3.x](/recipes/java/testing/mockito/mockito1to3migration.md)
 
 ## Examples
 ##### Example 1
@@ -134,14 +134,11 @@ import org.mockito.MockedStatic;
 import org.mockito.Mockito;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 class StaticMethodTest {
-
-    private MockedStatic<Currency> mockedCurrency;
-
     private MockedStatic<Calendar> mockedCalendar;
+    private MockedStatic<Currency> mockedCurrency;
 
     private Calendar calendarMock;
 
@@ -150,20 +147,20 @@ class StaticMethodTest {
         calendarMock = Mockito.mock(Calendar.class);
     }
 
-    @BeforeMethod
-    void setUpStaticMocks() {
-        mockedCurrency = Mockito.mockStatic(Currency.class);
-        mockedCalendar = Mockito.mockStatic(Calendar.class);
-    }
-
     @AfterMethod(alwaysRun = true)
     void tearDownStaticMocks() {
-        mockedCalendar.closeOnDemand();
-        mockedCurrency.closeOnDemand();
+        if (mockedCalendar != null) {
+            mockedCalendar.closeOnDemand();
+        }
+        if (mockedCurrency != null) {
+            mockedCurrency.closeOnDemand();
+        }
     }
 
     @Test
     void testWithCalendar() {
+        mockedCalendar = Mockito.mockStatic(Calendar.class);
+        mockedCurrency = Mockito.mockStatic(Currency.class);
         mockedCalendar.when(() -> Calendar.getInstance(Locale.ENGLISH)).thenReturn(calendarMock);
         assertEquals(Calendar.getInstance(Locale.ENGLISH), calendarMock);
         mockedCurrency.verify(Currency::getAvailableCurrencies, Mockito.never());
@@ -187,49 +184,42 @@ import org.mockito.Mockito;
 -import org.powermock.core.classloader.annotations.PrepareForTest;
 +import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
-@@ -11,0 +11,1 @@
-import org.powermock.core.classloader.annotations.PrepareForTest;
-import org.testng.annotations.BeforeClass;
-+import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
-@@ -13,1 +14,0 @@
+@@ -13,1 +13,0 @@
 import org.testng.annotations.Test;
 
 -@PrepareForTest(value = {Calendar.class, Currency.class})
 class StaticMethodTest {
-@@ -16,0 +16,4 @@
+@@ -15,0 +14,2 @@
+@PrepareForTest(value = {Calendar.class, Currency.class})
 class StaticMethodTest {
-
-+   private MockedStatic<Currency> mockedCurrency;
-+
 +   private MockedStatic<Calendar> mockedCalendar;
-+
-    private Calendar calendarMock;
-@@ -23,0 +27,12 @@
++   private MockedStatic<Currency> mockedCurrency;
+
+@@ -23,0 +24,10 @@
     }
 
-+   @BeforeMethod
-+   void setUpStaticMocks() {
-+       mockedCurrency = Mockito.mockStatic(Currency.class);
-+       mockedCalendar = Mockito.mockStatic(Calendar.class);
-+   }
-+
 +   @AfterMethod(alwaysRun = true)
 +   void tearDownStaticMocks() {
-+       mockedCalendar.closeOnDemand();
-+       mockedCurrency.closeOnDemand();
++       if (mockedCalendar != null) {
++           mockedCalendar.closeOnDemand();
++       }
++       if (mockedCurrency != null) {
++           mockedCurrency.closeOnDemand();
++       }
 +   }
 +
     @Test
-@@ -25,3 +41,1 @@
+@@ -25,3 +36,3 @@
     @Test
     void testWithCalendar() {
 -       PowerMockito.mockStatic(Calendar.class);
 -       PowerMockito.mockStatic(Currency.class);
 -       Mockito.when(Calendar.getInstance(Locale.ENGLISH)).thenReturn(calendarMock);
++       mockedCalendar = Mockito.mockStatic(Calendar.class);
++       mockedCurrency = Mockito.mockStatic(Currency.class);
 +       mockedCalendar.when(() -> Calendar.getInstance(Locale.ENGLISH)).thenReturn(calendarMock);
         assertEquals(Calendar.getInstance(Locale.ENGLISH), calendarMock);
-@@ -29,1 +43,1 @@
+@@ -29,1 +40,1 @@
         Mockito.when(Calendar.getInstance(Locale.ENGLISH)).thenReturn(calendarMock);
         assertEquals(Calendar.getInstance(Locale.ENGLISH), calendarMock);
 -       Mockito.verify(Currency.getAvailableCurrencies(), Mockito.never());
@@ -296,14 +286,11 @@ import org.mockito.MockedStatic;
 import org.mockito.Mockito;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 class StaticMethodTest {
-
-    private MockedStatic<Currency> mockedCurrency;
-
     private MockedStatic<Calendar> mockedCalendar;
+    private MockedStatic<Currency> mockedCurrency;
 
     private Calendar calendarMock;
 
@@ -312,20 +299,20 @@ class StaticMethodTest {
         calendarMock = Mockito.mock(Calendar.class);
     }
 
-    @BeforeMethod
-    void setUpStaticMocks() {
-        mockedCurrency = Mockito.mockStatic(Currency.class);
-        mockedCalendar = Mockito.mockStatic(Calendar.class);
-    }
-
     @AfterMethod(alwaysRun = true)
     void tearDownStaticMocks() {
-        mockedCalendar.closeOnDemand();
-        mockedCurrency.closeOnDemand();
+        if (mockedCalendar != null) {
+            mockedCalendar.closeOnDemand();
+        }
+        if (mockedCurrency != null) {
+            mockedCurrency.closeOnDemand();
+        }
     }
 
     @Test
     void testWithCalendar() {
+        mockedCalendar = Mockito.mockStatic(Calendar.class);
+        mockedCurrency = Mockito.mockStatic(Currency.class);
         mockedCalendar.when(() -> Calendar.getInstance(Locale.ENGLISH)).thenReturn(calendarMock);
         assertEquals(Calendar.getInstance(Locale.ENGLISH), calendarMock);
         mockedCurrency.verify(Currency::getAvailableCurrencies, Mockito.never());
@@ -349,49 +336,42 @@ import org.mockito.Mockito;
 -import org.powermock.core.classloader.annotations.PrepareForTest;
 +import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
-@@ -11,0 +11,1 @@
-import org.powermock.core.classloader.annotations.PrepareForTest;
-import org.testng.annotations.BeforeClass;
-+import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
-@@ -13,1 +14,0 @@
+@@ -13,1 +13,0 @@
 import org.testng.annotations.Test;
 
 -@PrepareForTest(value = {Calendar.class, Currency.class})
 class StaticMethodTest {
-@@ -16,0 +16,4 @@
+@@ -15,0 +14,2 @@
+@PrepareForTest(value = {Calendar.class, Currency.class})
 class StaticMethodTest {
-
-+   private MockedStatic<Currency> mockedCurrency;
-+
 +   private MockedStatic<Calendar> mockedCalendar;
-+
-    private Calendar calendarMock;
-@@ -23,0 +27,12 @@
++   private MockedStatic<Currency> mockedCurrency;
+
+@@ -23,0 +24,10 @@
     }
 
-+   @BeforeMethod
-+   void setUpStaticMocks() {
-+       mockedCurrency = Mockito.mockStatic(Currency.class);
-+       mockedCalendar = Mockito.mockStatic(Calendar.class);
-+   }
-+
 +   @AfterMethod(alwaysRun = true)
 +   void tearDownStaticMocks() {
-+       mockedCalendar.closeOnDemand();
-+       mockedCurrency.closeOnDemand();
++       if (mockedCalendar != null) {
++           mockedCalendar.closeOnDemand();
++       }
++       if (mockedCurrency != null) {
++           mockedCurrency.closeOnDemand();
++       }
 +   }
 +
     @Test
-@@ -25,3 +41,1 @@
+@@ -25,3 +36,3 @@
     @Test
     void testWithCalendar() {
 -       PowerMockito.mockStatic(Calendar.class);
 -       PowerMockito.mockStatic(Currency.class);
 -       Mockito.when(Calendar.getInstance(Locale.ENGLISH)).thenReturn(calendarMock);
++       mockedCalendar = Mockito.mockStatic(Calendar.class);
++       mockedCurrency = Mockito.mockStatic(Currency.class);
 +       mockedCalendar.when(() -> Calendar.getInstance(Locale.ENGLISH)).thenReturn(calendarMock);
         assertEquals(Calendar.getInstance(Locale.ENGLISH), calendarMock);
-@@ -29,1 +43,1 @@
+@@ -29,1 +40,1 @@
         Mockito.when(Calendar.getInstance(Locale.ENGLISH)).thenReturn(calendarMock);
         assertEquals(Calendar.getInstance(Locale.ENGLISH), calendarMock);
 -       Mockito.verify(Currency.getAvailableCurrencies(), Mockito.never());
@@ -439,6 +419,25 @@ _Tests disabled because they use a PowerMock feature with no Mockito equivalent.
 | Disabled element | The test method that was disabled, or the class name when the usage sits outside a test method and the whole class had to be disabled. |
 | Scope | `METHOD` when a single test was disabled, `CLASS` when the whole test class was. |
 | Reason | The PowerMock usage that cannot be migrated. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
+
+### Maven metadata failures
+**org.openrewrite.maven.table.MavenMetadataFailures**
+
+_Attempts to resolve maven metadata that failed._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Group id | The groupId of the artifact for which the metadata download failed. |
+| Artifact id | The artifactId of the artifact for which the metadata download failed. |
+| Version | The version of the artifact for which the metadata download failed. |
+| Maven repository | The URL of the Maven repository that the metadata download failed on. |
+| Snapshots | Does the repository support snapshots. |
+| Releases | Does the repository support releases. |
+| Failure | The reason the metadata download failed. |
 
 </TabItem>
 

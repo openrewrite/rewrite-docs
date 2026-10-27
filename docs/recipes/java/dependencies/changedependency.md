@@ -25,15 +25,15 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 | Type | Name | Description | Example |
 | --- | --- | --- | --- |
-| `String` | oldGroupId | The old group ID to replace. The group ID is the first part of a dependency coordinate 'com.google.guava:guava:VERSION'. Supports glob expressions. | `org.openrewrite.recipe` |
-| `String` | oldArtifactId | The old artifact ID to replace. The artifact ID is the second part of a dependency coordinate 'com.google.guava:guava:VERSION'. Supports glob expressions. | `rewrite-testing-frameworks` |
+| `String` | oldGroupId | The old group ID to replace. The group ID is the first part of a dependency coordinate `com.google.guava:guava:VERSION`. Supports glob expressions. | `org.openrewrite.recipe` |
+| `String` | oldArtifactId | The old artifact ID to replace. The artifact ID is the second part of a dependency coordinate `com.google.guava:guava:VERSION`. Supports glob expressions. | `rewrite-testing-frameworks` |
 | `String` | newGroupId | *Optional*. The new group ID to use. Defaults to the existing group ID. | `corp.internal.openrewrite.recipe` |
 | `String` | newArtifactId | *Optional*. The new artifact ID to use. Defaults to the existing artifact ID. | `rewrite-testing-frameworks` |
-| `String` | newVersion | *Optional*. An exact version number or node-style semver selector used to select the version number. | `29.X` |
-| `String` | versionPattern | *Optional*. Allows version selection to be extended beyond the original Node Semver semantics. So for example,Setting 'version' to "25-29" can be paired with a metadata pattern of "-jre" to select Guava 29.0-jre | `-jre` |
-| `Boolean` | overrideManagedVersion | *Optional*. If the new dependency has a managed version, this flag can be used to explicitly set the version on the dependency. The default for this flag is `false`. |  |
+| `String` | newVersion | *Optional*. An exact version number or node-style semver selector used to select the version number. | `29.x` |
+| `String` | versionPattern | *Optional*. Allows version selection to be extended beyond the original Node Semver semantics. So for example, setting `newVersion` to "25-29" can be paired with a metadata pattern of "-jre" to select Guava 29.0-jre. | `-jre` |
+| `Boolean` | overrideManagedVersion | *Optional*. Explicitly set the version on the new dependency, even when its version is managed. For Maven, this applies when the new dependency has a managed version. For Gradle, this applies when the old dependency has no declared version, regardless of whether the new dependency is managed. The default for this flag is `false`. |  |
 | `Boolean` | changeManagedDependency | *Optional*. Also update the dependency management section. The default for this flag is `true`. |  |
-| `Boolean` | changePluginDependencies | *Optional*. Also change dependencies declared inside Maven plugins. Defaults to true. Has no effect on Gradle dependencies. |  |
+| `Boolean` | changePluginDependencies | *Optional*. For Maven only, also change dependencies declared inside Maven plugins. Defaults to `true`. |  |
 
 
 ## Used by
@@ -46,12 +46,15 @@ This recipe is used as part of the following composite recipes:
 * [Add explicit JAX-WS dependencies](/recipes/java/migrate/javax/addjaxwsdependencies.md)
 * [Add explicit JAXB API dependencies](/recipes/java/migrate/javax/addjaxbapidependencies.md)
 * [Change `com.datastax.oss` to `org.apache.cassandra`](/recipes/java/spring/boot3/changecassandragroupid.md)
+* [Change `mockito-all` to `mockito-core` along with the Mockito that replaces PowerMock](/recipes/java/testing/mockito/changemockitoalltomockitocorereplacingpowermock.md)
 * [Change v1 Maven/Gradle dependencies to v2](/recipes/amazon/awssdk/v2migration/upgradesdkdependencies.md)
 * [Cucumber to JUnit test `@Suite`](/recipes/cucumber/jvm/cucumbertojunitplatformsuite.md)
+* [Handle dropped relocations in Quarkus 4.0](/recipes/quarkus/updates/core/quarkus40/droppedrelocations.md)
 * [JUnit Jupiter migration from JUnit 4.x](/recipes/java/testing/junit5/junit4to5migration.md)
 * [Migrate Apache Commons Logging 1.x to SLF4J 1.x](/recipes/java/logging/slf4j/commonslogging1toslf4j1.md)
 * [Migrate Bouncy Castle to `jdk15to18` for Java &lt; 8](/recipes/java/migrate/bouncycastlefromjdk15ontojdk15to18.md)
 * [Migrate Bouncy Castle to `jdk18on`](/recipes/java/migrate/bouncecastlefromjdk15ontojdk18on.md)
+* [Migrate Dropwizard dependencies to Spring Boot 3.x](/recipes/java/spring/boot3/migratedropwizarddependencies.md)
 * [Migrate Dropwizard to Spring Boot 3](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/dropwizard/boot/migratedropwizardtospringboot3)
 * [Migrate Fest 2.x to AssertJ](/recipes/java/testing/assertj/festtoassertj.md)
 * [Migrate Hibernate Types to Hypersistence Utils 6.0](/recipes/hibernate/migratetohypersistenceutilshibernate60.md)
@@ -66,7 +69,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate Log4j to SLF4J](/recipes/java/logging/slf4j/log4jtoslf4j.md)
 * [Migrate Okio dependencies to 3.x](/recipes/okio/upgradeokio3dependencies.md)
 * [Migrate RichFaces 3.x to 4.5](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/jsf/richfaces/migraterichfaces_4_5)
-* [Migrate SAP cloud foundry logging support to Spring Boot 3.x](/recipes/java/spring/boot3/migratesapcfjavaloggingsupport.md)
+* [Migrate SAP Cloud Foundry logging support to Spring Boot 3.x](/recipes/java/spring/boot3/migratesapcfjavaloggingsupport.md)
 * [Migrate SLF4J to Log4j 2.x API](/recipes/java/logging/log4j/slf4jtolog4j.md)
 * [Migrate Spring Boot Actuator to Quarkus Health and Metrics](/recipes/quarkus/spring/migratespringactuator.md)
 * [Migrate Spring Boot Testing to Quarkus Testing](/recipes/quarkus/spring/migratespringtesting.md)
@@ -75,9 +78,11 @@ This recipe is used as part of the following composite recipes:
 * [Migrate Spring Session Hazelcast to Hazelcast Spring Session](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/migratehazelcastspringsession)
 * [Migrate Spring Validation to Quarkus](/recipes/quarkus/spring/migratespringvalidation.md)
 * [Migrate Tag Libraries to 2.0 (Jakarta EE 9)](/recipes/oracle/weblogic/rewrite/jakarta/migratetaglibstojakartaee9.md)
+* [Migrate Thymeleaf dependencies to Spring Boot 3.x](/recipes/java/spring/boot3/migratethymeleafdependencies.md)
 * [Migrate Weld implementations to Jakarta CDI](/recipes/java/migrate/jakarta/weldtojakarta.md)
+* [Migrate `com.intellij:annotations` to `org.jetbrains:annotations`](/recipes/java/migrate/comintellijannotationstoorgjetbrainsannotations.md)
+* [Migrate `commons-fileupload` to `commons-fileupload2-jakarta-servlet5`](/recipes/java/migrate/jakarta/fileuploadtofileupload2.md)
 * [Migrate `jackson-datatype-hibernate6` to `jackson-datatype-hibernate7`](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/hibernate/update70/migratejacksondatatypehibernate6to7)
-* [Migrate com.intellij:annotations to org.jetbrains:annotations](/recipes/java/migrate/comintellijannotationstoorgjetbrainsannotations.md)
 * [Migrate database drivers to Quarkus JDBC extensions](/recipes/quarkus/spring/migratedatabasedrivers.md)
 * [Migrate dependencies from Jackson Codehaus (legacy) to FasterXML](/recipes/java/jackson/codehaus/codehausdependencytofasterxml.md)
 * [Migrate deprecated `javaee-api` dependencies to `jakarta.platform`](/recipes/java/migrate/jakarta/javaxeeapitojakarta.md)
@@ -137,9 +142,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate deprecated `javax.xml.bind` packages to `jakarta.xml.bind`](/recipes/quarkus/updates/core/quarkus30/javaxxmlbindmigrationtojakartaxmlbind.md)
 * [Migrate deprecated `javax.xml.ws` packages to `jakarta.xml.ws`](/recipes/java/migrate/jakarta/javaxxmlwsmigrationtojakartaxmlws.md)
 * [Migrate deprecated `javax.xml.ws` packages to `jakarta.xml.ws`](/recipes/quarkus/updates/core/quarkus30/javaxxmlwsmigrationtojakartaxmlws.md)
-* [Migrate deprecated `org.apache.commons.fileload` packages to `org.apache.commons.fileload.core`](/recipes/java/migrate/jakarta/fileuploadtofileupload2.md)
 * [Migrate deprecated `org.glassfish.javax.el` packages to `jakarta.el`](/recipes/oracle/weblogic/rewrite/jakarta/orgglassfishjavaxeltojakartael.md)
-* [Migrate dropWizard dependencies to Spring Boot 3.x](/recipes/java/spring/boot3/migratedropwizarddependencies.md)
 * [Migrate from Acegi Security 1.0.x to Spring Security 5.0](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/security/migrateacegitospringsecurity_5_0)
 * [Migrate from Java Faker to Datafaker](/recipes/java/testing/datafaker/javafakertodatafaker.md)
 * [Migrate from Micronaut 4.x to 5.x](/recipes/java/micronaut/micronaut4to5migration.md)
@@ -150,7 +153,6 @@ This recipe is used as part of the following composite recipes:
 * [Migrate javax.javaee-web-api to jakarta.jakartaee-web-api (Jakarta EE 9)](/recipes/oracle/weblogic/rewrite/jakarta/migratejavaxwebtojakartaweb9.md)
 * [Migrate javax.mvc to 2.0 (Jakarta EE 9)](/recipes/oracle/weblogic/rewrite/jakarta/migratejavaxmvctojakartaee9.md)
 * [Migrate rider-spring (JUnit4) to rider-junit5 (JUnit5)](/recipes/java/testing/dbrider/migratedbriderspringtodbriderjunit5.md)
-* [Migrate thymeleaf dependencies to Spring Boot 3.x](/recipes/java/spring/boot3/migratethymeleafdependencies.md)
 * [Migrate to DataNucleus 5.0](/recipes/java/migrate/datanucleus/upgradedatanucleus_5_0.md)
 * [Migrate to Hibernate 6.0.x (Moderne Edition)](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/hibernate/migratetohibernate60-moderne-edition)
 * [Migrate to Hibernate 7.0.x (Community Edition)](/recipes/hibernate/migratetohibernate70-community-edition.md)
@@ -163,11 +165,11 @@ This recipe is used as part of the following composite recipes:
 * [Migrate to MockWebServer3 (core module)](/recipes/okhttp/upgrademockwebserver3.md)
 * [Migrate to MockWebServer3 with JUnit 4](/recipes/okhttp/upgrademockwebserver3junit4.md)
 * [Migrate to MockWebServer3 with JUnit 5](/recipes/okhttp/upgrademockwebserver3junit5.md)
-* [Migrate to New Spring Cloud Gateway Modules and Starters](/recipes/java/spring/cloud2025/springcloudgatewaydeprecatedmodulesandstarters.md)
 * [Migrate to Spring Boot 3.4 (Community Edition)](/recipes/java/spring/boot3/upgradespringboot_3_4-community-edition.md)
 * [Migrate to Spring Boot 4.0 (Community Edition)](/recipes/java/spring/boot4/upgradespringboot_4_0-community-edition.md)
 * [Migrate to Spring Boot 4.0 (Moderne Edition)](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/upgradespringboot_4_0-moderne-edition)
 * [Migrate to Spring Boot 4.0 modular starters (Moderne Edition)](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/migratetomodularstarters-moderne-edition)
+* [Migrate to new Spring Cloud Gateway modules and starters](/recipes/java/spring/cloud2025/springcloudgatewaydeprecatedmodulesandstarters.md)
 * [Migrates `camel 4.16` application to `camel 4.17`](/recipes/quarkus/updates/camel/camel417/camelquarkusmigrationrecipe.md)
 * [Migrates from Netty 4.1.x to Netty 4.2.x](/recipes/netty/upgradenetty_4_1_to_4_2.md)
 * [Migrates to Apache Commons Collections 4.x](/recipes/apache/commons/collections/upgradeapachecommonscollections_3_4.md)
@@ -176,10 +178,11 @@ This recipe is used as part of the following composite recipes:
 * [Migrates to Apache POI 3.17](/recipes/apache/poi/upgradeapachepoi_3_17.md)
 * [Migrates to Apache POI 5.x](/recipes/apache/poi/upgradeapachepoi_5.md)
 * [Mitigation of Java XML Bind Deprecation in Java 11 vs WebLogic 14.1.2](/recipes/oracle/weblogic/rewrite/weblogic1412javaxmlbindmitigation.md)
-* [Mockito 3.x migration from 1.x](/recipes/java/testing/mockito/mockito1to3migration.md)
 * [Mockito 4 to 5.x upgrade only](/recipes/java/testing/mockito/mockito4to5only.md)
 * [Modernize a Jenkins plugin to the latest recommended versions](/recipes/jenkins/modernizeplugin.md)
+* [Move Jetty EE10 usages to EE11 alongside `wiremock-jetty12`](/recipes/java/testing/wiremock/migratejettyee10toee11.md)
 * [Relocate `org.apache.commons:commons-io` to `commons-io:commons-io`](/recipes/apache/commons/io/relocateapachecommonsio.md)
+* [Rename Flyway MongoDB artifact](/recipes/quarkus/updates/core/quarkus40/flywaymongodbdependencyrename.md)
 * [Rename Spring Boot 4.0 starters with managed versions](/recipes/java/spring/boot4/renamedeprecatedstartersmanagedversions.md)
 * [Rename Testcontainers dependencies](/recipes/java/testing/testcontainers/testcontainers2dependencies.md)
 * [Replace Derby driver with Quarkus JDBC Derby](/recipes/quarkus/spring/derbydrivertoquarkus.md)
@@ -190,32 +193,34 @@ This recipe is used as part of the following composite recipes:
 * [Split the Spring gRPC test starter into server-test and client-test starters](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/splitspringgrpccombinedteststarter)
 * [Split the combined Spring gRPC starter into server and client starters](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/splitspringgrpccombinedstarter)
 * [Update Apache Commons Email to Email2 for Jakarta](/recipes/java/migrate/jakarta/updateapachecommonsemaildependencies.md)
-* [Update Apache Commons FileUpload2 package for EE10](/recipes/java/migrate/jakarta/updatefileupload2dependencies.md)
-* [Update Apache Shiro Dependencies to 2.0.x](/recipes/java/migrate/jakarta/updateapacheshirodependencies.md)
+* [Update Apache Commons FileUpload2 package for Jakarta EE 10](/recipes/java/migrate/jakarta/updatefileupload2dependencies.md)
+* [Update Apache Shiro dependencies to 2.0.x](/recipes/java/migrate/jakarta/updateapacheshirodependencies.md)
 * [Update Fastjson for Jakarta EE 10](/recipes/java/migrate/jakarta/migratefastjsonforjakarta10.md)
-* [Update Java EE Servlet Dependencies to 3.x](/recipes/java/migrate/javaee8/migratetoservlet3x.md)
+* [Update Java Servlet dependencies to 3.x](/recipes/java/migrate/javaee8/migratetoservlet3x.md)
+* [Update Jetty 9 to Jetty 12](/recipes/java/migrate/jakarta/jettyupgradeee9.md)
 * [Update Jetty EE9 to Jetty EE10](/recipes/java/migrate/jakarta/jettyupgradeee10.md)
-* [Update Jetty9 to Jetty12](/recipes/java/migrate/jakarta/jettyupgradeee9.md)
-* [Update Prometheus Pushgateway Dependency Coordinates](/recipes/java/spring/boot3/updateprometheuspushgateway.md)
-* [Update RestLet to 2.6.0](/recipes/java/migrate/jakarta/updaterestlet2_6.md)
+* [Update Prometheus Pushgateway dependency coordinates](/recipes/java/spring/boot3/updateprometheuspushgateway.md)
+* [Update Restlet to 2.6.x](/recipes/java/migrate/jakarta/updaterestlet2_6.md)
 * [Update Spring Cloud Contract coordinates to Stubborn Contract](/recipes/sh/stubborn/contract/migration/updatedependencies.md)
 * [Update Tapestry dependencies](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/tapestry/updatetapestrydependencies)
+* [Update the Micronaut Session support](/recipes/java/micronaut/updatemicronautsession.md)
+* [Upgrade Exposed Gradle dependencies to 1.0](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kotlin/exposed/exposedupgradegradledependencies)
 * [Upgrade Hibernate to 6.6](/recipes/oracle/weblogic/rewrite/hibernate/upgradehibernateto66.md)
 * [Upgrade Jackson 2.x dependencies to 3.x](/recipes/java/jackson/upgradejackson_2_3_dependencies.md)
+* [Upgrade Mockito from 1.x to 3.x](/recipes/java/testing/mockito/mockito1to3migration.md)
 * [Upgrade Struts 6.0 dependencies](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/struts/migrate6/upgradestruts6dependencies)
 * [Upgrade WireMock to 3.x](/recipes/java/testing/wiremock/upgradewiremockdependencyversion.md)
 * [Upgrade WireMock to 4.x](/recipes/java/testing/wiremock/wiremock3to4migration.md)
-* [Upgrade `mockito-core` along with the Mockito that replaces PowerMock](/recipes/java/testing/mockito/upgrademockitocorereplacingpowermock.md)
 * [Upgrade dependencies to Spring Cloud 2022](/recipes/java/spring/cloud2022/dependencyupgrades.md)
 * [Upgrade plugins to Java 25 compatible versions](/recipes/java/migrate/upgradepluginsforjava25.md)
 * [Upgrade to Cucumber-JVM 2.x](/recipes/cucumber/jvm/upgradecucumber2x.md)
 * [Upgrade to Spring Boot 2.5](/recipes/java/spring/boot2/upgradespringboot_2_5.md)
 * [Upgrade to SpringDoc 2.1](/recipes/java/springdoc/upgradespringdoc_2.md)
-* [Use Arquillian JUnit 5 Extension](/recipes/java/testing/arquillian/arquillianjunit4toarquillianjunit5.md)
+* [Use Arquillian JUnit 5 extension](/recipes/java/testing/arquillian/arquillianjunit4toarquillianjunit5.md)
 * [Use Byteman JUnit 5 dependency](/recipes/java/testing/byteman/bytemanjunit4tobytemanjunit5.md)
 * [Use Jakarta Swagger Artifacts](/recipes/openapi/swagger/usejakartaswaggerartifacts.md)
 * [Use OkHttp 3 MockWebServer for JUnit 5](/recipes/java/testing/junit5/upgradeokhttpmockwebserver.md)
-* [Use XMLUnit Legacy for JUnit 5](/recipes/java/testing/junit5/usexmlunitlegacy.md)
+* [Use XMLUnit legacy for JUnit 5](/recipes/java/testing/junit5/usexmlunitlegacy.md)
 * [io.quarkus.updates.core.quarkus30.JavaxToJakartaAdditionalMigration](/recipes/quarkus/updates/core/quarkus30/javaxtojakartaadditionalmigration.md)
 * [io.quarkus.updates.core.quarkus311.WebDependencyLocatorRelocations](/recipes/quarkus/updates/core/quarkus311/webdependencylocatorrelocations.md)
 * [io.quarkus.updates.core.quarkus325.DevUiSpiRelocations](/recipes/quarkus/updates/core/quarkus325/devuispirelocations.md)
@@ -312,7 +317,7 @@ recipeList:
       oldArtifactId: rewrite-testing-frameworks
       newGroupId: corp.internal.openrewrite.recipe
       newArtifactId: rewrite-testing-frameworks
-      newVersion: 29.X
+      newVersion: 29.x
       versionPattern: '-jre'
 ```
 
@@ -324,7 +329,7 @@ recipeList:
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JAVA_DEPENDENCIES"
   requiresConfiguration
   cliOptions={' --recipe-option "oldGroupId=org.openrewrite.recipe" --recipe-option "oldArtifactId=rewrite-testing-frameworks"'}
-  optionalCliOptions={' --recipe-option "newGroupId=corp.internal.openrewrite.recipe" --recipe-option "newArtifactId=rewrite-testing-frameworks" --recipe-option "newVersion=29.X" --recipe-option "versionPattern=\'-jre\'" --recipe-option "overrideManagedVersion=true" --recipe-option "changeManagedDependency=true" --recipe-option "changePluginDependencies=true"'}
+  optionalCliOptions={' --recipe-option "newGroupId=corp.internal.openrewrite.recipe" --recipe-option "newArtifactId=rewrite-testing-frameworks" --recipe-option "newVersion=29.x" --recipe-option "versionPattern=\'-jre\'" --recipe-option "overrideManagedVersion=true" --recipe-option "changeManagedDependency=true" --recipe-option "changePluginDependencies=true"'}
   hasDataTables
 />
 
@@ -340,6 +345,25 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
+
+### Maven metadata failures
+**org.openrewrite.maven.table.MavenMetadataFailures**
+
+_Attempts to resolve maven metadata that failed._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Group id | The groupId of the artifact for which the metadata download failed. |
+| Artifact id | The artifactId of the artifact for which the metadata download failed. |
+| Version | The version of the artifact for which the metadata download failed. |
+| Maven repository | The URL of the Maven repository that the metadata download failed on. |
+| Snapshots | Does the repository support snapshots. |
+| Releases | Does the repository support releases. |
+| Failure | The reason the metadata download failed. |
+
+</TabItem>
+
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results

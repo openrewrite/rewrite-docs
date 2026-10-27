@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.dependencies.AddDependency**
 
-_For a Gradle project, add a gradle dependency to a `build.gradle` file in the correct configuration based on where it is used. Or For a maven project, Add a Maven dependency to a `pom.xml` file in the correct scope based on where it is used._
+_For a Gradle project, add a dependency to a `build.gradle` or `build.gradle.kts` file in the correct configuration based on where it is used. For a Maven project, add a dependency to a `pom.xml` file in the correct scope based on where it is used._
 
 ## Recipe source
 
@@ -26,19 +26,19 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | Type | Name | Description | Example |
 | --- | --- | --- | --- |
 | `String` | groupId | The first part of a dependency coordinate `com.google.guava:guava:VERSION`. | `com.google.guava` |
-| `String` | artifactId | The second part of a dependency coordinate `com.google.guava:guava:VERSION` | `guava` |
-| `String` | version | *Optional*. An exact version number or node-style semver selector used to select the version number. | `29.X` |
-| `String` | versionPattern | *Optional*. Allows version selection to be extended beyond the original Node Semver semantics. So for example, Setting 'version' to "25-29" can be paired with a metadata pattern of "-jre" to select Guava 29.0-jre | `-jre` |
+| `String` | artifactId | The second part of a dependency coordinate `com.google.guava:guava:VERSION`. | `guava` |
+| `String` | version | *Optional*. An exact version number or node-style semver selector used to select the version number. | `29.x` |
+| `String` | versionPattern | *Optional*. Allows version selection to be extended beyond the original Node Semver semantics. So for example, setting `version` to "25-29" can be paired with a metadata pattern of "-jre" to select Guava 29.0-jre. | `-jre` |
 | `String` | onlyIfUsing | *Optional*. Used to determine if the dependency will be added and in which scope it should be placed. | `org.junit.jupiter.api.*` |
 | `String` | classifier | *Optional*. A classifier to add. Commonly used to select variants of a library. | `test` |
-| `String` | familyPattern | *Optional*. A pattern, applied to groupIds, used to determine which other dependencies should have aligned version numbers. Accepts '*' as a wildcard character. | `com.fasterxml.jackson*` |
-| `String` | extension | *Optional*. For Gradle only, The extension of the dependency to add. If omitted Gradle defaults to assuming the type is "jar". | `jar` |
+| `String` | familyPattern | *Optional*. For Maven only, a pattern, applied to group IDs, used to determine which other dependencies should have aligned version numbers. Accepts `*` as a wildcard character. | `com.fasterxml.jackson*` |
+| `String` | extension | *Optional*. For Gradle only, the extension of the dependency to add. If omitted Gradle defaults to assuming the type is "jar". | `jar` |
 | `String` | configuration | *Optional*. The Gradle dependency configuration name within which to place the dependency. When omitted the configuration will be determined by the Maven scope parameter. If that parameter is also omitted, configuration will be determined based on where types matching `onlyIfUsing` appear in source code. | `implementation` |
 | `String` | scope | *Optional*. The Maven scope within which to place the dependency. When omitted scope will be determined based on where types matching `onlyIfUsing` appear in source code. Valid options: `compile`, `provided`, `runtime`, `test` | `runtime` |
-| `Boolean` | releasesOnly | *Optional*. For Maven only, Whether to exclude snapshots from consideration when using a semver selector |  |
-| `String` | type | *Optional*. For Maven only, The type of dependency to add. If omitted Maven defaults to assuming the type is "jar". Valid options: `jar`, `pom`, `war` | `jar` |
-| `Boolean` | optional | *Optional*. Set the value of the `<optional>` tag. No `<optional>` tag will be added when this is `null`. |  |
-| `Boolean` | acceptTransitive | *Optional*. Default false. If enabled, the dependency will not be added if it is already on the classpath as a transitive dependency. | `true` |
+| `Boolean` | releasesOnly | *Optional*. For Maven only, whether to exclude snapshots from consideration when using a semver selector. |  |
+| `String` | type | *Optional*. For Maven only, the type of dependency to add. If omitted Maven defaults to assuming the type is "jar". Valid options: `jar`, `pom`, `war` | `jar` |
+| `Boolean` | optional | *Optional*. For Maven only, set the value of the `<optional>` tag. No `<optional>` tag will be added when this is `null`. |  |
+| `Boolean` | acceptTransitive | *Optional*. For Maven only, if enabled, the dependency will not be added if it is already on the classpath as a transitive dependency. Defaults to `false`. |  |
 
 
 ## Used by
@@ -51,12 +51,22 @@ This recipe is used as part of the following composite recipes:
 * [Add Hibernate ORM Core if has dependencies](/recipes/oracle/weblogic/rewrite/hibernate/addhibernateormcore61.md)
 * [Add JBoss LogManager's SLF4J provider](/recipes/java/logging/slf4j/addjbosslogmanagerslf4jproviderdependency.md)
 * [Add JUnit 4 where the PowerMock JUnit 4 module provided it](/recipes/java/testing/mockito/addjunit4replacingpowermockmodule.md)
+* [Add Jackson 3 `jackson-databind` for sources that use it transitively](/recipes/java/jackson/upgradejackson_2_3_adddatabinddependency.md)
+* [Add Jackson 3 `jackson-dataformat-avro` for sources that use it transitively](/recipes/java/jackson/upgradejackson_2_3_adddataformatavrodependency.md)
+* [Add Jackson 3 `jackson-dataformat-cbor` for sources that use it transitively](/recipes/java/jackson/upgradejackson_2_3_adddataformatcbordependency.md)
+* [Add Jackson 3 `jackson-dataformat-csv` for sources that use it transitively](/recipes/java/jackson/upgradejackson_2_3_adddataformatcsvdependency.md)
+* [Add Jackson 3 `jackson-dataformat-ion` for sources that use it transitively](/recipes/java/jackson/upgradejackson_2_3_adddataformationdependency.md)
+* [Add Jackson 3 `jackson-dataformat-protobuf` for sources that use it transitively](/recipes/java/jackson/upgradejackson_2_3_adddataformatprotobufdependency.md)
+* [Add Jackson 3 `jackson-dataformat-smile` for sources that use it transitively](/recipes/java/jackson/upgradejackson_2_3_adddataformatsmiledependency.md)
+* [Add Jackson 3 `jackson-dataformat-xml` for sources that use it transitively](/recipes/java/jackson/upgradejackson_2_3_adddataformatxmldependency.md)
+* [Add Jackson 3 `jackson-dataformat-yaml` for sources that use it transitively](/recipes/java/jackson/upgradejackson_2_3_adddataformatyamldependency.md)
 * [Add Jackson2 for Jersey using JSON](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/addjackson2forjerseyjson)
 * [Add Jakarta EE 9 Servlet Dependency](/recipes/oracle/weblogic/rewrite/jakarta/addjakartaee9servletdependencyifusingservletcontext.md)
 * [Add Liquibase starters](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/addliquibasestarters)
 * [Add Quarkus 2 dependencies](/recipes/quarkus/migrate/javaee/addquarkus2dependencies.md)
 * [Add Spring Boot 4.0 modular starter dependencies](/recipes/java/spring/boot4/addmodularstarterdependencies.md)
 * [Add Spring Boot 4.0 modular starters](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/addmodularstarters)
+* [Add Spring Boot 4.1 gRPC starters to modules using Spring gRPC](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/addgrpcstarters_4_1)
 * [Add Spring Framework modular dependencies](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/framework/modularspringframeworkdependencies)
 * [Add Spring compatibility extensions for commonly used annotations](/recipes/quarkus/spring/addspringcompatibilityextensions.md)
 * [Add `javax.validation-api` dependency](/recipes/java/spring/boot2/maybeaddjavaxvalidationapi.md)
@@ -76,11 +86,11 @@ This recipe is used as part of the following composite recipes:
 * [Add missing Jackson dataformat dependencies](/recipes/java/jackson/addmissingjacksondependencies.md)
 * [Add the Jakarta Annotation API when needed](/recipes/java/migrate/jakarta/addjakartaannotationdependency.md)
 * [Add the Jakarta CDI API when needed](/recipes/java/migrate/jakarta/addjakartacdidependency.md)
-* [Add the Jakarta Ejb API when needed](/recipes/java/migrate/jakarta/addjakartaejbdependency.md)
-* [Add the Jakarta El API when needed](/recipes/java/migrate/jakarta/addjakartaeldependency.md)
+* [Add the Jakarta EJB API when needed](/recipes/java/migrate/jakarta/addjakartaejbdependency.md)
+* [Add the Jakarta EL API when needed](/recipes/java/migrate/jakarta/addjakartaeldependency.md)
 * [Add the Jakarta Mail API when needed](/recipes/java/migrate/jakarta/addjakartamaildependency.md)
-* [Add the jakarta.inject API when needed](/recipes/java/migrate/jakarta/addjakartainjectdependency.md)
-* [Add the jakarta.ws.rs API when needed](/recipes/java/migrate/jakarta/addjakartarestdependency.md)
+* [Add the `jakarta.inject` API when needed](/recipes/java/migrate/jakarta/addjakartainjectdependency.md)
+* [Add the `jakarta.ws.rs` API when needed](/recipes/java/migrate/jakarta/addjakartarestdependency.md)
 * [Adopt Jackson 3](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/adoptjackson3)
 * [Change v1 Maven/Gradle dependencies to v2](/recipes/amazon/awssdk/v2migration/upgradesdkdependencies.md)
 * [Complete migration to OpenTelemetry](/recipes/java/spring/opentelemetry/migratetoopentelemetry.md)
@@ -110,7 +120,6 @@ This recipe is used as part of the following composite recipes:
 * [Migrate Spring Cloud Config Client to Quarkus Config](/recipes/quarkus/spring/migratespringcloudconfig.md)
 * [Migrate Spring Cloud Service Discovery to Quarkus](/recipes/quarkus/spring/migratespringcloudservicediscovery.md)
 * [Migrate Spring Cloud Sleuth 3.1 to Micrometer Tracing 1.0](/recipes/java/spring/cloud2022/migratecloudsleuthtomicrometertracing.md)
-* [Migrate Spring Retry to Spring Resilience](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/migratespringretry)
 * [Migrate Spring Security OAuth clients to Spring Security](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/security/oauth/migratespringsecurityoauthclient)
 * [Migrate Spring Security OAuth resource servers to Spring Security](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/security/oauth/migratespringsecurityoauthresourceserver)
 * [Migrate Spring Validation to Quarkus](/recipes/quarkus/spring/migratespringvalidation.md)
@@ -145,7 +154,6 @@ This recipe is used as part of the following composite recipes:
 * [Migrate from JMockit to Mockito](/recipes/java/testing/jmockit/jmockittomockito.md)
 * [Migrate from Jakarta annotation API to JSpecify](/recipes/java/jspecify/migratefromjakartaannotationapi.md)
 * [Migrate from JetBrains annotations to JSpecify](/recipes/java/jspecify/migratefromjetbrainsannotations.md)
-* [Migrate from LaunchDarkly to OpenFeature](/recipes/featureflags/launchdarkly/migratelaunchdarklytoopenfeature.md)
 * [Migrate from Micrometer annotations to JSpecify](/recipes/java/jspecify/migratefrommicrometerannotations.md)
 * [Migrate from Micronaut 4.x to 5.x](/recipes/java/micronaut/micronaut4to5migration.md)
 * [Migrate from Micronaut Framework annotations to JSpecify](/recipes/java/jspecify/migratefrommicronautannotations.md)
@@ -169,6 +177,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate to Wicket 10.x](/recipes/apache/wicket/migratetowicket10.md)
 * [Migrates to Apache Commons Collections 4.x](/recipes/apache/commons/collections/upgradeapachecommonscollections_3_4.md)
 * [Modularize legacy raw Spring Data Redis dependency](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/modularizelegacyrawspringdataredis)
+* [Move Jetty EE10 usages to EE11 alongside `wiremock-jetty12`](/recipes/java/testing/wiremock/migratejettyee10toee11.md)
 * [Prefer the Java standard library instead of Joda-Time](/recipes/java/joda/time/nojodatime.md)
 * [Rename the package name from `com.nimbusds.jose.shaded.json` to `net.minidev.json`](/recipes/java/spring/security5/renamenimbusdsjsonobjectpackagename.md)
 * [Replace Derby test driver with Quarkus JDBC Derby (test scope)](/recipes/quarkus/spring/derbytestdrivertoquarkus.md)
@@ -201,7 +210,7 @@ This recipe is used as part of the following composite recipes:
 * [Replace Spring Boot WebSocket with Quarkus WebSockets](/recipes/quarkus/spring/springbootwebsockettoquarkus.md)
 * [Replace Spring Kafka with Quarkus Kafka Client](/recipes/quarkus/spring/springkafkatoquarkusclassic.md)
 * [Replace Spring Kafka with Quarkus Messaging Kafka](/recipes/quarkus/spring/springkafkatoquarkusreactive.md)
-* [Replace SpringFox Dependencies](/recipes/java/springdoc/replacespringfoxdependencies.md)
+* [Replace SpringFox dependencies](/recipes/java/springdoc/replacespringfoxdependencies.md)
 * [Replace `jakarta.jws-api` with `jakarta.xml.ws-api`](/recipes/java/migrate/jakarta/replacejakartajwswithjakartaxmlws.md)
 * [Replace `micrometer-spring-legacy` with `spring-boot-starter-actuator`](/recipes/java/spring/boot2/maybeaddspringbootstarteractuator.md)
 * [Retain `javax.xml.bind:jaxb-api` when `jackson-module-jaxb-annotations` is present](/recipes/java/migrate/jakarta/retainjaxbapiforjackson.md)
@@ -215,8 +224,7 @@ This recipe is used as part of the following composite recipes:
 * [Upgrade WireMock to 4.x](/recipes/java/testing/wiremock/wiremock3to4migration.md)
 * [Use Mockito JUnit Jupiter extension](/recipes/java/testing/junit5/usemockitoextension.md)
 * [Use OkHttp 3 MockWebServer for JUnit 5](/recipes/java/testing/junit5/upgradeokhttpmockwebserver.md)
-* [Use Vert.x JUnit 5 Extension](/recipes/java/testing/junit5/vertxunittovertxjunit5.md)
-* [Use `org.springframework.boot.web.server.LocalServerPort`](/recipes/java/spring/boot2/migratelocalserverportannotation.md)
+* [Use Vert.x JUnit 5 extension](/recipes/java/testing/junit5/vertxunittovertxjunit5.md)
 
 
 ## Usage
@@ -232,7 +240,7 @@ recipeList:
   - org.openrewrite.java.dependencies.AddDependency:
       groupId: com.google.guava
       artifactId: guava
-      version: 29.X
+      version: 29.x
       versionPattern: '-jre'
       onlyIfUsing: org.junit.jupiter.api.*
       classifier: test
@@ -241,7 +249,6 @@ recipeList:
       configuration: implementation
       scope: runtime
       type: jar
-      acceptTransitive: true
 ```
 
 <RunRecipe
@@ -252,7 +259,7 @@ recipeList:
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JAVA_DEPENDENCIES"
   requiresConfiguration
   cliOptions={' --recipe-option "groupId=com.google.guava" --recipe-option "artifactId=guava"'}
-  optionalCliOptions={' --recipe-option "version=29.X" --recipe-option "versionPattern=\'-jre\'" --recipe-option "onlyIfUsing=org.junit.jupiter.api.*" --recipe-option "classifier=test" --recipe-option "familyPattern=com.fasterxml.jackson*" --recipe-option "extension=jar" --recipe-option "configuration=implementation" --recipe-option "scope=runtime" --recipe-option "releasesOnly=true" --recipe-option "type=jar" --recipe-option "optional=true" --recipe-option "acceptTransitive=true"'}
+  optionalCliOptions={' --recipe-option "version=29.x" --recipe-option "versionPattern=\'-jre\'" --recipe-option "onlyIfUsing=org.junit.jupiter.api.*" --recipe-option "classifier=test" --recipe-option "familyPattern=com.fasterxml.jackson*" --recipe-option "extension=jar" --recipe-option "configuration=implementation" --recipe-option "scope=runtime" --recipe-option "releasesOnly=true" --recipe-option "type=jar" --recipe-option "optional=true" --recipe-option "acceptTransitive=true"'}
   hasDataTables
 />
 
@@ -268,6 +275,25 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
+
+### Maven metadata failures
+**org.openrewrite.maven.table.MavenMetadataFailures**
+
+_Attempts to resolve maven metadata that failed._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Group id | The groupId of the artifact for which the metadata download failed. |
+| Artifact id | The artifactId of the artifact for which the metadata download failed. |
+| Version | The version of the artifact for which the metadata download failed. |
+| Maven repository | The URL of the Maven repository that the metadata download failed on. |
+| Snapshots | Does the repository support snapshots. |
+| Releases | Does the repository support releases. |
+| Failure | The reason the metadata download failed. |
+
+</TabItem>
+
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results

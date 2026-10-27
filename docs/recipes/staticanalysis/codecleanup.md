@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.staticanalysis.CodeCleanup**
 
-_Automatically cleanup code, e.g. remove unnecessary parentheses, simplify expressions._
+_Automatically clean up code, e.g. remove unnecessary parentheses, add missing braces and fix whitespace._
 
 ## Recipe source
 
@@ -72,7 +72,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.staticanalysis.CodeCleanup
 displayName: Code cleanup
 description: |
-  Automatically cleanup code, e.g. remove unnecessary parentheses, simplify expressions.
+  Automatically clean up code, e.g. remove unnecessary parentheses, add missing braces and fix whitespace.
 preconditions:
   - org.openrewrite.Singleton
 recipeList:

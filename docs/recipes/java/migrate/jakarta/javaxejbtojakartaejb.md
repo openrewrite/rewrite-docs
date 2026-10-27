@@ -64,12 +64,12 @@ This recipe is available under the [Moderne Source Available License](https://do
   * groupId: `jakarta.ejb`
   * artifactId: `jakarta.ejb-api`
   * newVersion: `4.0.x`
-* [Add the Jakarta Ejb API when needed](../../../java/migrate/jakarta/addjakartaejbdependency)
+* [Add the Jakarta EJB API when needed](../../../java/migrate/jakarta/addjakartaejbdependency)
 * [Upgrade Maven plugin version](../../../maven/upgradepluginversion)
   * groupId: `org.apache.maven.plugins`
   * artifactId: `maven-ejb-plugin`
   * newVersion: `3.2.x`
-* [Set `maven-ejb-plugin` ejbVersion to 4.0](../../../java/migrate/jakarta/upgrademavenejbpluginconfiguration)
+* [Set `maven-ejb-plugin` `ejbVersion` to `4.0`](../../../java/migrate/jakarta/upgrademavenejbpluginconfiguration)
 * [Rename package name](../../../java/changepackage)
   * oldPackageName: `javax.ejb`
   * newPackageName: `jakarta.ejb`

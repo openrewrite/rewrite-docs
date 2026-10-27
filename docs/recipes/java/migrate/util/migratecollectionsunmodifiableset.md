@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.migrate.util.MigrateCollectionsUnmodifiableSet**
 
-_Prefer `Set.Of(..)` instead of using `unmodifiableSet(java.util.Set(java.util.Arrays asList(<args>)))` in Java 9 or higher._
+_Prefer `Set.of(..)` instead of using `Collections.unmodifiableSet(new HashSet<>(Arrays.asList(..)))` in Java 9 or higher._
 
 ## Recipe source
 

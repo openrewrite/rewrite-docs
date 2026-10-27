@@ -31,11 +31,13 @@ _Recipes that include further recipes, often including the individual recipes be
 
 * [`@Type` annotation type parameter migration](./typeannotationparameter.md)
 * [AddScalarPreferStandardBasicTypesForHibernate5](./addscalarpreferstandardbasictypes.md)
+* [Change Hibernate dialect](./changehibernatedialect.md)
 * [Migrate Hibernate Types to Hypersistence Utils 6.2](./migratetohypersistenceutilshibernate62.md)
 * [Migrate Hibernate Types to Hypersistence Utils 6.3](./migratetohypersistenceutilshibernate63.md)
 * [Migrate Hibernate Types to Hypersistence Utils for Hibernate 7.0](./migratetohypersistenceutilshibernate70.md)
 * [Migrate Hibernate Types to Hypersistence Utils for Hibernate 7.1](./migratetohypersistenceutilshibernate71.md)
 * [Migrate `UserType` to Hibernate 6](./migrateusertype.md)
+* [Migrate `persistence.xml` to Jakarta Persistence 3.2](./migratepersistencexmltojakartapersistence32.md)
 * [Migration of `ResultCheckStyle` to `Expectation`](./migrateresultcheckstyletoexpectation.md)
 * [Remove `@GeneratedValue` strategy when a custom `@GenericGenerator` is used](./removegeneratedvaluestrategywithgenericgenerator.md)
 * [Remove invalid `@GeneratedValue` annotation](./removeinvalidhibernategeneratedvalueannotation.md)

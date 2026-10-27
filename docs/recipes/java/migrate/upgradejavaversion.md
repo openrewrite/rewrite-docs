@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.migrate.UpgradeJavaVersion**
 
-_Upgrade build plugin configuration to use the specified Java version. This recipe changes `java.toolchain.languageVersion` in `build.gradle(.kts)` of gradle projects, or maven-compiler-plugin target version and related settings. Will not downgrade if the version is newer than the specified version._
+_Upgrade build plugin configuration to use the specified Java version. This recipe changes `java.toolchain.languageVersion` in `build.gradle(.kts)` of Gradle projects, or `maven-compiler-plugin` target version and related settings. Will not downgrade if the version is newer than the specified version._
 
 ## Recipe source
 
@@ -42,7 +42,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Upgrade jenkins java version](../../jenkins/upgradejavaversion)
 * [Update Gradle project Java compatibility](../../gradle/updatejavacompatibility)
   * allowDowngrade: `false`
-* [Update SDKMan Java version](../../java/migrate/updatesdkman)
+* [Update SDKMAN! Java version](../../java/migrate/updatesdkman)
   * newVersion: `null`
 * [Upgrade CircleCI OpenJDK job images](../../java/migrate/upgradejavacicontainerimage)
 * [Upgrade Docker image Java version](../../java/migrate/upgradedockerimageversion)
@@ -58,7 +58,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.UpgradeJavaVersion
 displayName: Upgrade Java version
 description: |
-  Upgrade build plugin configuration to use the specified Java version. This recipe changes `java.toolchain.languageVersion` in `build.gradle(.kts)` of gradle projects, or maven-compiler-plugin target version and related settings. Will not downgrade if the version is newer than the specified version.
+  Upgrade build plugin configuration to use the specified Java version. This recipe changes `java.toolchain.languageVersion` in `build.gradle(.kts)` of Gradle projects, or `maven-compiler-plugin` target version and related settings. Will not downgrade if the version is newer than the specified version.
 
 recipeList:
   - org.openrewrite.maven.UseMavenCompilerPluginReleaseConfiguration
@@ -95,7 +95,9 @@ This recipe is used as part of the following composite recipes:
 * [Upgrade build to Java 25 for Kotlin 2.3+](/recipes/java/migrate/upgradebuildtojava25forkotlin.md)
 * [Use Java 17 for Jetty 12](/recipes/java/migrate/jakarta/upgradejavaforjetty12.md)
 
-## Example
+## Examples
+##### Example 1
+`Maven#mavenUpgradeFromJava8ToJava17ViaProperties`
 
 ###### Parameters
 | Parameter | Value |
@@ -157,6 +159,57 @@ This recipe is used as part of the following composite recipes:
 +   <maven.compiler.source>17</maven.compiler.source>
 +   <maven.compiler.target>17</maven.compiler.target>
   </properties>
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`UpgradeJavaCiContainerImageTest#upgradeGitHubJobContainer`
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|version|`25`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value=".github/workflows/test.yaml" label=".github/workflows/test.yaml">
+
+
+###### Before
+```yaml title=".github/workflows/test.yaml"
+jobs:
+  test:
+    container: cimg/openjdk:22.0
+    services:
+      database:
+        image: mongo:5
+```
+
+###### After
+```yaml title=".github/workflows/test.yaml"
+jobs:
+  test:
+    container: cimg/openjdk:25.0
+    services:
+      database:
+        image: mongo:5
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- .github/workflows/test.yaml
++++ .github/workflows/test.yaml
+@@ -3,1 +3,1 @@
+jobs:
+  test:
+-   container: cimg/openjdk:22.0
++   container: cimg/openjdk:25.0
+    services:
 ```
 </TabItem>
 </Tabs>

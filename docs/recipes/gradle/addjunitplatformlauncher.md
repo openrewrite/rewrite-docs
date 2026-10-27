@@ -11,52 +11,16 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.gradle.AddJUnitPlatformLauncher**
 
-_Add the JUnit Platform Launcher to the buildscript dependencies._
+_Add the JUnit Platform Launcher to the test runtime dependencies, aligned with the resolved JUnit Platform version._
 
 ## Recipe source
 
-[GitHub: gradle-8.yml](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/resources/META-INF/rewrite/gradle-8.yml),
+[GitHub: AddJUnitPlatformLauncher.java](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/AddJUnitPlatformLauncher.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Code Genome Project](https://artifacts.codegenomeproject.org/maven/org/openrewrite/rewrite-gradle/)
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
-
-## Definition
-
-<Tabs groupId="recipeType">
-<TabItem value="recipe-list" label="Recipe List" >
-* [Add Gradle dependency](../gradle/adddependency)
-  * groupId: `org.junit.platform`
-  * artifactId: `junit-platform-launcher`
-  * version: `1.x`
-  * configuration: `testRuntimeOnly`
-  * onlyIfUsing: `org.junit.jupiter.api.Test`
-  * acceptTransitive: `true`
-
-</TabItem>
-
-<TabItem value="yaml-recipe-list" label="Yaml Recipe List">
-
-```yaml
----
-type: specs.openrewrite.org/v1beta/recipe
-name: org.openrewrite.gradle.AddJUnitPlatformLauncher
-displayName: Add JUnit Platform Launcher
-description: |
-  Add the JUnit Platform Launcher to the buildscript dependencies.
-recipeList:
-  - org.openrewrite.gradle.AddDependency:
-      groupId: org.junit.platform
-      artifactId: junit-platform-launcher
-      version: 1.x
-      configuration: testRuntimeOnly
-      onlyIfUsing: org.junit.jupiter.api.Test
-      acceptTransitive: true
-
-```
-</TabItem>
-</Tabs>
 
 ## Used by
 
@@ -64,41 +28,7 @@ This recipe is used as part of the following composite recipes:
 
 * [Migrate to Gradle 8 from Gradle 7](/recipes/gradle/migratetogradle8.md)
 
-## Examples
-##### Example 1
-`AddJUnitPlatformLauncherTest#addJUnitPlatformLauncher`
-
-
-###### Unchanged
-```groovy title="build.gradle"
-plugins {
-    id "java-library"
-}
-
-repositories {
-    mavenCentral()
-}
-```
-
-###### Unchanged
-```java
-import org.junit.jupiter.api.Test;
-public class A {
-    @Test
-    void foo() {
-    }
-}
-```
-
-###### Unchanged
-```mavenProject
-project
-```
-
----
-
-##### Example 2
-`AddJUnitPlatformLauncherTest#addJUnitPlatformLauncher`
+## Example
 
 
 ###### Unchanged
@@ -153,25 +83,6 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
-<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
-
-### Maven metadata failures
-**org.openrewrite.maven.table.MavenMetadataFailures**
-
-_Attempts to resolve maven metadata that failed._
-
-| Column Name | Description |
-| ----------- | ----------- |
-| Group id | The groupId of the artifact for which the metadata download failed. |
-| Artifact id | The artifactId of the artifact for which the metadata download failed. |
-| Version | The version of the artifact for which the metadata download failed. |
-| Maven repository | The URL of the Maven repository that the metadata download failed on. |
-| Snapshots | Does the repository support snapshots. |
-| Releases | Does the repository support releases. |
-| Failure | The reason the metadata download failed. |
-
-</TabItem>
-
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results

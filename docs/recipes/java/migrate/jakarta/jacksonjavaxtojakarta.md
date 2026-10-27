@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.migrate.jakarta.JacksonJavaxToJakarta**
 
-_Java EE has been rebranded to Jakarta EE.  This recipe replaces existing Jackson dependencies with their counterparts that are compatible with Jakarta EE 9._
+_Java EE has been rebranded to Jakarta EE. This recipe replaces existing Jackson dependencies with their counterparts that are compatible with Jakarta EE 9._
 
 ## Recipe source
 
@@ -163,7 +163,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.jakarta.JacksonJavaxToJakarta
 displayName: Migrate Jackson from javax to jakarta namespace
 description: |
-  Java EE has been rebranded to Jakarta EE.  This recipe replaces existing Jackson dependencies with their counterparts that are compatible with Jakarta EE 9.
+  Java EE has been rebranded to Jakarta EE. This recipe replaces existing Jackson dependencies with their counterparts that are compatible with Jakarta EE 9.
 preconditions:
   - org.openrewrite.Singleton
 recipeList:

@@ -73,7 +73,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * newPropertyKey: `spring.neo4j.uri`
 * [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.data.neo4j.username`
-  * newPropertyKey: `spring.neo4j.authentication.password`
+  * newPropertyKey: `spring.neo4j.authentication.username`
 * [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.mvc.locale`
   * newPropertyKey: `spring.web.locale`
@@ -218,7 +218,7 @@ recipeList:
       newPropertyKey: spring.neo4j.uri
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
       oldPropertyKey: spring.data.neo4j.username
-      newPropertyKey: spring.neo4j.authentication.password
+      newPropertyKey: spring.neo4j.authentication.username
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
       oldPropertyKey: spring.mvc.locale
       newPropertyKey: spring.web.locale

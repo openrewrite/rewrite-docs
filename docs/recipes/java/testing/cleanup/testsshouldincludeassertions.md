@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.testing.cleanup.TestsShouldIncludeAssertions**
 
-_For tests not having any assertions, wrap the statements with JUnit Jupiter's `Assertions#assertDoesNotThrow(..)`._
+_For tests not having any assertions, wrap the statements with JUnit Jupiter's `Assertions#assertDoesNotThrow(..)`. Tests that make an assumption are left unchanged, as wrapping them would report a skipped test as a failure._
 
 ### Tags
 

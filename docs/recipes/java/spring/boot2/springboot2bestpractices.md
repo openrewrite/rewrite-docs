@@ -42,7 +42,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 **Recipes**
 
 * [Remove `@RequestMapping` annotations](../../../java/spring/norequestmappingannotation)
-* [Remove `@SpringExtension`](../../../java/spring/boot2/unnecessaryspringextension)
+* [Remove redundant `@ExtendWith(SpringExtension.class)`](../../../java/spring/boot2/unnecessaryspringextension)
 * [Remove the `@Autowired` annotation on inferred constructor](../../../java/spring/noautowiredonconstructor)
 * [Add missing `@Configuration` annotation](../../../java/spring/boot2/addconfigurationannotationifbeanspresent)
 * [Migrate `RestTemplateBuilder`](../../../java/spring/boot2/resttemplatebuilderrequestfactory)

@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.hibernate.MigrateDialect**
 
-_Migrate Hibernate version-specific dialect classes removed by Hibernate 6.2 to their generic equivalents._
+_Migrate Hibernate version-specific dialect classes removed by Hibernate 6.2 to their generic equivalents in Java, properties, YAML, `persistence.xml` and `hibernate.cfg.xml`._
 
 ## Recipe source
 
@@ -36,103 +36,103 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 **Recipes**
 
-* [Change type](../java/changetype)
+* [Change Hibernate dialect](../hibernate/changehibernatedialect)
   * oldFullyQualifiedTypeName: `org.hibernate.dialect.MySQL5Dialect`
   * newFullyQualifiedTypeName: `org.hibernate.dialect.MySQLDialect`
-* [Change type](../java/changetype)
+* [Change Hibernate dialect](../hibernate/changehibernatedialect)
   * oldFullyQualifiedTypeName: `org.hibernate.dialect.MySQL55Dialect`
   * newFullyQualifiedTypeName: `org.hibernate.dialect.MySQLDialect`
-* [Change type](../java/changetype)
+* [Change Hibernate dialect](../hibernate/changehibernatedialect)
   * oldFullyQualifiedTypeName: `org.hibernate.dialect.MySQL57Dialect`
   * newFullyQualifiedTypeName: `org.hibernate.dialect.MySQLDialect`
-* [Change type](../java/changetype)
+* [Change Hibernate dialect](../hibernate/changehibernatedialect)
   * oldFullyQualifiedTypeName: `org.hibernate.dialect.MySQL8Dialect`
   * newFullyQualifiedTypeName: `org.hibernate.dialect.MySQLDialect`
-* [Change type](../java/changetype)
+* [Change Hibernate dialect](../hibernate/changehibernatedialect)
   * oldFullyQualifiedTypeName: `org.hibernate.dialect.MariaDB53Dialect`
   * newFullyQualifiedTypeName: `org.hibernate.dialect.MariaDBDialect`
-* [Change type](../java/changetype)
+* [Change Hibernate dialect](../hibernate/changehibernatedialect)
   * oldFullyQualifiedTypeName: `org.hibernate.dialect.MariaDB10Dialect`
   * newFullyQualifiedTypeName: `org.hibernate.dialect.MariaDBDialect`
-* [Change type](../java/changetype)
+* [Change Hibernate dialect](../hibernate/changehibernatedialect)
   * oldFullyQualifiedTypeName: `org.hibernate.dialect.MariaDB102Dialect`
   * newFullyQualifiedTypeName: `org.hibernate.dialect.MariaDBDialect`
-* [Change type](../java/changetype)
+* [Change Hibernate dialect](../hibernate/changehibernatedialect)
   * oldFullyQualifiedTypeName: `org.hibernate.dialect.MariaDB103Dialect`
   * newFullyQualifiedTypeName: `org.hibernate.dialect.MariaDBDialect`
-* [Change type](../java/changetype)
+* [Change Hibernate dialect](../hibernate/changehibernatedialect)
   * oldFullyQualifiedTypeName: `org.hibernate.dialect.PostgreSQL81Dialect`
   * newFullyQualifiedTypeName: `org.hibernate.dialect.PostgreSQLDialect`
-* [Change type](../java/changetype)
+* [Change Hibernate dialect](../hibernate/changehibernatedialect)
   * oldFullyQualifiedTypeName: `org.hibernate.dialect.PostgreSQL82Dialect`
   * newFullyQualifiedTypeName: `org.hibernate.dialect.PostgreSQLDialect`
-* [Change type](../java/changetype)
+* [Change Hibernate dialect](../hibernate/changehibernatedialect)
   * oldFullyQualifiedTypeName: `org.hibernate.dialect.PostgreSQL9Dialect`
   * newFullyQualifiedTypeName: `org.hibernate.dialect.PostgreSQLDialect`
-* [Change type](../java/changetype)
+* [Change Hibernate dialect](../hibernate/changehibernatedialect)
   * oldFullyQualifiedTypeName: `org.hibernate.dialect.PostgreSQL91Dialect`
   * newFullyQualifiedTypeName: `org.hibernate.dialect.PostgreSQLDialect`
-* [Change type](../java/changetype)
+* [Change Hibernate dialect](../hibernate/changehibernatedialect)
   * oldFullyQualifiedTypeName: `org.hibernate.dialect.PostgreSQL92Dialect`
   * newFullyQualifiedTypeName: `org.hibernate.dialect.PostgreSQLDialect`
-* [Change type](../java/changetype)
+* [Change Hibernate dialect](../hibernate/changehibernatedialect)
   * oldFullyQualifiedTypeName: `org.hibernate.dialect.PostgreSQL93Dialect`
   * newFullyQualifiedTypeName: `org.hibernate.dialect.PostgreSQLDialect`
-* [Change type](../java/changetype)
+* [Change Hibernate dialect](../hibernate/changehibernatedialect)
   * oldFullyQualifiedTypeName: `org.hibernate.dialect.PostgreSQL94Dialect`
   * newFullyQualifiedTypeName: `org.hibernate.dialect.PostgreSQLDialect`
-* [Change type](../java/changetype)
+* [Change Hibernate dialect](../hibernate/changehibernatedialect)
   * oldFullyQualifiedTypeName: `org.hibernate.dialect.PostgreSQL95Dialect`
   * newFullyQualifiedTypeName: `org.hibernate.dialect.PostgreSQLDialect`
-* [Change type](../java/changetype)
+* [Change Hibernate dialect](../hibernate/changehibernatedialect)
   * oldFullyQualifiedTypeName: `org.hibernate.dialect.PostgreSQL10Dialect`
   * newFullyQualifiedTypeName: `org.hibernate.dialect.PostgreSQLDialect`
-* [Change type](../java/changetype)
+* [Change Hibernate dialect](../hibernate/changehibernatedialect)
   * oldFullyQualifiedTypeName: `org.hibernate.dialect.Oracle8iDialect`
   * newFullyQualifiedTypeName: `org.hibernate.dialect.OracleDialect`
-* [Change type](../java/changetype)
+* [Change Hibernate dialect](../hibernate/changehibernatedialect)
   * oldFullyQualifiedTypeName: `org.hibernate.dialect.Oracle9iDialect`
   * newFullyQualifiedTypeName: `org.hibernate.dialect.OracleDialect`
-* [Change type](../java/changetype)
+* [Change Hibernate dialect](../hibernate/changehibernatedialect)
   * oldFullyQualifiedTypeName: `org.hibernate.dialect.Oracle10gDialect`
   * newFullyQualifiedTypeName: `org.hibernate.dialect.OracleDialect`
-* [Change type](../java/changetype)
+* [Change Hibernate dialect](../hibernate/changehibernatedialect)
   * oldFullyQualifiedTypeName: `org.hibernate.dialect.Oracle12cDialect`
   * newFullyQualifiedTypeName: `org.hibernate.dialect.OracleDialect`
-* [Change type](../java/changetype)
+* [Change Hibernate dialect](../hibernate/changehibernatedialect)
   * oldFullyQualifiedTypeName: `org.hibernate.dialect.SQLServer2005Dialect`
   * newFullyQualifiedTypeName: `org.hibernate.dialect.SQLServerDialect`
-* [Change type](../java/changetype)
+* [Change Hibernate dialect](../hibernate/changehibernatedialect)
   * oldFullyQualifiedTypeName: `org.hibernate.dialect.SQLServer2008Dialect`
   * newFullyQualifiedTypeName: `org.hibernate.dialect.SQLServerDialect`
-* [Change type](../java/changetype)
+* [Change Hibernate dialect](../hibernate/changehibernatedialect)
   * oldFullyQualifiedTypeName: `org.hibernate.dialect.SQLServer2012Dialect`
   * newFullyQualifiedTypeName: `org.hibernate.dialect.SQLServerDialect`
-* [Change type](../java/changetype)
+* [Change Hibernate dialect](../hibernate/changehibernatedialect)
   * oldFullyQualifiedTypeName: `org.hibernate.dialect.SQLServer2016Dialect`
   * newFullyQualifiedTypeName: `org.hibernate.dialect.SQLServerDialect`
-* [Change type](../java/changetype)
+* [Change Hibernate dialect](../hibernate/changehibernatedialect)
   * oldFullyQualifiedTypeName: `org.hibernate.dialect.DB297Dialect`
   * newFullyQualifiedTypeName: `org.hibernate.dialect.DB2Dialect`
-* [Change type](../java/changetype)
+* [Change Hibernate dialect](../hibernate/changehibernatedialect)
   * oldFullyQualifiedTypeName: `org.hibernate.dialect.DB2390Dialect`
   * newFullyQualifiedTypeName: `org.hibernate.dialect.DB2Dialect`
-* [Change type](../java/changetype)
+* [Change Hibernate dialect](../hibernate/changehibernatedialect)
   * oldFullyQualifiedTypeName: `org.hibernate.dialect.DB2390V8Dialect`
   * newFullyQualifiedTypeName: `org.hibernate.dialect.DB2Dialect`
-* [Change type](../java/changetype)
+* [Change Hibernate dialect](../hibernate/changehibernatedialect)
   * oldFullyQualifiedTypeName: `org.hibernate.dialect.Sybase11Dialect`
   * newFullyQualifiedTypeName: `org.hibernate.dialect.SybaseASEDialect`
-* [Change type](../java/changetype)
+* [Change Hibernate dialect](../hibernate/changehibernatedialect)
   * oldFullyQualifiedTypeName: `org.hibernate.dialect.SybaseASE15Dialect`
   * newFullyQualifiedTypeName: `org.hibernate.dialect.SybaseASEDialect`
-* [Change type](../java/changetype)
+* [Change Hibernate dialect](../hibernate/changehibernatedialect)
   * oldFullyQualifiedTypeName: `org.hibernate.dialect.SybaseASE157Dialect`
   * newFullyQualifiedTypeName: `org.hibernate.dialect.SybaseASEDialect`
-* [Change type](../java/changetype)
+* [Change Hibernate dialect](../hibernate/changehibernatedialect)
   * oldFullyQualifiedTypeName: `org.hibernate.dialect.CockroachDB192Dialect`
   * newFullyQualifiedTypeName: `org.hibernate.dialect.CockroachDialect`
-* [Change type](../java/changetype)
+* [Change Hibernate dialect](../hibernate/changehibernatedialect)
   * oldFullyQualifiedTypeName: `org.hibernate.dialect.CockroachDB201Dialect`
   * newFullyQualifiedTypeName: `org.hibernate.dialect.CockroachDialect`
 
@@ -146,107 +146,107 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.hibernate.MigrateDialect
 displayName: Migrate Hibernate dialect to the generic dialect
 description: |
-  Migrate Hibernate version-specific dialect classes removed by Hibernate 6.2 to their generic equivalents.
+  Migrate Hibernate version-specific dialect classes removed by Hibernate 6.2 to their generic equivalents in Java, properties, YAML, `persistence.xml` and `hibernate.cfg.xml`.
 preconditions:
   - org.openrewrite.Singleton
 recipeList:
-  - org.openrewrite.java.ChangeType:
+  - org.openrewrite.hibernate.ChangeHibernateDialect:
       oldFullyQualifiedTypeName: org.hibernate.dialect.MySQL5Dialect
       newFullyQualifiedTypeName: org.hibernate.dialect.MySQLDialect
-  - org.openrewrite.java.ChangeType:
+  - org.openrewrite.hibernate.ChangeHibernateDialect:
       oldFullyQualifiedTypeName: org.hibernate.dialect.MySQL55Dialect
       newFullyQualifiedTypeName: org.hibernate.dialect.MySQLDialect
-  - org.openrewrite.java.ChangeType:
+  - org.openrewrite.hibernate.ChangeHibernateDialect:
       oldFullyQualifiedTypeName: org.hibernate.dialect.MySQL57Dialect
       newFullyQualifiedTypeName: org.hibernate.dialect.MySQLDialect
-  - org.openrewrite.java.ChangeType:
+  - org.openrewrite.hibernate.ChangeHibernateDialect:
       oldFullyQualifiedTypeName: org.hibernate.dialect.MySQL8Dialect
       newFullyQualifiedTypeName: org.hibernate.dialect.MySQLDialect
-  - org.openrewrite.java.ChangeType:
+  - org.openrewrite.hibernate.ChangeHibernateDialect:
       oldFullyQualifiedTypeName: org.hibernate.dialect.MariaDB53Dialect
       newFullyQualifiedTypeName: org.hibernate.dialect.MariaDBDialect
-  - org.openrewrite.java.ChangeType:
+  - org.openrewrite.hibernate.ChangeHibernateDialect:
       oldFullyQualifiedTypeName: org.hibernate.dialect.MariaDB10Dialect
       newFullyQualifiedTypeName: org.hibernate.dialect.MariaDBDialect
-  - org.openrewrite.java.ChangeType:
+  - org.openrewrite.hibernate.ChangeHibernateDialect:
       oldFullyQualifiedTypeName: org.hibernate.dialect.MariaDB102Dialect
       newFullyQualifiedTypeName: org.hibernate.dialect.MariaDBDialect
-  - org.openrewrite.java.ChangeType:
+  - org.openrewrite.hibernate.ChangeHibernateDialect:
       oldFullyQualifiedTypeName: org.hibernate.dialect.MariaDB103Dialect
       newFullyQualifiedTypeName: org.hibernate.dialect.MariaDBDialect
-  - org.openrewrite.java.ChangeType:
+  - org.openrewrite.hibernate.ChangeHibernateDialect:
       oldFullyQualifiedTypeName: org.hibernate.dialect.PostgreSQL81Dialect
       newFullyQualifiedTypeName: org.hibernate.dialect.PostgreSQLDialect
-  - org.openrewrite.java.ChangeType:
+  - org.openrewrite.hibernate.ChangeHibernateDialect:
       oldFullyQualifiedTypeName: org.hibernate.dialect.PostgreSQL82Dialect
       newFullyQualifiedTypeName: org.hibernate.dialect.PostgreSQLDialect
-  - org.openrewrite.java.ChangeType:
+  - org.openrewrite.hibernate.ChangeHibernateDialect:
       oldFullyQualifiedTypeName: org.hibernate.dialect.PostgreSQL9Dialect
       newFullyQualifiedTypeName: org.hibernate.dialect.PostgreSQLDialect
-  - org.openrewrite.java.ChangeType:
+  - org.openrewrite.hibernate.ChangeHibernateDialect:
       oldFullyQualifiedTypeName: org.hibernate.dialect.PostgreSQL91Dialect
       newFullyQualifiedTypeName: org.hibernate.dialect.PostgreSQLDialect
-  - org.openrewrite.java.ChangeType:
+  - org.openrewrite.hibernate.ChangeHibernateDialect:
       oldFullyQualifiedTypeName: org.hibernate.dialect.PostgreSQL92Dialect
       newFullyQualifiedTypeName: org.hibernate.dialect.PostgreSQLDialect
-  - org.openrewrite.java.ChangeType:
+  - org.openrewrite.hibernate.ChangeHibernateDialect:
       oldFullyQualifiedTypeName: org.hibernate.dialect.PostgreSQL93Dialect
       newFullyQualifiedTypeName: org.hibernate.dialect.PostgreSQLDialect
-  - org.openrewrite.java.ChangeType:
+  - org.openrewrite.hibernate.ChangeHibernateDialect:
       oldFullyQualifiedTypeName: org.hibernate.dialect.PostgreSQL94Dialect
       newFullyQualifiedTypeName: org.hibernate.dialect.PostgreSQLDialect
-  - org.openrewrite.java.ChangeType:
+  - org.openrewrite.hibernate.ChangeHibernateDialect:
       oldFullyQualifiedTypeName: org.hibernate.dialect.PostgreSQL95Dialect
       newFullyQualifiedTypeName: org.hibernate.dialect.PostgreSQLDialect
-  - org.openrewrite.java.ChangeType:
+  - org.openrewrite.hibernate.ChangeHibernateDialect:
       oldFullyQualifiedTypeName: org.hibernate.dialect.PostgreSQL10Dialect
       newFullyQualifiedTypeName: org.hibernate.dialect.PostgreSQLDialect
-  - org.openrewrite.java.ChangeType:
+  - org.openrewrite.hibernate.ChangeHibernateDialect:
       oldFullyQualifiedTypeName: org.hibernate.dialect.Oracle8iDialect
       newFullyQualifiedTypeName: org.hibernate.dialect.OracleDialect
-  - org.openrewrite.java.ChangeType:
+  - org.openrewrite.hibernate.ChangeHibernateDialect:
       oldFullyQualifiedTypeName: org.hibernate.dialect.Oracle9iDialect
       newFullyQualifiedTypeName: org.hibernate.dialect.OracleDialect
-  - org.openrewrite.java.ChangeType:
+  - org.openrewrite.hibernate.ChangeHibernateDialect:
       oldFullyQualifiedTypeName: org.hibernate.dialect.Oracle10gDialect
       newFullyQualifiedTypeName: org.hibernate.dialect.OracleDialect
-  - org.openrewrite.java.ChangeType:
+  - org.openrewrite.hibernate.ChangeHibernateDialect:
       oldFullyQualifiedTypeName: org.hibernate.dialect.Oracle12cDialect
       newFullyQualifiedTypeName: org.hibernate.dialect.OracleDialect
-  - org.openrewrite.java.ChangeType:
+  - org.openrewrite.hibernate.ChangeHibernateDialect:
       oldFullyQualifiedTypeName: org.hibernate.dialect.SQLServer2005Dialect
       newFullyQualifiedTypeName: org.hibernate.dialect.SQLServerDialect
-  - org.openrewrite.java.ChangeType:
+  - org.openrewrite.hibernate.ChangeHibernateDialect:
       oldFullyQualifiedTypeName: org.hibernate.dialect.SQLServer2008Dialect
       newFullyQualifiedTypeName: org.hibernate.dialect.SQLServerDialect
-  - org.openrewrite.java.ChangeType:
+  - org.openrewrite.hibernate.ChangeHibernateDialect:
       oldFullyQualifiedTypeName: org.hibernate.dialect.SQLServer2012Dialect
       newFullyQualifiedTypeName: org.hibernate.dialect.SQLServerDialect
-  - org.openrewrite.java.ChangeType:
+  - org.openrewrite.hibernate.ChangeHibernateDialect:
       oldFullyQualifiedTypeName: org.hibernate.dialect.SQLServer2016Dialect
       newFullyQualifiedTypeName: org.hibernate.dialect.SQLServerDialect
-  - org.openrewrite.java.ChangeType:
+  - org.openrewrite.hibernate.ChangeHibernateDialect:
       oldFullyQualifiedTypeName: org.hibernate.dialect.DB297Dialect
       newFullyQualifiedTypeName: org.hibernate.dialect.DB2Dialect
-  - org.openrewrite.java.ChangeType:
+  - org.openrewrite.hibernate.ChangeHibernateDialect:
       oldFullyQualifiedTypeName: org.hibernate.dialect.DB2390Dialect
       newFullyQualifiedTypeName: org.hibernate.dialect.DB2Dialect
-  - org.openrewrite.java.ChangeType:
+  - org.openrewrite.hibernate.ChangeHibernateDialect:
       oldFullyQualifiedTypeName: org.hibernate.dialect.DB2390V8Dialect
       newFullyQualifiedTypeName: org.hibernate.dialect.DB2Dialect
-  - org.openrewrite.java.ChangeType:
+  - org.openrewrite.hibernate.ChangeHibernateDialect:
       oldFullyQualifiedTypeName: org.hibernate.dialect.Sybase11Dialect
       newFullyQualifiedTypeName: org.hibernate.dialect.SybaseASEDialect
-  - org.openrewrite.java.ChangeType:
+  - org.openrewrite.hibernate.ChangeHibernateDialect:
       oldFullyQualifiedTypeName: org.hibernate.dialect.SybaseASE15Dialect
       newFullyQualifiedTypeName: org.hibernate.dialect.SybaseASEDialect
-  - org.openrewrite.java.ChangeType:
+  - org.openrewrite.hibernate.ChangeHibernateDialect:
       oldFullyQualifiedTypeName: org.hibernate.dialect.SybaseASE157Dialect
       newFullyQualifiedTypeName: org.hibernate.dialect.SybaseASEDialect
-  - org.openrewrite.java.ChangeType:
+  - org.openrewrite.hibernate.ChangeHibernateDialect:
       oldFullyQualifiedTypeName: org.hibernate.dialect.CockroachDB192Dialect
       newFullyQualifiedTypeName: org.hibernate.dialect.CockroachDialect
-  - org.openrewrite.java.ChangeType:
+  - org.openrewrite.hibernate.ChangeHibernateDialect:
       oldFullyQualifiedTypeName: org.hibernate.dialect.CockroachDB201Dialect
       newFullyQualifiedTypeName: org.hibernate.dialect.CockroachDialect
 

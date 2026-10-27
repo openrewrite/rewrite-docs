@@ -1,13 +1,13 @@
 ---
-title: "Migrate Spring Cloud Gateway Proxy Webflux Properties"
-sidebar_label: "Migrate Spring Cloud Gateway Proxy Webflux Properties"
+title: "Migrate Spring Cloud Gateway Proxy WebFlux properties"
+sidebar_label: "Migrate Spring Cloud Gateway Proxy WebFlux properties"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Migrate Spring Cloud Gateway Proxy Webflux Properties
+# Migrate Spring Cloud Gateway Proxy WebFlux properties
 
 **org.openrewrite.java.spring.cloud2025.SpringCloudGatewayProxyWebfluxProperties**
 
@@ -52,7 +52,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.spring.cloud2025.SpringCloudGatewayProxyWebfluxProperties
-displayName: Migrate Spring Cloud Gateway Proxy Webflux Properties
+displayName: Migrate Spring Cloud Gateway Proxy WebFlux properties
 description: |
   Migrate Spring Cloud Gateway Proxy Webflux properties for Spring Cloud 2025 release.
 tags:
@@ -83,7 +83,7 @@ This recipe is used as part of the following composite recipes:
 
 <RunRecipe
   recipeName="org.openrewrite.java.spring.cloud2025.SpringCloudGatewayProxyWebfluxProperties"
-  displayName="Migrate Spring Cloud Gateway Proxy Webflux Properties"
+  displayName="Migrate Spring Cloud Gateway Proxy WebFlux properties"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-spring"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING"

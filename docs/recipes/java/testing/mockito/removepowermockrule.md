@@ -28,6 +28,63 @@ This recipe is used as part of the following composite recipes:
 
 * [Replace PowerMock usages with Mockito](/recipes/java/testing/mockito/replacepowermockitousages.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.junit.Rule;
+import org.junit.Test;
+import org.powermock.modules.junit4.rule.PowerMockRule;
+
+public class MyTest {
+    @Rule
+    public PowerMockRule rule = new PowerMockRule();
+
+    @Test
+    public void test() {
+    }
+}
+```
+
+###### After
+```java
+import org.junit.Test;
+
+public class MyTest {
+
+    @Test
+    public void test() {
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,0 @@
+-import org.junit.Rule;
+import org.junit.Test;
+@@ -3,1 +2,0 @@
+import org.junit.Rule;
+import org.junit.Test;
+-import org.powermock.modules.junit4.rule.PowerMockRule;
+
+@@ -6,2 +4,0 @@
+
+public class MyTest {
+-   @Rule
+-   public PowerMockRule rule = new PowerMockRule();
+
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

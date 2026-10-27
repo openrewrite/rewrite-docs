@@ -15,7 +15,7 @@ _This makes the behavior of the code platform neutral. It will not override any 
 
 ### Tags
 
-* [RSPEC-S4719](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S4719&open=java%3AS4719)
+* [RSPEC-S1943](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S1943&open=java%3AS1943)
 
 ## Recipe source
 
@@ -29,7 +29,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 | Type | Name | Description | Example |
 | --- | --- | --- | --- |
-| `String` | encoding | *Optional*. The default encoding to supply to the `getBytes` call | `UTF_8` |
+| `String` | encoding | *Optional*. The default encoding to supply to the `getBytes` call. | `UTF_8` |
 
 ## Example
 

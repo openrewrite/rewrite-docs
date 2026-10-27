@@ -26,7 +26,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrate Google Truth to AssertJ](/recipes/java/testing/truth/migratetruthtoassertj.md)
+* [Migrate Google Truth code to AssertJ](/recipes/java/testing/truth/truthcodetoassertj.md)
 
 
 ## Usage

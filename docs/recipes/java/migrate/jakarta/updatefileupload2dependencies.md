@@ -1,17 +1,17 @@
 ---
-title: "Update Apache Commons FileUpload2 package for EE10"
-sidebar_label: "Update Apache Commons FileUpload2 package for EE10"
+title: "Update Apache Commons FileUpload2 package for Jakarta EE 10"
+sidebar_label: "Update Apache Commons FileUpload2 package for Jakarta EE 10"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Update Apache Commons FileUpload2 package for EE10
+# Update Apache Commons FileUpload2 package for Jakarta EE 10
 
 **org.openrewrite.java.migrate.jakarta.UpdateFileupload2Dependencies**
 
-_Update Apache Commons FileUpload2 package for EE10._
+_Replace the `commons-fileupload2-jakarta-servlet5` artifact and package with their `servlet6` counterparts, which target Jakarta Servlet 6.0._
 
 ## Recipe source
 
@@ -52,9 +52,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.jakarta.UpdateFileupload2Dependencies
-displayName: Update Apache Commons FileUpload2 package for EE10
+displayName: Update Apache Commons FileUpload2 package for Jakarta EE 10
 description: |
-  Update Apache Commons FileUpload2 package for EE10.
+  Replace the `commons-fileupload2-jakarta-servlet5` artifact and package with their `servlet6` counterparts, which target Jakarta Servlet 6.0.
 preconditions:
   - org.openrewrite.Singleton
 recipeList:
@@ -81,7 +81,7 @@ This recipe is used as part of the following composite recipes:
 
 <RunRecipe
   recipeName="org.openrewrite.java.migrate.jakarta.UpdateFileupload2Dependencies"
-  displayName="Update Apache Commons FileUpload2 package for EE10"
+  displayName="Update Apache Commons FileUpload2 package for Jakarta EE 10"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-migrate-java"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA"
@@ -100,6 +100,25 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
+
+### Maven metadata failures
+**org.openrewrite.maven.table.MavenMetadataFailures**
+
+_Attempts to resolve maven metadata that failed._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Group id | The groupId of the artifact for which the metadata download failed. |
+| Artifact id | The artifactId of the artifact for which the metadata download failed. |
+| Version | The version of the artifact for which the metadata download failed. |
+| Maven repository | The URL of the Maven repository that the metadata download failed on. |
+| Snapshots | Does the repository support snapshots. |
+| Releases | Does the repository support releases. |
+| Failure | The reason the metadata download failed. |
+
+</TabItem>
+
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results

@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.github.SetupPythonUpgradePythonVersion**
 
-_Update the Python version used by `actions/setup-python` if it is below the expected version number._
+_Update the Python version used by `actions/setup-python` if it is below the expected version number. A `strategy.matrix` axis that feeds `python-version` gets the expected version added when none of its values reach it._
 
 ### Tags
 
@@ -32,6 +32,13 @@ This recipe is available under the [Moderne Source Available License](https://do
 | Type | Name | Description | Example |
 | --- | --- | --- | --- |
 | `String` | version | The target Python version. | `3.14` |
+
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Upgrade Python version](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/upgradepythonversion)
 
 ## Example
 

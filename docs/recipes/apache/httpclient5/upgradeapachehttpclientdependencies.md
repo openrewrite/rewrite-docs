@@ -38,7 +38,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Add Gradle or Maven dependency](../../java/dependencies/adddependency)
   * groupId: `org.apache.httpcomponents.client5`
   * artifactId: `httpclient5`
-  * version: `5.4.x`
+  * version: `5.6.x`
   * onlyIfUsing: `org.apache.http..*`
   * acceptTransitive: `true`
 * [Remove a Gradle or Maven dependency](../../java/dependencies/removedependency)
@@ -72,7 +72,7 @@ recipeList:
   - org.openrewrite.java.dependencies.AddDependency:
       groupId: org.apache.httpcomponents.client5
       artifactId: httpclient5
-      version: 5.4.x
+      version: 5.6.x
       onlyIfUsing: org.apache.http..*
       acceptTransitive: true
   - org.openrewrite.java.dependencies.RemoveDependency:
@@ -122,6 +122,25 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
+
+### Maven metadata failures
+**org.openrewrite.maven.table.MavenMetadataFailures**
+
+_Attempts to resolve maven metadata that failed._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Group id | The groupId of the artifact for which the metadata download failed. |
+| Artifact id | The artifactId of the artifact for which the metadata download failed. |
+| Version | The version of the artifact for which the metadata download failed. |
+| Maven repository | The URL of the Maven repository that the metadata download failed on. |
+| Snapshots | Does the repository support snapshots. |
+| Releases | Does the repository support releases. |
+| Failure | The reason the metadata download failed. |
+
+</TabItem>
+
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results

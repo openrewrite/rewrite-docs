@@ -1,17 +1,17 @@
 ---
-title: "Replace `org.apache.commons.lang3.Validate#notNull` with `Objects#requireNonNull`"
-sidebar_label: "Replace `org.apache.commons.lang3.Validate#notNull` with `Objects#requireNonNull`"
+title: "Replace varargs `org.apache.commons.lang3.Validate#notNull` with `Objects#requireNonNull`"
+sidebar_label: "Replace varargs `org.apache.commons.lang3.Validate#notNull` with `Objects#requireNonNull`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Replace `org.apache.commons.lang3.Validate#notNull` with `Objects#requireNonNull`
+# Replace varargs `org.apache.commons.lang3.Validate#notNull` with `Objects#requireNonNull`
 
 **org.openrewrite.staticanalysis.ReplaceValidateNotNullHavingVarargsWithObjectsRequireNonNull**
 
-_Replace `org.apache.commons.lang3.Validate.notNull(Object, String, Object[])` with `Objects.requireNonNull(Object, String)`._
+_Replace `org.apache.commons.lang3.Validate.notNull(Object, String, Object[])` with `Objects.requireNonNull(Object, String)`, or with `Objects.requireNonNull(Object, Supplier<String>)` to format the message lazily when format arguments are passed._
 
 ## Recipe source
 
@@ -80,7 +80,7 @@ class Test {
 
 <RunRecipe
   recipeName="org.openrewrite.staticanalysis.ReplaceValidateNotNullHavingVarargsWithObjectsRequireNonNull"
-  displayName="Replace `org.apache.commons.lang3.Validate#notNull` with `Objects#requireNonNull`"
+  displayName="Replace varargs `org.apache.commons.lang3.Validate#notNull` with `Objects#requireNonNull`"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-static-analysis"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_STATIC_ANALYSIS"

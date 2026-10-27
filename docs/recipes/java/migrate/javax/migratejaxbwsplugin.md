@@ -1,13 +1,13 @@
 ---
-title: "Migrate JAXB-WS Plugin"
-sidebar_label: "Migrate JAXB-WS Plugin"
+title: "Migrate the JAX-WS Maven plugin"
+sidebar_label: "Migrate the JAX-WS Maven plugin"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Migrate JAXB-WS Plugin
+# Migrate the JAX-WS Maven plugin
 
 **org.openrewrite.java.migrate.javax.MigrateJaxBWSPlugin**
 
@@ -60,7 +60,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.javax.MigrateJaxBWSPlugin
-displayName: Migrate JAXB-WS Plugin
+displayName: Migrate the JAX-WS Maven plugin
 description: |
   Upgrade the JAXB-WS Maven plugin to be compatible with Java 11.
 tags:
@@ -382,7 +382,7 @@ This recipe is used as part of the following composite recipes:
 
 <RunRecipe
   recipeName="org.openrewrite.java.migrate.javax.MigrateJaxBWSPlugin"
-  displayName="Migrate JAXB-WS Plugin"
+  displayName="Migrate the JAX-WS Maven plugin"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-migrate-java"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA"

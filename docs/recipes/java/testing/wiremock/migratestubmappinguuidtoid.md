@@ -28,6 +28,58 @@ This recipe is used as part of the following composite recipes:
 
 * [Upgrade WireMock to 4.x](/recipes/java/testing/wiremock/wiremock3to4migration.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="src/test/resources/mappings/get-user.json" label="src/test/resources/mappings/get-user.json">
+
+
+###### Before
+```json title="src/test/resources/mappings/get-user.json"
+{
+  "uuid": "8f4c3b1e-5d2a-4f6b-9c8d-1a2b3c4d5e6f",
+  "name": "get user",
+  "request": {
+    "method": "GET",
+    "url": "/user"
+  },
+  "response": {
+    "status": 200
+  }
+}
+```
+
+###### After
+```json title="src/test/resources/mappings/get-user.json"
+{
+  "id": "8f4c3b1e-5d2a-4f6b-9c8d-1a2b3c4d5e6f",
+  "name": "get user",
+  "request": {
+    "method": "GET",
+    "url": "/user"
+  },
+  "response": {
+    "status": 200
+  }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- src/test/resources/mappings/get-user.json
++++ src/test/resources/mappings/get-user.json
+@@ -2,1 +2,1 @@
+{
+- "uuid": "8f4c3b1e-5d2a-4f6b-9c8d-1a2b3c4d5e6f",
++ "id": "8f4c3b1e-5d2a-4f6b-9c8d-1a2b3c4d5e6f",
+  "name": "get user",
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

@@ -1,17 +1,17 @@
 ---
-title: "Remove Security SecurityManager"
-sidebar_label: "Remove Security SecurityManager"
+title: "Remove `SecurityManager` permission checks"
+sidebar_label: "Remove `SecurityManager` permission checks"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Remove Security SecurityManager
+# Remove `SecurityManager` permission checks
 
 **org.openrewrite.java.migrate.RemoveSecurityManager**
 
-_The Security Manager API is unsupported in Java 24. This recipe will remove the usage of `java.security.SecurityManager`._
+_The Security Manager API is unsupported in Java 24. This recipe removes calls to the `java.lang.SecurityManager#check*(..)` methods._
 
 ### Tags
 
@@ -61,9 +61,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.RemoveSecurityManager
-displayName: Remove Security SecurityManager
+displayName: Remove `SecurityManager` permission checks
 description: |
-  The Security Manager API is unsupported in Java 24. This recipe will remove the usage of `java.security.SecurityManager`.
+  The Security Manager API is unsupported in Java 24. This recipe removes calls to the `java.lang.SecurityManager#check*(..)` methods.
 tags:
   - deprecation
   - java25
@@ -97,7 +97,7 @@ This recipe is used as part of the following composite recipes:
 
 <RunRecipe
   recipeName="org.openrewrite.java.migrate.RemoveSecurityManager"
-  displayName="Remove Security SecurityManager"
+  displayName="Remove `SecurityManager` permission checks"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-migrate-java"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA"

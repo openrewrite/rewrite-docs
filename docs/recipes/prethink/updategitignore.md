@@ -27,6 +27,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 This recipe is used as part of the following composite recipes:
 
 * [Update Prethink context](/recipes/prethink/updateprethinkcontext.md)
+* [Update mainframe Prethink context](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/mainframe/prethink/updatemainframeprethinkcontext)
 
 
 ## Usage

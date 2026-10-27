@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.migrate.lang.var.UseVarForGenericMethodInvocations**
 
-_Apply `var` to variables initialized by invocations of generic methods. This recipe ignores generic factory methods without parameters, because open rewrite cannot handle them correctly ATM._
+_Apply `var` to variables initialized by invocations of generic methods. Invocations with neither type nor method arguments are left alone, as their type arguments are inferred from the declared type, which `var` would lose._
 
 ## Recipe source
 

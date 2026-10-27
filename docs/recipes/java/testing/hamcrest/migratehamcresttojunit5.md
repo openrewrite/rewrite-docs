@@ -16,7 +16,7 @@ _Migrate Hamcrest `assertThat(..)` to JUnit Jupiter `Assertions`._
 ### Tags
 
 * [hamcrest](/reference/recipes-by-tag#hamcrest)
-* [assertj](/reference/recipes-by-tag#assertj)
+* [junit](/reference/recipes-by-tag#junit)
 * [testing](/reference/recipes-by-tag#testing)
 
 ## Recipe source
@@ -69,7 +69,7 @@ description: |
   Migrate Hamcrest `assertThat(..)` to JUnit Jupiter `Assertions`.
 tags:
   - hamcrest
-  - assertj
+  - junit
   - testing
 preconditions:
   - org.openrewrite.Singleton

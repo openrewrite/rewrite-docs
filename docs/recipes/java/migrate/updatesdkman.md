@@ -1,17 +1,17 @@
 ---
-title: "Update SDKMan Java version"
-sidebar_label: "Update SDKMan Java version"
+title: "Update SDKMAN! Java version"
+sidebar_label: "Update SDKMAN! Java version"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Update SDKMan Java version
+# Update SDKMAN! Java version
 
 **org.openrewrite.java.migrate.UpdateSdkMan**
 
-_Update the SDKMAN JDK version in the `.sdkmanrc` file. Given a major release (e.g., 17), the recipe will update the current distribution to the current default SDKMAN version of the specified major release. The distribution option can be used to specify a specific JVM distribution. Note that these must correspond to valid SDKMAN distributions._
+_Update the SDKMAN! JDK version in the `.sdkmanrc` file. Given a major release (e.g., 17), the recipe will update the current distribution to the current default SDKMAN! version of the specified major release. The distribution option can be used to specify a specific JVM distribution. Note that these must correspond to valid SDKMAN! distributions._
 
 ## Recipe source
 
@@ -40,7 +40,7 @@ This recipe is used as part of the following composite recipes:
 
 <RunRecipe
   recipeName="org.openrewrite.java.migrate.UpdateSdkMan"
-  displayName="Update SDKMan Java version"
+  displayName="Update SDKMAN! Java version"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-migrate-java"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA"

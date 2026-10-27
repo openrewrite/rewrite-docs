@@ -41,9 +41,11 @@ This recipe is available under the [Moderne Source Available License](https://do
 **Recipes**
 
 * [Migrate to Java 6](../../java/migrate/upgradetojava6)
-* [Adds missing JDBC interface methods](../../java/migrate/jrejdbcinterfacenewmethods)
+* [Add missing JDBC interface methods](../../java/migrate/jrejdbcinterfacenewmethods)
 * [Rename final method declarations `getSuppressed()` and `addSuppressed(Throwable exception)` in classes that extend `Throwable`](../../java/migrate/jrethrowablefinalmethods)
-* [Replace `java.lang.Math random()` with `ThreadLocalRandom nextDouble()`](../../java/migrate/util/replacemathrandomwiththreadlocalrandomrecipe)
+  * methodPatternAddSuppressed: `*..* addSuppressed(Throwable)`
+  * methodPatternGetSuppressed: `*..* getSuppressed()`
+* [Replace `Math.random()` with `ThreadLocalRandom.current().nextDouble()`](../../java/migrate/util/replacemathrandomwiththreadlocalrandomrecipe)
 * [Migrate Bouncy Castle to `jdk15to18` for Java &lt; 8](../../java/migrate/bouncycastlefromjdk15ontojdk15to18)
 
 </TabItem>
@@ -64,7 +66,9 @@ preconditions:
 recipeList:
   - org.openrewrite.java.migrate.UpgradeToJava6
   - org.openrewrite.java.migrate.JREJdbcInterfaceNewMethods
-  - org.openrewrite.java.migrate.JREThrowableFinalMethods
+  - org.openrewrite.java.migrate.JREThrowableFinalMethods:
+      methodPatternAddSuppressed: *..* addSuppressed(Throwable)
+      methodPatternGetSuppressed: *..* getSuppressed()
   - org.openrewrite.java.migrate.util.ReplaceMathRandomWithThreadLocalRandomRecipe
   - org.openrewrite.java.migrate.BouncyCastleFromJdk15OnToJdk15to18
 

@@ -132,6 +132,129 @@ This recipe is used as part of the following composite recipes:
 
 * [Modernize a PMD ruleset](/recipes/java/pmd/modernizepmd.md)
 
+## Examples
+##### Example 1
+`Pmd7RuleRenamesTest#renameRulesThatPmd7Renamed`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="xml" label="xml">
+
+
+###### Before
+```xml
+<?xml version="1.0"?>
+<ruleset name="custom"
+         xmlns="http://pmd.sourceforge.net/ruleset/2.0.0">
+    <description>Our rules</description>
+    <rule ref="category/java/bestpractices.xml/JUnit5TestShouldBePackagePrivate"/>
+    <rule ref="category/java/bestpractices.xml/JUnitTestsShouldIncludeAssert"/>
+    <rule ref="category/java/bestpractices.xml/SwitchStmtsShouldHaveDefault"/>
+    <rule ref="category/java/design.xml/UseUtilityClass"/>
+    <rule ref="category/java/performance.xml/TooFewBranchesForASwitchStatement"/>
+    <rule ref="category/java/bestpractices.xml/AvoidReassigningParameters"/>
+</ruleset>
+```
+
+###### After
+```xml
+<?xml version="1.0"?>
+<ruleset name="custom"
+         xmlns="http://pmd.sourceforge.net/ruleset/2.0.0">
+    <description>Our rules</description>
+    <rule ref="category/java/bestpractices.xml/JUnitJupiterTestShouldBePackagePrivate"/>
+    <rule ref="category/java/bestpractices.xml/UnitTestShouldIncludeAssert"/>
+    <rule ref="category/java/bestpractices.xml/NonExhaustiveSwitch"/>
+    <rule ref="category/java/design.xml/InstantiableUtilityClass"/>
+    <rule ref="category/java/performance.xml/TooFewBranchesForSwitch"/>
+    <rule ref="category/java/bestpractices.xml/AvoidReassigningParameters"/>
+</ruleset>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -5,5 +5,5 @@
+         xmlns="http://pmd.sourceforge.net/ruleset/2.0.0">
+    <description>Our rules</description>
+-   <rule ref="category/java/bestpractices.xml/JUnit5TestShouldBePackagePrivate"/>
+-   <rule ref="category/java/bestpractices.xml/JUnitTestsShouldIncludeAssert"/>
+-   <rule ref="category/java/bestpractices.xml/SwitchStmtsShouldHaveDefault"/>
+-   <rule ref="category/java/design.xml/UseUtilityClass"/>
+-   <rule ref="category/java/performance.xml/TooFewBranchesForASwitchStatement"/>
++   <rule ref="category/java/bestpractices.xml/JUnitJupiterTestShouldBePackagePrivate"/>
++   <rule ref="category/java/bestpractices.xml/UnitTestShouldIncludeAssert"/>
++   <rule ref="category/java/bestpractices.xml/NonExhaustiveSwitch"/>
++   <rule ref="category/java/design.xml/InstantiableUtilityClass"/>
++   <rule ref="category/java/performance.xml/TooFewBranchesForSwitch"/>
+    <rule ref="category/java/bestpractices.xml/AvoidReassigningParameters"/>
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`Pmd7RuleRenamesTest#renameRulesThatPmd7Renamed`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="xml" label="xml">
+
+
+###### Before
+```xml
+<?xml version="1.0"?>
+<ruleset name="custom"
+         xmlns="http://pmd.sourceforge.net/ruleset/2.0.0">
+    <description>Our rules</description>
+    <rule ref="category/java/bestpractices.xml/JUnit5TestShouldBePackagePrivate"/>
+    <rule ref="category/java/bestpractices.xml/JUnitTestsShouldIncludeAssert"/>
+    <rule ref="category/java/bestpractices.xml/SwitchStmtsShouldHaveDefault"/>
+    <rule ref="category/java/design.xml/UseUtilityClass"/>
+    <rule ref="category/java/performance.xml/TooFewBranchesForASwitchStatement"/>
+    <rule ref="category/java/bestpractices.xml/AvoidReassigningParameters"/>
+</ruleset>
+```
+
+###### After
+```xml
+<?xml version="1.0"?>
+<ruleset name="custom"
+         xmlns="http://pmd.sourceforge.net/ruleset/2.0.0">
+    <description>Our rules</description>
+    <rule ref="category/java/bestpractices.xml/JUnitJupiterTestShouldBePackagePrivate"/>
+    <rule ref="category/java/bestpractices.xml/UnitTestShouldIncludeAssert"/>
+    <rule ref="category/java/bestpractices.xml/NonExhaustiveSwitch"/>
+    <rule ref="category/java/design.xml/InstantiableUtilityClass"/>
+    <rule ref="category/java/performance.xml/TooFewBranchesForSwitch"/>
+    <rule ref="category/java/bestpractices.xml/AvoidReassigningParameters"/>
+</ruleset>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -5,5 +5,5 @@
+         xmlns="http://pmd.sourceforge.net/ruleset/2.0.0">
+    <description>Our rules</description>
+-   <rule ref="category/java/bestpractices.xml/JUnit5TestShouldBePackagePrivate"/>
+-   <rule ref="category/java/bestpractices.xml/JUnitTestsShouldIncludeAssert"/>
+-   <rule ref="category/java/bestpractices.xml/SwitchStmtsShouldHaveDefault"/>
+-   <rule ref="category/java/design.xml/UseUtilityClass"/>
+-   <rule ref="category/java/performance.xml/TooFewBranchesForASwitchStatement"/>
++   <rule ref="category/java/bestpractices.xml/JUnitJupiterTestShouldBePackagePrivate"/>
++   <rule ref="category/java/bestpractices.xml/UnitTestShouldIncludeAssert"/>
++   <rule ref="category/java/bestpractices.xml/NonExhaustiveSwitch"/>
++   <rule ref="category/java/design.xml/InstantiableUtilityClass"/>
++   <rule ref="category/java/performance.xml/TooFewBranchesForSwitch"/>
+    <rule ref="category/java/bestpractices.xml/AvoidReassigningParameters"/>
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

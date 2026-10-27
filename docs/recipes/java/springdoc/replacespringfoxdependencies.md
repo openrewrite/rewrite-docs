@@ -1,13 +1,13 @@
 ---
-title: "Replace SpringFox Dependencies"
-sidebar_label: "Replace SpringFox Dependencies"
+title: "Replace SpringFox dependencies"
+sidebar_label: "Replace SpringFox dependencies"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Replace SpringFox Dependencies
+# Replace SpringFox dependencies
 
 **org.openrewrite.java.springdoc.ReplaceSpringFoxDependencies**
 
@@ -37,7 +37,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 <TabItem value="recipe-list" label="Recipe List" >
 **Preconditions**
 
-* [Dependency insight for Gradle and Maven](../../java/dependencies/dependencyinsight)
+* [Gradle or Maven dependency insight](../../java/dependencies/dependencyinsight)
   * groupIdPattern: `io.springfox`
   * artifactIdPattern: `*`
 * [Singleton](../../core/singleton)
@@ -60,7 +60,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.springdoc.ReplaceSpringFoxDependencies
-displayName: Replace SpringFox Dependencies
+displayName: Replace SpringFox dependencies
 description: |
   Replace SpringFox Dependencies.
 tags:
@@ -95,7 +95,7 @@ This recipe is used as part of the following composite recipes:
 
 <RunRecipe
   recipeName="org.openrewrite.java.springdoc.ReplaceSpringFoxDependencies"
-  displayName="Replace SpringFox Dependencies"
+  displayName="Replace SpringFox dependencies"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-spring"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING"
@@ -114,6 +114,25 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
+
+### Maven metadata failures
+**org.openrewrite.maven.table.MavenMetadataFailures**
+
+_Attempts to resolve maven metadata that failed._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Group id | The groupId of the artifact for which the metadata download failed. |
+| Artifact id | The artifactId of the artifact for which the metadata download failed. |
+| Version | The version of the artifact for which the metadata download failed. |
+| Maven repository | The URL of the Maven repository that the metadata download failed on. |
+| Snapshots | Does the repository support snapshots. |
+| Releases | Does the repository support releases. |
+| Failure | The reason the metadata download failed. |
+
+</TabItem>
+
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results

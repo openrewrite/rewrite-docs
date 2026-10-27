@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.testing.junit5.ImplausibleTimeoutToMinutes**
 
-_JUnit Jupiter's `@Timeout` defaults to `TimeUnit.SECONDS`, so a value such as `@Timeout(10000)` is interpreted as almost three hours, which is most likely a mistake where milliseconds were intended. This recipe rewrites such implausibly large second-based timeouts to the equivalent number of minutes, for instance `@Timeout(value = 167, unit = TimeUnit.MINUTES)`, preserving the original (likely erroneous) semantics while making the mistake far more visible for review._
+_JUnit Jupiter's `@Timeout` defaults to `TimeUnit.SECONDS`, so a value such as `@Timeout(7200)` is interpreted as two hours, which is most likely a mistake where milliseconds were intended. This recipe rewrites such implausibly large second-based timeouts to the equivalent number of minutes, for instance `@Timeout(value = 120, unit = TimeUnit.MINUTES)`, preserving the original (likely erroneous) semantics while making the mistake far more visible for review. Other attributes such as `threadMode` are kept, and values that are not a whole number of minutes are left unchanged, since rounding them would change the timeout._
 
 ## Recipe source
 
@@ -25,7 +25,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 | Type | Name | Description | Example |
 | --- | --- | --- | --- |
-| `Integer` | thresholdSeconds | *Optional*. Timeouts of at least this many seconds (when the time unit is the default `SECONDS`) are considered implausibly long and are rewritten to the equivalent number of minutes. Defaults to `1000` seconds, about 17 minutes. | `1000` |
+| `Integer` | thresholdSeconds | *Optional*. Timeouts of at least this many seconds (when the time unit is the default `SECONDS`) are considered implausibly long and are rewritten to the equivalent number of minutes, when they are a whole number of minutes. Defaults to `1000` seconds, about 17 minutes. | `1000` |
 
 
 ## Used by
@@ -51,7 +51,7 @@ This recipe is used as part of the following composite recipes:
 import org.junit.jupiter.api.Timeout;
 
 class MyTest {
-    @Timeout(10000)
+    @Timeout(7200)
     void test() {
     }
 }
@@ -64,7 +64,7 @@ import org.junit.jupiter.api.Timeout;
 import java.util.concurrent.TimeUnit;
 
 class MyTest {
-    @Timeout(value = 167, unit = TimeUnit.MINUTES)
+    @Timeout(value = 120, unit = TimeUnit.MINUTES)
     void test() {
     }
 }
@@ -83,8 +83,8 @@ class MyTest {
 @@ -4,1 +6,1 @@
 
 class MyTest {
--   @Timeout(10000)
-+   @Timeout(value = 167, unit = TimeUnit.MINUTES)
+-   @Timeout(7200)
++   @Timeout(value = 120, unit = TimeUnit.MINUTES)
     void test() {
 ```
 </TabItem>

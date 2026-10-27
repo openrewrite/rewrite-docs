@@ -1,13 +1,13 @@
 ---
-title: "Adds missing JDBC interface methods"
-sidebar_label: "Adds missing JDBC interface methods"
+title: "Add missing JDBC interface methods"
+sidebar_label: "Add missing JDBC interface methods"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Adds missing JDBC interface methods
+# Add missing JDBC interface methods
 
 **org.openrewrite.java.migrate.JREJdbcInterfaceNewMethods**
 
@@ -36,39 +36,39 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 **Recipes**
 
-* [Adds missing method implementations](../../java/migrate/addmissingmethodimplementation)
+* [Add missing method implementations](../../java/migrate/addmissingmethodimplementation)
   * fullyQualifiedClassName: `java.sql.Connection`
   * methodPattern: `*..* abort(java.util.concurrent.Executor)`
   * methodTemplateString: `public void abort(java.util.concurrent.Executor executor) {  	// TODO Auto-generated method stub  }`
-* [Adds missing method implementations](../../java/migrate/addmissingmethodimplementation)
+* [Add missing method implementations](../../java/migrate/addmissingmethodimplementation)
   * fullyQualifiedClassName: `java.sql.Connection`
   * methodPattern: `*..* getNetworkTimeout()`
   * methodTemplateString: `public int getNetworkTimeout() {  	// TODO Auto-generated method stub  return 0; }`
-* [Adds missing method implementations](../../java/migrate/addmissingmethodimplementation)
+* [Add missing method implementations](../../java/migrate/addmissingmethodimplementation)
   * fullyQualifiedClassName: `java.sql.Connection`
   * methodPattern: `*..* getSchema()`
   * methodTemplateString: `public java.lang.String getSchema() {  	// TODO Auto-generated method stub  return null; }`
-* [Adds missing method implementations](../../java/migrate/addmissingmethodimplementation)
+* [Add missing method implementations](../../java/migrate/addmissingmethodimplementation)
   * fullyQualifiedClassName: `java.sql.Connection`
   * methodPattern: `*..* setNetworkTimeout(java.util.concurrent.Executor, int)`
   * methodTemplateString: `public void setNetworkTimeout(java.util.concurrent.Executor executor, int milliseconds) {  	// TODO Auto-generated method stub  }`
-* [Adds missing method implementations](../../java/migrate/addmissingmethodimplementation)
+* [Add missing method implementations](../../java/migrate/addmissingmethodimplementation)
   * fullyQualifiedClassName: `java.sql.Connection`
   * methodPattern: `*..* setSchema(java.lang.String)`
   * methodTemplateString: `public void setSchema(java.lang.String schema) throws java.sql.SQLException {  	// TODO Auto-generated method stub  }`
-* [Adds missing method implementations](../../java/migrate/addmissingmethodimplementation)
+* [Add missing method implementations](../../java/migrate/addmissingmethodimplementation)
   * fullyQualifiedClassName: `java.sql.Driver`
   * methodPattern: `*..* getParentLogger()`
   * methodTemplateString: `public java.util.logging.Logger getParentLogger() {  	// TODO Auto-generated method stub  return null; }`
-* [Adds missing method implementations](../../java/migrate/addmissingmethodimplementation)
+* [Add missing method implementations](../../java/migrate/addmissingmethodimplementation)
   * fullyQualifiedClassName: `java.sql.Statement`
   * methodPattern: `*..* closeOnCompletion()`
   * methodTemplateString: `public void closeOnCompletion() {  	// TODO Auto-generated method stub  }`
-* [Adds missing method implementations](../../java/migrate/addmissingmethodimplementation)
+* [Add missing method implementations](../../java/migrate/addmissingmethodimplementation)
   * fullyQualifiedClassName: `java.sql.Statement`
   * methodPattern: `*..* isCloseOnCompletion()`
   * methodTemplateString: `public boolean isCloseOnCompletion() {  	// TODO Auto-generated method stub  return false; }`
-* [Adds missing method implementations](../../java/migrate/addmissingmethodimplementation)
+* [Add missing method implementations](../../java/migrate/addmissingmethodimplementation)
   * fullyQualifiedClassName: `javax.sql.CommonDataSource`
   * methodPattern: `*..* getParentLogger()`
   * methodTemplateString: `public java.util.logging.Logger getParentLogger() {  	// TODO Auto-generated method stub  return null; }`
@@ -81,7 +81,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.JREJdbcInterfaceNewMethods
-displayName: Adds missing JDBC interface methods
+displayName: Add missing JDBC interface methods
 description: |
   Add method implementations stubs to classes that implement JDBC interfaces.
 preconditions:
@@ -157,7 +157,7 @@ This recipe is used as part of the following composite recipes:
 
 <RunRecipe
   recipeName="org.openrewrite.java.migrate.JREJdbcInterfaceNewMethods"
-  displayName="Adds missing JDBC interface methods"
+  displayName="Add missing JDBC interface methods"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-migrate-java"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA"

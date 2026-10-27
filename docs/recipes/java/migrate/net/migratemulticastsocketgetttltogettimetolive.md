@@ -11,52 +11,16 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.migrate.net.MigrateMulticastSocketGetTTLToGetTimeToLive**
 
-_Use `java.net.MulticastSocket#getTimeToLive()` instead of the deprecated `java.net.MulticastSocket#getTTL()` in Java 1.2 or higher._
+_Use `java.net.MulticastSocket#getTimeToLive()` instead of the deprecated `java.net.MulticastSocket#getTTL()` in Java 1.2 or higher. Where the result is used, it is cast back to `byte`, so that the value and the expression type stay the same._
 
 ## Recipe source
 
-[GitHub: java-net-apis.yml](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/java-net-apis.yml),
+[GitHub: MigrateMulticastSocketGetTTLToGetTimeToLive.java](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/net/MigrateMulticastSocketGetTTLToGetTimeToLive.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues),
 [Code Genome Project](https://artifacts.codegenomeproject.org/maven/org/openrewrite/recipe/rewrite-migrate-java/)
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license). Moderne customers can download precompiled artifacts from The Code Genome Project. For non-commercial use you can build the artifact from source locally.
 
-
-## Definition
-
-<Tabs groupId="recipeType">
-<TabItem value="recipe-list" label="Recipe List" >
-**Preconditions**
-
-* [Singleton](../../../core/singleton)
-
-**Recipes**
-
-* [Change method name](../../../java/changemethodname)
-  * methodPattern: `java.net.MulticastSocket getTTL()`
-  * newMethodName: `getTimeToLive`
-
-</TabItem>
-
-<TabItem value="yaml-recipe-list" label="Yaml Recipe List">
-
-```yaml
----
-type: specs.openrewrite.org/v1beta/recipe
-name: org.openrewrite.java.migrate.net.MigrateMulticastSocketGetTTLToGetTimeToLive
-displayName: Use `java.net.MulticastSocket#getTimeToLive()`
-description: |
-  Use `java.net.MulticastSocket#getTimeToLive()` instead of the deprecated `java.net.MulticastSocket#getTTL()` in Java 1.2 or higher.
-preconditions:
-  - org.openrewrite.Singleton
-recipeList:
-  - org.openrewrite.java.ChangeMethodName:
-      methodPattern: java.net.MulticastSocket getTTL()
-      newMethodName: getTimeToLive
-
-```
-</TabItem>
-</Tabs>
 
 ## Used by
 

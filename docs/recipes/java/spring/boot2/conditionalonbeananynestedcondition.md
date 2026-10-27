@@ -75,7 +75,6 @@ class ConfigClass {
     public ThingOne thingOne() {
         return new ThingOne();
     }
-
     @Bean
     @Conditional(ConditionAaOrBb.class)
     public ThingTwo thingTwo() {
@@ -116,18 +115,13 @@ class ConfigClass {
 -   @ConditionalOnBean({Aa.class, Bb.class})
 +   @Conditional(ConditionAaOrBb.class)
     public ThingOne thingOne() {
-@@ -14,0 +16,1 @@
-        return new ThingOne();
-    }
-+
-    @Bean
-@@ -15,1 +18,1 @@
+@@ -15,1 +17,1 @@
     }
     @Bean
 -   @ConditionalOnBean({Bb.class, Aa.class})
 +   @Conditional(ConditionAaOrBb.class)
     public ThingTwo thingTwo() {
-@@ -19,0 +22,14 @@
+@@ -19,0 +21,14 @@
         return new ThingTwo();
     }
 +

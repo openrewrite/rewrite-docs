@@ -13,6 +13,10 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 _Adds the `final` modifier keyword to private instance variables which are not reassigned._
 
+### Tags
+
+* [RSPEC-S9438](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S9438&open=java%3AS9438)
+
 ## Recipe source
 
 [GitHub: FinalizePrivateFields.java](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/FinalizePrivateFields.java),

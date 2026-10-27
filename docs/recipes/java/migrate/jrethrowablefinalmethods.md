@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.migrate.JREThrowableFinalMethods**
 
-_The recipe renames  `getSuppressed()` and `addSuppressed(Throwable exception)` methods  in classes that extend `java.lang.Throwable` to `myGetSuppressed` and `myAddSuppressed(Throwable)`. These methods were added to Throwable in Java 7 and are marked final which cannot be overridden._
+_The recipe renames `getSuppressed()` and `addSuppressed(Throwable exception)` methods in classes that extend `java.lang.Throwable` to `myGetSuppressed` and `myAddSuppressed(Throwable)`. These methods were added to `Throwable` in Java 7 and are marked final which cannot be overridden._
 
 ## Recipe source
 
@@ -21,6 +21,13 @@ _The recipe renames  `getSuppressed()` and `addSuppressed(Throwable exception)` 
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license). Moderne customers can download precompiled artifacts from The Code Genome Project. For non-commercial use you can build the artifact from source locally.
 
+## Options
+
+| Type | Name | Description | Example |
+| --- | --- | --- | --- |
+| `String` | methodPatternAddSuppressed | *Optional*. A method pattern matching the `addSuppressed(Throwable)` declarations and invocations to rename to `myAddSuppressed`. | `*..* addSuppressed(Throwable)` |
+| `String` | methodPatternGetSuppressed | *Optional*. A method pattern matching the `getSuppressed()` declarations and invocations to rename to `myGetSuppressed`. | `*..* getSuppressed()` |
+
 
 ## Used by
 
@@ -29,6 +36,12 @@ This recipe is used as part of the following composite recipes:
 * [Migrate to Java 7](/recipes/java/migrate/upgradetojava7.md)
 
 ## Example
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|methodPatternAddSuppressed|`*..* add1Suppressed(Throwable)`|
+|methodPatternGetSuppressed|`*..* get1Suppressed()`|
 
 
 <Tabs groupId="beforeAfter">
@@ -132,6 +145,7 @@ public class ThrowableWithIllegalOverrrides extends Throwable {
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-migrate-java"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA"
+  optionalCliOptions={' --recipe-option "methodPatternAddSuppressed=\'*..* addSuppressed(Throwable)\'" --recipe-option "methodPatternGetSuppressed=\'*..* getSuppressed()\'"'}
   hasDataTables
 />
 

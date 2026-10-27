@@ -1,17 +1,17 @@
 ---
-title: "Remove Security Policy"
-sidebar_label: "Remove Security Policy"
+title: "Remove `Policy.setPolicy(..)` calls"
+sidebar_label: "Remove `Policy.setPolicy(..)` calls"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Remove Security Policy
+# Remove `Policy.setPolicy(..)` calls
 
 **org.openrewrite.java.migrate.RemoveSecurityPolicy**
 
-_The Security Manager API is unsupported in Java 24. This recipe will remove the use of `java.security.Policy`._
+_The Security Manager API is unsupported in Java 24. This recipe removes calls to `java.security.Policy#setPolicy(..)`._
 
 ### Tags
 
@@ -61,9 +61,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.RemoveSecurityPolicy
-displayName: Remove Security Policy
+displayName: Remove `Policy.setPolicy(..)` calls
 description: |
-  The Security Manager API is unsupported in Java 24. This recipe will remove the use of `java.security.Policy`.
+  The Security Manager API is unsupported in Java 24. This recipe removes calls to `java.security.Policy#setPolicy(..)`.
 tags:
   - deprecation
   - java25
@@ -97,7 +97,7 @@ This recipe is used as part of the following composite recipes:
 
 <RunRecipe
   recipeName="org.openrewrite.java.migrate.RemoveSecurityPolicy"
-  displayName="Remove Security Policy"
+  displayName="Remove `Policy.setPolicy(..)` calls"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-migrate-java"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA"

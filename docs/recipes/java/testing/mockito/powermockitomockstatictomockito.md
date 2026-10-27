@@ -61,26 +61,22 @@ import static org.mockito.Mockito.mockStatic;
 import java.util.Calendar;
 
 import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.MockedStatic;
 
 public class MyTest {
-
     private MockedStatic<Calendar> mockedCalendar;
-
-    @BeforeEach
-    void setUpStaticMocks() {
-        mockedCalendar = mockStatic(Calendar.class);
-    }
 
     @AfterEach
     void tearDownStaticMocks() {
-        mockedCalendar.closeOnDemand();
+        if (mockedCalendar != null) {
+            mockedCalendar.closeOnDemand();
+        }
     }
 
     @Test
     void testStaticMethod() {
+        mockedCalendar = mockStatic(Calendar.class);
     }
 }
 ```
@@ -89,43 +85,43 @@ public class MyTest {
 <TabItem value="diff" label="Diff" >
 
 ```diff
-@@ -5,0 +5,2 @@
+@@ -5,0 +5,1 @@
 import java.util.Calendar;
 
 +import org.junit.jupiter.api.AfterEach;
-+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-@@ -6,1 +8,1 @@
+@@ -6,1 +7,1 @@
 
 import org.junit.jupiter.api.Test;
 -import org.powermock.core.classloader.annotations.PrepareForTest;
 +import org.mockito.MockedStatic;
 
-@@ -8,1 +10,0 @@
+@@ -8,1 +9,0 @@
 import org.powermock.core.classloader.annotations.PrepareForTest;
 
 -@PrepareForTest({Calendar.class})
 public class MyTest {
-@@ -11,0 +12,12 @@
+@@ -10,0 +10,1 @@
+@PrepareForTest({Calendar.class})
+public class MyTest {
++   private MockedStatic<Calendar> mockedCalendar;
+
+@@ -11,0 +12,7 @@
 public class MyTest {
 
-+   private MockedStatic<Calendar> mockedCalendar;
-+
-+   @BeforeEach
-+   void setUpStaticMocks() {
-+       mockedCalendar = mockStatic(Calendar.class);
-+   }
-+
 +   @AfterEach
 +   void tearDownStaticMocks() {
-+       mockedCalendar.closeOnDemand();
++       if (mockedCalendar != null) {
++           mockedCalendar.closeOnDemand();
++       }
 +   }
 +
     @Test
-@@ -13,1 +26,0 @@
+@@ -13,1 +21,1 @@
     @Test
     void testStaticMethod() {
 -       mockStatic(Calendar.class);
++       mockedCalendar = mockStatic(Calendar.class);
     }
 ```
 </TabItem>

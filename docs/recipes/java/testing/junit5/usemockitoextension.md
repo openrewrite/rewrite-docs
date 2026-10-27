@@ -42,7 +42,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 **Recipes**
 
-* [Mockito 4.x upgrade](../../../java/testing/mockito/mockito1to4migration)
+* [Upgrade to Mockito 4.x](../../../java/testing/mockito/mockito1to4migration)
 * [Add Gradle or Maven dependency](../../../java/dependencies/adddependency)
   * groupId: `org.mockito`
   * artifactId: `mockito-junit-jupiter`
@@ -52,6 +52,14 @@ This recipe is available under the [Moderne Source Available License](https://do
   * scope: `test`
   * acceptTransitive: `true`
 * [Replace JUnit 4 MockitoJUnitRunner with junit-jupiter MockitoExtension](../../../java/testing/mockito/mockitojunitrunnertoextension)
+* [Add Gradle or Maven dependency](../../../java/dependencies/adddependency)
+  * groupId: `org.mockito`
+  * artifactId: `mockito-junit-jupiter`
+  * version: `4.x`
+  * onlyIfUsing: `org.powermock.modules.junit4.PowerMockRunner`
+  * familyPattern: `org.mockito`
+  * scope: `test`
+  * acceptTransitive: `true`
 * [Add Mockito Jupiter integration for migrated Mockito rules](../../../java/testing/junit5/addmockitojupiterforrules)
 
 </TabItem>
@@ -82,6 +90,14 @@ recipeList:
       scope: test
       acceptTransitive: true
   - org.openrewrite.java.testing.mockito.MockitoJUnitRunnerToExtension
+  - org.openrewrite.java.dependencies.AddDependency:
+      groupId: org.mockito
+      artifactId: mockito-junit-jupiter
+      version: 4.x
+      onlyIfUsing: org.powermock.modules.junit4.PowerMockRunner
+      familyPattern: org.mockito
+      scope: test
+      acceptTransitive: true
   - org.openrewrite.java.testing.junit5.AddMockitoJupiterForRules
 
 ```
@@ -93,6 +109,191 @@ recipeList:
 This recipe is used as part of the following composite recipes:
 
 * [JUnit Jupiter migration from JUnit 4.x](/recipes/java/testing/junit5/junit4to5migration.md)
+
+## Examples
+##### Example 1
+`MockitoRuleDependencyTest#addsMatchingJupiterDependencyForModernMockitoRule`
+
+
+###### Unchanged
+```java
+import org.junit.Rule;
+import org.mockito.junit.MockitoJUnit;
+import org.mockito.junit.MockitoRule;
+class Example {
+    @Rule public MockitoRule mocks = MockitoJUnit.rule();
+}
+```
+
+###### Unchanged
+```mavenProject
+test
+```
+
+<Tabs groupId="beforeAfter">
+<TabItem value="pom.xml" label="pom.xml">
+
+
+###### Before
+```xml title="pom.xml"
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>example</groupId>
+    <artifactId>test</artifactId>
+    <version>1</version>
+    <properties>
+        <mockito.version>5.23.0</mockito.version>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>${mockito.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+</project>
+```
+
+###### After
+```xml title="pom.xml"
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>example</groupId>
+    <artifactId>test</artifactId>
+    <version>1</version>
+    <properties>
+        <mockito.version>5.23.0</mockito.version>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>${mockito.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-junit-jupiter</artifactId>
+            <version>${mockito.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+</project>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- pom.xml
++++ pom.xml
+@@ -16,0 +16,6 @@
+            <scope>test</scope>
+        </dependency>
++       <dependency>
++           <groupId>org.mockito</groupId>
++           <artifactId>mockito-junit-jupiter</artifactId>
++           <version>${mockito.version}</version>
++           <scope>test</scope>
++       </dependency>
+    </dependencies>
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`MockitoRuleDependencyTest#addsMatchingJupiterDependencyForModernMockitoRule`
+
+
+###### Unchanged
+```java
+import org.junit.Rule;
+import org.mockito.junit.MockitoJUnit;
+import org.mockito.junit.MockitoRule;
+class Example {
+    @Rule public MockitoRule mocks = MockitoJUnit.rule();
+}
+```
+
+###### Unchanged
+```mavenProject
+test
+```
+
+<Tabs groupId="beforeAfter">
+<TabItem value="pom.xml" label="pom.xml">
+
+
+###### Before
+```xml title="pom.xml"
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>example</groupId>
+    <artifactId>test</artifactId>
+    <version>1</version>
+    <properties>
+        <mockito.version>5.23.0</mockito.version>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>${mockito.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+</project>
+```
+
+###### After
+```xml title="pom.xml"
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>example</groupId>
+    <artifactId>test</artifactId>
+    <version>1</version>
+    <properties>
+        <mockito.version>5.23.0</mockito.version>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>${mockito.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-junit-jupiter</artifactId>
+            <version>${mockito.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+</project>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- pom.xml
++++ pom.xml
+@@ -16,0 +16,6 @@
+            <scope>test</scope>
+        </dependency>
++       <dependency>
++           <groupId>org.mockito</groupId>
++           <artifactId>mockito-junit-jupiter</artifactId>
++           <version>${mockito.version}</version>
++           <scope>test</scope>
++       </dependency>
+    </dependencies>
+```
+</TabItem>
+</Tabs>
 
 
 ## Usage
@@ -132,6 +333,25 @@ _Tests disabled because they use a PowerMock feature with no Mockito equivalent.
 | Disabled element | The test method that was disabled, or the class name when the usage sits outside a test method and the whole class had to be disabled. |
 | Scope | `METHOD` when a single test was disabled, `CLASS` when the whole test class was. |
 | Reason | The PowerMock usage that cannot be migrated. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
+
+### Maven metadata failures
+**org.openrewrite.maven.table.MavenMetadataFailures**
+
+_Attempts to resolve maven metadata that failed._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Group id | The groupId of the artifact for which the metadata download failed. |
+| Artifact id | The artifactId of the artifact for which the metadata download failed. |
+| Version | The version of the artifact for which the metadata download failed. |
+| Maven repository | The URL of the Maven repository that the metadata download failed on. |
+| Snapshots | Does the repository support snapshots. |
+| Releases | Does the repository support releases. |
+| Failure | The reason the metadata download failed. |
 
 </TabItem>
 

@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.github.security.PinGitHubActionsToSha**
 
-_Replaces mutable tag or branch references in GitHub Actions `uses:` declarations with immutable commit SHAs. A static mapping of well-known actions is checked first; if the action is not found, the GitHub API is used to resolve the reference at recipe run time. By default only third-party actions are pinned; set `pinOfficialActions` to include actions from the `actions` and `github` organizations. To pin only a specific allow-list of actions, set `includedActions`._
+_Replaces mutable tag or branch references in GitHub Actions `uses:` declarations with immutable commit SHAs, using a built-in mapping of well-known actions. The recipe makes no network calls; references not found in the mapping are left unchanged and listed in a data table. By default only third-party actions are pinned; set `pinOfficialActions` to include actions from the `actions` and `github` organizations. To pin only a subset of the mapped actions, set `includedActions`._
 
 ### Tags
 
@@ -33,9 +33,8 @@ This recipe is available under the [Moderne Source Available License](https://do
 | Type | Name | Description | Example |
 | --- | --- | --- | --- |
 | `Boolean` | pinOfficialActions | *Optional*. When set to `true`, also pins actions from official GitHub organizations (e.g., `actions/*`, `github/*`). Defaults to `false`, meaning only third-party actions are pinned. |  |
-| `String` | githubApiToken | *Optional*. A GitHub personal access token used to resolve tags/branches to commit SHAs via the GitHub API. Only needed for actions not found in the built-in static mapping. Without a token, unauthenticated requests are rate-limited to 60/hour. | `ghp_exampleTokenNotARealToken` |
-| `List` | trustedOwners | *Optional*. Optional list of trusted owners/organizations, actions that belong to these organizations will not be pinned. This option overrides the 'Included actions' list. | `my-organization, my-other-organization` |
-| `List` | includedActions | *Optional*. Optional allow-list of actions to pin. When provided, only `uses:` references matching one of these patterns are pinned; all other actions are left untouched. Patterns may be `owner/repo` (exact match), `owner/*` (any repo in an org), or `owner/repo/subpath` (exact match including a subpath). When omitted or empty, all third-party actions (and optionally official actions, per `pinOfficialActions`) are pinned. | `codecov/codecov-action` |
+| `List` | trustedOwners | *Optional*. Optional list of trusted owners/organizations, actions that belong to these organizations will not be pinned. This option overrides the 'Included actions' list. | `gradle` |
+| `List` | includedActions | *Optional*. Optional allow-list of actions to pin. When provided, only `uses:` references matching one of these patterns are pinned; all other actions are left untouched. Each pattern must match an action in the built-in mapping of known SHAs; it narrows which mapped actions are pinned, and cannot add new ones. Patterns may be `owner/repo` (exact match), `owner/*` (any repo in an org), or `owner/repo/subpath` (exact match including a subpath). When omitted or empty, all third-party actions (and optionally official actions, per `pinOfficialActions`) are pinned. | `codecov/codecov-action` |
 
 ## Example
 
@@ -43,7 +42,6 @@ This recipe is available under the [Moderne Source Available License](https://do
 | Parameter | Value |
 | --- | --- |
 |pinOfficialActions|`false`|
-|githubApiToken|`null`|
 |trustedOwners|`null`|
 |includedActions|`null`|
 
@@ -101,7 +99,7 @@ jobs:
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-github-actions"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_GITHUB_ACTIONS"
-  optionalCliOptions={' --recipe-option "pinOfficialActions=true" --recipe-option "githubApiToken=ghp_exampleTokenNotARealToken" --recipe-option "trustedOwners=my-organization, my-other-organization" --recipe-option "includedActions=codecov/codecov-action"'}
+  optionalCliOptions={' --recipe-option "pinOfficialActions=true" --recipe-option "trustedOwners=gradle" --recipe-option "includedActions=codecov/codecov-action"'}
   hasDataTables
 />
 
@@ -117,6 +115,21 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.github.table.UnresolvedActionShas" label="UnresolvedActionShas">
+
+### Unresolved action SHAs
+**org.openrewrite.github.table.UnresolvedActionShas**
+
+_Action references that were eligible for pinning, but not found in the built-in mapping of known action SHAs._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Source path | The workflow or action file containing the reference. |
+| Action | The action path, such as `owner/repo` or `owner/repo/subpath`. |
+| Reference | The tag or branch the action is referenced by. |
+
+</TabItem>
+
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results

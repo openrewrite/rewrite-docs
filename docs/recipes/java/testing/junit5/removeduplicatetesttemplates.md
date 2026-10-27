@@ -1,17 +1,17 @@
 ---
-title: "Remove duplicates uses of @TestTemplate implementations for a single method"
-sidebar_label: "Remove duplicates uses of @TestTemplate implementations for a single method"
+title: "Remove duplicate uses of `@TestTemplate` implementations for a single method"
+sidebar_label: "Remove duplicate uses of `@TestTemplate` implementations for a single method"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Remove duplicates uses of @TestTemplate implementations for a single method
+# Remove duplicate uses of `@TestTemplate` implementations for a single method
 
 **org.openrewrite.java.testing.junit5.RemoveDuplicateTestTemplates**
 
-_Remove duplicates uses of @TestTemplate implementations for a single method._
+_Remove `@Test` from methods that are also annotated with `@RepeatedTest`, which would otherwise run both as a regular test and as a repeated test._
 
 ## Recipe source
 
@@ -86,7 +86,7 @@ class MyTest {
 
 <RunRecipe
   recipeName="org.openrewrite.java.testing.junit5.RemoveDuplicateTestTemplates"
-  displayName="Remove duplicates uses of @TestTemplate implementations for a single method"
+  displayName="Remove duplicate uses of `@TestTemplate` implementations for a single method"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-testing-frameworks"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_TESTING_FRAMEWORKS"

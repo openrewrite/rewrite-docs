@@ -1,17 +1,17 @@
 ---
-title: "Prefer `EnumSet of(..)`"
-sidebar_label: "Prefer `EnumSet of(..)`"
+title: "Prefer `EnumSet.of(..)`"
+sidebar_label: "Prefer `EnumSet.of(..)`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Prefer `EnumSet of(..)`
+# Prefer `EnumSet.of(..)`
 
 **org.openrewrite.java.migrate.util.UseEnumSetOf**
 
-_Prefer `EnumSet of(..)` instead of using `Set of(..)` when the arguments are enums in Java 9 or higher._
+_Prefer `EnumSet.of(..)` instead of using `Set.of(..)` when the arguments are enums in Java 9 or higher._
 
 ## Recipe source
 
@@ -97,7 +97,7 @@ import java.util.Set;
 
 <RunRecipe
   recipeName="org.openrewrite.java.migrate.util.UseEnumSetOf"
-  displayName="Prefer `EnumSet of(..)`"
+  displayName="Prefer `EnumSet.of(..)`"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-migrate-java"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA"

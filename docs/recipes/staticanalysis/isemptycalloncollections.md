@@ -11,12 +11,11 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.staticanalysis.IsEmptyCallOnCollections**
 
-_Also check for _not_ `isEmpty()` when testing for not equal to zero size. Using `isEmpty()` communicates intent more clearly than comparing `size()` to zero, and for some collection implementations `isEmpty()` can be more efficient since `size()` may require traversal._
+_Replaces comparisons of `size()` to zero with `isEmpty()`, or with `!isEmpty()` when testing for a non-zero size. Using `isEmpty()` communicates intent more clearly than comparing `size()` to zero, and for some collection implementations `isEmpty()` can be more efficient since `size()` may require traversal._
 
 ### Tags
 
 * [RSPEC-S1155](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S1155&open=java%3AS1155)
-* [RSPEC-S3981](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S3981&open=java%3AS3981)
 
 ## Recipe source
 

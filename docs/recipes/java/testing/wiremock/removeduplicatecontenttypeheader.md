@@ -28,6 +28,59 @@ This recipe is used as part of the following composite recipes:
 
 * [Keep a single `Content-Type` response header while still on WireMock 3](/recipes/java/testing/wiremock/removeduplicatecontenttypeheaders.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import static com.github.tomakehurst.wiremock.client.WireMock.aResponse;
+
+import com.github.tomakehurst.wiremock.client.ResponseDefinitionBuilder;
+
+class Stubs {
+    ResponseDefinitionBuilder response() {
+        return aResponse()
+                .withStatus(200)
+                .withHeader("Content-Type", "text/plain", "application/json")
+                .withBody("{}");
+    }
+}
+```
+
+###### After
+```java
+import static com.github.tomakehurst.wiremock.client.WireMock.aResponse;
+
+import com.github.tomakehurst.wiremock.client.ResponseDefinitionBuilder;
+
+class Stubs {
+    ResponseDefinitionBuilder response() {
+        return aResponse()
+                .withStatus(200)
+                .withHeader("Content-Type", "application/json")
+                .withBody("{}");
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -9,1 +9,1 @@
+        return aResponse()
+                .withStatus(200)
+-               .withHeader("Content-Type", "text/plain", "application/json")
++               .withHeader("Content-Type", "application/json")
+                .withBody("{}");
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

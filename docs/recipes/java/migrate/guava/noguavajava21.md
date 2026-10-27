@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.migrate.guava.NoGuavaJava21**
 
-_Guava filled in important gaps in the Java standard library and still does. But at least some of Guava's API surface area is covered by the Java standard library now, and some projects may be able to remove Guava altogether if they migrate to standard library for these functions._
+_Replace Guava's `Maps` and `Sets` `new*WithExpectedSize` factories and the primitive `constrainToRange` methods with their Java standard library equivalents on Java 21 or higher._
 
 ### Tags
 
@@ -56,7 +56,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.guava.NoGuavaJava21
 displayName: Prefer the Java 21 standard library instead of Guava
 description: |
-  Guava filled in important gaps in the Java standard library and still does. But at least some of Guava's API surface area is covered by the Java standard library now, and some projects may be able to remove Guava altogether if they migrate to standard library for these functions.
+  Replace Guava's `Maps` and `Sets` `new*WithExpectedSize` factories and the primitive `constrainToRange` methods with their Java standard library equivalents on Java 21 or higher.
 tags:
   - guava
   - java21

@@ -40,6 +40,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrates to Apache Commons Collections 4.x](/recipes/apache/commons/collections/upgradeapachecommonscollections_3_4.md)
 * [Prefer `System.lineSeparator()`](/recipes/apache/commons/io/usesystemlineseparator.md)
 * [Prefer `java.nio.charset.StandardCharsets`](/recipes/apache/commons/lang3/usestandardcharsets.md)
+* [Use `Logger#getGlobal()`](/recipes/java/migrate/logging/migrateloggerglobaltogetglobal.md)
 
 
 ## Usage

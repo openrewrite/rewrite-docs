@@ -25,7 +25,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 | Type | Name | Description | Example |
 | --- | --- | --- | --- |
-| `String` | nonNullAnnotationClass | *Optional*. The fully qualified name of the @NonNull annotation. The annotation should be meta annotated with `@Target(TYPE_USE)`. Defaults to `org.jspecify.annotations.NonNull` | `org.jspecify.annotations.NonNull` |
+| `String` | nonNullAnnotationClass | *Optional*. The fully qualified name of the `@NonNull` annotation. The annotation should be meta annotated with `@Target(TYPE_USE)`. Defaults to `org.jspecify.annotations.NonNull`. | `org.jspecify.annotations.NonNull` |
 
 
 ## Used by
@@ -51,7 +51,7 @@ This recipe is used as part of the following composite recipes:
 class Test {
     public void process(String value) {
         if (value == null) {
-            throw new IllegalArgumentException("value cannot be null");
+            throw new IllegalArgumentException();
         }
         System.out.println(value);
     }
@@ -81,7 +81,7 @@ class Test {
 class Test {
 -   public void process(String value) {
 -       if (value == null) {
--           throw new IllegalArgumentException("value cannot be null");
+-           throw new IllegalArgumentException();
 -       }
 +   public void process(@NonNull String value) {
         System.out.println(value);

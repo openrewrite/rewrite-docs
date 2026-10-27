@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.migrate.UpgradeToJava17**
 
-_This recipe will apply changes commonly needed when migrating to Java 17. Specifically, for those applications that are built on Java 8, this recipe will update and add dependencies on J2EE libraries that are no longer directly bundled with the JDK. This recipe will also replace deprecated API with equivalents when there is a clear migration strategy. Build files will also be updated to use Java 17 as the target/source and plugins will be also be upgraded to versions that are compatible with Java 17._
+_This recipe will apply changes commonly needed when migrating to Java 17. Specifically, for those applications that are built on Java 8, this recipe will update and add dependencies on J2EE libraries that are no longer directly bundled with the JDK. This recipe will also replace deprecated API with equivalents when there is a clear migration strategy. Build files will also be updated to use Java 17 as the target/source and plugins will also be upgraded to versions that are compatible with Java 17._
 
 ### Tags
 
@@ -40,13 +40,14 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 **Recipes**
 
+* [Enable Lombok annotation processor](../../java/migrate/enablelombokannotationprocessor)
 * [Migrate to Java 11](../../java/migrate/java8tojava11)
 * [Upgrade build to Java 17](../../java/migrate/upgradebuildtojava17)
-* [Changes code to use Java 17's `instanceof` pattern matching](../../staticanalysis/instanceofpatternmatch)
+* [Change code to use Java 17's `instanceof` pattern matching](../../staticanalysis/instanceofpatternmatch)
 * [Add `@Serial` annotation to `serialVersionUID`](../../staticanalysis/addserialannotationtoserialversionuid)
 * [Remove `Runtime.traceInstructions(boolean)` and `Runtime.traceMethodCalls` methods](../../java/migrate/removedruntimetracemethods)
 * [Change `javax.tools.ToolProvider` methods calls to static](../../java/migrate/removedtoolproviderconstructor)
-* [Change `java.lang.reflect.Modifier` and ` java.lang.invoke.ConstantBootstraps` method calls to static](../../java/migrate/removedmodifierandconstantbootstrapsconstructors)
+* [Change `java.lang.reflect.Modifier` and `java.lang.invoke.ConstantBootstraps` method calls to static](../../java/migrate/removedmodifierandconstantbootstrapsconstructors)
 * [Add explicit import for `Record` classes](../../java/migrate/lang/explicitrecordimport)
 * [Use text blocks](../../java/migrate/lang/usetextblocks)
   * convertStringsWithoutNewlines: `false`
@@ -60,7 +61,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Replace `SSLSession.getPeerCertificateChain()` method](../../java/migrate/removedsslsessiongetpeercertificatechainmethodimpl)
 * [Replace `com.sun.net.ssl` package](../../java/migrate/sunnetsslpackageunavailable)
 * [Replace `RMIConnectorServer.CREDENTIAL_TYPES` constant](../../java/migrate/removedrmiconnectorservercredentialtypesconstant)
-* [Replace `finalize` method in `java.io.FileInputStream`  and `java.io.FileOutputStream`](../../java/migrate/removedfileiofinalizemethods)
+* [Replace `finalize` method in `java.io.FileInputStream` and `java.io.FileOutputStream`](../../java/migrate/removedfileiofinalizemethods)
 * [Upgrade plugins to Java 17 compatible versions](../../java/migrate/upgradepluginsforjava17)
 * [Upgrade Gradle or Maven dependency versions](../../java/dependencies/upgradedependencyversion)
   * groupId: `com.google.inject`
@@ -88,7 +89,6 @@ This recipe is available under the [Moderne Source Available License](https://do
   * artifactId: `mapstruct*`
   * newVersion: `1.6.x`
 * [Add `lombok-mapstruct-binding` when both MapStruct and Lombok are used](../../java/migrate/addlombokmapstructbinding)
-* [Enable Lombok annotation processor](../../java/migrate/enablelombokannotationprocessor)
 
 </TabItem>
 
@@ -100,12 +100,13 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.UpgradeToJava17
 displayName: Migrate to Java 17
 description: |
-  This recipe will apply changes commonly needed when migrating to Java 17. Specifically, for those applications that are built on Java 8, this recipe will update and add dependencies on J2EE libraries that are no longer directly bundled with the JDK. This recipe will also replace deprecated API with equivalents when there is a clear migration strategy. Build files will also be updated to use Java 17 as the target/source and plugins will be also be upgraded to versions that are compatible with Java 17.
+  This recipe will apply changes commonly needed when migrating to Java 17. Specifically, for those applications that are built on Java 8, this recipe will update and add dependencies on J2EE libraries that are no longer directly bundled with the JDK. This recipe will also replace deprecated API with equivalents when there is a clear migration strategy. Build files will also be updated to use Java 17 as the target/source and plugins will also be upgraded to versions that are compatible with Java 17.
 tags:
   - java17
 preconditions:
   - org.openrewrite.Singleton
 recipeList:
+  - org.openrewrite.java.migrate.EnableLombokAnnotationProcessor
   - org.openrewrite.java.migrate.Java8toJava11
   - org.openrewrite.java.migrate.UpgradeBuildToJava17
   - org.openrewrite.staticanalysis.InstanceOfPatternMatch
@@ -154,7 +155,6 @@ recipeList:
       artifactId: mapstruct*
       newVersion: 1.6.x
   - org.openrewrite.java.migrate.AddLombokMapstructBinding
-  - org.openrewrite.java.migrate.EnableLombokAnnotationProcessor
 
 ```
 </TabItem>

@@ -16,8 +16,8 @@ _Recipes that include further recipes, often including the individual recipes be
 ## Recipes
 
 * [Assertion arguments should be passed in the correct order](./assertionsargumentorder.md)
+* [Find test classes without tests](./findtestclasseswithouttests.md)
 * [Include an assertion in tests](./testsshouldincludeassertions.md)
-* [Junit `assertTrue(a == b)` to `assertEquals(a,b)`](./asserttruecomparisontoassertequals.md)
 * [Kotlin test methods should have return type `Unit`](./kotlintestmethodsshouldreturnunit.md)
 * [Remove JUnit `assertTrue(true)` and `assertFalse(false)`](./assertliteralbooleanremovedrecipe.md)
 * [Remove empty tests without comments](./removeemptytests.md)
@@ -30,6 +30,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Replace JUnit `assertFalse(a.equals(b))` to `assertNotEquals(a,b)`](./assertfalseequalstoassertnotequals.md)
 * [Replace JUnit `assertNotEquals(false, &lt;boolean&gt;)` to `assertFalse(&lt;boolean&gt;)` / `assertTrue(&lt;boolean&gt;)`](./assertnotequalsbooleantoassertboolean.md)
 * [Replace JUnit `assertTrue(!&lt;boolean&gt;)` to `assertFalse(&lt;boolean&gt;)`](./asserttruenegationtoassertfalse.md)
+* [Replace JUnit `assertTrue(a == b)` with `assertEquals(a, b)`](./asserttruecomparisontoassertequals.md)
 * [Replace JUnit `assertTrue(a == null)` to `assertNull(a)`](./asserttruenulltoassertnull.md)
 * [Replace JUnit `assertTrue(a.equals(b))` to `assertEquals(a,b)`](./asserttrueequalstoassertequals.md)
 * [Replace JUnit `assertTrue(false)` and `assertFalse(true)` with `fail()`](./assertliteralbooleantofailrecipes$withoutmessagerecipe.md)

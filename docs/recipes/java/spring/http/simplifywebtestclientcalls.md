@@ -1,17 +1,17 @@
 ---
-title: "Simplify WebTestClient expressions"
-sidebar_label: "Simplify WebTestClient expressions"
+title: "Simplify `WebTestClient` expressions"
+sidebar_label: "Simplify `WebTestClient` expressions"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Simplify WebTestClient expressions
+# Simplify `WebTestClient` expressions
 
 **org.openrewrite.java.spring.http.SimplifyWebTestClientCalls**
 
-_Simplifies various types of WebTestClient expressions to improve code readability._
+_Simplifies various types of `WebTestClient` expressions to improve code readability._
 
 ## Recipe source
 
@@ -26,7 +26,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 This recipe is used as part of the following composite recipes:
 
-* [Replace String literals with Spring constants](/recipes/java/spring/boot3/replacestringliteralswithconstants.md)
+* [Spring Boot 3.3 best practices (only)](/recipes/java/spring/boot3/springboot3bestpracticesonly.md)
 
 ## Example
 
@@ -90,7 +90,7 @@ class Test {
 
 <RunRecipe
   recipeName="org.openrewrite.java.spring.http.SimplifyWebTestClientCalls"
-  displayName="Simplify WebTestClient expressions"
+  displayName="Simplify `WebTestClient` expressions"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-spring"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING"

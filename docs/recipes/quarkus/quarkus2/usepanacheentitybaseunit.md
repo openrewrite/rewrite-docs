@@ -1,6 +1,6 @@
 ---
-title: "Use `Uni&lt;T extends PanacheEntityBase&gt;`"
-sidebar_label: "Use `Uni&lt;T extends PanacheEntityBase&gt;`"
+title: "Use `Uni<T extends PanacheEntityBase>`"
+sidebar_label: "Use `Uni<T extends PanacheEntityBase>`"
 ---
 
 import Tabs from '@theme/Tabs';

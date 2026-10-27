@@ -1,17 +1,17 @@
 ---
-title: "Remove author tags from JavaDocs"
-sidebar_label: "Remove author tags from JavaDocs"
+title: "Remove author tags from Javadoc"
+sidebar_label: "Remove author tags from Javadoc"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Remove author tags from JavaDocs
+# Remove author tags from Javadoc
 
 **org.openrewrite.staticanalysis.RemoveJavaDocAuthorTag**
 
-_Removes author tags from JavaDocs to reduce code maintenance._
+_Removes author tags from Javadoc comments to reduce code maintenance._
 
 ## Recipe source
 
@@ -65,7 +65,7 @@ class Test {}
 
 <RunRecipe
   recipeName="org.openrewrite.staticanalysis.RemoveJavaDocAuthorTag"
-  displayName="Remove author tags from JavaDocs"
+  displayName="Remove author tags from Javadoc"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-static-analysis"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_STATIC_ANALYSIS"

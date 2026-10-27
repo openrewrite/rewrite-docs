@@ -1,13 +1,13 @@
 ---
-title: "Remove unnecessary `use-authorization-manager` for message security in Spring security 6"
-sidebar_label: "Remove unnecessary `use-authorization-manager` for message security in Spring security 6"
+title: "Remove unnecessary `use-authorization-manager` for message security in Spring Security 6"
+sidebar_label: "Remove unnecessary `use-authorization-manager` for message security in Spring Security 6"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Remove unnecessary `use-authorization-manager` for message security in Spring security 6
+# Remove unnecessary `use-authorization-manager` for message security in Spring Security 6
 
 **org.openrewrite.java.spring.security6.RemoveUseAuthorizationManager**
 
@@ -50,7 +50,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.spring.security6.RemoveUseAuthorizationManager
-displayName: Remove unnecessary `use-authorization-manager` for message security in Spring security 6
+displayName: Remove unnecessary `use-authorization-manager` for message security in Spring Security 6
 description: |
   In Spring Security 6, `&lt;websocket-message-broker&gt;` defaults `use-authorization-manager` to `true`. So, the `use-authorization-manager` attribute for message security is no longer needed and can be removed.
 tags:
@@ -79,7 +79,7 @@ This recipe is used as part of the following composite recipes:
 
 <RunRecipe
   recipeName="org.openrewrite.java.spring.security6.RemoveUseAuthorizationManager"
-  displayName="Remove unnecessary `use-authorization-manager` for message security in Spring security 6"
+  displayName="Remove unnecessary `use-authorization-manager` for message security in Spring Security 6"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-spring"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING"

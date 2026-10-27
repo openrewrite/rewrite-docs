@@ -1,13 +1,13 @@
 ---
-title: "Attributes with automatically generated values require configuration"
-sidebar_label: "Attributes with automatically generated values require configuration"
+title: "Add a `@TableGenerator` to automatically generated `@GeneratedValue` attributes"
+sidebar_label: "Add a `@TableGenerator` to automatically generated `@GeneratedValue` attributes"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Attributes with automatically generated values require configuration
+# Add a `@TableGenerator` to automatically generated `@GeneratedValue` attributes
 
 **org.openrewrite.java.migrate.javax.AddTableGenerator**
 
@@ -126,7 +126,7 @@ public class GeneratedValueExample  {
 
 <RunRecipe
   recipeName="org.openrewrite.java.migrate.javax.AddTableGenerator"
-  displayName="Attributes with automatically generated values require configuration"
+  displayName="Add a `@TableGenerator` to automatically generated `@GeneratedValue` attributes"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-migrate-java"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA"

@@ -1,17 +1,17 @@
 ---
-title: "JUnit `assertArrayEquals` to assertJ"
-sidebar_label: "JUnit `assertArrayEquals` to assertJ"
+title: "JUnit `assertArrayEquals` to AssertJ"
+sidebar_label: "JUnit `assertArrayEquals` to AssertJ"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# JUnit `assertArrayEquals` to assertJ
+# JUnit `assertArrayEquals` to AssertJ
 
 **org.openrewrite.java.testing.assertj.JUnitAssertArrayEqualsToAssertThat**
 
-_Convert JUnit-style `assertArrayEquals()` to AssertJ's `assertThat().contains()` equivalents._
+_Convert JUnit-style `assertArrayEquals()` to AssertJ's `assertThat().containsExactly()` equivalents._
 
 ## Recipe source
 
@@ -98,7 +98,7 @@ import org.junit.jupiter.api.Test;
 
 <RunRecipe
   recipeName="org.openrewrite.java.testing.assertj.JUnitAssertArrayEqualsToAssertThat"
-  displayName="JUnit `assertArrayEquals` to assertJ"
+  displayName="JUnit `assertArrayEquals` to AssertJ"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-testing-frameworks"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_TESTING_FRAMEWORKS"

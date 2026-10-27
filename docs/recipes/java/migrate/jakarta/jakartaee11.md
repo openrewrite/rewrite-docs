@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.migrate.jakarta.JakartaEE11**
 
-_These recipes help with the Migration to Jakarta EE 11, flagging and updating deprecated methods._
+_Migrate to Jakarta EE 11 by applying the Jakarta EE 10 migration, and then upgrading the Jakarta EE platform, Jakarta Faces and Maven plugins to their Jakarta EE 11 versions._
 
 ### Tags
 
@@ -42,8 +42,8 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 * [Migrate to Jakarta EE 10](../../../java/migrate/jakarta/jakartaee10)
 * [Jakarta Faces 4.0 to 4.1](../../../java/migrate/jakarta/faces4xmigrationtofaces41x)
-* [Update Jakarta EE Platform Dependencies to 11.0.x](../../../java/migrate/jakarta/updatejakartaplatform11)
-* [Update Plugins for Jakarta EE 11](../../../java/migrate/jakarta/migratepluginsforjakarta11)
+* [Update Jakarta EE platform dependencies to 11.0.x](../../../java/migrate/jakarta/updatejakartaplatform11)
+* [Update plugins for Jakarta EE 11](../../../java/migrate/jakarta/migratepluginsforjakarta11)
 
 </TabItem>
 
@@ -55,7 +55,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.jakarta.JakartaEE11
 displayName: Migrate to Jakarta EE 11
 description: |
-  These recipes help with the Migration to Jakarta EE 11, flagging and updating deprecated methods.
+  Migrate to Jakarta EE 11 by applying the Jakarta EE 10 migration, and then upgrading the Jakarta EE platform, Jakarta Faces and Maven plugins to their Jakarta EE 11 versions.
 tags:
   - jakarta
 preconditions:

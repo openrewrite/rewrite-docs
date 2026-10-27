@@ -1,17 +1,17 @@
 ---
-title: "Remove Security AccessController"
-sidebar_label: "Remove Security AccessController"
+title: "Remove `AccessController.checkPermission(..)` calls"
+sidebar_label: "Remove `AccessController.checkPermission(..)` calls"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Remove Security AccessController
+# Remove `AccessController.checkPermission(..)` calls
 
 **org.openrewrite.java.migrate.AccessController**
 
-_The Security Manager API is unsupported in Java 24. This recipe will remove the usage of `java.security.AccessController`._
+_The Security Manager API is unsupported in Java 24. This recipe removes calls to `java.security.AccessController#checkPermission(..)`._
 
 ### Tags
 
@@ -61,9 +61,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.AccessController
-displayName: Remove Security AccessController
+displayName: Remove `AccessController.checkPermission(..)` calls
 description: |
-  The Security Manager API is unsupported in Java 24. This recipe will remove the usage of `java.security.AccessController`.
+  The Security Manager API is unsupported in Java 24. This recipe removes calls to `java.security.AccessController#checkPermission(..)`.
 tags:
   - deprecation
   - java25
@@ -97,7 +97,7 @@ This recipe is used as part of the following composite recipes:
 
 <RunRecipe
   recipeName="org.openrewrite.java.migrate.AccessController"
-  displayName="Remove Security AccessController"
+  displayName="Remove `AccessController.checkPermission(..)` calls"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-migrate-java"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA"

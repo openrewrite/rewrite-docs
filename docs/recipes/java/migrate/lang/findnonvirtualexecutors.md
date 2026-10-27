@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.migrate.lang.FindNonVirtualExecutors**
 
-_Find all places where static `java.util.concurrent.Executors` method creates a non-virtual `java.util.concurrent.ExecutorService`. This recipe can be used to search fro `ExecutorService` that can be replaced by Virtual Thread executor._
+_Find all places where static `java.util.concurrent.Executors` method creates a non-virtual `java.util.concurrent.ExecutorService`. This recipe can be used to search for `ExecutorService` that can be replaced by a virtual thread executor._
 
 ### Tags
 
@@ -64,7 +64,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.lang.FindNonVirtualExecutors
 displayName: Find non-virtual `ExecutorService` creation
 description: |
-  Find all places where static `java.util.concurrent.Executors` method creates a non-virtual `java.util.concurrent.ExecutorService`. This recipe can be used to search fro `ExecutorService` that can be replaced by Virtual Thread executor.
+  Find all places where static `java.util.concurrent.Executors` method creates a non-virtual `java.util.concurrent.ExecutorService`. This recipe can be used to search for `ExecutorService` that can be replaced by a virtual thread executor.
 tags:
   - java21
   - virtual_threads
@@ -92,7 +92,7 @@ recipeList:
 
 This recipe is used as part of the following composite recipes:
 
-* [Find Virtual Thread opportunities](/recipes/java/migrate/lang/findvirtualthreadopportunities.md)
+* [Find virtual thread opportunities](/recipes/java/migrate/lang/findvirtualthreadopportunities.md)
 
 
 ## Usage

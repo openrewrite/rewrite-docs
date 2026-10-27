@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.spring.boot2.MigrateLocalServerPortAnnotation**
 
-_Updates the package and adds the necessary dependency if `LocalServerPort` is in use. The package of `LocalServerPort` was changed in Spring Boot 2.0, necessitating changes._
+_Updates the package of `LocalServerPort`, which changed in Spring Boot 2.0._
 
 ## Recipe source
 
@@ -21,38 +21,6 @@ _Updates the package and adds the necessary dependency if `LocalServerPort` is i
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license). Moderne customers can download precompiled artifacts from The Code Genome Project. For non-commercial use you can build the artifact from source locally.
 
-
-## Definition
-
-<Tabs groupId="recipeType">
-<TabItem value="recipe-list" label="Recipe List" >
-* [Add Gradle or Maven dependency](../../../java/dependencies/adddependency)
-  * groupId: `org.springframework.boot`
-  * artifactId: `spring-boot-starter-web`
-  * version: `2.0.x`
-  * onlyIfUsing: `org.springframework.boot.web.server.LocalServerPort`
-
-</TabItem>
-
-<TabItem value="yaml-recipe-list" label="Yaml Recipe List">
-
-```yaml
----
-type: specs.openrewrite.org/v1beta/recipe
-name: org.openrewrite.java.spring.boot2.MigrateLocalServerPortAnnotation
-displayName: Use `org.springframework.boot.web.server.LocalServerPort`
-description: |
-  Updates the package and adds the necessary dependency if `LocalServerPort` is in use. The package of `LocalServerPort` was changed in Spring Boot 2.0, necessitating changes.
-recipeList:
-  - org.openrewrite.java.dependencies.AddDependency:
-      groupId: org.springframework.boot
-      artifactId: spring-boot-starter-web
-      version: 2.0.x
-      onlyIfUsing: org.springframework.boot.web.server.LocalServerPort
-
-```
-</TabItem>
-</Tabs>
 
 ## Used by
 

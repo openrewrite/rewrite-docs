@@ -1,17 +1,17 @@
 ---
-title: "Updates `getRealPath()` to call `getContext()` followed by `getRealPath()`"
-sidebar_label: "Updates `getRealPath()` to call `getContext()` followed by `getRealPath()`"
+title: "Replace `ServletRequest.getRealPath(String)` with `getServletContext().getRealPath(String)`"
+sidebar_label: "Replace `ServletRequest.getRealPath(String)` with `getServletContext().getRealPath(String)`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Updates `getRealPath()` to call `getContext()` followed by `getRealPath()`
+# Replace `ServletRequest.getRealPath(String)` with `getServletContext().getRealPath(String)`
 
 **org.openrewrite.java.migrate.jakarta.UpdateGetRealPath**
 
-_Updates `getRealPath()` for `jakarta.servlet.ServletRequest` and `jakarta.servlet.ServletRequestWrapper` to use `ServletContext.getRealPath(String)`._
+_Replace the removed `getRealPath(String)` on `jakarta.servlet.ServletRequest` and `jakarta.servlet.ServletRequestWrapper` with `getServletContext().getRealPath(String)`._
 
 ## Recipe source
 
@@ -26,7 +26,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 This recipe is used as part of the following composite recipes:
 
-* [Replace  deprecated Jakarta Servlet methods and classes](/recipes/java/migrate/jakarta/removalsservletjakarta10.md)
+* [Replace deprecated Jakarta Servlet methods and classes](/recipes/java/migrate/jakarta/removalsservletjakarta10.md)
 * [Replace deprecated Jakarta Servlet methods and classes](/recipes/oracle/weblogic/rewrite/jakarta/removalsservletjakarta9.md)
 
 ## Example
@@ -81,7 +81,7 @@ class Foo {
 
 <RunRecipe
   recipeName="org.openrewrite.java.migrate.jakarta.UpdateGetRealPath"
-  displayName="Updates `getRealPath()` to call `getContext()` followed by `getRealPath()`"
+  displayName="Replace `ServletRequest.getRealPath(String)` with `getServletContext().getRealPath(String)`"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-migrate-java"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA"

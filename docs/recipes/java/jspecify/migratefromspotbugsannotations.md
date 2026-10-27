@@ -42,6 +42,14 @@ This recipe is available under the [Moderne Source Available License](https://do
   * version: `1.0.0`
   * onlyIfUsing: `edu.umd.cs.findbugs.annotations.*ull*`
   * acceptTransitive: `true`
+* [Remove annotation from `void` method](../../java/migrate/jspecify/removeannotationfromvoidmethod)
+  * annotationType: `edu.umd.cs.findbugs.annotations.Nullable`
+* [Remove annotation from `void` method](../../java/migrate/jspecify/removeannotationfromvoidmethod)
+  * annotationType: `edu.umd.cs.findbugs.annotations.CheckForNull`
+* [Remove annotation from `void` method](../../java/migrate/jspecify/removeannotationfromvoidmethod)
+  * annotationType: `edu.umd.cs.findbugs.annotations.PossiblyNull`
+* [Remove annotation from `void` method](../../java/migrate/jspecify/removeannotationfromvoidmethod)
+  * annotationType: `edu.umd.cs.findbugs.annotations.NonNull`
 * [Move annotation to array type](../../java/migrate/jspecify/moveannotationtoarraytype)
   * annotationType: `edu.umd.cs.findbugs.annotations.*ull*`
 * [Change type](../../java/changetype)
@@ -85,6 +93,14 @@ recipeList:
       version: 1.0.0
       onlyIfUsing: edu.umd.cs.findbugs.annotations.*ull*
       acceptTransitive: true
+  - org.openrewrite.java.migrate.jspecify.RemoveAnnotationFromVoidMethod:
+      annotationType: edu.umd.cs.findbugs.annotations.Nullable
+  - org.openrewrite.java.migrate.jspecify.RemoveAnnotationFromVoidMethod:
+      annotationType: edu.umd.cs.findbugs.annotations.CheckForNull
+  - org.openrewrite.java.migrate.jspecify.RemoveAnnotationFromVoidMethod:
+      annotationType: edu.umd.cs.findbugs.annotations.PossiblyNull
+  - org.openrewrite.java.migrate.jspecify.RemoveAnnotationFromVoidMethod:
+      annotationType: edu.umd.cs.findbugs.annotations.NonNull
   - org.openrewrite.java.migrate.jspecify.MoveAnnotationToArrayType:
       annotationType: edu.umd.cs.findbugs.annotations.*ull*
   - org.openrewrite.java.ChangeType:
@@ -142,6 +158,25 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
+
+### Maven metadata failures
+**org.openrewrite.maven.table.MavenMetadataFailures**
+
+_Attempts to resolve maven metadata that failed._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Group id | The groupId of the artifact for which the metadata download failed. |
+| Artifact id | The artifactId of the artifact for which the metadata download failed. |
+| Version | The version of the artifact for which the metadata download failed. |
+| Maven repository | The URL of the Maven repository that the metadata download failed on. |
+| Snapshots | Does the repository support snapshots. |
+| Releases | Does the repository support releases. |
+| Failure | The reason the metadata download failed. |
+
+</TabItem>
+
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results

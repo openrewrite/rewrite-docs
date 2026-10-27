@@ -6,7 +6,7 @@ description: A comprehensive list of all recipes organized by module.
 
 _This doc indexes per-module recipe lists. Click a groupId to see its recipes._
 
-Total recipes: 4282
+Total recipes: 4331
 
 
 ## org.openrewrite
@@ -35,7 +35,6 @@ Total recipes: 4282
 * [rewrite-all](all-recipes-org-openrewrite-recipe.md#rewrite-all)
 * [rewrite-apache](all-recipes-org-openrewrite-recipe.md#rewrite-apache)
 * [rewrite-cucumber-jvm](all-recipes-org-openrewrite-recipe.md#rewrite-cucumber-jvm)
-* [rewrite-feature-flags](all-recipes-org-openrewrite-recipe.md#rewrite-feature-flags)
 * [rewrite-github-actions](all-recipes-org-openrewrite-recipe.md#rewrite-github-actions)
 * [rewrite-gitlab](all-recipes-org-openrewrite-recipe.md#rewrite-gitlab)
 * [rewrite-hibernate](all-recipes-org-openrewrite-recipe.md#rewrite-hibernate)

@@ -41,7 +41,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 **Recipes**
 
-* [Mockito 4.x upgrade](../../../java/testing/mockito/mockito1to4migration)
+* [Upgrade to Mockito 4.x](../../../java/testing/mockito/mockito1to4migration)
 * [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
   * oldGroupId: `org.mockito`
   * oldArtifactId: `mockito-inline`
@@ -97,7 +97,7 @@ recipeList:
 This recipe is used as part of the following composite recipes:
 
 * [Migrate to Spring Boot 3.1](/recipes/java/spring/boot3/upgradespringboot_3_1.md)
-* [Mockito 5.x upgrade](/recipes/java/testing/mockito/mockito1to5migration.md)
+* [Upgrade to Mockito 5.x](/recipes/java/testing/mockito/mockito1to5migration.md)
 
 
 ## Usage
@@ -137,6 +137,25 @@ _Tests disabled because they use a PowerMock feature with no Mockito equivalent.
 | Disabled element | The test method that was disabled, or the class name when the usage sits outside a test method and the whole class had to be disabled. |
 | Scope | `METHOD` when a single test was disabled, `CLASS` when the whole test class was. |
 | Reason | The PowerMock usage that cannot be migrated. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
+
+### Maven metadata failures
+**org.openrewrite.maven.table.MavenMetadataFailures**
+
+_Attempts to resolve maven metadata that failed._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Group id | The groupId of the artifact for which the metadata download failed. |
+| Artifact id | The artifactId of the artifact for which the metadata download failed. |
+| Version | The version of the artifact for which the metadata download failed. |
+| Maven repository | The URL of the Maven repository that the metadata download failed on. |
+| Snapshots | Does the repository support snapshots. |
+| Releases | Does the repository support releases. |
+| Failure | The reason the metadata download failed. |
 
 </TabItem>
 

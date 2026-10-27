@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.hibernate.TypeAnnotationParameter**
 
-_Hibernate 6.x has 'type' parameter of type String replaced with 'value' of type class._
+_Migrate Hibernate type class references and supported basic type registry names to Hibernate 6 annotations. Unrecognized registry names are retained for manual migration._
 
 ## Recipe source
 

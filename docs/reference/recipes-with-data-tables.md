@@ -184,15 +184,6 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-#### [org.openrewrite.gradle.AddJUnitPlatformLauncher](/recipes/gradle/addjunitplatformlauncher.md)
-  * **Add JUnit Platform Launcher**
-  * Add the JUnit Platform Launcher to the buildscript dependencies.
-
-##### Data tables:
-
-  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
-
-
 #### [org.openrewrite.gradle.AddPlatformDependency](/recipes/gradle/addplatformdependency.md)
   * **Add Gradle platform dependency**
   * Add a gradle platform dependency to a `build.gradle` file in the correct configuration based on where it is used.
@@ -223,15 +214,6 @@ _This doc contains all of the recipes with **unique** data tables that have been
 #### [org.openrewrite.gradle.GradleBestPractices](/recipes/gradle/gradlebestpractices.md)
   * **Apply Gradle best practices**
   * Apply a set of [Gradle best practices](https://docs.gradle.org/current/userguide/best_practices_general.html) to the build files, for more efficient and idiomatic builds.
-
-##### Data tables:
-
-  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
-
-
-#### [org.openrewrite.gradle.MigrateToGradle8](/recipes/gradle/migratetogradle8.md)
-  * **Migrate to Gradle 8 from Gradle 7**
-  * Migrate to version 8.x. See the Gradle upgrade guide from [version 7.x to 8.0](https://docs.gradle.org/current/userguide/upgrading_version_7.html) and [version 8.x to latest](https://docs.gradle.org/current/userguide/upgrading_version_8.html) for more information.
 
 ##### Data tables:
 
@@ -499,47 +481,55 @@ _This doc contains all of the recipes with **unique** data tables that have been
 
 #### [org.openrewrite.javascript.AddDependency](/recipes/javascript/adddependency.md)
   * **Add npm dependency**
-  * Add an npm dependency to `package.json` and regenerate the lock file natively, without executing the package manager. If the dependency already exists in any scope, the recipe is a no-op. Not safe to use as a precondition: consults the package registry over the network and publishes per-project state shared with other dependency recipes.
+  * Add an npm dependency to `package.json` and regenerate the lock file natively, without executing the package manager. In a pnpm workspace with catalogs it writes what `pnpm add` writes under the workspace's `catalogMode` and `saveCatalogName`. If the dependency already exists in any scope, the recipe is a no-op. Not safe to use as a precondition: consults the package registry over the network and publishes per-project state shared with other dependency recipes.
 
 ##### Data tables:
 
   * **org.openrewrite.javascript.table.NodeLockRegenerationFailures**: *Lock files that could not be regenerated after a dependency edit, and why.*
+  * **org.openrewrite.javascript.table.NodeDependencyEditsDeclined**: *Edits a recipe did not make, or that the package manager applies only in part, and why.*
 
 
 #### [org.openrewrite.javascript.ChangeDependency](/recipes/javascript/changedependency.md)
   * **Change npm dependency**
-  * Renames an npm dependency in `package.json` and optionally updates its version constraint. After modifying the package.json, the lock file is regenerated natively, without executing the package manager. Not safe to use as a precondition: consults the package registry over the network and publishes per-project state shared with other dependency recipes.
+  * Renames an npm dependency in `package.json` and optionally updates its version constraint. A `catalog:` reference keeps its catalog, which gains the new name's entry. After modifying the package.json, the lock file is regenerated natively, without executing the package manager. Not safe to use as a precondition: consults the package registry over the network and publishes per-project state shared with other dependency recipes.
 
 ##### Data tables:
 
   * **org.openrewrite.javascript.table.NodeLockRegenerationFailures**: *Lock files that could not be regenerated after a dependency edit, and why.*
+  * **org.openrewrite.javascript.table.NodeDependencyEditsDeclined**: *Edits a recipe did not make, or that the package manager applies only in part, and why.*
+  * **org.openrewrite.javascript.table.NodeDependencyProtocolsSkipped**: *Dependencies a recipe left unchanged because their value is not a version range.*
 
 
 #### [org.openrewrite.javascript.RemoveDependency](/recipes/javascript/removedependency.md)
   * **Remove npm dependency**
-  * Remove an npm dependency from `package.json` and regenerate the lock file natively, without executing the package manager. If the dependency does not exist in any scope, the recipe is a no-op.
+  * Remove an npm dependency from `package.json` and regenerate the lock file natively, without executing the package manager. A pnpm workspace with `cleanupUnusedCatalogs` also loses the catalog entries no project references any more. If the dependency does not exist in any scope, the recipe is a no-op.
 
 ##### Data tables:
 
   * **org.openrewrite.javascript.table.NodeLockRegenerationFailures**: *Lock files that could not be regenerated after a dependency edit, and why.*
+  * **org.openrewrite.javascript.table.NodeDependencyEditsDeclined**: *Edits a recipe did not make, or that the package manager applies only in part, and why.*
 
 
 #### [org.openrewrite.javascript.UpgradeDependencyVersion](/recipes/javascript/upgradedependencyversion.md)
   * **Upgrade npm dependency version**
-  * Upgrades the version constraint of matching npm dependencies in `package.json` and regenerates the lock file natively, without executing the package manager. Matching is by exact package name or glob pattern. v1 uses simple string inequality for the upgrade check (always overwrites). A future version will use semver to skip already-up-to-date constraints. Not safe to use as a precondition: consults the package registry over the network and publishes per-project state shared with other dependency recipes.
+  * Upgrades the version constraint of matching npm dependencies in `package.json` and regenerates the lock file natively, without executing the package manager. Matching is by exact package name or glob pattern. A version range is replaced when it admits a version below the new range's lowest; one that already starts at or above it is left, and so is a `peerDependencies` range that admits every version the new one does. A `catalog:` reference is upgraded in its catalog entry by the same rule, and any other value is left as it is. Not safe to use as a precondition: consults the package registry over the network and publishes per-project state shared with other dependency recipes.
 
 ##### Data tables:
 
   * **org.openrewrite.javascript.table.NodeLockRegenerationFailures**: *Lock files that could not be regenerated after a dependency edit, and why.*
+  * **org.openrewrite.javascript.table.NodeDependencyEditsDeclined**: *Edits a recipe did not make, or that the package manager applies only in part, and why.*
+  * **org.openrewrite.javascript.table.NodeDependencyProtocolsSkipped**: *Dependencies a recipe left unchanged because their value is not a version range.*
 
 
 #### [org.openrewrite.javascript.UpgradeTransitiveDependencyVersion](/recipes/javascript/upgradetransitivedependencyversion.md)
   * **Upgrade transitive npm dependency**
-  * Pins or upgrades a transitive npm dependency by adding an override entry to `package.json` and regenerating the lock file natively, without executing the package manager. For npm and Bun, adds to the `overrides` field; for Yarn, adds to `resolutions`; for pnpm, adds to `pnpm.overrides`. The override is idempotent — if the entry already exists with the same version, no change is made. Not safe to use as a precondition: consults the package registry over the network and publishes per-project state shared with other dependency recipes.
+  * Pins or upgrades a transitive npm dependency with an override at the workspace root, where its package manager reads it, and regenerates the lock file natively, without executing the package manager: npm's `overrides`, Bun's `overrides` or `resolutions`, Yarn's `resolutions`, and for pnpm `pnpm-workspace.yaml` or `pnpm.overrides` by the pnpm release the project names. An override the package manager cannot read is not written, and the reason is recorded. None is written for a package the lock does not resolve. Not safe to use as a precondition: consults the package registry over the network and publishes per-project state shared with other dependency recipes.
 
 ##### Data tables:
 
   * **org.openrewrite.javascript.table.NodeLockRegenerationFailures**: *Lock files that could not be regenerated after a dependency edit, and why.*
+  * **org.openrewrite.javascript.table.NodeDependencyProtocolsSkipped**: *Dependencies a recipe left unchanged because their value is not a version range.*
+  * **org.openrewrite.javascript.table.NodeDependencyEditsDeclined**: *Edits a recipe did not make, or that the package manager applies only in part, and why.*
 
 
 #### [org.openrewrite.javascript.search.DependencyInsight](/recipes/javascript/search/dependencyinsight.md)
@@ -697,7 +687,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
 
 #### [org.openrewrite.maven.MigrateToMaven4](/recipes/maven/migratetomaven4.md)
   * **Migrate to Maven 4**
-  * Migrates Maven POMs from Maven 3 to Maven 4, addressing breaking changes and deprecations. This recipe updates property expressions, runs the Maven 3.10 migration (which removes duplicate plugin and dependency declarations and updates an existing Maven wrapper to Maven 3.10), updates lifecycle phases, upgrades plugins known to fail under Maven 4, switches repository URLs to HTTPS, and replaces removed properties to ensure compatibility with Maven 4.
+  * Migrates Maven POMs from Maven 3 to Maven 4, addressing breaking changes and deprecations. This recipe updates property expressions, runs the Maven 3.10 migration (which removes duplicate plugin and dependency declarations, fixes invalid parent relative paths, updates an existing Maven wrapper to Maven 3.10, and removes properties that equal the new super POM defaults), updates lifecycle phases, upgrades plugins known to fail under Maven 4, switches repository URLs to HTTPS, and replaces removed properties to ensure compatibility with Maven 4.
 
 ##### Data tables:
 
@@ -890,6 +880,201 @@ _This doc contains all of the recipes with **unique** data tables that have been
 
 
 
+### rewrite-apache
+
+#### [org.openrewrite.apache.ApacheBestPractices](/recipes/apache/apachebestpractices.md)
+  * **Apache best practices**
+  * Apply best practices to code that uses [Apache](https://apache.org/) libraries. This migrates Apache Commons, [HttpClient](https://hc.apache.org/) and [POI](https://poi.apache.org/) off their end-of-life major versions, replaces deprecated APIs with their supported replacements, and prefers the Java standard library where it now offers an equivalent.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.apache.commons.ApacheCommonsBestPractices](/recipes/apache/commons/apachecommonsbestpractices.md)
+  * **Apache Commons best practices**
+  * Apply best practices to code that uses [Apache Commons](https://commons.apache.org/) libraries: migrate off the end-of-life Commons Lang 2.x, Commons Collections 3.x and Commons Math 2.x major versions, correct the `commons-io` coordinates, replace deprecated APIs with their supported replacements, make character encodings explicit, and prefer the Java standard library where it now offers an equivalent.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.apache.commons.collections.UpgradeApacheCommonsCollections_3_4](/recipes/apache/commons/collections/upgradeapachecommonscollections_3_4.md)
+  * **Migrates to Apache Commons Collections 4.x**
+  * Migrate applications to the latest Apache Commons Collections 4.x release. This recipe modifies application's build files, make changes to deprecated/preferred APIs, and migrates configuration settings that have changes between versions.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.apache.commons.io.RelocateApacheCommonsIo](/recipes/apache/commons/io/relocateapachecommonsio.md)
+  * **Relocate `org.apache.commons:commons-io` to `commons-io:commons-io`**
+  * The deployment of `org.apache.commons:commons-io` [was a publishing mistake around 2012](https://issues.sonatype.org/browse/MVNCENTRAL-244) which was corrected by changing the deployment GAV to be located under `commons-io:commons-io`.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.apache.commons.lang.UpgradeApacheCommonsLang_2_3](/recipes/apache/commons/lang/upgradeapachecommonslang_2_3.md)
+  * **Migrates to Apache Commons Lang 3.x**
+  * Migrate applications to the latest Apache Commons Lang 3.x release. This recipe modifies application's build files, and changes the package as per [the migration release notes](https://commons.apache.org/proper/commons-lang/article3_0.html).
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.apache.commons.lang.WordUtilsToCommonsText](/recipes/apache/commons/lang/wordutilstocommonstext.md)
+  * **Migrate `WordUtils` to Apache Commons Text**
+  * Migrate `org.apache.commons.lang.WordUtils` to `org.apache.commons.text.WordUtils` and add the Commons Text dependency.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.apache.commons.math.UpgradeApacheCommonsMath_2_3](/recipes/apache/commons/math/upgradeapachecommonsmath_2_3.md)
+  * **Migrates to Apache Commons Math 3.x**
+  * Migrate applications to the latest Apache Commons Math 3.x release. This recipe modifies  application's build files, make changes to deprecated/preferred APIs, and migrates configuration settings that have changes between versions.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.apache.httpclient4.UpgradeApacheHttpClient_4_5](/recipes/apache/httpclient4/upgradeapachehttpclient_4_5.md)
+  * **Migrates to ApacheHttpClient 4.5.x**
+  * Migrate applications to the latest Apache HttpClient 4.5.x release. This recipe modifies application's build files, make changes to deprecated/preferred APIs, and migrates configuration settings that have changes between versions.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.apache.httpclient5.UpgradeApacheHttpClientDependencies](/recipes/apache/httpclient5/upgradeapachehttpclientdependencies.md)
+  * **Migrate from org.apache.httpcomponents to ApacheHttpClient 5.x dependencies**
+  * Adopt `org.apache.httpcomponents.client5:httpclient5` from `org.apache.httpcomponents`.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.apache.httpclient5.UpgradeApacheHttpClient_5](/recipes/apache/httpclient5/upgradeapachehttpclient_5.md)
+  * **Migrate to ApacheHttpClient 5.x**
+  * Migrate applications to the latest Apache HttpClient 5.x release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.apache.httpclient5.UpgradeApacheHttpCoreNioDependencies](/recipes/apache/httpclient5/upgradeapachehttpcoreniodependencies.md)
+  * **Migrate from httpcore-nio to ApacheHttpClient 5.x core dependency**
+  * Adopt `org.apache.httpcomponents.core5:httpcore5` from `org.apache.httpcomponents:httpcore-nio`.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.apache.httpclient5.UpgradeApacheHttpCore_5_NioClassMapping](/recipes/apache/httpclient5/upgradeapachehttpcore_5_nioclassmapping.md)
+  * **Migrate to Apache HttpCore Nio Classes to Apache HttpCore 5.x**
+  * Mapping of all the compatible classes of Apache HttpCore 5.x from Apache HttpCore Nio 4.4.x.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.apache.poi.UpgradeApachePoi_3_17](/recipes/apache/poi/upgradeapachepoi_3_17.md)
+  * **Migrates to Apache POI 3.17**
+  * Migrates to the last Apache POI 3.x release. This recipe modifies build files and makes changes to deprecated/preferred APIs that have changed between versions.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.apache.poi.UpgradeApachePoi_4_1](/recipes/apache/poi/upgradeapachepoi_4_1.md)
+  * **Migrates to Apache POI 4.1.2**
+  * Migrates to the last Apache POI 4.x release. This recipe modifies build files and makes changes to deprecated/preferred APIs that have changed between versions.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.apache.poi.UpgradeApachePoi_5](/recipes/apache/poi/upgradeapachepoi_5.md)
+  * **Migrates to Apache POI 5.x**
+  * Migrates to the latest Apache POI 5.x release. This recipe modifies build files to account for artifact renames and upgrades dependency versions. It also chains the 4.1 recipe to handle all prior API migrations.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+
+### rewrite-cucumber-jvm
+
+#### [org.openrewrite.cucumber.jvm.CucumberJava8ToJava](/recipes/cucumber/jvm/cucumberjava8tojava.md)
+  * **Migrate `cucumber-java8` to `cucumber-java`**
+  * Migrates `cucumber-java8` step definitions, `LambdaGlue` hooks and `LambdaGlue` type registrations to `cucumber-java` annotated methods.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.cucumber.jvm.CucumberToJunitPlatformSuite](/recipes/cucumber/jvm/cucumbertojunitplatformsuite.md)
+  * **Cucumber to JUnit test `@Suite`**
+  * Migrates Cucumber tests run by the `@Cucumber` annotation or the JUnit 4 `@RunWith(Cucumber.class)` runner to a JUnit Platform `@Suite`, and swaps `cucumber-junit` for `cucumber-junit-platform-engine` 7.x. Each Cucumber-JVM module depends on the `cucumber-core` of its own release, and the engine fails to run against any other, so the rest of the Cucumber-JVM dependencies move to that same 7.x.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.cucumber.jvm.UpgradeCucumber2x](/recipes/cucumber/jvm/upgradecucumber2x.md)
+  * **Upgrade to Cucumber-JVM 2.x**
+  * Upgrade to Cucumber-JVM 2.x from any previous version.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.cucumber.jvm.UpgradeCucumber5x](/recipes/cucumber/jvm/upgradecucumber5x.md)
+  * **Upgrade to Cucumber-JVM 5.x**
+  * Upgrade to Cucumber-JVM 5.x from any previous version.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.cucumber.jvm.UpgradeCucumber6x](/recipes/cucumber/jvm/upgradecucumber6x.md)
+  * **Upgrade to Cucumber-JVM 6.x**
+  * Upgrade to Cucumber-JVM 6.x from any previous version.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.cucumber.jvm.UpgradeCucumber7x](/recipes/cucumber/jvm/upgradecucumber7x.md)
+  * **Upgrade to Cucumber-JVM 7.x**
+  * Upgrade to Cucumber-JVM 7.x from any previous version.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+
 ### rewrite-github-actions
 
 #### [org.openrewrite.github.FindGitHubActionSecretReferences](/recipes/github/findgithubactionsecretreferences.md)
@@ -901,16 +1086,338 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.table.TextMatches**: *Lines matching simple text search.*
 
 
+#### [org.openrewrite.github.security.PinGitHubActionsToSha](/recipes/github/security/pingithubactionstosha.md)
+  * **Pin GitHub Actions to commit SHAs**
+  * Replaces mutable tag or branch references in GitHub Actions `uses:` declarations with immutable commit SHAs, using a built-in mapping of well-known actions. The recipe makes no network calls; references not found in the mapping are left unchanged and listed in a data table. By default only third-party actions are pinned; set `pinOfficialActions` to include actions from the `actions` and `github` organizations. To pin only a subset of the mapped actions, set `includedActions`.
+
+##### Data tables:
+
+  * **org.openrewrite.github.table.UnresolvedActionShas**: *Action references that were eligible for pinning, but not found in the built-in mapping of known action SHAs.*
+
+
+
+### rewrite-hibernate
+
+#### [org.openrewrite.hibernate.MigrateToHibernate60](/recipes/hibernate/migratetohibernate60-community-edition.md)
+  * **Migrate to Hibernate 6.0.x (Community Edition)**
+  * This recipe will apply changes commonly needed when migrating to Hibernate 6.0.x. The hibernate dependencies will be updated to use the new `org.hibernate.orm` group ID and the recipe will make changes necessary to use Hibernate with Jakarta EE 9.0.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.hibernate.MigrateToHibernate61](/recipes/hibernate/migratetohibernate61.md)
+  * **Migrate to Hibernate 6.1.x**
+  * This recipe will apply changes commonly needed when migrating to Hibernate 6.1.x. The hibernate dependencies will   be updated to use the new org.hibernate.orm group ID and the recipe will make changes necessary to use Hibernate with Jakarta EE 9.0.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.hibernate.MigrateToHibernate62](/recipes/hibernate/migratetohibernate62.md)
+  * **Migrate to Hibernate 6.2.x**
+  * This recipe will apply changes commonly needed when migrating to Hibernate 6.2.x.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.hibernate.MigrateToHibernate63](/recipes/hibernate/migratetohibernate63.md)
+  * **Migrate to Hibernate 6.3.x**
+  * This recipe will apply changes commonly needed when migrating to Hibernate 6.3.x.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.hibernate.MigrateToHibernate64](/recipes/hibernate/migratetohibernate64.md)
+  * **Migrate to Hibernate 6.4.x**
+  * This recipe will apply changes commonly needed when migrating to Hibernate 6.4.x.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.hibernate.MigrateToHibernate65](/recipes/hibernate/migratetohibernate65.md)
+  * **Migrate to Hibernate 6.5.x**
+  * This recipe will apply changes commonly needed when migrating to Hibernate 6.5.x.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.hibernate.MigrateToHibernate66](/recipes/hibernate/migratetohibernate66-community-edition.md)
+  * **Migrate to Hibernate 6.6.x (Community Edition)**
+  * This recipe will apply changes commonly needed when migrating to Hibernate 6.6.x.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.hibernate.MigrateToHibernate70](/recipes/hibernate/migratetohibernate70-community-edition.md)
+  * **Migrate to Hibernate 7.0.x (Community Edition)**
+  * This recipe will apply changes commonly needed when migrating to Hibernate 7.0.x.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.hibernate.MigrateToHibernate71](/recipes/hibernate/migratetohibernate71-community-edition.md)
+  * **Migrate to Hibernate 7.1.x (Community Edition)**
+  * This recipe will apply changes commonly needed when migrating to Hibernate 7.1.x.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.hibernate.MigrateToHibernateDependencies60](/recipes/hibernate/migratetohibernatedependencies60.md)
+  * **Migrate Hibernate dependencies to 6.0.x**
+  * This recipe will migrate any existing dependencies on Hibernate 5.x to the latest 6.0.x release. This migration will include the adjustment to the new `org.hibernate.orm` group ID. It accounts for artifacts names that both do and do not include the `jakarta` suffix and it will change both dependencies and managed dependencies.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.hibernate.MigrateToHypersistenceUtilsHibernate60](/recipes/hibernate/migratetohypersistenceutilshibernate60.md)
+  * **Migrate Hibernate Types to Hypersistence Utils 6.0**
+  * This recipe will migrate any existing dependencies on `com.vladmihalcea:hibernate-types` to `io.hypersistence:hypersistence-utils-hibernate-60`. This migration will include the adjustment from the `com.vladmihalcea.hibernate` and `com.vladmihalcea.spring` packages to `io.hypersistence.utils.hibernate` and `io.hypersistence.utils.spring`.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.hibernate.MigrateToHypersistenceUtilsHibernate62](/recipes/hibernate/migratetohypersistenceutilshibernate62.md)
+  * **Migrate Hibernate Types to Hypersistence Utils 6.2**
+  * This recipe will migrate any existing dependencies on `io.hypersistence:hypersistence-utils-hibernate-60` to `io.hypersistence:hypersistence-utils-hibernate-62`.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.hibernate.MigrateToHypersistenceUtilsHibernate63](/recipes/hibernate/migratetohypersistenceutilshibernate63.md)
+  * **Migrate Hibernate Types to Hypersistence Utils 6.3**
+  * This recipe will migrate any existing dependencies on `io.hypersistence:hypersistence-utils-hibernate-62` to `io.hypersistence:hypersistence-utils-hibernate-63`.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.hibernate.MigrateToHypersistenceUtilsHibernate70](/recipes/hibernate/migratetohypersistenceutilshibernate70.md)
+  * **Migrate Hibernate Types to Hypersistence Utils for Hibernate 7.0**
+  * This recipe will migrate any existing dependencies on `io.hypersistence:hypersistence-utils-hibernate-63` to `io.hypersistence:hypersistence-utils-hibernate-70`.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.hibernate.MigrateToHypersistenceUtilsHibernate71](/recipes/hibernate/migratetohypersistenceutilshibernate71.md)
+  * **Migrate Hibernate Types to Hypersistence Utils for Hibernate 7.1**
+  * This recipe will migrate any existing dependencies on `io.hypersistence:hypersistence-utils-hibernate-70` to `io.hypersistence:hypersistence-utils-hibernate-71`.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.hibernate.validator.HibernateValidator_8_0](/recipes/hibernate/validator/hibernatevalidator_8_0.md)
+  * **Migrate to Hibernate Validator 8.0.x**
+  * This recipe will apply changes commonly needed when migrating to Hibernate Validator 8.0.x.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.hibernate.validator.HibernateValidator_9_1](/recipes/hibernate/validator/hibernatevalidator_9_1.md)
+  * **Migrate to Hibernate Validator 9.1.x**
+  * This recipe will apply changes commonly needed when migrating to Hibernate Validator 9.1.x.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+
+### rewrite-jackson
+
+#### [org.openrewrite.java.jackson.AddMissingJacksonDependencies](/recipes/java/jackson/addmissingjacksondependencies.md)
+  * **Add missing Jackson dataformat dependencies**
+  * Adds Jackson dataformat dependencies when code uses types from their packages but the dependency is not declared. For example, adds `jackson-dataformat-xml` when code uses `XmlMapper`.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.jackson.CodehausToFasterXML](/recipes/java/jackson/codehaustofasterxml.md)
+  * **Migrate from Jackson Codehaus (legacy) to Jackson FasterXML**
+  * In Jackson 2, the package and dependency coordinates moved from Codehaus to FasterXML.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.jackson.JacksonBestPractices](/recipes/java/jackson/jacksonbestpractices.md)
+  * **Jackson best practices**
+  * Apply best practices for using Jackson library, including upgrade to Jackson 2.x and removing redundant annotations.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.jackson.UpgradeJackson_2_3](/recipes/java/jackson/upgradejackson_2_3.md)
+  * **Migrates from Jackson 2.x to Jackson 3.x**
+  * Migrate applications to the latest Jackson 3.x release. This recipe handles package changes (`com.fasterxml.jackson` -&gt; `tools.jackson`), dependency updates, core class renames, exception renames, and method renames (e.g., `JsonGenerator.writeObject()` -&gt; `writePOJO()`, `JsonParser.getCurrentValue()` -&gt; `currentValue()`).
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.jackson.UpgradeJackson_2_3_AddDatabindDependency](/recipes/java/jackson/upgradejackson_2_3_adddatabinddependency.md)
+  * **Add Jackson 3 `jackson-databind` for sources that use it transitively**
+  * Add `tools.jackson.core:jackson-databind` to modules whose sources use its Jackson 2 types, but only get `com.fasterxml.jackson.core:jackson-databind` transitively. Jackson 2 artifacts that are declared directly are upgraded instead.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.jackson.UpgradeJackson_2_3_AddDataformatAvroDependency](/recipes/java/jackson/upgradejackson_2_3_adddataformatavrodependency.md)
+  * **Add Jackson 3 `jackson-dataformat-avro` for sources that use it transitively**
+  * Add `tools.jackson.dataformat:jackson-dataformat-avro` to modules whose sources use its Jackson 2 types, but only get `com.fasterxml.jackson.dataformat:jackson-dataformat-avro` transitively. Jackson 2 artifacts that are declared directly are upgraded instead.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.jackson.UpgradeJackson_2_3_AddDataformatCborDependency](/recipes/java/jackson/upgradejackson_2_3_adddataformatcbordependency.md)
+  * **Add Jackson 3 `jackson-dataformat-cbor` for sources that use it transitively**
+  * Add `tools.jackson.dataformat:jackson-dataformat-cbor` to modules whose sources use its Jackson 2 types, but only get `com.fasterxml.jackson.dataformat:jackson-dataformat-cbor` transitively. Jackson 2 artifacts that are declared directly are upgraded instead.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.jackson.UpgradeJackson_2_3_AddDataformatCsvDependency](/recipes/java/jackson/upgradejackson_2_3_adddataformatcsvdependency.md)
+  * **Add Jackson 3 `jackson-dataformat-csv` for sources that use it transitively**
+  * Add `tools.jackson.dataformat:jackson-dataformat-csv` to modules whose sources use its Jackson 2 types, but only get `com.fasterxml.jackson.dataformat:jackson-dataformat-csv` transitively. Jackson 2 artifacts that are declared directly are upgraded instead.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.jackson.UpgradeJackson_2_3_AddDataformatIonDependency](/recipes/java/jackson/upgradejackson_2_3_adddataformationdependency.md)
+  * **Add Jackson 3 `jackson-dataformat-ion` for sources that use it transitively**
+  * Add `tools.jackson.dataformat:jackson-dataformat-ion` to modules whose sources use its Jackson 2 types, but only get `com.fasterxml.jackson.dataformat:jackson-dataformat-ion` transitively. Jackson 2 artifacts that are declared directly are upgraded instead.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.jackson.UpgradeJackson_2_3_AddDataformatProtobufDependency](/recipes/java/jackson/upgradejackson_2_3_adddataformatprotobufdependency.md)
+  * **Add Jackson 3 `jackson-dataformat-protobuf` for sources that use it transitively**
+  * Add `tools.jackson.dataformat:jackson-dataformat-protobuf` to modules whose sources use its Jackson 2 types, but only get `com.fasterxml.jackson.dataformat:jackson-dataformat-protobuf` transitively. Jackson 2 artifacts that are declared directly are upgraded instead.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.jackson.UpgradeJackson_2_3_AddDataformatSmileDependency](/recipes/java/jackson/upgradejackson_2_3_adddataformatsmiledependency.md)
+  * **Add Jackson 3 `jackson-dataformat-smile` for sources that use it transitively**
+  * Add `tools.jackson.dataformat:jackson-dataformat-smile` to modules whose sources use its Jackson 2 types, but only get `com.fasterxml.jackson.dataformat:jackson-dataformat-smile` transitively. Jackson 2 artifacts that are declared directly are upgraded instead.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.jackson.UpgradeJackson_2_3_AddDataformatXmlDependency](/recipes/java/jackson/upgradejackson_2_3_adddataformatxmldependency.md)
+  * **Add Jackson 3 `jackson-dataformat-xml` for sources that use it transitively**
+  * Add `tools.jackson.dataformat:jackson-dataformat-xml` to modules whose sources use its Jackson 2 types, but only get `com.fasterxml.jackson.dataformat:jackson-dataformat-xml` transitively. Jackson 2 artifacts that are declared directly are upgraded instead.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.jackson.UpgradeJackson_2_3_AddDataformatYamlDependency](/recipes/java/jackson/upgradejackson_2_3_adddataformatyamldependency.md)
+  * **Add Jackson 3 `jackson-dataformat-yaml` for sources that use it transitively**
+  * Add `tools.jackson.dataformat:jackson-dataformat-yaml` to modules whose sources use its Jackson 2 types, but only get `com.fasterxml.jackson.dataformat:jackson-dataformat-yaml` transitively. Jackson 2 artifacts that are declared directly are upgraded instead.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.jackson.UpgradeJackson_2_3_Dependencies](/recipes/java/jackson/upgradejackson_2_3_dependencies.md)
+  * **Upgrade Jackson 2.x dependencies to 3.x**
+  * Upgrade Jackson Maven dependencies from 2.x to 3.x versions and update group IDs. Modules that already resolve Jackson 3 and no longer use Jackson 2 types in their sources are left as-is, as any Jackson 2 dependencies they still declare are there on purpose.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.jackson.codehaus.CodehausDependencyToFasterXML](/recipes/java/jackson/codehaus/codehausdependencytofasterxml.md)
+  * **Migrate dependencies from Jackson Codehaus (legacy) to FasterXML**
+  * Replace Codehaus Jackson dependencies with FasterXML Jackson dependencies, and add databind if needed.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
 
 ### rewrite-java-dependencies
 
+#### [org.openrewrite.java.dependencies.AddDependency](/recipes/java/dependencies/adddependency.md)
+  * **Add Gradle or Maven dependency**
+  * For a Gradle project, add a dependency to a `build.gradle` or `build.gradle.kts` file in the correct configuration based on where it is used. For a Maven project, add a dependency to a `pom.xml` file in the correct scope based on where it is used.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.dependencies.ChangeDependency](/recipes/java/dependencies/changedependency.md)
+  * **Change Gradle or Maven dependency**
+  * Change the group ID, artifact ID, and/or the version of a specified Gradle or Maven dependency.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
 #### [org.openrewrite.java.dependencies.DependencyInsight](/recipes/java/dependencies/dependencyinsight.md)
-  * **Dependency insight for Gradle and Maven**
+  * **Gradle or Maven dependency insight**
   * Finds dependencies, including transitive dependencies, in both Gradle and Maven projects. Matches within all Gradle dependency configurations and Maven scopes.
 
 ##### Data tables:
 
   * **org.openrewrite.maven.table.DependenciesInUse**: *Direct and transitive dependencies in use.*
+  * **org.openrewrite.maven.table.ExplainDependenciesInUse**: *A dependency graph explainer similar to that shown by `gradle dependencyInsight` for each matching dependency. This table will contain a row per matching dependency per configuration per (sub)project.*
 
 
 #### [org.openrewrite.java.dependencies.DependencyList](/recipes/java/dependencies/dependencylist.md)
@@ -919,23 +1426,32 @@ _This doc contains all of the recipes with **unique** data tables that have been
 
 ##### Data tables:
 
-  * **org.openrewrite.java.dependencies.table.DependencyListReport**: *Lists all Gradle and Maven dependencies*
+  * **org.openrewrite.java.dependencies.table.DependencyListReport**: *Lists all Gradle and Maven dependencies.*
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
 #### [org.openrewrite.java.dependencies.DependencyResolutionDiagnostic](/recipes/java/dependencies/dependencyresolutiondiagnostic.md)
   * **Dependency resolution diagnostic**
-  * Recipes which manipulate dependencies must be able to successfully access the artifact repositories and resolve dependencies from them. This recipe produces two data tables used to understand the state of dependency resolution.   The Repository accessibility report lists all the artifact repositories known to the project and whether respond to network access. The network access is attempted while the recipe is run and so is representative of current conditions.   The Gradle dependency configuration errors lists all the dependency configurations that failed to resolve one or more dependencies when the project was parsed. This is representative of conditions at the time the LST was parsed.
+  * Recipes which manipulate dependencies must be able to successfully access the artifact repositories and resolve dependencies from them. This recipe produces two data tables used to understand the state of dependency resolution.  The Repository accessibility report lists all the artifact repositories known to the project and whether they respond to network access. The network access is attempted while the recipe is run and so is representative of current conditions.  The Gradle dependency configuration errors lists all the dependency configurations that failed to resolve one or more dependencies when the project was parsed. This is representative of conditions at the time the LST was parsed.
 
 ##### Data tables:
 
   * **org.openrewrite.java.dependencies.table.RepositoryAccessibilityReport**: *Listing of all dependency repositories and whether they are accessible.*
-  * **org.openrewrite.java.dependencies.table.GradleDependencyConfigurationErrors**: *Records Gradle dependency configurations which failed to resolve during parsing. Partial success/failure is common, a failure in this list does not mean that every dependency failed to resolve.*
+  * **org.openrewrite.java.dependencies.table.GradleDependencyConfigurationErrors**: *Records Gradle dependency configurations which failed to resolve during parsing. Partial success/failure is common; a failure in this list does not mean that every dependency failed to resolve.*
+
+
+#### [org.openrewrite.java.dependencies.FindDependency](/recipes/java/dependencies/finddependency.md)
+  * **Find Gradle or Maven dependencies**
+  * Finds direct dependencies declared in Gradle and Maven build files. This does *not* search transitive dependencies. To detect both direct and transitive dependencies use `org.openrewrite.java.dependencies.DependencyInsight`.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.DependenciesDeclared**: *Direct (first-order) dependencies declared by the project.*
 
 
 #### [org.openrewrite.java.dependencies.FindRepositoryOrder](/recipes/java/dependencies/findrepositoryorder.md)
-  * **Maven repository order**
-  * Determine the order in which dependencies will be resolved for each `pom.xml` or `build.gradle` based on its defined repositories and effective settings.
+  * **Gradle or Maven repository order**
+  * Determine the order in which dependencies will be resolved for each `pom.xml` or `build.gradle` based on its defined repositories. For Maven, the effective `settings.xml` is also taken into account.
 
 ##### Data tables:
 
@@ -944,25 +1460,43 @@ _This doc contains all of the recipes with **unique** data tables that have been
 
 #### [org.openrewrite.java.dependencies.RelocatedDependencyCheck](/recipes/java/dependencies/relocateddependencycheck.md)
   * **Find relocated dependencies**
-  * Find Maven and Gradle dependencies and Maven plugins that have relocated to a new `groupId` or `artifactId`. Relocation information comes from the [oga-maven-plugin](https://github.com/jonathanlermitage/oga-maven-plugin/) maintained by Jonathan Lermitage, Filipe Roque and others.  This recipe makes no changes to any source file by default. Add `changeDependencies=true` to change dependencies, but note that you might need to run additional recipes to update imports and adopt other breaking changes.
+  * Find Maven and Gradle dependencies, version catalog entries, Maven plugins, parents and extensions that have relocated to a new `groupId` or `artifactId`. Relocation information comes from the [oga-maven-plugin](https://github.com/jonathanlermitage/oga-maven-plugin/) maintained by Jonathan Lermitage, Filipe Roque and others.  This recipe makes no changes to any source file by default. Add `changeDependencies=true` to change dependencies whose relocated artifact publishes the same version, but note that you might need to run additional recipes to update imports and adopt other breaking changes.
 
 ##### Data tables:
 
   * **org.openrewrite.java.dependencies.table.RelocatedDependencyReport**: *A list of dependencies in use that have relocated.*
 
 
-#### [org.openrewrite.java.dependencies.search.FindDuplicateClasses](/recipes/java/dependencies/search/findduplicateclasses.md)
-  * **Find duplicate classes on the classpath**
-  * Detects classes that appear in multiple dependencies on the classpath. This is similar to what the Maven duplicate-finder-maven-plugin does. Duplicate classes can cause runtime issues when different versions of the same class are loaded.
+#### [org.openrewrite.java.dependencies.UpgradeDependencyVersion](/recipes/java/dependencies/upgradedependencyversion.md)
+  * **Upgrade Gradle or Maven dependency versions**
+  * For Gradle projects, upgrade the version of a dependency in a `build.gradle` or `build.gradle.kts` file. Supports updating dependency declarations of various forms:  * `String` notation: `&quot;group:artifact:version&quot;`  * `Map` notation: `group: 'group', name: 'artifact', version: 'version'` It is possible to update version numbers which are defined earlier in the same file in variable declarations, in `gradle.properties`, or in a version catalog.  For Maven projects, upgrade the version of a dependency by specifying a group ID and an artifact ID using Node Semver advanced range selectors, allowing more precise control over version updates to patch or minor releases.
 
 ##### Data tables:
 
-  * **org.openrewrite.java.dependencies.table.DuplicateClassesReport**: *Lists classes that appear in multiple dependencies on the classpath*
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.dependencies.UpgradeTransitiveDependencyVersion](/recipes/java/dependencies/upgradetransitivedependencyversion.md)
+  * **Upgrade transitive Gradle or Maven dependencies**
+  * Upgrades the version of a transitive dependency in a Maven `pom.xml` or Gradle `build.gradle` or `build.gradle.kts`. Leaves direct dependencies unmodified. Can be paired with `UpgradeDependencyVersion` to upgrade a dependency everywhere, regardless of whether it is direct or transitive.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.dependencies.search.FindDuplicateClasses](/recipes/java/dependencies/search/findduplicateclasses.md)
+  * **Find duplicate classes on the classpath**
+  * Detects classes that appear in multiple dependencies on the classpath. This is similar to what the Maven `duplicate-finder-maven-plugin` does. Duplicate classes can cause runtime issues when different versions of the same class are loaded.
+
+##### Data tables:
+
+  * **org.openrewrite.java.dependencies.table.DuplicateClassesReport**: *Lists classes that appear in multiple dependencies on the classpath.*
 
 
 #### [org.openrewrite.java.dependencies.search.FindMinimumDependencyVersion](/recipes/java/dependencies/search/findminimumdependencyversion.md)
   * **Find the oldest matching dependency version in use**
-  * The oldest dependency version in use is the lowest dependency version in use in any source set of any subproject of a repository. It is possible that, for example, the main source set of a project uses Jackson 2.11, but a test source set uses Jackson 2.16. In this case, the oldest Jackson version in use is Java 2.11.
+  * The oldest dependency version in use is the lowest dependency version in use in any source set of any subproject of a repository. It is possible that, for example, the main source set of a project uses Jackson 2.11, but a test source set uses Jackson 2.16. In this case, the oldest Jackson version in use is Jackson 2.11.
 
 ##### Data tables:
 
@@ -971,7 +1505,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
 
 #### [org.openrewrite.java.dependencies.search.FindMinimumJUnitVersion](/recipes/java/dependencies/search/findminimumjunitversion.md)
   * **Find minimum JUnit version**
-  * A recipe to find the minimum version of JUnit dependencies. This recipe is designed to return the minimum version of JUnit in a project. It will search for JUnit 4 and JUnit 5 dependencies in the project. If both versions are found, it will return the minimum version of JUnit 4. If a minimumVersion is provided, the recipe will search to see if the minimum version of JUnit used by the project is no lower than the minimumVersion. For example: if the minimumVersion is 4, and the project has JUnit 4.12 and JUnit 5.7, the recipe will return JUnit 4.12. If the project has only JUnit 5.7, the recipe will return JUnit 5.7. Another example: if the minimumVersion is 5, and the project has JUnit 4.12 and JUnit 5.7, the recipe will not return any results.
+  * Finds the minimum version of JUnit dependencies in a project. It will search for JUnit 4 and JUnit 5 dependencies in the project. If both versions are found, it will return the JUnit 4 version. If a `minimumVersion` is provided, the recipe only returns results when that is the minimum version of JUnit used by the project. For example: if the `minimumVersion` is 4, and the project has JUnit 4.12 and JUnit 5.7, the recipe will return JUnit 4.12. If the project has only JUnit 5.7, the recipe will not return any results. Another example: if the `minimumVersion` is 5, and the project has JUnit 4.12 and JUnit 5.7, the recipe will not return any results.
 
 ##### Data tables:
 
@@ -980,6 +1514,15 @@ _This doc contains all of the recipes with **unique** data tables that have been
 
 
 ### rewrite-jenkins
+
+#### [org.openrewrite.java.testing.htmlunit.UpgradeHtmlUnit_3](/recipes/java/testing/htmlunit/upgradehtmlunit_3.md)
+  * **Migrate to HtmlUnit 3.x**
+  * Automates the HtmlUnit [migration guide](https://htmlunit.sourceforge.io/migration.html) from 2.x to 3.x.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
 
 #### [org.openrewrite.jenkins.ModernizePlugin](/recipes/jenkins/modernizeplugin.md)
   * **Modernize a Jenkins plugin to the latest recommended versions**
@@ -1000,7 +1543,46 @@ _This doc contains all of the recipes with **unique** data tables that have been
 
 
 
+### rewrite-joda
+
+#### [org.openrewrite.java.joda.time.NoJodaTime](/recipes/java/joda/time/nojodatime.md)
+  * **Prefer the Java standard library instead of Joda-Time**
+  * Before Java 8, Java lacked a robust date and time library, leading to the widespread use of Joda-Time to fill this gap. With the release of Java 8, the `java.time` package was introduced, incorporating most of Joda-Time's concepts. Features deemed too specialized or bulky for `java.time` were included in the ThreeTen-Extra library.  This recipe migrates Joda-Time types to `java.time` and `threeten-extra` types.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+
 ### rewrite-logging-frameworks
+
+#### [org.openrewrite.java.logging.log4j.Log4j1ToLog4j2](/recipes/java/logging/log4j/log4j1tolog4j2.md)
+  * **Migrate Log4j 1.x to Log4j 2.x**
+  * Migrates Log4j 1.x to Log4j 2.x.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.logging.log4j.Slf4jToLog4j](/recipes/java/logging/log4j/slf4jtolog4j.md)
+  * **Migrate SLF4J to Log4j 2.x API**
+  * Transforms code written using SLF4J to use Log4j 2.x API.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.logging.log4j.UpgradeLog4J2DependencyVersion](/recipes/java/logging/log4j/upgradelog4j2dependencyversion.md)
+  * **Upgrade Log4j 2.x dependency version**
+  * Upgrades the Log4j 2.x dependencies to the latest 2.x version. Mitigates the [Log4Shell and other Log4j2-related vulnerabilities](https://www.cisa.gov/news-events/cybersecurity-advisories/aa21-356a).
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
 
 #### [org.openrewrite.java.logging.logback.ConditionAttributeToConditionElement](/recipes/java/logging/logback/conditionattributetoconditionelement.md)
   * **Replace the Logback `condition` attribute with the `condition` element**
@@ -1011,8 +1593,80 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.java.logging.logback.table.UnmigratedJaninoConditions**: *Janino conditions that have no equivalent among the conditions shipped with logback-core, and so have to be migrated by hand to a custom `PropertyCondition`.*
 
 
+#### [org.openrewrite.java.logging.logback.Log4jToLogback](/recipes/java/logging/logback/log4jtologback.md)
+  * **Migrate Log4j 2.x to Logback**
+  * Migrates usage of Apache Log4j 2.x to using `logback` as an SLF4J implementation directly. Note, this currently does not modify `log4j.properties` files.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.logging.slf4j.AddJBossLogManagerSlf4jProviderDependency](/recipes/java/logging/slf4j/addjbosslogmanagerslf4jproviderdependency.md)
+  * **Add JBoss LogManager's SLF4J provider**
+  * When JBoss LogManager is the logging backend, add its SLF4J provider so we can migrate to SLF4J as a logging facade.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.logging.slf4j.CommonsLogging1ToSlf4j1](/recipes/java/logging/slf4j/commonslogging1toslf4j1.md)
+  * **Migrate Apache Commons Logging 1.x to SLF4J 1.x**
+  * Transforms usages of Apache Commons Logging 1.x to leveraging SLF4J 1.x directly.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.logging.slf4j.JBossLoggingToSlf4j](/recipes/java/logging/slf4j/jbossloggingtoslf4j.md)
+  * **Migrate JBoss Logging to SLF4J**
+  * Migrates usage of the JBoss Logging facade to using SLF4J.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.logging.slf4j.Log4j1ToSlf4j1](/recipes/java/logging/slf4j/log4j1toslf4j1.md)
+  * **Migrate Log4j 1.x to SLF4J 1.x**
+  * Transforms usages of Log4j 1.x to leveraging SLF4J 1.x directly. Note, this currently does not modify `log4j.properties` files.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.logging.slf4j.Log4jToSlf4j](/recipes/java/logging/slf4j/log4jtoslf4j.md)
+  * **Migrate Log4j to SLF4J**
+  * Migrates usage of Apache Log4j to using SLF4J directly. Use of the traditional Log4j to SLF4J bridge can result in loss of performance, as the Log4j messages must be formatted before they can be passed to SLF4J. Note, this currently does not modify `log4j.properties` files.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
 
 ### rewrite-micrometer
+
+#### [org.openrewrite.micrometer.MicrometerBestPractices](/recipes/micrometer/micrometerbestpractices.md)
+  * **Micrometer best practices**
+  * This recipe will apply a set of best practice refactorings for Micrometer, like adopting `Observations` instead of `Timers`.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.micrometer.UpgradeMicrometer_1_13](/recipes/micrometer/upgrademicrometer_1_13.md)
+  * **Migrate to Micrometer 1.13**
+  * Migrate applications to the latest Micrometer 1.13 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions as described in the [Micrometer 1.13 migration guide](https://github.com/micrometer-metrics/micrometer/wiki/1.13-Migration-Guide).
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
 
 #### [org.openrewrite.micrometer.dropwizard.FindDropwizardMetrics](/recipes/micrometer/dropwizard/finddropwizardmetrics.md)
   * **Find Dropwizard metrics**
@@ -1026,9 +1680,27 @@ _This doc contains all of the recipes with **unique** data tables that have been
 
 ### rewrite-micronaut
 
+#### [org.openrewrite.java.micronaut.AddMicronautRetryDependencyIfNeeded](/recipes/java/micronaut/addmicronautretrydependencyifneeded.md)
+  * **Update the Micronaut Retry support**
+  * This recipe will add the explicit Micronaut Retry dependency if needed.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
 #### [org.openrewrite.java.micronaut.AddMicronautValidationDependencyVersion](/recipes/java/micronaut/addmicronautvalidationdependencyversion.md)
   * **Add missing Micronaut validation dependency versions**
   * Supply a compatible version for unmanaged Gradle validation dependencies, reusing the validation version already in use when possible.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.micronaut.AddMicronautWebsocketDependencyIfNeeded](/recipes/java/micronaut/addmicronautwebsocketdependencyifneeded.md)
+  * **Update the Micronaut Websocket support**
+  * This recipe will add the explicit Micronaut Websocket dependency if needed.
 
 ##### Data tables:
 
@@ -1080,6 +1752,15 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
+#### [org.openrewrite.java.micronaut.UpdateJakartaAnnotations](/recipes/java/micronaut/updatejakartaannotations.md)
+  * **Update jakarta annotations dependency**
+  * This recipe will remove jakarta annotations dependency as it is a transitive dependency of micronaut-inject, and migrate from javax.annotation if needed.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
 #### [org.openrewrite.java.micronaut.UpdateMicronautPlatformBom](/recipes/java/micronaut/updatemicronautplatformbom.md)
   * **Update to Micronaut 4.x platform BOM**
   * This recipe will update a Gradle or Maven build to reference the Micronaut 4 platform BOM.
@@ -1110,6 +1791,87 @@ _This doc contains all of the recipes with **unique** data tables that have been
 
 ### rewrite-migrate-java
 
+#### [org.openrewrite.java.jspecify.JSpecifyBestPractices](/recipes/java/jspecify/jspecifybestpractices.md)
+  * **JSpecify best practices**
+  * Apply JSpecify best practices, such as migrating off of alternatives, and adding missing `@Nullable` annotations.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.jspecify.MigrateFromJakartaAnnotationApi](/recipes/java/jspecify/migratefromjakartaannotationapi.md)
+  * **Migrate from Jakarta annotation API to JSpecify**
+  * Replace the `jakarta.annotation` `@Nullable` and `@Nonnull` annotations with their JSpecify equivalents, adding the JSpecify dependency where needed.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.jspecify.MigrateFromJavaxAnnotationApi](/recipes/java/jspecify/migratefromjavaxannotationapi.md)
+  * **Migrate from javax annotation API to JSpecify**
+  * Replace the `javax.annotation` `@Nullable`, `@CheckForNull`, `@Nonnull` and `@ParametersAreNonnullByDefault` annotations with their JSpecify equivalents, adding the JSpecify dependency where needed.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.jspecify.MigrateFromJetbrainsAnnotations](/recipes/java/jspecify/migratefromjetbrainsannotations.md)
+  * **Migrate from JetBrains annotations to JSpecify**
+  * Replace the `org.jetbrains.annotations` `@Nullable` and `@NotNull` annotations with their JSpecify equivalents, adding the JSpecify dependency where needed.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.jspecify.MigrateFromMicrometerAnnotations](/recipes/java/jspecify/migratefrommicrometerannotations.md)
+  * **Migrate from Micrometer annotations to JSpecify**
+  * Replace the `io.micrometer.core.lang` `@Nullable` and `@NonNull` annotations with their JSpecify equivalents, adding the JSpecify dependency where needed.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.jspecify.MigrateFromMicronautAnnotations](/recipes/java/jspecify/migratefrommicronautannotations.md)
+  * **Migrate from Micronaut Framework annotations to JSpecify**
+  * Replace the `io.micronaut.core.annotation` `@Nullable` and `@NonNull` annotations with their JSpecify equivalents, adding the JSpecify dependency where needed.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.jspecify.MigrateFromSpotBugsAnnotations](/recipes/java/jspecify/migratefromspotbugsannotations.md)
+  * **Migrate from SpotBugs annotations to JSpecify**
+  * Migrate from SpotBugs `edu.umd.cs.findbugs.annotations` annotations to JSpecify.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.jspecify.MigrateFromSpringFrameworkAnnotations](/recipes/java/jspecify/migratefromspringframeworkannotations.md)
+  * **Migrate from Spring Framework annotations to JSpecify**
+  * Replace the `org.springframework.lang` `@Nullable` and `@NonNull` annotations with their JSpecify equivalents, adding the JSpecify dependency where needed.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.jspecify.MigrateToJSpecify](/recipes/java/jspecify/migratetojspecify.md)
+  * **Migrate to JSpecify**
+  * This recipe will migrate to JSpecify annotations from various other nullability annotation standards.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
 #### [org.openrewrite.java.migrate.AddLombokMapstructBinding](/recipes/java/migrate/addlombokmapstructbinding.md)
   * **Add `lombok-mapstruct-binding` when both MapStruct and Lombok are used**
   * Add the `lombok-mapstruct-binding` annotation processor as needed when both MapStruct and Lombok are used.
@@ -1119,9 +1881,27 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-#### [org.openrewrite.java.migrate.AddLombokMapstructBindingMavenDependencyOnly](/recipes/java/migrate/addlombokmapstructbindingmavendependencyonly.md)
-  * **Add `lombok-mapstruct-binding` dependency for Maven when both MapStruct and Lombok are used**
-  * Add the `lombok-mapstruct-binding` when both MapStruct and Lombok are used, and the dependency does not already exist. Only to be called from `org.openrewrite.java.migrate.AddLombokMapstructBinding` to reduce redundant checks.
+#### [org.openrewrite.java.migrate.BounceCastleFromJdk15OntoJdk18On](/recipes/java/migrate/bouncecastlefromjdk15ontojdk18on.md)
+  * **Migrate Bouncy Castle to `jdk18on`**
+  * This recipe will upgrade Bouncy Castle dependencies from any of the legacy artifact suffixes `-jdk12`, `-jdk14`, `-jdk15`, `-jdk15+`, `-jdk16`, `-jdk15on` or `-jdk15to18` to `-jdk18on`. The `bctsp` artifacts map onto `bcpkix`, which absorbed the time stamp protocol support in 1.47.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.migrate.BouncyCastleFromJdk15OnToJdk15to18](/recipes/java/migrate/bouncycastlefromjdk15ontojdk15to18.md)
+  * **Migrate Bouncy Castle to `jdk15to18` for Java &lt; 8**
+  * This recipe replaces the Bouncy Castle artifacts from any of the legacy artifact suffixes `-jdk12`, `-jdk14`, `-jdk15`, `-jdk15+`, `-jdk16` or `-jdk15on` to `-jdk15to18`. Those artifacts aren't maintained anymore and `jdk18on` is only for Java 8 and above. The `jdk15to18` artifact is the up-to-date replacement for Java &lt; 8. The `bctsp` artifacts map onto `bcpkix`, which absorbed the time stamp protocol support in 1.47.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.migrate.ComIntelliJAnnotationsToOrgJetbrainsAnnotations](/recipes/java/migrate/comintellijannotationstoorgjetbrainsannotations.md)
+  * **Migrate `com.intellij:annotations` to `org.jetbrains:annotations`**
+  * This recipe will upgrade old dependency of com.intellij:annotations to the newer org.jetbrains:annotations.
 
 ##### Data tables:
 
@@ -1139,7 +1919,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
 
 #### [org.openrewrite.java.migrate.Java8toJava11](/recipes/java/migrate/java8tojava11.md)
   * **Migrate to Java 11**
-  * This recipe will apply changes commonly needed when upgrading to Java 11. Specifically, for those applications that are built on Java 8, this recipe will update and add dependencies on J2EE libraries that are no longer directly bundled with the JDK. This recipe will also replace deprecated API with equivalents when there is a clear migration strategy. Build files will also be updated to use Java 11 as the target/source and plugins will be also be upgraded to versions that are compatible with Java 11.
+  * This recipe will apply changes commonly needed when upgrading to Java 11. Specifically, for those applications that are built on Java 8, this recipe will update and add dependencies on J2EE libraries that are no longer directly bundled with the JDK. This recipe will also replace deprecated API with equivalents when there is a clear migration strategy. Build files will also be updated to use Java 11 as the target/source and plugins will also be upgraded to versions that are compatible with Java 11.
 
 ##### Data tables:
 
@@ -1166,7 +1946,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
 
 #### [org.openrewrite.java.migrate.UpgradePluginsForJava11](/recipes/java/migrate/upgradepluginsforjava11.md)
   * **Upgrade plugins to Java 11 compatible versions**
-  * Updates plugins to version compatible with Java 11.
+  * Updates plugins to versions compatible with Java 11.
 
 ##### Data tables:
 
@@ -1175,7 +1955,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
 
 #### [org.openrewrite.java.migrate.UpgradePluginsForJava17](/recipes/java/migrate/upgradepluginsforjava17.md)
   * **Upgrade plugins to Java 17 compatible versions**
-  * Updates plugins to version compatible with Java 17.
+  * Updates plugins to versions compatible with Java 17.
 
 ##### Data tables:
 
@@ -1184,7 +1964,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
 
 #### [org.openrewrite.java.migrate.UpgradePluginsForJava21](/recipes/java/migrate/upgradepluginsforjava21.md)
   * **Upgrade plugins to Java 21 compatible versions**
-  * Updates plugins and dependencies to version compatible with Java 21.
+  * Updates plugins and dependencies to versions compatible with Java 21.
 
 ##### Data tables:
 
@@ -1202,7 +1982,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
 
 #### [org.openrewrite.java.migrate.UpgradeToJava17](/recipes/java/migrate/upgradetojava17.md)
   * **Migrate to Java 17**
-  * This recipe will apply changes commonly needed when migrating to Java 17. Specifically, for those applications that are built on Java 8, this recipe will update and add dependencies on J2EE libraries that are no longer directly bundled with the JDK. This recipe will also replace deprecated API with equivalents when there is a clear migration strategy. Build files will also be updated to use Java 17 as the target/source and plugins will be also be upgraded to versions that are compatible with Java 17.
+  * This recipe will apply changes commonly needed when migrating to Java 17. Specifically, for those applications that are built on Java 8, this recipe will update and add dependencies on J2EE libraries that are no longer directly bundled with the JDK. This recipe will also replace deprecated API with equivalents when there is a clear migration strategy. Build files will also be updated to use Java 17 as the target/source and plugins will also be upgraded to versions that are compatible with Java 17.
 
 ##### Data tables:
 
@@ -1211,7 +1991,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
 
 #### [org.openrewrite.java.migrate.UpgradeToJava21](/recipes/java/migrate/upgradetojava21.md)
   * **Migrate to Java 21**
-  * This recipe will apply changes commonly needed when migrating to Java 21. This recipe will also replace deprecated API with equivalents when there is a clear migration strategy. Build files will also be updated to use Java 21 as the target/source and plugins will be also be upgraded to versions that are compatible with Java 21.
+  * This recipe will apply changes commonly needed when migrating to Java 21. This recipe will also replace deprecated API with equivalents when there is a clear migration strategy. Build files will also be updated to use Java 21 as the target/source and plugins will also be upgraded to versions that are compatible with Java 21.
 
 ##### Data tables:
 
@@ -1220,7 +2000,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
 
 #### [org.openrewrite.java.migrate.UpgradeToJava25](/recipes/java/migrate/upgradetojava25.md)
   * **Migrate to Java 25**
-  * This recipe will apply changes commonly needed when migrating to Java 25. This recipe will also replace deprecated API with equivalents when there is a clear migration strategy. Build files will also be updated to use Java 25 as the target/source and plugins will be also be upgraded to versions that are compatible with Java 25.
+  * This recipe will apply changes commonly needed when migrating to Java 25. This recipe will also replace deprecated API with equivalents when there is a clear migration strategy. Build files will also be updated to use Java 25 as the target/source and plugins will also be upgraded to versions that are compatible with Java 25.
 
 ##### Data tables:
 
@@ -1263,6 +2043,51 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
+#### [org.openrewrite.java.migrate.datanucleus.UpgradeDataNucleus_4_0](/recipes/java/migrate/datanucleus/upgradedatanucleus_4_0.md)
+  * **Migrate to DataNucleus 4.0**
+  * Migrate DataNucleus 3.x applications to 4.0. This recipe handles package relocations, type renames, property key changes, and dependency updates introduced in AccessPlatform 4.0.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.migrate.datanucleus.UpgradeDataNucleus_5_0](/recipes/java/migrate/datanucleus/upgradedatanucleus_5_0.md)
+  * **Migrate to DataNucleus 5.0**
+  * Migrate DataNucleus 4.x applications to 5.0. This recipe handles package relocations, type renames, property key changes, and dependency updates.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.migrate.datanucleus.UpgradeDataNucleus_5_1](/recipes/java/migrate/datanucleus/upgradedatanucleus_5_1.md)
+  * **Migrate to DataNucleus 5.1**
+  * Migrate DataNucleus applications to 5.1. This recipe first applies the 5.0 migration, then handles the transaction namespace reorganization and other property renames introduced in 5.1.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.migrate.datanucleus.UpgradeDataNucleus_5_2](/recipes/java/migrate/datanucleus/upgradedatanucleus_5_2.md)
+  * **Migrate to DataNucleus 5.2**
+  * Migrate DataNucleus applications to 5.2. This recipe first applies the 5.1 migration, then handles the column mapping package move and query-related property renames introduced in 5.2.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.migrate.guava.NoGuava](/recipes/java/migrate/guava/noguava.md)
+  * **Prefer the Java standard library instead of Guava**
+  * Guava filled in important gaps in the Java standard library and still does. But at least some of Guava's API surface area is covered by the Java standard library now, and some projects may be able to remove Guava altogether if they migrate to standard library for these functions.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
 #### [org.openrewrite.java.migrate.jacoco.UpgradeJaCoCo](/recipes/java/migrate/jacoco/upgradejacoco.md)
   * **Upgrade JaCoCo**
   * This recipe will upgrade JaCoCo to the latest patch version, which traditionally advertises full backwards compatibility for older Java versions.
@@ -1272,9 +2097,117 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
+#### [org.openrewrite.java.migrate.jakarta.AddJakartaAnnotationDependency](/recipes/java/migrate/jakarta/addjakartaannotationdependency.md)
+  * **Add the Jakarta Annotation API when needed**
+  * Add the migrated API without promoting an explicitly provided or compile-only dependency.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.migrate.jakarta.AddJakartaCdiDependency](/recipes/java/migrate/jakarta/addjakartacdidependency.md)
+  * **Add the Jakarta CDI API when needed**
+  * Add the Jakarta CDI API for migrated source without promoting an explicitly provided or compile-only API to a runtime dependency.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.migrate.jakarta.AddJakartaEjbDependency](/recipes/java/migrate/jakarta/addjakartaejbdependency.md)
+  * **Add the Jakarta EJB API when needed**
+  * Add the migrated API without promoting an explicitly provided or compile-only dependency.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.migrate.jakarta.AddJakartaElDependency](/recipes/java/migrate/jakarta/addjakartaeldependency.md)
+  * **Add the Jakarta EL API when needed**
+  * Add the migrated API without promoting an explicitly provided or compile-only dependency.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.migrate.jakarta.AddJakartaInjectDependency](/recipes/java/migrate/jakarta/addjakartainjectdependency.md)
+  * **Add the `jakarta.inject` API when needed**
+  * Add a standalone API only when no explicitly provided API or full platform already supplies it.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.migrate.jakarta.AddJakartaMailDependency](/recipes/java/migrate/jakarta/addjakartamaildependency.md)
+  * **Add the Jakarta Mail API when needed**
+  * Add the migrated API without promoting an explicitly provided or compile-only dependency.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.migrate.jakarta.AddJakartaRestDependency](/recipes/java/migrate/jakarta/addjakartarestdependency.md)
+  * **Add the `jakarta.ws.rs` API when needed**
+  * Add a standalone API only when no explicitly provided API or full platform already supplies it.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.migrate.jakarta.EhcacheJavaxToJakarta](/recipes/java/migrate/jakarta/ehcachejavaxtojakarta.md)
+  * **Migrate Ehcache from javax to jakarta namespace**
+  * Java EE has been rebranded to Jakarta EE. This recipe replaces existing Ehcache dependencies with their counterparts that are compatible with Jakarta EE 9.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.migrate.jakarta.Faces2xMigrationToJakartaFaces3x](/recipes/java/migrate/jakarta/faces2xmigrationtojakartafaces3x.md)
+  * **JSF 2.x to Jakarta Faces 3.x**
+  * Jakarta EE 9 uses Faces 3.0, a major upgrade to Jakarta packages and XML namespaces.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.migrate.jakarta.Faces3xMigrationToFaces4x](/recipes/java/migrate/jakarta/faces3xmigrationtofaces4x.md)
+  * **Upgrade to Jakarta Faces 4.x**
+  * Jakarta EE 10 uses Faces 4.0.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.migrate.jakarta.Faces4xMigrationToFaces41x](/recipes/java/migrate/jakarta/faces4xmigrationtofaces41x.md)
+  * **Jakarta Faces 4.0 to 4.1**
+  * Jakarta EE 11 uses Faces 4.1, a minor upgrade.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.migrate.jakarta.FileuploadToFileUpload2](/recipes/java/migrate/jakarta/fileuploadtofileupload2.md)
+  * **Migrate `commons-fileupload` to `commons-fileupload2-jakarta-servlet5`**
+  * Migrate Apache Commons FileUpload 1.x and the `commons-fileupload2-jakarta` milestone to `commons-fileupload2-jakarta-servlet5`, moving `org.apache.commons.fileupload` packages and servlet types to their FileUpload 2 equivalents.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
 #### [org.openrewrite.java.migrate.jakarta.JacksonJavaxToJakarta](/recipes/java/migrate/jakarta/jacksonjavaxtojakarta.md)
   * **Migrate Jackson from javax to jakarta namespace**
-  * Java EE has been rebranded to Jakarta EE.  This recipe replaces existing Jackson dependencies with their counterparts that are compatible with Jakarta EE 9.
+  * Java EE has been rebranded to Jakarta EE. This recipe replaces existing Jackson dependencies with their counterparts that are compatible with Jakarta EE 9.
 
 ##### Data tables:
 
@@ -1283,7 +2216,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
 
 #### [org.openrewrite.java.migrate.jakarta.JakartaEE10](/recipes/java/migrate/jakarta/jakartaee10.md)
   * **Migrate to Jakarta EE 10**
-  * These recipes help with the Migration to Jakarta EE 10, flagging and updating deprecated methods.
+  * Migrate to Jakarta EE 10 from Java EE 8 or Jakarta EE 9. Moves `javax` packages to `jakarta`, upgrades the Jakarta EE APIs, implementations and Maven plugins to their Jakarta EE 10 versions, and replaces APIs that were deprecated or removed in Jakarta EE 10.
 
 ##### Data tables:
 
@@ -1292,7 +2225,70 @@ _This doc contains all of the recipes with **unique** data tables that have been
 
 #### [org.openrewrite.java.migrate.jakarta.JakartaEE11](/recipes/java/migrate/jakarta/jakartaee11.md)
   * **Migrate to Jakarta EE 11**
-  * These recipes help with the Migration to Jakarta EE 11, flagging and updating deprecated methods.
+  * Migrate to Jakarta EE 11 by applying the Jakarta EE 10 migration, and then upgrading the Jakarta EE platform, Jakarta Faces and Maven plugins to their Jakarta EE 11 versions.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.migrate.jakarta.JavaxActivationMigrationToJakartaActivation](/recipes/java/migrate/jakarta/javaxactivationmigrationtojakartaactivation.md)
+  * **Migrate deprecated `javax.activation` packages to `jakarta.activation`**
+  * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.migrate.jakarta.JavaxAnnotationMigrationToJakartaAnnotation](/recipes/java/migrate/jakarta/javaxannotationmigrationtojakartaannotation.md)
+  * **Migrate deprecated `javax.annotation` to `jakarta.annotation`**
+  * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.migrate.jakarta.JavaxAuthenticationMigrationToJakartaAuthentication](/recipes/java/migrate/jakarta/javaxauthenticationmigrationtojakartaauthentication.md)
+  * **Migrate deprecated `javax.security.auth.message` packages to `jakarta.security.auth.message`**
+  * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.migrate.jakarta.JavaxAuthorizationMigrationToJakartaAuthorization](/recipes/java/migrate/jakarta/javaxauthorizationmigrationtojakartaauthorization.md)
+  * **Migrate deprecated `javax.security.jacc` packages to `jakarta.security.jacc`**
+  * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.migrate.jakarta.JavaxBatchMigrationToJakartaBatch](/recipes/java/migrate/jakarta/javaxbatchmigrationtojakartabatch.md)
+  * **Migrate deprecated `javax.batch` packages to `jakarta.batch`**
+  * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.migrate.jakarta.JavaxDecoratorToJakartaDecorator](/recipes/java/migrate/jakarta/javaxdecoratortojakartadecorator.md)
+  * **Migrate deprecated `javax.decorator` packages to `jakarta.decorator`**
+  * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.migrate.jakarta.JavaxEEApiToJakarta](/recipes/java/migrate/jakarta/javaxeeapitojakarta.md)
+  * **Migrate deprecated `javaee-api` dependencies to `jakarta.platform`**
+  * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
 
 ##### Data tables:
 
@@ -1301,6 +2297,87 @@ _This doc contains all of the recipes with **unique** data tables that have been
 
 #### [org.openrewrite.java.migrate.jakarta.JavaxEjbToJakartaEjb](/recipes/java/migrate/jakarta/javaxejbtojakartaejb.md)
   * **Migrate deprecated `javax.ejb` packages to `jakarta.ejb`**
+  * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.migrate.jakarta.JavaxElToJakartaEl](/recipes/java/migrate/jakarta/javaxeltojakartael.md)
+  * **Migrate deprecated `javax.el` packages to `jakarta.el`**
+  * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.migrate.jakarta.JavaxEnterpriseToJakartaEnterprise](/recipes/java/migrate/jakarta/javaxenterprisetojakartaenterprise.md)
+  * **Migrate deprecated `javax.enterprise` packages to `jakarta.enterprise`**
+  * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.migrate.jakarta.JavaxInjectMigrationToJakartaInject](/recipes/java/migrate/jakarta/javaxinjectmigrationtojakartainject.md)
+  * **Migrate deprecated `javax.inject` packages to `jakarta.inject`**
+  * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.migrate.jakarta.JavaxInterceptorToJakartaInterceptor](/recipes/java/migrate/jakarta/javaxinterceptortojakartainterceptor.md)
+  * **Migrate deprecated `javax.interceptor` packages to `jakarta.interceptor`**
+  * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.migrate.jakarta.JavaxJmsToJakartaJms](/recipes/java/migrate/jakarta/javaxjmstojakartajms.md)
+  * **Migrate deprecated `javax.jms` packages to `jakarta.jms`**
+  * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.migrate.jakarta.JavaxJsonToJakartaJson](/recipes/java/migrate/jakarta/javaxjsontojakartajson.md)
+  * **Migrate deprecated `javax.json` packages to `jakarta.json`**
+  * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.migrate.jakarta.JavaxJspToJakartaJsp](/recipes/java/migrate/jakarta/javaxjsptojakartajsp.md)
+  * **Migrate deprecated `javax.jsp` packages to `jakarta.jsp`**
+  * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.migrate.jakarta.JavaxJwsToJakartaJws](/recipes/java/migrate/jakarta/javaxjwstojakartajws.md)
+  * **Migrate deprecated `javax.jws` packages to `jakarta.jws`**
+  * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.migrate.jakarta.JavaxMailToJakartaMail](/recipes/java/migrate/jakarta/javaxmailtojakartamail.md)
+  * **Migrate deprecated `javax.mail` packages to `jakarta.mail`**
   * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
 
 ##### Data tables:
@@ -1317,6 +2394,78 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
+#### [org.openrewrite.java.migrate.jakarta.JavaxPersistenceToJakartaPersistence](/recipes/java/migrate/jakarta/javaxpersistencetojakartapersistence.md)
+  * **Migrate deprecated `javax.persistence` packages to `jakarta.persistence`**
+  * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.migrate.jakarta.JavaxResourceToJakartaResource](/recipes/java/migrate/jakarta/javaxresourcetojakartaresource.md)
+  * **Migrate deprecated `javax.resource` packages to `jakarta.resource`**
+  * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.migrate.jakarta.JavaxSecurityToJakartaSecurity](/recipes/java/migrate/jakarta/javaxsecuritytojakartasecurity.md)
+  * **Migrate deprecated `javax.security.enterprise` packages to `jakarta.security.enterprise`**
+  * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.migrate.jakarta.JavaxServletToJakartaServlet](/recipes/java/migrate/jakarta/javaxservlettojakartaservlet.md)
+  * **Migrate deprecated `javax.servlet` packages to `jakarta.servlet`**
+  * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.migrate.jakarta.JavaxTransactionMigrationToJakartaTransaction](/recipes/java/migrate/jakarta/javaxtransactionmigrationtojakartatransaction.md)
+  * **Migrate deprecated `javax.transaction` packages to `jakarta.transaction`**
+  * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.migrate.jakarta.JavaxValidationMigrationToJakartaValidation](/recipes/java/migrate/jakarta/javaxvalidationmigrationtojakartavalidation.md)
+  * **Migrate deprecated `javax.validation` packages to `jakarta.validation`**
+  * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.migrate.jakarta.JavaxWebsocketToJakartaWebsocket](/recipes/java/migrate/jakarta/javaxwebsockettojakartawebsocket.md)
+  * **Migrate deprecated `javax.websocket` packages to `jakarta.websocket`**
+  * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.migrate.jakarta.JavaxWsToJakartaWs](/recipes/java/migrate/jakarta/javaxwstojakartaws.md)
+  * **Migrate deprecated `javax.ws` packages to `jakarta.ws`**
+  * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
 #### [org.openrewrite.java.migrate.jakarta.JavaxXmlBindMigrationToJakartaXmlBind](/recipes/java/migrate/jakarta/javaxxmlbindmigrationtojakartaxmlbind.md)
   * **Migrate deprecated `javax.xml.bind` packages to `jakarta.xml.bind`**
   * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
@@ -1326,9 +2475,63 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
+#### [org.openrewrite.java.migrate.jakarta.JavaxXmlSoapToJakartaXmlSoap](/recipes/java/migrate/jakarta/javaxxmlsoaptojakartaxmlsoap.md)
+  * **Migrate deprecated `javax.soap` packages to `jakarta.soap`**
+  * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.migrate.jakarta.JavaxXmlWsMigrationToJakartaXmlWs](/recipes/java/migrate/jakarta/javaxxmlwsmigrationtojakartaxmlws.md)
+  * **Migrate deprecated `javax.xml.ws` packages to `jakarta.xml.ws`**
+  * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.migrate.jakarta.JettyUpgradeEE10](/recipes/java/migrate/jakarta/jettyupgradeee10.md)
+  * **Update Jetty EE9 to Jetty EE10**
+  * Update Jetty dependencies from EE9 to EE10, changing the groupId and artifactIds as needed.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.migrate.jakarta.JettyUpgradeEE9](/recipes/java/migrate/jakarta/jettyupgradeee9.md)
+  * **Update Jetty 9 to Jetty 12**
+  * Update Jetty dependencies from version 9 to version 12.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.migrate.jakarta.JohnzonJavaxToJakarta](/recipes/java/migrate/jakarta/johnzonjavaxtojakarta.md)
+  * **Migrate Johnzon from javax to jakarta namespace**
+  * Java EE has been rebranded to Jakarta EE. This recipe replaces existing Johnzon dependencies with their counterparts that are compatible with Jakarta EE 9.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.migrate.jakarta.MigrateFastjsonForJakarta10](/recipes/java/migrate/jakarta/migratefastjsonforjakarta10.md)
+  * **Update Fastjson for Jakarta EE 10**
+  * Update Fastjson to be compatible with Jakarta EE 10.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
 #### [org.openrewrite.java.migrate.jakarta.MigratePluginsForJakarta10](/recipes/java/migrate/jakarta/migratepluginsforjakarta10.md)
-  * **Update Plugins for Jakarta EE 10**
-  * Update plugin to be compatible with Jakarta EE 10.
+  * **Update plugins for Jakarta EE 10**
+  * Update plugins to be compatible with Jakarta EE 10.
 
 ##### Data tables:
 
@@ -1336,7 +2539,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
 
 
 #### [org.openrewrite.java.migrate.jakarta.MigratePluginsForJakarta11](/recipes/java/migrate/jakarta/migratepluginsforjakarta11.md)
-  * **Update Plugins for Jakarta EE 11**
+  * **Update plugins for Jakarta EE 11**
   * Update plugins to be compatible with Jakarta EE 11.
 
 ##### Data tables:
@@ -1345,8 +2548,242 @@ _This doc contains all of the recipes with **unique** data tables that have been
 
 
 #### [org.openrewrite.java.migrate.jakarta.MigratePluginsForJakarta9](/recipes/java/migrate/jakarta/migratepluginsforjakarta9.md)
-  * **Update Plugins for Jakarta EE 9**
+  * **Update plugins for Jakarta EE 9**
   * Update plugins to be compatible with Jakarta EE 9.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.migrate.jakarta.MigrationToJakarta10Apis](/recipes/java/migrate/jakarta/migrationtojakarta10apis.md)
+  * **Migrate Jakarta EE 9 API dependencies to Jakarta EE 10 versions**
+  * Upgrade the Jakarta EE 9 API dependencies to their Jakarta EE 10 versions.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.migrate.jakarta.ReplaceJakartaJwsWithJakartaXmlWs](/recipes/java/migrate/jakarta/replacejakartajwswithjakartaxmlws.md)
+  * **Replace `jakarta.jws-api` with `jakarta.xml.ws-api`**
+  * Starting with Jakarta EE 10, the standalone `jakarta.jws-api` artifact was retired and its content was merged into `jakarta.xml.ws-api`. This recipe replaces a declared `jakarta.jws:jakarta.jws-api` dependency in place with `jakarta.xml.ws:jakarta.xml.ws-api`, and adds `jakarta.xml.ws:jakarta.xml.ws-api` directly when `jakarta.jws` was only available transitively.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.migrate.jakarta.RestAssuredJavaxToJakarta](/recipes/java/migrate/jakarta/restassuredjavaxtojakarta.md)
+  * **Migrate RestAssured from javax to jakarta namespace by upgrading to a version compatible with Jakarta EE 9**
+  * Java EE has been rebranded to Jakarta EE. This recipe replaces existing RestAssured dependencies with their counterparts that are compatible with Jakarta EE 9.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.migrate.jakarta.RetainJaxbApiForJackson](/recipes/java/migrate/jakarta/retainjaxbapiforjackson.md)
+  * **Retain `javax.xml.bind:jaxb-api` when `jackson-module-jaxb-annotations` is present**
+  * When migrating from `javax.xml.bind` to `jakarta.xml.bind` 3.0+, the `javax.xml.bind:jaxb-api` dependency is normally replaced. However, if `jackson-module-jaxb-annotations` is on the classpath (and still uses the `javax.xml.bind` namespace), this recipe ensures `javax.xml.bind:jaxb-api` remains available as a runtime dependency to prevent `NoClassDefFoundError`.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.migrate.jakarta.UpdateApacheCommonsEmailDependencies](/recipes/java/migrate/jakarta/updateapachecommonsemaildependencies.md)
+  * **Update Apache Commons Email to Email2 for Jakarta**
+  * Replace `commons-email` with `commons-email2-jakarta` 2.0.x, and move the `org.apache.commons.mail` types to their Email2 packages.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.migrate.jakarta.UpdateApacheShiroDependencies](/recipes/java/migrate/jakarta/updateapacheshirodependencies.md)
+  * **Update Apache Shiro dependencies to 2.0.x**
+  * Upgrade Apache Shiro to the 2.0.x `jakarta` classifier artifacts and move the relocated codec and utility types, and upgrade `buji-pac4j` and pac4j to their Jakarta EE versions.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.migrate.jakarta.UpdateEclipseLinkDependencies](/recipes/java/migrate/jakarta/updateeclipselinkdependencies.md)
+  * **Update EclipseLink dependencies to 4.x**
+  * Upgrade the `org.eclipse.persistence` dependencies to EclipseLink 4.x, which implements Jakarta Persistence 3.1.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.migrate.jakarta.UpdateFileupload2Dependencies](/recipes/java/migrate/jakarta/updatefileupload2dependencies.md)
+  * **Update Apache Commons FileUpload2 package for Jakarta EE 10**
+  * Replace the `commons-fileupload2-jakarta-servlet5` artifact and package with their `servlet6` counterparts, which target Jakarta Servlet 6.0.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.migrate.jakarta.UpdateJakartaFacesApi3](/recipes/java/migrate/jakarta/updatejakartafacesapi3.md)
+  * **Migrate deprecated `javax.faces` packages to `jakarta.faces`**
+  * Java EE has been rebranded to Jakarta EE, necessitating a package relocation and upgrade.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.migrate.jakarta.UpdateJakartaFacesApi4](/recipes/java/migrate/jakarta/updatejakartafacesapi4.md)
+  * **Update Jakarta Faces dependencies to 4.0.x**
+  * Upgrade the Jakarta Faces API and the `org.glassfish:jakarta.faces` implementation to 4.0.x.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.migrate.jakarta.UpdateJakartaFacesApi41](/recipes/java/migrate/jakarta/updatejakartafacesapi41.md)
+  * **Update Jakarta Faces dependencies to 4.1.x**
+  * Upgrade the Jakarta Faces API to 4.1.x.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.migrate.jakarta.UpdateJakartaPlatform10](/recipes/java/migrate/jakarta/updatejakartaplatform10.md)
+  * **Update Jakarta EE platform dependencies to 10.0.0**
+  * Upgrade the `jakarta.platform` dependencies to 10.0.0.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.migrate.jakarta.UpdateJakartaPlatform11](/recipes/java/migrate/jakarta/updatejakartaplatform11.md)
+  * **Update Jakarta EE platform dependencies to 11.0.x**
+  * Upgrade the `jakarta.platform` dependencies to 11.0.x, along with the Jakarta Annotations and Jakarta Server Pages APIs.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.migrate.jakarta.UpdateJakartaXmlWsEE10](/recipes/java/migrate/jakarta/updatejakartaxmlwsee10.md)
+  * **Update Jakarta XML Web Services dependencies for Jakarta EE 10**
+  * Upgrade the Jakarta XML Binding, SOAP and XML Web Services APIs and the `jaxws-rt` implementation to their Jakarta EE 10 versions, replacing the retired `jakarta.jws-api` artifact with `jakarta.xml.ws-api`.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.migrate.jakarta.UpdateJerseyDependencies](/recipes/java/migrate/jakarta/updatejerseydependencies.md)
+  * **Update GlassFish Jersey dependencies to 3.1.x**
+  * Upgrade the GlassFish Jersey dependencies to 3.1.x, and Tyrus to 2.1.x.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.migrate.jakarta.UpdateRestLet2_6](/recipes/java/migrate/jakarta/updaterestlet2_6.md)
+  * **Update Restlet to 2.6.x**
+  * Upgrade Restlet dependencies to 2.6.x, moving the `org.restlet.jee` artifacts to the `org.restlet` group and removing the `org.restlet.ext.httpclient` extension.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.migrate.jakarta.UpdateYassonDependencies](/recipes/java/migrate/jakarta/updateyassondependencies.md)
+  * **Update Eclipse Yasson dependencies to 3.0.x**
+  * Upgrade the `org.eclipse:yasson` dependency to 3.0.x, which implements Jakarta JSON Binding 3.0.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.migrate.jakarta.UpgradeFaces3OpenSourceLibraries](/recipes/java/migrate/jakarta/upgradefaces3opensourcelibraries.md)
+  * **Upgrade Faces open source libraries**
+  * Upgrade PrimeFaces, OmniFaces, and MyFaces libraries to Jakarta EE 9 versions.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.migrate.jakarta.UpgradeFaces41OpenSourceLibraries](/recipes/java/migrate/jakarta/upgradefaces41opensourcelibraries.md)
+  * **Upgrade Faces open source libraries**
+  * Upgrade OmniFaces and MyFaces/Mojarra libraries to Jakarta EE 11 versions.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.migrate.jakarta.UpgradeFaces4OpenSourceLibraries](/recipes/java/migrate/jakarta/upgradefaces4opensourcelibraries.md)
+  * **Upgrade Faces open source libraries**
+  * Upgrade PrimeFaces, OmniFaces, and MyFaces libraries to Jakarta EE 10 versions.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.migrate.jakarta.UpgradeJettyCoreDependencies](/recipes/java/migrate/jakarta/upgradejettycoredependencies.md)
+  * **Align legacy Jetty core dependencies with Jetty 12**
+  * Upgrade explicitly declared Jetty core dependencies alongside the relocated servlet dependencies.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.migrate.jakarta.WeldToJakarta](/recipes/java/migrate/jakarta/weldtojakarta.md)
+  * **Migrate Weld implementations to Jakarta CDI**
+  * Replace legacy Weld core artifacts and upgrade javax-based Weld implementations to Weld 4, which implements Jakarta CDI 3.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.migrate.javaee8](/recipes/java/migrate/javaee8-recipe.md)
+  * **Migrate to Java EE 8**
+  * Apply changes needed when migrating to Java EE 8, such as upgrading the Java Servlet dependency, replacing deprecated Servlet methods, and moving Bean Validation configuration from Apache BVal to Hibernate Validator. Includes the Java EE 7 migration.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.migrate.javaee8.MigrateToServlet3x](/recipes/java/migrate/javaee8/migratetoservlet3x.md)
+  * **Update Java Servlet dependencies to 3.x**
+  * Replace the legacy `javax.servlet:servlet-api` dependency with `javax.servlet:javax.servlet-api` 3.x.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.migrate.javax.AddCommonAnnotationsDependencies](/recipes/java/migrate/javax/addcommonannotationsdependencies.md)
+  * **Add explicit Common Annotations dependencies**
+  * Add the necessary `annotation-api` dependency from Jakarta EE 8 to maintain compatibility with Java version 11 or greater.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.migrate.javax.AddInjectDependencies](/recipes/java/migrate/javax/addinjectdependencies.md)
+  * **Add explicit Inject dependencies**
+  * Add the necessary `inject-api` dependency from Jakarta EE 8 to maintain compatibility with Java version 11 or greater.
 
 ##### Data tables:
 
@@ -1380,9 +2817,27 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
+#### [org.openrewrite.java.migrate.javax.AddJaxwsDependencies](/recipes/java/migrate/javax/addjaxwsdependencies.md)
+  * **Add explicit JAX-WS dependencies**
+  * This recipe will add explicit dependencies for Jakarta EE 8 when a Java 8 application is using JAX-WS. Any existing dependencies will be upgraded to the latest version of Jakarta EE 8. The artifacts are moved to Jakarta EE 8 but the application can continue to use the `javax.xml.ws` namespace.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
 #### [org.openrewrite.java.migrate.javax.MigrateJaxBWSPlugin](/recipes/java/migrate/javax/migratejaxbwsplugin.md)
-  * **Migrate JAXB-WS Plugin**
+  * **Migrate the JAX-WS Maven plugin**
   * Upgrade the JAXB-WS Maven plugin to be compatible with Java 11.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.migrate.javax.MigrateOneGfwJaxbDependencies](/recipes/java/migrate/javax/migrateonegfwjaxbdependencies.md)
+  * **Replace `one.gfw` JAXB artifacts with their official coordinates**
+  * The `one.gfw` group republishes unmodified copies of the JAXB API and runtime artifacts under its own group ID. This recipe replaces them with the official artifacts they were copied from, so that subsequent JAXB and Jakarta migrations recognize them.
 
 ##### Data tables:
 
@@ -1391,7 +2846,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
 
 #### [org.openrewrite.java.migrate.lang.FindNonVirtualExecutors](/recipes/java/migrate/lang/findnonvirtualexecutors.md)
   * **Find non-virtual `ExecutorService` creation**
-  * Find all places where static `java.util.concurrent.Executors` method creates a non-virtual `java.util.concurrent.ExecutorService`. This recipe can be used to search fro `ExecutorService` that can be replaced by Virtual Thread executor.
+  * Find all places where static `java.util.concurrent.Executors` method creates a non-virtual `java.util.concurrent.ExecutorService`. This recipe can be used to search for `ExecutorService` that can be replaced by a virtual thread executor.
 
 ##### Data tables:
 
@@ -1399,8 +2854,8 @@ _This doc contains all of the recipes with **unique** data tables that have been
 
 
 #### [org.openrewrite.java.migrate.lang.FindVirtualThreadOpportunities](/recipes/java/migrate/lang/findvirtualthreadopportunities.md)
-  * **Find Virtual Thread opportunities**
-  * Find opportunities to convert existing code to use Virtual Threads.
+  * **Find virtual thread opportunities**
+  * Find opportunities to convert existing code to use virtual threads.
 
 ##### Data tables:
 
@@ -1408,8 +2863,17 @@ _This doc contains all of the recipes with **unique** data tables that have been
 
 
 #### [org.openrewrite.java.migrate.lombok.LombokBestPractices](/recipes/java/migrate/lombok/lombokbestpractices.md)
-  * **Lombok Best Practices**
+  * **Lombok best practices**
   * Applies all recipes that enforce best practices for using Lombok.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.migrate.lombok.UpdateLombokToJava11](/recipes/java/migrate/lombok/updatelomboktojava11.md)
+  * **Migrate Lombok to a Java 11 compatible version**
+  * Update Lombok dependency to a version that is compatible with Java 11 and migrate experimental Lombok types that have been promoted.
 
 ##### Data tables:
 
@@ -1435,7 +2899,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
 
 
 #### [org.openrewrite.java.migrate.search.FindInternalJavaxApis](/recipes/java/migrate/search/findinternaljavaxapis.md)
-  * **Find uses of internal javax APIs**
+  * **Find uses of internal `javax` APIs**
   * The libraries that define these APIs will have to be migrated before any of the repositories that use them.
 
 ##### Data tables:
@@ -1461,12 +2925,135 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.java.migrate.table.JavaVersionMigrationPlan**: *A per-repository view of the current state of Java versions and associated build tools*
 
 
+#### [org.openrewrite.scala.migrate.UpgradeScala_2_12](/recipes/scala/migrate/upgradescala_2_12.md)
+  * **Migrate to Scala 2.12.+**
+  * Upgrade the Scala version for compatibility with newer Java versions.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
 
 ### rewrite-netty
 
 #### [org.openrewrite.netty.UpgradeNetty_3_2_to_4_1](/recipes/netty/upgradenetty_3_2_to_4_1.md)
   * **Migrates from Netty 3.2.x to Netty 4.1.x**
   * Migrate applications to the latest Netty 4.1.x release.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.netty.UpgradeNetty_4_1_to_4_2](/recipes/netty/upgradenetty_4_1_to_4_2.md)
+  * **Migrates from Netty 4.1.x to Netty 4.2.x**
+  * Migrate applications to the latest Netty 4.2.x release.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+
+### rewrite-okhttp
+
+#### [org.openrewrite.okhttp.UpgradeMockWebServer3](/recipes/okhttp/upgrademockwebserver3.md)
+  * **Migrate to MockWebServer3 (core module)**
+  * Migrate from the legacy `mockwebserver` artifact to `mockwebserver3` core module without JUnit dependency.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.okhttp.UpgradeMockWebServer3JUnit4](/recipes/okhttp/upgrademockwebserver3junit4.md)
+  * **Migrate to MockWebServer3 with JUnit 4**
+  * Migrate from the legacy `mockwebserver` artifact to `mockwebserver3-junit4` with JUnit 4 integration.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.okhttp.UpgradeMockWebServer3JUnit5](/recipes/okhttp/upgrademockwebserver3junit5.md)
+  * **Migrate to MockWebServer3 with JUnit 5**
+  * Migrate from the legacy `mockwebserver` artifact to `mockwebserver3-junit5` with JUnit 5 integration.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.okhttp.UpgradeOkHttp4](/recipes/okhttp/upgradeokhttp4.md)
+  * **Migrate to OkHttp 4.x**
+  * This recipe will apply changes commonly needed when migrating to OkHttp 4.x.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.okhttp.UpgradeOkHttp4Dependencies](/recipes/okhttp/upgradeokhttp4dependencies.md)
+  * **Migrate OkHttp dependencies to 4.x**
+  * Migrate OkHttp dependencies to 4.x.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.okhttp.UpgradeOkHttp5](/recipes/okhttp/upgradeokhttp5.md)
+  * **Migrate to OkHttp 5.x**
+  * This recipe will apply changes commonly needed when migrating to OkHttp 5.x.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.okhttp.UpgradeOkHttp5Dependencies](/recipes/okhttp/upgradeokhttp5dependencies.md)
+  * **Migrate OkHttp dependencies to 5.x**
+  * Migrate OkHttp dependencies to 5.x.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.okio.UpgradeOkio3](/recipes/okio/upgradeokio3.md)
+  * **Migrate to Okio 3.x**
+  * This recipe will apply changes commonly needed when migrating to Okio 3.x.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.okio.UpgradeOkio3Dependencies](/recipes/okio/upgradeokio3dependencies.md)
+  * **Migrate Okio dependencies to 3.x**
+  * Migrate Okio dependencies to 3.x.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+
+### rewrite-openapi
+
+#### [org.openrewrite.openapi.swagger.SwaggerToOpenAPI](/recipes/openapi/swagger/swaggertoopenapi.md)
+  * **Migrate from Swagger to OpenAPI**
+  * Migrate from Swagger to OpenAPI.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.openapi.swagger.UseJakartaSwaggerArtifacts](/recipes/openapi/swagger/usejakartaswaggerartifacts.md)
+  * **Use Jakarta Swagger Artifacts**
+  * Migrate from javax Swagger artifacts to Jakarta versions.
 
 ##### Data tables:
 
@@ -1496,6 +3083,15 @@ _This doc contains all of the recipes with **unique** data tables that have been
 
 
 ### rewrite-quarkus
+
+#### [org.openrewrite.quarkus.migrate.javaee.AddQuarkus2Dependencies](/recipes/quarkus/migrate/javaee/addquarkus2dependencies.md)
+  * **Add Quarkus 2 dependencies**
+  * Add Quarkus 2 dependencies to the project.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
 
 #### [org.openrewrite.quarkus.migrate.javaee.AddQuarkus2MavenPlugins](/recipes/quarkus/migrate/javaee/addquarkus2mavenplugins.md)
   * **Migrate JavaEE Maven Dependencies to Quarkus 2**
@@ -1527,6 +3123,15 @@ _This doc contains all of the recipes with **unique** data tables that have been
 
 ### rewrite-rewrite
 
+#### [org.openrewrite.java.jspecify.MigrateFromOpenRewriteAnnotations](/recipes/java/jspecify/migratefromopenrewriteannotations.md)
+  * **Migrate from OpenRewrite annotations to JSpecify**
+  * Migrate from OpenRewrite's JSR-305 meta-annotations to JSpecify.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
 #### [org.openrewrite.java.recipes.FindRecipes](/recipes/java/recipes/findrecipes.md)
   * **Find OpenRewrite recipes**
   * This recipe finds all OpenRewrite recipes, primarily to produce a data table that is being used to experiment with fine-tuning a large language model to produce more recipes.
@@ -1543,6 +3148,15 @@ _This doc contains all of the recipes with **unique** data tables that have been
 ##### Data tables:
 
   * **org.openrewrite.java.recipes.DeprecatedMethodDelegations**: *Deprecated methods that delegate to another method in the same class, suitable for inlining via `InlineMethodCalls`.*
+
+
+#### [org.openrewrite.java.recipes.RecipeNullabilityBestPractices](/recipes/java/recipes/recipenullabilitybestpractices.md)
+  * **Recipe nullability best practices**
+  * Use JSpecify nullable annotations; drop Nonnull annotations; use `NullMarked` on `package-info.java` instead.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
 #### [org.openrewrite.java.recipes.RecipeTestingBestPractices](/recipes/java/recipes/recipetestingbestpractices.md)
@@ -1578,13 +3192,121 @@ _This doc contains all of the recipes with **unique** data tables that have been
 
 ### rewrite-spring
 
+#### [org.openrewrite.java.flyway.AddFlywayModuleMySQL](/recipes/java/flyway/addflywaymodulemysql.md)
+  * **Add missing Flyway module for MySQL**
+  * Database modules for Flyway 10 have been split out into separate modules for maintainability. Add the `flyway-mysql` dependency if you are using MySQL with Flyway 10, as detailed on https://github.com/flyway/flyway/issues/3780.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.flyway.AddFlywayModuleOracle](/recipes/java/flyway/addflywaymoduleoracle.md)
+  * **Add missing Flyway module for Oracle**
+  * Database modules for Flyway 10 have been split out into separate modules for maintainability. Add the `flyway-database-oracle` dependency if you are using Oracle with Flyway 10, as detailed on https://github.com/flyway/flyway/issues/3780.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.flyway.AddFlywayModulePostgreSQL](/recipes/java/flyway/addflywaymodulepostgresql.md)
+  * **Add missing Flyway module for PostgreSQL**
+  * Database modules for Flyway 10 have been split out in to separate modules for maintainability. Add the `flyway-database-postgresql` dependency if you are using PostgreSQL with Flyway 10, as detailed on https://github.com/flyway/flyway/issues/3780.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.flyway.AddFlywayModuleSqlServer](/recipes/java/flyway/addflywaymodulesqlserver.md)
+  * **Add missing Flyway module for SQL Server**
+  * Database modules for Flyway 10 have been split out into separate modules for maintainability. Add the `flyway-sqlserver` dependency if you are using SQL Server with Flyway 10, as detailed on https://github.com/flyway/flyway/issues/3780.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.flyway.MigrateToFlyway10](/recipes/java/flyway/migratetoflyway10.md)
+  * **Migrate to Flyway 10**
+  * Migrate to Flyway 10. See details at [Flyway V10 has landed](https://documentation.red-gate.com/fd/flyway-v10-has-landed-222627771.html).
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.spring.batch.SpringBatch4To5Migration](/recipes/java/spring/batch/springbatch4to5migration.md)
+  * **Migrate to Spring Batch 5.0 from 4.3**
+  * Migrate applications built on Spring Batch 4.3 to the latest Spring Batch 5.0 release.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.spring.batch.SpringBatch5To6Migration](/recipes/java/spring/batch/springbatch5to6migration.md)
+  * **Migrate to Spring Batch 6.0 from 5.2**
+  * Migrate applications built on Spring Batch 5.2 to the latest Spring Batch 6.0 release.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.spring.boot2.AddSpringBootStarterValidation](/recipes/java/spring/boot2/addspringbootstartervalidation.md)
+  * **Add `spring-boot-starter-validation` if needed**
+  * Add `spring-boot-starter-validation` when validation constraints are used, unless the project already declares `jakarta.validation-api` or `hibernate-validator` directly.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.spring.boot2.MaybeAddJavaxValidationApi](/recipes/java/spring/boot2/maybeaddjavaxvalidationapi.md)
+  * **Add `javax.validation-api` dependency**
+  * Conditional on the application using a version of Spring Boot which uses javax but provides a hibernate-validator version which exports the jakarta.validation-api instead.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.spring.boot2.MaybeAddSpringBootStarterActuator](/recipes/java/spring/boot2/maybeaddspringbootstarteractuator.md)
+  * **Replace `micrometer-spring-legacy` with `spring-boot-starter-actuator`**
+  * Replace deprecated `micrometer-spring-legacy` with `spring-boot-starter-actuator`.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.spring.boot2.MigrateHibernateConstraintsToJavax](/recipes/java/spring/boot2/migratehibernateconstraintstojavax.md)
+  * **Use `javax.validation.constraints`**
+  * Use `javax.validation.constraints` instead of the deprecated `org.hibernate.validator.constraints` in Spring Boot 2.0 or higher.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
 #### [org.openrewrite.java.spring.boot2.SpringBoot2JUnit4to5Migration](/recipes/java/spring/boot2/springboot2junit4to5migration.md)
   * **Migrate Spring Boot 2.x projects to JUnit 5 from JUnit 4**
   * This recipe will migrate a Spring Boot application's tests from JUnit 4 to JUnit 5. This spring-specific migration includes conversion of Spring Test runners to Spring Test extensions and awareness of the composable Spring Test annotations.
 
 ##### Data tables:
 
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
   * **org.openrewrite.java.testing.mockito.table.PowerMockTestsDisabled**: *Tests disabled because they use a PowerMock feature with no Mockito equivalent. Each row is an action item: rework the test so it does not reach into private members, then re-enable it.*
+
+
+#### [org.openrewrite.java.spring.boot2.UpgradeSpockToGroovy3](/recipes/java/spring/boot2/upgradespocktogroovy3.md)
+  * **Upgrade Spock to a Groovy 3 compatible variant**
+  * Upgrade Spock dependencies to a Groovy 3 compatible 2.0 variant when Groovy 3 is on the classpath.
+
+##### Data tables:
+
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
@@ -1682,6 +3404,42 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.DependenciesDeclared**: *Direct (first-order) dependencies declared by the project.*
 
 
+#### [org.openrewrite.java.spring.boot3.ChangeCassandraGroupId](/recipes/java/spring/boot3/changecassandragroupid.md)
+  * **Change `com.datastax.oss` to `org.apache.cassandra`**
+  * Change `groupId` from `com.datastax.oss` to `org.apache.cassandra` and adopt the Spring Boot 3.3 managed version.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.spring.boot3.MigrateDropWizardDependencies](/recipes/java/spring/boot3/migratedropwizarddependencies.md)
+  * **Migrate Dropwizard dependencies to Spring Boot 3.x**
+  * Migrate dropWizard dependencies to the new artifactId, since these are changed with Spring Boot 3.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.spring.boot3.MigrateSapCfJavaLoggingSupport](/recipes/java/spring/boot3/migratesapcfjavaloggingsupport.md)
+  * **Migrate SAP Cloud Foundry logging support to Spring Boot 3.x**
+  * Migrate SAP cloud foundry logging support from `cf-java-logging-support-servlet` to `cf-java-logging-support-servlet-jakarta`, to use Jakarta with Spring Boot 3.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.spring.boot3.MigrateThymeleafDependencies](/recipes/java/spring/boot3/migratethymeleafdependencies.md)
+  * **Migrate Thymeleaf dependencies to Spring Boot 3.x**
+  * Migrate thymeleaf dependencies to the new artifactId, since these are changed with Spring Boot 3.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
 #### [org.openrewrite.java.spring.boot3.SpringBoot33BestPractices](/recipes/java/spring/boot3/springboot33bestpractices.md)
   * **Spring Boot 3.3 best practices**
   * Applies best practices to Spring Boot 3 applications.
@@ -1692,9 +3450,108 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.java.testing.mockito.table.PowerMockTestsDisabled**: *Tests disabled because they use a PowerMock feature with no Mockito equivalent. Each row is an action item: rework the test so it does not reach into private members, then re-enable it.*
 
 
+#### [org.openrewrite.java.spring.boot3.UpdatePrometheusPushgateway](/recipes/java/spring/boot3/updateprometheuspushgateway.md)
+  * **Update Prometheus Pushgateway dependency coordinates**
+  * Update the Prometheus Pushgateway artifact ID for Spring Boot 3.5 compatibility.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.spring.boot3.UpgradeMyBatisToSpringBoot_2_0](/recipes/java/spring/boot3/upgrademybatistospringboot_2_0.md)
+  * **Upgrade MyBatis to Spring Boot 2.0**
+  * Upgrade MyBatis Spring modules to a version corresponding to Spring Boot 2.0.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.spring.boot3.UpgradeMyBatisToSpringBoot_2_1](/recipes/java/spring/boot3/upgrademybatistospringboot_2_1.md)
+  * **Upgrade MyBatis to Spring Boot 2.1**
+  * Upgrade MyBatis Spring modules to a version corresponding to Spring Boot 2.1.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.spring.boot3.UpgradeMyBatisToSpringBoot_2_2](/recipes/java/spring/boot3/upgrademybatistospringboot_2_2.md)
+  * **Upgrade MyBatis to Spring Boot 2.2**
+  * Upgrade MyBatis Spring modules to a version corresponding to Spring Boot 2.2.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.spring.boot3.UpgradeMyBatisToSpringBoot_2_3](/recipes/java/spring/boot3/upgrademybatistospringboot_2_3.md)
+  * **Upgrade MyBatis to Spring Boot 2.3**
+  * Upgrade MyBatis Spring modules to a version corresponding to Spring Boot 2.3.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.spring.boot3.UpgradeMyBatisToSpringBoot_2_4](/recipes/java/spring/boot3/upgrademybatistospringboot_2_4.md)
+  * **Upgrade MyBatis to Spring Boot 2.4**
+  * Upgrade MyBatis Spring modules to a version corresponding to Spring Boot 2.4.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.spring.boot3.UpgradeMyBatisToSpringBoot_2_5](/recipes/java/spring/boot3/upgrademybatistospringboot_2_5.md)
+  * **Upgrade MyBatis to Spring Boot 2.5**
+  * Upgrade MyBatis Spring modules to a version corresponding to Spring Boot 2.5.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.spring.boot3.UpgradeMyBatisToSpringBoot_2_6](/recipes/java/spring/boot3/upgrademybatistospringboot_2_6.md)
+  * **Upgrade MyBatis to Spring Boot 2.6**
+  * Upgrade MyBatis Spring modules to a version corresponding to Spring Boot 2.6.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.spring.boot3.UpgradeMyBatisToSpringBoot_2_7](/recipes/java/spring/boot3/upgrademybatistospringboot_2_7.md)
+  * **Upgrade MyBatis to Spring Boot 2.7**
+  * Upgrade MyBatis Spring modules to a version corresponding to Spring Boot 2.7.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.spring.boot3.UpgradeMyBatisToSpringBoot_3_0](/recipes/java/spring/boot3/upgrademybatistospringboot_3_0.md)
+  * **Upgrade MyBatis to Spring Boot 3.0**
+  * Upgrade MyBatis Spring modules to a version corresponding to Spring Boot 3.0.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.spring.boot3.UpgradeMyBatisToSpringBoot_3_2](/recipes/java/spring/boot3/upgrademybatistospringboot_3_2.md)
+  * **Upgrade MyBatis to Spring Boot 3.2**
+  * Upgrade MyBatis Spring modules to a version corresponding to Spring Boot 3.2.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
 #### [org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_0](/recipes/java/spring/boot3/upgradespringboot_3_0-community-edition.md)
   * **Migrate to Spring Boot 3.0 (Community Edition)**
-  * Migrate applications to the latest Spring Boot 3.0 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 2.7.
+  * Migrate applications to the latest Spring Boot 3.0 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 3.0.
 
 ##### Data tables:
 
@@ -1704,7 +3561,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
 
 #### [org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_1](/recipes/java/spring/boot3/upgradespringboot_3_1.md)
   * **Migrate to Spring Boot 3.1**
-  * Migrate applications to the latest Spring Boot 3.1 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 3.0.
+  * Migrate applications to the latest Spring Boot 3.1 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 3.1.
 
 ##### Data tables:
 
@@ -1714,7 +3571,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
 
 #### [org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_2](/recipes/java/spring/boot3/upgradespringboot_3_2.md)
   * **Migrate to Spring Boot 3.2**
-  * Migrate applications to the latest Spring Boot 3.2 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 3.1.
+  * Migrate applications to the latest Spring Boot 3.2 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 3.2.
 
 ##### Data tables:
 
@@ -1724,7 +3581,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
 
 #### [org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_3](/recipes/java/spring/boot3/upgradespringboot_3_3.md)
   * **Migrate to Spring Boot 3.3**
-  * Migrate applications to the latest Spring Boot 3.3 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 3.2.
+  * Migrate applications to the latest Spring Boot 3.3 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 3.3.
 
 ##### Data tables:
 
@@ -1752,6 +3609,42 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.java.testing.mockito.table.PowerMockTestsDisabled**: *Tests disabled because they use a PowerMock feature with no Mockito equivalent. Each row is an action item: rework the test so it does not reach into private members, then re-enable it.*
 
 
+#### [org.openrewrite.java.spring.boot4.AddModularStarterDependencies](/recipes/java/spring/boot4/addmodularstarterdependencies.md)
+  * **Add Spring Boot 4.0 modular starter dependencies**
+  * Adds the Spring Boot 4.0 modular starter dependencies implied by a module's Spring Boot 3 package usage, without relocating any source. Split out from `MigrateToModularStarters` so that it can be sequenced ahead of `MigrateAutoconfigurePackages` when composed into a larger migration.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.spring.boot4.AddSpringBootStarterDataMongoDbReactiveTest](/recipes/java/spring/boot4/addspringbootstarterdatamongodbreactivetest.md)
+  * **Add `spring-boot-starter-data-mongodb-reactive-test` for reactive MongoDB tests**
+  * Adds the dedicated Spring Boot 4.0 reactive Spring Data MongoDB test starter when the application directly uses the reactive Spring Data MongoDB starter and MongoDB test slices.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.spring.boot4.AddSpringBootStarterDataMongoDbTest](/recipes/java/spring/boot4/addspringbootstarterdatamongodbtest.md)
+  * **Add `spring-boot-starter-data-mongodb-test` for imperative MongoDB tests**
+  * Adds the dedicated Spring Boot 4.0 imperative Spring Data MongoDB test starter when the application directly uses the imperative Spring Data MongoDB starter and MongoDB test slices.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.spring.boot4.AddSpringBootStarterFlyway](/recipes/java/spring/boot4/addspringbootstarterflyway.md)
+  * **Add `spring-boot-starter-flyway` if using Flyway**
+  * Adds the necessary Spring Boot 4.0 Flyway starter for autoconfiguration based on dependency usage.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
 #### [org.openrewrite.java.spring.boot4.MigrateJsonschema2PojoToSpringBoot4](/recipes/java/spring/boot4/migratejsonschema2pojotospringboot4.md)
   * **Migrate jsonschema2pojo configuration to Spring Boot 4**
   * Update `jsonschema2pojo-maven-plugin` to generate Jackson 3 and Jakarta Validation annotations compatible with Spring Boot 4. The `jackson3` annotation style was introduced in jsonschema2pojo 1.3.0, so the plugin is upgraded to at least that version first.
@@ -1770,6 +3663,24 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
+#### [org.openrewrite.java.spring.boot4.MigrateToModularStarters](/recipes/java/spring/boot4/migratetomodularstarters-community-edition.md)
+  * **Migrate to Spring Boot 4.0 modular starters (Community Edition)**
+  * Adds the necessary Spring Boot 4.0 starter dependencies based on package usage. Spring Boot 4.0 has a modular design requiring explicit starters for each feature. This recipe detects feature usage via package imports and adds the appropriate starters. Note: Higher-level starters (like data-jpa) include lower-level ones (like jdbc) transitively, so only the highest-level detected starter is added for each technology.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.spring.boot4.RenameDeprecatedStartersManagedVersions](/recipes/java/spring/boot4/renamedeprecatedstartersmanagedversions.md)
+  * **Rename Spring Boot 4.0 starters with managed versions**
+  * Renames deprecated Spring Boot starters to their new names without adding explicit versions, for use in projects where the `io.spring.dependency-management` plugin manages versions via BOM.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
 #### [org.openrewrite.java.spring.boot4.UpgradeSpringBoot_4_0](/recipes/java/spring/boot4/upgradespringboot_4_0-community-edition.md)
   * **Migrate to Spring Boot 4.0 (Community Edition)**
   * Migrate applications to the latest Spring Boot 4.0 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs.
@@ -1778,6 +3689,69 @@ _This doc contains all of the recipes with **unique** data tables that have been
 
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
   * **org.openrewrite.java.testing.mockito.table.PowerMockTestsDisabled**: *Tests disabled because they use a PowerMock feature with no Mockito equivalent. Each row is an action item: rework the test so it does not reach into private members, then re-enable it.*
+
+
+#### [org.openrewrite.java.spring.cloud2022.DependencyUpgrades](/recipes/java/spring/cloud2022/dependencyupgrades.md)
+  * **Upgrade dependencies to Spring Cloud 2022**
+  * Upgrade dependencies to Spring Cloud 2022 from prior 2021.x version.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.spring.cloud2022.MigrateCloudSleuthToMicrometerTracing](/recipes/java/spring/cloud2022/migratecloudsleuthtomicrometertracing.md)
+  * **Migrate Spring Cloud Sleuth 3.1 to Micrometer Tracing 1.0**
+  * Spring Cloud Sleuth has been discontinued and only compatible with Spring Boot 2.x.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.spring.cloud2022.UpgradeSpringCloud_2022](/recipes/java/spring/cloud2022/upgradespringcloud_2022.md)
+  * **Migrate to Spring Cloud 2022**
+  * Migrate applications to the latest Spring Cloud 2022 (Kilburn) release.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.spring.cloud2023.DependencyUpgrades](/recipes/java/spring/cloud2023/dependencyupgrades.md)
+  * **Upgrade dependencies to Spring Cloud 2023**
+  * Upgrade dependencies to Spring Cloud 2023 from prior 2022.x version.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.spring.cloud2023.UpgradeSpringCloud_2023](/recipes/java/spring/cloud2023/upgradespringcloud_2023.md)
+  * **Migrate to Spring Cloud 2023**
+  * Migrate applications to the latest Spring Cloud 2023 (Leyton) release.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.spring.cloud2024.DependencyUpgrades](/recipes/java/spring/cloud2024/dependencyupgrades.md)
+  * **Upgrade dependencies to Spring Cloud 2024**
+  * Upgrade dependencies to Spring Cloud 2024 from prior 2023.x version.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.spring.cloud2024.UpgradeSpringCloud_2024](/recipes/java/spring/cloud2024/upgradespringcloud_2024.md)
+  * **Migrate to Spring Cloud 2024**
+  * Migrate applications to the latest Spring Cloud 2024 (Moorgate) release.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
 #### [org.openrewrite.java.spring.cloud2025.AddSpringCloudDependenciesBom](/recipes/java/spring/cloud2025/addspringclouddependenciesbom.md)
@@ -1789,9 +3763,135 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
+#### [org.openrewrite.java.spring.cloud2025.DependencyUpgrades](/recipes/java/spring/cloud2025/dependencyupgrades.md)
+  * **Upgrade dependencies to Spring Cloud 2025**
+  * Upgrade dependencies to Spring Cloud 2025 from prior 2024.x version.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.spring.cloud2025.SpringCloudGatewayDeprecatedModulesAndStarters](/recipes/java/spring/cloud2025/springcloudgatewaydeprecatedmodulesandstarters.md)
+  * **Migrate to new Spring Cloud Gateway modules and starters**
+  * Migrate to new Spring Cloud Gateway modules and starters for Spring Cloud 2025.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.spring.cloud2025.UpgradeSpringCloud_2025](/recipes/java/spring/cloud2025/upgradespringcloud_2025.md)
+  * **Migrate to Spring Cloud 2025**
+  * Migrate applications to the latest Spring Cloud 2025 (Northfields) release.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
 #### [org.openrewrite.java.spring.cloud2025.UpgradeSpringCloud_2025_1](/recipes/java/spring/cloud2025/upgradespringcloud_2025_1.md)
   * **Migrate to Spring Cloud 2025.1**
   * Migrate applications to the latest Spring Cloud 2025.1 release, compatible with Spring Boot 4.0.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.spring.data.UpgradeSpringDataMongoDb_5_0](/recipes/java/spring/data/upgradespringdatamongodb_5_0.md)
+  * **Migrate to Spring Data MongoDB 5.0**
+  * Align explicitly versioned Spring Data MongoDB and supported MongoDB JVM driver dependencies with Spring Data MongoDB 5.0. Managed, versionless dependencies remain managed.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.spring.data.UpgradeSpringData_2_3](/recipes/java/spring/data/upgradespringdata_2_3.md)
+  * **Migrate to Spring Data 2.3**
+  * Migrate applications to the latest Spring Data 2.3 release.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.spring.data.UpgradeSpringData_2_5](/recipes/java/spring/data/upgradespringdata_2_5.md)
+  * **Migrate to Spring Data JPA 2.5**
+  * Migrate applications to the latest Spring Data 2.5 release.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.spring.data.UpgradeSpringData_2_7](/recipes/java/spring/data/upgradespringdata_2_7.md)
+  * **Migrate to Spring Data JPA 2.7**
+  * Migrate applications to the latest Spring Data JPA 2.7 release.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.spring.data.UpgradeSpringData_3_0](/recipes/java/spring/data/upgradespringdata_3_0.md)
+  * **Migrate to Spring Data 3.0**
+  * Migrate applications to Spring Data 3.0. Handles the PagingAndSortingRepository hierarchy change where it no longer extends CrudRepository, and chains prior deprecation fixes from Spring Data 2.7.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.spring.data.UpgradeSpringData_3_4](/recipes/java/spring/data/upgradespringdata_3_4.md)
+  * **Migrate to Spring Data JPA 3.4**
+  * Migrate applications to the latest Spring Data JPA 3.4 release.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.spring.data.UpgradeSpringData_4_0](/recipes/java/spring/data/upgradespringdata_4_0.md)
+  * **Migrate to Spring Data 4.0**
+  * Migrate applications to the Spring Data 2025.1 release train. Datastore-specific migration support is added incrementally.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.spring.framework.UpgradeSpringFramework_5_0](/recipes/java/spring/framework/upgradespringframework_5_0-community-edition.md)
+  * **Migrate to Spring Framework 5.0 (Community Edition)**
+  * Migrate applications to the latest Spring Framework 5.0 release.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.spring.framework.UpgradeSpringFramework_5_1](/recipes/java/spring/framework/upgradespringframework_5_1.md)
+  * **Migrate to Spring Framework 5.1**
+  * Migrate applications to the latest Spring Framework 5.1 release.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.spring.framework.UpgradeSpringFramework_5_2](/recipes/java/spring/framework/upgradespringframework_5_2.md)
+  * **Migrate to Spring Framework 5.2**
+  * Migrate applications to the latest Spring Framework 5.2 release.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.spring.framework.UpgradeSpringFramework_5_3](/recipes/java/spring/framework/upgradespringframework_5_3-community-edition.md)
+  * **Migrate to Spring Framework 5.3 (Community Edition)**
+  * Migrate applications to the latest Spring Framework 5.3 release.
 
 ##### Data tables:
 
@@ -1844,6 +3944,78 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.ExplainDependenciesInUse**: *A dependency graph explainer similar to that shown by `gradle dependencyInsight` for each matching dependency. This table will contain a row per matching dependency per configuration per (sub)project.*
 
 
+#### [org.openrewrite.java.spring.kafka.UpgradeSpringKafka_3_0](/recipes/java/spring/kafka/upgradespringkafka_3_0.md)
+  * **Migrate to Spring Kafka 3.0**
+  * Migrate applications to the latest Spring Kafka 3.0 release.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.spring.opentelemetry.MigrateBraveToOpenTelemetry](/recipes/java/spring/opentelemetry/migratebravetoopentelemetry.md)
+  * **Migrate Brave API to OpenTelemetry API**
+  * Migrate Java code using Brave (Zipkin) tracing API to OpenTelemetry API. This recipe handles the migration of Brave Tracer, Span, and related classes to OpenTelemetry equivalents.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.spring.opentelemetry.MigrateDatadogToOpenTelemetry](/recipes/java/spring/opentelemetry/migratedatadogtoopentelemetry.md)
+  * **Migrate Datadog tracing to OpenTelemetry**
+  * Migrate from Datadog Java tracing annotations to OpenTelemetry annotations. Replace Datadog @Trace annotations with @WithSpan annotations.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.spring.opentelemetry.MigrateFromZipkinToOpenTelemetry](/recipes/java/spring/opentelemetry/migratefromzipkintoopentelemetry.md)
+  * **Migrate from Zipkin to OpenTelemetry OTLP**
+  * Migrate from Zipkin tracing to OpenTelemetry OTLP. This recipe replaces Zipkin dependencies with OpenTelemetry OTLP exporter and updates the related configuration properties.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.spring.opentelemetry.MigrateNewRelicToOpenTelemetry](/recipes/java/spring/opentelemetry/migratenewrelictoopentelemetry.md)
+  * **Migrate New Relic Agent to OpenTelemetry**
+  * Migrate from New Relic Java Agent annotations to OpenTelemetry annotations. Replace @Trace annotations with @WithSpan annotations.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.spring.opentelemetry.MigrateOpenTracingToOpenTelemetry](/recipes/java/spring/opentelemetry/migrateopentracingtoopentelemetry.md)
+  * **Migrate OpenTracing API to OpenTelemetry API**
+  * Migrate Java code using OpenTracing API to OpenTelemetry API. OpenTracing has been superseded by OpenTelemetry and is no longer actively maintained.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.spring.opentelemetry.MigrateSleuthToOpenTelemetry](/recipes/java/spring/opentelemetry/migratesleuthtoopentelemetry.md)
+  * **Migrate from Spring Cloud Sleuth to OpenTelemetry**
+  * Migrate from Spring Cloud Sleuth to OpenTelemetry. [Spring Cloud Sleuth has been deprecated](https://github.com/spring-cloud/spring-cloud-sleuth#spring-cloud-sleuth) and is replaced by Micrometer Tracing with OpenTelemetry as a backend. This recipe removes Sleuth dependencies and adds OpenTelemetry instrumentation.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.spring.opentelemetry.MigrateToOpenTelemetry](/recipes/java/spring/opentelemetry/migratetoopentelemetry.md)
+  * **Complete migration to OpenTelemetry**
+  * Comprehensive migration to OpenTelemetry including dependencies, configuration properties, and Java code changes. This recipe handles migration from Spring Cloud Sleuth, Brave/Zipkin, and OpenTracing to OpenTelemetry.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
 #### [org.openrewrite.java.spring.search.FindApiCalls](/recipes/java/spring/search/findapicalls.md)
   * **Find HTTP API calls via `RestTemplate`**
   * Find outbound HTTP API calls made via Spring's `RestTemplate` class.
@@ -1881,6 +4053,33 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.java.spring.table.SpringComponentRelationships**: *A table of relationships between Spring components.*
 
 
+#### [org.openrewrite.java.spring.security5.RenameNimbusdsJsonObjectPackageName](/recipes/java/spring/security5/renamenimbusdsjsonobjectpackagename.md)
+  * **Rename the package name from `com.nimbusds.jose.shaded.json` to `net.minidev.json`**
+  * Rename the package name from `com.nimbusds.jose.shaded.json` to `net.minidev.json`.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.spring.security5.UpgradeSpringSecurity_5_7](/recipes/java/spring/security5/upgradespringsecurity_5_7.md)
+  * **Migrate to Spring Security 5.7**
+  * Migrate applications to the latest Spring Security 5.7 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.spring.security5.UpgradeSpringSecurity_5_8](/recipes/java/spring/security5/upgradespringsecurity_5_8.md)
+  * **Migrate to Spring Security 5.8**
+  * Migrate applications to the latest Spring Security 5.8 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
 #### [org.openrewrite.java.spring.security5.search.FindEncryptorsQueryableTextUses](/recipes/java/spring/security5/search/findencryptorsqueryabletextuses.md)
   * **Finds uses of `Encryptors.queryableText()`**
   * `Encryptors.queryableText()` is insecure and is removed in Spring Security 6.
@@ -1890,8 +4089,161 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.java.table.MethodCalls**: *The text of matching method invocations.*
 
 
+#### [org.openrewrite.java.spring.security6.UpgradeSpringSecurity_6_0](/recipes/java/spring/security6/upgradespringsecurity_6_0.md)
+  * **Migrate to Spring Security 6.0**
+  * Migrate applications to the latest Spring Security 6.0 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.spring.security6.UpgradeSpringSecurity_6_1](/recipes/java/spring/security6/upgradespringsecurity_6_1.md)
+  * **Migrate to Spring Security 6.1**
+  * Migrate applications to the latest Spring Security 6.1 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.spring.security6.UpgradeSpringSecurity_6_2](/recipes/java/spring/security6/upgradespringsecurity_6_2.md)
+  * **Migrate to Spring Security 6.2**
+  * Migrate applications to the latest Spring Security 6.2 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.spring.security6.UpgradeSpringSecurity_6_3](/recipes/java/spring/security6/upgradespringsecurity_6_3.md)
+  * **Migrate to Spring Security 6.3**
+  * Migrate applications to the latest Spring Security 6.3 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.spring.security6.UpgradeSpringSecurity_6_4](/recipes/java/spring/security6/upgradespringsecurity_6_4.md)
+  * **Migrate to Spring Security 6.4**
+  * Migrate applications to the latest Spring Security 6.4 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.spring.security6.UpgradeSpringSecurity_6_5](/recipes/java/spring/security6/upgradespringsecurity_6_5-community-edition.md)
+  * **Migrate to Spring Security 6.5 (Community Edition)**
+  * Migrate applications to the latest Spring Security 6.5 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.spring.security7.UpgradeSpringSecurity_7_0](/recipes/java/spring/security7/upgradespringsecurity_7_0.md)
+  * **Migrate to Spring Security 7.0**
+  * Migrate applications to the latest Spring Security 7.0 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.springdoc.ReplaceSpringFoxDependencies](/recipes/java/springdoc/replacespringfoxdependencies.md)
+  * **Replace SpringFox dependencies**
+  * Replace SpringFox Dependencies.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.springdoc.SpringFoxToSpringDoc](/recipes/java/springdoc/springfoxtospringdoc.md)
+  * **Migrate from SpringFox Swagger to SpringDoc and OpenAPI**
+  * Migrate from SpringFox Swagger to SpringDoc and OpenAPI.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.springdoc.SwaggerToSpringDoc](/recipes/java/springdoc/swaggertospringdoc.md)
+  * **Migrate from Swagger to SpringDoc and OpenAPI**
+  * Migrate from Swagger to SpringDoc and OpenAPI.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.springdoc.UpgradeSpringDoc_2](/recipes/java/springdoc/upgradespringdoc_2.md)
+  * **Upgrade to SpringDoc 2.1**
+  * Upgrade to SpringDoc v2.1, as described in the [upgrade guide](https://springdoc.org/#migrating-from-springdoc-v1).
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.springdoc.UpgradeSpringDoc_2_2](/recipes/java/springdoc/upgradespringdoc_2_2.md)
+  * **Upgrade to SpringDoc 2.2**
+  * Upgrade to SpringDoc v2.2.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.springdoc.UpgradeSpringDoc_2_5](/recipes/java/springdoc/upgradespringdoc_2_5.md)
+  * **Upgrade to SpringDoc 2.5**
+  * Upgrade to SpringDoc v2.5.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.springdoc.UpgradeSpringDoc_2_6](/recipes/java/springdoc/upgradespringdoc_2_6.md)
+  * **Upgrade to SpringDoc 2.6**
+  * Upgrade to SpringDoc v2.6.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.springdoc.UpgradeSpringDoc_2_8](/recipes/java/springdoc/upgradespringdoc_2_8.md)
+  * **Upgrade to SpringDoc 2.8**
+  * Upgrade to SpringDoc v2.8.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.springdoc.UpgradeSpringDoc_3_0](/recipes/java/springdoc/upgradespringdoc_3_0.md)
+  * **Upgrade to SpringDoc 3.0**
+  * Upgrade to SpringDoc v3.0.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
 
 ### rewrite-spring-to-quarkus
+
+#### [org.openrewrite.quarkus.spring.AddSpringCompatibilityExtensions](/recipes/quarkus/spring/addspringcompatibilityextensions.md)
+  * **Add Spring compatibility extensions for commonly used annotations**
+  * Adds Quarkus Spring compatibility extensions when Spring annotations are detected in the codebase.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
 
 #### [org.openrewrite.quarkus.spring.CustomizeQuarkusVersion](/recipes/quarkus/spring/customizequarkusversion.md)
   * **Customize Quarkus BOM Version**
@@ -1902,9 +4254,405 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
+#### [org.openrewrite.quarkus.spring.DerbyDriverToQuarkus](/recipes/quarkus/spring/derbydrivertoquarkus.md)
+  * **Replace Derby driver with Quarkus JDBC Derby**
+  * Migrates `org.apache.derby:derby` or `derbyclient` to `io.quarkus:quarkus-jdbc-derby` (excludes test scope).
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.quarkus.spring.DerbyTestDriverToQuarkus](/recipes/quarkus/spring/derbytestdrivertoquarkus.md)
+  * **Replace Derby test driver with Quarkus JDBC Derby (test scope)**
+  * Migrates `org.apache.derby:derby` with test scope to `io.quarkus:quarkus-jdbc-derby` with test scope.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.quarkus.spring.EnableAnnotationsToQuarkusDependencies](/recipes/quarkus/spring/enableannotationstoquarkusdependencies.md)
+  * **Migrate `@EnableXyz` annotations to Quarkus extensions**
+  * Removes Spring `@EnableXyz` annotations and adds the corresponding Quarkus extensions as dependencies.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.quarkus.spring.H2DriverToQuarkus](/recipes/quarkus/spring/h2drivertoquarkus.md)
+  * **Replace H2 driver with Quarkus JDBC H2**
+  * Migrates `com.h2database:h2` to `io.quarkus:quarkus-jdbc-h2` (excludes test scope).
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.quarkus.spring.H2TestDriverToQuarkus](/recipes/quarkus/spring/h2testdrivertoquarkus.md)
+  * **Replace H2 test driver with Quarkus JDBC H2 (test scope)**
+  * Migrates `com.h2database:h2` with test scope to `io.quarkus:quarkus-jdbc-h2` with test scope.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.quarkus.spring.MigrateBootStarters](/recipes/quarkus/spring/migratebootstarters.md)
+  * **Replace Spring Boot starter dependencies with Quarkus equivalents**
+  * Migrates Spring Boot starter dependencies to their Quarkus equivalents, removing version tags as Quarkus manages versions through its BOM.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.quarkus.spring.MigrateConfigurationProperties](/recipes/quarkus/spring/migrateconfigurationproperties.md)
+  * **Migrate @ConfigurationProperties to Quarkus @ConfigMapping**
+  * Migrates Spring Boot @ConfigurationProperties to Quarkus @ConfigMapping. This recipe converts configuration property classes to the native Quarkus pattern.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.quarkus.spring.MigrateDatabaseDrivers](/recipes/quarkus/spring/migratedatabasedrivers.md)
+  * **Migrate database drivers to Quarkus JDBC extensions**
+  * Replaces Spring Boot database driver dependencies with their Quarkus JDBC extension equivalents.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.quarkus.spring.MigrateEntitiesToPanache](/recipes/quarkus/spring/migrateentitiestopanache.md)
+  * **Migrate JPA Entities to Panache Entities**
+  * Converts standard JPA entities to Quarkus Panache entities using the Active Record pattern. Entities will extend PanacheEntity and gain built-in CRUD operations.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.quarkus.spring.MigrateSpringActuator](/recipes/quarkus/spring/migratespringactuator.md)
+  * **Migrate Spring Boot Actuator to Quarkus Health and Metrics**
+  * Migrates Spring Boot Actuator to Quarkus SmallRye Health and Metrics extensions. Converts HealthIndicator implementations to Quarkus HealthCheck pattern.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.quarkus.spring.MigrateSpringCloudConfig](/recipes/quarkus/spring/migratespringcloudconfig.md)
+  * **Migrate Spring Cloud Config Client to Quarkus Config**
+  * Migrates Spring Cloud Config Client to Quarkus configuration sources. Converts bootstrap.yml/properties patterns to Quarkus config.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.quarkus.spring.MigrateSpringCloudServiceDiscovery](/recipes/quarkus/spring/migratespringcloudservicediscovery.md)
+  * **Migrate Spring Cloud Service Discovery to Quarkus**
+  * Migrates Spring Cloud Service Discovery annotations and configurations to Quarkus equivalents. Converts @EnableDiscoveryClient and related patterns to Quarkus Stork service discovery.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.quarkus.spring.MigrateSpringDataMongodb](/recipes/quarkus/spring/migratespringdatamongodb.md)
+  * **Migrate Spring Data MongoDB to Quarkus Panache MongoDB**
+  * Migrates Spring Data MongoDB repositories to Quarkus MongoDB with Panache. Converts MongoRepository interfaces to PanacheMongoRepository pattern.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.quarkus.spring.MigrateSpringTesting](/recipes/quarkus/spring/migratespringtesting.md)
+  * **Migrate Spring Boot Testing to Quarkus Testing**
+  * Migrates Spring Boot test annotations and utilities to Quarkus test equivalents. Converts @SpringBootTest to @QuarkusTest, @MockBean to @InjectMock, etc.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.quarkus.spring.MigrateSpringTransactional](/recipes/quarkus/spring/migratespringtransactional.md)
+  * **Migrate Spring @Transactional to Jakarta @Transactional**
+  * Migrates Spring's @Transactional annotation to Jakarta's @Transactional. Maps propagation attributes to TxType and removes Spring-specific attributes.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.quarkus.spring.MigrateSpringValidation](/recipes/quarkus/spring/migratespringvalidation.md)
+  * **Migrate Spring Validation to Quarkus**
+  * Migrates Spring Boot validation to Quarkus Hibernate Validator. Adds the quarkus-hibernate-validator dependency and handles validation annotation imports.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.quarkus.spring.SpringBootActiveMQToQuarkus](/recipes/quarkus/spring/springbootactivemqtoquarkus.md)
+  * **Replace Spring Boot ActiveMQ with Quarkus Artemis JMS**
+  * Migrates `spring-boot-starter-activemq` to `quarkus-artemis-jms`.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.quarkus.spring.SpringBootActuatorToQuarkus](/recipes/quarkus/spring/springbootactuatortoquarkus.md)
+  * **Replace Spring Boot Actuator with Quarkus SmallRye Health**
+  * Migrates `spring-boot-starter-actuator` to `quarkus-smallrye-health`.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.quarkus.spring.SpringBootAmqpToQuarkusClassic](/recipes/quarkus/spring/springbootamqptoquarkusclassic.md)
+  * **Replace Spring Boot AMQP with Quarkus Messaging RabbitMQ**
+  * Migrates `spring-boot-starter-amqp` to `quarkus-messaging-rabbitmq` when no reactor dependencies are present.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.quarkus.spring.SpringBootAmqpToQuarkusReactive](/recipes/quarkus/spring/springbootamqptoquarkusreactive.md)
+  * **Replace Spring Boot AMQP with Quarkus Messaging AMQP**
+  * Migrates `spring-boot-starter-amqp` to `quarkus-messaging-amqp` when reactor dependencies are present.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.quarkus.spring.SpringBootArtemisToQuarkus](/recipes/quarkus/spring/springbootartemistoquarkus.md)
+  * **Replace Spring Boot Artemis with Quarkus Artemis JMS**
+  * Migrates `spring-boot-starter-artemis` to `quarkus-artemis-jms`.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.quarkus.spring.SpringBootBatchToQuarkus](/recipes/quarkus/spring/springbootbatchtoquarkus.md)
+  * **Replace Spring Boot Batch with Quarkus Scheduler**
+  * Migrates `spring-boot-starter-batch` to `quarkus-scheduler`.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.quarkus.spring.SpringBootCacheToQuarkus](/recipes/quarkus/spring/springbootcachetoquarkus.md)
+  * **Replace Spring Boot Cache with Quarkus Cache**
+  * Migrates `spring-boot-starter-cache` to `quarkus-cache`.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.quarkus.spring.SpringBootDataJpaToQuarkus](/recipes/quarkus/spring/springbootdatajpatoquarkus.md)
+  * **Replace Spring Boot Data JPA with Quarkus Hibernate ORM Panache**
+  * Migrates `spring-boot-starter-data-jpa` to `quarkus-hibernate-orm-panache`.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.quarkus.spring.SpringBootDataMongoToQuarkus](/recipes/quarkus/spring/springbootdatamongotoquarkus.md)
+  * **Replace Spring Boot Data MongoDB with Quarkus MongoDB Panache**
+  * Migrates `spring-boot-starter-data-mongodb` to `quarkus-mongodb-panache`.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.quarkus.spring.SpringBootDataRedisToQuarkus](/recipes/quarkus/spring/springbootdataredistoquarkus.md)
+  * **Replace Spring Boot Data Redis with Quarkus Redis Client**
+  * Migrates `spring-boot-starter-data-redis` to `quarkus-redis-client`.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.quarkus.spring.SpringBootDataRestToQuarkus](/recipes/quarkus/spring/springbootdataresttoquarkus.md)
+  * **Replace Spring Boot Data REST with Quarkus REST**
+  * Migrates `spring-boot-starter-data-rest` to `quarkus-rest-jackson`.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.quarkus.spring.SpringBootElasticsearchToQuarkus](/recipes/quarkus/spring/springbootelasticsearchtoquarkus.md)
+  * **Replace Spring Boot Elasticsearch with Quarkus Elasticsearch REST Client**
+  * Migrates `spring-boot-starter-data-elasticsearch` to `quarkus-elasticsearch-rest-client`.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.quarkus.spring.SpringBootIntegrationToQuarkus](/recipes/quarkus/spring/springbootintegrationtoquarkus.md)
+  * **Replace Spring Boot Integration with Camel Quarkus**
+  * Migrates `spring-boot-starter-integration` to `camel-quarkus-core`.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.quarkus.spring.SpringBootJdbcToQuarkus](/recipes/quarkus/spring/springbootjdbctoquarkus.md)
+  * **Replace Spring Boot JDBC with Quarkus Agroal**
+  * Migrates `spring-boot-starter-jdbc` to `quarkus-agroal`.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.quarkus.spring.SpringBootMailToQuarkus](/recipes/quarkus/spring/springbootmailtoquarkus.md)
+  * **Replace Spring Boot Mail with Quarkus Mailer**
+  * Migrates `spring-boot-starter-mail` to `quarkus-mailer`.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.quarkus.spring.SpringBootOAuth2ClientToQuarkus](/recipes/quarkus/spring/springbootoauth2clienttoquarkus.md)
+  * **Replace Spring Boot OAuth2 Client with Quarkus OIDC Client**
+  * Migrates spring-boot-starter-oauth2-client` to `quarkus-oidc-client`.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.quarkus.spring.SpringBootOAuth2ResourceServerToQuarkus](/recipes/quarkus/spring/springbootoauth2resourceservertoquarkus.md)
+  * **Replace Spring Boot OAuth2 Resource Server with Quarkus OIDC**
+  * Migrates `spring-boot-starter-oauth2-resource-server` to `quarkus-oidc`.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.quarkus.spring.SpringBootQuartzToQuarkus](/recipes/quarkus/spring/springbootquartztoquarkus.md)
+  * **Replace Spring Boot Quartz with Quarkus Quartz**
+  * Migrates `spring-boot-starter-quartz` to `quarkus-quartz`.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.quarkus.spring.SpringBootSecurityToQuarkus](/recipes/quarkus/spring/springbootsecuritytoquarkus.md)
+  * **Replace Spring Boot Security with Quarkus Security**
+  * Migrates `spring-boot-starter-security` to `quarkus-security`.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.quarkus.spring.SpringBootTestToQuarkus](/recipes/quarkus/spring/springboottesttoquarkus.md)
+  * **Replace Spring Boot Test with Quarkus JUnit 5**
+  * Migrates `spring-boot-starter-test` to `quarkus-junit5`.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.quarkus.spring.SpringBootThymeleafToQuarkus](/recipes/quarkus/spring/springbootthymeleaftoquarkus.md)
+  * **Replace Spring Boot Thymeleaf with Quarkus Qute**
+  * Migrates `spring-boot-starter-thymeleaf` to `quarkus-qute`.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
 #### [org.openrewrite.quarkus.spring.SpringBootToQuarkus](/recipes/quarkus/spring/springboottoquarkus.md)
   * **Migrate Spring Boot to Quarkus**
   * Replace Spring Boot with Quarkus.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.quarkus.spring.SpringBootValidationToQuarkus](/recipes/quarkus/spring/springbootvalidationtoquarkus.md)
+  * **Replace Spring Boot Validation with Quarkus Hibernate Validator**
+  * Migrates `spring-boot-starter-validation` to `quarkus-hibernate-validator`.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.quarkus.spring.SpringBootWebFluxToQuarkusReactive](/recipes/quarkus/spring/springbootwebfluxtoquarkusreactive.md)
+  * **Replace Spring Boot WebFlux with Quarkus REST Client**
+  * Migrates `spring-boot-starter-webflux` to `quarkus-rest-client-jackson` when reactor dependencies are present.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.quarkus.spring.SpringBootWebSocketToQuarkus](/recipes/quarkus/spring/springbootwebsockettoquarkus.md)
+  * **Replace Spring Boot WebSocket with Quarkus WebSockets**
+  * Migrates `spring-boot-starter-websocket` to `quarkus-websockets`.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.quarkus.spring.SpringBootWebToQuarkusClassic](/recipes/quarkus/spring/springbootwebtoquarkusclassic.md)
+  * **Replace Spring Boot Web with Quarkus RESTEasy Classic**
+  * Migrates `spring-boot-starter-web` to `quarkus-resteasy-jackson` when no reactor dependencies are present.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.quarkus.spring.SpringBootWebToQuarkusReactive](/recipes/quarkus/spring/springbootwebtoquarkusreactive.md)
+  * **Replace Spring Boot Web with Quarkus REST**
+  * Migrates `spring-boot-starter-web` to `quarkus-rest-jackson` when reactor dependencies are present.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.quarkus.spring.SpringKafkaToQuarkusClassic](/recipes/quarkus/spring/springkafkatoquarkusclassic.md)
+  * **Replace Spring Kafka with Quarkus Kafka Client**
+  * Migrates `spring-kafka` to `quarkus-kafka-client` when no reactor dependencies are present.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.quarkus.spring.SpringKafkaToQuarkusReactive](/recipes/quarkus/spring/springkafkatoquarkusreactive.md)
+  * **Replace Spring Kafka with Quarkus Messaging Kafka**
+  * Migrates `spring-kafka` to `quarkus-messaging-kafka` when reactor dependencies are present.
 
 ##### Data tables:
 
@@ -1989,13 +4737,40 @@ _This doc contains all of the recipes with **unique** data tables that have been
 
 ### rewrite-testing-frameworks
 
+#### [org.openrewrite.java.testing.archunit.ArchUnit0to1Migration](/recipes/java/testing/archunit/archunit0to1migration.md)
+  * **ArchUnit 0.x upgrade**
+  * Upgrade ArchUnit from 0.x to 1.x.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.testing.arquillian.ArquillianJUnit4ToArquillianJUnit5](/recipes/java/testing/arquillian/arquillianjunit4toarquillianjunit5.md)
+  * **Use Arquillian JUnit 5 extension**
+  * Migrates Arquillian JUnit 4 to JUnit 5.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
 #### [org.openrewrite.java.testing.assertj.Assertj](/recipes/java/testing/assertj/assertj-best-practices.md)
   * **AssertJ best practices**
   * Migrates JUnit asserts to AssertJ and applies best practices to assertions.
 
 ##### Data tables:
 
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
   * **org.openrewrite.java.testing.mockito.table.PowerMockTestsDisabled**: *Tests disabled because they use a PowerMock feature with no Mockito equivalent. Each row is an action item: rework the test so it does not reach into private members, then re-enable it.*
+
+
+#### [org.openrewrite.java.testing.assertj.FestToAssertj](/recipes/java/testing/assertj/festtoassertj.md)
+  * **Migrate Fest 2.x to AssertJ**
+  * AssertJ provides a rich set of assertions, truly helpful error messages, improves test code readability. Converts Fest 2.x imports to AssertJ imports.
+
+##### Data tables:
+
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
@@ -2005,31 +4780,69 @@ _This doc contains all of the recipes with **unique** data tables that have been
 
 ##### Data tables:
 
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
   * **org.openrewrite.java.testing.mockito.table.PowerMockTestsDisabled**: *Tests disabled because they use a PowerMock feature with no Mockito equivalent. Each row is an action item: rework the test so it does not reach into private members, then re-enable it.*
+
+
+#### [org.openrewrite.java.testing.byteman.BytemanJUnit4ToBytemanJUnit5](/recipes/java/testing/byteman/bytemanjunit4tobytemanjunit5.md)
+  * **Use Byteman JUnit 5 dependency**
+  * Migrates Byteman JUnit 4 to JUnit 5.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.testing.datafaker.JavaFakerToDataFaker](/recipes/java/testing/datafaker/javafakertodatafaker.md)
+  * **Migrate from Java Faker to Datafaker**
+  * Change imports and dependencies related to Java Faker to Datafaker replacements.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.testing.dbrider.MigrateDbRiderSpringToDbRiderJUnit5](/recipes/java/testing/dbrider/migratedbriderspringtodbriderjunit5.md)
+  * **Migrate rider-spring (JUnit4) to rider-junit5 (JUnit5)**
+  * Migrates the DbRider dependency and annotations from `rider-spring` (JUnit 4) to `rider-junit5` (JUnit 5) in a Spring application.
+
+##### Data tables:
+
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
 #### [org.openrewrite.java.testing.easymock.EasyMockToMockito](/recipes/java/testing/easymock/easymocktomockito.md)
   * **Migrate from EasyMock to Mockito**
-  * This recipe will apply changes commonly needed when migrating from EasyMock to Mockito.
+  * Applies changes commonly needed when migrating from EasyMock to Mockito.
 
 ##### Data tables:
 
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
   * **org.openrewrite.java.testing.mockito.table.PowerMockTestsDisabled**: *Tests disabled because they use a PowerMock feature with no Mockito equivalent. Each row is an action item: rework the test so it does not reach into private members, then re-enable it.*
+
+
+#### [org.openrewrite.java.testing.hamcrest.MigrateHamcrestToAssertJ](/recipes/java/testing/hamcrest/migratehamcresttoassertj.md)
+  * **Migrate Hamcrest assertions to AssertJ**
+  * Migrate Hamcrest `assertThat(..)` to AssertJ `Assertions`.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
 #### [org.openrewrite.java.testing.jmockit.JMockitToMockito](/recipes/java/testing/jmockit/jmockittomockito.md)
   * **Migrate from JMockit to Mockito**
-  * This recipe will apply changes commonly needed when migrating from JMockit to Mockito.
+  * Applies changes commonly needed when migrating from JMockit to Mockito.
 
 ##### Data tables:
 
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
   * **org.openrewrite.java.testing.mockito.table.PowerMockTestsDisabled**: *Tests disabled because they use a PowerMock feature with no Mockito equivalent. Each row is an action item: rework the test so it does not reach into private members, then re-enable it.*
 
 
 #### [org.openrewrite.java.testing.junit.JUnit6BestPractices](/recipes/java/testing/junit/junit6bestpractices.md)
   * **JUnit 6 best practices**
-  * Applies best practices to tests.
+  * Migrates JUnit 5 tests to JUnit 6 and applies the JUnit Jupiter best practices.
 
 ##### Data tables:
 
@@ -2042,17 +4855,53 @@ _This doc contains all of the recipes with **unique** data tables that have been
 
 ##### Data tables:
 
-  * **org.openrewrite.java.testing.mockito.table.PowerMockTestsDisabled**: *Tests disabled because they use a PowerMock feature with no Mockito equivalent. Each row is an action item: rework the test so it does not reach into private members, then re-enable it.*
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+  * **org.openrewrite.java.testing.mockito.table.PowerMockTestsDisabled**: *Tests disabled because they use a PowerMock feature with no Mockito equivalent. Each row is an action item: rework the test so it does not reach into private members, then re-enable it.*
 
 
 #### [org.openrewrite.java.testing.junit5.JUnit5BestPractices](/recipes/java/testing/junit5/junit5bestpractices.md)
   * **JUnit 5 best practices**
-  * Applies best practices to tests.
+  * Migrates JUnit 4 tests to JUnit 5, upgrades to JUnit 5.14 and applies the JUnit Jupiter best practices.
 
 ##### Data tables:
 
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
   * **org.openrewrite.java.testing.mockito.table.PowerMockTestsDisabled**: *Tests disabled because they use a PowerMock feature with no Mockito equivalent. Each row is an action item: rework the test so it does not reach into private members, then re-enable it.*
+
+
+#### [org.openrewrite.java.testing.junit5.UpdateMockWebServer](/recipes/java/testing/junit5/updatemockwebserver.md)
+  * **OkHttp 3.x `MockWebServer` `@Rule` to 4.x `MockWebServer`**
+  * Replace usages of OkHttp 3.x `@Rule MockWebServer` with 4.x `MockWebServer`.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.testing.junit5.UpgradeOkHttpMockWebServer](/recipes/java/testing/junit5/upgradeokhttpmockwebserver.md)
+  * **Use OkHttp 3 MockWebServer for JUnit 5**
+  * Migrates OkHttp 3 `MockWebServer` to enable JUnit Jupiter Extension support.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.testing.junit5.UpgradeToJUnit513](/recipes/java/testing/junit5/upgradetojunit513.md)
+  * **Upgrade to JUnit 5.13**
+  * Upgrades JUnit 5 to 5.13.x and replaces the deprecated `ParameterizedTest` placeholder constants with those of `ParameterizedInvocationConstants`.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.testing.junit5.UpgradeToJUnit514](/recipes/java/testing/junit5/upgradetojunit514.md)
+  * **Upgrade to JUnit 5.14**
+  * Upgrades JUnit 5 to 5.14.x, including the 5.13 changes, and replaces deprecated types and methods such as `OutputDirectoryProvider` and `DiscoverySelectors.selectClasspathResource(Set)` with their successors.
+
+##### Data tables:
+
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
@@ -2063,11 +4912,48 @@ _This doc contains all of the recipes with **unique** data tables that have been
 ##### Data tables:
 
   * **org.openrewrite.java.testing.mockito.table.PowerMockTestsDisabled**: *Tests disabled because they use a PowerMock feature with no Mockito equivalent. Each row is an action item: rework the test so it does not reach into private members, then re-enable it.*
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.testing.junit5.UseXMLUnitLegacy](/recipes/java/testing/junit5/usexmlunitlegacy.md)
+  * **Use XMLUnit legacy for JUnit 5**
+  * Migrates XMLUnit 1.x to XMLUnit legacy 2.x.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.testing.junit5.VertxUnitToVertxJunit5](/recipes/java/testing/junit5/vertxunittovertxjunit5.md)
+  * **Use Vert.x JUnit 5 extension**
+  * Migrates Vert.x `@RunWith` `VertxUnitRunner` to the JUnit Jupiter `@ExtendWith` `VertxExtension`.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
 #### [org.openrewrite.java.testing.junit6.JUnit5to6Migration](/recipes/java/testing/junit6/junit5to6migration.md)
   * **JUnit 6 migration from JUnit 5.x**
   * Migrates JUnit 5.x tests to JUnit 6.x.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.testing.mockito.AddJUnit4ReplacingPowerMockModule](/recipes/java/testing/mockito/addjunit4replacingpowermockmodule.md)
+  * **Add JUnit 4 where the PowerMock JUnit 4 module provided it**
+  * Adds `junit:junit` to modules that use JUnit 4 and depend on `powermock-module-junit4`, which brings JUnit 4 in transitively, so that their tests still compile once the PowerMock dependencies are removed. A module that declares `junit:junit` itself is left as it is.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.testing.mockito.ChangeMockitoAllToMockitoCoreReplacingPowerMock](/recipes/java/testing/mockito/changemockitoalltomockitocorereplacingpowermock.md)
+  * **Change `mockito-all` to `mockito-core` along with the Mockito that replaces PowerMock**
+  * Changes a declared `mockito-all` into `mockito-core`, as `mockito-all` is a 1.x-only uber jar with no 3.x release to upgrade to. This runs before the PowerMock dependencies are replaced, so that a module which declared `mockito-all` is seen to declare `mockito-core` and does not get it a second time.
 
 ##### Data tables:
 
@@ -2084,30 +4970,33 @@ _This doc contains all of the recipes with **unique** data tables that have been
 
 
 #### [org.openrewrite.java.testing.mockito.Mockito1to3Migration](/recipes/java/testing/mockito/mockito1to3migration.md)
-  * **Mockito 3.x migration from 1.x**
+  * **Upgrade Mockito from 1.x to 3.x**
   * Upgrade Mockito from 1.x to 3.x.
 
 ##### Data tables:
 
   * **org.openrewrite.java.testing.mockito.table.PowerMockTestsDisabled**: *Tests disabled because they use a PowerMock feature with no Mockito equivalent. Each row is an action item: rework the test so it does not reach into private members, then re-enable it.*
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
 #### [org.openrewrite.java.testing.mockito.Mockito1to4Migration](/recipes/java/testing/mockito/mockito1to4migration.md)
-  * **Mockito 4.x upgrade**
+  * **Upgrade to Mockito 4.x**
   * Upgrade Mockito from 1.x to 4.x.
 
 ##### Data tables:
 
   * **org.openrewrite.java.testing.mockito.table.PowerMockTestsDisabled**: *Tests disabled because they use a PowerMock feature with no Mockito equivalent. Each row is an action item: rework the test so it does not reach into private members, then re-enable it.*
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
 #### [org.openrewrite.java.testing.mockito.Mockito1to5Migration](/recipes/java/testing/mockito/mockito1to5migration.md)
-  * **Mockito 5.x upgrade**
+  * **Upgrade to Mockito 5.x**
   * Upgrade Mockito from 1.x to 5.x.
 
 ##### Data tables:
 
   * **org.openrewrite.java.testing.mockito.table.PowerMockTestsDisabled**: *Tests disabled because they use a PowerMock feature with no Mockito equivalent. Each row is an action item: rework the test so it does not reach into private members, then re-enable it.*
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
 #### [org.openrewrite.java.testing.mockito.Mockito4to5Only](/recipes/java/testing/mockito/mockito4to5only.md)
@@ -2117,6 +5006,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
 ##### Data tables:
 
   * **org.openrewrite.java.testing.mockito.table.PowerMockTestsDisabled**: *Tests disabled because they use a PowerMock feature with no Mockito equivalent. Each row is an action item: rework the test so it does not reach into private members, then re-enable it.*
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
 #### [org.openrewrite.java.testing.mockito.MockitoBestPractices](/recipes/java/testing/mockito/mockitobestpractices.md)
@@ -2126,15 +5016,116 @@ _This doc contains all of the recipes with **unique** data tables that have been
 ##### Data tables:
 
   * **org.openrewrite.java.testing.mockito.table.PowerMockTestsDisabled**: *Tests disabled because they use a PowerMock feature with no Mockito equivalent. Each row is an action item: rework the test so it does not reach into private members, then re-enable it.*
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.testing.mockito.RemovePowerMockDependencies](/recipes/java/testing/mockito/removepowermockdependencies.md)
+  * **Swap the PowerMock dependencies for Mockito**
+  * Replaces and then removes the PowerMock dependencies. Usage that cannot be migrated has been commented out by `DisableUnsupportedPowerMockTests`, so no code refers to PowerMock by the time this runs. Leaving PowerMock on the classpath is not an option: it registers its own `MockMaker`, which cannot create the static and construction mocks the migrated tests rely on.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
 #### [org.openrewrite.java.testing.mockito.ReplacePowerMockito](/recipes/java/testing/mockito/replacepowermockito.md)
   * **Replace PowerMock with raw Mockito**
-  * PowerMockito with raw Mockito; best executed as part of a Mockito upgrade.  Tests that mock, stub or verify private members are disabled rather than migrated. Mockito does not support reaching into private state by design, and a test that depends on it is testing an implementation detail, so the intended follow-up is a review that reworks each one to exercise the type through its public API -- not a like-for-like translation. Each disabled test keeps its original body as a comment for that review, is annotated `@Disabled`, `@Ignore` or TestNG's `@Ignore`, and is listed as an action item in the `PowerMockTestsDisabled` data table. Commenting the body out is what lets the PowerMock dependency be removed, so the rest of the repository moves off PowerMock and its tests keep running: PowerMock registers its own Mockito `MockMaker`, which cannot create the static and construction mocks the migrated tests rely on, so the two cannot share a classpath.
+  * Replace PowerMockito with raw Mockito; best executed as part of a Mockito upgrade.  Tests that mock, stub or verify private members are disabled rather than migrated. Mockito does not support reaching into private state by design, and a test that depends on it is testing an implementation detail, so the intended follow-up is a review that reworks each one to exercise the type through its public API -- not a like-for-like translation. Each disabled test keeps its original body as a comment for that review, is annotated `@Disabled`, `@Ignore` or TestNG's `@Ignore`, and is listed as an action item in the `PowerMockTestsDisabled` data table. Commenting the body out is what lets the PowerMock dependency be removed, so the rest of the repository moves off PowerMock and its tests keep running: PowerMock registers its own Mockito `MockMaker`, which cannot create the static and construction mocks the migrated tests rely on, so the two cannot share a classpath.
 
 ##### Data tables:
 
   * **org.openrewrite.java.testing.mockito.table.PowerMockTestsDisabled**: *Tests disabled because they use a PowerMock feature with no Mockito equivalent. Each row is an action item: rework the test so it does not reach into private members, then re-enable it.*
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.testing.mockito.UpgradeMockitoCoreReplacingPowerMock](/recipes/java/testing/mockito/upgrademockitocorereplacingpowermock.md)
+  * **Upgrade `mockito-core` along with the Mockito that replaces PowerMock**
+  * Upgrades a declared `mockito-core` to at least the Mockito 3.x that replaces the PowerMock Mockito API. An older `mockito-core` would otherwise take precedence over the one `mockito-inline` depends on, so that `Mockito.mockStatic` and `MockedStatic` do not resolve. A declared `mockito-inline` is upgraded as well, as before 3.4 it depends on a `mockito-core` without `Mockito.mockStatic`. This runs after the PowerMock dependencies are replaced, so that it also upgrades the Mockito artifact that replaces them. A version managed by a BOM, such as the Mockito 3.3 of Spring Boot 2.2 and 2.3, is overridden as well, through its `mockito.version` property where the BOM uses one, so that the other Mockito artifacts it manages stay aligned.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.testing.testcontainers.MigrateToOracleFree](/recipes/java/testing/testcontainers/migratetooraclefree.md)
+  * **Migrate from `oracle-xe` to `oracle-free`**
+  * Oracle Database Free is the successor of Oracle XE. Migrate from `org.testcontainers:oracle-xe` to `org.testcontainers:oracle-free`.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.testing.testcontainers.TestContainersBestPractices](/recipes/java/testing/testcontainers/testcontainersbestpractices.md)
+  * **Testcontainers best practices**
+  * Apply best practices to Testcontainers usage.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.testing.testcontainers.Testcontainers2Dependencies](/recipes/java/testing/testcontainers/testcontainers2dependencies.md)
+  * **Rename Testcontainers dependencies**
+  * Change Testcontainers dependencies to adopt the new consistent `testcontainers-` prefix.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.testing.testcontainers.Testcontainers2Migration](/recipes/java/testing/testcontainers/testcontainers2migration.md)
+  * **Migrate to testcontainers-java 2.x**
+  * Change dependencies and types to migrate to testcontainers-java 2.x.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.testing.testng.TestNgToAssertj](/recipes/java/testing/testng/testngtoassertj.md)
+  * **Migrate TestNG assertions to AssertJ**
+  * Convert assertions from `org.testng.Assert` to `org.assertj.core.api.Assertions`.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.testing.truth.MigrateTruthToAssertJ](/recipes/java/testing/truth/migratetruthtoassertj.md)
+  * **Migrate Google Truth to AssertJ**
+  * Migrate Google Truth assertions to AssertJ assertions.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.testing.wiremock.MigrateJettyEE10ToEE11](/recipes/java/testing/wiremock/migratejettyee10toee11.md)
+  * **Move Jetty EE10 usages to EE11 alongside `wiremock-jetty12`**
+  * WireMock 3's `wiremock-jetty12` module ran on Jetty's EE10 servlet environment, whereas WireMock 4.x runs on EE11, so EE10 types such as the `ServletContextHandler` handed to `NotFoundHandler` no longer line up. Move EE10 packages and dependencies over to their EE11 counterparts, but only in modules depending on `wiremock-jetty12`, where EE10 arrived through WireMock in the first place.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.testing.wiremock.UpgradeWiremockDependencyVersion](/recipes/java/testing/wiremock/upgradewiremockdependencyversion.md)
+  * **Upgrade WireMock to 3.x**
+  * Migrate WireMock dependencies from the old `com.github.tomakehurst` coordinates to the new `org.wiremock` coordinates. WireMock 3.x changed its Maven coordinates and requires Java 11 or higher. Old 2.x versions contain CVE-2023-44487.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.testing.wiremock.Wiremock3to4Migration](/recipes/java/testing/wiremock/wiremock3to4migration.md)
+  * **Upgrade WireMock to 4.x**
+  * Upgrade WireMock to 4.x, which requires Java 17, ships Jetty 12.1 by default, splits JUnit support out into separate modules and makes the primary domain classes immutable. Note that `RequestMethod.GET_OR_HEAD` is a multi method matcher in 4.x rather than a method named `GET_OR_HEAD`, so code reading a name off that particular constant needs a look.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
 
@@ -2185,6 +5176,15 @@ _This doc contains all of the recipes with **unique** data tables that have been
 
   * **org.openrewrite.java.table.MethodCalls**: *The text of matching method invocations.*
   * **org.openrewrite.java.table.TypeUses**: *The source code of matching type uses.*
+
+
+#### [com.oracle.weblogic.rewrite.FacesMigrationToJakartaFaces2x](/recipes/oracle/weblogic/rewrite/facesmigrationtojakartafaces2x.md)
+  * **JSF 1.x to Jakarta Server Faces 2.3 on WebLogic 14.1.2 or older**
+  * Jakarta EE 8 uses Faces 2.3 a major upgrade to Jakarta packages and XML namespaces. This recipe will migrate JSF 1.x to Jakarta Server Faces 2.3 on WebLogic 14.1.2 or older.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
 #### [com.oracle.weblogic.rewrite.JakartaEE9_1](/recipes/oracle/weblogic/rewrite/jakartaee9_1.md)
@@ -2243,6 +5243,15 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
+#### [com.oracle.weblogic.rewrite.UpgradeJPATo31HibernateTo66](/recipes/oracle/weblogic/rewrite/upgradejpato31hibernateto66.md)
+  * **Upgrade Jakarta JPA to 3.1 and Hibernate 6.6**
+  * This recipe upgrades Jakarta JPA to 3.1 and Hibernate to 6.6 (compatible with Jakarta EE 10).
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
 #### [com.oracle.weblogic.rewrite.UpgradeTo1411](/recipes/oracle/weblogic/rewrite/upgradeto1411.md)
   * **Migrate to WebLogic 14.1.1**
   * This recipe will apply changes required for migrating to WebLogic 14.1.1
@@ -2274,6 +5283,159 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.java.table.TypeUses**: *The source code of matching type uses.*
 
 
+#### [com.oracle.weblogic.rewrite.WebLogic1412JavaXmlBindMitigation](/recipes/oracle/weblogic/rewrite/weblogic1412javaxmlbindmitigation.md)
+  * **Mitigation of Java XML Bind Deprecation in Java 11 vs WebLogic 14.1.2**
+  * This recipe will mitigate the Javax XML Bind deprecation in Java 11 vs WebLogic 14.1.2
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [com.oracle.weblogic.rewrite.hibernate.AddHibernateOrmCore61](/recipes/oracle/weblogic/rewrite/hibernate/addhibernateormcore61.md)
+  * **Add Hibernate ORM Core if has dependencies**
+  * This recipe will add Hibernate ORM Core if has dependencies.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [com.oracle.weblogic.rewrite.hibernate.MigrateHibernateToJakartaEE9](/recipes/oracle/weblogic/rewrite/hibernate/migratehibernatetojakartaee9.md)
+  * **Migrate to Hibernate for Jakarta EE 9**
+  * Upgrade hibernate libraries to Jakarta EE9 versions.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [com.oracle.weblogic.rewrite.hibernate.UpgradeHibernateTo66](/recipes/oracle/weblogic/rewrite/hibernate/upgradehibernateto66.md)
+  * **Upgrade Hibernate to 6.6**
+  * This recipe upgrades Hibernate to version 6.6, which is compatible with Jakarta EE 10 and JPA 3.1. It also upgrades a few of the commonly used Hibernate add-ons.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [com.oracle.weblogic.rewrite.jakarta.AddJakartaEE9ServletDependencyIfUsingServletContext](/recipes/oracle/weblogic/rewrite/jakarta/addjakartaee9servletdependencyifusingservletcontext.md)
+  * **Add Jakarta EE 9 Servlet Dependency**
+  * Add Jakarta EE 9 Servlet Dependency if using jakarta.servlet.ServletContext
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [com.oracle.weblogic.rewrite.jakarta.Faces2xMigrationToJakartaFaces3x](/recipes/oracle/weblogic/rewrite/jakarta/faces2xmigrationtojakartafaces3x.md)
+  * **JSF 2.x to Jakarta Server Faces 3.x**
+  * Jakarta EE 9 uses Faces 3.0 a major upgrade to Jakarta packages and XML namespaces.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [com.oracle.weblogic.rewrite.jakarta.JavaxAnnotationMigrationToJakarta9Annotation](/recipes/oracle/weblogic/rewrite/jakarta/javaxannotationmigrationtojakarta9annotation.md)
+  * **Migrate deprecated `javax.annotation` to `jakarta.annotation`**
+  * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [com.oracle.weblogic.rewrite.jakarta.MigrateJavaxMVCToJakartaEE9](/recipes/oracle/weblogic/rewrite/jakarta/migratejavaxmvctojakartaee9.md)
+  * **Migrate javax.mvc to 2.0 (Jakarta EE 9)**
+  * Upgrade Jakarta Model-View-Controller libraries to 2.0 (Jakarta EE9) versions.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [com.oracle.weblogic.rewrite.jakarta.MigrateJavaxWebToJakartaWeb9](/recipes/oracle/weblogic/rewrite/jakarta/migratejavaxwebtojakartaweb9.md)
+  * **Migrate javax.javaee-web-api to jakarta.jakartaee-web-api (Jakarta EE 9)**
+  * Update Java EE Web API dependency to Jakarta EE Web Profile API 9.1
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [com.oracle.weblogic.rewrite.jakarta.MigrateTagLibsToJakartaEE9](/recipes/oracle/weblogic/rewrite/jakarta/migratetaglibstojakartaee9.md)
+  * **Migrate Tag Libraries to 2.0 (Jakarta EE 9)**
+  * Upgrade Jakarta Standard Tag libraries to 2.0 (Jakarta EE9) versions.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [com.oracle.weblogic.rewrite.jakarta.OrgGlassfishJavaxElToJakartaEl](/recipes/oracle/weblogic/rewrite/jakarta/orgglassfishjavaxeltojakartael.md)
+  * **Migrate deprecated `org.glassfish.javax.el` packages to `jakarta.el`**
+  * Package relocation for rebranded Javax to Jakarta EE.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [com.oracle.weblogic.rewrite.jakarta.UpdateJakartaPersistenceTo31](/recipes/oracle/weblogic/rewrite/jakarta/updatejakartapersistenceto31.md)
+  * **Update Jakarta Persistence to 3.1**
+  * Update Jakarta Persistence to 3.1.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [com.oracle.weblogic.rewrite.jakarta.UpdateJakartaPersistenceTo32](/recipes/oracle/weblogic/rewrite/jakarta/updatejakartapersistenceto32.md)
+  * **Update Jakarta Persistence to 3.2**
+  * Update Jakarta Persistence to 3.2.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [com.oracle.weblogic.rewrite.jakarta.UpdateJakartaPlatform9_1](/recipes/oracle/weblogic/rewrite/jakarta/updatejakartaplatform9_1.md)
+  * **Update Jakarta EE Platform Dependencies to 9.1.0**
+  * Update Jakarta EE Platform Dependencies to 9.1.0
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [com.oracle.weblogic.rewrite.jakarta.UpgradeCommonOpenSourceLibraries](/recipes/oracle/weblogic/rewrite/jakarta/upgradecommonopensourcelibraries.md)
+  * **Upgrade Common open source libraries**
+  * Upgrade Common open source libraries libraries to Jakarta EE9 versions.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [com.oracle.weblogic.rewrite.jakarta.UpgradeFacesOpenSourceLibraries2](/recipes/oracle/weblogic/rewrite/jakarta/upgradefacesopensourcelibraries2.md)
+  * **Upgrade Faces open source libraries**
+  * Upgrade PrimeFaces, OmniFaces, and MyFaces libraries to Jakarta EE9 versions.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [com.oracle.weblogic.rewrite.jakarta.UpgradeFacesOpenSourceLibraries3](/recipes/oracle/weblogic/rewrite/jakarta/upgradefacesopensourcelibraries3.md)
+  * **Upgrade Faces open source libraries**
+  * Upgrade PrimeFaces, OmniFaces, and MyFaces libraries to Jakarta EE9 versions.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
 #### [com.oracle.weblogic.rewrite.jakarta.UpgradeMavenPluginArtifactItems](/recipes/oracle/weblogic/rewrite/jakarta/upgrademavenpluginartifactitems.md)
   * **Upgrade group, artifact ID and version of an artifactItem, of a maven plugin execution configuration**
   * Change the groupId and the artifactId of an artifactItem in the configuration section of a plugin's execution. This recipe does not perform any validation and assumes all values passed are valid.
@@ -2286,6 +5448,24 @@ _This doc contains all of the recipes with **unique** data tables that have been
 #### [com.oracle.weblogic.rewrite.jakarta.UpgradeMavenPluginConfigurationArtifacts](/recipes/oracle/weblogic/rewrite/jakarta/upgrademavenpluginconfigurationartifacts.md)
   * **Change artifacts for a Maven plugin configuration**
   * Change artifacts for a Maven plugin configuration artifacts.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [com.oracle.weblogic.rewrite.spring.data.UpgradeSpringDataBom](/recipes/oracle/weblogic/rewrite/spring/data/upgradespringdatabom.md)
+  * **Upgrade Spring Data BOM to 2024.1.x**
+  * Upgrade Spring Data BOM to 2024.1.x version.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [com.oracle.weblogic.rewrite.spring.data.UpgradeSpringDataJpa](/recipes/oracle/weblogic/rewrite/spring/data/upgradespringdatajpa.md)
+  * **Upgrade Spring Data JPA to 3.4.6**
+  * Upgrade Spring Data JPA to 3.4.6 version, which is the version used by spring-data-bom v2024.1.x
 
 ##### Data tables:
 
@@ -2322,6 +5502,15 @@ _This doc contains all of the recipes with **unique** data tables that have been
 #### [io.quarkus.updates.camel.camel413.CamelQuarkusMigrationRecipe](/recipes/quarkus/updates/camel/camel413/camelquarkusmigrationrecipe.md)
   * **Migrates `camel 4.12` application to `camel 4.13`**
   * Migrates `camel 4.12` Quarkus application to `camel 4.13`.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [io.quarkus.updates.camel.camel417.CamelQuarkusMigrationRecipe](/recipes/quarkus/updates/camel/camel417/camelquarkusmigrationrecipe.md)
+  * **Migrates `camel 4.16` application to `camel 4.17`**
+  * Migrates `camel 4.16` Quarkus application to `camel 4.17`.
 
 ##### Data tables:
 
@@ -2553,6 +5742,15 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
+#### [io.quarkus.updates.core.quarkus30.JavaxToJakartaAdditionalMigration](/recipes/quarkus/updates/core/quarkus30/javaxtojakartaadditionalmigration.md)
+  * **io.quarkus.updates.core.quarkus30.JavaxToJakartaAdditionalMigration**
+  * 
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
 #### [io.quarkus.updates.core.quarkus30.JavaxTransactionMigrationToJakartaTransaction](/recipes/quarkus/updates/core/quarkus30/javaxtransactionmigrationtojakartatransaction.md)
   * **Migrate deprecated `javax.transaction` packages to `jakarta.transaction`**
   * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
@@ -2679,6 +5877,15 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
+#### [io.quarkus.updates.core.quarkus311.WebDependencyLocatorRelocations](/recipes/quarkus/updates/core/quarkus311/webdependencylocatorrelocations.md)
+  * **io.quarkus.updates.core.quarkus311.WebDependencyLocatorRelocations**
+  * 
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
 #### [io.quarkus.updates.core.quarkus312.SyncHibernateJpaModelgenVersionWithBOM](/recipes/quarkus/updates/core/quarkus312/synchibernatejpamodelgenversionwithbom.md)
   * **io.quarkus.updates.core.quarkus312.SyncHibernateJpaModelgenVersionWithBOM**
   * 
@@ -2715,6 +5922,51 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
+#### [io.quarkus.updates.core.quarkus325.DevUiSpiRelocations](/recipes/quarkus/updates/core/quarkus325/devuispirelocations.md)
+  * **io.quarkus.updates.core.quarkus325.DevUiSpiRelocations**
+  * Rename the Dev UI SPI artifacts quarkus-vertx-http-dev-ui-spi to quarkus-devui-deployment-spi and quarkus-vertx-http-dev-ui-tests to quarkus-devui-test-spi.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [io.quarkus.updates.core.quarkus33.GraalVMSubstitutionsArtifact](/recipes/quarkus/updates/core/quarkus33/graalvmsubstitutionsartifact.md)
+  * **io.quarkus.updates.core.quarkus33.GraalVMSubstitutionsArtifact**
+  * 
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [io.quarkus.updates.core.quarkus331.JUnitRelocations](/recipes/quarkus/updates/core/quarkus331/junitrelocations.md)
+  * **io.quarkus.updates.core.quarkus331.JUnitRelocations**
+  * 
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [io.quarkus.updates.core.quarkus331.Testcontainers2](/recipes/quarkus/updates/core/quarkus331/testcontainers2.md)
+  * **io.quarkus.updates.core.quarkus331.Testcontainers2**
+  * 
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [io.quarkus.updates.core.quarkus337.PanacheNextRelocations](/recipes/quarkus/updates/core/quarkus337/panachenextrelocations.md)
+  * **io.quarkus.updates.core.quarkus337.PanacheNextRelocations**
+  * 
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
 #### [io.quarkus.updates.core.quarkus339.ReplaceHibernateProcessorAnnotationProcessor](/recipes/quarkus/updates/core/quarkus339/replacehibernateprocessorannotationprocessor.md)
   * **io.quarkus.updates.core.quarkus339.ReplaceHibernateProcessorAnnotationProcessor**
   * 
@@ -2742,9 +5994,27 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
+#### [io.quarkus.updates.core.quarkus36.JaegerSmallRyeOpenTracing](/recipes/quarkus/updates/core/quarkus36/jaegersmallryeopentracing.md)
+  * **io.quarkus.updates.core.quarkus36.JaegerSmallRyeOpenTracing**
+  * 
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
 #### [io.quarkus.updates.core.quarkus37.ChangeMavenCompilerAnnotationProcessorGroupIdAndArtifactId](/recipes/quarkus/updates/core/quarkus37/changemavencompilerannotationprocessorgroupidandartifactid.md)
   * **Change Maven Compiler plugin annotation processor groupId, artifactId and/or the version**
   * Change the groupId, artifactId and/or the version of a specified Maven Compiler plugin annotation processor.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [io.quarkus.updates.core.quarkus37.HibernateSearchOutboxPolling](/recipes/quarkus/updates/core/quarkus37/hibernatesearchoutboxpolling.md)
+  * **io.quarkus.updates.core.quarkus37.HibernateSearchOutboxPolling**
+  * 
 
 ##### Data tables:
 
@@ -2762,6 +6032,15 @@ _This doc contains all of the recipes with **unique** data tables that have been
 
 #### [io.quarkus.updates.core.quarkus37.ReplaceJpaModelgenAnnotationProcessor](/recipes/quarkus/updates/core/quarkus37/replacejpamodelgenannotationprocessor.md)
   * **io.quarkus.updates.core.quarkus37.ReplaceJpaModelgenAnnotationProcessor**
+  * 
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [io.quarkus.updates.core.quarkus37.ResteasyClientRenaming](/recipes/quarkus/updates/core/quarkus37/resteasyclientrenaming.md)
+  * **io.quarkus.updates.core.quarkus37.ResteasyClientRenaming**
   * 
 
 ##### Data tables:
@@ -2805,6 +6084,33 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
+#### [io.quarkus.updates.core.quarkus383.GraalSDK](/recipes/quarkus/updates/core/quarkus383/graalsdk.md)
+  * **io.quarkus.updates.core.quarkus383.GraalSDK**
+  * 
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [io.quarkus.updates.core.quarkus39.GraalSDK](/recipes/quarkus/updates/core/quarkus39/graalsdk.md)
+  * **io.quarkus.updates.core.quarkus39.GraalSDK**
+  * 
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [io.quarkus.updates.core.quarkus39.Relocations](/recipes/quarkus/updates/core/quarkus39/relocations.md)
+  * **io.quarkus.updates.core.quarkus39.Relocations**
+  * 
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
 #### [io.quarkus.updates.core.quarkus39.SyncHibernateJpaModelgenVersionWithBOM](/recipes/quarkus/updates/core/quarkus39/synchibernatejpamodelgenversionwithbom.md)
   * **io.quarkus.updates.core.quarkus39.SyncHibernateJpaModelgenVersionWithBOM**
   * 
@@ -2814,9 +6120,36 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
+#### [io.quarkus.updates.core.quarkus40.DroppedRelocations](/recipes/quarkus/updates/core/quarkus40/droppedrelocations.md)
+  * **Handle dropped relocations in Quarkus 4.0**
+  * Rename artifacts whose relocations have been dropped in Quarkus 4.0. These relocations were introduced in Quarkus 3.x and are no longer available.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [io.quarkus.updates.core.quarkus40.FlywayMongoDBDependencyRename](/recipes/quarkus/updates/core/quarkus40/flywaymongodbdependencyrename.md)
+  * **Rename Flyway MongoDB artifact**
+  * Flyway renamed flyway-database-mongodb to flyway-database-nc-mongodb in version 13.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [io.quarkus.updates.core.quarkus40.Jackson3Migration](/recipes/quarkus/updates/core/quarkus40/jackson3migration.md)
+  * **Migrate Jackson from 2.x to 3.x**
+  * Jackson 3.x uses new package names (tools.jackson instead of com.fasterxml.jackson), new group IDs, and includes various API changes. This recipe applies the OpenRewrite Jackson 2 to 3 migration.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
 #### [io.quarkus.updates.cxf.cxf339.AddQuarkusJacksonIfUsed](/recipes/quarkus/updates/cxf/cxf339/addquarkusjacksonifused.md)
   * **Add quarkus-jackson if Jackson is used**
-  * Adds io.quarkus:quarkus-jackson to applications that use Jackson types in their sources, because quarkus-cxf stopped pulling quarkus-jackson transitively in 3.39.0. The detection is source based only: the dependency is not added when it is already available directly or transitively through another extension. The update tooling applies this recipe only to projects depending on io.quarkiverse.cxf:quarkus-cxf.
+  * Adds io.quarkus:quarkus-jackson to applications that use Jackson types in their sources, because quarkus-cxf stopped pulling quarkus-jackson transitively in 3.39.0. The detection is source based only: the dependency is not added when it is already declared directly. The update tooling applies this recipe only to projects depending on io.quarkiverse.cxf:quarkus-cxf.
 
 ##### Data tables:
 
@@ -2825,7 +6158,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
 
 #### [io.quarkus.updates.cxf.cxf339.UpdateAll](/recipes/quarkus/updates/cxf/cxf339/updateall.md)
   * **Migrate quarkus-cxf to 3.39**
-  * quarkus-cxf 3.39.0 no longer pulls io.quarkus:quarkus-jackson transitively. Adds an explicit quarkus-jackson dependency to applications that use Jackson classes in their sources and do not get the dependency from elsewhere.
+  * quarkus-cxf 3.39.0 no longer pulls io.quarkus:quarkus-jackson transitively. Adds an explicit quarkus-jackson dependency to applications that use Jackson classes in their sources and do not declare it directly.
 
 ##### Data tables:
 
@@ -3375,6 +6708,42 @@ _This doc contains all of the recipes with **unique** data tables that have been
 #### [sh.stubborn.contract.migration.UpdateDependencies](/recipes/sh/stubborn/contract/migration/updatedependencies.md)
   * **Update Spring Cloud Contract coordinates to Stubborn Contract**
   * Replaces org.springframework.cloud:spring-cloud-contract-* GAVs with sh.stubborn:stubborn-* equivalents, migrates the spring-cloud-contract-dependencies BOM, and swaps both build plugins, in Maven and Gradle builds alike. The com.toomuchcoding JSON/XML assertion coordinates are swapped alongside the sh.stubborn.jsonassert / sh.stubborn.xmlassert package renames. Every coordinate is repinned to latest.release.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [software.amazon.awssdk.v2migration.AddS3EventNotificationDependency](/recipes/amazon/awssdk/v2migration/adds3eventnotificationdependency.md)
+  * **Add AWS SDK for Java v2 S3 Event Notification dependency if needed**
+  * This recipe will add the Java v2 S3 Event Notification dependency if v1 S3EventNotification is used
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [software.amazon.awssdk.v2migration.AddTransferManagerDependency](/recipes/amazon/awssdk/v2migration/addtransfermanagerdependency.md)
+  * **Add AWS SDK for Java v2 S3 Transfer Manager dependency if needed**
+  * This recipe will add the Java v2 S3 Transfer Manager dependency if v1 Transfer Manager is used
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [software.amazon.awssdk.v2migration.AwsSdkJavaV1ToV2](/recipes/amazon/awssdk/v2migration/awssdkjavav1tov2.md)
+  * **Migrate from the AWS SDK for Java v1 to the AWS SDK for Java v2**
+  * This recipe will apply changes required for migrating from the AWS SDK for Java v1 to the AWS SDK for Java v2.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [software.amazon.awssdk.v2migration.UpgradeSdkDependencies](/recipes/amazon/awssdk/v2migration/upgradesdkdependencies.md)
+  * **Change v1 Maven/Gradle dependencies to v2**
+  * Change v1 Maven/Gradle dependencies to v2.
 
 ##### Data tables:
 

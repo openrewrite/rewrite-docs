@@ -40,11 +40,10 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Remove duplicate plugin declarations](../maven/removeduplicateplugindeclarations)
 * [Remove redundant explicit dependency and plugin versions](../maven/removeredundantdependencyversions)
 * [Remove redundant properties](../maven/removeredundantproperties)
-  * onlyIfValuesMatch: `true`
+  * onlyIfParentValueIs: `EQ`
 * [Dependency management dependencies should have a version](../maven/cleanup/dependencymanagementdependencyrequiresversion)
 * [Modernize obsolete Maven poms](../maven/modernizeobsoletepoms)
 * [Migrate to `maven-dependency-plugin` goal `resolve-sources`](../maven/plugin/dependencyplugingoalresolvesources)
-* [Sort dependencies](../maven/sortdependencies)
 * [Update SCM with Git origin](../maven/updatescmfromgitorigin)
 
 </TabItem>
@@ -69,11 +68,10 @@ recipeList:
   - org.openrewrite.maven.RemoveDuplicatePluginDeclarations
   - org.openrewrite.maven.RemoveRedundantDependencyVersions
   - org.openrewrite.maven.RemoveRedundantProperties:
-      onlyIfValuesMatch: true
+      onlyIfParentValueIs: EQ
   - org.openrewrite.maven.cleanup.DependencyManagementDependencyRequiresVersion
   - org.openrewrite.maven.ModernizeObsoletePoms
   - org.openrewrite.maven.plugin.DependencyPluginGoalResolveSources
-  - org.openrewrite.maven.SortDependencies
   - org.openrewrite.maven.UpdateScmFromGitOrigin
 
 ```

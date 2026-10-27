@@ -42,7 +42,6 @@ This recipe is available under the [Moderne Source Available License](https://do
   * groupId: `org.springframework.boot`
   * artifactId: `*`
   * newVersion: `2.5.x`
-  * overrideManagedVersion: `false`
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `org.springframework.boot`
   * artifactId: `spring-boot-dependencies`
@@ -82,7 +81,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * newFullyQualifiedTypeName: `org.springframework.boot.autoconfigure.web.WebProperties$Resources`
 * [Replace deprecated `PropertyNamingStrategy` inner classes and constants](../../../java/jackson/replacepropertynamingstrategyconstants)
 * [Migrate Spring Boot properties to 2.5](../../../java/spring/boot2/springbootproperties_2_5)
-* [Adds `@DependsOnDatabaseInitialization` to Spring Beans and Components depending on `javax.sql.DataSource`](../../../java/spring/boot2/databasecomponentandbeaninitializationordering)
+* [Add `@DependsOnDatabaseInitialization` to Spring beans and components depending on `javax.sql.DataSource`](../../../java/spring/boot2/databasecomponentandbeaninitializationordering)
 * [Upgrade MyBatis to Spring Boot 2.5](../../../java/spring/boot3/upgrademybatistospringboot_2_5)
 
 </TabItem>
@@ -105,7 +104,6 @@ recipeList:
       groupId: org.springframework.boot
       artifactId: "*"
       newVersion: 2.5.x
-      overrideManagedVersion: false
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: org.springframework.boot
       artifactId: spring-boot-dependencies

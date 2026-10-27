@@ -37,7 +37,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 This recipe is used as part of the following composite recipes:
 
 * [Add Micronaut build plugins to 4.x](/recipes/java/micronaut/updatebuildplugins.md)
-* [Migrate JAXB-WS Plugin](/recipes/java/migrate/javax/migratejaxbwsplugin.md)
+* [Migrate the JAX-WS Maven plugin](/recipes/java/migrate/javax/migratejaxbwsplugin.md)
 * [Update Spring Cloud Contract coordinates to Stubborn Contract](/recipes/sh/stubborn/contract/migration/updatedependencies.md)
 * [Upgrade plugins that are incompatible with Maven 4](/recipes/maven/upgradepluginsformaven4.md)
 * [Upgrade plugins to Java 25 compatible versions](/recipes/java/migrate/upgradepluginsforjava25.md)

@@ -13,6 +13,9 @@ _Recipes to search and transform [HashiCorp Configuration Language](https://gith
 
 ## Recipes
 
+* [Add content](./addcontent.md)
+* [Change key](./changekey.md)
+* [Change value](./changevalue.md)
 * [Delete content](./deletecontent.md)
 * [Move content to another file](./movecontenttofile.md)
 * [Replace legacy attribute index syntax](./replacelegacyattributeindexsyntax.md)

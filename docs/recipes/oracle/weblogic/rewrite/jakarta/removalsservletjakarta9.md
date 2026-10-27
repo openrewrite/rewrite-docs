@@ -92,7 +92,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
   * newParameterNames: `[ex, str]`
   * oldParameterNames: `[str, ex]`
   * matchOverrides: `true`
-* [Updates `getRealPath()` to call `getContext()` followed by `getRealPath()`](../../../../java/migrate/jakarta/updategetrealpath)
+* [Replace `ServletRequest.getRealPath(String)` with `getServletContext().getRealPath(String)`](../../../../java/migrate/jakarta/updategetrealpath)
 * [Delete method argument](../../../../java/deletemethodargument)
   * methodPattern: `jakarta.servlet.UnavailableException <constructor>(jakarta.servlet.Servlet, String)`
   * argumentIndex: `0`

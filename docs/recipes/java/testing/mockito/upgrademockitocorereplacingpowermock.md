@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.testing.mockito.UpgradeMockitoCoreReplacingPowerMock**
 
-_Upgrades an explicitly declared `mockito-core` to at least the Mockito 3.x that replaces the PowerMock Mockito API. An older `mockito-core` would otherwise take precedence over the one `mockito-inline` depends on, so that `Mockito.mockStatic` and `MockedStatic` do not resolve. `mockito-all` is a 1.x-only uber jar with no 3.x release, so it becomes `mockito-core` first. A declared `mockito-inline` is upgraded as well, as before 3.4 it depends on a `mockito-core` without `Mockito.mockStatic`._
+_Upgrades a declared `mockito-core` to at least the Mockito 3.x that replaces the PowerMock Mockito API. An older `mockito-core` would otherwise take precedence over the one `mockito-inline` depends on, so that `Mockito.mockStatic` and `MockedStatic` do not resolve. A declared `mockito-inline` is upgraded as well, as before 3.4 it depends on a `mockito-core` without `Mockito.mockStatic`. This runs after the PowerMock dependencies are replaced, so that it also upgrades the Mockito artifact that replaces them. A version managed by a BOM, such as the Mockito 3.3 of Spring Boot 2.2 and 2.3, is overridden as well, through its `mockito.version` property where the BOM uses one, so that the other Mockito artifacts it manages stay aligned._
 
 ### Tags
 
@@ -43,18 +43,16 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 **Recipes**
 
-* [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
-  * oldGroupId: `org.mockito`
-  * oldArtifactId: `mockito-all`
-  * newArtifactId: `mockito-core`
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `org.mockito`
   * artifactId: `mockito-core`
   * newVersion: `3.x`
+  * overrideManagedVersion: `true`
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `org.mockito`
   * artifactId: `mockito-inline`
   * newVersion: `3.x`
+  * overrideManagedVersion: `true`
 
 </TabItem>
 
@@ -66,7 +64,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.testing.mockito.UpgradeMockitoCoreReplacingPowerMock
 displayName: Upgrade `mockito-core` along with the Mockito that replaces PowerMock
 description: |
-  Upgrades an explicitly declared `mockito-core` to at least the Mockito 3.x that replaces the PowerMock Mockito API. An older `mockito-core` would otherwise take precedence over the one `mockito-inline` depends on, so that `Mockito.mockStatic` and `MockedStatic` do not resolve. `mockito-all` is a 1.x-only uber jar with no 3.x release, so it becomes `mockito-core` first. A declared `mockito-inline` is upgraded as well, as before 3.4 it depends on a `mockito-core` without `Mockito.mockStatic`.
+  Upgrades a declared `mockito-core` to at least the Mockito 3.x that replaces the PowerMock Mockito API. An older `mockito-core` would otherwise take precedence over the one `mockito-inline` depends on, so that `Mockito.mockStatic` and `MockedStatic` do not resolve. A declared `mockito-inline` is upgraded as well, as before 3.4 it depends on a `mockito-core` without `Mockito.mockStatic`. This runs after the PowerMock dependencies are replaced, so that it also upgrades the Mockito artifact that replaces them. A version managed by a BOM, such as the Mockito 3.3 of Spring Boot 2.2 and 2.3, is overridden as well, through its `mockito.version` property where the BOM uses one, so that the other Mockito artifacts it manages stay aligned.
 tags:
   - mockito
   - testing
@@ -75,18 +73,16 @@ preconditions:
       groupIdPattern: org.powermock
       artifactIdPattern: powermock-api-mockito*
 recipeList:
-  - org.openrewrite.java.dependencies.ChangeDependency:
-      oldGroupId: org.mockito
-      oldArtifactId: mockito-all
-      newArtifactId: mockito-core
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: org.mockito
       artifactId: mockito-core
       newVersion: 3.x
+      overrideManagedVersion: true
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: org.mockito
       artifactId: mockito-inline
       newVersion: 3.x
+      overrideManagedVersion: true
 
 ```
 </TabItem>
@@ -122,6 +118,25 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
+
+### Maven metadata failures
+**org.openrewrite.maven.table.MavenMetadataFailures**
+
+_Attempts to resolve maven metadata that failed._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Group id | The groupId of the artifact for which the metadata download failed. |
+| Artifact id | The artifactId of the artifact for which the metadata download failed. |
+| Version | The version of the artifact for which the metadata download failed. |
+| Maven repository | The URL of the Maven repository that the metadata download failed on. |
+| Snapshots | Does the repository support snapshots. |
+| Releases | Does the repository support releases. |
+| Failure | The reason the metadata download failed. |
+
+</TabItem>
+
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results

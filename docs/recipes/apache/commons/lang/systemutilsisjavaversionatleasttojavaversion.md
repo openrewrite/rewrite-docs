@@ -34,6 +34,54 @@ This recipe is used as part of the following composite recipes:
 
 * [Migrates to Apache Commons Lang 3.x](/recipes/apache/commons/lang/upgradeapachecommonslang_2_3.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.apache.commons.lang.SystemUtils;
+
+class A {
+    boolean atLeast14() {
+        return SystemUtils.isJavaVersionAtLeast(1.4f);
+    }
+}
+```
+
+###### After
+```java
+import org.apache.commons.lang.SystemUtils;
+import org.apache.commons.lang3.JavaVersion;
+
+class A {
+    boolean atLeast14() {
+        return SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_4);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -2,0 +2,1 @@
+import org.apache.commons.lang.SystemUtils;
++import org.apache.commons.lang3.JavaVersion;
+
+@@ -5,1 +6,1 @@
+class A {
+    boolean atLeast14() {
+-       return SystemUtils.isJavaVersionAtLeast(1.4f);
++       return SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_4);
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

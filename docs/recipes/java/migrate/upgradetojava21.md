@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.migrate.UpgradeToJava21**
 
-_This recipe will apply changes commonly needed when migrating to Java 21. This recipe will also replace deprecated API with equivalents when there is a clear migration strategy. Build files will also be updated to use Java 21 as the target/source and plugins will be also be upgraded to versions that are compatible with Java 21._
+_This recipe will apply changes commonly needed when migrating to Java 21. This recipe will also replace deprecated API with equivalents when there is a clear migration strategy. Build files will also be updated to use Java 21 as the target/source and plugins will also be upgraded to versions that are compatible with Java 21._
 
 ### Tags
 
@@ -51,14 +51,13 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Upgrade `actions/setup-java` `java-version`](../../github/setupjavaupgradejavaversion)
 * [Upgrade plugins to Java 21 compatible versions](../../java/migrate/upgradepluginsforjava21)
 * [Avoid using the deprecated empty `finalize()` method in `java.desktop`](../../java/migrate/deletedeprecatedfinalize)
-* [Adopt `javax.security.auth.Subject.current()` and `javax.security.auth.Subject.callAs()` methods`](../../java/migrate/removedsubjectmethods)
-* [If-else-if-else to switch](../../java/migrate/lang/ifelseifconstructtoswitch)
+* [Adopt `javax.security.auth.Subject.current()` and `javax.security.auth.Subject.callAs()` methods](../../java/migrate/removedsubjectmethods)
+* [Replace if-else-if-else with switch](../../java/migrate/lang/ifelseifconstructtoswitch)
 * [Add null check to existing switch cases](../../java/migrate/lang/nullcheckasswitchcase)
-* [Convert assigning Switch statements to Switch expressions](../../java/migrate/lang/switchcaseassignmentstoswitchexpression)
+* [Convert assigning switch statements to switch expressions](../../java/migrate/lang/switchcaseassignmentstoswitchexpression)
 * [Convert switch cases where every case returns into a returned switch expression](../../java/migrate/lang/switchcasereturnstoswitchexpression)
 * [Convert switch expression yield to arrow](../../java/migrate/lang/switchexpressionyieldtoarrow)
 * [Adopt switch pattern matching (JEP 441)](../../java/migrate/switchpatternmatching)
-* [Remove illegal semicolons](../../java/migrate/removeillegalsemicolons)
 
 </TabItem>
 
@@ -70,7 +69,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.UpgradeToJava21
 displayName: Migrate to Java 21
 description: |
-  This recipe will apply changes commonly needed when migrating to Java 21. This recipe will also replace deprecated API with equivalents when there is a clear migration strategy. Build files will also be updated to use Java 21 as the target/source and plugins will be also be upgraded to versions that are compatible with Java 21.
+  This recipe will apply changes commonly needed when migrating to Java 21. This recipe will also replace deprecated API with equivalents when there is a clear migration strategy. Build files will also be updated to use Java 21 as the target/source and plugins will also be upgraded to versions that are compatible with Java 21.
 tags:
   - java21
 preconditions:
@@ -94,7 +93,6 @@ recipeList:
   - org.openrewrite.java.migrate.lang.SwitchCaseReturnsToSwitchExpression
   - org.openrewrite.java.migrate.lang.SwitchExpressionYieldToArrow
   - org.openrewrite.java.migrate.SwitchPatternMatching
-  - org.openrewrite.java.migrate.RemoveIllegalSemicolons
 
 ```
 </TabItem>

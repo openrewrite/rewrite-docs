@@ -47,6 +47,9 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
   * oldFullyQualifiedTypeName: `org.codehaus.jackson.map.annotate.JsonSerialize`
   * newFullyQualifiedTypeName: `com.fasterxml.jackson.databind.annotation.JsonSerialize`
 * [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.codehaus.jackson.map.AnnotationIntrospector.Pair`
+  * newFullyQualifiedTypeName: `com.fasterxml.jackson.databind.introspect.AnnotationIntrospectorPair`
+* [Change type](../../java/changetype)
   * oldFullyQualifiedTypeName: `org.codehaus.jackson.map.AnnotationIntrospector`
   * newFullyQualifiedTypeName: `com.fasterxml.jackson.databind.AnnotationIntrospector`
 * [Change type](../../java/changetype)
@@ -55,9 +58,6 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Change type](../../java/changetype)
   * oldFullyQualifiedTypeName: `org.codehaus.jackson.map.introspect.JacksonAnnotationIntrospector`
   * newFullyQualifiedTypeName: `com.fasterxml.jackson.databind.introspect.JacksonAnnotationIntrospector`
-* [Change type](../../java/changetype)
-  * oldFullyQualifiedTypeName: `org.codehaus.jackson.map.AnnotationIntrospector.Pair`
-  * newFullyQualifiedTypeName: `com.fasterxml.jackson.databind.introspect.AnnotationIntrospectorPair`
 * [Change type](../../java/changetype)
   * oldFullyQualifiedTypeName: `org.codehaus.jackson.map.introspect.NopAnnotationIntrospector`
   * newFullyQualifiedTypeName: `com.fasterxml.jackson.databind.introspect.NopAnnotationIntrospector`
@@ -110,6 +110,9 @@ recipeList:
       oldFullyQualifiedTypeName: org.codehaus.jackson.map.annotate.JsonSerialize
       newFullyQualifiedTypeName: com.fasterxml.jackson.databind.annotation.JsonSerialize
   - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.codehaus.jackson.map.AnnotationIntrospector.Pair
+      newFullyQualifiedTypeName: com.fasterxml.jackson.databind.introspect.AnnotationIntrospectorPair
+  - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.codehaus.jackson.map.AnnotationIntrospector
       newFullyQualifiedTypeName: com.fasterxml.jackson.databind.AnnotationIntrospector
   - org.openrewrite.java.ChangeType:
@@ -118,9 +121,6 @@ recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.codehaus.jackson.map.introspect.JacksonAnnotationIntrospector
       newFullyQualifiedTypeName: com.fasterxml.jackson.databind.introspect.JacksonAnnotationIntrospector
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: org.codehaus.jackson.map.AnnotationIntrospector.Pair
-      newFullyQualifiedTypeName: com.fasterxml.jackson.databind.introspect.AnnotationIntrospectorPair
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.codehaus.jackson.map.introspect.NopAnnotationIntrospector
       newFullyQualifiedTypeName: com.fasterxml.jackson.databind.introspect.NopAnnotationIntrospector

@@ -25,7 +25,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 | Type | Name | Description | Example |
 | --- | --- | --- | --- |
-| `String` | matcher | *Optional*. The Hamcrest `Matcher` to migrate to JUnit5. | `equalTo` |
+| `String` | matcher | *Optional*. The Hamcrest `Matcher` to migrate to AssertJ. | `equalTo` |
 | `String` | assertion | *Optional*. The AssertJ method to migrate to. | `isEqualTo` |
 | `String` | argumentType | *Optional*. The type of the argument to the Hamcrest `Matcher`. | `java.math.BigDecimal` |
 

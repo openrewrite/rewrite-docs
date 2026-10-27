@@ -14,7 +14,7 @@ _Recipes that include further recipes, often including the individual recipes be
 
 ## Recipes
 
-* [Prefer `EnumSet of(..)`](./useenumsetof.md)
+* [Prefer `EnumSet.of(..)`](./useenumsetof.md)
 * [Prefer `List.of()`](./migratecollectionsemptylist.md)
 * [Prefer `List.of(..)`](./migratecollectionssingletonlist.md)
 * [Prefer `List.of(..)`](./migratecollectionsunmodifiablelist.md)
@@ -30,12 +30,12 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Prefer `Set.of(..)`](./migratecollectionssingletonset.md)
 * [Prefer `Set.of(..)`](./migratecollectionsunmodifiableset.md)
 * [Prefer `Set.of(..)`](./usesetof.md)
-* [Remove invocations of deprecated invocations from Deflater, Inflater, ZipFile](./removefinalizerfromzip.md)
+* [Remove `finalize()` invocations on `Deflater`, `Inflater` and `ZipFile`](./removefinalizerfromzip.md)
 * [Replace `List.get(int)`, `add(int, Object)`, and `remove(int)` with `SequencedCollection` `*First` and `*Last` methods](./listfirstandlast.md)
+* [Replace `Math.random()` with `ThreadLocalRandom.current().nextDouble()`](./replacemathrandomwiththreadlocalrandomrecipe.md)
 * [Replace `Stream.collect(Collectors.toUnmodifiableList())` with `Stream.toList()`](./replacestreamcollectwithtolist.md)
+* [Replace `filter(Optional::isPresent).map(Optional::get)` with `flatMap(Optional::stream)`](./optionalstreamrecipe.md)
 * [Replace `iterator().next()` with `getFirst()`](./iteratornext.md)
-* [Replace `java.lang.Math random()` with `ThreadLocalRandom nextDouble()`](./replacemathrandomwiththreadlocalrandomrecipe.md)
-* [`Stream&lt;Optional&gt;` idiom recipe](./optionalstreamrecipe.md)
 * [Use `Reader.of(CharSequence)` for non-synchronized readers](./migratestringreadertoreaderof.md)
 * [Use `getFirst()` instead of `stream().findFirst().orElseThrow()`](./streamfindfirst.md)
 

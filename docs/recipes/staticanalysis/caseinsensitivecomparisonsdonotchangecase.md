@@ -1,13 +1,13 @@
 ---
-title: "CaseInsensitive comparisons do not alter case"
-sidebar_label: "CaseInsensitive comparisons do not alter case"
+title: "Case-insensitive comparisons do not alter case"
+sidebar_label: "Case-insensitive comparisons do not alter case"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# CaseInsensitive comparisons do not alter case
+# Case-insensitive comparisons do not alter case
 
 **org.openrewrite.staticanalysis.CaseInsensitiveComparisonsDoNotChangeCase**
 
@@ -76,7 +76,7 @@ class A {
 
 <RunRecipe
   recipeName="org.openrewrite.staticanalysis.CaseInsensitiveComparisonsDoNotChangeCase"
-  displayName="CaseInsensitive comparisons do not alter case"
+  displayName="Case-insensitive comparisons do not alter case"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-static-analysis"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_STATIC_ANALYSIS"

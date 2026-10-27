@@ -1,17 +1,17 @@
 ---
-title: "Enum values should be compared with &quot;==&quot;"
-sidebar_label: "Enum values should be compared with &quot;==&quot;"
+title: "Enum values should be compared with `==`"
+sidebar_label: "Enum values should be compared with `==`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Enum values should be compared with &quot;==&quot;
+# Enum values should be compared with `==`
 
 **org.openrewrite.staticanalysis.CompareEnumsWithEqualityOperator**
 
-_Replaces `Enum equals(java.lang.Object)` with `Enum == java.lang.Object`. An `!Enum equals(java.lang.Object)` will change to `!=`. Using `==` for enum comparison is null-safe, catches type mismatches at compile time, and is idiomatic since each enum constant is guaranteed to be a singleton._
+_Replaces `a.equals(b)` with `a == b` when `a` is an enum, and `!a.equals(b)` with `a != b`. Using `==` for enum comparison is null-safe, catches type mismatches at compile time, and is idiomatic since each enum constant is guaranteed to be a singleton._
 
 ### Tags
 
@@ -91,7 +91,7 @@ class Test {
 
 <RunRecipe
   recipeName="org.openrewrite.staticanalysis.CompareEnumsWithEqualityOperator"
-  displayName="Enum values should be compared with &quot;==&quot;"
+  displayName="Enum values should be compared with `==`"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-static-analysis"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_STATIC_ANALYSIS"

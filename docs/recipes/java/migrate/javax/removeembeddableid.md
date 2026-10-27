@@ -1,13 +1,13 @@
 ---
-title: "`@Embeddable` classes cannot have an `@Id` annotation when referenced by an `@EmbeddedId` annotation"
-sidebar_label: "`@Embeddable` classes cannot have an `@Id` annotation when referenced by an `@EmbeddedId` annotation"
+title: "Remove `@Id` from `@Embeddable` classes referenced by an `@EmbeddedId`"
+sidebar_label: "Remove `@Id` from `@Embeddable` classes referenced by an `@EmbeddedId`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# `@Embeddable` classes cannot have an `@Id` annotation when referenced by an `@EmbeddedId` annotation
+# Remove `@Id` from `@Embeddable` classes referenced by an `@EmbeddedId`
 
 **org.openrewrite.java.migrate.javax.RemoveEmbeddableId**
 
@@ -91,7 +91,7 @@ public class MainEntity {
 
 <RunRecipe
   recipeName="org.openrewrite.java.migrate.javax.RemoveEmbeddableId"
-  displayName="`@Embeddable` classes cannot have an `@Id` annotation when referenced by an `@EmbeddedId` annotation"
+  displayName="Remove `@Id` from `@Embeddable` classes referenced by an `@EmbeddedId`"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-migrate-java"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA"

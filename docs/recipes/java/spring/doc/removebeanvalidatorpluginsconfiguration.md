@@ -1,17 +1,17 @@
 ---
-title: "Removes @Import(BeanValidatorPluginsConfiguration.class)"
-sidebar_label: "Removes @Import(BeanValidatorPluginsConfiguration.class)"
+title: "Remove `@Import(BeanValidatorPluginsConfiguration.class)`"
+sidebar_label: "Remove `@Import(BeanValidatorPluginsConfiguration.class)`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Removes @Import(BeanValidatorPluginsConfiguration.class)
+# Remove `@Import(BeanValidatorPluginsConfiguration.class)`
 
 **org.openrewrite.java.spring.doc.RemoveBeanValidatorPluginsConfiguration**
 
-_As Springdoc OpenAPI supports Bean Validation out of the box, the BeanValidatorPluginsConfiguration is no longer supported nor needed. Thus remove @Import(BeanValidatorPluginsConfiguration.class)._
+_As Springdoc OpenAPI supports Bean Validation out of the box, the `BeanValidatorPluginsConfiguration` is no longer supported nor needed. Thus remove `@Import(BeanValidatorPluginsConfiguration.class)`._
 
 ## Recipe source
 
@@ -77,7 +77,7 @@ class ApplicationConfiguration {}
 
 <RunRecipe
   recipeName="org.openrewrite.java.spring.doc.RemoveBeanValidatorPluginsConfiguration"
-  displayName="Removes @Import(BeanValidatorPluginsConfiguration.class)"
+  displayName="Remove `@Import(BeanValidatorPluginsConfiguration.class)`"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-spring"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING"

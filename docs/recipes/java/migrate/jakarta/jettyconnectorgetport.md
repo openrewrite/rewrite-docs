@@ -26,7 +26,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 This recipe is used as part of the following composite recipes:
 
-* [Update Jetty9 to Jetty12](/recipes/java/migrate/jakarta/jettyupgradeee9.md)
+* [Update Jetty 9 to Jetty 12](/recipes/java/migrate/jakarta/jettyupgradeee9.md)
 
 
 ## Usage

@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.staticanalysis.ReplaceLambdaWithMethodReference**
 
-_Replaces the single statement lambdas `o -> o instanceOf X`, `o -> (A) o`, `o -> System.out.println(o)`, `o -> o != null`, `o -> o == null` with the equivalent method reference. Method references are often more concise and readable than their lambda equivalents, making the code's intent clearer at a glance._
+_Replaces the single statement lambdas `o -> o instanceof X`, `o -> (A) o`, `o -> System.out.println(o)`, `o -> o != null`, `o -> o == null` with the equivalent method reference. Method references are often more concise and readable than their lambda equivalents, making the code's intent clearer at a glance._
 
 ### Tags
 
@@ -34,9 +34,7 @@ This recipe is used as part of the following composite recipes:
 * [Java best practices](/recipes/java/migrate/javabestpractices.md)
 * [OpenRewrite recipe best practices](/recipes/recipes/rewrite/openrewriterecipebestpractices.md)
 
-## Examples
-##### Example 1
-`ReplaceLambdaWithMethodReferenceTest#functionMultiParamReference`
+## Example
 
 
 <Tabs groupId="beforeAfter">
@@ -104,66 +102,6 @@ class Test {
 ```
 </TabItem>
 </Tabs>
-
----
-
-##### Example 2
-`ReplaceLambdaWithMethodReferenceTest#toQualifiedMethodReference`
-
-
-<Tabs groupId="beforeAfter">
-<TabItem value="kotlin" label="kotlin">
-
-
-###### Before
-```kotlin
-fun main() {
-    val pets = listOf(Cat(), Dog())
-    pets.forEach { it.move() }
-}
-```
-
-###### After
-```kotlin
-fun main() {
-    val pets = listOf(Cat(), Dog())
-    pets.forEach ( Pet::move )
-}
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
-@@ -3,1 +3,1 @@
-fun main() {
-    val pets = listOf(Cat(), Dog())
--   pets.forEach { it.move() }
-+   pets.forEach ( Pet::move )
-}
-```
-</TabItem>
-</Tabs>
-
-###### Unchanged
-```kotlin
-interface Pet {
-    fun move() {
-    }
-}
-
-class Cat : Pet {
-    override fun move() {
-        println("Cat is moving")
-    }
-}
-
-class Dog : Pet {
-    override fun move() {
-        println("Dog is moving")
-    }
-}
-```
 
 
 ## Usage

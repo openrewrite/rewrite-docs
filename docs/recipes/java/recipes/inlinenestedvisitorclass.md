@@ -28,6 +28,117 @@ This recipe is used as part of the following composite recipes:
 
 * [Java Recipe best practices](/recipes/java/recipes/javarecipebestpractices.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.openrewrite.ExecutionContext;
+import org.openrewrite.Recipe;
+import org.openrewrite.TreeVisitor;
+import org.openrewrite.java.JavaIsoVisitor;
+import org.openrewrite.java.tree.J;
+
+public class MyRecipe extends Recipe {
+    @Override
+    public String getDisplayName() {
+        return "My recipe";
+    }
+
+    @Override
+    public String getDescription() {
+        return "My description.";
+    }
+
+    @Override
+    public TreeVisitor<?, ExecutionContext> getVisitor() {
+        return new MyRecipeVisitor();
+    }
+
+    private static class MyRecipeVisitor extends JavaIsoVisitor<ExecutionContext> {
+        @Override
+        public J.Literal visitLiteral(J.Literal literal, ExecutionContext ctx) {
+            if (literal.getValue() == null) {
+                return literal;
+            }
+            return super.visitLiteral(literal, ctx);
+        }
+    }
+}
+```
+
+###### After
+```java
+import org.openrewrite.ExecutionContext;
+import org.openrewrite.Recipe;
+import org.openrewrite.TreeVisitor;
+import org.openrewrite.java.JavaIsoVisitor;
+import org.openrewrite.java.tree.J;
+
+public class MyRecipe extends Recipe {
+    @Override
+    public String getDisplayName() {
+        return "My recipe";
+    }
+
+    @Override
+    public String getDescription() {
+        return "My description.";
+    }
+
+    @Override
+    public TreeVisitor<?, ExecutionContext> getVisitor() {
+        return new JavaIsoVisitor<ExecutionContext>() {
+            @Override
+            public J.Literal visitLiteral(J.Literal literal, ExecutionContext ctx) {
+                if (literal.getValue() == null) {
+                    return literal;
+                }
+                return super.visitLiteral(literal, ctx);
+            }
+        };
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -20,8 +20,7 @@
+    @Override
+    public TreeVisitor<?, ExecutionContext> getVisitor() {
+-       return new MyRecipeVisitor();
+-   }
+-
+-   private static class MyRecipeVisitor extends JavaIsoVisitor<ExecutionContext> {
+-       @Override
+-       public J.Literal visitLiteral(J.Literal literal, ExecutionContext ctx) {
+-           if (literal.getValue() == null) {
+-               return literal;
++       return new JavaIsoVisitor<ExecutionContext>() {
++           @Override
++           public J.Literal visitLiteral(J.Literal literal, ExecutionContext ctx) {
++               if (literal.getValue() == null) {
++                   return literal;
++               }
++               return super.visitLiteral(literal, ctx);
+            }
+@@ -29,2 +28,1 @@
+                return literal;
+            }
+-           return super.visitLiteral(literal, ctx);
+-       }
++       };
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

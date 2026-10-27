@@ -35,16 +35,16 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 This recipe is used as part of the following composite recipes:
 
-* [Flags any `org.apache.bval.jsr*` (bval 1.1) and `org.apache.bval.jsr303*` (bval 1.0) package references](/recipes/java/migrate/javaee8/apachedefaultprovider.md)
 * [JNDI name `jsf/ClientSideSecretKey` has been renamed to `faces/ClientSideSecretKey`, and the `jsf/FlashSecretKey` JNDI name has been renamed to `faces/FlashSecretKey`.](/recipes/oracle/weblogic/rewrite/jakarta/facesjndinameschanged3.md)
-* [JNDI name `jsf/ClientSideSecretKey` has been renamed to `faces/ClientSideSecretKey`, and the `jsf/FlashSecretKey` JNDI name has been renamed to `faces/FlashSecretKey`](/recipes/java/migrate/jakarta/facesjndinameschanged.md)
 * [Migrate JSF variable-resolver to el-resolver](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/framework/jsf23/migratefacesconfig)
 * [Migrate from Acegi Security 1.0.x to Spring Security 5.0](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/security/migrateacegitospringsecurity_5_0)
 * [Migrate to Spring ORM to 5](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/orm/springorm5)
 * [Migrate to Struts 6.0](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/struts/migrate6/migratestruts6)
 * [Migrate xmlns entries in `web.xml` files](/recipes/java/migrate/jakarta/javaxwebxmltojakartawebxml.md)
-* [Removed OpenJPA providers in the persistence.xml file](/recipes/java/migrate/javaee7/openjpapersistenceprovider.md)
+* [Rename the `jsf/ClientSideSecretKey` and `jsf/FlashSecretKey` JNDI names to `faces/*`](/recipes/java/migrate/jakarta/facesjndinameschanged.md)
+* [Replace Apache BVal with Hibernate Validator in `validation.xml`](/recipes/java/migrate/javaee8/apachedefaultprovider.md)
 * [Replace deprecated lifecycle phases](/recipes/maven/replacedeprecatedlifecyclephases.md)
+* [Replace the OpenJPA persistence provider with EclipseLink in `persistence.xml`](/recipes/java/migrate/javaee7/openjpapersistenceprovider.md)
 * [Upgrade plugins to Java 25 compatible versions](/recipes/java/migrate/upgradepluginsforjava25.md)
 * [Upgrade to Maven model version 4.1.0](/recipes/maven/upgradetomodelversion410.md)
 

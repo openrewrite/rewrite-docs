@@ -1,17 +1,17 @@
 ---
-title: "Sorted set stream should be collected to LinkedHashSet"
-sidebar_label: "Sorted set stream should be collected to LinkedHashSet"
+title: "Sorted set stream should be collected to `LinkedHashSet`"
+sidebar_label: "Sorted set stream should be collected to `LinkedHashSet`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Sorted set stream should be collected to LinkedHashSet
+# Sorted set stream should be collected to `LinkedHashSet`
 
 **org.openrewrite.staticanalysis.SortedSetStreamToLinkedHashSet**
 
-_Converts `set.stream().sorted().collect(Collectors.toSet())` to `set.stream().sorted().collect(LinkedHashSet::new)`._
+_Converts `stream.sorted().collect(Collectors.toSet())` to `stream.sorted().collect(Collectors.toCollection(LinkedHashSet::new))`, so that the sort order is preserved._
 
 ## Recipe source
 
@@ -75,7 +75,7 @@ class A {
 
 <RunRecipe
   recipeName="org.openrewrite.staticanalysis.SortedSetStreamToLinkedHashSet"
-  displayName="Sorted set stream should be collected to LinkedHashSet"
+  displayName="Sorted set stream should be collected to `LinkedHashSet`"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-static-analysis"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_STATIC_ANALYSIS"

@@ -1,17 +1,21 @@
 ---
-title: "Modernize `BufferedWriter` creation &amp; prevent file descriptor leaks"
-sidebar_label: "Modernize `BufferedWriter` creation &amp; prevent file descriptor leaks"
+title: "Modernize `BufferedWriter` creation and prevent file descriptor leaks"
+sidebar_label: "Modernize `BufferedWriter` creation and prevent file descriptor leaks"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Modernize `BufferedWriter` creation &amp; prevent file descriptor leaks
+# Modernize `BufferedWriter` creation and prevent file descriptor leaks
 
 **org.openrewrite.staticanalysis.BufferedWriterCreationRecipes**
 
 _The code `new BufferedWriter(new FileWriter(f))` creates a `BufferedWriter` that does not close the underlying `FileWriter` when it is closed. This can lead to file descriptor leaks as per [CWE-755](https://cwe.mitre.org/data/definitions/755.html). Use `Files.newBufferedWriter` to create a `BufferedWriter` that closes the underlying file descriptor when it is closed._
+
+### Tags
+
+* [RSPEC-S1943](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S1943&open=java%3AS1943)
 
 ## Recipe source
 
@@ -43,9 +47,11 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.staticanalysis.BufferedWriterCreationRecipes
-displayName: Modernize `BufferedWriter` creation &amp; prevent file descriptor leaks
+displayName: Modernize `BufferedWriter` creation and prevent file descriptor leaks
 description: |
   The code `new BufferedWriter(new FileWriter(f))` creates a `BufferedWriter` that does not close the underlying `FileWriter` when it is closed. This can lead to file descriptor leaks as per [CWE-755](https://cwe.mitre.org/data/definitions/755.html). Use `Files.newBufferedWriter` to create a `BufferedWriter` that closes the underlying file descriptor when it is closed.
+tags:
+  - RSPEC-S1943
 recipeList:
   - org.openrewrite.staticanalysis.BufferedWriterCreationRecipes$BufferedWriterFromNewFileWriterWithFileArgumentRecipe
   - org.openrewrite.staticanalysis.BufferedWriterCreationRecipes$BufferedWriterFromNewFileWriterWithStringArgumentRecipe
@@ -130,7 +136,7 @@ public class BufferedWriterCreationTest {
 
 <RunRecipe
   recipeName="org.openrewrite.staticanalysis.BufferedWriterCreationRecipes"
-  displayName="Modernize `BufferedWriter` creation &amp; prevent file descriptor leaks"
+  displayName="Modernize `BufferedWriter` creation and prevent file descriptor leaks"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-static-analysis"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_STATIC_ANALYSIS"

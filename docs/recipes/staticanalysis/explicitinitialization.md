@@ -13,7 +13,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 Checks if any class or object member is explicitly initialized to default for its type value:
  - `null` for object references
- - zero for numeric types and `char`
+ - zero for `int`, `long`, `short` and `char`
  - and `false` for `boolean`
 Removes explicit initializations where they aren't necessary. Since the JVM already guarantees these defaults, restating them adds visual noise and can obscure fields that are intentionally initialized to non-default values.
 
@@ -138,7 +138,7 @@ class Test {
 ---
 
 ##### Example 2
-`ExplicitInitializationVisitorCsharpTest#removeExplicitInitialization`
+`ExplicitInitializationCsharpTest#removeExplicitInitialization`
 
 
 <Tabs groupId="beforeAfter">

@@ -21,6 +21,55 @@ _Remove the redundant `final` modifier from resources declared in a try-with-res
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license). Moderne customers can download precompiled artifacts from The Code Genome Project. For non-commercial use you can build the artifact from source locally.
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+
+class Test {
+    void method() throws IOException {
+        try (final var input = new ByteArrayInputStream(new byte[0])) {
+            int x = input.read();
+        }
+    }
+}
+```
+
+###### After
+```java
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+
+class Test {
+    void method() throws IOException {
+        try (var input = new ByteArrayInputStream(new byte[0])) {
+            int x = input.read();
+        }
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -6,1 +6,1 @@
+class Test {
+    void method() throws IOException {
+-       try (final var input = new ByteArrayInputStream(new byte[0])) {
++       try (var input = new ByteArrayInputStream(new byte[0])) {
+            int x = input.read();
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

@@ -13,6 +13,10 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 _Convert `new BufferedWriter(new FileWriter(s))` to `Files.newBufferedWriter(new java.io.File(s).toPath())`._
 
+### Tags
+
+* [RSPEC-S1943](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S1943&open=java%3AS1943)
+
 ## Recipe source
 
 [GitHub: BufferedWriterCreation.java](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/BufferedWriterCreation.java),
@@ -26,7 +30,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 This recipe is used as part of the following composite recipes:
 
-* [Modernize `BufferedWriter` creation &amp; prevent file descriptor leaks](/recipes/staticanalysis/bufferedwritercreationrecipes.md)
+* [Modernize `BufferedWriter` creation and prevent file descriptor leaks](/recipes/staticanalysis/bufferedwritercreationrecipes.md)
 
 
 ## Usage

@@ -1,13 +1,13 @@
 ---
-title: "Testcontainers 2 container classes"
-sidebar_label: "Testcontainers 2 container classes"
+title: "Move container classes to their Testcontainers 2 packages"
+sidebar_label: "Move container classes to their Testcontainers 2 packages"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Testcontainers 2 container classes
+# Move container classes to their Testcontainers 2 packages
 
 **org.openrewrite.java.testing.testcontainers.Testcontainers2ContainerClasses**
 
@@ -33,6 +33,8 @@ This recipe is available under the [Moderne Source Available License](https://do
 **Preconditions**
 
 * [Singleton](../../../core/singleton)
+* [Find files that have at least one use of a type](../../../java/search/hastype)
+  * fullyQualifiedTypeName: `org.testcontainers..*`
 
 **Recipes**
 
@@ -177,11 +179,13 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.testing.testcontainers.Testcontainers2ContainerClasses
-displayName: Testcontainers 2 container classes
+displayName: Move container classes to their Testcontainers 2 packages
 description: |
   Change Testcontainers container classes to their new package locations in Testcontainers 2.x.
 preconditions:
   - org.openrewrite.Singleton
+  - org.openrewrite.java.search.HasType:
+      fullyQualifiedTypeName: org.testcontainers..*
 recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.testcontainers.containers.BigQueryEmulatorContainer
@@ -422,7 +426,7 @@ class Foo {
 
 <RunRecipe
   recipeName="org.openrewrite.java.testing.testcontainers.Testcontainers2ContainerClasses"
-  displayName="Testcontainers 2 container classes"
+  displayName="Move container classes to their Testcontainers 2 packages"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-testing-frameworks"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_TESTING_FRAMEWORKS"

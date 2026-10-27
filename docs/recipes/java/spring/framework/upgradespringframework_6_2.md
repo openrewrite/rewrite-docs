@@ -41,7 +41,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * groupId: `org.springframework`
   * artifactId: `*`
   * newVersion: `6.2.x`
-* [Migrate `org.springframework.util.Base64Utils` to `java.io.Base64`](../../../java/spring/framework/migratebase64utils)
+* [Migrate `org.springframework.util.Base64Utils` to `java.util.Base64`](../../../java/spring/framework/migratebase64utils)
 * [Migrate `HandlerResult.hasExceptionHandler()` to `getExceptionHandler()`](../../../java/spring/framework/migratehandlerresulthasexceptionhandlermethod)
 * [Migrate `org.springframework.web.reactive.HandlerResult.setExceptionHandler` method](../../../java/spring/framework/migratehandlerresultsetexceptionhandlermethod)
 * [Migrate `MethodArgumentNotValidException.errorsToStringList` and `resolveErrorMessages`](../../../java/spring/framework/migratemethodargumentnotvalidexceptionerrormethod)

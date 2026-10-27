@@ -56,7 +56,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * newVersion: `1.1.x`
 * [Migrate removed Spring `Assert` methods](../../../java/spring/framework/migratespringassert)
 * [Migrate to ApacheHttpClient 5.x](../../../apache/httpclient5/upgradeapachehttpclient_5)
-* [Migrate `setReadTimeout(java.lang.int)` to SocketConfig `setSoTimeout(..)`](../../../java/spring/framework/httpcomponentsclienthttprequestfactoryreadtimeout)
+* [Migrate `setReadTimeout(int)` to SocketConfig `setSoTimeout(..)`](../../../java/spring/framework/httpcomponentsclienthttprequestfactoryreadtimeout)
 * [Migrate `ResponseEntityExceptionHandler` from HttpStatus to HttpStatusCode](../../../java/spring/framework/migrateresponseentityexceptionhandlerhttpstatustohttpstatuscode)
 * [Migrate breaking changes in `ResponseStatusException`](../../../java/spring/framework/migrateresponsestatusexception)
 * [Replaces deprecated `ClientHttpResponse#getRawStatusCode()`](../../../java/spring/framework/migrateclienthttpresponsegetrawstatuscodemethod)

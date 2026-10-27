@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.javascript.AddDependency**
 
-_Add an npm dependency to `package.json` and regenerate the lock file natively, without executing the package manager. If the dependency already exists in any scope, the recipe is a no-op. Not safe to use as a precondition: consults the package registry over the network and publishes per-project state shared with other dependency recipes._
+_Add an npm dependency to `package.json` and regenerate the lock file natively, without executing the package manager. In a pnpm workspace with catalogs it writes what `pnpm add` writes under the workspace's `catalogMode` and `saveCatalogName`. If the dependency already exists in any scope, the recipe is a no-op. Not safe to use as a precondition: consults the package registry over the network and publishes per-project state shared with other dependency recipes._
 
 ## Recipe source
 
@@ -90,8 +90,24 @@ _Lock files that could not be regenerated after a dependency edit, and why._
 | ----------- | ----------- |
 | Source path | The path of the package.json whose lock could not be regenerated. |
 | Package name | The package that caused the failure, when attributable to one. |
-| Reason | The structured failure reason, e.g. REGISTRY_UNREACHABLE or RESOLUTION_REQUIRED. Absent for unstructured failures. |
+| Kind | CANNOT_KNOW when the outcome depends on what the engine is not given, PM_REJECTS or PM_FAILS when the package manager itself rejects or fails on the edit, SECOND_INSTALL when its next install would reject or rewrite the lock. |
+| Reason | The structured failure reason, e.g. REGISTRY_UNREACHABLE, RESOLUTION_REQUIRED or PEER_CONFLICT. |
 | Detail | A human-readable description of the failure. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.javascript.table.NodeDependencyEditsDeclined" label="NodeDependencyEditsDeclined">
+
+### Node.js dependency edits declined
+**org.openrewrite.javascript.table.NodeDependencyEditsDeclined**
+
+_Edits a recipe did not make, or that the package manager applies only in part, and why._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Source path | The file the edit belongs in. |
+| Package name | The dependency the edit was for. |
+| Reason | Why the edit was not made, or why the package manager would not read it as asked. |
 
 </TabItem>
 

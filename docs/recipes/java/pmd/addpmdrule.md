@@ -27,6 +27,48 @@ This recipe is available under the [Moderne Source Available License](https://do
 | --- | --- | --- | --- |
 | `String` | rule | The rule to add, as a fully qualified reference naming both the ruleset file and the rule within it. A bare rule name is not enough, since PMD resolves a rule through the ruleset file it lives in. | `category/java/errorprone.xml/EmptyCatchBlock` |
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|rule|`category/java/errorprone.xml/EmptyCatchBlock`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="xml" label="xml">
+
+
+###### Before
+```xml
+<?xml version="1.0"?>
+<ruleset name="custom">
+    <rule ref="category/java/errorprone.xml/AvoidBranchingStatementAsLastInLoop"/>
+</ruleset>
+```
+
+###### After
+```xml
+<?xml version="1.0"?>
+<ruleset name="custom">
+    <rule ref="category/java/errorprone.xml/AvoidBranchingStatementAsLastInLoop"/>
+    <rule ref="category/java/errorprone.xml/EmptyCatchBlock"/>
+</ruleset>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -4,0 +4,1 @@
+<ruleset name="custom">
+    <rule ref="category/java/errorprone.xml/AvoidBranchingStatementAsLastInLoop"/>
++   <rule ref="category/java/errorprone.xml/EmptyCatchBlock"/>
+</ruleset>
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

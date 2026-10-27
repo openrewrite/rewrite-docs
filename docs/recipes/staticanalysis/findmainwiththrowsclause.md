@@ -25,6 +25,44 @@ _Marks JVM entry-point `main` methods (`public static void main(String[])` or th
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license). Moderne customers can download precompiled artifacts from The Code Genome Project. For non-commercial use you can build the artifact from source locally.
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+class A {
+    public static void main(String[] args) throws Exception {
+        System.out.println("hello");
+    }
+}
+```
+
+###### After
+```java
+class A {
+    /*~~(`main` declares `throws`; uncaught exceptions propagate to the JVM's default handler. Handle them explicitly and exit with a meaningful code.)~~>*/public static void main(String[] args) throws Exception {
+        System.out.println("hello");
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -2,1 +2,1 @@
+class A {
+-   public static void main(String[] args) throws Exception {
++   /*~~(`main` declares `throws`; uncaught exceptions propagate to the JVM's default handler. Handle them explicitly and exit with a meaningful code.)~~>*/public static void main(String[] args) throws Exception {
+        System.out.println("hello");
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

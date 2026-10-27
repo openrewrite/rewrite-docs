@@ -44,12 +44,11 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Rename package name](../../../java/changepackage)
   * oldPackageName: `com.nimbusds.jose.shaded.json`
   * newPackageName: `net.minidev.json`
-  * recursive: `false`
 * [Add Gradle or Maven dependency](../../../java/dependencies/adddependency)
   * groupId: `net.minidev`
   * artifactId: `json-smart`
   * version: `2.x`
-  * onlyIfUsing: `com.nimbusds.jose`
+  * onlyIfUsing: `com.nimbusds.jose.shaded.json.*`
 
 </TabItem>
 
@@ -71,12 +70,11 @@ recipeList:
   - org.openrewrite.java.ChangePackage:
       oldPackageName: com.nimbusds.jose.shaded.json
       newPackageName: net.minidev.json
-      recursive: false
   - org.openrewrite.java.dependencies.AddDependency:
       groupId: net.minidev
       artifactId: json-smart
       version: 2.x
-      onlyIfUsing: com.nimbusds.jose
+      onlyIfUsing: com.nimbusds.jose.shaded.json.*
 
 ```
 </TabItem>
@@ -235,6 +233,25 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
+
+### Maven metadata failures
+**org.openrewrite.maven.table.MavenMetadataFailures**
+
+_Attempts to resolve maven metadata that failed._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Group id | The groupId of the artifact for which the metadata download failed. |
+| Artifact id | The artifactId of the artifact for which the metadata download failed. |
+| Version | The version of the artifact for which the metadata download failed. |
+| Maven repository | The URL of the Maven repository that the metadata download failed on. |
+| Snapshots | Does the repository support snapshots. |
+| Releases | Does the repository support releases. |
+| Failure | The reason the metadata download failed. |
+
+</TabItem>
+
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results

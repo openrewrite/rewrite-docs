@@ -1,13 +1,13 @@
 ---
-title: "Replaces `Object.notify()` with `Object.notifyAll()`"
-sidebar_label: "Replaces `Object.notify()` with `Object.notifyAll()`"
+title: "Replace `Object.notify()` with `Object.notifyAll()`"
+sidebar_label: "Replace `Object.notify()` with `Object.notifyAll()`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Replaces `Object.notify()` with `Object.notifyAll()`
+# Replace `Object.notify()` with `Object.notifyAll()`
 
 **org.openrewrite.staticanalysis.UseObjectNotifyAll**
 
@@ -38,7 +38,7 @@ This recipe is used as part of the following composite recipes:
 
 <RunRecipe
   recipeName="org.openrewrite.staticanalysis.UseObjectNotifyAll"
-  displayName="Replaces `Object.notify()` with `Object.notifyAll()`"
+  displayName="Replace `Object.notify()` with `Object.notifyAll()`"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-static-analysis"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_STATIC_ANALYSIS"

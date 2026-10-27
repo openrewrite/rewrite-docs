@@ -41,12 +41,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 **Recipes**
 
-* [Mockito 5.x upgrade](../../../java/testing/mockito/mockito1to5migration)
+* [Upgrade to Mockito 5.x](../../../java/testing/mockito/mockito1to5migration)
 * [Remove annotation](../../../java/removeannotation)
   * annotationPattern: `@org.mockito.junit.jupiter.MockitoSettings(strictness=org.mockito.quality.Strictness.WARN)`
 * [Remove `Mockito.times(0)` and `Mockito.times(1)`](../../../java/testing/mockito/removetimeszeroandone)
 * [Remove `doNothing()` for void methods on `@Mock` fields](../../../java/testing/mockito/removedonothingfordefaultmocks)
-* [Call to Mockito method &quot;verify&quot;, &quot;when&quot; or &quot;given&quot; should be simplified](../../../java/testing/mockito/simplifymockitoverifywhengiven)
+* [Remove `eq()` matchers from Mockito `verify`, `when` and `given` calls](../../../java/testing/mockito/simplifymockitoverifywhengiven)
 * [Wrap `MockedConstruction` in try-with-resources](../../../java/testing/mockito/mockconstructiontotrywithresources)
 
 </TabItem>
@@ -194,6 +194,25 @@ _Tests disabled because they use a PowerMock feature with no Mockito equivalent.
 | Disabled element | The test method that was disabled, or the class name when the usage sits outside a test method and the whole class had to be disabled. |
 | Scope | `METHOD` when a single test was disabled, `CLASS` when the whole test class was. |
 | Reason | The PowerMock usage that cannot be migrated. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
+
+### Maven metadata failures
+**org.openrewrite.maven.table.MavenMetadataFailures**
+
+_Attempts to resolve maven metadata that failed._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Group id | The groupId of the artifact for which the metadata download failed. |
+| Artifact id | The artifactId of the artifact for which the metadata download failed. |
+| Version | The version of the artifact for which the metadata download failed. |
+| Maven repository | The URL of the Maven repository that the metadata download failed on. |
+| Snapshots | Does the repository support snapshots. |
+| Releases | Does the repository support releases. |
+| Failure | The reason the metadata download failed. |
 
 </TabItem>
 

@@ -33,7 +33,6 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Rename package name](../../java/changepackage)
   * oldPackageName: `org.bouncycastle.pqc.crypto.sphincsplus`
   * newPackageName: `org.bouncycastle.pqc.legacy.sphincsplus`
-  * recursive: `false`
 
 </TabItem>
 
@@ -52,7 +51,6 @@ recipeList:
   - org.openrewrite.java.ChangePackage:
       oldPackageName: org.bouncycastle.pqc.crypto.sphincsplus
       newPackageName: org.bouncycastle.pqc.legacy.sphincsplus
-      recursive: false
 
 ```
 </TabItem>

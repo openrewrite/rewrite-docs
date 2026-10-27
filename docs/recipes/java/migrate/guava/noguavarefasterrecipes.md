@@ -30,9 +30,29 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [`Preconditions.checkNotNull` to `Objects.requireNonNull`](../../../java/migrate/guava/noguavarefasterrecipes$preconditionschecknotnulltoobjectsrequirenonnullrecipe)
-* [`Preconditions.checkNotNull` with `String` message to `Objects.requireNonNull`](../../../java/migrate/guava/noguavarefasterrecipes$preconditionschecknotnullwithmessagetoobjectsrequirenonnullrecipe)
-* [`Preconditions.checkNotNull` with `Object` message to `Objects.requireNonNull` with `String.valueOf`](../../../java/migrate/guava/noguavarefasterrecipes$preconditionschecknotnullwithmessagetoobjectsrequirenonnullmessagetypeobjectrecipe)
+* [Replace `Preconditions.checkNotNull` with `Objects.requireNonNull`](../../../java/migrate/guava/noguavarefasterrecipes$preconditionschecknotnulltoobjectsrequirenonnullrecipe)
+* [Replace `Preconditions.checkNotNull` taking a `String` message with `Objects.requireNonNull`](../../../java/migrate/guava/noguavarefasterrecipes$preconditionschecknotnullwithmessagetoobjectsrequirenonnullrecipe)
+* [Replace `Preconditions.checkNotNull` taking an `Object` message with `Objects.requireNonNull` and `String.valueOf`](../../../java/migrate/guava/noguavarefasterrecipes$preconditionschecknotnullwithmessagetoobjectsrequirenonnullmessagetypeobjectrecipe)
+* [Prefer `new ArrayList&lt;&gt;()`](../../../java/migrate/guava/noguavarefasterrecipes$listsnewarraylistrecipe)
+* [Prefer `new ArrayList&lt;&gt;(Collection)`](../../../java/migrate/guava/noguavarefasterrecipes$listsnewarraylistfromcollectionrecipe)
+* [Prefer `new ArrayList&lt;&gt;(int)`](../../../java/migrate/guava/noguavarefasterrecipes$listsnewarraylistwithcapacityrecipe)
+* [Prefer `new CopyOnWriteArrayList&lt;&gt;()`](../../../java/migrate/guava/noguavarefasterrecipes$listsnewcopyonwritearraylistrecipe)
+* [Prefer `new CopyOnWriteArrayList&lt;&gt;(Collection)`](../../../java/migrate/guava/noguavarefasterrecipes$listsnewcopyonwritearraylistfromcollectionrecipe)
+* [Prefer `new LinkedList&lt;&gt;()`](../../../java/migrate/guava/noguavarefasterrecipes$listsnewlinkedlistrecipe)
+* [Prefer `new LinkedList&lt;&gt;(Collection)`](../../../java/migrate/guava/noguavarefasterrecipes$listsnewlinkedlistfromcollectionrecipe)
+* [Prefer `new HashMap&lt;&gt;()`](../../../java/migrate/guava/noguavarefasterrecipes$mapsnewhashmaprecipe)
+* [Prefer `new HashMap&lt;&gt;(Map)`](../../../java/migrate/guava/noguavarefasterrecipes$mapsnewhashmapfrommaprecipe)
+* [Prefer `new LinkedHashMap&lt;&gt;()`](../../../java/migrate/guava/noguavarefasterrecipes$mapsnewlinkedhashmaprecipe)
+* [Prefer `new LinkedHashMap&lt;&gt;(Map)`](../../../java/migrate/guava/noguavarefasterrecipes$mapsnewlinkedhashmapfrommaprecipe)
+* [Prefer `new TreeMap&lt;&gt;()`](../../../java/migrate/guava/noguavarefasterrecipes$mapsnewtreemaprecipe)
+* [Prefer `new TreeMap&lt;&gt;(Comparator)`](../../../java/migrate/guava/noguavarefasterrecipes$mapsnewtreemapwithcomparatorrecipe)
+* [Prefer `new TreeMap&lt;&gt;(SortedMap)`](../../../java/migrate/guava/noguavarefasterrecipes$mapsnewtreemapfromsortedmaprecipe)
+* [Prefer `Collections.newSetFromMap(new ConcurrentHashMap&lt;&gt;())`](../../../java/migrate/guava/noguavarefasterrecipes$setsnewconcurrenthashsetrecipe)
+* [Prefer `new LinkedHashSet&lt;&gt;()`](../../../java/migrate/guava/noguavarefasterrecipes$setsnewlinkedhashsetrecipe)
+* [Prefer `new LinkedHashSet&lt;&gt;(Collection)`](../../../java/migrate/guava/noguavarefasterrecipes$setsnewlinkedhashsetfromcollectionrecipe)
+* [Prefer `new LinkedHashSet&lt;&gt;(int)`](../../../java/migrate/guava/noguavarefasterrecipes$setsnewlinkedhashsetwithexpectedsizerecipe)
+* [Prefer `Collection.stream().allMatch(Predicate)`](../../../java/migrate/guava/noguavarefasterrecipes$iterablesallrecipe)
+* [Prefer `Collection.stream().map(Function)` over `Collections2.transform`](../../../java/migrate/guava/noguavarefasterrecipes$collections2transformrecipe)
 
 </TabItem>
 
@@ -49,6 +69,26 @@ recipeList:
   - org.openrewrite.java.migrate.guava.NoGuavaRefasterRecipes$PreconditionsCheckNotNullToObjectsRequireNonNullRecipe
   - org.openrewrite.java.migrate.guava.NoGuavaRefasterRecipes$PreconditionsCheckNotNullWithMessageToObjectsRequireNonNullRecipe
   - org.openrewrite.java.migrate.guava.NoGuavaRefasterRecipes$PreconditionsCheckNotNullWithMessageToObjectsRequireNonNullMessageTypeObjectRecipe
+  - org.openrewrite.java.migrate.guava.NoGuavaRefasterRecipes$ListsNewArrayListRecipe
+  - org.openrewrite.java.migrate.guava.NoGuavaRefasterRecipes$ListsNewArrayListFromCollectionRecipe
+  - org.openrewrite.java.migrate.guava.NoGuavaRefasterRecipes$ListsNewArrayListWithCapacityRecipe
+  - org.openrewrite.java.migrate.guava.NoGuavaRefasterRecipes$ListsNewCopyOnWriteArrayListRecipe
+  - org.openrewrite.java.migrate.guava.NoGuavaRefasterRecipes$ListsNewCopyOnWriteArrayListFromCollectionRecipe
+  - org.openrewrite.java.migrate.guava.NoGuavaRefasterRecipes$ListsNewLinkedListRecipe
+  - org.openrewrite.java.migrate.guava.NoGuavaRefasterRecipes$ListsNewLinkedListFromCollectionRecipe
+  - org.openrewrite.java.migrate.guava.NoGuavaRefasterRecipes$MapsNewHashMapRecipe
+  - org.openrewrite.java.migrate.guava.NoGuavaRefasterRecipes$MapsNewHashMapFromMapRecipe
+  - org.openrewrite.java.migrate.guava.NoGuavaRefasterRecipes$MapsNewLinkedHashMapRecipe
+  - org.openrewrite.java.migrate.guava.NoGuavaRefasterRecipes$MapsNewLinkedHashMapFromMapRecipe
+  - org.openrewrite.java.migrate.guava.NoGuavaRefasterRecipes$MapsNewTreeMapRecipe
+  - org.openrewrite.java.migrate.guava.NoGuavaRefasterRecipes$MapsNewTreeMapWithComparatorRecipe
+  - org.openrewrite.java.migrate.guava.NoGuavaRefasterRecipes$MapsNewTreeMapFromSortedMapRecipe
+  - org.openrewrite.java.migrate.guava.NoGuavaRefasterRecipes$SetsNewConcurrentHashSetRecipe
+  - org.openrewrite.java.migrate.guava.NoGuavaRefasterRecipes$SetsNewLinkedHashSetRecipe
+  - org.openrewrite.java.migrate.guava.NoGuavaRefasterRecipes$SetsNewLinkedHashSetFromCollectionRecipe
+  - org.openrewrite.java.migrate.guava.NoGuavaRefasterRecipes$SetsNewLinkedHashSetWithExpectedSizeRecipe
+  - org.openrewrite.java.migrate.guava.NoGuavaRefasterRecipes$IterablesAllRecipe
+  - org.openrewrite.java.migrate.guava.NoGuavaRefasterRecipes$Collections2TransformRecipe
 
 ```
 </TabItem>

@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.migrate.lombok.log.UseJBossLog**
 
-_Prefer the lombok annotation `@JBossLog` over explicitly written out `org.jboss.logging.Logger` fields._
+_Prefer the Lombok annotation `@JBossLog` over explicitly written out `org.jboss.logging.Logger` fields._
 
 ## Recipe source
 

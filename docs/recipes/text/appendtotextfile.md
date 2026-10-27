@@ -36,7 +36,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 This recipe is used as part of the following composite recipes:
 
-* [Lombok Best Practices](/recipes/java/migrate/lombok/lombokbestpractices.md)
+* [Lombok best practices](/recipes/java/migrate/lombok/lombokbestpractices.md)
 * [OpenRewrite recipe best practices](/recipes/recipes/rewrite/openrewriterecipebestpractices.md)
 
 

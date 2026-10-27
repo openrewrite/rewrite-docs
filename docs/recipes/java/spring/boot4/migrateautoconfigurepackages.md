@@ -370,7 +370,6 @@ This recipe is available under the [Moderne Source Available License](https://do
   * methodPattern: `org.springframework.boot.health.contributor.HealthIndicator getHealth(..)`
   * newMethodName: `health`
   * matchOverrides: `true`
-  * ignoreDefinition: `false`
 * [Change type](../../../java/changetype)
   * oldFullyQualifiedTypeName: `org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration`
   * newFullyQualifiedTypeName: `org.springframework.boot.jackson.autoconfigure.JacksonAutoConfiguration`
@@ -723,7 +722,6 @@ recipeList:
       methodPattern: org.springframework.boot.health.contributor.HealthIndicator getHealth(..)
       newMethodName: health
       matchOverrides: true
-      ignoreDefinition: false
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration
       newFullyQualifiedTypeName: org.springframework.boot.jackson.autoconfigure.JacksonAutoConfiguration

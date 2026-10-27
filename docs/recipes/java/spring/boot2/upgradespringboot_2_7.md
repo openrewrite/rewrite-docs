@@ -41,7 +41,6 @@ This recipe is available under the [Moderne Source Available License](https://do
   * groupId: `org.springframework.boot`
   * artifactId: `*`
   * newVersion: `2.7.x`
-  * overrideManagedVersion: `false`
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `org.springframework.boot`
   * artifactId: `spring-boot-dependencies`
@@ -73,7 +72,6 @@ This recipe is available under the [Moderne Source Available License](https://do
   * groupId: `org.springframework.cloud`
   * artifactId: `spring-cloud-stream-dependencies`
   * newVersion: `3.2.x`
-  * overrideManagedVersion: `false`
 * [Change type](../../../java/changetype)
   * oldFullyQualifiedTypeName: `org.springframework.boot.web.server.LocalServerPort`
   * newFullyQualifiedTypeName: `org.springframework.boot.test.web.server.LocalServerPort`
@@ -91,7 +89,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Change key](../../../yaml/changekey)
   * oldKeyPath: `$.spring.security.saml2.relyingparty.registration.*[?(@.identityprovider)]`
   * newKey: `assertingparty`
-* [Change the value of a spring application property](../../../java/spring/changespringpropertyvalue)
+* [Change the value of a Spring application property](../../../java/spring/changespringpropertyvalue)
   * propertyKey: `spring.jpa.hibernate.naming.physical-strategy`
   * newValue: `org.hibernate.boot.model.naming.CamelCaseToUnderscoresNamingStrategy`
   * oldValue: `org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy`
@@ -116,7 +114,6 @@ recipeList:
       groupId: org.springframework.boot
       artifactId: "*"
       newVersion: 2.7.x
-      overrideManagedVersion: false
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: org.springframework.boot
       artifactId: spring-boot-dependencies
@@ -148,7 +145,6 @@ recipeList:
       groupId: org.springframework.cloud
       artifactId: spring-cloud-stream-dependencies
       newVersion: 3.2.x
-      overrideManagedVersion: false
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.springframework.boot.web.server.LocalServerPort
       newFullyQualifiedTypeName: org.springframework.boot.test.web.server.LocalServerPort

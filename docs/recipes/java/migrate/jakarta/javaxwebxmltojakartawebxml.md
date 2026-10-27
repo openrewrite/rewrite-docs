@@ -40,7 +40,6 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 * [Find files](../../../core/findsourcefiles)
   * filePattern: `**/web.xml`
-* [Singleton](../../../core/singleton)
 
 **Recipes**
 
@@ -89,7 +88,6 @@ tags:
 preconditions:
   - org.openrewrite.FindSourceFiles:
       filePattern: **/web.xml
-  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.xml.ChangeTagAttribute:
       elementName: web-app

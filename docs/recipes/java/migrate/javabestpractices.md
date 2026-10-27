@@ -49,13 +49,12 @@ This recipe is available under the [Moderne Source Available License](https://do
   * convertStringsWithoutNewlines: `true`
   * avoidLineContinuations: `false`
 * [Prefer `String.formatted(Object...)`](../../java/migrate/lang/stringformatted)
-  * addParentheses: `true`
 * [Prefer the Java standard library instead of Guava](../../java/migrate/guava/noguava)
 * [Prefer the Java standard library instead of Joda-Time](../../java/joda/time/nojodatime)
 * [JSpecify best practices](../../java/jspecify/jspecifybestpractices)
 * [Use `var` for variables initialized with type casts](../../java/migrate/lang/var/usevarfortypecast)
 * [Use `var` for constructor call assignments](../../java/migrate/lang/var/usevarforconstructors)
-* [Apply `var` to Generic Constructors](../../java/migrate/lang/var/usevarforgenericsconstructors)
+* [Apply `var` to generic constructors](../../java/migrate/lang/var/usevarforgenericsconstructors)
 * [Apply `var` to generic method invocations](../../java/migrate/lang/var/usevarforgenericmethodinvocations)
 * [Use `var` for primitive and String variables](../../java/migrate/lang/var/usevarforprimitive)
 * [Use modernized `java.util` APIs](../../java/migrate/util/javautilapis)
@@ -64,21 +63,21 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Week Year (YYYY) should not be used for date formatting](../../staticanalysis/replaceweekyearwithyear)
 * [`hashCode()` should not be called on array instances](../../staticanalysis/removehashcodecallsfromarrayinstances)
 * [Remove `toString()` calls on arrays](../../staticanalysis/removetostringcallsfromarrayinstances)
-* [Replaces `Object.notify()` with `Object.notifyAll()`](../../staticanalysis/useobjectnotifyall)
+* [Replace `Object.notify()` with `Object.notifyAll()`](../../staticanalysis/useobjectnotifyall)
 * [Remove garbage collection invocations](../../staticanalysis/removecallstosystemgc)
 * [Remove `Object.finalize()` invocations](../../staticanalysis/removecallstoobjectfinalize)
-* [URL Equals and Hash Code](../../staticanalysis/urlequalshashcoderecipes)
+* [`URL#equals()` and `URL#hashCode()`](../../staticanalysis/urlequalshashcoderecipes)
 * [Simplify lambda blocks to expressions](../../staticanalysis/lambdablocktoexpression)
 * [Use method references in lambda](../../staticanalysis/replacelambdawithmethodreference)
 * [Use the diamond operator](../../staticanalysis/usediamondoperator)
 * [Remove unnecessary parentheses](../../staticanalysis/unnecessaryparentheses)
-* [Remove redundant null checks before instanceof](../../staticanalysis/removeredundantnullcheckbeforeinstanceof)
+* [Remove redundant null checks before `instanceof`](../../staticanalysis/removeredundantnullcheckbeforeinstanceof)
 * [Replace `StringBuilder#append` with `String`](../../staticanalysis/replacestringbuilderwithstring)
 * [Use `Collection` interfaces](../../staticanalysis/usecollectioninterfaces)
-* [Enum values should be compared with &quot;==&quot;](../../staticanalysis/compareenumswithequalityoperator)
+* [Enum values should be compared with `==`](../../staticanalysis/compareenumswithequalityoperator)
 * [Combine semantically equal catch blocks](../../staticanalysis/combinesemanticallyequalcatchblocks)
 * [Use `String::replace()` when first parameter is not a real regular expression](../../staticanalysis/usestringreplace)
-* [Use `StandardCharset` constants](../../staticanalysis/usestandardcharset)
+* [Use `StandardCharsets` constants](../../staticanalysis/usestandardcharset)
 * [Use `System.lineSeparator()`](../../staticanalysis/usesystemlineseparator)
 * [Remove redundant casts](../../staticanalysis/removeredundanttypecast)
 * [Replace `java.util.Stack` with `java.util.Deque`](../../staticanalysis/replacestackwithdeque)
@@ -111,8 +110,7 @@ recipeList:
   - org.openrewrite.java.migrate.lang.UseTextBlocks:
       convertStringsWithoutNewlines: true
       avoidLineContinuations: false
-  - org.openrewrite.java.migrate.lang.StringFormatted:
-      addParentheses: true
+  - org.openrewrite.java.migrate.lang.StringFormatted
   - org.openrewrite.java.migrate.guava.NoGuava
   - org.openrewrite.java.joda.time.NoJodaTime
   - org.openrewrite.java.jspecify.JSpecifyBestPractices

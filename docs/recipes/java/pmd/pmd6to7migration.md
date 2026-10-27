@@ -340,6 +340,117 @@ This recipe is used as part of the following composite recipes:
 
 * [Modernize a PMD ruleset](/recipes/java/pmd/modernizepmd.md)
 
+## Examples
+##### Example 1
+`Pmd6to7MigrationTest#migrateRuleset`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="xml" label="xml">
+
+
+###### Before
+```xml
+<?xml version="1.0"?>
+<ruleset name="custom"
+         xmlns="http://pmd.sourceforge.net/ruleset/2.0.0">
+    <description>Our rules</description>
+    <rule ref="category/java/bestpractices.xml/UnusedImports"/>
+    <rule ref="category/java/errorprone.xml/MissingBreakInSwitch"/>
+    <rule ref="category/java/design.xml/StdCyclomaticComplexity"/>
+    <rule ref="category/java/performance.xml/AvoidUsingShortType"/>
+    <rule ref="category/java/bestpractices.xml/AvoidReassigningParameters"/>
+</ruleset>
+```
+
+###### After
+```xml
+<?xml version="1.0"?>
+<ruleset name="custom"
+         xmlns="http://pmd.sourceforge.net/ruleset/2.0.0">
+    <description>Our rules</description>
+    <rule ref="category/java/codestyle.xml/UnnecessaryImport"/>
+    <rule ref="category/java/errorprone.xml/ImplicitSwitchFallThrough"/>
+    <rule ref="category/java/design.xml/CyclomaticComplexity"/>
+    <rule ref="category/java/bestpractices.xml/AvoidReassigningParameters"/>
+</ruleset>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -5,4 +5,3 @@
+         xmlns="http://pmd.sourceforge.net/ruleset/2.0.0">
+    <description>Our rules</description>
+-   <rule ref="category/java/bestpractices.xml/UnusedImports"/>
+-   <rule ref="category/java/errorprone.xml/MissingBreakInSwitch"/>
+-   <rule ref="category/java/design.xml/StdCyclomaticComplexity"/>
+-   <rule ref="category/java/performance.xml/AvoidUsingShortType"/>
++   <rule ref="category/java/codestyle.xml/UnnecessaryImport"/>
++   <rule ref="category/java/errorprone.xml/ImplicitSwitchFallThrough"/>
++   <rule ref="category/java/design.xml/CyclomaticComplexity"/>
+    <rule ref="category/java/bestpractices.xml/AvoidReassigningParameters"/>
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`Pmd6to7MigrationTest#migrateRuleset`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="xml" label="xml">
+
+
+###### Before
+```xml
+<?xml version="1.0"?>
+<ruleset name="custom"
+         xmlns="http://pmd.sourceforge.net/ruleset/2.0.0">
+    <description>Our rules</description>
+    <rule ref="category/java/bestpractices.xml/UnusedImports"/>
+    <rule ref="category/java/errorprone.xml/MissingBreakInSwitch"/>
+    <rule ref="category/java/design.xml/StdCyclomaticComplexity"/>
+    <rule ref="category/java/performance.xml/AvoidUsingShortType"/>
+    <rule ref="category/java/bestpractices.xml/AvoidReassigningParameters"/>
+</ruleset>
+```
+
+###### After
+```xml
+<?xml version="1.0"?>
+<ruleset name="custom"
+         xmlns="http://pmd.sourceforge.net/ruleset/2.0.0">
+    <description>Our rules</description>
+    <rule ref="category/java/codestyle.xml/UnnecessaryImport"/>
+    <rule ref="category/java/errorprone.xml/ImplicitSwitchFallThrough"/>
+    <rule ref="category/java/design.xml/CyclomaticComplexity"/>
+    <rule ref="category/java/bestpractices.xml/AvoidReassigningParameters"/>
+</ruleset>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -5,4 +5,3 @@
+         xmlns="http://pmd.sourceforge.net/ruleset/2.0.0">
+    <description>Our rules</description>
+-   <rule ref="category/java/bestpractices.xml/UnusedImports"/>
+-   <rule ref="category/java/errorprone.xml/MissingBreakInSwitch"/>
+-   <rule ref="category/java/design.xml/StdCyclomaticComplexity"/>
+-   <rule ref="category/java/performance.xml/AvoidUsingShortType"/>
++   <rule ref="category/java/codestyle.xml/UnnecessaryImport"/>
++   <rule ref="category/java/errorprone.xml/ImplicitSwitchFallThrough"/>
++   <rule ref="category/java/design.xml/CyclomaticComplexity"/>
+    <rule ref="category/java/bestpractices.xml/AvoidReassigningParameters"/>
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

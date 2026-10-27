@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.staticanalysis.java.MoveFieldAnnotationToType**
 
-_Annotations that could be applied to either a field or a type are better applied to the type, because similar annotations may be more restrictive, leading to compile errors like 'scoping construct cannot be annotated with type-use annotation' when migrating later._
+_Annotations that could be applied to either a field or a type are better applied to the type, because similar annotations may be more restrictive, leading to compile errors like 'scoping construct cannot be annotated with type-use annotation' when migrating later. Applies to fields, local variables, method parameters and method return types._
 
 ## Recipe source
 
@@ -25,7 +25,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 | Type | Name | Description | Example |
 | --- | --- | --- | --- |
-| `String` | annotationType | *Optional*. The type of annotation to move. | `org.openrewrite..*` |
+| `String` | annotationType | *Optional*. The type of annotation to move. Defaults to `org.openrewrite..*`. | `org.openrewrite..*` |
 
 
 ## Used by

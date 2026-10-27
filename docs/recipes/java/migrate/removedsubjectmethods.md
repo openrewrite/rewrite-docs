@@ -1,13 +1,13 @@
 ---
-title: "Adopt `javax.security.auth.Subject.current()` and `javax.security.auth.Subject.callAs()` methods`"
-sidebar_label: "Adopt `javax.security.auth.Subject.current()` and `javax.security.auth.Subject.callAs()` methods`"
+title: "Adopt `javax.security.auth.Subject.current()` and `javax.security.auth.Subject.callAs()` methods"
+sidebar_label: "Adopt `javax.security.auth.Subject.current()` and `javax.security.auth.Subject.callAs()` methods"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Adopt `javax.security.auth.Subject.current()` and `javax.security.auth.Subject.callAs()` methods`
+# Adopt `javax.security.auth.Subject.current()` and `javax.security.auth.Subject.callAs()` methods
 
 **org.openrewrite.java.migrate.RemovedSubjectMethods**
 
@@ -55,7 +55,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.RemovedSubjectMethods
-displayName: Adopt `javax.security.auth.Subject.current()` and `javax.security.auth.Subject.callAs()` methods`
+displayName: Adopt `javax.security.auth.Subject.current()` and `javax.security.auth.Subject.callAs()` methods
 description: |
   Replaces the `javax.security.auth.Subject.getSubject()` and `javax.security.auth.Subject.doAs()` methods with `javax.security.auth.Subject.current()` and `javax.security.auth.Subject.callAs()`.
 tags:
@@ -85,7 +85,7 @@ This recipe is used as part of the following composite recipes:
 
 <RunRecipe
   recipeName="org.openrewrite.java.migrate.RemovedSubjectMethods"
-  displayName="Adopt `javax.security.auth.Subject.current()` and `javax.security.auth.Subject.callAs()` methods`"
+  displayName="Adopt `javax.security.auth.Subject.current()` and `javax.security.auth.Subject.callAs()` methods"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-migrate-java"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA"

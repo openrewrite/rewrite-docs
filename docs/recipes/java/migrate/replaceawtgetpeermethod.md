@@ -25,8 +25,8 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 | Type | Name | Description | Example |
 | --- | --- | --- | --- |
-| `String` | getPeerMethodPattern | *Optional*. The method pattern to match and replace. | `java.awt.* getPeer()` |
-| `String` | lightweightPeerFQCN | *Optional*. The fully qualified class name of the LightweightPeer interface to replace in `instanceof`. | `java.awt.peer.LightweightPeer` |
+| `String` | getPeerMethodPattern | *Optional*. A method pattern matching the `getPeer()` method to replace. | `java.awt.* getPeer()` |
+| `String` | lightweightPeerFQCN | *Optional*. The fully qualified name of the `LightweightPeer` interface to replace in `instanceof`. | `java.awt.peer.LightweightPeer` |
 
 
 ## Used by

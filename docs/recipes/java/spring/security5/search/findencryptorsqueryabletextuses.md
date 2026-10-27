@@ -40,7 +40,6 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 * [Find method usages](../../../../java/search/findmethods)
   * methodPattern: `org.springframework.security.crypto.encrypt.Encryptors queryableText(..)`
-  * matchOverrides: `false`
 
 </TabItem>
 
@@ -62,7 +61,6 @@ preconditions:
 recipeList:
   - org.openrewrite.java.search.FindMethods:
       methodPattern: org.springframework.security.crypto.encrypt.Encryptors queryableText(..)
-      matchOverrides: false
 
 ```
 </TabItem>

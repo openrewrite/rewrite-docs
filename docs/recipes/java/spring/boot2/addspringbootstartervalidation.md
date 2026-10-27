@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.spring.boot2.AddSpringBootStarterValidation**
 
-_Add `spring-boot-starter-validation` when validation constraints are used, unless the project already declares an explicit validation API dependency._
+_Add `spring-boot-starter-validation` when validation constraints are used, unless the project already declares `jakarta.validation-api` or `hibernate-validator` directly._
 
 ## Recipe source
 
@@ -31,6 +31,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Module has dependency](../../../java/dependencies/search/modulehasdependency)
   * groupIdPattern: `jakarta.validation`
   * artifactIdPattern: `jakarta.validation-api`
+  * onlyDirect: `true`
+  * invertMarking: `true`
+* [Module has dependency](../../../java/dependencies/search/modulehasdependency)
+  * groupIdPattern: `org.hibernate.validator`
+  * artifactIdPattern: `hibernate-validator`
+  * onlyDirect: `true`
   * invertMarking: `true`
 * [Singleton](../../../core/singleton)
 
@@ -53,11 +59,17 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.spring.boot2.AddSpringBootStarterValidation
 displayName: Add `spring-boot-starter-validation` if needed
 description: |
-  Add `spring-boot-starter-validation` when validation constraints are used, unless the project already declares an explicit validation API dependency.
+  Add `spring-boot-starter-validation` when validation constraints are used, unless the project already declares `jakarta.validation-api` or `hibernate-validator` directly.
 preconditions:
   - org.openrewrite.java.dependencies.search.ModuleHasDependency:
       groupIdPattern: jakarta.validation
       artifactIdPattern: jakarta.validation-api
+      onlyDirect: true
+      invertMarking: true
+  - org.openrewrite.java.dependencies.search.ModuleHasDependency:
+      groupIdPattern: org.hibernate.validator
+      artifactIdPattern: hibernate-validator
+      onlyDirect: true
       invertMarking: true
   - org.openrewrite.Singleton
 recipeList:
@@ -102,6 +114,25 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
+
+### Maven metadata failures
+**org.openrewrite.maven.table.MavenMetadataFailures**
+
+_Attempts to resolve maven metadata that failed._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Group id | The groupId of the artifact for which the metadata download failed. |
+| Artifact id | The artifactId of the artifact for which the metadata download failed. |
+| Version | The version of the artifact for which the metadata download failed. |
+| Maven repository | The URL of the Maven repository that the metadata download failed on. |
+| Snapshots | Does the repository support snapshots. |
+| Releases | Does the repository support releases. |
+| Failure | The reason the metadata download failed. |
+
+</TabItem>
+
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results

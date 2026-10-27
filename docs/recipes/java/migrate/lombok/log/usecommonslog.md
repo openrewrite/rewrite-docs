@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.migrate.lombok.log.UseCommonsLog**
 
-_Prefer the lombok annotation `@CommonsLog` over explicitly written out `org.apache.commons.logging.Log` fields._
+_Prefer the Lombok annotation `@CommonsLog` over explicitly written out `org.apache.commons.logging.Log` fields._
 
 ## Recipe source
 

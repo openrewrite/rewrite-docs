@@ -1,17 +1,17 @@
 ---
-title: "Remove `@SpringExtension`"
-sidebar_label: "Remove `@SpringExtension`"
+title: "Remove redundant `@ExtendWith(SpringExtension.class)`"
+sidebar_label: "Remove redundant `@ExtendWith(SpringExtension.class)`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Remove `@SpringExtension`
+# Remove redundant `@ExtendWith(SpringExtension.class)`
 
 **org.openrewrite.java.spring.boot2.UnnecessarySpringExtension**
 
-_`@SpringBootTest` and all test slice annotations already applies `@SpringExtension` as of Spring Boot 2.1.0._
+_`@SpringBootTest` and all test slice annotations already apply `@ExtendWith(SpringExtension.class)` as of Spring Boot 2.1.0._
 
 ## Recipe source
 
@@ -83,7 +83,7 @@ class Test {
 
 <RunRecipe
   recipeName="org.openrewrite.java.spring.boot2.UnnecessarySpringExtension"
-  displayName="Remove `@SpringExtension`"
+  displayName="Remove redundant `@ExtendWith(SpringExtension.class)`"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-spring"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING"

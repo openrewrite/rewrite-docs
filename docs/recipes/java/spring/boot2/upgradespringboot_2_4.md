@@ -48,7 +48,6 @@ This recipe is available under the [Moderne Source Available License](https://do
   * groupId: `org.springframework.boot`
   * artifactId: `*`
   * newVersion: `2.4.x`
-  * overrideManagedVersion: `false`
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `org.springframework.boot`
   * artifactId: `spring-boot-dependencies`
@@ -84,7 +83,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Use `isEagerFilterInit()`](../../../java/spring/boot2/migrateundertowservletwebserverfactoryiseagerinitfilters)
 * [Use `setEagerFilterInit(boolean)`](../../../java/spring/boot2/migrateundertowservletwebserverfactoryseteagerinitfilters)
 * [Migrate to recommended constants in `LogbackLoggingSystemProperties` from deprecated values in `LoggingSystemProperties`](../../../java/spring/boot2/migrateloggingsystempropertyconstants)
-* [Migrate deprecated Spring-Boot `EmbeddedDatabaseConnection.HSQL`](../../../java/spring/boot2/migratehsqlembeddeddatabaseconnection)
+* [Migrate deprecated Spring Boot `EmbeddedDatabaseConnection.HSQL`](../../../java/spring/boot2/migratehsqlembeddeddatabaseconnection)
 * [Merge Spring `bootstrap.yml` with `application.yml`](../../../java/spring/boot2/mergebootstrapyamlwithapplicationyaml)
 * [Migrate Spring Boot properties to 2.4](../../../java/spring/boot2/springbootproperties_2_4)
 * [Upgrade MyBatis to Spring Boot 2.4](../../../java/spring/boot3/upgrademybatistospringboot_2_4)
@@ -113,7 +112,6 @@ recipeList:
       groupId: org.springframework.boot
       artifactId: "*"
       newVersion: 2.4.x
-      overrideManagedVersion: false
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: org.springframework.boot
       artifactId: spring-boot-dependencies

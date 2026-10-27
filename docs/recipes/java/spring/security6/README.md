@@ -24,13 +24,13 @@ _Recipes that include further recipes, often including the individual recipes be
 ## Recipes
 
 * [Convert `HttpSecurity::apply` chained calls into `HttpSecurity::with` Lambda DSL](./applytowithlambdadsl.md)
-* [Keep the default RequestCache querying behavior in Spring Security 5](./updaterequestcache.md)
+* [Keep the Spring Security 5 `RequestCache` querying behavior](./updaterequestcache.md)
 * [Remove calls matching `AuthenticationEntryPointFailureHandler.setRethrowAuthenticationServiceException(true)`](./propagateauthenticationserviceexceptions.md)
 * [Remove explicit `SecurityContextConfigurer.requireExplicitSave(true)` opt-in](./requireexplicitsavingofsecuritycontextrepository.md)
 * [Remove explicit configuration of SHA-256 as encoding and matching algorithm for `TokenBasedRememberMeServices`](./usesha256inrememberme.md)
 * [Remove the `useAuthorizationManager=true` attribute from `@EnableReactiveMethodSecurity`](./updateenablereactivemethodsecurity.md)
 * [Remove unnecessary `filterSecurityInterceptorOncePerRequest(false)` when upgrading to Spring Security 6](./removefiltersecurityinterceptoronceperrequest.md)
-* [Remove unnecessary `use-authorization-manager` for message security in Spring security 6](./removeuseauthorizationmanager.md)
+* [Remove unnecessary `use-authorization-manager` for message security in Spring Security 6](./removeuseauthorizationmanager.md)
 * [Remove unneeded `oauth2Login` config when upgrading to Spring Security 6](./removeoauth2loginconfig.md)
 
 

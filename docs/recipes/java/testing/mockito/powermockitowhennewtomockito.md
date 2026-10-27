@@ -28,6 +28,115 @@ This recipe is used as part of the following composite recipes:
 
 * [Replace PowerMock usages with Mockito](/recipes/java/testing/mockito/replacepowermockitousages.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import java.io.File;
+
+import org.junit.Before;
+import org.junit.Test;
+
+import static org.mockito.Mockito.mock;
+import static org.powermock.api.mockito.PowerMockito.whenNew;
+
+public class MyTest {
+    private File file = mock(File.class);
+
+    @Before
+    public void setUp() throws Exception {
+        whenNew(File.class).withArguments("data.txt").thenReturn(file);
+    }
+
+    @Test
+    public void test() {
+    }
+}
+```
+
+###### After
+```java
+import java.io.File;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import org.mockito.AdditionalAnswers;
+import org.mockito.MockedConstruction;
+import org.mockito.Mockito;
+
+import static org.mockito.Mockito.mock;
+
+public class MyTest {
+    private MockedConstruction<File> mockedConstructionFile;
+    private File file = mock(File.class);
+
+    @Before
+    public void setUp() throws Exception {
+        mockedConstructionFile = Mockito.mockConstructionWithAnswer(File.class, AdditionalAnswers.delegatesTo(file));
+    }
+
+    @After
+    public void tearDownStaticMocks() {
+        mockedConstructionFile.closeOnDemand();
+    }
+
+    @Test
+    public void test() {
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,0 +3,1 @@
+import java.io.File;
+
++import org.junit.After;
+import org.junit.Before;
+@@ -5,0 +6,3 @@
+import org.junit.Before;
+import org.junit.Test;
++import org.mockito.AdditionalAnswers;
++import org.mockito.MockedConstruction;
++import org.mockito.Mockito;
+
+@@ -7,1 +11,0 @@
+
+import static org.mockito.Mockito.mock;
+-import static org.powermock.api.mockito.PowerMockito.whenNew;
+
+@@ -10,0 +13,1 @@
+
+public class MyTest {
++   private MockedConstruction<File> mockedConstructionFile;
+    private File file = mock(File.class);
+@@ -14,1 +18,1 @@
+    @Before
+    public void setUp() throws Exception {
+-       whenNew(File.class).withArguments("data.txt").thenReturn(file);
++       mockedConstructionFile = Mockito.mockConstructionWithAnswer(File.class, AdditionalAnswers.delegatesTo(file));
+    }
+@@ -17,0 +21,5 @@
+    }
+
++   @After
++   public void tearDownStaticMocks() {
++       mockedConstructionFile.closeOnDemand();
++   }
++
+    @Test
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

@@ -1,13 +1,13 @@
 ---
-title: "Migrate Enabled to Access Spring Boot Properties"
-sidebar_label: "Migrate Enabled to Access Spring Boot Properties"
+title: "Migrate `enabled` to `access` Spring Boot properties"
+sidebar_label: "Migrate `enabled` to `access` Spring Boot properties"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Migrate Enabled to Access Spring Boot Properties
+# Migrate `enabled` to `access` Spring Boot properties
 
 **org.openrewrite.java.spring.boot3.SpringBootProperties\_3\_4\_EnabledToAccess**
 
@@ -44,286 +44,286 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `management.endpoints.enabled-by-default`
   * newPropertyKey: `management.endpoints.access.default`
-* [Change the value of a spring application property](../../../java/spring/changespringpropertyvalue)
+* [Change the value of a Spring application property](../../../java/spring/changespringpropertyvalue)
   * propertyKey: `management.endpoints.access.default`
   * newValue: `read-only`
   * oldValue: `true`
-* [Change the value of a spring application property](../../../java/spring/changespringpropertyvalue)
+* [Change the value of a Spring application property](../../../java/spring/changespringpropertyvalue)
   * propertyKey: `management.endpoints.access.default`
   * newValue: `none`
   * oldValue: `false`
 * [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `management.endpoint.auditevents.enabled`
   * newPropertyKey: `management.endpoint.auditevents.access`
-* [Change the value of a spring application property](../../../java/spring/changespringpropertyvalue)
+* [Change the value of a Spring application property](../../../java/spring/changespringpropertyvalue)
   * propertyKey: `management.endpoint.auditevents.access`
   * newValue: `read-only`
   * oldValue: `true`
-* [Change the value of a spring application property](../../../java/spring/changespringpropertyvalue)
+* [Change the value of a Spring application property](../../../java/spring/changespringpropertyvalue)
   * propertyKey: `management.endpoint.auditevents.access`
   * newValue: `none`
   * oldValue: `false`
 * [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `management.endpoint.beans.enabled`
   * newPropertyKey: `management.endpoint.beans.access`
-* [Change the value of a spring application property](../../../java/spring/changespringpropertyvalue)
+* [Change the value of a Spring application property](../../../java/spring/changespringpropertyvalue)
   * propertyKey: `management.endpoint.beans.access`
   * newValue: `read-only`
   * oldValue: `true`
-* [Change the value of a spring application property](../../../java/spring/changespringpropertyvalue)
+* [Change the value of a Spring application property](../../../java/spring/changespringpropertyvalue)
   * propertyKey: `management.endpoint.beans.access`
   * newValue: `none`
   * oldValue: `false`
 * [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `management.endpoint.caches.enabled`
   * newPropertyKey: `management.endpoint.caches.access`
-* [Change the value of a spring application property](../../../java/spring/changespringpropertyvalue)
+* [Change the value of a Spring application property](../../../java/spring/changespringpropertyvalue)
   * propertyKey: `management.endpoint.caches.access`
   * newValue: `read-only`
   * oldValue: `true`
-* [Change the value of a spring application property](../../../java/spring/changespringpropertyvalue)
+* [Change the value of a Spring application property](../../../java/spring/changespringpropertyvalue)
   * propertyKey: `management.endpoint.caches.access`
   * newValue: `none`
   * oldValue: `false`
 * [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `management.endpoint.conditions.enabled`
   * newPropertyKey: `management.endpoint.conditions.access`
-* [Change the value of a spring application property](../../../java/spring/changespringpropertyvalue)
+* [Change the value of a Spring application property](../../../java/spring/changespringpropertyvalue)
   * propertyKey: `management.endpoint.conditions.access`
   * newValue: `read-only`
   * oldValue: `true`
-* [Change the value of a spring application property](../../../java/spring/changespringpropertyvalue)
+* [Change the value of a Spring application property](../../../java/spring/changespringpropertyvalue)
   * propertyKey: `management.endpoint.conditions.access`
   * newValue: `none`
   * oldValue: `false`
 * [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `management.endpoint.configprops.enabled`
   * newPropertyKey: `management.endpoint.configprops.access`
-* [Change the value of a spring application property](../../../java/spring/changespringpropertyvalue)
+* [Change the value of a Spring application property](../../../java/spring/changespringpropertyvalue)
   * propertyKey: `management.endpoint.configprops.access`
   * newValue: `read-only`
   * oldValue: `true`
-* [Change the value of a spring application property](../../../java/spring/changespringpropertyvalue)
+* [Change the value of a Spring application property](../../../java/spring/changespringpropertyvalue)
   * propertyKey: `management.endpoint.configprops.access`
   * newValue: `none`
   * oldValue: `false`
 * [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `management.endpoint.env.enabled`
   * newPropertyKey: `management.endpoint.env.access`
-* [Change the value of a spring application property](../../../java/spring/changespringpropertyvalue)
+* [Change the value of a Spring application property](../../../java/spring/changespringpropertyvalue)
   * propertyKey: `management.endpoint.env.access`
   * newValue: `read-only`
   * oldValue: `true`
-* [Change the value of a spring application property](../../../java/spring/changespringpropertyvalue)
+* [Change the value of a Spring application property](../../../java/spring/changespringpropertyvalue)
   * propertyKey: `management.endpoint.env.access`
   * newValue: `none`
   * oldValue: `false`
 * [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `management.endpoint.flyway.enabled`
   * newPropertyKey: `management.endpoint.flyway.access`
-* [Change the value of a spring application property](../../../java/spring/changespringpropertyvalue)
+* [Change the value of a Spring application property](../../../java/spring/changespringpropertyvalue)
   * propertyKey: `management.endpoint.flyway.access`
   * newValue: `read-only`
   * oldValue: `true`
-* [Change the value of a spring application property](../../../java/spring/changespringpropertyvalue)
+* [Change the value of a Spring application property](../../../java/spring/changespringpropertyvalue)
   * propertyKey: `management.endpoint.flyway.access`
   * newValue: `none`
   * oldValue: `false`
 * [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `management.endpoint.health.enabled`
   * newPropertyKey: `management.endpoint.health.access`
-* [Change the value of a spring application property](../../../java/spring/changespringpropertyvalue)
+* [Change the value of a Spring application property](../../../java/spring/changespringpropertyvalue)
   * propertyKey: `management.endpoint.health.access`
   * newValue: `read-only`
   * oldValue: `true`
-* [Change the value of a spring application property](../../../java/spring/changespringpropertyvalue)
+* [Change the value of a Spring application property](../../../java/spring/changespringpropertyvalue)
   * propertyKey: `management.endpoint.health.access`
   * newValue: `none`
   * oldValue: `false`
 * [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `management.endpoint.heapdump.enabled`
   * newPropertyKey: `management.endpoint.heapdump.access`
-* [Change the value of a spring application property](../../../java/spring/changespringpropertyvalue)
+* [Change the value of a Spring application property](../../../java/spring/changespringpropertyvalue)
   * propertyKey: `management.endpoint.heapdump.access`
   * newValue: `read-only`
   * oldValue: `true`
-* [Change the value of a spring application property](../../../java/spring/changespringpropertyvalue)
+* [Change the value of a Spring application property](../../../java/spring/changespringpropertyvalue)
   * propertyKey: `management.endpoint.heapdump.access`
   * newValue: `none`
   * oldValue: `false`
 * [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `management.endpoint.httpexchanges.enabled`
   * newPropertyKey: `management.endpoint.httpexchanges.access`
-* [Change the value of a spring application property](../../../java/spring/changespringpropertyvalue)
+* [Change the value of a Spring application property](../../../java/spring/changespringpropertyvalue)
   * propertyKey: `management.endpoint.httpexchanges.access`
   * newValue: `read-only`
   * oldValue: `true`
-* [Change the value of a spring application property](../../../java/spring/changespringpropertyvalue)
+* [Change the value of a Spring application property](../../../java/spring/changespringpropertyvalue)
   * propertyKey: `management.endpoint.httpexchanges.access`
   * newValue: `none`
   * oldValue: `false`
 * [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `management.endpoint.info.enabled`
   * newPropertyKey: `management.endpoint.info.access`
-* [Change the value of a spring application property](../../../java/spring/changespringpropertyvalue)
+* [Change the value of a Spring application property](../../../java/spring/changespringpropertyvalue)
   * propertyKey: `management.endpoint.info.access`
   * newValue: `read-only`
   * oldValue: `true`
-* [Change the value of a spring application property](../../../java/spring/changespringpropertyvalue)
+* [Change the value of a Spring application property](../../../java/spring/changespringpropertyvalue)
   * propertyKey: `management.endpoint.info.access`
   * newValue: `none`
   * oldValue: `false`
 * [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `management.endpoint.integrationgraph.enabled`
   * newPropertyKey: `management.endpoint.integrationgraph.access`
-* [Change the value of a spring application property](../../../java/spring/changespringpropertyvalue)
+* [Change the value of a Spring application property](../../../java/spring/changespringpropertyvalue)
   * propertyKey: `management.endpoint.integrationgraph.access`
   * newValue: `read-only`
   * oldValue: `true`
-* [Change the value of a spring application property](../../../java/spring/changespringpropertyvalue)
+* [Change the value of a Spring application property](../../../java/spring/changespringpropertyvalue)
   * propertyKey: `management.endpoint.integrationgraph.access`
   * newValue: `none`
   * oldValue: `false`
 * [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `management.endpoint.liquibase.enabled`
   * newPropertyKey: `management.endpoint.liquibase.access`
-* [Change the value of a spring application property](../../../java/spring/changespringpropertyvalue)
+* [Change the value of a Spring application property](../../../java/spring/changespringpropertyvalue)
   * propertyKey: `management.endpoint.liquibase.access`
   * newValue: `read-only`
   * oldValue: `true`
-* [Change the value of a spring application property](../../../java/spring/changespringpropertyvalue)
+* [Change the value of a Spring application property](../../../java/spring/changespringpropertyvalue)
   * propertyKey: `management.endpoint.liquibase.access`
   * newValue: `none`
   * oldValue: `false`
 * [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `management.endpoint.logfile.enabled`
   * newPropertyKey: `management.endpoint.logfile.access`
-* [Change the value of a spring application property](../../../java/spring/changespringpropertyvalue)
+* [Change the value of a Spring application property](../../../java/spring/changespringpropertyvalue)
   * propertyKey: `management.endpoint.logfile.access`
   * newValue: `read-only`
   * oldValue: `true`
-* [Change the value of a spring application property](../../../java/spring/changespringpropertyvalue)
+* [Change the value of a Spring application property](../../../java/spring/changespringpropertyvalue)
   * propertyKey: `management.endpoint.logfile.access`
   * newValue: `none`
   * oldValue: `false`
 * [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `management.endpoint.loggers.enabled`
   * newPropertyKey: `management.endpoint.loggers.access`
-* [Change the value of a spring application property](../../../java/spring/changespringpropertyvalue)
+* [Change the value of a Spring application property](../../../java/spring/changespringpropertyvalue)
   * propertyKey: `management.endpoint.loggers.access`
   * newValue: `read-only`
   * oldValue: `true`
-* [Change the value of a spring application property](../../../java/spring/changespringpropertyvalue)
+* [Change the value of a Spring application property](../../../java/spring/changespringpropertyvalue)
   * propertyKey: `management.endpoint.loggers.access`
   * newValue: `none`
   * oldValue: `false`
 * [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `management.endpoint.mappings.enabled`
   * newPropertyKey: `management.endpoint.mappings.access`
-* [Change the value of a spring application property](../../../java/spring/changespringpropertyvalue)
+* [Change the value of a Spring application property](../../../java/spring/changespringpropertyvalue)
   * propertyKey: `management.endpoint.mappings.access`
   * newValue: `read-only`
   * oldValue: `true`
-* [Change the value of a spring application property](../../../java/spring/changespringpropertyvalue)
+* [Change the value of a Spring application property](../../../java/spring/changespringpropertyvalue)
   * propertyKey: `management.endpoint.mappings.access`
   * newValue: `none`
   * oldValue: `false`
 * [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `management.endpoint.metrics.enabled`
   * newPropertyKey: `management.endpoint.metrics.access`
-* [Change the value of a spring application property](../../../java/spring/changespringpropertyvalue)
+* [Change the value of a Spring application property](../../../java/spring/changespringpropertyvalue)
   * propertyKey: `management.endpoint.metrics.access`
   * newValue: `read-only`
   * oldValue: `true`
-* [Change the value of a spring application property](../../../java/spring/changespringpropertyvalue)
+* [Change the value of a Spring application property](../../../java/spring/changespringpropertyvalue)
   * propertyKey: `management.endpoint.metrics.access`
   * newValue: `none`
   * oldValue: `false`
 * [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `management.endpoint.prometheus.enabled`
   * newPropertyKey: `management.endpoint.prometheus.access`
-* [Change the value of a spring application property](../../../java/spring/changespringpropertyvalue)
+* [Change the value of a Spring application property](../../../java/spring/changespringpropertyvalue)
   * propertyKey: `management.endpoint.prometheus.access`
   * newValue: `read-only`
   * oldValue: `true`
-* [Change the value of a spring application property](../../../java/spring/changespringpropertyvalue)
+* [Change the value of a Spring application property](../../../java/spring/changespringpropertyvalue)
   * propertyKey: `management.endpoint.prometheus.access`
   * newValue: `none`
   * oldValue: `false`
 * [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `management.endpoint.quartz.enabled`
   * newPropertyKey: `management.endpoint.quartz.access`
-* [Change the value of a spring application property](../../../java/spring/changespringpropertyvalue)
+* [Change the value of a Spring application property](../../../java/spring/changespringpropertyvalue)
   * propertyKey: `management.endpoint.quartz.access`
   * newValue: `read-only`
   * oldValue: `true`
-* [Change the value of a spring application property](../../../java/spring/changespringpropertyvalue)
+* [Change the value of a Spring application property](../../../java/spring/changespringpropertyvalue)
   * propertyKey: `management.endpoint.quartz.access`
   * newValue: `none`
   * oldValue: `false`
 * [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `management.endpoint.sbom.enabled`
   * newPropertyKey: `management.endpoint.sbom.access`
-* [Change the value of a spring application property](../../../java/spring/changespringpropertyvalue)
+* [Change the value of a Spring application property](../../../java/spring/changespringpropertyvalue)
   * propertyKey: `management.endpoint.sbom.access`
   * newValue: `read-only`
   * oldValue: `true`
-* [Change the value of a spring application property](../../../java/spring/changespringpropertyvalue)
+* [Change the value of a Spring application property](../../../java/spring/changespringpropertyvalue)
   * propertyKey: `management.endpoint.sbom.access`
   * newValue: `none`
   * oldValue: `false`
 * [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `management.endpoint.scheduledtasks.enabled`
   * newPropertyKey: `management.endpoint.scheduledtasks.access`
-* [Change the value of a spring application property](../../../java/spring/changespringpropertyvalue)
+* [Change the value of a Spring application property](../../../java/spring/changespringpropertyvalue)
   * propertyKey: `management.endpoint.scheduledtasks.access`
   * newValue: `read-only`
   * oldValue: `true`
-* [Change the value of a spring application property](../../../java/spring/changespringpropertyvalue)
+* [Change the value of a Spring application property](../../../java/spring/changespringpropertyvalue)
   * propertyKey: `management.endpoint.scheduledtasks.access`
   * newValue: `none`
   * oldValue: `false`
 * [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `management.endpoint.sessions.enabled`
   * newPropertyKey: `management.endpoint.sessions.access`
-* [Change the value of a spring application property](../../../java/spring/changespringpropertyvalue)
+* [Change the value of a Spring application property](../../../java/spring/changespringpropertyvalue)
   * propertyKey: `management.endpoint.sessions.access`
   * newValue: `read-only`
   * oldValue: `true`
-* [Change the value of a spring application property](../../../java/spring/changespringpropertyvalue)
+* [Change the value of a Spring application property](../../../java/spring/changespringpropertyvalue)
   * propertyKey: `management.endpoint.sessions.access`
   * newValue: `none`
   * oldValue: `false`
 * [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `management.endpoint.shutdown.enabled`
   * newPropertyKey: `management.endpoint.shutdown.access`
-* [Change the value of a spring application property](../../../java/spring/changespringpropertyvalue)
+* [Change the value of a Spring application property](../../../java/spring/changespringpropertyvalue)
   * propertyKey: `management.endpoint.shutdown.access`
   * newValue: `read-only`
   * oldValue: `true`
-* [Change the value of a spring application property](../../../java/spring/changespringpropertyvalue)
+* [Change the value of a Spring application property](../../../java/spring/changespringpropertyvalue)
   * propertyKey: `management.endpoint.shutdown.access`
   * newValue: `none`
   * oldValue: `false`
 * [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `management.endpoint.startup.enabled`
   * newPropertyKey: `management.endpoint.startup.access`
-* [Change the value of a spring application property](../../../java/spring/changespringpropertyvalue)
+* [Change the value of a Spring application property](../../../java/spring/changespringpropertyvalue)
   * propertyKey: `management.endpoint.startup.access`
   * newValue: `read-only`
   * oldValue: `true`
-* [Change the value of a spring application property](../../../java/spring/changespringpropertyvalue)
+* [Change the value of a Spring application property](../../../java/spring/changespringpropertyvalue)
   * propertyKey: `management.endpoint.startup.access`
   * newValue: `none`
   * oldValue: `false`
 * [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `management.endpoint.threaddump.enabled`
   * newPropertyKey: `management.endpoint.threaddump.access`
-* [Change the value of a spring application property](../../../java/spring/changespringpropertyvalue)
+* [Change the value of a Spring application property](../../../java/spring/changespringpropertyvalue)
   * propertyKey: `management.endpoint.threaddump.access`
   * newValue: `read-only`
   * oldValue: `true`
-* [Change the value of a spring application property](../../../java/spring/changespringpropertyvalue)
+* [Change the value of a Spring application property](../../../java/spring/changespringpropertyvalue)
   * propertyKey: `management.endpoint.threaddump.access`
   * newValue: `none`
   * oldValue: `false`
@@ -336,7 +336,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.spring.boot3.SpringBootProperties_3_4_EnabledToAccess
-displayName: Migrate Enabled to Access Spring Boot Properties
+displayName: Migrate `enabled` to `access` Spring Boot properties
 description: |
   Migrate properties found in `application.properties` and `application.yml`, specifically converting 'enabled' to 'access'.
 tags:
@@ -647,7 +647,7 @@ This recipe is used as part of the following composite recipes:
 
 <RunRecipe
   recipeName="org.openrewrite.java.spring.boot3.SpringBootProperties_3_4_EnabledToAccess"
-  displayName="Migrate Enabled to Access Spring Boot Properties"
+  displayName="Migrate `enabled` to `access` Spring Boot properties"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-spring"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING"

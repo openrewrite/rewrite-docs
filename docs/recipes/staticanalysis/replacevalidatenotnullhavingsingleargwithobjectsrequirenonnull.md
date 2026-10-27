@@ -1,13 +1,13 @@
 ---
-title: "Replace `org.apache.commons.lang3.Validate#notNull` with `Objects#requireNonNull`"
-sidebar_label: "Replace `org.apache.commons.lang3.Validate#notNull` with `Objects#requireNonNull`"
+title: "Replace single-argument `org.apache.commons.lang3.Validate#notNull` with `Objects#requireNonNull`"
+sidebar_label: "Replace single-argument `org.apache.commons.lang3.Validate#notNull` with `Objects#requireNonNull`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Replace `org.apache.commons.lang3.Validate#notNull` with `Objects#requireNonNull`
+# Replace single-argument `org.apache.commons.lang3.Validate#notNull` with `Objects#requireNonNull`
 
 **org.openrewrite.staticanalysis.ReplaceValidateNotNullHavingSingleArgWithObjectsRequireNonNull**
 
@@ -30,12 +30,6 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-**Preconditions**
-
-* [Singleton](../core/singleton)
-
-**Recipes**
-
 * [Change method name](../java/changemethodname)
   * methodPattern: `org.apache.commons.lang3.Validate notNull(..)`
   * newMethodName: `requireNonNull`
@@ -51,11 +45,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.staticanalysis.ReplaceValidateNotNullHavingSingleArgWithObjectsRequireNonNull
-displayName: Replace `org.apache.commons.lang3.Validate#notNull` with `Objects#requireNonNull`
+displayName: Replace single-argument `org.apache.commons.lang3.Validate#notNull` with `Objects#requireNonNull`
 description: |
   Replace `org.apache.commons.lang3.Validate.notNull(Object)` with `Objects.requireNonNull(Object)`.
-preconditions:
-  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: org.apache.commons.lang3.Validate notNull(..)
@@ -79,7 +71,7 @@ This recipe is used as part of the following composite recipes:
 
 <RunRecipe
   recipeName="org.openrewrite.staticanalysis.ReplaceValidateNotNullHavingSingleArgWithObjectsRequireNonNull"
-  displayName="Replace `org.apache.commons.lang3.Validate#notNull` with `Objects#requireNonNull`"
+  displayName="Replace single-argument `org.apache.commons.lang3.Validate#notNull` with `Objects#requireNonNull`"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-static-analysis"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_STATIC_ANALYSIS"

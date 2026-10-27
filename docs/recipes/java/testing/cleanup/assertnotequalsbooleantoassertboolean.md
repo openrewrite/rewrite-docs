@@ -1,6 +1,6 @@
 ---
-title: "Replace JUnit `assertNotEquals(false, &lt;boolean&gt;)` to `assertFalse(&lt;boolean&gt;)` / `assertTrue(&lt;boolean&gt;)`"
-sidebar_label: "Replace JUnit `assertNotEquals(false, &lt;boolean&gt;)` to `assertFalse(&lt;boolean&gt;)` / `assertTrue(&lt;boolean&gt;)`"
+title: "Replace JUnit `assertNotEquals(false, <boolean>)` to `assertFalse(<boolean>)` / `assertTrue(<boolean>)`"
+sidebar_label: "Replace JUnit `assertNotEquals(false, <boolean>)` to `assertFalse(<boolean>)` / `assertTrue(<boolean>)`"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -26,7 +26,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 This recipe is used as part of the following composite recipes:
 
-* [Clean Up Assertions](/recipes/java/testing/junit5/cleanupassertions.md)
+* [Clean up assertions](/recipes/java/testing/junit5/cleanupassertions.md)
 
 ## Example
 

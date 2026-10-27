@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.maven.RemoveDuplicateDependencies**
 
-_Removes duplicated dependencies in the `<dependencies>` and `<dependencyManagement>` sections of the `pom.xml`._
+_Maven 3.10 and Maven 4 fail the build when a `<dependencies>` or `<dependencyManagement>` section, including those of a profile, declares the same `groupId:artifactId:type:classifier` more than once, regardless of `<scope>`. Earlier Maven versions only warned and kept a single declaration: the first one in a project's `<dependencyManagement>`, and otherwise the last one, in the position of the first. This recipe removes the duplicates, keeping the declaration earlier Maven versions used so that the resolved dependencies stay the same._
 
 ## Recipe source
 

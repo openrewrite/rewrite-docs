@@ -1,13 +1,13 @@
 ---
-title: "Upgrade Surefire Plugin"
-sidebar_label: "Upgrade Surefire Plugin"
+title: "Upgrade the Maven Surefire plugin"
+sidebar_label: "Upgrade the Maven Surefire plugin"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Upgrade Surefire Plugin
+# Upgrade the Maven Surefire plugin
 
 **org.openrewrite.java.testing.junit5.UpgradeSurefirePlugin**
 
@@ -58,7 +58,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.testing.junit5.UpgradeSurefirePlugin
-displayName: Upgrade Surefire Plugin
+displayName: Upgrade the Maven Surefire plugin
 description: |
   Upgrades the Maven Surefire Plugin to the latest version if still using an older Maven version.
 preconditions:
@@ -93,7 +93,7 @@ This recipe is used as part of the following composite recipes:
 
 <RunRecipe
   recipeName="org.openrewrite.java.testing.junit5.UpgradeSurefirePlugin"
-  displayName="Upgrade Surefire Plugin"
+  displayName="Upgrade the Maven Surefire plugin"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-testing-frameworks"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_TESTING_FRAMEWORKS"

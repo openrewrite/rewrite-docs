@@ -1,17 +1,17 @@
 ---
-title: "Transform classes that extend a given Class to implement the given Interface instead"
-sidebar_label: "Transform classes that extend a given Class to implement the given Interface instead"
+title: "Transform classes that extend a given class to implement the given interface instead"
+sidebar_label: "Transform classes that extend a given class to implement the given interface instead"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Transform classes that extend a given Class to implement the given Interface instead
+# Transform classes that extend a given class to implement the given interface instead
 
 **org.openrewrite.java.spring.batch.ReplaceSupportClassWithItsInterface**
 
-_As of spring-batch 5.x Listeners has default methods (made possible by a Java 8 baseline) and can be implemented directly without the need for this adapter._
+_As of Spring Batch 5.x listeners have default methods (made possible by a Java 8 baseline) and can be implemented directly without the need for this adapter._
 
 ## Recipe source
 
@@ -45,7 +45,7 @@ Here's how you can define and customize such a recipe within your rewrite.yml:
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.ReplaceSupportClassWithItsInterfaceExample
-displayName: Transform classes that extend a given Class to implement the given Interface instead example
+displayName: Transform classes that extend a given class to implement the given interface instead example
 recipeList:
   - org.openrewrite.java.spring.batch.ReplaceSupportClassWithItsInterface:
       fullyQualifiedClassName: org.springframework.batch.core.listener.JobExecutionListenerSupport
@@ -54,7 +54,7 @@ recipeList:
 
 <RunRecipe
   recipeName="org.openrewrite.java.spring.batch.ReplaceSupportClassWithItsInterface"
-  displayName="Transform classes that extend a given Class to implement the given Interface instead"
+  displayName="Transform classes that extend a given class to implement the given interface instead"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-spring"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING"

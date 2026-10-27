@@ -1,21 +1,21 @@
 ---
-title: "Remove redundant null checks before instanceof"
-sidebar_label: "Remove redundant null checks before instanceof"
+title: "Remove redundant null checks before `instanceof`"
+sidebar_label: "Remove redundant null checks before `instanceof`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Remove redundant null checks before instanceof
+# Remove redundant null checks before `instanceof`
 
 **org.openrewrite.staticanalysis.RemoveRedundantNullCheckBeforeInstanceof**
 
-_Removes redundant null checks before instanceof operations since instanceof returns false for null. Removing the extra check simplifies the conditional and makes the null-safety guarantee of `instanceof` more visible to readers._
+_Removes redundant null checks before `instanceof` operations since `instanceof` returns `false` for `null`. Removing the extra check simplifies the conditional and makes the null-safety guarantee of `instanceof` more visible to readers._
 
 ### Tags
 
-* [RSPEC-S1697](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S1697&open=java%3AS1697)
+* [RSPEC-S4201](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S4201&open=java%3AS4201)
 
 ## Recipe source
 
@@ -82,7 +82,7 @@ class A {
 
 <RunRecipe
   recipeName="org.openrewrite.staticanalysis.RemoveRedundantNullCheckBeforeInstanceof"
-  displayName="Remove redundant null checks before instanceof"
+  displayName="Remove redundant null checks before `instanceof`"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-static-analysis"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_STATIC_ANALYSIS"

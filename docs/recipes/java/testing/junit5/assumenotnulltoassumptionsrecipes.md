@@ -30,7 +30,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Transform singlar `assumeNotNull(object)` to `assumeFalse(object == null)`](../../../java/testing/junit5/assumenotnulltoassumptionsrecipes$singleargrecipe)
+* [Transform single-argument `assumeNotNull(object)` to `assumeFalse(object == null)`](../../../java/testing/junit5/assumenotnulltoassumptionsrecipes$singleargrecipe)
 * [Transform variadic `assumeNotNull(objects...)` to a stream of `assumeFalse(object == null)`](../../../java/testing/junit5/assumenotnulltoassumptionsrecipes$varargsrecipe)
 
 </TabItem>

@@ -59,9 +59,9 @@ _A per-repository view of the current state of Java versions and associated buil
 | Major version source compatibility | The major version. |
 | Target compatibility | The target compatibility or `--release` version of the source file. |
 | Gradle version | The version of Gradle in use, if any. |
-| Has Gradle build | Whether a build.gradle file exists in the repository. |
+| Has Gradle build | Whether a `build.gradle` file exists in the repository. |
 | Maven version | The version of Maven in use, if any. |
-| Has Maven pom | Whether a pom.xml file exists in the repository. |
+| Has Maven pom | Whether a `pom.xml` file exists in the repository. |
 
 </TabItem>
 

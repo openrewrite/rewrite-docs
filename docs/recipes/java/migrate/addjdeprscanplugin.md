@@ -1,13 +1,13 @@
 ---
-title: "Add `JDeprScan` Maven Plug-in"
-sidebar_label: "Add `JDeprScan` Maven Plug-in"
+title: "Add `JDeprScan` Maven plugin"
+sidebar_label: "Add `JDeprScan` Maven plugin"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Add `JDeprScan` Maven Plug-in
+# Add `JDeprScan` Maven plugin
 
 **org.openrewrite.java.migrate.AddJDeprScanPlugin**
 
@@ -32,7 +32,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <RunRecipe
   recipeName="org.openrewrite.java.migrate.AddJDeprScanPlugin"
-  displayName="Add `JDeprScan` Maven Plug-in"
+  displayName="Add `JDeprScan` Maven plugin"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-migrate-java"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA"

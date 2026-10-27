@@ -44,7 +44,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `org.projectlombok`
   * artifactId: `lombok`
-  * newVersion: `1.18.*`
+  * newVersion: `1.18.x`
 * [Change type](../../../java/changetype)
   * oldFullyQualifiedTypeName: `lombok.experimental.Builder`
   * newFullyQualifiedTypeName: `lombok.Builder`
@@ -87,7 +87,7 @@ recipeList:
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: org.projectlombok
       artifactId: lombok
-      newVersion: 1.18.*
+      newVersion: 1.18.x
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: lombok.experimental.Builder
       newFullyQualifiedTypeName: lombok.Builder
@@ -118,7 +118,7 @@ recipeList:
 
 This recipe is used as part of the following composite recipes:
 
-* [Lombok Best Practices](/recipes/java/migrate/lombok/lombokbestpractices.md)
+* [Lombok best practices](/recipes/java/migrate/lombok/lombokbestpractices.md)
 * [Migrate to Java 11](/recipes/java/migrate/java8tojava11.md)
 
 ## Examples
@@ -302,6 +302,25 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
+
+### Maven metadata failures
+**org.openrewrite.maven.table.MavenMetadataFailures**
+
+_Attempts to resolve maven metadata that failed._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Group id | The groupId of the artifact for which the metadata download failed. |
+| Artifact id | The artifactId of the artifact for which the metadata download failed. |
+| Version | The version of the artifact for which the metadata download failed. |
+| Maven repository | The URL of the Maven repository that the metadata download failed on. |
+| Snapshots | Does the repository support snapshots. |
+| Releases | Does the repository support releases. |
+| Failure | The reason the metadata download failed. |
+
+</TabItem>
+
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results
