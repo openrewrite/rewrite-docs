@@ -53,16 +53,16 @@ try {
   const generated = await fetch(SOURCE_URL);
   const table = extractTable(generated);
   if (!table) {
-    console.warn(`Warning: No properties table found at ${SOURCE_URL}`);
-    process.exit(0);
+    console.error(`No properties table found at ${SOURCE_URL}`);
+    process.exit(1);
   }
 
   const content = readFileSync(DOCS_FILE, "utf-8");
   const startIdx = content.indexOf(START_MARKER);
   const endIdx = content.indexOf(END_MARKER);
   if (startIdx === -1 || endIdx === -1) {
-    console.warn(`Warning: Markers not found in ${DOCS_FILE}`);
-    process.exit(0);
+    console.error(`Markers not found in ${DOCS_FILE}`);
+    process.exit(1);
   }
 
   const startLineEnd = content.indexOf("\n", startIdx) + 1;
@@ -70,6 +70,6 @@ try {
   writeFileSync(DOCS_FILE, newContent);
   console.log("Updated Gradle plugin properties table");
 } catch (err) {
-  console.warn(`Warning: ${err.message}, skipping Gradle plugin props update`);
-  process.exit(0);
+  console.error(err.message);
+  process.exit(1);
 }
