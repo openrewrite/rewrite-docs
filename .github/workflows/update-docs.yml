@@ -8,6 +8,10 @@ on:
         type: boolean
         description: Only update the latest versions of every OpenRewrite module
         default: true
+      allow-fewer-recipes:
+        type: boolean
+        description: Publish even when a module lost more than half its recipes since the last changelog
+        default: false
   schedule:
     - cron: 0 0 * * *
 
@@ -56,15 +60,37 @@ jobs:
         with:
           repository: 'openrewrite/rewrite-recipe-markdown-generator'
           path: 'rewrite-recipe-markdown-generator'
-      - name: Generate Markdown
-        run: ./gradlew run -PlatestVersionsOnly=${{ env.LATEST_VERSIONS_ONLY }}
-        working-directory: rewrite-recipe-markdown-generator
 
       # Checkout docs repository
       - uses: actions/checkout@v7
         with:
           fetch-depth: 0
           path: 'rewrite-docs'
+
+      - name: Generate Markdown
+        run: |
+          # A full run diffs the catalog against this baseline into a changelog, and updates the copy so the
+          # next changelog starts where this one ends.
+          cp ../rewrite-docs/docs/changelog/recipeDescriptors.yml "$RUNNER_TEMP/"
+          ./gradlew run -PlatestVersionsOnly=${{ env.LATEST_VERSIONS_ONLY }} -PrecipeDescriptors="$RUNNER_TEMP/recipeDescriptors.yml"
+        working-directory: rewrite-recipe-markdown-generator
+
+      # A module that lost most of its recipes usually means its language failed to load in this run, which would
+      # otherwise publish its recipe pages as deleted and its recipes as removed in the changelog.
+      - name: Check for missing recipes
+        if: ${{ env.LATEST_VERSIONS_ONLY != 'true' && !inputs.allow-fewer-recipes }}
+        working-directory: rewrite-docs
+        run: |
+          count() { awk '/^[^ #]/{a=$1; sub(/:$/, "", a)} /^    [^ -]/{c[a]++} END{for(k in c) print k, c[k]}' | LC_ALL=C sort; }
+          fewer=$(LC_ALL=C join -a1 -a2 -e0 -o 0,1.2,2.2 \
+            <(count < docs/changelog/recipeDescriptors.yml) \
+            <(count < "$RUNNER_TEMP/recipeDescriptors.yml") |
+            awk '$3 * 2 < $2 { printf "%s: %d → %d\n", $1, $2, $3 }')
+          if [ -n "$fewer" ]; then
+            echo "::error::These modules lost more than half their recipes since the last changelog. Run again, or with allow-fewer-recipes if they really were removed."
+            echo "$fewer"
+            exit 1
+          fi
 
       # Configure git user
       - name: configure-git-user
@@ -115,6 +141,25 @@ jobs:
       - name: Update Gradle plugin properties
         working-directory: rewrite-docs
         run: node scripts/update-gradle-plugin-props.mjs && git add docs/reference/gradle-plugin-configuration.md
+
+      - name: Add the changelog
+        if: ${{ env.LATEST_VERSIONS_ONLY != 'true' && hashFiles('rewrite-recipe-markdown-generator/build/docs/*-Release.md') != '' }}
+        working-directory: rewrite-docs
+        run: |
+          changelog=$(basename ../rewrite-recipe-markdown-generator/build/docs/*-Release.md .md)
+          version=$(echo "${changelog%-Release}" | tr - .)
+          if [ -e "docs/changelog/$changelog.md" ]; then
+            echo "::warning::The $version changelog is already published; its changes wait for the next release's changelog."
+            exit 0
+          fi
+          if cmp -s docs/changelog/recipeDescriptors.yml "$RUNNER_TEMP/recipeDescriptors.yml"; then
+            echo "::warning::The generator wrote a changelog without updating the baseline, so it was not published."
+            exit 0
+          fi
+          cp "../rewrite-recipe-markdown-generator/build/docs/$changelog.md" docs/changelog/
+          cp "$RUNNER_TEMP/recipeDescriptors.yml" docs/changelog/
+          sed -i "0,/^\( *\)'changelog\/.*/s//\1'changelog\/$changelog',\n&/" sidebars.ts
+          git add docs/changelog sidebars.ts
 
       # Commit and push changes
       - name: Commit and push
