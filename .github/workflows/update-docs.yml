@@ -56,15 +56,20 @@ jobs:
         with:
           repository: 'openrewrite/rewrite-recipe-markdown-generator'
           path: 'rewrite-recipe-markdown-generator'
-      - name: Generate Markdown
-        run: ./gradlew run -PlatestVersionsOnly=${{ env.LATEST_VERSIONS_ONLY }}
-        working-directory: rewrite-recipe-markdown-generator
 
       # Checkout docs repository
       - uses: actions/checkout@v7
         with:
           fetch-depth: 0
           path: 'rewrite-docs'
+
+      - name: Generate Markdown
+        run: |
+          # A full run diffs the catalog against this baseline into a changelog, and updates the copy for the
+          # changelog pull request below; the baseline on master only moves on when that is merged.
+          cp ../rewrite-docs/docs/changelog/recipeDescriptors.yml "$RUNNER_TEMP/"
+          ./gradlew run -PlatestVersionsOnly=${{ env.LATEST_VERSIONS_ONLY }} -PrecipeDescriptors="$RUNNER_TEMP/recipeDescriptors.yml"
+        working-directory: rewrite-recipe-markdown-generator
 
       # Configure git user
       - name: configure-git-user
@@ -121,3 +126,57 @@ jobs:
         working-directory: rewrite-docs
         run: |
           git diff --quiet HEAD || (git commit -m "[Auto] Update docs as of $(date +'%Y-%m-%dT%H%M')" && git push origin master)
+
+      # Every full run replaces the one pull request carrying the changelog, so it rolls forward to the newest
+      # release until merged. Its pushes, made with the GITHUB_TOKEN, start no pull_request workflows, so PR
+      # validation is started here instead.
+      - name: Open the changelog pull request
+        if: ${{ env.LATEST_VERSIONS_ONLY != 'true' && hashFiles('rewrite-recipe-markdown-generator/build/docs/*-Release.md') != '' }}
+        working-directory: rewrite-docs
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          changelog=$(basename ../rewrite-recipe-markdown-generator/build/docs/*-Release.md .md)
+          version=$(echo "${changelog%-Release}" | tr - .)
+          if [ -e "docs/changelog/$changelog.md" ]; then
+            echo "::warning::The $version changelog is already published; its changes wait for the next release's changelog."
+            exit 0
+          fi
+          if cmp -s docs/changelog/recipeDescriptors.yml "$RUNNER_TEMP/recipeDescriptors.yml"; then
+            echo "::warning::The generator wrote a changelog without updating the baseline, so no pull request was opened."
+            exit 0
+          fi
+
+          count() { awk '/^[^ #]/{a=$1; sub(/:$/, "", a)} /^    [^ -]/{c[a]++} END{for(k in c) print k, c[k]}' | LC_ALL=C sort; }
+          fewer=$(LC_ALL=C join -a1 -a2 -e0 -o 0,1.2,2.2 \
+            <(count < docs/changelog/recipeDescriptors.yml) \
+            <(count < "$RUNNER_TEMP/recipeDescriptors.yml") |
+            awk '$3 < $2 { printf "- `%s`: %d → %d\n", $1, $2, $3 }')
+
+          git switch -C auto/changelog
+          cp "../rewrite-recipe-markdown-generator/build/docs/$changelog.md" docs/changelog/
+          cp "$RUNNER_TEMP/recipeDescriptors.yml" docs/changelog/
+          sed -i "0,/^\( *\)'changelog\/.*/s//\1'changelog\/$changelog',\n&/" sidebars.ts
+          git add docs/changelog sidebars.ts
+          git commit -m "Add the $version changelog"
+          git push --force origin auto/changelog
+
+          body="$RUNNER_TEMP/changelog-pr.md"
+          {
+            echo "Publishes the changelog of everything that changed since the last one, as found by [this full docs run]($GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID)."
+            echo
+            echo 'Every full run replaces this branch, so the changelog rolls forward to the newest release until this is merged. Merging it also moves `docs/changelog/recipeDescriptors.yml` on, so the next changelog starts where this one ends.'
+            if [ -n "$fewer" ]; then
+              echo
+              echo 'These modules have fewer recipes than in the last changelog. A recipe or two is a removal; a module down to zero, or most of the way, usually means its language failed to load in this run, so start the run again rather than merge:'
+              echo
+              echo "$fewer"
+            fi
+          } > "$body"
+          pr=$(gh pr list --head auto/changelog --state open --json number --jq '.[].number')
+          if [ -n "$pr" ]; then
+            gh pr edit "$pr" --title "Add the $version changelog" --body-file "$body"
+          else
+            gh pr create --base master --head auto/changelog --title "Add the $version changelog" --body-file "$body"
+          fi
+          gh workflow run pr-validation.yml --ref auto/changelog
