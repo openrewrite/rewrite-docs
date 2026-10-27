@@ -25,7 +25,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     env:
-      LATEST_VERSIONS_ONLY: ${{ github.event_name == 'workflow_dispatch' && inputs.latest-versions-only }}
+      LATEST_VERSIONS_ONLY: ${{ github.event_name != 'workflow_dispatch' || inputs.latest-versions-only }}
       # OpenRewrite and Moderne artifacts resolve from the Code Genome Project repository, which requires
       # authentication; the generator's build reads these as the codegenome repository credentials.
       ORG_GRADLE_PROJECT_codegenomeUsername: ${{ secrets.CODEGENOME_USERNAME }}
