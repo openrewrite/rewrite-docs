@@ -32,19 +32,29 @@ fun mavenPluginParameters(descriptor: InputStream): List<MavenPluginParameter> {
         .sortedBy { it.name }
 }
 
+/// Renders [parameters] as a table of only two columns, with the user property, default and goals folded into
+/// the others, as the code in separate columns cannot wrap and would make the table wider than the page.
 fun mavenPluginParametersTable(parameters: List<MavenPluginParameter>): String {
     val allGoals = parameters.flatMap { it.goals }.toSet()
     return buildString {
-        appendLine("| Parameter | User property | Default | Goals | Description |")
-        appendLine("| --------- | ------------- | ------- | ----- | ----------- |")
+        appendLine("| Parameter | Description |")
+        appendLine("| --------- | ----------- |")
         for (parameter in parameters) {
-            val goals = if (parameter.goals.toSet() == allGoals) "All" else parameter.goals.joinToString(", ") { code(it) }
-            appendLine(
-                "| ${code(parameter.name)} | ${parameter.property?.let(::code).orEmpty()} " +
-                    "| ${parameter.defaultValue?.let(::code).orEmpty()} | $goals | ${parameter.description} |"
-            )
+            val name = listOfNotNull(parameter.name, parameter.property).joinToString("<br/>") { code(it) }
+            val description = listOfNotNull(
+                parameter.description,
+                parameter.defaultValue?.let { "Defaults to ${code(it)}." },
+                parameter.goals.takeIf { it.toSet() != allGoals }?.let(::onlyFor),
+            ).joinToString(" ")
+            appendLine("| $name | $description |")
         }
     }.trimEnd()
+}
+
+private fun onlyFor(goals: List<String>): String {
+    val codes = goals.map { code(it) }
+    val list = if (codes.size == 1) codes.single() else codes.dropLast(1).joinToString(", ") + " and " + codes.last()
+    return "Only for the $list ${if (codes.size == 1) "goal" else "goals"}."
 }
 
 /// Replaces the parameters table between the markers in [page] with one for [parameters].

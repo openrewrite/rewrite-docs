@@ -26,9 +26,9 @@ class GradlePluginPropertiesTest {
 
             ### Properties
 
-            | Property | Type |
-            | -------- | ---- |
-            | `new` | `String` |
+            | Property | Type | Default | Description |
+            | -------- | ---- | ------- | ----------- |
+            | `new` | `String` | Empty list | A new property, not a\|pipe. |
 
             ### Tasks
         """.trimIndent()
@@ -39,15 +39,29 @@ class GradlePluginPropertiesTest {
 
             <!-- AUTO-GENERATED-GRADLE-PROPS:START - Do not edit manually -->
 
-            | Property | Type |
-            | -------- | ---- |
-            | `new` | `String` |
+            | Property | Description |
+            | -------- | ----------- |
+            | `new`<br/>`String` | A new property, not a\|pipe. Defaults to empty list. |
 
             <!-- AUTO-GENERATED-GRADLE-PROPS:END -->
 
             Outro
             """.trimIndent()
         )
+    }
+
+    @Test
+    fun failsOnUnexpectedColumns() {
+        val reference = """
+            ### Properties
+
+            | Property | Type |
+            | -------- | ---- |
+            | `new` | `String` |
+        """.trimIndent()
+
+        assertThatThrownBy { replaceGradlePluginProperties(page, reference) }
+            .hasMessageContaining("Unexpected columns")
     }
 
     @Test
