@@ -12,6 +12,10 @@ const NOTICE_BAR_DISMISSED_ATTRIBUTE = 'data-notice-bar-dismissed';
 /**
  * Renders nothing in Docusaurus's default slot.
  *
+ * Note that `themeConfig.announcementBar` is not rendered either: the only bar is
+ * NoticeAnnouncementBar below. To announce something else, change its copy and
+ * NOTICE_BAR_STORAGE_KEY so people who dismissed the old notice see the new one.
+ *
  * The header — bar, navbar, section nav — is one fixed block built in
  * Navbar/Layout, and the bar is rendered there by AnnouncementBarInline. If
  * this also rendered, two bars would mount: they would overlap at the top of

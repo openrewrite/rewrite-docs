@@ -160,7 +160,12 @@ const config: Config = {
             to: 'https://docs.moderne.io/user-documentation/recipes/lists/latest-versions-of-every-openrewrite-module',
           },
           // The recipe catalog moved to the Code Genome Project: each recipe page redirects to the
-          // same recipe there by recipe ID, and each category page to a search on its package.
+          // same recipe there by recipe ID, and each category page to a search on its package. A
+          // category that mixes vendors (org.openrewrite and io.moderne, say) searches the shared
+          // part of the package, e.g. `java.spring.boot3`, so no vendor drops out. Recipes that are
+          // not in the Code Genome Project yet (the python.cleanup recipes and a few staticanalysis
+          // ones) fall back to their category's search. This file is a snapshot of the catalog's
+          // last state and is maintained by hand; there is no generator.
           ...(recipeCatalogRedirects as { from: string | string[]; to: string }[]),
         ],
       },
