@@ -14,8 +14,8 @@ The OpenRewrite Maven plugin offers these goals:
 
 * `mvn rewrite:run` - Run the configured recipes and apply the changes locally.
 * `mvn rewrite:runNoFork` - Run the configured recipes and apply the changes locally. This variant does not fork the Maven life cycle and can be a more efficient choice when using Rewrite within a CI workflow when combined with other Maven goals.
-* `mvn rewrite:dryRun` - Generate warnings to the console for any recipe that would make changes and generates a diff file in each Maven module's `target` folder.
-* `mvn rewrite:dryRunNoFork` - Generate warnings to the console for any recipe that would make changes and generates a diff file in each Maven module's `target` folder. This variant does not fork the Maven life cycle and can be a more efficient choice when using Rewrite within a CI workflow when combined with other Maven goals.
+* `mvn rewrite:dryRun` - Generate warnings to the console for any recipe that would make changes and write them to a patch file in the `target/rewrite` folder of the top-level project, or of each module with `runPerSubmodule`.
+* `mvn rewrite:dryRunNoFork` - Generate warnings to the console for any recipe that would make changes and write them to a patch file in the `target/rewrite` folder of the top-level project, or of each module with `runPerSubmodule`. This variant does not fork the Maven life cycle and can be a more efficient choice when using Rewrite within a CI workflow when combined with other Maven goals.
 * `mvn rewrite:discover` - Generate a report of available recipes found on the classpath.
 * `mvn rewrite:typetable` - [Generate a type table](/authoring-recipes/multiple-versions#typetable-generation-for-maven-projects) to support multiple versions of a single library.
 
@@ -53,25 +53,44 @@ It generally makes sense to apply the plugin to the root `pom.xml` in a reposito
 *   `plainTextMasks` - A set of file masks to denote which files should be parsed as plain text. Evaluated as a [PathMatcher](https://docs.oracle.com/javase/8/docs/api/java/nio/file/PathMatcher.html) glob pattern, where "\*\*" matches any number of directories and "\*" matches a single directory or filename. **Exclusions take precedence over any plain text masks.** If this configuration is specified, it completely overrides the default masks, and `additionalPlainTextMasks` will have no effect. If not explicitly defined, the default masks are
 
     ```bash title="Default masks"
-    **/META-INF/services/**
-    **/META-INF/spring.factories
-    **/META-INF/spring/**
+    **/*.adoc
+    **/*.aj
     **/*.bash
     **/*.bat
     **/CODEOWNERS
+    **/*.css
     **/*.config
-    **/Dockerfile
+    **/[dD]ockerfile*
+    **/*.[dD]ockerfile
+    **/*[cC]ontainerfile*
+    **/*.[cC]ontainerfile
+    **/*.env
     **/.gitattributes
     **/.gitignore
+    **/*.htm*
+    **/gradlew
     **/.java-version
+    **/*.jelly
     **/*.jsp
     **/*.ksh
+    **/*.lock
+    **/lombok.config
+    **/[mM]akefile
     **/*.md
+    **/*.mf
+    **/META-INF/services/**
+    **/META-INF/spring/**
+    **/META-INF/spring.factories
+    **/mvnw
+    **/mvnw.cmd
     **/*.qute.java
     **/.sdkmanrc
     **/*.sh
     **/*.sql
+    **/*.svg
+    **/*.tsx
     **/*.txt
+    **/*.py
     ```
 * `options` - Pass configuration options to recipes in the format `key=value`. Multiple options can be provided as a comma-separated list. For example, `-Drewrite.options=methodPattern=java.util.List add(..),key2=value2`.
 * `pomCacheDirectory` - The directory where OpenRewrite will cache `pom.xml` and meta-data. The default value is `~/.rewrite-cache`
@@ -156,7 +175,7 @@ After the goal finishes executing, run `git diff` to see what changes were made,
 
 Execute `mvn rewrite:dryRun` to dry-run the active recipes and print which visitors would make changes to which files to the build log. This does not alter your source files at all. This goal can be used to preview the changes that would be made by a recipe.
 
-`rewrite:dryRun` outputs a report in the form of a `patch` file, by default under `target/site/rewrite/rewrite.patch`, containing changes that would be made if you were to run `rewrite:run`. This file can be used with `git` or `diff` to view or apply the potential changes. For example, `git diff . target/site/rewrite/rewrite.patch`.
+`rewrite:dryRun` outputs a report in the form of a `patch` file, by default at `target/rewrite/rewrite.patch` in the top-level project, containing changes that would be made if you were to run `rewrite:run`. This file can be used with `git` to view or apply the potential changes. For example, `git apply target/rewrite/rewrite.patch`.
 
 ![Example rewrite.patch file produced by dryRun](./assets/dry-run-example.png)
 
