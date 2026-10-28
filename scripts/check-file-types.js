@@ -6,12 +6,14 @@ const ALLOWED_EXTENSIONS = new Set([
   '.md', '.mdx', '.tsx', '.ts', '.js', '.mjs', '.css', '.json',
   '.png', '.gif', '.jpg', '.jpeg', '.svg', '.ico',
   '.yaml', '.yml', '.toml', '.lock', '.txt',
+  '.kt', '.kts', '.properties',
 ]);
 
 const ALLOWED_FILENAMES = new Set([
   'LICENSE', 'Makefile', 'Dockerfile',
   '.gitignore', '.gitattributes', '.nvmrc', '.node-version',
   '.editorconfig', '.prettierignore', '.eslintignore',
+  'gradlew', 'gradlew.bat', 'gradle-wrapper.jar',
 ]);
 
 const GENERATED_HTML_PREFIX = 'static/recipes/';
