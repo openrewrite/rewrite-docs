@@ -23,7 +23,7 @@ The use of the "bill of materials" means that a developer will only need to spec
 
 | Module | Version | License |
 | ------ | ------- | ------- |
-""".trimStart()
+""".removePrefix("\n")
 
 //language=markdown
 internal val INSTALLATION = """
@@ -141,7 +141,7 @@ internal val LATEST_INSTALLATION = """
 Install without a pinned version so you can later run `mod config recipes upgrade` to pull the newest versions without editing this command.
 
 ```bash
-""".trimStart()
+""".removePrefix("\n")
 
 //language=markdown
 internal val FOOTER = """
@@ -149,4 +149,4 @@ internal val FOOTER = """
 
 </TabItem>
 </Tabs>
-""".trimStart()
+""".removePrefix("\n")
