@@ -15,10 +15,10 @@ _This recipe will migrate WebLogic schemas to 15.1.1_
 
 ### Tags
 
-* [weblogic](/reference/recipes-by-tag#weblogic)
-* [descriptors](/reference/recipes-by-tag#descriptors)
-* [java](/reference/recipes-by-tag#java)
-* [schemas](/reference/recipes-by-tag#schemas)
+* weblogic
+* descriptors
+* java
+* schemas
 
 ## Recipe source
 

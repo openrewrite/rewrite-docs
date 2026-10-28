@@ -15,7 +15,7 @@ _In Jackson 2, the package and dependency coordinates moved from Codehaus to Fas
 
 ### Tags
 
-* [jackson-2](/reference/recipes-by-tag#jackson)
+* jackson-2
 
 ## Recipe source
 

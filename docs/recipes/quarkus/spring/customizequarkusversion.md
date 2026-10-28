@@ -15,11 +15,11 @@ _Allows customization of the Quarkus BOM version used in the migration. By defau
 
 ### Tags
 
-* [spring](/reference/recipes-by-tag#spring)
-* [migration](/reference/recipes-by-tag#migration)
-* [bom](/reference/recipes-by-tag#bom)
-* [version](/reference/recipes-by-tag#version)
-* [quarkus](/reference/recipes-by-tag#quarkus)
+* spring
+* migration
+* bom
+* version
+* quarkus
 
 ## Recipe source
 

@@ -15,9 +15,9 @@ _Migrates `spring-boot-starter-security` to `quarkus-security`._
 
 ### Tags
 
-* [spring](/reference/recipes-by-tag#spring)
-* [security](/reference/recipes-by-tag#security)
-* [quarkus](/reference/recipes-by-tag#quarkus)
+* spring
+* security
+* quarkus
 
 ## Recipe source
 

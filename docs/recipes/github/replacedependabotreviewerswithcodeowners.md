@@ -15,9 +15,9 @@ _Replaces the [removed](https://github.blog/changelog/2025-04-29-dependabot-revi
 
 ### Tags
 
-* [dependabot](/reference/recipes-by-tag#dependabot)
-* [dependencies](/reference/recipes-by-tag#dependencies)
-* [github](/reference/recipes-by-tag#github)
+* dependabot
+* dependencies
+* github
 
 ## Recipe source
 

@@ -15,8 +15,8 @@ _Migrate applications to the latest Apache HttpClient 5.x release. This recipe w
 
 ### Tags
 
-* [httpclient](/reference/recipes-by-tag#httpclient)
-* [apache](/reference/recipes-by-tag#apache)
+* httpclient
+* apache
 
 ## Recipe source
 

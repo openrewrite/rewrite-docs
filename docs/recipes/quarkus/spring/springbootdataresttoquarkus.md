@@ -15,10 +15,10 @@ _Migrates `spring-boot-starter-data-rest` to `quarkus-rest-jackson`._
 
 ### Tags
 
-* [spring](/reference/recipes-by-tag#spring)
-* [rest](/reference/recipes-by-tag#rest)
-* [data](/reference/recipes-by-tag#data)
-* [quarkus](/reference/recipes-by-tag#quarkus)
+* spring
+* rest
+* data
+* quarkus
 
 ## Recipe source
 

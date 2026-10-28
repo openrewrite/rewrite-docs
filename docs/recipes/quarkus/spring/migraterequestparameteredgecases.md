@@ -15,11 +15,11 @@ _Migrates additional Spring Web parameter annotations not covered by the main We
 
 ### Tags
 
-* [spring](/reference/recipes-by-tag#spring)
-* [migration](/reference/recipes-by-tag#migration)
-* [jaxrs](/reference/recipes-by-tag#jaxrs)
-* [web](/reference/recipes-by-tag#web)
-* [quarkus](/reference/recipes-by-tag#quarkus)
+* spring
+* migration
+* jaxrs
+* web
+* quarkus
 
 ## Recipe source
 

@@ -15,8 +15,8 @@ _Always use a static import for assertion methods._
 
 ### Tags
 
-* [junit](/reference/recipes-by-tag#junit)
-* [testing](/reference/recipes-by-tag#testing)
+* junit
+* testing
 
 ## Recipe source
 

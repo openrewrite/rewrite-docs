@@ -15,7 +15,7 @@ _Use `SecurityManager#checkMulticast(InetAddress)` instead of the deprecated `Se
 
 ### Tags
 
-* [deprecated](/reference/recipes-by-tag#deprecated)
+* deprecated
 
 ## Recipe source
 

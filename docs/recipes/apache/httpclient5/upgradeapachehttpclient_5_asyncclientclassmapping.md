@@ -15,8 +15,8 @@ _Migrates classes from Apache HttpAsyncClient 4.x `httpasyncclient` to their equ
 
 ### Tags
 
-* [httpclient](/reference/recipes-by-tag#httpclient)
-* [apache](/reference/recipes-by-tag#apache)
+* httpclient
+* apache
 
 ## Recipe source
 

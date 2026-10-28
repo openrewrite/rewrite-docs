@@ -15,9 +15,9 @@ _Composite recipe that updates Maven/Gradle coordinates, Java package names, and
 
 ### Tags
 
-* [migration](/reference/recipes-by-tag#migration)
-* [spring-cloud-contract](/reference/recipes-by-tag#spring)
-* [stubborn-contract](/reference/recipes-by-tag#stubborn)
+* migration
+* spring-cloud-contract
+* stubborn-contract
 
 ## Recipe source
 

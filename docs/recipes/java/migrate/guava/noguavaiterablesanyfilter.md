@@ -15,7 +15,7 @@ _Prefer `Collection.stream().anyMatch(Predicate)` over `Iterables.any(Collection
 
 ### Tags
 
-* [guava](/reference/recipes-by-tag#guava)
+* guava
 
 ## Recipe source
 

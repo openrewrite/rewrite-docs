@@ -15,9 +15,9 @@ _Adds an `open-pull-requests-limit` to each update configuration in Dependabot f
 
 ### Tags
 
-* [github](/reference/recipes-by-tag#github)
-* [dependabot](/reference/recipes-by-tag#dependabot)
-* [dependencies](/reference/recipes-by-tag#dependencies)
+* github
+* dependabot
+* dependencies
 
 ## Recipe source
 

@@ -15,7 +15,7 @@ _In Bouncy Castle 1.71 the `getInstance(..)` methods on the `DER*String` ASN.1 t
 
 ### Tags
 
-* [bouncycastle](/reference/recipes-by-tag#bouncycastle)
+* bouncycastle
 
 ## Recipe source
 

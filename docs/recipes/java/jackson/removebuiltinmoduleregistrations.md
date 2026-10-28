@@ -15,7 +15,7 @@ _In Jackson 3, `ParameterNamesModule`, `Jdk8Module`, and `JavaTimeModule` are bu
 
 ### Tags
 
-* [jackson-3](/reference/recipes-by-tag#jackson)
+* jackson-3
 
 ## Recipe source
 

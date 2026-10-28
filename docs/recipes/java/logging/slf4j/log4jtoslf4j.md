@@ -15,9 +15,9 @@ _Migrates usage of Apache Log4j to using SLF4J directly. Use of the traditional 
 
 ### Tags
 
-* [slf4j](/reference/recipes-by-tag#slf4j)
-* [logging](/reference/recipes-by-tag#logging)
-* [log4j](/reference/recipes-by-tag#log4j)
+* slf4j
+* logging
+* log4j
 
 ## Recipe source
 

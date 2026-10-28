@@ -15,7 +15,7 @@ _Convert trivial getter methods to `@Getter` annotations on their respective fie
 
 ### Tags
 
-* [lombok](/reference/recipes-by-tag#lombok)
+* lombok
 
 ## Recipe source
 

@@ -15,11 +15,11 @@ _Migrates Spring Data MongoDB repositories to Quarkus MongoDB with Panache. Conv
 
 ### Tags
 
-* [spring](/reference/recipes-by-tag#spring)
-* [migration](/reference/recipes-by-tag#migration)
-* [mongodb](/reference/recipes-by-tag#mongodb)
-* [quarkus](/reference/recipes-by-tag#quarkus)
-* [panache](/reference/recipes-by-tag#panache)
+* spring
+* migration
+* mongodb
+* quarkus
+* panache
 
 ## Recipe source
 

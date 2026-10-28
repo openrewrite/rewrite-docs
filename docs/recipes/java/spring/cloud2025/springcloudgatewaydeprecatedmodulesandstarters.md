@@ -15,8 +15,8 @@ _Migrate to new Spring Cloud Gateway modules and starters for Spring Cloud 2025.
 
 ### Tags
 
-* [spring](/reference/recipes-by-tag#spring)
-* [cloud](/reference/recipes-by-tag#cloud)
+* spring
+* cloud
 
 ## Recipe source
 

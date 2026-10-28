@@ -15,11 +15,11 @@ _Removes Spring `@EnableXyz` annotations and adds the corresponding Quarkus exte
 
 ### Tags
 
-* [spring](/reference/recipes-by-tag#spring)
-* [migration](/reference/recipes-by-tag#migration)
-* [annotations](/reference/recipes-by-tag#annotations)
-* [application](/reference/recipes-by-tag#application)
-* [quarkus](/reference/recipes-by-tag#quarkus)
+* spring
+* migration
+* annotations
+* application
+* quarkus
 
 ## Recipe source
 

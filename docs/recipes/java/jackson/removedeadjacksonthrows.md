@@ -15,7 +15,7 @@ _In Jackson 3 the exception hierarchy is rerooted under `JacksonException`, whic
 
 ### Tags
 
-* [jackson-3](/reference/recipes-by-tag#jackson)
+* jackson-3
 
 ## Recipe source
 

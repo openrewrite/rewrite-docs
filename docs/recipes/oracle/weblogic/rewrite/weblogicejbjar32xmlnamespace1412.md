@@ -15,10 +15,10 @@ _Migrate xmlns entries in WebLogic EJB 3.2 schema files to WebLogic 14.1.2_
 
 ### Tags
 
-* [weblogic](/reference/recipes-by-tag#weblogic)
-* [ejb-jar](/reference/recipes-by-tag#ejb)
-* [ejb-3.2](/reference/recipes-by-tag#ejb)
-* [schemas](/reference/recipes-by-tag#schemas)
+* weblogic
+* ejb-jar
+* ejb-3.2
+* schemas
 
 ## Recipe source
 

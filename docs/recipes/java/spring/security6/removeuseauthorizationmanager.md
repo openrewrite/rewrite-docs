@@ -15,8 +15,8 @@ _In Spring Security 6, `<websocket-message-broker>` defaults `use-authorization-
 
 ### Tags
 
-* [spring](/reference/recipes-by-tag#spring)
-* [security](/reference/recipes-by-tag#security)
+* spring
+* security
 
 ## Recipe source
 

@@ -15,10 +15,10 @@ _Migrates `spring-kafka` to `quarkus-kafka-client` when no reactor dependencies 
 
 ### Tags
 
-* [spring](/reference/recipes-by-tag#spring)
-* [classic](/reference/recipes-by-tag#classic)
-* [quarkus](/reference/recipes-by-tag#quarkus)
-* [kafka](/reference/recipes-by-tag#kafka)
+* spring
+* classic
+* quarkus
+* kafka
 
 ## Recipe source
 

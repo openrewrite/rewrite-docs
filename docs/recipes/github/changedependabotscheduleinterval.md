@@ -15,9 +15,9 @@ _Change the schedule interval and optionally the day, time, and time zone for a 
 
 ### Tags
 
-* [github](/reference/recipes-by-tag#github)
-* [dependabot](/reference/recipes-by-tag#dependabot)
-* [dependencies](/reference/recipes-by-tag#dependencies)
+* github
+* dependabot
+* dependencies
 
 ## Recipe source
 

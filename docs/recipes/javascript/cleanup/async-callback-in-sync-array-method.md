@@ -15,11 +15,11 @@ _Detects async callbacks passed to array methods like .some(), .every(), .filter
 
 ### Tags
 
-* [async](/reference/recipes-by-tag#async)
-* [bug](/reference/recipes-by-tag#bug)
-* [cleanup](/reference/recipes-by-tag#cleanup)
-* [typescript](/reference/recipes-by-tag#typescript)
-* [javascript](/reference/recipes-by-tag#javascript)
+* async
+* bug
+* cleanup
+* typescript
+* javascript
 
 ## Recipe source
 

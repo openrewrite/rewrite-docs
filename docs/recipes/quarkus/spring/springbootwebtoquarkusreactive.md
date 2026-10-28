@@ -15,10 +15,10 @@ _Migrates `spring-boot-starter-web` to `quarkus-rest-jackson` when reactor depen
 
 ### Tags
 
-* [spring](/reference/recipes-by-tag#spring)
-* [reactive](/reference/recipes-by-tag#reactive)
-* [web](/reference/recipes-by-tag#web)
-* [quarkus](/reference/recipes-by-tag#quarkus)
+* spring
+* reactive
+* web
+* quarkus
 
 ## Recipe source
 

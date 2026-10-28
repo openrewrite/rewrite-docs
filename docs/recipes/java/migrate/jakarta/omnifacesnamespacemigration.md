@@ -15,10 +15,10 @@ _Find and replace legacy OmniFaces namespaces._
 
 ### Tags
 
-* [faces](/reference/recipes-by-tag#faces)
-* [jsf](/reference/recipes-by-tag#jsf)
-* [omnifaces](/reference/recipes-by-tag#omnifaces)
-* [jakarta](/reference/recipes-by-tag#jakarta)
+* faces
+* jsf
+* omnifaces
+* jakarta
 
 ## Recipe source
 

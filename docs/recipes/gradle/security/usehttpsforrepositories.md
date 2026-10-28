@@ -15,7 +15,7 @@ _Use HTTPS for repository URLs._
 
 ### Tags
 
-* [security](/reference/recipes-by-tag#security)
+* security
 
 ## Recipe source
 

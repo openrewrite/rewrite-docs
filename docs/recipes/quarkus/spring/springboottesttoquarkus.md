@@ -15,9 +15,9 @@ _Migrates `spring-boot-starter-test` to `quarkus-junit5`._
 
 ### Tags
 
-* [spring](/reference/recipes-by-tag#spring)
-* [test](/reference/recipes-by-tag#test)
-* [quarkus](/reference/recipes-by-tag#quarkus)
+* spring
+* test
+* quarkus
 
 ## Recipe source
 

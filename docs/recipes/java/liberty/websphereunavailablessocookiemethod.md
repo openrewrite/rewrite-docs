@@ -15,8 +15,8 @@ _Replace `WSSecurityHelper.revokeSSOCookies(request, response)` with `request.lo
 
 ### Tags
 
-* [websphere](/reference/recipes-by-tag#websphere)
-* [liberty](/reference/recipes-by-tag#liberty)
+* websphere
+* liberty
 
 ## Recipe source
 

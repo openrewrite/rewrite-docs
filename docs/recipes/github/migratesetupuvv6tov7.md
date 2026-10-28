@@ -15,8 +15,8 @@ _Migrates `astral-sh/setup-uv` from v6 to v7. Updates the action version and rem
 
 ### Tags
 
-* [actions](/reference/recipes-by-tag#actions)
-* [github](/reference/recipes-by-tag#github)
+* actions
+* github
 
 ## Recipe source
 

@@ -4,6 +4,7 @@ import { themes as prismThemes } from "prism-react-renderer";
 import remarkTokenReplacer from "./src/plugins/replace-tokens";
 import latestVersions from "./src/plugins/latest-versions";
 import { removedChangelogPages } from "./src/config/removedChangelogPages";
+import { removedListPages } from "./src/config/removedListPages";
 
 const description = "Large-scale automated source code refactoring"
 
@@ -150,7 +151,10 @@ const config: Config = {
     [
       '@docusaurus/plugin-client-redirects',
       {
-        redirects: [{ from: removedChangelogPages, to: '/changelog' }],
+        redirects: [
+          { from: removedChangelogPages, to: '/changelog' },
+          { from: removedListPages, to: '/recipes' },
+        ],
       },
     ],
     [

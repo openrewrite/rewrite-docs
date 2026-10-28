@@ -15,8 +15,8 @@ _Applies best practices to GitHub Actions workflows, including enabling dependen
 
 ### Tags
 
-* [actions](/reference/recipes-by-tag#actions)
-* [github](/reference/recipes-by-tag#github)
+* actions
+* github
 
 ## Recipe source
 

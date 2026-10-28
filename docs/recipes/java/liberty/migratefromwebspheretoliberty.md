@@ -15,8 +15,8 @@ _Use this category of rules to identify code changes needed when migrating from 
 
 ### Tags
 
-* [websphere](/reference/recipes-by-tag#websphere)
-* [liberty](/reference/recipes-by-tag#liberty)
+* websphere
+* liberty
 
 ## Recipe source
 

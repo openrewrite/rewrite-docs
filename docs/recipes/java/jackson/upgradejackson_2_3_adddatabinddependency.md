@@ -15,7 +15,7 @@ _Add `tools.jackson.core:jackson-databind` to modules whose sources use its Jack
 
 ### Tags
 
-* [jackson-3](/reference/recipes-by-tag#jackson)
+* jackson-3
 
 ## Recipe source
 

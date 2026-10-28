@@ -15,10 +15,10 @@ _Setup Spring Framework 5.3.x PetClinic for WebLogic 14.1.2._
 
 ### Tags
 
-* [weblogic](/reference/recipes-by-tag#weblogic)
-* [petclinic](/reference/recipes-by-tag#petclinic)
-* [springframework](/reference/recipes-by-tag#springframework)
-* [examples](/reference/recipes-by-tag#examples)
+* weblogic
+* petclinic
+* springframework
+* examples
 
 ## Recipe source
 

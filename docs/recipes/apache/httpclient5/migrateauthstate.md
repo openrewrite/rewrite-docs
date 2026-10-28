@@ -15,8 +15,8 @@ _Migrate Apache HttpClient 4.x `AuthState` and related types to the HttpClient 5
 
 ### Tags
 
-* [httpclient](/reference/recipes-by-tag#httpclient)
-* [apache](/reference/recipes-by-tag#apache)
+* httpclient
+* apache
 
 ## Recipe source
 

@@ -15,9 +15,9 @@ _Migrates `spring-boot-starter-thymeleaf` to `quarkus-qute`._
 
 ### Tags
 
-* [spring](/reference/recipes-by-tag#spring)
-* [templating](/reference/recipes-by-tag#templating)
-* [quarkus](/reference/recipes-by-tag#quarkus)
+* spring
+* templating
+* quarkus
 
 ## Recipe source
 

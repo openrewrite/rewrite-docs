@@ -15,7 +15,7 @@ _Convert trivial setter methods to `@Setter` annotations on their respective fie
 
 ### Tags
 
-* [lombok](/reference/recipes-by-tag#lombok)
+* lombok
 
 ## Recipe source
 

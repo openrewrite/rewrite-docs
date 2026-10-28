@@ -15,8 +15,8 @@ _Collapse duplicate `Content-Type` response headers in both stub files and the J
 
 ### Tags
 
-* [wiremock](/reference/recipes-by-tag#wiremock)
-* [testing](/reference/recipes-by-tag#testing)
+* wiremock
+* testing
 
 ## Recipe source
 

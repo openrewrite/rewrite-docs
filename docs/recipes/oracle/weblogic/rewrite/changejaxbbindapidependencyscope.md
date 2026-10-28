@@ -15,7 +15,7 @@ _This recipe will change the jakarta.xml.bind-api dependency scope to provided w
 
 ### Tags
 
-* [weblogic](/reference/recipes-by-tag#weblogic)
+* weblogic
 
 ## Recipe source
 

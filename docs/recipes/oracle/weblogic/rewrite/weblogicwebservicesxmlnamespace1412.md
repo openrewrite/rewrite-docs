@@ -15,9 +15,9 @@ _Migrate xmlns entries in WebLogic Web Services schema files to WebLogic 14.1.2_
 
 ### Tags
 
-* [weblogic](/reference/recipes-by-tag#weblogic)
-* [webservices](/reference/recipes-by-tag#webservices)
-* [schemas](/reference/recipes-by-tag#schemas)
+* weblogic
+* webservices
+* schemas
 
 ## Recipe source
 

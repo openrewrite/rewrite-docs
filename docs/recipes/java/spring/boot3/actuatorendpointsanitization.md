@@ -15,8 +15,8 @@ _Spring Boot 3.0 removed the key-based sanitization mechanism used in Spring Boo
 
 ### Tags
 
-* [spring](/reference/recipes-by-tag#spring)
-* [boot](/reference/recipes-by-tag#boot)
+* spring
+* boot
 
 ## Recipe source
 

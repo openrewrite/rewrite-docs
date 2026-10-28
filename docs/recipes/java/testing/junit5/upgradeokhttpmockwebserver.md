@@ -15,9 +15,9 @@ _Migrates OkHttp 3 `MockWebServer` to enable JUnit Jupiter Extension support._
 
 ### Tags
 
-* [junit](/reference/recipes-by-tag#junit)
-* [okhttp](/reference/recipes-by-tag#okhttp)
-* [testing](/reference/recipes-by-tag#testing)
+* junit
+* okhttp
+* testing
 
 ## Recipe source
 

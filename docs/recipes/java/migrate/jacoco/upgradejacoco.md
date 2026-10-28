@@ -15,7 +15,7 @@ _This recipe will upgrade JaCoCo to the latest patch version, which traditionall
 
 ### Tags
 
-* [jacoco](/reference/recipes-by-tag#jacoco)
+* jacoco
 
 ## Recipe source
 

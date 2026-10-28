@@ -15,7 +15,7 @@ _`Thread.countStackFrames()` has been removed in Java SE 14 and has been changed
 
 ### Tags
 
-* [java17](/reference/recipes-by-tag#java17)
+* java17
 
 ## Recipe source
 

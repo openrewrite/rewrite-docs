@@ -15,8 +15,8 @@ _Change maven.compiler.source and maven.compiler.target values to 21._
 
 ### Tags
 
-* [compiler](/reference/recipes-by-tag#compiler)
-* [java21](/reference/recipes-by-tag#java21)
+* compiler
+* java21
 
 ## Recipe source
 

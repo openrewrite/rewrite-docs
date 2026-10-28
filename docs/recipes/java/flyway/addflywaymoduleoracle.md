@@ -15,8 +15,8 @@ _Database modules for Flyway 10 have been split out into separate modules for ma
 
 ### Tags
 
-* [flyway](/reference/recipes-by-tag#flyway)
-* [oracle](/reference/recipes-by-tag#oracle)
+* flyway
+* oracle
 
 ## Recipe source
 

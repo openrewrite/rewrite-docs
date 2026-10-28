@@ -15,9 +15,9 @@ _Migrates usage of Java Util Logging (JUL) to using SLF4J directly._
 
 ### Tags
 
-* [slf4j](/reference/recipes-by-tag#slf4j)
-* [logging](/reference/recipes-by-tag#logging)
-* [java-util-logging](/reference/recipes-by-tag#java)
+* slf4j
+* logging
+* java-util-logging
 
 ## Recipe source
 

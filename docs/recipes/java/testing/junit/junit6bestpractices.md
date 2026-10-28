@@ -15,8 +15,8 @@ _Migrates JUnit 5 tests to JUnit 6 and applies the JUnit Jupiter best practices.
 
 ### Tags
 
-* [junit](/reference/recipes-by-tag#junit)
-* [testing](/reference/recipes-by-tag#testing)
+* junit
+* testing
 
 ## Recipe source
 

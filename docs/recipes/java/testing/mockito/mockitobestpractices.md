@@ -15,8 +15,8 @@ _Applies best practices for Mockito tests._
 
 ### Tags
 
-* [mockito](/reference/recipes-by-tag#mockito)
-* [testing](/reference/recipes-by-tag#testing)
+* mockito
+* testing
 
 ## Recipe source
 

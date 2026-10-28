@@ -15,9 +15,9 @@ _Commons Lang 2.x compared Java versions as a `float` such as `1.4f` or an `int`
 
 ### Tags
 
-* [apache](/reference/recipes-by-tag#apache)
-* [lang](/reference/recipes-by-tag#lang)
-* [commons](/reference/recipes-by-tag#commons)
+* apache
+* lang
+* commons
 
 ## Recipe source
 

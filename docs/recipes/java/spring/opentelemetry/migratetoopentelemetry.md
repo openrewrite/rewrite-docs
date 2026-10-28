@@ -15,11 +15,11 @@ _Comprehensive migration to OpenTelemetry including dependencies, configuration 
 
 ### Tags
 
-* [spring](/reference/recipes-by-tag#spring)
-* [migration](/reference/recipes-by-tag#migration)
-* [opentelemetry](/reference/recipes-by-tag#opentelemetry)
-* [boot](/reference/recipes-by-tag#boot)
-* [observability](/reference/recipes-by-tag#observability)
+* spring
+* migration
+* opentelemetry
+* boot
+* observability
 
 ## Recipe source
 

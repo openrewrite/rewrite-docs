@@ -15,9 +15,9 @@ _Replaces @Rule StubRunnerRule / StubRunnerClassRule with @RegisterExtension Stu
 
 ### Tags
 
-* [junit4](/reference/recipes-by-tag#junit4)
-* [junit5](/reference/recipes-by-tag#junit5)
-* [stubborn-contract](/reference/recipes-by-tag#stubborn)
+* junit4
+* junit5
+* stubborn-contract
 
 ## Recipe source
 

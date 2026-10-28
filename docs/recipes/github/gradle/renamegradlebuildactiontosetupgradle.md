@@ -15,8 +15,8 @@ _Rename the deprecated `gradle/gradle-build-action` to `gradle/actions/setup-gra
 
 ### Tags
 
-* [gradle](/reference/recipes-by-tag#gradle)
-* [github](/reference/recipes-by-tag#github)
+* gradle
+* github
 
 ## Recipe source
 

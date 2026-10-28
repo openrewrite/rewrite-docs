@@ -15,8 +15,8 @@ _Change EasyMock types, mock creation, expectations and argument matchers to the
 
 ### Tags
 
-* [easymock](/reference/recipes-by-tag#easymock)
-* [testing](/reference/recipes-by-tag#testing)
+* easymock
+* testing
 
 ## Recipe source
 

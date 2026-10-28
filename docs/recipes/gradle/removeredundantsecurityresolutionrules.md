@@ -15,7 +15,7 @@ _Remove `resolutionStrategy.eachDependency` rules that pin dependencies to versi
 
 ### Tags
 
-* [security](/reference/recipes-by-tag#security)
+* security
 
 ## Recipe source
 

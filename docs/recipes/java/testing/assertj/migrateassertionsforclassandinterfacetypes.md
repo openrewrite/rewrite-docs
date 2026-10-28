@@ -15,8 +15,8 @@ _AssertJ deprecated `AssertionsForClassTypes` and `AssertionsForInterfaceTypes` 
 
 ### Tags
 
-* [assertj](/reference/recipes-by-tag#assertj)
-* [testing](/reference/recipes-by-tag#testing)
+* assertj
+* testing
 
 ## Recipe source
 

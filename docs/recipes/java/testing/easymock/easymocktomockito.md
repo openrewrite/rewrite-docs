@@ -15,8 +15,8 @@ _Applies changes commonly needed when migrating from EasyMock to Mockito._
 
 ### Tags
 
-* [easymock](/reference/recipes-by-tag#easymock)
-* [testing](/reference/recipes-by-tag#testing)
+* easymock
+* testing
 
 ## Recipe source
 

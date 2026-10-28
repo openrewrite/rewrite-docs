@@ -15,9 +15,9 @@ _Find and replace legacy JSF namespace URIs with Jakarta Faces URNs in XHTML fil
 
 ### Tags
 
-* [faces](/reference/recipes-by-tag#faces)
-* [jsf](/reference/recipes-by-tag#jsf)
-* [jakarta](/reference/recipes-by-tag#jakarta)
+* faces
+* jsf
+* jakarta
 
 ## Recipe source
 

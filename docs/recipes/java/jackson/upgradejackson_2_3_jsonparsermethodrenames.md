@@ -15,7 +15,7 @@ _Rename JsonParser methods that were renamed in 3.x (e.g., `getTextCharacters()`
 
 ### Tags
 
-* [jackson-3](/reference/recipes-by-tag#jackson)
+* jackson-3
 
 ## Recipe source
 

@@ -15,11 +15,11 @@ _Migrates `spring-boot-starter-amqp` to `quarkus-messaging-amqp` when reactor de
 
 ### Tags
 
-* [spring](/reference/recipes-by-tag#spring)
-* [reactive](/reference/recipes-by-tag#reactive)
-* [amqp](/reference/recipes-by-tag#amqp)
-* [quarkus](/reference/recipes-by-tag#quarkus)
-* [messaging](/reference/recipes-by-tag#messaging)
+* spring
+* reactive
+* amqp
+* quarkus
+* messaging
 
 ## Recipe source
 

@@ -15,7 +15,7 @@ _Updates plugins to versions compatible with Java 11._
 
 ### Tags
 
-* [java11](/reference/recipes-by-tag#java11)
+* java11
 
 ## Recipe source
 

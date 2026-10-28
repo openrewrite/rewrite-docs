@@ -15,9 +15,9 @@ _Finds potential security issues in GitHub Actions workflows, based on [Zizmor](
 
 ### Tags
 
-* [supply-chain](/reference/recipes-by-tag#supply)
-* [github](/reference/recipes-by-tag#github)
-* [security](/reference/recipes-by-tag#security)
+* supply-chain
+* github
+* security
 
 ## Recipe source
 

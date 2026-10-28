@@ -15,9 +15,9 @@ _Migrate xmlns entries in WebLogic Application Client schema files to WebLogic 1
 
 ### Tags
 
-* [weblogic](/reference/recipes-by-tag#weblogic)
-* [application-client](/reference/recipes-by-tag#application)
-* [schemas](/reference/recipes-by-tag#schemas)
+* weblogic
+* application-client
+* schemas
 
 ## Recipe source
 

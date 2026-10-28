@@ -15,7 +15,7 @@ _Apply best practices to code that uses [Apache](https://apache.org/) libraries.
 
 ### Tags
 
-* [apache](/reference/recipes-by-tag#apache)
+* apache
 
 ## Recipe source
 

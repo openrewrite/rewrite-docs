@@ -15,8 +15,8 @@ _Find all places where static `java.util.concurrent.Executors` method creates a 
 
 ### Tags
 
-* [java21](/reference/recipes-by-tag#java21)
-* [virtual_threads](/reference/recipes-by-tag#virtual)
+* java21
+* virtual_threads
 
 ## Recipe source
 

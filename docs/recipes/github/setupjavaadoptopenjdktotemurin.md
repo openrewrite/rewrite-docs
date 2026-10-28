@@ -15,7 +15,7 @@ _Adopt OpenJDK got moved to Eclipse Temurin and won't be updated anymore. It is 
 
 ### Tags
 
-* [security](/reference/recipes-by-tag#security)
+* security
 
 ## Recipe source
 

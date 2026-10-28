@@ -15,7 +15,7 @@ _Upgrade to SpringDoc v2.5._
 
 ### Tags
 
-* [springdoc](/reference/recipes-by-tag#springdoc)
+* springdoc
 
 ## Recipe source
 

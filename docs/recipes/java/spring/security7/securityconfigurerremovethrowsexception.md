@@ -15,8 +15,8 @@ _Remove throws exception in `SecurityConfigurer` methods `init` and `configure`.
 
 ### Tags
 
-* [spring](/reference/recipes-by-tag#spring)
-* [security](/reference/recipes-by-tag#security)
+* spring
+* security
 
 ## Recipe source
 

@@ -15,8 +15,8 @@ _Migrate Spring Boot 1.x applications to the latest Spring Boot 2.0 release. Thi
 
 ### Tags
 
-* [spring](/reference/recipes-by-tag#spring)
-* [boot](/reference/recipes-by-tag#boot)
+* spring
+* boot
 
 ## Recipe source
 

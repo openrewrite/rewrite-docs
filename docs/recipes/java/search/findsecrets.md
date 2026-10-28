@@ -15,7 +15,7 @@ _Find secrets stored in plain text in code._
 
 ### Tags
 
-* [security](/reference/recipes-by-tag#security)
+* security
 
 ## Recipe source
 

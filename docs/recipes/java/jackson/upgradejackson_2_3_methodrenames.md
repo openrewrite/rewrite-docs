@@ -15,7 +15,7 @@ _Rename Jackson methods that were renamed in 3.x (e.g., `writeObject()` to `writ
 
 ### Tags
 
-* [jackson-3](/reference/recipes-by-tag#jackson)
+* jackson-3
 
 ## Recipe source
 

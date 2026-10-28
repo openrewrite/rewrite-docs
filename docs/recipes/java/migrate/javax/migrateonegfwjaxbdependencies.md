@@ -15,9 +15,9 @@ _The `one.gfw` group republishes unmodified copies of the JAXB API and runtime a
 
 ### Tags
 
-* [jaxb](/reference/recipes-by-tag#jaxb)
-* [javax](/reference/recipes-by-tag#javax)
-* [jakarta](/reference/recipes-by-tag#jakarta)
+* jaxb
+* javax
+* jakarta
 
 ## Recipe source
 

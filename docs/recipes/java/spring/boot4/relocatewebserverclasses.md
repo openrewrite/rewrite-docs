@@ -15,8 +15,8 @@ _Spring Boot 4.0 relocated the embedded web server (Tomcat, Jetty) and web serve
 
 ### Tags
 
-* [spring](/reference/recipes-by-tag#spring)
-* [boot](/reference/recipes-by-tag#boot)
+* spring
+* boot
 
 ## Recipe source
 

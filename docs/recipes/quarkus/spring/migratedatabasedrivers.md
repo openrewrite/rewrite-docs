@@ -15,10 +15,10 @@ _Replaces Spring Boot database driver dependencies with their Quarkus JDBC exten
 
 ### Tags
 
-* [spring](/reference/recipes-by-tag#spring)
-* [database](/reference/recipes-by-tag#database)
-* [jdbc](/reference/recipes-by-tag#jdbc)
-* [quarkus](/reference/recipes-by-tag#quarkus)
+* spring
+* database
+* jdbc
+* quarkus
 
 ## Recipe source
 

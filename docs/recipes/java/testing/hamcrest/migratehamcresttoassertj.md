@@ -15,9 +15,9 @@ _Migrate Hamcrest `assertThat(..)` to AssertJ `Assertions`._
 
 ### Tags
 
-* [hamcrest](/reference/recipes-by-tag#hamcrest)
-* [assertj](/reference/recipes-by-tag#assertj)
-* [testing](/reference/recipes-by-tag#testing)
+* hamcrest
+* assertj
+* testing
 
 ## Recipe source
 

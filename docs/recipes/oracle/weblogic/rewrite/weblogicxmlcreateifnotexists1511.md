@@ -15,9 +15,9 @@ _This recipe will create a `weblogic.xml` file with the WebLogic 15.1.1 namespac
 
 ### Tags
 
-* [weblogic](/reference/recipes-by-tag#weblogic)
-* [web-app](/reference/recipes-by-tag#web)
-* [schemas](/reference/recipes-by-tag#schemas)
+* weblogic
+* web-app
+* schemas
 
 ## Recipe source
 

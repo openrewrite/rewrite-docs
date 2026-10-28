@@ -15,7 +15,7 @@ _Remove redundant `@JsonFormat` annotations on `java.time` types that specify IS
 
 ### Tags
 
-* [jackson-3](/reference/recipes-by-tag#jackson)
+* jackson-3
 
 ## Recipe source
 

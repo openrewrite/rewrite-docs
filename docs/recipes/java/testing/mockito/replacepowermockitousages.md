@@ -15,8 +15,8 @@ _Replaces the PowerMock API, runners, rules and annotations used in Java sources
 
 ### Tags
 
-* [mockito](/reference/recipes-by-tag#mockito)
-* [testing](/reference/recipes-by-tag#testing)
+* mockito
+* testing
 
 ## Recipe source
 

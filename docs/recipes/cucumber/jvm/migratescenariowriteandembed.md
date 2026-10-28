@@ -15,8 +15,8 @@ _Cucumber-JVM 6.0.0 removed `Scenario.write(String)` and `Scenario.embed(byte[],
 
 ### Tags
 
-* [cucumber](/reference/recipes-by-tag#cucumber)
-* [testing](/reference/recipes-by-tag#testing)
+* cucumber
+* testing
 
 ## Recipe source
 

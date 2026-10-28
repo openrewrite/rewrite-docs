@@ -15,8 +15,8 @@ _Cucumber-JVM 5.0.0 removed the `timeout` attribute from step definition and hoo
 
 ### Tags
 
-* [cucumber](/reference/recipes-by-tag#cucumber)
-* [testing](/reference/recipes-by-tag#testing)
+* cucumber
+* testing
 
 ## Recipe source
 

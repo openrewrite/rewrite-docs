@@ -15,8 +15,8 @@ _Only Kotlin 2.3 and later can target Java 25 bytecode, so modules on an older K
 
 ### Tags
 
-* [kotlin](/reference/recipes-by-tag#kotlin)
-* [java25](/reference/recipes-by-tag#java25)
+* kotlin
+* java25
 
 ## Recipe source
 

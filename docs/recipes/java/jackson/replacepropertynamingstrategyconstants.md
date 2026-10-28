@@ -15,7 +15,7 @@ _Replace usages of deprecated `PropertyNamingStrategy` inner classes and constan
 
 ### Tags
 
-* [jackson-2](/reference/recipes-by-tag#jackson)
+* jackson-2
 
 ## Recipe source
 

@@ -15,8 +15,8 @@ _Applies best practices to JUnit Jupiter tests, such as statically importing and
 
 ### Tags
 
-* [junit](/reference/recipes-by-tag#junit)
-* [testing](/reference/recipes-by-tag#testing)
+* junit
+* testing
 
 ## Recipe source
 

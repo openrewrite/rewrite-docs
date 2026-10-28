@@ -15,7 +15,7 @@ _Update Jackson type names including exception types and core class renames._
 
 ### Tags
 
-* [jackson-3](/reference/recipes-by-tag#jackson)
+* jackson-3
 
 ## Recipe source
 

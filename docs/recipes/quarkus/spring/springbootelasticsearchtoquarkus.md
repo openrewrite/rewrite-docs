@@ -15,10 +15,10 @@ _Migrates `spring-boot-starter-data-elasticsearch` to `quarkus-elasticsearch-res
 
 ### Tags
 
-* [spring](/reference/recipes-by-tag#spring)
-* [elasticsearch](/reference/recipes-by-tag#elasticsearch)
-* [data](/reference/recipes-by-tag#data)
-* [quarkus](/reference/recipes-by-tag#quarkus)
+* spring
+* elasticsearch
+* data
+* quarkus
 
 ## Recipe source
 

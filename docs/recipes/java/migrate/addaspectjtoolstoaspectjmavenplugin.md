@@ -15,7 +15,7 @@ _Pins `aspectjtools` 1.9.25.1 on the `dev.aspectj:aspectj-maven-plugin`, as the 
 
 ### Tags
 
-* [java25](/reference/recipes-by-tag#java25)
+* java25
 
 ## Recipe source
 

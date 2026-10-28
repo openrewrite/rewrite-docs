@@ -15,9 +15,9 @@ _Java EE has been rebranded to Jakarta EE, necessitating a package relocation. E
 
 ### Tags
 
-* [batch](/reference/recipes-by-tag#batch)
-* [javax](/reference/recipes-by-tag#javax)
-* [jakarta](/reference/recipes-by-tag#jakarta)
+* batch
+* javax
+* jakarta
 
 ## Recipe source
 

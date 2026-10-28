@@ -15,8 +15,8 @@ _Replace AssertJ assertions where a dedicated assertion is available for the sam
 
 ### Tags
 
-* [assertj](/reference/recipes-by-tag#assertj)
-* [testing](/reference/recipes-by-tag#testing)
+* assertj
+* testing
 
 ## Recipe source
 

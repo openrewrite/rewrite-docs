@@ -15,11 +15,11 @@ _Converts standard JPA entities to Quarkus Panache entities using the Active Rec
 
 ### Tags
 
-* [spring](/reference/recipes-by-tag#spring)
-* [migration](/reference/recipes-by-tag#migration)
-* [jpa](/reference/recipes-by-tag#jpa)
-* [quarkus](/reference/recipes-by-tag#quarkus)
-* [panache](/reference/recipes-by-tag#panache)
+* spring
+* migration
+* jpa
+* quarkus
+* panache
 
 ## Recipe source
 

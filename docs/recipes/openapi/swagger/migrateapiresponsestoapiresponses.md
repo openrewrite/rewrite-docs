@@ -18,8 +18,8 @@ Changes the namespace of the `@ApiResponses` and `@ApiResponse` annotations and 
 
 ### Tags
 
-* [openapi](/reference/recipes-by-tag#openapi)
-* [swagger](/reference/recipes-by-tag#swagger)
+* openapi
+* swagger
 
 ## Recipe source
 

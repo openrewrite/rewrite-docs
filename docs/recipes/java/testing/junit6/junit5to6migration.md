@@ -15,9 +15,9 @@ _Migrates JUnit 5.x tests to JUnit 6.x._
 
 ### Tags
 
-* [junit](/reference/recipes-by-tag#junit)
-* [jupiter](/reference/recipes-by-tag#jupiter)
-* [testing](/reference/recipes-by-tag#testing)
+* junit
+* jupiter
+* testing
 
 ## Recipe source
 

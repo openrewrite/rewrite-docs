@@ -15,7 +15,7 @@ _This recipe will migrate to JSpecify annotations from various other nullability
 
 ### Tags
 
-* [java](/reference/recipes-by-tag#java)
+* java
 
 ## Recipe source
 

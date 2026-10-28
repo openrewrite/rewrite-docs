@@ -15,9 +15,9 @@ _Migrate WireMock dependencies from the old `com.github.tomakehurst` coordinates
 
 ### Tags
 
-* [wiremock](/reference/recipes-by-tag#wiremock)
-* [security](/reference/recipes-by-tag#security)
-* [testing](/reference/recipes-by-tag#testing)
+* wiremock
+* security
+* testing
 
 ## Recipe source
 

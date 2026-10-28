@@ -15,7 +15,7 @@ _Trigger workflows for pull requests queued in a [merge queue](https://docs.gith
 
 ### Tags
 
-* [github](/reference/recipes-by-tag#github)
+* github
 
 ## Recipe source
 

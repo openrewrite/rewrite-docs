@@ -15,8 +15,8 @@ _Change artifacts for a Maven plugin configuration artifacts._
 
 ### Tags
 
-* [jakarta](/reference/recipes-by-tag#jakarta)
-* [dependencies](/reference/recipes-by-tag#dependencies)
+* jakarta
+* dependencies
 
 ## Recipe source
 

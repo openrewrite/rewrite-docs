@@ -15,9 +15,9 @@ _Migrates `spring-boot-starter-mail` to `quarkus-mailer`._
 
 ### Tags
 
-* [spring](/reference/recipes-by-tag#spring)
-* [mail](/reference/recipes-by-tag#mail)
-* [quarkus](/reference/recipes-by-tag#quarkus)
+* spring
+* mail
+* quarkus
 
 ## Recipe source
 

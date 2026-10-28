@@ -15,7 +15,7 @@ _Prefer `Optional.stream().collect(Collectors.toSet())` over `Optional.asSet()`.
 
 ### Tags
 
-* [guava](/reference/recipes-by-tag#guava)
+* guava
 
 ## Recipe source
 

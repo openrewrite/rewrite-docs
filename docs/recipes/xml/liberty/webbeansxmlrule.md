@@ -15,7 +15,7 @@ _This Recipe replaces OpenWebBeans schema in every beans.xml with the standard C
 
 ### Tags
 
-* [liberty](/reference/recipes-by-tag#liberty)
+* liberty
 
 ## Recipe source
 

@@ -15,9 +15,9 @@ _Migrate Hamcrest `assertThat(..)` to JUnit Jupiter `Assertions`._
 
 ### Tags
 
-* [hamcrest](/reference/recipes-by-tag#hamcrest)
-* [junit](/reference/recipes-by-tag#junit)
-* [testing](/reference/recipes-by-tag#testing)
+* hamcrest
+* junit
+* testing
 
 ## Recipe source
 

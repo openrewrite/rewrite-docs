@@ -15,8 +15,8 @@ _Apply security-focused Docker best practices to Dockerfiles. This includes runn
 
 ### Tags
 
-* [security](/reference/recipes-by-tag#security)
-* [docker](/reference/recipes-by-tag#docker)
+* security
+* docker
 
 ## Recipe source
 

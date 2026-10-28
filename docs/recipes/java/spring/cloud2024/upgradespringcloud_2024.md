@@ -15,8 +15,8 @@ _Migrate applications to the latest Spring Cloud 2024 (Moorgate) release._
 
 ### Tags
 
-* [spring](/reference/recipes-by-tag#spring)
-* [cloud](/reference/recipes-by-tag#cloud)
+* spring
+* cloud
 
 ## Recipe source
 

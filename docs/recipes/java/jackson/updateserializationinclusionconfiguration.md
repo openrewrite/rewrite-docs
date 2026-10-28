@@ -15,7 +15,7 @@ _In Jackson 3, `mapper.setSerializationInclusion(JsonInclude.Include.NON_NULL)` 
 
 ### Tags
 
-* [jackson-3](/reference/recipes-by-tag#jackson)
+* jackson-3
 
 ## Recipe source
 

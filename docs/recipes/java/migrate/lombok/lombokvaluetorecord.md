@@ -15,7 +15,7 @@ _Convert Lombok `@Value` annotated classes to standard Java records._
 
 ### Tags
 
-* [lombok](/reference/recipes-by-tag#lombok)
+* lombok
 
 ## Recipe source
 

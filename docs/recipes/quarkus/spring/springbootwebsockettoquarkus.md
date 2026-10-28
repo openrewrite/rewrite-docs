@@ -15,9 +15,9 @@ _Migrates `spring-boot-starter-websocket` to `quarkus-websockets`._
 
 ### Tags
 
-* [spring](/reference/recipes-by-tag#spring)
-* [websocket](/reference/recipes-by-tag#websocket)
-* [quarkus](/reference/recipes-by-tag#quarkus)
+* spring
+* websocket
+* quarkus
 
 ## Recipe source
 

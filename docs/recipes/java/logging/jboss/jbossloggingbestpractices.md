@@ -15,8 +15,8 @@ _This recipe applies best practices for logging in JBoss applications. It includ
 
 ### Tags
 
-* [jboss](/reference/recipes-by-tag#jboss)
-* [logging](/reference/recipes-by-tag#logging)
+* jboss
+* logging
 
 ## Recipe source
 

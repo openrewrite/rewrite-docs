@@ -15,8 +15,8 @@ _Migrates JUnit 4 tests to JUnit 5, upgrades to JUnit 5.14 and applies the JUnit
 
 ### Tags
 
-* [junit](/reference/recipes-by-tag#junit)
-* [testing](/reference/recipes-by-tag#testing)
+* junit
+* testing
 
 ## Recipe source
 

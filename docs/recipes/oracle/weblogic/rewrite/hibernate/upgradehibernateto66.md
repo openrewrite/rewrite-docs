@@ -15,8 +15,8 @@ _This recipe upgrades Hibernate to version 6.6, which is compatible with Jakarta
 
 ### Tags
 
-* [hibernate](/reference/recipes-by-tag#hibernate)
-* [persistence](/reference/recipes-by-tag#persistence)
+* hibernate
+* persistence
 
 ## Recipe source
 

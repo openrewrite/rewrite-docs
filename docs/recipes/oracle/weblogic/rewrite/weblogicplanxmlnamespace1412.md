@@ -15,9 +15,9 @@ _Migrate xmlns entries in WebLogic Plan schema files to WebLogic 14.1.2_
 
 ### Tags
 
-* [weblogic](/reference/recipes-by-tag#weblogic)
-* [deployment-plan](/reference/recipes-by-tag#deployment)
-* [schemas](/reference/recipes-by-tag#schemas)
+* weblogic
+* deployment-plan
+* schemas
 
 ## Recipe source
 

@@ -15,9 +15,9 @@ _Update the Node.js version used by `actions/setup-node` if it is below the expe
 
 ### Tags
 
-* [github](/reference/recipes-by-tag#github)
-* [nodejs](/reference/recipes-by-tag#nodejs)
-* [deprecation](/reference/recipes-by-tag#deprecation)
+* github
+* nodejs
+* deprecation
 
 ## Recipe source
 

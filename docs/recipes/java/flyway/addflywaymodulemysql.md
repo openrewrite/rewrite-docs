@@ -15,8 +15,8 @@ _Database modules for Flyway 10 have been split out into separate modules for ma
 
 ### Tags
 
-* [flyway](/reference/recipes-by-tag#flyway)
-* [mysql](/reference/recipes-by-tag#mysql)
+* flyway
+* mysql
 
 ## Recipe source
 

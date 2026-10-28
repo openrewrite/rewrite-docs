@@ -15,10 +15,10 @@ _Migrates `spring-boot-starter-oauth2-resource-server` to `quarkus-oidc`._
 
 ### Tags
 
-* [spring](/reference/recipes-by-tag#spring)
-* [security](/reference/recipes-by-tag#security)
-* [oauth2](/reference/recipes-by-tag#oauth2)
-* [quarkus](/reference/recipes-by-tag#quarkus)
+* spring
+* security
+* oauth2
+* quarkus
 
 ## Recipe source
 

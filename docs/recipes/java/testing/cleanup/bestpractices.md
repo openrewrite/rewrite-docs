@@ -15,7 +15,7 @@ _Wraps the statements of tests without assertions in `assertDoesNotThrow(..)` an
 
 ### Tags
 
-* [testing](/reference/recipes-by-tag#testing)
+* testing
 
 ## Recipe source
 

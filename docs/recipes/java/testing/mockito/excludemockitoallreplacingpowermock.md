@@ -15,8 +15,8 @@ _Excludes `mockito-all` from the dependencies that bring it into a module that d
 
 ### Tags
 
-* [mockito](/reference/recipes-by-tag#mockito)
-* [testing](/reference/recipes-by-tag#testing)
+* mockito
+* testing
 
 ## Recipe source
 

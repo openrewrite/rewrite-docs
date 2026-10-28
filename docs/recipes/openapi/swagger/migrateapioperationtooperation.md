@@ -15,8 +15,8 @@ _Converts the `@ApiOperation` annotation to `@Operation` and converts the direct
 
 ### Tags
 
-* [openapi](/reference/recipes-by-tag#openapi)
-* [swagger](/reference/recipes-by-tag#swagger)
+* openapi
+* swagger
 
 ## Recipe source
 

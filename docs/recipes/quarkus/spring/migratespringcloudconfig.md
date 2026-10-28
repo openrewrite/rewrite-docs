@@ -15,11 +15,11 @@ _Migrates Spring Cloud Config Client to Quarkus configuration sources. Converts 
 
 ### Tags
 
-* [spring](/reference/recipes-by-tag#spring)
-* [cloud](/reference/recipes-by-tag#cloud)
-* [migration](/reference/recipes-by-tag#migration)
-* [config](/reference/recipes-by-tag#config)
-* [quarkus](/reference/recipes-by-tag#quarkus)
+* spring
+* cloud
+* migration
+* config
+* quarkus
 
 ## Recipe source
 

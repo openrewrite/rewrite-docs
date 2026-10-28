@@ -15,8 +15,8 @@ _Apply GitLab CI/CD best practices to `.gitlab-ci.yml`. This includes adding `wo
 
 ### Tags
 
-* [gitlab](/reference/recipes-by-tag#gitlab)
-* [ci](/reference/recipes-by-tag#ci)
+* gitlab
+* ci
 
 ## Recipe source
 

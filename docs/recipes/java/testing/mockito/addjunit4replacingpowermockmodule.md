@@ -15,8 +15,8 @@ _Adds `junit:junit` to modules that use JUnit 4 and depend on `powermock-module-
 
 ### Tags
 
-* [mockito](/reference/recipes-by-tag#mockito)
-* [testing](/reference/recipes-by-tag#testing)
+* mockito
+* testing
 
 ## Recipe source
 

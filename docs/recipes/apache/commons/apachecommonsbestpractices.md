@@ -15,8 +15,8 @@ _Apply best practices to code that uses [Apache Commons](https://commons.apache.
 
 ### Tags
 
-* [commons](/reference/recipes-by-tag#commons)
-* [apache](/reference/recipes-by-tag#apache)
+* commons
+* apache
 
 ## Recipe source
 

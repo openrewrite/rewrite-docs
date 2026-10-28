@@ -15,8 +15,8 @@ _This recipe will apply changes required for migrating from the AWS SDK for Java
 
 ### Tags
 
-* [aws](/reference/recipes-by-tag#aws)
-* [sdk](/reference/recipes-by-tag#sdk)
+* aws
+* sdk
 
 ## Recipe source
 

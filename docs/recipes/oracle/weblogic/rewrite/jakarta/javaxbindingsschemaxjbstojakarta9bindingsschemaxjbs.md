@@ -15,10 +15,10 @@ _Java EE has been rebranded to Jakarta EE, necessitating an XML namespace reloca
 
 ### Tags
 
-* [jaxb](/reference/recipes-by-tag#jaxb)
-* [xjb](/reference/recipes-by-tag#xjb)
-* [jakarta](/reference/recipes-by-tag#jakarta)
-* [bindings](/reference/recipes-by-tag#bindings)
+* jaxb
+* xjb
+* jakarta
+* bindings
 
 ## Recipe source
 

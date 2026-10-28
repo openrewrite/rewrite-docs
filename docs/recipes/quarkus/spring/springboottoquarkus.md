@@ -15,10 +15,10 @@ _Replace Spring Boot with Quarkus._
 
 ### Tags
 
-* [spring](/reference/recipes-by-tag#spring)
-* [migration](/reference/recipes-by-tag#migration)
-* [bom](/reference/recipes-by-tag#bom)
-* [quarkus](/reference/recipes-by-tag#quarkus)
+* spring
+* migration
+* bom
+* quarkus
 
 ## Recipe source
 

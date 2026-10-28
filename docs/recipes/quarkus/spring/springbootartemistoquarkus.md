@@ -15,10 +15,10 @@ _Migrates `spring-boot-starter-artemis` to `quarkus-artemis-jms`._
 
 ### Tags
 
-* [spring](/reference/recipes-by-tag#spring)
-* [jms](/reference/recipes-by-tag#jms)
-* [artemis](/reference/recipes-by-tag#artemis)
-* [quarkus](/reference/recipes-by-tag#quarkus)
+* spring
+* jms
+* artemis
+* quarkus
 
 ## Recipe source
 

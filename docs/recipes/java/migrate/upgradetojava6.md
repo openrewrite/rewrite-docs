@@ -15,7 +15,7 @@ _This recipe will apply changes commonly needed when upgrading to Java 6. This r
 
 ### Tags
 
-* [java6](/reference/recipes-by-tag#java6)
+* java6
 
 ## Recipe source
 

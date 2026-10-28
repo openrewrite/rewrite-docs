@@ -15,9 +15,9 @@ _Migrates XMLUnit 1.x to XMLUnit legacy 2.x._
 
 ### Tags
 
-* [junit](/reference/recipes-by-tag#junit)
-* [testing](/reference/recipes-by-tag#testing)
-* [xmlunit](/reference/recipes-by-tag#xmlunit)
+* junit
+* testing
+* xmlunit
 
 ## Recipe source
 

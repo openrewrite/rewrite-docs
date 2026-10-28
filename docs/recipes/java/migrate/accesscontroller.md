@@ -15,9 +15,9 @@ _The Security Manager API is unsupported in Java 24. This recipe removes calls t
 
 ### Tags
 
-* [deprecation](/reference/recipes-by-tag#deprecation)
-* [java25](/reference/recipes-by-tag#java25)
-* [security](/reference/recipes-by-tag#security)
+* deprecation
+* java25
+* security
 
 ## Recipe source
 

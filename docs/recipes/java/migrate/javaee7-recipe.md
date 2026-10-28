@@ -15,8 +15,8 @@ _Apply changes needed when migrating to Java EE 7, such as replacing the OpenJPA
 
 ### Tags
 
-* [javaee7](/reference/recipes-by-tag#javaee7)
-* [deprecated](/reference/recipes-by-tag#deprecated)
+* javaee7
+* deprecated
 
 ## Recipe source
 

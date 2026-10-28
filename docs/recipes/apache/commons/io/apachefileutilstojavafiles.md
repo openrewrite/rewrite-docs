@@ -15,8 +15,8 @@ _Prefer the Java standard library's `java.nio.file.Files` over third-party usage
 
 ### Tags
 
-* [apache](/reference/recipes-by-tag#apache)
-* [commons](/reference/recipes-by-tag#commons)
+* apache
+* commons
 
 ## Recipe source
 

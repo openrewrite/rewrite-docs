@@ -15,10 +15,10 @@ _Migrates `spring-boot-starter-jdbc` to `quarkus-agroal`._
 
 ### Tags
 
-* [spring](/reference/recipes-by-tag#spring)
-* [jdbc](/reference/recipes-by-tag#jdbc)
-* [datasource](/reference/recipes-by-tag#datasource)
-* [quarkus](/reference/recipes-by-tag#quarkus)
+* spring
+* jdbc
+* datasource
+* quarkus
 
 ## Recipe source
 

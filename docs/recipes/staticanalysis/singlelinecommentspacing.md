@@ -15,7 +15,7 @@ _Adds a space after `//` in single-line comments that do not start with one._
 
 ### Tags
 
-* [formatting](/reference/recipes-by-tag#formatting)
+* formatting
 
 ## Recipe source
 

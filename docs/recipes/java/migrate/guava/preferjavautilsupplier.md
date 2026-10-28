@@ -15,7 +15,7 @@ _Prefer `java.util.function.Supplier` instead of using `com.google.common.base.S
 
 ### Tags
 
-* [guava](/reference/recipes-by-tag#guava)
+* guava
 * [RSPEC-S4738](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S4738&open=java%3AS4738)
 
 ## Recipe source

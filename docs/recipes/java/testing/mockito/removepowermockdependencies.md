@@ -15,8 +15,8 @@ _Replaces and then removes the PowerMock dependencies. Usage that cannot be migr
 
 ### Tags
 
-* [mockito](/reference/recipes-by-tag#mockito)
-* [testing](/reference/recipes-by-tag#testing)
+* mockito
+* testing
 
 ## Recipe source
 

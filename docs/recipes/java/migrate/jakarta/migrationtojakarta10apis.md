@@ -15,7 +15,7 @@ _Upgrade the Jakarta EE 9 API dependencies to their Jakarta EE 10 versions._
 
 ### Tags
 
-* [jakarta](/reference/recipes-by-tag#jakarta)
+* jakarta
 
 ## Recipe source
 

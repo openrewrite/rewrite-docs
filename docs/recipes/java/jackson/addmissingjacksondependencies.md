@@ -15,7 +15,7 @@ _Adds Jackson dataformat dependencies when code uses types from their packages b
 
 ### Tags
 
-* [jackson-2](/reference/recipes-by-tag#jackson)
+* jackson-2
 
 ## Recipe source
 

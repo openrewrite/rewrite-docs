@@ -15,8 +15,8 @@ _Change WireMock types that moved packages in WireMock 4.x, such as the Jetty, s
 
 ### Tags
 
-* [wiremock](/reference/recipes-by-tag#wiremock)
-* [testing](/reference/recipes-by-tag#testing)
+* wiremock
+* testing
 
 ## Recipe source
 

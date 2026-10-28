@@ -15,12 +15,12 @@ _Migrate from Spring Cloud Sleuth to OpenTelemetry. [Spring Cloud Sleuth has bee
 
 ### Tags
 
-* [spring](/reference/recipes-by-tag#spring)
-* [migration](/reference/recipes-by-tag#migration)
-* [opentelemetry](/reference/recipes-by-tag#opentelemetry)
-* [sleuth](/reference/recipes-by-tag#sleuth)
-* [boot](/reference/recipes-by-tag#boot)
-* [observability](/reference/recipes-by-tag#observability)
+* spring
+* migration
+* opentelemetry
+* sleuth
+* boot
+* observability
 
 ## Recipe source
 

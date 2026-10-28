@@ -15,8 +15,8 @@ _Find opportunities to convert existing code to use virtual threads._
 
 ### Tags
 
-* [java21](/reference/recipes-by-tag#java21)
-* [virtual_threads](/reference/recipes-by-tag#virtual)
+* java21
+* virtual_threads
 
 ## Recipe source
 

@@ -15,9 +15,9 @@ _Migrates `spring-boot-starter-validation` to `quarkus-hibernate-validator`._
 
 ### Tags
 
-* [spring](/reference/recipes-by-tag#spring)
-* [validation](/reference/recipes-by-tag#validation)
-* [quarkus](/reference/recipes-by-tag#quarkus)
+* spring
+* validation
+* quarkus
 
 ## Recipe source
 

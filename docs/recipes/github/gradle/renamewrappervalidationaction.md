@@ -15,8 +15,8 @@ _Rename the deprecated `gradle/wrapper-validation-action` to `gradle/actions/wra
 
 ### Tags
 
-* [gradle](/reference/recipes-by-tag#gradle)
-* [github](/reference/recipes-by-tag#github)
+* gradle
+* github
 
 ## Recipe source
 

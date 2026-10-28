@@ -15,8 +15,8 @@ _Migrate applications to the latest Spring Kafka 4.0 release._
 
 ### Tags
 
-* [spring](/reference/recipes-by-tag#spring)
-* [kafka](/reference/recipes-by-tag#kafka)
+* spring
+* kafka
 
 ## Recipe source
 

@@ -15,10 +15,10 @@ _Migrates `spring-boot-starter-actuator` to `quarkus-smallrye-health`._
 
 ### Tags
 
-* [spring](/reference/recipes-by-tag#spring)
-* [health](/reference/recipes-by-tag#health)
-* [actuator](/reference/recipes-by-tag#actuator)
-* [quarkus](/reference/recipes-by-tag#quarkus)
+* spring
+* health
+* actuator
+* quarkus
 
 ## Recipe source
 

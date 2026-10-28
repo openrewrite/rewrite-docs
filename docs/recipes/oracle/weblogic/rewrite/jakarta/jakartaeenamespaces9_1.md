@@ -15,11 +15,11 @@ _These recipes help with Migration From JavaX to Jakarta EE 9.1 Namespaces._
 
 ### Tags
 
-* [weblogic](/reference/recipes-by-tag#weblogic)
-* [migration](/reference/recipes-by-tag#migration)
-* [jakarta](/reference/recipes-by-tag#jakarta)
-* [jakartaee](/reference/recipes-by-tag#jakartaee)
-* [namespaces](/reference/recipes-by-tag#namespaces)
+* weblogic
+* migration
+* jakarta
+* jakartaee
+* namespaces
 
 ## Recipe source
 

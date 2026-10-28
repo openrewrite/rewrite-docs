@@ -15,10 +15,10 @@ _These recipes help with Migration to Jakarta EE 9.1, flagging and updating depr
 
 ### Tags
 
-* [weblogic](/reference/recipes-by-tag#weblogic)
-* [migration](/reference/recipes-by-tag#migration)
-* [jakarta](/reference/recipes-by-tag#jakarta)
-* [jakartaee](/reference/recipes-by-tag#jakartaee)
+* weblogic
+* migration
+* jakarta
+* jakartaee
 
 ## Recipe source
 

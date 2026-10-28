@@ -15,8 +15,8 @@ _Replace JUnit 4's `junit.framework.AssertionFailedError` and `org.junit.Compari
 
 ### Tags
 
-* [junit](/reference/recipes-by-tag#junit)
-* [testing](/reference/recipes-by-tag#testing)
+* junit
+* testing
 
 ## Recipe source
 

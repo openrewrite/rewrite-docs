@@ -15,7 +15,7 @@ _Add `tools.jackson.dataformat:jackson-dataformat-csv` to modules whose sources 
 
 ### Tags
 
-* [jackson-3](/reference/recipes-by-tag#jackson)
+* jackson-3
 
 ## Recipe source
 

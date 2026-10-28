@@ -15,7 +15,7 @@ _Prefer `java.util.Objects#hash` instead of using `com.google.common.base.Object
 
 ### Tags
 
-* [guava](/reference/recipes-by-tag#guava)
+* guava
 
 ## Recipe source
 

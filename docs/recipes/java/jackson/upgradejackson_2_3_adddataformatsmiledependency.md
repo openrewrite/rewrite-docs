@@ -15,7 +15,7 @@ _Add `tools.jackson.dataformat:jackson-dataformat-smile` to modules whose source
 
 ### Tags
 
-* [jackson-3](/reference/recipes-by-tag#jackson)
+* jackson-3
 
 ## Recipe source
 

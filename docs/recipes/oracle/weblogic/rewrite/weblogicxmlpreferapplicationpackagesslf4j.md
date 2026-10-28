@@ -15,9 +15,9 @@ _This recipe will add a `prefer-application-packages` entry for SLF4J in `weblog
 
 ### Tags
 
-* [weblogic](/reference/recipes-by-tag#weblogic)
-* [web-app](/reference/recipes-by-tag#web)
-* [schemas](/reference/recipes-by-tag#schemas)
+* weblogic
+* web-app
+* schemas
 
 ## Recipe source
 

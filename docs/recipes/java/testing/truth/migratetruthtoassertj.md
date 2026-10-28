@@ -15,9 +15,9 @@ _Migrate Google Truth assertions to AssertJ assertions._
 
 ### Tags
 
-* [assertj](/reference/recipes-by-tag#assertj)
-* [testing](/reference/recipes-by-tag#testing)
-* [truth](/reference/recipes-by-tag#truth)
+* assertj
+* testing
+* truth
 
 ## Recipe source
 

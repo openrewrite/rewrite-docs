@@ -15,8 +15,8 @@ _Replace deprecated OSSRH_S01 secrets with new Sonatype secrets in GitHub Action
 
 ### Tags
 
-* [secrets](/reference/recipes-by-tag#secrets)
-* [github](/reference/recipes-by-tag#github)
+* secrets
+* github
 
 ## Recipe source
 

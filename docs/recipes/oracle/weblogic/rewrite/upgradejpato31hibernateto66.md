@@ -15,10 +15,10 @@ _This recipe upgrades Jakarta JPA to 3.1 and Hibernate to 6.6 (compatible with J
 
 ### Tags
 
-* [persistence](/reference/recipes-by-tag#persistence)
-* [jpa](/reference/recipes-by-tag#jpa)
-* [hibernate](/reference/recipes-by-tag#hibernate)
-* [jakarta](/reference/recipes-by-tag#jakarta)
+* persistence
+* jpa
+* hibernate
+* jakarta
 
 ## Recipe source
 

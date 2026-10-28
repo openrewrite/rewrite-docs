@@ -15,9 +15,9 @@ _Transforms usages of Log4j 2.x to leveraging SLF4J 1.x directly. Note, this cur
 
 ### Tags
 
-* [slf4j](/reference/recipes-by-tag#slf4j)
-* [logging](/reference/recipes-by-tag#logging)
-* [log4j](/reference/recipes-by-tag#log4j)
+* slf4j
+* logging
+* log4j
 
 ## Recipe source
 

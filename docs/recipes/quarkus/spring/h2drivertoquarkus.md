@@ -15,10 +15,10 @@ _Migrates `com.h2database:h2` to `io.quarkus:quarkus-jdbc-h2` (excludes test sco
 
 ### Tags
 
-* [spring](/reference/recipes-by-tag#spring)
-* [database](/reference/recipes-by-tag#database)
-* [h2](/reference/recipes-by-tag#h2)
-* [quarkus](/reference/recipes-by-tag#quarkus)
+* spring
+* database
+* h2
+* quarkus
 
 ## Recipe source
 

@@ -15,8 +15,8 @@ _REST Assured 6 configures Jackson 3 through `jackson3ObjectMapperFactory` and `
 
 ### Tags
 
-* [rest-assured](/reference/recipes-by-tag#rest)
-* [jackson-3](/reference/recipes-by-tag#jackson)
+* rest-assured
+* jackson-3
 
 ## Recipe source
 

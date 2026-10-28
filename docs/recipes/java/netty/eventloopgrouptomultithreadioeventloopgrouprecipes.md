@@ -15,7 +15,7 @@ _Replaces Netty's `new *EventLoopGroup` with `new MultiThreadIoEventLoopGroup(*I
 
 ### Tags
 
-* [netty](/reference/recipes-by-tag#netty)
+* netty
 
 ## Recipe source
 

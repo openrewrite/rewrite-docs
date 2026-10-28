@@ -15,10 +15,10 @@ _Add the necessary `annotation-api` dependency from Jakarta EE 8 to maintain com
 
 ### Tags
 
-* [javax](/reference/recipes-by-tag#javax)
-* [java11](/reference/recipes-by-tag#java11)
-* [jsr250](/reference/recipes-by-tag#jsr250)
-* [jakarta](/reference/recipes-by-tag#jakarta)
+* javax
+* java11
+* jsr250
+* jakarta
 
 ## Recipe source
 

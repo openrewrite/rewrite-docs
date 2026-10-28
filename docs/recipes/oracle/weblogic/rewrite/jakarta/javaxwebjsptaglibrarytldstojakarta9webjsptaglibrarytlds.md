@@ -15,10 +15,10 @@ _Java EE has been rebranded to Jakarta EE, necessitating an XML namespace reloca
 
 ### Tags
 
-* [jsptaglibrary](/reference/recipes-by-tag#jsptaglibrary)
-* [tld](/reference/recipes-by-tag#tld)
-* [jakarta](/reference/recipes-by-tag#jakarta)
-* [jsp](/reference/recipes-by-tag#jsp)
+* jsptaglibrary
+* tld
+* jakarta
+* jsp
 
 ## Recipe source
 

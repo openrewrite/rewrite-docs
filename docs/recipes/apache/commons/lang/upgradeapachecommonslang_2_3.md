@@ -15,9 +15,9 @@ _Migrate applications to the latest Apache Commons Lang 3.x release. This recipe
 
 ### Tags
 
-* [lang](/reference/recipes-by-tag#lang)
-* [commons](/reference/recipes-by-tag#commons)
-* [apache](/reference/recipes-by-tag#apache)
+* lang
+* commons
+* apache
 
 ## Recipe source
 

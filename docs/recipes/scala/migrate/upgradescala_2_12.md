@@ -15,7 +15,7 @@ _Upgrade the Scala version for compatibility with newer Java versions._
 
 ### Tags
 
-* [scala](/reference/recipes-by-tag#scala)
+* scala
 
 ## Recipe source
 

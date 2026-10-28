@@ -15,8 +15,8 @@ _Applies changes commonly needed when migrating from JMockit to Mockito._
 
 ### Tags
 
-* [jmockit](/reference/recipes-by-tag#jmockit)
-* [testing](/reference/recipes-by-tag#testing)
+* jmockit
+* testing
 
 ## Recipe source
 

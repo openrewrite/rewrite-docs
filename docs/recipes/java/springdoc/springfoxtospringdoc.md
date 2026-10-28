@@ -15,10 +15,10 @@ _Migrate from SpringFox Swagger to SpringDoc and OpenAPI._
 
 ### Tags
 
-* [springdoc](/reference/recipes-by-tag#springdoc)
-* [springfox](/reference/recipes-by-tag#springfox)
-* [openapi](/reference/recipes-by-tag#openapi)
-* [swagger](/reference/recipes-by-tag#swagger)
+* springdoc
+* springfox
+* openapi
+* swagger
 
 ## Recipe source
 

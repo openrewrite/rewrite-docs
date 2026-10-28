@@ -15,7 +15,7 @@ _This recipe will upgrade Bouncy Castle dependencies from any of the legacy arti
 
 ### Tags
 
-* [bouncycastle](/reference/recipes-by-tag#bouncycastle)
+* bouncycastle
 
 ## Recipe source
 

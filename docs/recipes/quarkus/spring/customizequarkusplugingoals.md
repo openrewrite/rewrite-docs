@@ -15,12 +15,12 @@ _Allows customization of Quarkus Maven plugin goals. Adds or modifies the execut
 
 ### Tags
 
-* [spring](/reference/recipes-by-tag#spring)
-* [migration](/reference/recipes-by-tag#migration)
-* [plugin](/reference/recipes-by-tag#plugin)
-* [build](/reference/recipes-by-tag#build)
-* [maven](/reference/recipes-by-tag#maven)
-* [quarkus](/reference/recipes-by-tag#quarkus)
+* spring
+* migration
+* plugin
+* build
+* maven
+* quarkus
 
 ## Recipe source
 

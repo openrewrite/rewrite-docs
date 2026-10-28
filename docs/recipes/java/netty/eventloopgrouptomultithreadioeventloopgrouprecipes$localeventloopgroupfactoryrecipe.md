@@ -15,8 +15,8 @@ _Replace `new LocalEventLoopGroup()` with `new MultiThreadIoEventLoopGroup(Local
 
 ### Tags
 
-* [local](/reference/recipes-by-tag#local)
-* [netty](/reference/recipes-by-tag#netty)
+* local
+* netty
 
 ## Recipe source
 

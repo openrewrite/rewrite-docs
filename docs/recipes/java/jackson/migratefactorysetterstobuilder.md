@@ -15,7 +15,7 @@ _In Jackson 3, `JsonFactory` is immutable and `new JsonFactory()` is no longer t
 
 ### Tags
 
-* [jackson-3](/reference/recipes-by-tag#jackson)
+* jackson-3
 
 ## Recipe source
 

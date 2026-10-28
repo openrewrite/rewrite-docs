@@ -15,9 +15,9 @@ _Adds Quarkus Spring compatibility extensions when Spring annotations are detect
 
 ### Tags
 
-* [spring](/reference/recipes-by-tag#spring)
-* [compatibility](/reference/recipes-by-tag#compatibility)
-* [quarkus](/reference/recipes-by-tag#quarkus)
+* spring
+* compatibility
+* quarkus
 
 ## Recipe source
 

@@ -16,7 +16,7 @@ _Prefer `java.util.Optional#or(Supplier<? extends Optional<? extends T>>)` over 
 ### Tags
 
 * [RSPEC-S4738](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S4738&open=java%3AS4738)
-* [guava](/reference/recipes-by-tag#guava)
+* guava
 
 ## Recipe source
 

@@ -15,8 +15,8 @@ _Replace PowerMockito with raw Mockito; best executed as part of a Mockito upgra
 
 ### Tags
 
-* [mockito](/reference/recipes-by-tag#mockito)
-* [testing](/reference/recipes-by-tag#testing)
+* mockito
+* testing
 
 ## Recipe source
 

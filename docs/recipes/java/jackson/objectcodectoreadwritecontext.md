@@ -15,7 +15,7 @@ _Jackson 3 removes `ObjectCodec`. `JsonParser.getCodec()` becomes `objectReadCon
 
 ### Tags
 
-* [jackson-3](/reference/recipes-by-tag#jackson)
+* jackson-3
 
 ## Recipe source
 

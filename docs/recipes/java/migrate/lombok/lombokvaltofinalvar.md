@@ -15,7 +15,7 @@ _Prefer the Java standard library's `final var` and `var` over third-party usage
 
 ### Tags
 
-* [lombok](/reference/recipes-by-tag#lombok)
+* lombok
 
 ## Recipe source
 

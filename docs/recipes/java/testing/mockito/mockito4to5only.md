@@ -15,8 +15,8 @@ _Upgrade Mockito from 4.x to 5.x. Does not include 1.x to 4.x migration._
 
 ### Tags
 
-* [mockito](/reference/recipes-by-tag#mockito)
-* [testing](/reference/recipes-by-tag#testing)
+* mockito
+* testing
 
 ## Recipe source
 

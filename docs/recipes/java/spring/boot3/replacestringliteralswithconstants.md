@@ -15,8 +15,8 @@ _Replace String literals with Spring constants where applicable._
 
 ### Tags
 
-* [spring](/reference/recipes-by-tag#spring)
-* [boot](/reference/recipes-by-tag#boot)
+* spring
+* boot
 
 ## Recipe source
 
