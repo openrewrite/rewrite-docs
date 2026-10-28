@@ -37,7 +37,7 @@ Moderne's proprietary recipes pick up where the open-source and source-available
 * **Context for AI coding agents:** Generate verified context about your architecture, dependencies, tests, and code quality with [Moderne Prethink](https://docs.moderne.io/user-documentation/agent-tools/prethink), so agents read facts instead of guessing.
 * **Analysis at scale:** Trace data flow and measure impact across every repository in an organization, with verification that changed code still compiles.
 
-These proprietary recipes are available to Moderne customers under the [Moderne Proprietary License](https://docs.moderne.io/licensing/overview). The [Moderne recipe catalog](https://docs.moderne.io/user-documentation/recipes/recipe-catalog) lists every recipe in the set.
+These proprietary recipes are available to Moderne customers under the [Moderne Proprietary License](https://docs.moderne.io/licensing/overview). The [Code Genome Project recipe catalog](https://codegenomeproject.org/recipes) lists every recipe in the set.
 
 ## FAQ
 
