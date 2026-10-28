@@ -9,13 +9,13 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  lint:
-    name: Lint
+  build:
+    name: Build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
         with:
-          fetch-depth: 0
+          fetch-depth: 2
 
       - uses: actions/setup-node@v6
         with:
@@ -25,10 +25,11 @@ jobs:
       - name: Install dependencies
         run: yarn install --frozen-lockfile
 
+      # The checkout is the PR merge commit, so its first parent is the base branch.
       - name: Check file types
         run: node scripts/check-file-types.js
         env:
-          BASE_REF: ${{ github.event.pull_request.base.sha }}
+          BASE_REF: HEAD^1
 
       - name: TypeScript type check
         run: yarn typecheck
@@ -36,27 +37,10 @@ jobs:
       - name: Check for orphaned pages
         run: node scripts/check-orphaned-pages.js
 
-  build:
-    name: Build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v7
-
-      - uses: actions/setup-node@v6
-        with:
-          node-version: 20
-          cache: yarn
-
-      - name: Install dependencies
-        run: yarn install --frozen-lockfile
-
       - name: Build site
-        run: |
-          set -o pipefail
-          yarn build 2>&1 | { grep -v "^Generated markdown file:" || true; }
+        run: yarn build
         env:
           CI_STRICT_LINKS: "1"
-          NODE_OPTIONS: --max-old-space-size=8192
           DOCUSAURUS_IGNORE_SSG_WARNINGS: true
 
   gradle:
