@@ -1,4 +1,7 @@
+import org.openrewrite.docs.GitHub
 import org.openrewrite.docs.Pom
+import org.openrewrite.docs.Version
+import org.openrewrite.docs.UpdateChangelog
 import org.openrewrite.docs.UpdateLatestVersions
 
 repositories {
@@ -51,10 +54,39 @@ val updateLatestVersions = tasks.register<UpdateLatestVersions>("updateLatestVer
     javascriptFile = layout.projectDirectory.file("src/plugins/latest-versions.js")
 }
 
+val githubAccessToken = providers.environmentVariable("GITHUB_TOKEN")
+    .orElse(providers.exec { commandLine("gh", "auth", "token") }.standardOutput.asText.map(String::trim))
+
+val bomReleases by lazy { UpdateChangelog.bomReleases(GitHub(githubAccessToken.get())) }
+
+// A configuration per release, as one configuration would resolve them all to the newest.
+val recipeBomPoms = files(provider { bomReleases.map { pom("org.openrewrite.recipe:rewrite-recipe-bom:${it.version}") } })
+
+// The latest version of each module in those BOMs, as the repository a module is released from rarely changes.
+val releaseNoteModulePoms = configurations.create("releaseNoteModulePoms") {
+    isCanBeConsumed = false
+    withDependencies {
+        recipeBomPoms.map(Pom::parse)
+            .flatMap(UpdateChangelog::releaseNoteModules)
+            .groupBy { it.coordinates }
+            .map { (_, versions) -> versions.maxBy { Version.parse(it.version) ?: Version(emptyList()) } }
+            .forEach { add(project.dependencies.create("${it.coordinates}:${it.version}@pom")) }
+    }
+}
+
+val updateChangelog = tasks.register<UpdateChangelog>("updateChangelog") {
+    group = "documentation"
+    description = "Updates the changelog from the release notes of the modules in each rewrite-recipe-bom release."
+    bomPoms.from(recipeBomPoms)
+    modulePoms.from(releaseNoteModulePoms)
+    githubToken = githubAccessToken
+    changelogFile = layout.projectDirectory.file("docs/changelog.md")
+}
+
 tasks.register("updateDocs") {
     group = "documentation"
     description = "Updates every generated page of the docs."
-    dependsOn(updateLatestVersions)
+    dependsOn(updateLatestVersions, updateChangelog)
 }
 
 /// Returns the `groupId:artifactId` of every module managed by the BOM at [coordinate], following `import`-scoped BOMs.

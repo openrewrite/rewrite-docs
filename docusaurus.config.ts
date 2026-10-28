@@ -3,6 +3,7 @@ import type { Config } from "@docusaurus/types";
 import { themes as prismThemes } from "prism-react-renderer";
 import remarkTokenReplacer from "./src/plugins/replace-tokens";
 import latestVersions from "./src/plugins/latest-versions";
+import { removedChangelogPages } from "./src/config/removedChangelogPages";
 
 const description = "Large-scale automated source code refactoring"
 
@@ -146,6 +147,12 @@ const config: Config = {
   },
 
   plugins: [
+    [
+      '@docusaurus/plugin-client-redirects',
+      {
+        redirects: [{ from: removedChangelogPages, to: '/changelog' }],
+      },
+    ],
     [
       'docusaurus-plugin-llms',
       {
