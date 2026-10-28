@@ -42,7 +42,7 @@ All recipe names, descriptions, and parameters should follow our [recipe naming 
 
 By following these conventions, you'll ensure that:
 
-* The [documentation](../recipes) generated for your recipe is valid and clear to others
+* The [documentation](https://codegenomeproject.org/recipes) generated for your recipe is valid and clear to others
 * The [Moderne platform](https://app.moderne.io/) can accurately filter and display your recipe and its parameters
 
 ### If it can be declarative, it should be declarative

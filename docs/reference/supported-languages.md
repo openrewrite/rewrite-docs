@@ -36,7 +36,7 @@ See the [licensing page](../licensing/openrewrite-licensing.md) to determine whi
 
 ## Frameworks
 
-Framework migration recipes are developed through collaboration between the OpenRewrite team, the original framework authors, and the wider OSS community. Each recipe in our [recipe catalog](/recipes) includes a list of contributing authors.
+Framework migration recipes are developed through collaboration between the OpenRewrite team, the original framework authors, and the wider OSS community. Each recipe in our [recipe catalog](https://codegenomeproject.org/recipes) includes a list of contributing authors.
 
 Many different frameworks are supported such as (but not limited to):
 

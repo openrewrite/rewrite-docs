@@ -21,11 +21,11 @@ For the sake of having an example for this guide, let's imagine that we have an 
 Specifically, we want to:
 
 1. Rename the package `com.example.springboot2.starter` to `com.example.springboot3.starter`
-  * This can be done with the [org.openrewrite.java.ChangePackage recipe](../recipes/java/changepackage.md).
+  * This can be done with the [org.openrewrite.java.ChangePackage recipe](https://codegenomeproject.org/recipes/org.openrewrite.java.ChangePackage).
 2. Change the type of `com.example.springboot2.starter.MyConfig` to `com.example.springboot3.starter.MyNewConfig`
-  * This can be done with the [org.openrewrite.java.ChangeType recipe](../recipes/java/changetype.md)
+  * This can be done with the [org.openrewrite.java.ChangeType recipe](https://codegenomeproject.org/recipes/org.openrewrite.java.ChangeType)
 3. Upgrade the version of our library from `1.0.0` to `2.0.x` in the Gradle or Maven build file (e.g., `com.acme:inhouse-starter:1.0.0` --> `com.acme:inhouse-starter:2.0.x`)
-  * This can be done with the [org.openrewrite.java.dependencies.UpgradeDependencyVersion recipe](../recipes/java/dependencies/upgradedependencyversion.md)
+  * This can be done with the [org.openrewrite.java.dependencies.UpgradeDependencyVersion recipe](https://codegenomeproject.org/recipes/org.openrewrite.java.dependencies.UpgradeDependencyVersion)
 
 ### Example changes
 

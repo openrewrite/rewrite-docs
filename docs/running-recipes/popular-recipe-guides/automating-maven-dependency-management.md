@@ -72,7 +72,7 @@ At this point, you have all of the information you need to manually exclude `log
 
 ## Switching SLF4J Implementations
 
-Use the rewrite recipes [ExcludeDependency](../../recipes/maven/excludedependency.md) and [AddDependency](../../recipes/maven/adddependency.md) to ensure that only your preferred slf4j dependency is used. If a new transitive dependency on `logback-classic` appears in the future, `ExcludeDependency` will detect and exclude it.
+Use the rewrite recipes [ExcludeDependency](https://codegenomeproject.org/recipes/org.openrewrite.maven.ExcludeDependency) and [AddDependency](https://codegenomeproject.org/recipes/org.openrewrite.maven.AddDependency) to ensure that only your preferred slf4j dependency is used. If a new transitive dependency on `logback-classic` appears in the future, `ExcludeDependency` will detect and exclude it.
 
 Add this to your `rewrite.yml`:
 
@@ -127,4 +127,4 @@ Of course, CI failures are always at least a little bit frustrating for develope
 
 ## Next Steps
 
-The dependency management recipes used in this guide aren't the only such recipes included in rewrite. See the [Maven](../../recipes/maven/) recipe reference for the full listing of dependency management recipes.
+The dependency management recipes used in this guide aren't the only such recipes included in rewrite. See the [Maven](https://codegenomeproject.org/recipes?q=org.openrewrite.maven) recipe reference for the full listing of dependency management recipes.

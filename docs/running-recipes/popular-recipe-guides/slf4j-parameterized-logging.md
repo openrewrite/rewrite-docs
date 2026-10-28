@@ -15,7 +15,7 @@ In this guide we'll look at using OpenRewrite to automatically refactor logging 
 
 ## Example Configuration
 
-The [ParameterizedLogging](../../recipes/java/logging/slf4j/parameterizedlogging.md) recipe has no required configuration options and can be activated directly after taking a dependency on [rewrite-logging-frameworks](https://github.com/openrewrite/rewrite-logging-frameworks) in your build file:
+The [ParameterizedLogging](https://codegenomeproject.org/recipes/org.openrewrite.java.logging.slf4j.ParameterizedLogging) recipe has no required configuration options and can be activated directly after taking a dependency on [rewrite-logging-frameworks](https://github.com/openrewrite/rewrite-logging-frameworks) in your build file:
 
 <RunRecipe
   recipeName="org.openrewrite.java.logging.slf4j.ParameterizedLogging"
@@ -27,7 +27,7 @@ The [ParameterizedLogging](../../recipes/java/logging/slf4j/parameterizedlogging
 
 At this point, you're ready to execute the migration by running `mvn rewrite:run` or `gradlew rewriteRun`. After running the migration you can inspect the results with `git diff` (or equivalent), manually fix anything that wasn't able to be migrated automatically, and commit the results.
 
-For the full list of changes, see the recipe's [reference documentation](../../recipes/java/logging/slf4j/parameterizedlogging.md).
+For the full list of changes, see the recipe's [reference documentation](https://codegenomeproject.org/recipes/org.openrewrite.java.logging.slf4j.ParameterizedLogging).
 
 <Tabs>
 <TabItem value="example-class-before" label="Example Class (Before)">

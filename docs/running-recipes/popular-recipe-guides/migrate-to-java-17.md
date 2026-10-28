@@ -34,7 +34,7 @@ At this point, you're ready to execute the migration by running `mvn rewrite:run
 
 ## Before and After
 
-For the complete list of changes made by this recipe, please see the reference pages for [Java 11](../../recipes/java/migrate/java8tojava11.md) and [Java 17](../../recipes/java/migrate/upgradetojava17.md). If you have a specific use case that is not yet covered by this project, please reach out to our team!
+For the complete list of changes made by this recipe, please see the reference pages for [Java 11](https://codegenomeproject.org/recipes/org.openrewrite.java.migrate.Java8toJava11) and [Java 17](https://codegenomeproject.org/recipes/org.openrewrite.java.migrate.UpgradeToJava17). If you have a specific use case that is not yet covered by this project, please reach out to our team!
 
 ### Example Class
 

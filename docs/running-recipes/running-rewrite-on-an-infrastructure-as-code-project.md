@@ -14,7 +14,7 @@ OpenRewrite ships standalone parsers for the file types these repositories conta
 
 | Source | Parser module | Notes |
 |---|---|---|
-| Terraform / OpenTofu / HCL (`.tf`, `.tfvars`, `.tofu`, `.hcl`) | [`rewrite-hcl`](https://github.com/openrewrite/rewrite/tree/main/rewrite-hcl) | Used as the running example below. See the [HCL recipe catalog](/recipes/hcl). |
+| Terraform / OpenTofu / HCL (`.tf`, `.tfvars`, `.tofu`, `.hcl`) | [`rewrite-hcl`](https://github.com/openrewrite/rewrite/tree/main/rewrite-hcl) | Used as the running example below. See the [HCL recipe catalog](https://codegenomeproject.org/recipes?q=org.openrewrite.hcl). |
 | Kubernetes manifests, Helm charts | [`rewrite-yaml`](https://github.com/openrewrite/rewrite/tree/main/rewrite-yaml) | |
 | Dockerfiles, Containerfiles | [`rewrite-docker`](https://github.com/openrewrite/rewrite/tree/main/rewrite-docker) | |
 | GitHub Actions, GitLab CI workflows | [`rewrite-yaml`](https://github.com/openrewrite/rewrite/tree/main/rewrite-yaml) + [`rewrite-github-actions`](https://github.com/openrewrite/rewrite-github-actions) / [`rewrite-gitlab`](https://github.com/openrewrite/rewrite-gitlab) | |
@@ -261,6 +261,6 @@ For workflow-aware recipes that build on top of YAML (GitHub Actions, GitLab CI)
 
 For published recipe libraries you can depend on today:
 
-* [Moderne Terraform recipe catalog](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/terraform/) — proprietary recipes available only to Moderne customers.
+* [Moderne Terraform recipe catalog](https://codegenomeproject.org/recipes?q=org.openrewrite.terraform) — proprietary recipes available only to Moderne customers.
 * [paweloczadly/openrewrite-recipes](https://github.com/paweloczadly/openrewrite-recipes) — community: generic HCL/OpenTofu transformations (change module versions, add/remove input variables).
 * [infra-at-scale/avm-openrewrite-migrations](https://github.com/infra-at-scale/avm-openrewrite-migrations) — community: Azure Verified Module migration recipes.

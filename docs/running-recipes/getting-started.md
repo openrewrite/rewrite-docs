@@ -220,7 +220,7 @@ From the command line, try running `mvn rewrite:discover` or `gradle rewriteDisc
 
 ## Step 3: Activate a recipe
 
-Before you can run any of the recipes, you will need to update the plugin configuration to mark the desired recipe(s) as "active". Let's use the [org.openrewrite.java.OrderImports](../recipes/java/orderimports.md) recipe as an example (which will ensure your imports follow a standard order). To activate this recipe, please modify your `pom.xml` or `build.gradle(.kts)` file so that the sections you modified earlier look like the below example:
+Before you can run any of the recipes, you will need to update the plugin configuration to mark the desired recipe(s) as "active". Let's use the [org.openrewrite.java.OrderImports](https://codegenomeproject.org/recipes/org.openrewrite.java.OrderImports) recipe as an example (which will ensure your imports follow a standard order). To activate this recipe, please modify your `pom.xml` or `build.gradle(.kts)` file so that the sections you modified earlier look like the below example:
 
 <Tabs groupId="projectType">
 <TabItem value="gradle-groovy" label="Gradle (Groovy)">
@@ -312,7 +312,7 @@ From there, you can commit the changes or add additional recipes based on your n
 
 ## Step 5: Run a recipe with YAML configuration
 
-Some recipes are more complex than `OrderImports` and require configuration (in a `rewrite.yml` file) to run them. For instance, the built-in recipe [org.openrewrite.java.ChangePackage](../recipes/java/changepackage.md) has three options that need to be configured:
+Some recipes are more complex than `OrderImports` and require configuration (in a `rewrite.yml` file) to run them. For instance, the built-in recipe [org.openrewrite.java.ChangePackage](https://codegenomeproject.org/recipes/org.openrewrite.java.ChangePackage) has three options that need to be configured:
 
 | Type      | Name           | Description                                                        |
 | --------- | -------------- | ------------------------------------------------------------------ |
@@ -416,10 +416,10 @@ From there, you can confirm that everything still builds and passes its tests by
 At this point, you know how to configure and run any recipe included in OpenRewrite itself. However, many recipes are not bundled into the core library. For example, the Jackson recipes maintained by the OpenRewrite team live in the [rewrite-jackson repository](https://github.com/openrewrite/rewrite-jackson), the testing ones in [rewrite-testing-frameworks](https://github.com/openrewrite/rewrite-testing-frameworks), and the Spring ones in [rewrite-spring](https://github.com/openrewrite/rewrite-spring).
 
 :::info
-You can search through all of the recipes in the [OpenRewrite docs](/recipes). Each recipe page has instructions for how to import the recipe and what parameters (if any) need to be included.
+You can search through all of the recipes in the [OpenRewrite docs](https://codegenomeproject.org/recipes). Each recipe page has instructions for how to import the recipe and what parameters (if any) need to be included.
 :::
 
-Let's pretend that you want to migrate a project from Jackson 2.x to Jackson 3.x. If you take a look at the [Usage section](../recipes/java/jackson/upgradejackson_2_3.md#usage) in the [Jackson 2.x to 3.x migration recipe](../recipes/java/jackson/upgradejackson_2_3.md), you'll see what you need to include in your `build.gradle(.kts)` or `pom.xml` file in order to use this recipe.
+Let's pretend that you want to migrate a project from Jackson 2.x to Jackson 3.x. If you take a look at the [Usage section](https://codegenomeproject.org/recipes/org.openrewrite.java.jackson.UpgradeJackson_2_3) in the [Jackson 2.x to 3.x migration recipe](https://codegenomeproject.org/recipes/org.openrewrite.java.jackson.UpgradeJackson_2_3), you'll see what you need to include in your `build.gradle(.kts)` or `pom.xml` file in order to use this recipe.
 
 Below, we'll walk through the [Maven](#maven--external-modules) and [Gradle](#gradle--external-modules) changes and provide some additional context around said changes.
 
@@ -531,7 +531,7 @@ Presuming you chose to use the `rewrite-recipe-bom`, your Gradle setup should lo
 
 To check that everything worked correctly, run the command `gradle rewriteRun`. You should see that the project's Jackson imports and API usages have been migrated from 2.x to 3.x.
 
-OpenRewrite edits Gradle build files as well as source code, so your `build.gradle(.kts)` should have had its Jackson dependencies updated too. Recipes such as [AddDependency](../recipes/gradle/adddependency.md), [ChangeDependency](../recipes/gradle/changedependency.md), and [UpgradeDependencyVersion](../recipes/gradle/upgradedependencyversion.md) handle this, and migration recipes compose them.
+OpenRewrite edits Gradle build files as well as source code, so your `build.gradle(.kts)` should have had its Jackson dependencies updated too. Recipes such as [AddDependency](https://codegenomeproject.org/recipes/org.openrewrite.gradle.AddDependency), [ChangeDependency](https://codegenomeproject.org/recipes/org.openrewrite.gradle.ChangeDependency), and [UpgradeDependencyVersion](https://codegenomeproject.org/recipes/org.openrewrite.gradle.UpgradeDependencyVersion) handle this, and migration recipes compose them.
 
 ## Next steps
 

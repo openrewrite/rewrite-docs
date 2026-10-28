@@ -16,7 +16,7 @@ In this guide we'll look at using OpenRewrite to perform an automated migration 
 
 ## Example Configuration
 
-The [UpgradeSpringBoot_2_7](../../recipes/java/spring/boot2/upgradespringboot_2_7.md) recipe has no required configuration options and can be activated directly after taking a dependency on [rewrite-spring](https://github.com/openrewrite/rewrite-spring) in your build file:
+The [UpgradeSpringBoot_2_7](https://codegenomeproject.org/recipes/org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_7) recipe has no required configuration options and can be activated directly after taking a dependency on [rewrite-spring](https://github.com/openrewrite/rewrite-spring) in your build file:
 
 <RunRecipe
   recipeName="org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_7"
@@ -30,7 +30,7 @@ At this point, you're ready to execute the migration by running `mvn rewrite:run
 
 ## Before and After
 
-For the full list of changes this recipe will make, see its [reference page](../../recipes/java/spring/boot2/upgradespringboot_2_7.md).
+For the full list of changes this recipe will make, see its [reference page](https://codegenomeproject.org/recipes/org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_7).
 
 ### Request Mapping Annotations.
 

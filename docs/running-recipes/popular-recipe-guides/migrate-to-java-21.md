@@ -29,9 +29,9 @@ At this point, you're ready to execute the migration by running `mvn rewrite:run
 
 ## Before and After
 
-For the complete list of changes made by this recipe, please see the reference pages for [Java 21](../../recipes/java/migrate/upgradetojava21.md).
+For the complete list of changes made by this recipe, please see the reference pages for [Java 21](https://codegenomeproject.org/recipes/org.openrewrite.java.migrate.UpgradeToJava21).
 
-Please note that this recipe will also [migrate from Java 8 to Java 11](../../recipes/java/migrate/java8tojava11.md) and [migrate from Java 11 to Java 17](../../recipes/java/migrate/upgradetojava17.md) if you aren't already on Java 17. For details about migrating from Java 8 to 17, check out our [migrate to Java 17 popular recipe guide](./migrate-to-java-17.md).
+Please note that this recipe will also [migrate from Java 8 to Java 11](https://codegenomeproject.org/recipes/org.openrewrite.java.migrate.Java8toJava11) and [migrate from Java 11 to Java 17](https://codegenomeproject.org/recipes/org.openrewrite.java.migrate.UpgradeToJava17) if you aren't already on Java 17. For details about migrating from Java 8 to 17, check out our [migrate to Java 17 popular recipe guide](./migrate-to-java-17.md).
 
 If you have a specific use case that is not yet covered by this project, please reach out to our team!
 
@@ -89,7 +89,7 @@ public class Example {
 ```
 
 :::info
-The above example class demonstrates a few of the most common changes when migrating from Java 17 to 21. That being said, there are many additional tasks covered by this recipe that are not represented in this example. Check out the [migrate to Java 21 documentation](../../recipes/java/migrate/upgradetojava21.md) for a full list of what the recipe does.
+The above example class demonstrates a few of the most common changes when migrating from Java 17 to 21. That being said, there are many additional tasks covered by this recipe that are not represented in this example. Check out the [migrate to Java 21 documentation](https://codegenomeproject.org/recipes/org.openrewrite.java.migrate.UpgradeToJava21) for a full list of what the recipe does.
 :::
 
 ## See how this recipe works across multiple open-source repositories
