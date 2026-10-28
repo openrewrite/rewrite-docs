@@ -4,6 +4,7 @@ import org.openrewrite.docs.Version
 import org.openrewrite.docs.UpdateChangelog
 import org.openrewrite.docs.UpdateGradlePluginProperties
 import org.openrewrite.docs.UpdateLatestVersions
+import org.openrewrite.docs.UpdateMavenPluginParameters
 
 repositories {
     maven {
@@ -90,10 +91,17 @@ val updateGradlePluginProperties = tasks.register<UpdateGradlePluginProperties>(
     pageFile = layout.projectDirectory.file("docs/reference/gradle-plugin-configuration.md")
 }
 
+val updateMavenPluginParameters = tasks.register<UpdateMavenPluginParameters>("updateMavenPluginParameters") {
+    group = "documentation"
+    description = "Updates the Maven plugin parameters table from the descriptor in the rewrite-maven-plugin jar."
+    pluginJar.from(latestJar("org.openrewrite.maven:rewrite-maven-plugin"))
+    pageFile = layout.projectDirectory.file("docs/reference/rewrite-maven-plugin.md")
+}
+
 tasks.register("updateDocs") {
     group = "documentation"
     description = "Updates every generated page of the docs."
-    dependsOn(updateLatestVersions, updateChangelog, updateGradlePluginProperties)
+    dependsOn(updateLatestVersions, updateChangelog, updateGradlePluginProperties, updateMavenPluginParameters)
 }
 
 /// Returns the `groupId:artifactId` of every module managed by the BOM at [coordinate], following `import`-scoped BOMs.
@@ -105,6 +113,10 @@ fun bomModules(coordinate: String): Set<String> =
 
 fun latestPom(module: String) = pom("$module:latest.release")
 
+fun latestJar(module: String) = artifact("$module:latest.release@jar")
+
+fun pom(coordinate: String) = artifact("$coordinate@pom")
+
 // Detached configurations are not in the configuration container, so `configurations.all` above never sees them.
-fun pom(coordinate: String) = configurations.detachedConfiguration(dependencies.create("$coordinate@pom"))
+fun artifact(notation: String) = configurations.detachedConfiguration(dependencies.create(notation))
     .apply { resolutionStrategy.cacheDynamicVersionsFor(1, TimeUnit.HOURS) }

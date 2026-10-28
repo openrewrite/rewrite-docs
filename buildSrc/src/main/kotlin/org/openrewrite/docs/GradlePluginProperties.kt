@@ -9,11 +9,7 @@ fun replaceGradlePluginProperties(page: String, reference: String): String {
         .takeWhile { it.startsWith("|") }
     check(table.isNotEmpty()) { "No properties table found in the Gradle plugin reference" }
 
-    val start = page.indexOf(START_MARKER)
-    val end = page.indexOf(END_MARKER)
-    check(start != -1 && end != -1) { "No $START_MARKER and $END_MARKER markers found" }
-    val startLineEnd = page.indexOf('\n', start) + 1
-    return page.substring(0, startLineEnd) + "\n" + table.joinToString("\n") + "\n\n" + page.substring(end)
+    return replaceBetweenMarkers(page, START_MARKER, END_MARKER, table.joinToString("\n"))
 }
 
 private const val START_MARKER = "<!-- AUTO-GENERATED-GRADLE-PROPS:START"

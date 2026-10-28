@@ -2,8 +2,6 @@ package org.openrewrite.docs
 
 import java.io.File
 import java.io.InputStream
-import javax.xml.parsers.DocumentBuilderFactory
-import org.w3c.dom.Element
 
 enum class License(val title: String, val url: String) {
     Apache2("Apache License Version 2.0", "https://www.apache.org/licenses/LICENSE-2.0"),
@@ -45,7 +43,7 @@ class Pom(
         fun parse(file: File): Pom = file.inputStream().use(::parse)
 
         fun parse(pom: InputStream): Pom {
-            val project = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(pom).documentElement
+            val project = parseXml(pom)
             val parent = project.child("parent")
             val managed = project.child("dependencyManagement")?.child("dependencies")
                 ?.children("dependency")
@@ -62,14 +60,5 @@ class Pom(
                 managedDependencies = managed,
             )
         }
-
-        private fun Element.children(name: String): List<Element> {
-            val nodes = childNodes
-            return (0 until nodes.length).map(nodes::item).filterIsInstance<Element>().filter { it.tagName == name }
-        }
-
-        private fun Element.child(name: String): Element? = children(name).firstOrNull()
-
-        private fun Element.text(name: String): String? = child(name)?.textContent?.trim()
     }
 }
