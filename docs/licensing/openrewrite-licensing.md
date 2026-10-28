@@ -65,6 +65,6 @@ That being said, it's possible for places to reach out and negotiate this – wh
 
 ## References
 
-* [OpenRewrite licensing by repository](../reference/latest-versions-of-every-openrewrite-module.md)
+* [OpenRewrite licensing by repository](https://docs.moderne.io/user-documentation/recipes/lists/latest-versions-of-every-openrewrite-module)
 * [Moderne Proprietary License](https://docs.moderne.io/licensing/overview)
 * [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license)

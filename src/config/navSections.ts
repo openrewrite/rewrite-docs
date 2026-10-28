@@ -88,7 +88,7 @@ const ALL_RELEASES_HREF = '/changelog';
 /** Right-aligned dropdown, mirroring Releases on docs.moderne.io. */
 export const releaseSections: NavSection[] = [
   { name: 'Changelog', href: ALL_RELEASES_HREF },
-  { name: 'Latest versions', href: '/reference/latest-versions-of-every-openrewrite-module' },
+  { name: 'Latest versions', href: 'https://docs.moderne.io/user-documentation/recipes/lists/latest-versions-of-every-openrewrite-module' },
 ];
 
 /** The drawer's sections, where the secondary nav is hidden: the same links, with
