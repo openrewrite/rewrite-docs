@@ -20,7 +20,6 @@ export type NavSection = {
 export const primarySections: NavSection[] = [
   { name: 'Running Recipes', href: '/running-recipes' },
   { name: 'Authoring Recipes', href: '/authoring-recipes' },
-  { name: 'Recipe catalog', href: '/recipes' },
   { name: 'Reference', href: '/reference' },
   { name: 'Concepts & explanations', href: '/concepts-explanations' },
 ];

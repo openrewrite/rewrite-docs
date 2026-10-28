@@ -4,7 +4,7 @@ We encourage you to contribute to our docs! Please feel free to create an issue 
 
 We use [Docusaurus](https://docusaurus.io/) to manage our documentation. When any changes are merged into this directory, a build is kicked off to update the docs. Please see the [OpenRewrite contributing guide](https://github.com/openrewrite/.github/blob/main/CONTRIBUTING.md) for detailed instructions on how to get started.
 
-Recipe docs under `docs/recipes` were auto-generated and are moving to the Code Genome Project, so please don't edit them here. See the [README](./README.md#recipe-docs) for details.
+Recipe docs live in the [Code Genome Project](https://codegenomeproject.org/recipes), not here. See the [README](./README.md#recipe-docs) for details.
 
 ## Writing standards
 

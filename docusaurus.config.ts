@@ -5,6 +5,7 @@ import remarkTokenReplacer from "./src/plugins/replace-tokens";
 import latestVersions from "./src/plugins/latest-versions";
 import { removedChangelogPages } from "./src/config/removedChangelogPages";
 import { removedListPages } from "./src/config/removedListPages";
+import recipeCatalogRedirects from "./src/config/recipe-catalog-redirects.json";
 
 const description = "Large-scale automated source code refactoring"
 
@@ -153,11 +154,14 @@ const config: Config = {
       {
         redirects: [
           { from: removedChangelogPages, to: '/changelog' },
-          { from: removedListPages, to: '/recipes' },
+          { from: removedListPages, to: 'https://codegenomeproject.org/recipes' },
           {
             from: '/reference/latest-versions-of-every-openrewrite-module',
             to: 'https://docs.moderne.io/user-documentation/recipes/lists/latest-versions-of-every-openrewrite-module',
           },
+          // The recipe catalog moved to the Code Genome Project: each recipe page redirects to the
+          // same recipe there by recipe ID, and each category page to a search on its package.
+          ...(recipeCatalogRedirects as { from: string | string[]; to: string }[]),
         ],
       },
     ],
@@ -209,12 +213,6 @@ const config: Config = {
       appId: "8XDBE5G3ZV",
       apiKey: "14363fc8de10ed3d1785fe6d17a92631",
       indexName: "openrewrite",
-    },
-    announcementBar: {
-      id: "moderne_recipe_catalog",
-      content:
-        '<strong>Moderne customer?</strong> <a href="https://docs.moderne.io/user-documentation/recipes/recipe-catalog" target="_blank" rel="noopener">Use the Moderne recipe catalog instead.</a>',
-      isCloseable: true,
     },
     image: "img/moderne-poster-logo.svg",
     colorMode: {
