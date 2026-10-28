@@ -16,12 +16,7 @@ repositories {
 }
 
 val recipeBomGroups = setOf("org.openrewrite", "org.openrewrite.recipe", "io.moderne.recipe")
-val nonRecipeBomModules = setOf(
-    "org.openrewrite:plugin",
-    "org.openrewrite:rewrite-test",
-    // Deprecated, but still managed by moderne-recipe-bom
-    "org.openrewrite.recipe:rewrite-ai-search",
-)
+val nonRecipeBomModules = setOf("org.openrewrite:plugin", "org.openrewrite:rewrite-test")
 // Parsers, Lombok support and test harness for rewrite-java
 val javaSupportModule = Regex("org\\.openrewrite:rewrite-java-.+")
 val modulesOutsideBom = setOf("io.moderne.recipe:rewrite-cve-2026-22732")
