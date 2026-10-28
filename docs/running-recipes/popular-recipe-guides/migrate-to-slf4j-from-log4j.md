@@ -24,7 +24,7 @@ In this guide, we'll use OpenRewrite to perform an automated migration from Apac
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_LOGGING_FRAMEWORKS"
 />
 
-For the full list of changes this recipe will make, see the [recipe reference page](../../recipes/java/logging/slf4j/log4jtoslf4j.md).
+For the full list of changes this recipe will make, see the [recipe reference page](https://codegenomeproject.org/recipes/org.openrewrite.java.logging.slf4j.Log4jToSlf4j).
 
 Once you've configured your project, you're ready to execute the migration by running `mvn rewrite:run` or `gradlew rewriteRun`. After running the migration you can inspect the results with `git diff` (or equivalent), manually fix anything that wasn't able to be migrated automatically, and commit the results.
 
@@ -34,7 +34,7 @@ Similar to the [`SLF4J Migrator`](http://www.slf4j.org/migrator.html), the goal 
 
 ### `.toString()`
 
-Because `Log4j` logging statements are automatically migrated to use the [`SLF4J Parameterized Logging` equivalent](http://www.slf4j.org/faq.html#logging\_performance) (see ["Use SLF4J Parameterized Logging"](../../recipes/java/logging/slf4j/parameterizedlogging.md)), messages of type `String` are supported. Therefore, there is no need to add a `.toString()` method invocation on the object.
+Because `Log4j` logging statements are automatically migrated to use the [`SLF4J Parameterized Logging` equivalent](http://www.slf4j.org/faq.html#logging\_performance) (see ["Use SLF4J Parameterized Logging"](https://codegenomeproject.org/recipes/org.openrewrite.java.logging.slf4j.ParameterizedLogging)), messages of type `String` are supported. Therefore, there is no need to add a `.toString()` method invocation on the object.
 
 <Tabs>
 <TabItem value="object-parameters-before" label="Object Parameters (Before)">
@@ -186,7 +186,7 @@ class Example {
 </TabItem>
 </Tabs>
 
-For the full list of changes, see the recipe's [reference documentation](../../recipes/java/logging/slf4j/parameterizedlogging.md).
+For the full list of changes, see the recipe's [reference documentation](https://codegenomeproject.org/recipes/org.openrewrite.java.logging.slf4j.ParameterizedLogging).
 
 ## Known Limitations
 

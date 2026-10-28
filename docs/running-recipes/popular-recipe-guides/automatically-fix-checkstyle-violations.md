@@ -54,7 +54,7 @@ The Gradle snippets below carry those credentials inline. For Maven, they go in 
 
 ### With Checkstyle Plugin
 
-If your build uses either the Gradle or Maven checkstyle plugins, then good news, the OpenRewrite build plugins will detect that and automatically match their configuration. All that remains is to activate the [Code cleanup](../../recipes/staticanalysis/codecleanup.md) recipe:
+If your build uses either the Gradle or Maven checkstyle plugins, then good news, the OpenRewrite build plugins will detect that and automatically match their configuration. All that remains is to activate the [Code cleanup](https://codegenomeproject.org/recipes/org.openrewrite.staticanalysis.CodeCleanup) recipe:
 
 <Tabs groupId="projectType">
 	<TabItem value="maven" label="Maven">

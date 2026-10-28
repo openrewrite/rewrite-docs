@@ -30,7 +30,7 @@ At this point, you're ready to execute the migration by running `mvn rewrite:run
 
 ## Before and After
 
-For the full list of changes, this recipe will make, see its [reference page](../../recipes/java/testing/assertj/junittoassertj.md).
+For the full list of changes, this recipe will make, see its [reference page](https://codegenomeproject.org/recipes/org.openrewrite.java.testing.assertj.JUnitToAssertj).
 
 <Tabs>
 <TabItem value="junit-assert-test-class-before" label="JUnit Assert Test Class (Before)">

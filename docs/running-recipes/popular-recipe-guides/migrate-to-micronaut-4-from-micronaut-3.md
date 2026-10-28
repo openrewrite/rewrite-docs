@@ -23,7 +23,7 @@ If you want to learn more about the process that went into developing these reci
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MICRONAUT"
 />
 
-For the full list of changes this recipe will make, see the [recipe reference page](../../recipes/java/micronaut/micronaut3to4migration.md).
+For the full list of changes this recipe will make, see the [recipe reference page](https://codegenomeproject.org/recipes/org.openrewrite.java.micronaut.Micronaut3to4Migration).
 
 Once you've configured your project, you're ready to execute the migration by running `mvn rewrite:run` or `gradlew rewriteRun`. After running the migration you can inspect the results with `git diff` (or equivalent), manually fix anything that wasn't able to be migrated automatically, and commit the results.
 

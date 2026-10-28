@@ -53,17 +53,17 @@ Replace `USERNAME` with the email or username you signed in to the Code Genome P
 If the recipe you're trying to run does not have any required configuration parameters, then you can run the recipe by executing a shell command.
 
 :::tip
-Our [recipe documentation](/recipes) includes the specific shell commands to run for any recipe without configuration parameters. You may find it easier to copy and run the provided command instead of manually creating it.
+Our [recipe documentation](https://codegenomeproject.org/recipes) includes the specific shell commands to run for any recipe without configuration parameters. You may find it easier to copy and run the provided command instead of manually creating it.
 :::
 
-If the recipe comes from the [core Rewrite library](https://github.com/openrewrite/rewrite) (such as with [Remove Unused Imports](../recipes/java/removeunusedimports.md)) then you can run the following command and replace `org.openrewrite.java.RemoveUnusedImports` with the path to the recipe you're wanting to run: 
+If the recipe comes from the [core Rewrite library](https://github.com/openrewrite/rewrite) (such as with [Remove Unused Imports](https://codegenomeproject.org/recipes/org.openrewrite.java.RemoveUnusedImports)) then you can run the following command and replace `org.openrewrite.java.RemoveUnusedImports` with the path to the recipe you're wanting to run: 
 
 ```shell
 mvn -U org.openrewrite.maven:rewrite-maven-plugin:{{VERSION_REWRITE_MAVEN_PLUGIN}}:run \
   -Drewrite.activeRecipes=org.openrewrite.java.RemoveUnusedImports
 ```
 
-If the recipe comes from a different library (such as with [Migrate from Jackson 2.x to Jackson 3.x](../recipes/java/jackson/upgradejackson_2_3.md)) then you can run the following command and replace `org.openrewrite.recipe:rewrite-jackson:RELEASE` with the artifact coordinates of your recipe and `org.openrewrite.java.jackson.UpgradeJackson_2_3` with the path to the recipe you're wanting to run:
+If the recipe comes from a different library (such as with [Migrate from Jackson 2.x to Jackson 3.x](https://codegenomeproject.org/recipes/org.openrewrite.java.jackson.UpgradeJackson_2_3)) then you can run the following command and replace `org.openrewrite.recipe:rewrite-jackson:RELEASE` with the artifact coordinates of your recipe and `org.openrewrite.java.jackson.UpgradeJackson_2_3` with the path to the recipe you're wanting to run:
 
 ```shell
 mvn -U org.openrewrite.maven:rewrite-maven-plugin:{{VERSION_REWRITE_MAVEN_PLUGIN}}:run \
@@ -80,7 +80,7 @@ If the recipe you're trying to run has configuration parameters, then you will n
 1. [Create or update a `rewrite.yml` file in your project root](../running-recipes/getting-started.md#step-5-run-a-recipe-with-yaml-configuration). In there, you will need to create a new recipe that wraps the recipe you want to run and specifies the parameters you want to use.
 2. Run a shell command that executes the new recipe you've defined in step 1.
 
-For instance, if you wanted to run the [ChangePackage recipe](../recipes/java/changepackage.md) to change `org.old.package.name` to `org.new.package.name`, you would need to create a `rewrite.yml` file that looks like this: 
+For instance, if you wanted to run the [ChangePackage recipe](https://codegenomeproject.org/recipes/org.openrewrite.java.ChangePackage) to change `org.old.package.name` to `org.new.package.name`, you would need to create a `rewrite.yml` file that looks like this: 
 
 ```yaml
 ---
@@ -102,7 +102,7 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:{{VERSION_REWRITE_MAVEN_PLUGIN
 
 While the preferred way to configure recipes is through a `rewrite.yml` file, it is possible to pass configuration parameters directly from the command line. However, this only works when running a _single_ recipe.
 
-For example, to run the [AddCommentToMethod](../recipes/java/addcommenttomethod.md) recipe without modifying your `pom.xml`, you can use the following command:
+For example, to run the [AddCommentToMethod](https://codegenomeproject.org/recipes/org.openrewrite.java.AddCommentToMethod) recipe without modifying your `pom.xml`, you can use the following command:
 
 ```shell
 mvn org.openrewrite.maven:rewrite-maven-plugin:{{VERSION_REWRITE_MAVEN_PLUGIN}}:run \

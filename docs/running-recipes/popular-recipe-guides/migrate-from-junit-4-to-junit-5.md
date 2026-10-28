@@ -16,7 +16,7 @@ In this tutorial, we'll use OpenRewrite to perform an automated migration from t
 
 ## Example Configuration
 
-If your project is a Spring or Spring-Boot project, activate the [SpringBoot2JUnit4to5Migration](../../recipes/java/spring/boot2/springboot2junit4to5migration.md) recipe:
+If your project is a Spring or Spring-Boot project, activate the [SpringBoot2JUnit4to5Migration](https://codegenomeproject.org/recipes/org.openrewrite.java.spring.boot2.SpringBoot2JUnit4to5Migration) recipe:
 
 <RunRecipe
   recipeName="org.openrewrite.java.spring.boot2.SpringBoot2JUnit4to5Migration"
@@ -30,7 +30,7 @@ If your project is a Spring or Spring-Boot project, activate the [SpringBoot2JUn
 `SpringBoot2JUnit4to5Migration` is a superset of the normal JUnit 4 to JUnit Jupiter and Mockito 1 to 3 recipes, with some additional Spring-specific functionality. If you activate this recipe it is not necessary to also activate the base JUnit or Mockito migration recipes.
 :::
 
-If your project is _not_ a Spring or Spring-Boot project, activate the [JUnit5BestPractices](../../recipes/java/testing/junit5/junit5bestpractices.md) recipe:
+If your project is _not_ a Spring or Spring-Boot project, activate the [JUnit5BestPractices](https://codegenomeproject.org/recipes/org.openrewrite.java.testing.junit5.JUnit5BestPractices) recipe:
 
 <RunRecipe
   recipeName="org.openrewrite.java.testing.junit5.JUnit5BestPractices"
@@ -44,7 +44,7 @@ At this point, you're ready to execute the migration by running `mvn rewrite:run
 
 ## Before and After
 
-For the full list of changes, this recipe will make, see its [reference page](../../recipes/java/testing/junit5/junit5bestpractices.md).
+For the full list of changes, this recipe will make, see its [reference page](https://codegenomeproject.org/recipes/org.openrewrite.java.testing.junit5.JUnit5BestPractices).
 
 <Tabs>
 <TabItem value="junit-4-test-class-before" label="JUnit 4 Test Class (Before)">

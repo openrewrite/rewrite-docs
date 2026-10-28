@@ -1,4 +1,4 @@
-/** Routes of the generated recipe lists, which the recipe catalog replaced. */
+/** Routes of the generated recipe lists, which the Code Genome Project catalog replaced. */
 export const removedListPages = [
   '/lists',
   '/reference/all-recipes',

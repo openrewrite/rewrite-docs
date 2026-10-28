@@ -15,7 +15,7 @@ In this guide we'll look at using OpenRewrite to perform an automated remediatio
 
 ### Example configuration
 
-The [Common Static Analysis Recipe](../../recipes/staticanalysis/commonstaticanalysis.md) consists of more than 50 types of issues and can be applied by including OpenRewrite's plugin to your project and configuring the recipe:
+The [Common Static Analysis Recipe](https://codegenomeproject.org/recipes/org.openrewrite.staticanalysis.CommonStaticAnalysis) consists of more than 50 types of issues and can be applied by including OpenRewrite's plugin to your project and configuring the recipe:
 
 <RunRecipe
   recipeName="org.openrewrite.staticanalysis.CommonStaticAnalysis"
@@ -29,7 +29,7 @@ At this point, you're ready to fix common static analysis issues by running `mvn
 
 ### Before and After
 
-For the full list of changes this recipe will make, see its [reference page](../../recipes/staticanalysis/commonstaticanalysis.md).
+For the full list of changes this recipe will make, see its [reference page](https://codegenomeproject.org/recipes/org.openrewrite.staticanalysis.CommonStaticAnalysis).
 
 #### Use explicit types on lambda arguments
 

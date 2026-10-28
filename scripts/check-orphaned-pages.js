@@ -117,6 +117,7 @@ const categorySlugs = new Set(
     .map(normalize),
 );
 for (const section of new Set([...primarySections, ...mobileSections])) {
+  if (section.href.startsWith('http')) continue; // external sections have no sidebar subtree
   if (!categorySlugs.has(normalize(section.href))) {
     problems.push(
       `Nav section '${section.name}' links to ${section.href}, which matches no top-level category slug in sidebars.ts.`,

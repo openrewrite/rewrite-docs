@@ -23,7 +23,7 @@ In this tutorial, we'll use OpenRewrite to perform an automated migration to [Ja
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA"
 />
 
-For the full list of changes this recipe will make, see the [recipe reference page](../../recipes/java/migrate/jakarta/jakartaee10.md).
+For the full list of changes this recipe will make, see the [recipe reference page](https://codegenomeproject.org/recipes/org.openrewrite.java.migrate.jakarta.JakartaEE10).
 
 Once you've configured your project, you're ready to execute the migration by running `mvn rewrite:run` or `gradlew rewriteRun`. After running the migration you can inspect the results with `git diff` (or equivalent), manually fix anything that wasn't able to be migrated automatically, and commit the results.
 

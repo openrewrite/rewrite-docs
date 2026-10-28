@@ -23,7 +23,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_TESTING_FRAMEWORKS"
 />
 
-For the full list of changes this recipe will make, see the [reference page](../../recipes/java/testing/assertj/assertj-best-practices.md).
+For the full list of changes this recipe will make, see the [reference page](https://codegenomeproject.org/recipes/org.openrewrite.java.testing.assertj.Assertj).
 
 # Before and After
 

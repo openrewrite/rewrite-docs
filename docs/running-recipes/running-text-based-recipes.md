@@ -8,7 +8,7 @@ import TabItem from '@theme/TabItem';
 
 # Running text based recipes
 
-[Text recipes](https://docs.openrewrite.org/recipes/text) are recipes that forego the [Lossless Semantic Tree](../concepts-and-explanations/lossless-semantic-trees.md) (LST) in favor of interacting with text directly. **In almost every situation, this is not what you want to do.** This is because running a text recipe against any file that could be parsed into an LST will convert said file into a plain text file and you will no longer be able to run non-text recipes against the file.
+[Text recipes](https://codegenomeproject.org/recipes?q=org.openrewrite.text) are recipes that forego the [Lossless Semantic Tree](../concepts-and-explanations/lossless-semantic-trees.md) (LST) in favor of interacting with text directly. **In almost every situation, this is not what you want to do.** This is because running a text recipe against any file that could be parsed into an LST will convert said file into a plain text file and you will no longer be able to run non-text recipes against the file.
 
 With that being said, there _are_ some situations where you may want to do this. For example, you may want to automate replacing the base images in your Dockerfiles as part of running a Java upgrade. As Dockerfiles are not parsed into an LST, modifying them with text recipes won't cause any harm.
 
@@ -36,7 +36,7 @@ CMD ["./mvnw", "spring-boot:run"]
 
 The `rewrite.yml` file will be where we'll define our recipe for updating the base image. In the below example, you can see that we are looking for the exact text of `eclipse-temurin:17-jdk-jammy` in files that match exactly `Dockerfile`. There are many options for this recipe and most of the options allow for regex to increase the flexibility of the recipe.
 
-You can find all of the options for the `FindAndReplace` recipe in the [find and replace recipe doc](../recipes/text/findandreplace.md).
+You can find all of the options for the `FindAndReplace` recipe in the [find and replace recipe doc](https://codegenomeproject.org/recipes/org.openrewrite.text.FindAndReplace).
 
 ```yaml
 ---

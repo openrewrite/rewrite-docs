@@ -23,7 +23,7 @@ In this guide, we'll walk you through how to do this.
 
 ## Customizing a recipe
 
-For the sake of this guide, let's assume that you took a look at the [Common static analysis issues recipe](../recipes/staticanalysis/commonstaticanalysis.md) and decided that you don't like the fact that it [disallows multiple variables from being declared on the same line](../recipes/staticanalysis/multiplevariabledeclarations.md). You want to remove that recipe from the list of recipes being executed – but you still want to run all of the other ones.
+For the sake of this guide, let's assume that you took a look at the [Common static analysis issues recipe](https://codegenomeproject.org/recipes/org.openrewrite.staticanalysis.CommonStaticAnalysis) and decided that you don't like the fact that it [disallows multiple variables from being declared on the same line](https://codegenomeproject.org/recipes/org.openrewrite.staticanalysis.MultipleVariableDeclarations). You want to remove that recipe from the list of recipes being executed – but you still want to run all of the other ones.
 
 To edit this recipe, we'll take advantage of the [Moderne recipe builder](https://docs.moderne.io/user-documentation/moderne-platform/how-to-guides/new-recipe-builder/).
 
@@ -95,7 +95,7 @@ You can then run it as you would any other OpenRewrite recipe.
 
 ## Breaking apart recipes
 
-In some situations, you may find that a recipe would change more than what you'd like to commit to. For instance, let's consider the [Migrate to Spring Boot 3.3 recipe](../recipes/java/spring/boot3/upgradespringboot_3_3.md). This recipe is quite complex and is composed of 2682 other recipes:
+In some situations, you may find that a recipe would change more than what you'd like to commit to. For instance, let's consider the [Migrate to Spring Boot 3.3 recipe](https://codegenomeproject.org/recipes/org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_3). This recipe is quite complex and is composed of 2682 other recipes:
 
 <figure>
   ![](./assets/spring-boot-visual.png)
@@ -109,7 +109,7 @@ In some situations, you may find that a recipe would change more than what you'd
 
 Rather than running all of these recipes at once, you may find it beneficial to look through the recipe list and run some of the smaller recipes first. By doing so, you can reduce the scope of issues that may arise, and make it easier for people to review/merge in changes.
 
-Imagine you have a Java 11 project using JUnit 4 and Spring Boot 2.3. If you ran the Spring Boot 3.3 recipe, your project would be [migrated to Java 17](../recipes/java/migrate/upgradebuildtojava17.md) and [JUnit 4 would be upgraded to JUnit 5](../recipes/java/spring/boot2/springboot2junit4to5migration.md) (among other things). Those are both substantial upgrades on their own - so you may want to consider running _just_ one of those recipes to begin.
+Imagine you have a Java 11 project using JUnit 4 and Spring Boot 2.3. If you ran the Spring Boot 3.3 recipe, your project would be [migrated to Java 17](https://codegenomeproject.org/recipes/org.openrewrite.java.migrate.UpgradeBuildToJava17) and [JUnit 4 would be upgraded to JUnit 5](https://codegenomeproject.org/recipes/org.openrewrite.java.spring.boot2.SpringBoot2JUnit4to5Migration) (among other things). Those are both substantial upgrades on their own - so you may want to consider running _just_ one of those recipes to begin.
 
 For some of the more popular recipes (such as the two mentioned above), we have [guides that give additional context and walk you through all that you need to do](./popular-recipe-guides/migrate-to-java-17.md).
 

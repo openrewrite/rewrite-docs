@@ -2,35 +2,6 @@
   --docusaurus-announcement-bar-height: auto;
 }
 
-.announcementBar {
-  display: flex;
-  align-items: center;
-  /* min-height, not height: wrapped text grows the bar instead of spilling out
-     of it and colliding with the navbar. */
-  min-height: var(--docusaurus-announcement-bar-height);
-  background-color: var(--ifm-color-announcement-bar-bg);
-  color: var(--ifm-color-announcement-bar-text);
-
-  /*
-  Unfortunately we can't make announcement bar render above the navbar
-  IE need to use border-bottom instead of shadow
-  See https://github.com/facebookincubator/infima/issues/275
-
-  box-shadow: var(--ifm-global-shadow-lw);
-  z-index: calc(var(--ifm-z-index-fixed) + 1);
-  */
-  border-bottom: 1px solid var(--ifm-color-emphasis-100);
-}
-
-html[data-announcement-bar-initially-dismissed='true'] .announcementBar {
-  display: none;
-}
-
-/*
-Mirrors .announcementBar, but kept as a separate class so the recipe-catalog
-bar's dismissal (data-announcement-bar-initially-dismissed) never hides the
-notice bar. Its own attribute is set by the inline head script for no flash.
-*/
 .noticeBar {
   display: flex;
   align-items: center;
@@ -46,8 +17,8 @@ html[data-notice-bar-dismissed='true'] .noticeBar {
   display: none;
 }
 
-/* Matches AnnouncementBar/Content's .content so the notice bar reads the same,
-   plus a tighter line-height so a two-line wrap stays compact. */
+/* Matches the stock announcement bar content, plus a tighter line-height so a
+   two-line wrap stays compact. */
 .noticeBarContent {
   flex: 1 1 auto;
   font-size: 85%;
@@ -70,12 +41,7 @@ html[data-notice-bar-dismissed='true'] .noticeBar {
   align-self: stretch;
 }
 
-.announcementBarContent {
-  flex: 1 1 auto;
-}
-
 @media print {
-  .announcementBar,
   .noticeBar {
     display: none;
   }

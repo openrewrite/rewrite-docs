@@ -20,7 +20,9 @@ export type NavSection = {
 export const primarySections: NavSection[] = [
   { name: 'Running Recipes', href: '/running-recipes' },
   { name: 'Authoring Recipes', href: '/authoring-recipes' },
-  { name: 'Recipe catalog', href: '/recipes' },
+  // External: the catalog lives in the Code Genome Project. The sidebar's own link
+  // to it is scoped away on desktop (DocSidebarItems), so the nav is its only home.
+  { name: 'Recipe catalog', href: 'https://codegenomeproject.org/recipes' },
   { name: 'Reference', href: '/reference' },
   { name: 'Concepts & explanations', href: '/concepts-explanations' },
 ];
