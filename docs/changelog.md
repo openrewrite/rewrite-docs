@@ -8,6 +8,145 @@ Each release of the [rewrite-recipe-bom](https://github.com/openrewrite/rewrite-
 These are the release notes of the modules that changed in each release over the past year, taken from their GitHub releases.
 For the current version of each module, see the [latest versions of every OpenRewrite module](https://docs.moderne.io/user-documentation/recipes/lists/latest-versions-of-every-openrewrite-module).
 
+## [rewrite-recipe-bom 3.44.0](https://github.com/openrewrite/rewrite-recipe-bom/releases/tag/v3.44.0)
+
+Released on October 28, 2026, with OpenRewrite 8.96.0.
+
+#### [rewrite 8.96.0](https://github.com/openrewrite/rewrite/releases/tag/v8.96.0)
+
+* Stop loading recipe examples and maintainers by @timtebeek in [#9449](https://github.com/openrewrite/rewrite/pull/9449)
+* Keep the types of the parsers a test builds in a HashMap by @knutwannheden in [#9450](https://github.com/openrewrite/rewrite/pull/9450)
+* Go: Keep RPC memory flat across a recipe run by evicting the trees received from Java by @greg-at-moderne in [#9442](https://github.com/openrewrite/rewrite/pull/9442)
+* Go: report the registered source file type of every tree a scanning recipe generates by @greg-at-moderne in [#9443](https://github.com/openrewrite/rewrite/pull/9443)
+* Python: RPC explicit failure for GetObject when it  cannot serialize the tree by @greg-at-moderne in [#9445](https://github.com/openrewrite/rewrite/pull/9445)
+* C#: pin Nerdbank.MessagePack to 1.3.88 for GHSA-grf3-jgmf-2g5j by @knutwannheden in [#9451](https://github.com/openrewrite/rewrite/pull/9451)
+* Xml: reject closing tags that do not match their opening tag by @timtebeek in [#9261](https://github.com/openrewrite/rewrite/pull/9261)
+* Go: bump golang.org/x/mod and klauspost/compress past published advisories by @knutwannheden in [#9453](https://github.com/openrewrite/rewrite/pull/9453)
+* Python: remove unused `PySpace.SpaceBuilder` by @greg-at-moderne in [#9452](https://github.com/openrewrite/rewrite/pull/9452)
+* Go: send nil lists as empty lists where the J model declares them non-null by @knutwannheden in [#9454](https://github.com/openrewrite/rewrite/pull/9454)
+* Python: build the dependency env with Python 3.8 or 3.9 when a project allows nothing newer by @knutwannheden in [#9455](https://github.com/openrewrite/rewrite/pull/9455)
+* Use returned values instead of discarding them under `@CheckReturnValue` by @timtebeek in [#9394](https://github.com/openrewrite/rewrite/pull/9394)
+* Scala: same-named locals in one method keep their own types by @greg-at-moderne in [#9456](https://github.com/openrewrite/rewrite/pull/9456)
+* Cache unsupported Maven repository normalization results by @Shubchynskyi in [#9235](https://github.com/openrewrite/rewrite/pull/9235)
+* Go: handle deleted and scanned files the same way on both RPC visit paths by @greg-at-moderne in [#9462](https://github.com/openrewrite/rewrite/pull/9462)
+* Honor Gradle AddDependency's acceptTransitive option by @knutwannheden in [#9457](https://github.com/openrewrite/rewrite/pull/9457)
+* Describe which dropped parent management UpgradeParentVersion retains by @timtebeek in [#9463](https://github.com/openrewrite/rewrite/pull/9463)
+
+#### [rewrite-all 1.33.0](https://github.com/openrewrite/rewrite-all/releases/tag/v1.33.0)
+
+* Dedupe FindCallGraph low-confidence rows on the source file's cursor by @timtebeek in [#50](https://github.com/openrewrite/rewrite-all/pull/50)
+
+#### [rewrite-apache 2.37.0](https://github.com/openrewrite/rewrite-apache/releases/tag/v2.37.0)
+
+* Move adjacent literal StringEntity content encoding into its constructor by @jkschneider in [#163](https://github.com/openrewrite/rewrite-apache/pull/163)
+* Compare types with TypeUtils.isOfType instead of JavaType.equals by @knutwannheden in [#164](https://github.com/openrewrite/rewrite-apache/pull/164)
+* Resolve commons-lang3 from the type table in SystemUtilsIsJavaVersionAtLeastToJavaVersion by @timtebeek in [#165](https://github.com/openrewrite/rewrite-apache/pull/165)
+
+#### [rewrite-hibernate 2.30.0](https://github.com/openrewrite/rewrite-hibernate/releases/tag/v2.30.0)
+
+* Resolve XML namespaces through rewrite-xml's Namespaced trait by @knutwannheden in [#117](https://github.com/openrewrite/rewrite-hibernate/pull/117)
+
+#### [rewrite-jackson 1.34.0](https://github.com/openrewrite/rewrite-jackson/releases/tag/v1.34.0)
+
+* Compare types with TypeUtils.isOfType instead of JavaType.equals by @knutwannheden in [#185](https://github.com/openrewrite/rewrite-jackson/pull/185)
+* Move Codehaus Jackson 1.x test jars to type tables by @timtebeek in [#186](https://github.com/openrewrite/rewrite-jackson/pull/186)
+
+#### [rewrite-java-dependencies 1.67.0](https://github.com/openrewrite/rewrite-java-dependencies/releases/tag/v1.67.0)
+
+* Order versions with core's Version in FindMinimum* recipes (A5 of #211) by @timtebeek in [#223](https://github.com/openrewrite/rewrite-java-dependencies/pull/223)
+* Key FindMinimumJUnitVersion on JUnit major version and answer per module (A6 of #211) by @timtebeek in [#224](https://github.com/openrewrite/rewrite-java-dependencies/pull/224)
+* Keep optional and classifier dependencies in RemoveRedundantDependencies (B1, B3 of #211) by @timtebeek in [#225](https://github.com/openrewrite/rewrite-java-dependencies/pull/225)
+* Move guava, logback-classic and slf4j-nop test dependencies to a test type table by @timtebeek in [#226](https://github.com/openrewrite/rewrite-java-dependencies/pull/226)
+
+#### [rewrite-jenkins 0.41.0](https://github.com/openrewrite/rewrite-jenkins/releases/tag/v0.41.0)
+
+* Move test-only parser jars to a test type table by @timtebeek in [#119](https://github.com/openrewrite/rewrite-jenkins/pull/119)
+
+#### [rewrite-logging-frameworks 3.37.0](https://github.com/openrewrite/rewrite-logging-frameworks/releases/tag/v3.37.0)
+
+* Move test-only parser dependencies to type tables by @timtebeek in [#321](https://github.com/openrewrite/rewrite-logging-frameworks/pull/321)
+* Keep JUL varargs type on the method name and read log level checks under && and || by @timtebeek in [#322](https://github.com/openrewrite/rewrite-logging-frameworks/pull/322)
+
+#### [rewrite-mainframe 3.6.0](https://github.com/moderneinc/rewrite-mainframe/releases/tag/v3.6.0)
+
+* Share copybook trees and copied-word markers, so a COBOL LST takes 42% less heap by @knutwannheden in [#187](https://github.com/moderneinc/rewrite-mainframe/pull/187)
+
+#### [rewrite-maven-plugin 6.53.0](https://github.com/openrewrite/rewrite-maven-plugin/releases/tag/v6.53.0)
+
+* Activate codegenome profile for Moderne CLI builds by @timtebeek in [#1226](https://github.com/openrewrite/rewrite-maven-plugin/pull/1226)
+* Build KotlinIT's projects with Kotlin 2.4.21, which runs on JDK 25 by @jkschneider in [#1228](https://github.com/openrewrite/rewrite-maven-plugin/pull/1228)
+* Document every goal parameter and ship the HTML plugin descriptor by @timtebeek in [#1231](https://github.com/openrewrite/rewrite-maven-plugin/pull/1231)
+* Update rewrite-polyglot.version to 2.16.0-SNAPSHOT by @timtebeek in [#1232](https://github.com/openrewrite/rewrite-maven-plugin/pull/1232)
+
+#### [rewrite-micrometer 0.34.0](https://github.com/openrewrite/rewrite-micrometer/releases/tag/v0.34.0)
+
+* Resolve Misk and Kotlin types from the type table instead of test runtime jars by @timtebeek in [#45](https://github.com/openrewrite/rewrite-micrometer/pull/45)
+
+#### [rewrite-migrate-java 3.49.0](https://github.com/openrewrite/rewrite-migrate-java/releases/tag/v3.49.0)
+
+* Wrap test in rewriteRun and fix mismatched web.xml closing tags by @timtebeek in [#1380](https://github.com/openrewrite/rewrite-migrate-java/pull/1380)
+* Upgrade the Lombok version configured for the io.freefair.lombok Gradle plugin by @ds-xdev in [#1379](https://github.com/openrewrite/rewrite-migrate-java/pull/1379)
+
+#### [rewrite-netty 0.16.0](https://github.com/openrewrite/rewrite-netty/releases/tag/v0.16.0)
+
+* Move test-only parser dependencies to type tables by @timtebeek in [#25](https://github.com/openrewrite/rewrite-netty/pull/25)
+* Move test-only io_uring incubator parser dependency to a test type table by @timtebeek in [#26](https://github.com/openrewrite/rewrite-netty/pull/26)
+
+#### [rewrite-okhttp 0.28.0](https://github.com/openrewrite/rewrite-okhttp/releases/tag/v0.28.0)
+
+* Move okhttp test dependency to a test type table by @timtebeek in [#34](https://github.com/openrewrite/rewrite-okhttp/pull/34)
+
+#### [rewrite-openapi 0.38.0](https://github.com/openrewrite/rewrite-openapi/releases/tag/v0.38.0)
+
+* Move test-only parser dependencies to type tables by @timtebeek in [#85](https://github.com/openrewrite/rewrite-openapi/pull/85)
+* Move test-only jakarta.ws.rs-api parser dependency to the test type table by @timtebeek in [#86](https://github.com/openrewrite/rewrite-openapi/pull/86)
+
+#### [rewrite-pmd 0.4.0](https://github.com/openrewrite/rewrite-pmd/releases/tag/v0.4.0)
+
+* Fix assertion rule names in PMD 6 to 7 migration by @greg-at-moderne in [#6](https://github.com/openrewrite/rewrite-pmd/pull/6)
+* Deduplicate migrated PMD rule references while preserving configuration by @greg-at-moderne in [#7](https://github.com/openrewrite/rewrite-pmd/pull/7)
+
+#### [rewrite-prethink 1.9.0](https://github.com/openrewrite/rewrite-prethink/releases/tag/v1.9.0)
+
+* Declare the released CALM 1.3 schema instead of the 2025-03 draft by @timtebeek in [#41](https://github.com/openrewrite/rewrite-prethink/pull/41)
+
+#### [rewrite-quarkus 2.39.0](https://github.com/openrewrite/rewrite-quarkus/releases/tag/v2.39.0)
+
+* Move test-only Quarkus 1.13 parser jars to a test type table by @timtebeek in [#124](https://github.com/openrewrite/rewrite-quarkus/pull/124)
+
+#### [rewrite-rewrite 0.38.0](https://github.com/openrewrite/rewrite-rewrite/releases/tag/v0.38.0)
+
+* Compare types with TypeUtils.isOfType instead of JavaType.equals by @knutwannheden in [#112](https://github.com/openrewrite/rewrite-rewrite/pull/112)
+* Drop ReplaceStackWithDeque from OpenRewriteRecipeBestPractices, as it leaves rewrite-static-analysis by @jkschneider in [#111](https://github.com/openrewrite/rewrite-rewrite/pull/111)
+* Find ways recipes get past rewriteRun quality checks by @timtebeek in [#114](https://github.com/openrewrite/rewrite-rewrite/pull/114)
+* Remove examples.yml files instead of generating them by @timtebeek in [#115](https://github.com/openrewrite/rewrite-rewrite/pull/115)
+
+#### [rewrite-spring 6.44.0](https://github.com/openrewrite/rewrite-spring/releases/tag/v6.44.0)
+
+* Compare types with TypeUtils.isOfType or by identity instead of JavaType.equals by @knutwannheden in [#1232](https://github.com/openrewrite/rewrite-spring/pull/1232)
+* Move test-only parser dependencies to type tables by @timtebeek in [#1233](https://github.com/openrewrite/rewrite-spring/pull/1233)
+* Remove unused logback-classic test dependency by @timtebeek in [#1234](https://github.com/openrewrite/rewrite-spring/pull/1234)
+
+#### [rewrite-spring-to-quarkus 0.16.0](https://github.com/openrewrite/rewrite-spring-to-quarkus/releases/tag/v0.16.0)
+
+* Match only declared dependencies, and drop option keys the recipes ignore by @knutwannheden in [#97](https://github.com/openrewrite/rewrite-spring-to-quarkus/pull/97)
+* Restore the test-scope filter on H2TestDriverToQuarkus by @knutwannheden in [#98](https://github.com/openrewrite/rewrite-spring-to-quarkus/pull/98)
+* Move test-only parser jars to a test type table by @timtebeek in [#99](https://github.com/openrewrite/rewrite-spring-to-quarkus/pull/99)
+* Fix the smallrye-config-core coordinate, regenerate the main type table, and version-qualify the cdi-api lookups by @timtebeek in [#100](https://github.com/openrewrite/rewrite-spring-to-quarkus/pull/100)
+* Convert idiomatic Spring HealthIndicators to compilable MicroProfile Health code by @timtebeek in [#101](https://github.com/openrewrite/rewrite-spring-to-quarkus/pull/101)
+
+#### [rewrite-static-analysis 2.48.0](https://github.com/openrewrite/rewrite-static-analysis/releases/tag/v2.48.0)
+
+* Don't replace a call used as a statement with an expression that cannot stand alone by @knutwannheden in [#1162](https://github.com/openrewrite/rewrite-static-analysis/pull/1162)
+
+#### [rewrite-templating 1.49.0](https://github.com/openrewrite/rewrite-templating/releases/tag/v1.49.0)
+
+* Delete src/main/resources/META-INF/rewrite/examples.yml by @timtebeek in [#199](https://github.com/openrewrite/rewrite-templating/pull/199)
+
+#### [rewrite-testing-frameworks 3.52.0](https://github.com/openrewrite/rewrite-testing-frameworks/releases/tag/v3.52.0)
+
+* Move parser-only test jars to the test type table by @timtebeek in [#1253](https://github.com/openrewrite/rewrite-testing-frameworks/pull/1253)
+
 ## [rewrite-recipe-bom 3.43.0](https://github.com/openrewrite/rewrite-recipe-bom/releases/tag/v3.43.0)
 
 Released on October 27, 2026, with OpenRewrite 8.95.0.
