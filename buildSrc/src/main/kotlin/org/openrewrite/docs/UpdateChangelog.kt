@@ -31,7 +31,7 @@ abstract class UpdateChangelog : DefaultTask() {
     @TaskAction
     fun update() {
         val github = GitHub(githubToken.get())
-        val publishedAt = bomReleases(github).associate { it.version to it.publishedAt }
+        val bomReleases = bomReleases(github).associateBy { it.version }
         val repositories = modulePoms.map(Pom::parse)
             .associate { it.coordinates to it.repository.ifEmpty { REPOSITORIES_WITHOUT_SCM[it.coordinates].orEmpty() } }
 
@@ -43,8 +43,8 @@ abstract class UpdateChangelog : DefaultTask() {
                 }
                 .groupBy({ it.first }, { it.second })
                 .mapValues { (_, moduleVersions) -> moduleVersions.max() }
-            val version = Version.parse(pom.version)!!
-            BomRelease(version, publishedAt.getValue(version), versions)
+            val release = bomReleases.getValue(Version.parse(pom.version)!!)
+            BomRelease(release.version, release.url, release.publishedAt, versions)
         }.sortedBy { it.version }
 
         val publicRepositories = boms.flatMap { it.repositoryVersions.keys }.distinct().filter(github::isPublic)

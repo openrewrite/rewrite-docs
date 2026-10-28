@@ -5,6 +5,7 @@ import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 
 class ChangelogTest {
+    private val bom = "https://github.com/openrewrite/rewrite-recipe-bom"
     private val spring = "https://github.com/openrewrite/rewrite-spring"
 
     private fun version(version: String) = Version.parse(version)!!
@@ -15,14 +16,14 @@ class ChangelogTest {
     @Test
     fun listsTheReleasesBetweenConsecutiveBoms() {
         val boms = listOf(
-            BomRelease(version("3.41.0"), Instant.parse("2026-10-09T21:30:41Z"), mapOf(spring to version("6.41.0"))),
-            BomRelease(version("3.42.0"), Instant.parse("2026-10-27T02:14:09Z"), mapOf(spring to version("6.42.1"))),
+            BomRelease(version("3.41.0"), "$bom/releases/tag/v3.41.0", Instant.parse("2026-10-09T21:30:41Z"), mapOf(spring to version("6.41.0"))),
+            BomRelease(version("3.42.0"), "$bom/releases/tag/v3.42.0", Instant.parse("2026-10-27T02:14:09Z"), mapOf(spring to version("6.42.1"))),
         )
         val releases = mapOf(spring to listOf(release("6.43.0"), release("6.42.1"), release("6.42.0"), release("6.41.0")))
 
         assertThat(Changelog(boms, releases).markdown().substringAfter("## ")).isEqualTo(
             """
-            rewrite-recipe-bom 3.42.0
+            [rewrite-recipe-bom 3.42.0]($bom/releases/tag/v3.42.0)
 
             Released on October 27, 2026.
 

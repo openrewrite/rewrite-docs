@@ -8,7 +8,7 @@ Each release of the [rewrite-recipe-bom](https://github.com/openrewrite/rewrite-
 These are the release notes of the modules that changed in each release over the past year, taken from their GitHub releases.
 For the current version of each module, see the [latest versions of every OpenRewrite module](./reference/latest-versions-of-every-openrewrite-module.md).
 
-## rewrite-recipe-bom 3.43.0
+## [rewrite-recipe-bom 3.43.0](https://github.com/openrewrite/rewrite-recipe-bom/releases/tag/v3.43.0)
 
 Released on October 27, 2026, with OpenRewrite 8.95.0.
 
@@ -173,7 +173,7 @@ Released on October 27, 2026, with OpenRewrite 8.95.0.
 * Keep AssertToAssertions output stable after rewrite qualifies shadowed calls by @timtebeek in [#1254](https://github.com/openrewrite/rewrite-testing-frameworks/pull/1254)
 * Pin bare mockito-core type table lookups to a single Mockito major by @timtebeek in [#1255](https://github.com/openrewrite/rewrite-testing-frameworks/pull/1255)
 
-## rewrite-recipe-bom 3.42.0
+## [rewrite-recipe-bom 3.42.0](https://github.com/openrewrite/rewrite-recipe-bom/releases/tag/v3.42.0)
 
 Released on October 27, 2026, with OpenRewrite 8.94.0.
 
@@ -892,7 +892,7 @@ Released on October 27, 2026, with OpenRewrite 8.94.0.
 
 * Add rewrite-quarkus and rewrite-jackson as runtime dependencies by @timtebeek in [#107](https://github.com/openrewrite/rewrite-third-party/pull/107)
 
-## rewrite-recipe-bom 3.41.0
+## [rewrite-recipe-bom 3.41.0](https://github.com/openrewrite/rewrite-recipe-bom/releases/tag/v3.41.0)
 
 Released on October 9, 2026, with OpenRewrite 8.93.0.
 
@@ -1375,7 +1375,7 @@ Released on October 9, 2026, with OpenRewrite 8.93.0.
 * Skip JUnit 6 build changes in modules that use TestNG by @timtebeek in [#1177](https://github.com/openrewrite/rewrite-testing-frameworks/pull/1177)
 * ReplacePowerMockito: fix duplicate and shadowed Mockito dependencies by @sambsnyd in [#1176](https://github.com/openrewrite/rewrite-testing-frameworks/pull/1176)
 
-## rewrite-recipe-bom 3.40.0
+## [rewrite-recipe-bom 3.40.0](https://github.com/openrewrite/rewrite-recipe-bom/releases/tag/v3.40.0)
 
 Released on September 23, 2026, with OpenRewrite 8.92.8.
 
@@ -1640,7 +1640,7 @@ Released on September 23, 2026, with OpenRewrite 8.92.8.
 
 * Pass Code Genome Project credentials to aggregation workflows by @timtebeek in [#104](https://github.com/openrewrite/rewrite-third-party/pull/104)
 
-## rewrite-recipe-bom 3.39.0
+## [rewrite-recipe-bom 3.39.0](https://github.com/openrewrite/rewrite-recipe-bom/releases/tag/v3.39.0)
 
 Released on September 9, 2026, with OpenRewrite 8.92.1.
 
@@ -1956,7 +1956,7 @@ Released on September 9, 2026, with OpenRewrite 8.92.1.
 
 * Resolve org.openrewrite build plugins from the Code Genome Project by @kmccarp in [#103](https://github.com/openrewrite/rewrite-third-party/pull/103)
 
-## rewrite-recipe-bom 3.38.0
+## [rewrite-recipe-bom 3.38.0](https://github.com/openrewrite/rewrite-recipe-bom/releases/tag/v3.38.0)
 
 Released on August 26, 2026, with OpenRewrite 8.91.0.
 
@@ -2348,7 +2348,7 @@ Released on August 26, 2026, with OpenRewrite 8.91.0.
 * Bundle upstream `sh.stubborn:stubborn-contract-migration` recipes by @timtebeek in [#100](https://github.com/openrewrite/rewrite-third-party/pull/100)
 * Assert the resolved Stubborn Contract Maven plugin version by @timtebeek in [#101](https://github.com/openrewrite/rewrite-third-party/pull/101)
 
-## rewrite-recipe-bom 3.37.0
+## [rewrite-recipe-bom 3.37.0](https://github.com/openrewrite/rewrite-recipe-bom/releases/tag/v3.37.0)
 
 Released on August 12, 2026, with OpenRewrite 8.89.0.
 
@@ -2691,7 +2691,7 @@ Released on August 12, 2026, with OpenRewrite 8.89.0.
 
 * Suppress netty CVE-2026-56816 and jna JDK CPE false positives indefinitely by @timtebeek in [#94](https://github.com/openrewrite/rewrite-third-party/pull/94)
 
-## rewrite-recipe-bom 3.36.0
+## [rewrite-recipe-bom 3.36.0](https://github.com/openrewrite/rewrite-recipe-bom/releases/tag/v3.36.0)
 
 Released on July 29, 2026, with OpenRewrite 8.88.0.
 
@@ -3014,7 +3014,7 @@ Released on July 29, 2026, with OpenRewrite 8.88.0.
 * Raise jackson-databind resolution pin from 2.21.4 to 2.21.5 by @timtebeek in [#92](https://github.com/openrewrite/rewrite-third-party/pull/92)
 * Convert jackson-databind and httpcore5 version pins to floor-only constraints by @timtebeek in [#93](https://github.com/openrewrite/rewrite-third-party/pull/93)
 
-## rewrite-recipe-bom 3.35.0
+## [rewrite-recipe-bom 3.35.0](https://github.com/openrewrite/rewrite-recipe-bom/releases/tag/v3.35.0)
 
 Released on July 14, 2026, with OpenRewrite 8.87.0.
 
@@ -3265,7 +3265,7 @@ Released on July 14, 2026, with OpenRewrite 8.87.0.
 * Force jackson-databind to 2.21.4 to remediate CVE-2026-54512/54513 by @timtebeek in [#85](https://github.com/openrewrite/rewrite-third-party/pull/85)
 * Fix CVE-2026-54399 (Apache HttpComponents Core DoS) by @timtebeek in [#86](https://github.com/openrewrite/rewrite-third-party/pull/86)
 
-## rewrite-recipe-bom 3.34.0
+## [rewrite-recipe-bom 3.34.0](https://github.com/openrewrite/rewrite-recipe-bom/releases/tag/v3.34.0)
 
 Released on July 1, 2026, with OpenRewrite 8.86.0.
 
@@ -3592,7 +3592,7 @@ Released on July 1, 2026, with OpenRewrite 8.86.0.
 
 * Pin org.axonframework to 4.+ by @greg-at-moderne in [#80](https://github.com/openrewrite/rewrite-third-party/pull/80)
 
-## rewrite-recipe-bom 3.33.0
+## [rewrite-recipe-bom 3.33.0](https://github.com/openrewrite/rewrite-recipe-bom/releases/tag/v3.33.0)
 
 Released on June 17, 2026, with OpenRewrite 8.85.0.
 
@@ -3922,7 +3922,7 @@ Released on June 17, 2026, with OpenRewrite 8.85.0.
 
 * Renew expired OWASP suppressions to 2026-07-01 by @Jenson3210 in [#78](https://github.com/openrewrite/rewrite-third-party/pull/78)
 
-## rewrite-recipe-bom 3.32.0
+## [rewrite-recipe-bom 3.32.0](https://github.com/openrewrite/rewrite-recipe-bom/releases/tag/v3.32.0)
 
 Released on June 3, 2026, with OpenRewrite 8.84.0.
 
@@ -4244,7 +4244,7 @@ Released on June 3, 2026, with OpenRewrite 8.84.0.
 
 * Add rewrite-migrate-java to runtime classpath by @timtebeek in [#74](https://github.com/openrewrite/rewrite-third-party/pull/74)
 
-## rewrite-recipe-bom 3.31.0
+## [rewrite-recipe-bom 3.31.0](https://github.com/openrewrite/rewrite-recipe-bom/releases/tag/v3.31.0)
 
 Released on May 21, 2026, with OpenRewrite 8.83.0.
 
@@ -4618,7 +4618,7 @@ Released on May 21, 2026, with OpenRewrite 8.83.0.
 * Revert marketplace category descriptions by @timtebeek in [#72](https://github.com/openrewrite/rewrite-third-party/pull/72)
 * Suppress CVE-2026-42582: false positive on core Netty modules by @timtebeek in [#73](https://github.com/openrewrite/rewrite-third-party/pull/73)
 
-## rewrite-recipe-bom 3.30.1
+## [rewrite-recipe-bom 3.30.1](https://github.com/openrewrite/rewrite-recipe-bom/releases/tag/v3.30.1)
 
 Released on May 7, 2026, with OpenRewrite 8.81.6.
 
@@ -4927,7 +4927,7 @@ Released on May 7, 2026, with OpenRewrite 8.81.6.
 
 * OpenRewrite [v8.81.6](https://github.com/openrewrite/rewrite/releases/tag/v8.81.6)
 
-## rewrite-recipe-bom 3.30.0
+## [rewrite-recipe-bom 3.30.0](https://github.com/openrewrite/rewrite-recipe-bom/releases/tag/v3.30.0)
 
 Released on April 27, 2026, with OpenRewrite 8.81.0.
 
@@ -5098,7 +5098,7 @@ Released on April 27, 2026, with OpenRewrite 8.81.0.
 
 * OpenRewrite v8.81.0: https://github.com/openrewrite/rewrite/compare/v8.81.0...main
 
-## rewrite-recipe-bom 3.29.0
+## [rewrite-recipe-bom 3.29.0](https://github.com/openrewrite/rewrite-recipe-bom/releases/tag/v3.29.0)
 
 Released on April 21, 2026, with OpenRewrite 8.80.0.
 
@@ -5439,7 +5439,7 @@ Released on April 21, 2026, with OpenRewrite 8.80.0.
 
 * Auto-generate picnic.yml from the error-prone-contrib jar by @timtebeek in [#68](https://github.com/openrewrite/rewrite-third-party/pull/68)
 
-## rewrite-recipe-bom 3.28.0
+## [rewrite-recipe-bom 3.28.0](https://github.com/openrewrite/rewrite-recipe-bom/releases/tag/v3.28.0)
 
 Released on April 8, 2026, with OpenRewrite 8.79.0.
 
@@ -5655,7 +5655,7 @@ Released on April 8, 2026, with OpenRewrite 8.79.0.
 
 * OpenRewrite v8.79.0: https://github.com/openrewrite/rewrite
 
-## rewrite-recipe-bom 3.27.1
+## [rewrite-recipe-bom 3.27.1](https://github.com/openrewrite/rewrite-recipe-bom/releases/tag/v3.27.1)
 
 Released on April 6, 2026, with OpenRewrite 8.78.5.
 
@@ -5872,7 +5872,7 @@ Released on April 6, 2026, with OpenRewrite 8.78.5.
 
 * Limit how far back chained Quarkus migrations run by @timtebeek in [#66](https://github.com/openrewrite/rewrite-third-party/pull/66)
 
-## rewrite-recipe-bom 3.27.0
+## [rewrite-recipe-bom 3.27.0](https://github.com/openrewrite/rewrite-recipe-bom/releases/tag/v3.27.0)
 
 Released on March 25, 2026, with OpenRewrite 8.77.0.
 
@@ -6266,7 +6266,7 @@ Released on March 25, 2026, with OpenRewrite 8.77.0.
 
 * Pin timefold to 1.x by @greg-at-moderne in [#64](https://github.com/openrewrite/rewrite-third-party/pull/64)
 
-## rewrite-recipe-bom 3.26.1
+## [rewrite-recipe-bom 3.26.1](https://github.com/openrewrite/rewrite-recipe-bom/releases/tag/v3.26.1)
 
 Released on March 12, 2026, with OpenRewrite 8.75.5.
 
@@ -6496,7 +6496,7 @@ Released on March 12, 2026, with OpenRewrite 8.75.5.
 
 * OpenRewrite v8.75.5: https://github.com/openrewrite/rewrite/compare/v8.75.5...main
 
-## rewrite-recipe-bom 3.26.0
+## [rewrite-recipe-bom 3.26.0](https://github.com/openrewrite/rewrite-recipe-bom/releases/tag/v3.26.0)
 
 Released on March 4, 2026, with OpenRewrite 8.75.0.
 
@@ -6698,7 +6698,7 @@ Released on March 4, 2026, with OpenRewrite 8.75.0.
 
 * OpenRewrite v8.75.0: https://github.com/openrewrite/rewrite
 
-## rewrite-recipe-bom 3.25.0
+## [rewrite-recipe-bom 3.25.0](https://github.com/openrewrite/rewrite-recipe-bom/releases/tag/v3.25.0)
 
 Released on February 25, 2026, with OpenRewrite 8.74.1.
 
@@ -6969,7 +6969,7 @@ Released on February 25, 2026, with OpenRewrite 8.74.1.
 * Add missing Hamcrest not(Matcher) to AssertJ conversions by @timtebeek in [#917](https://github.com/openrewrite/rewrite-testing-frameworks/pull/917)
 * Do not incorrectly strip method calls from assertion arguments by @timtebeek in [#918](https://github.com/openrewrite/rewrite-testing-frameworks/pull/918)
 
-## rewrite-recipe-bom 3.24.0
+## [rewrite-recipe-bom 3.24.0](https://github.com/openrewrite/rewrite-recipe-bom/releases/tag/v3.24.0)
 
 Released on February 11, 2026, with OpenRewrite 8.73.0.
 
@@ -7314,7 +7314,7 @@ Released on February 11, 2026, with OpenRewrite 8.73.0.
 
 * Add liftwizard-rewrite recipes by @timtebeek in [#59](https://github.com/openrewrite/rewrite-third-party/pull/59)
 
-## rewrite-recipe-bom 3.23.0
+## [rewrite-recipe-bom 3.23.0](https://github.com/openrewrite/rewrite-recipe-bom/releases/tag/v3.23.0)
 
 Released on January 20, 2026, with OpenRewrite 8.72.0.
 
@@ -7529,7 +7529,7 @@ Released on January 20, 2026, with OpenRewrite 8.72.0.
 
 * Regenerate `MigrateToQuarkus_v3_0_0` and enable scheduled pipeline by @timtebeek in [#56](https://github.com/openrewrite/rewrite-third-party/pull/56)
 
-## rewrite-recipe-bom 3.22.0
+## [rewrite-recipe-bom 3.22.0](https://github.com/openrewrite/rewrite-recipe-bom/releases/tag/v3.22.0)
 
 Released on January 7, 2026, with OpenRewrite 8.71.0.
 
@@ -7737,7 +7737,7 @@ Released on January 7, 2026, with OpenRewrite 8.71.0.
 * Remove out-of-date OWASP suppressions by @Laurens-W in [#54](https://github.com/openrewrite/rewrite-third-party/pull/54)
 * Update suppressions by @Laurens-W in [#55](https://github.com/openrewrite/rewrite-third-party/pull/55)
 
-## rewrite-recipe-bom 3.21.0
+## [rewrite-recipe-bom 3.21.0](https://github.com/openrewrite/rewrite-recipe-bom/releases/tag/v3.21.0)
 
 Released on December 16, 2025, with OpenRewrite 8.69.0.
 
@@ -7942,7 +7942,7 @@ Released on December 16, 2025, with OpenRewrite 8.69.0.
 
 * OpenRewrite v8.69.0: https://github.com/openrewrite/rewrite
 
-## rewrite-recipe-bom 3.20.0
+## [rewrite-recipe-bom 3.20.0](https://github.com/openrewrite/rewrite-recipe-bom/releases/tag/v3.20.0)
 
 Released on December 5, 2025, with OpenRewrite 8.68.1.
 
@@ -8160,7 +8160,7 @@ Released on December 5, 2025, with OpenRewrite 8.68.1.
 
 * Update suppressions by @Laurens-W in [#53](https://github.com/openrewrite/rewrite-third-party/pull/53)
 
-## rewrite-recipe-bom 3.19.0
+## [rewrite-recipe-bom 3.19.0](https://github.com/openrewrite/rewrite-recipe-bom/releases/tag/v3.19.0)
 
 Released on November 20, 2025, with OpenRewrite 8.67.0.
 
@@ -8417,7 +8417,7 @@ Released on November 20, 2025, with OpenRewrite 8.67.0.
 * Move the Guava generated recipes to rewrite-migrate-java by @timtebeek in d52b3fbd81bb822f72442df2ee4eddfa63da6d43
 * Exclude `refaster-support` from `error-prone-contrib::recipes` by @timtebeek in e5bd3c65c2b9629ed7520f9ceb6ebf4564f9c4b7
 
-## rewrite-recipe-bom 3.18.0
+## [rewrite-recipe-bom 3.18.0](https://github.com/openrewrite/rewrite-recipe-bom/releases/tag/v3.18.0)
 
 Released on November 5, 2025, with OpenRewrite 8.66.1.
 

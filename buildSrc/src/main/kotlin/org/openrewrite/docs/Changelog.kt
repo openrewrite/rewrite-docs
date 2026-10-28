@@ -6,7 +6,7 @@ import java.time.format.DateTimeFormatter
 import java.util.Locale
 
 /// A rewrite-recipe-bom release, with the version of each module repository it manages.
-data class BomRelease(val version: Version, val publishedAt: Instant, val repositoryVersions: Map<String, Version>)
+data class BomRelease(val version: Version, val url: String, val publishedAt: Instant, val repositoryVersions: Map<String, Version>)
 
 /// Release notes of the modules that changed in each of [boms] but the first, which only sets where the second starts.
 class Changelog(private val boms: List<BomRelease>, private val releases: Map<String, List<Release>>) {
@@ -14,7 +14,7 @@ class Changelog(private val boms: List<BomRelease>, private val releases: Map<St
         append(HEADER)
         for ((previous, bom) in boms.zipWithNext().reversed()) {
             appendLine()
-            appendLine("## rewrite-recipe-bom ${bom.version}")
+            appendLine("## [rewrite-recipe-bom ${bom.version}](${bom.url})")
             appendLine()
             val rewrite = bom.repositoryVersions[REWRITE]?.let { ", with OpenRewrite $it" }.orEmpty()
             appendLine("Released on ${DATE.format(bom.publishedAt)}$rewrite.")
