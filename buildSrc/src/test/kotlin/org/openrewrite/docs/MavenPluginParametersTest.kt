@@ -55,10 +55,10 @@ class MavenPluginParametersTest {
 
         assertThat(mavenPluginParametersTable(parameters)).isEqualTo(
             """
-            | Parameter | User property | Default | Goals | Description |
-            | --------- | ------------- | ------- | ----- | ----------- |
-            | `configLocation` | `rewrite.configLocation` | `${'$'}{maven.multiModuleProjectDirectory}/rewrite.yml` | All | The configuration file. |
-            | `reportOutputDirectory` | `reportOutputDirectory` |  | `dryRun` | The directory to write `rewrite.patch` to. |
+            | Parameter | Description |
+            | --------- | ----------- |
+            | `configLocation`<br/>`rewrite.configLocation` | The configuration file. Defaults to `${'$'}{maven.multiModuleProjectDirectory}/rewrite.yml`. |
+            | `reportOutputDirectory`<br/>`reportOutputDirectory` | The directory to write `rewrite.patch` to. Only for the `dryRun` goal. |
             """.trimIndent()
         )
     }
@@ -110,9 +110,9 @@ class MavenPluginParametersTest {
 
                 <!-- AUTO-GENERATED-MAVEN-PARAMETERS:START - Do not edit manually -->
 
-                | Parameter | User property | Default | Goals | Description |
-                | --------- | ------------- | ------- | ----- | ----------- |
-                | `skip` |  | `false` | All | Whether to skip. |
+                | Parameter | Description |
+                | --------- | ----------- |
+                | `skip` | Whether to skip. Defaults to `false`. |
 
                 <!-- AUTO-GENERATED-MAVEN-PARAMETERS:END -->
 

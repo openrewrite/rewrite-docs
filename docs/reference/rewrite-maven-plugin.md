@@ -37,37 +37,37 @@ In some circumstances, depending on how your project `pom.xml` is configured, yo
 
 ## Plugin configuration
 
-It generally makes sense to apply the plugin to the root `pom.xml` in a repository so that the configuration applies to each project in a multi-module project. The table below lists the parameters of each goal, which you can set in the plugin's `<configuration>` or on the command line through their user property, such as `-Drewrite.activeRecipes=org.example.Recipe`. The [auto-generated rewrite-maven-plugin documentation](https://openrewrite.github.io/rewrite-maven-plugin/plugin-info.html) also shows their types.
+It generally makes sense to apply the plugin to the root `pom.xml` in a repository so that the configuration applies to each project in a multi-module project. The table below lists the parameters of each goal, which you can set in the plugin's `<configuration>` or on the command line through the user property listed below their name, such as `-Drewrite.activeRecipes=org.example.Recipe`. The [auto-generated rewrite-maven-plugin documentation](https://openrewrite.github.io/rewrite-maven-plugin/plugin-info.html) also shows their types.
 
 <!-- AUTO-GENERATED-MAVEN-PARAMETERS:START - Do not edit manually; updated by ./gradlew updateMavenPluginParameters -->
 
-| Parameter | User property | Default | Goals | Description |
-| --------- | ------------- | ------- | ----- | ----------- |
-| `activeRecipes` | `rewrite.activeRecipes` |  | All | The recipes to run, by the name they are given in their `specs.openrewrite.org/v1beta/recipe` resource. No recipe runs unless it is listed here. |
-| `activeStyles` | `rewrite.activeStyles` |  | All | The styles to apply, by the name they are given in their `specs.openrewrite.org/v1beta/style` resource. No style is applied unless it is listed here. |
-| `additionalPlainTextMasks` | `rewrite.additionalPlainTextMasks` |  | All | Files to parse as plain text in addition to the default masks, as glob patterns like those of `exclusions`. For example, `**/*.ext`. |
-| `checkstyleConfigFile` | `rewrite.checkstyleConfigFile` |  | All | A Checkstyle configuration file to derive the coding style from, instead of detecting it from the Checkstyle plugin. |
-| `checkstyleDetectionEnabled` | `rewrite.checkstyleDetectionEnabled` | `true` | All | Whether to derive the coding style from the configuration of the Checkstyle plugin, when the build uses it. |
-| `configLocation` | `rewrite.configLocation` | `${maven.multiModuleProjectDirectory}/rewrite.yml` | All | The OpenRewrite YAML configuration file, as a path or an `http(s)` URL. A relative path is resolved against the directory of each module, so prefixing it with `${maven.multiModuleProjectDirectory}` has every module use the same file at the root of the repository. |
-| `detail` | `detail` | `false` | `discover` | Whether to show the display name, description and options of each recipe. |
-| `exclusions` | `rewrite.exclusions` |  | All | Paths not to parse, as [`PathMatcher`](https://docs.oracle.com/javase/8/docs/api/java/nio/file/PathMatcher.html) glob patterns relative to the root of the repository, where `**` matches any number of directories and `*` a single directory or file name. For example, `docs/**`. |
-| `exportDatatables` | `rewrite.exportDatatables` | `false` | `dryRun`, `dryRunNoFork`, `run`, `runNoFork` | Whether to export the data tables that recipes produce as CSV files, to `target/rewrite/datatables`. |
-| `failOnDryRunResults` | `failOnDryRunResults` | `false` | `dryRun`, `dryRunNoFork` | Whether to fail the build when recipes would make changes, to use the goal as a check in continuous integration. |
-| `failOnInvalidActiveRecipes` | `rewrite.failOnInvalidActiveRecipes` | `false` | All | Whether to fail the build when an active recipe, or a recipe it includes, is not configured correctly. This may default to `true` in the future. |
-| `options` | `rewrite.options` |  | `dryRun`, `dryRunNoFork`, `run`, `runNoFork` | Options to configure the active recipe with, as `key=value` pairs. Only a single recipe that does not include other recipes can be configured this way. For example, `-Drewrite.options=methodPattern=java.util.List add(..),key2=value2`. |
-| `plainTextMasks` | `rewrite.plainTextMasks` |  | All | The files to parse as plain text, as glob patterns like those of `exclusions`, replacing the default masks. The defaults cover common text files without a dedicated parser, such as Markdown, shell scripts and Dockerfiles. Exclusions take precedence over plain text masks, and `additionalPlainTextMasks` has no effect when this is set. |
-| `pomCacheDirectory` | `rewrite.pomCacheDirectory` |  | All | The directory to create the `.rewrite-cache` directory with cached POMs and Maven metadata in. Defaults to the user's home directory. Deleting the cache is safe, as it is populated again on the next run. |
-| `pomCacheEnabled` | `rewrite.pomCacheEnabled` | `true` | All | Whether to cache downloaded POMs and Maven metadata on disk, in `pomCacheDirectory`. When disabled, an in-memory cache is used instead, which makes runs slower on projects with deep dependency trees. |
-| `recipe` | `recipe` |  | `discover` | The name of a recipe to show, instead of every recipe. For example, `./mvnw rewrite:discover -Ddetail=true -Drecipe=org.openrewrite.java.format.AutoFormat`. |
-| `recipeArtifactCoordinates` | `rewrite.recipeArtifactCoordinates` |  | All | Recipe artifacts to add, as `groupId:artifactId:version` coordinates, instead of or in addition to plugin dependencies. These are resolved from the repositories of the project rather than its plugin repositories. |
-| `recipeChangeLogLevel` | `rewrite.recipeChangeLogLevel` | `WARN` | `dryRun`, `dryRunNoFork`, `run`, `runNoFork` | The level to log the changes that recipes make at: `ERROR`, `WARN`, `INFO` or `DEBUG`. |
-| `recursion` | `recursion` | `0` | `discover` | How many levels of the recipes that a recipe includes to show. |
-| `reportOutputDirectory` | `reportOutputDirectory` |  | `dryRun`, `dryRunNoFork` | The directory to write `rewrite.patch` to. Defaults to `target/rewrite` in the top-level project, or in each module when `runPerSubmodule` is enabled. |
-| `resolvePropertiesInYaml` | `rewrite.resolvePropertiesInYaml` | `true` | All | Whether to resolve Maven properties, like `${project.artifactId}`, in the YAML configuration file. |
-| `rewriteSkip` | `rewrite.skip` | `false` | All | Whether to skip the execution of the plugin, to disable it without removing its configuration. |
-| `runPerSubmodule` | `rewrite.runPerSubmodule` | `false` | All | Whether to run recipes on each module separately, rather than once on all the modules of the build. |
-| `sizeThresholdMb` | `sizeThresholdMb` | `10` | All | The size in megabytes above which files other than Java sources are not parsed. |
-| `skipMavenParsing` | `skipMavenParsing` | `false` | All | Whether to skip parsing `pom.xml` files, and the POMs they inherit from, as source files. This can make runs faster when no recipe changes POMs. |
+| Parameter | Description |
+| --------- | ----------- |
+| `activeRecipes`<br/>`rewrite.activeRecipes` | The recipes to run, by the name they are given in their `specs.openrewrite.org/v1beta/recipe` resource. No recipe runs unless it is listed here. |
+| `activeStyles`<br/>`rewrite.activeStyles` | The styles to apply, by the name they are given in their `specs.openrewrite.org/v1beta/style` resource. No style is applied unless it is listed here. |
+| `additionalPlainTextMasks`<br/>`rewrite.additionalPlainTextMasks` | Files to parse as plain text in addition to the default masks, as glob patterns like those of `exclusions`. For example, `**/*.ext`. |
+| `checkstyleConfigFile`<br/>`rewrite.checkstyleConfigFile` | A Checkstyle configuration file to derive the coding style from, instead of detecting it from the Checkstyle plugin. |
+| `checkstyleDetectionEnabled`<br/>`rewrite.checkstyleDetectionEnabled` | Whether to derive the coding style from the configuration of the Checkstyle plugin, when the build uses it. Defaults to `true`. |
+| `configLocation`<br/>`rewrite.configLocation` | The OpenRewrite YAML configuration file, as a path or an `http(s)` URL. A relative path is resolved against the directory of each module, so prefixing it with `${maven.multiModuleProjectDirectory}` has every module use the same file at the root of the repository. Defaults to `${maven.multiModuleProjectDirectory}/rewrite.yml`. |
+| `detail`<br/>`detail` | Whether to show the display name, description and options of each recipe. Defaults to `false`. Only for the `discover` goal. |
+| `exclusions`<br/>`rewrite.exclusions` | Paths not to parse, as [`PathMatcher`](https://docs.oracle.com/javase/8/docs/api/java/nio/file/PathMatcher.html) glob patterns relative to the root of the repository, where `**` matches any number of directories and `*` a single directory or file name. For example, `docs/**`. |
+| `exportDatatables`<br/>`rewrite.exportDatatables` | Whether to export the data tables that recipes produce as CSV files, to `target/rewrite/datatables`. Defaults to `false`. Only for the `dryRun`, `dryRunNoFork`, `run` and `runNoFork` goals. |
+| `failOnDryRunResults`<br/>`failOnDryRunResults` | Whether to fail the build when recipes would make changes, to use the goal as a check in continuous integration. Defaults to `false`. Only for the `dryRun` and `dryRunNoFork` goals. |
+| `failOnInvalidActiveRecipes`<br/>`rewrite.failOnInvalidActiveRecipes` | Whether to fail the build when an active recipe, or a recipe it includes, is not configured correctly. This may default to `true` in the future. Defaults to `false`. |
+| `options`<br/>`rewrite.options` | Options to configure the active recipe with, as `key=value` pairs. Only a single recipe that does not include other recipes can be configured this way. For example, `-Drewrite.options=methodPattern=java.util.List add(..),key2=value2`. Only for the `dryRun`, `dryRunNoFork`, `run` and `runNoFork` goals. |
+| `plainTextMasks`<br/>`rewrite.plainTextMasks` | The files to parse as plain text, as glob patterns like those of `exclusions`, replacing the default masks. The defaults cover common text files without a dedicated parser, such as Markdown, shell scripts and Dockerfiles. Exclusions take precedence over plain text masks, and `additionalPlainTextMasks` has no effect when this is set. |
+| `pomCacheDirectory`<br/>`rewrite.pomCacheDirectory` | The directory to create the `.rewrite-cache` directory with cached POMs and Maven metadata in. Defaults to the user's home directory. Deleting the cache is safe, as it is populated again on the next run. |
+| `pomCacheEnabled`<br/>`rewrite.pomCacheEnabled` | Whether to cache downloaded POMs and Maven metadata on disk, in `pomCacheDirectory`. When disabled, an in-memory cache is used instead, which makes runs slower on projects with deep dependency trees. Defaults to `true`. |
+| `recipe`<br/>`recipe` | The name of a recipe to show, instead of every recipe. For example, `./mvnw rewrite:discover -Ddetail=true -Drecipe=org.openrewrite.java.format.AutoFormat`. Only for the `discover` goal. |
+| `recipeArtifactCoordinates`<br/>`rewrite.recipeArtifactCoordinates` | Recipe artifacts to add, as `groupId:artifactId:version` coordinates, instead of or in addition to plugin dependencies. These are resolved from the repositories of the project rather than its plugin repositories. |
+| `recipeChangeLogLevel`<br/>`rewrite.recipeChangeLogLevel` | The level to log the changes that recipes make at: `ERROR`, `WARN`, `INFO` or `DEBUG`. Defaults to `WARN`. Only for the `dryRun`, `dryRunNoFork`, `run` and `runNoFork` goals. |
+| `recursion`<br/>`recursion` | How many levels of the recipes that a recipe includes to show. Defaults to `0`. Only for the `discover` goal. |
+| `reportOutputDirectory`<br/>`reportOutputDirectory` | The directory to write `rewrite.patch` to. Defaults to `target/rewrite` in the top-level project, or in each module when `runPerSubmodule` is enabled. Only for the `dryRun` and `dryRunNoFork` goals. |
+| `resolvePropertiesInYaml`<br/>`rewrite.resolvePropertiesInYaml` | Whether to resolve Maven properties, like `${project.artifactId}`, in the YAML configuration file. Defaults to `true`. |
+| `rewriteSkip`<br/>`rewrite.skip` | Whether to skip the execution of the plugin, to disable it without removing its configuration. Defaults to `false`. |
+| `runPerSubmodule`<br/>`rewrite.runPerSubmodule` | Whether to run recipes on each module separately, rather than once on all the modules of the build. Defaults to `false`. |
+| `sizeThresholdMb`<br/>`sizeThresholdMb` | The size in megabytes above which files other than Java sources are not parsed. Defaults to `10`. |
+| `skipMavenParsing`<br/>`skipMavenParsing` | Whether to skip parsing `pom.xml` files, and the POMs they inherit from, as source files. This can make runs faster when no recipe changes POMs. Defaults to `false`. |
 
 <!-- AUTO-GENERATED-MAVEN-PARAMETERS:END -->
 
