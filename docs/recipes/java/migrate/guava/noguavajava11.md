@@ -15,8 +15,8 @@ _Replace Guava's `ImmutableList`, `ImmutableMap` and `ImmutableSet` `of` and `co
 
 ### Tags
 
-* [guava](/reference/recipes-by-tag#guava)
-* [java11](/reference/recipes-by-tag#java11)
+* guava
+* java11
 
 ## Recipe source
 

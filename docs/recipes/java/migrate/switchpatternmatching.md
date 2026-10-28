@@ -15,7 +15,7 @@ _[JEP 441](https://openjdk.org/jeps/441) describes how some switch statements ca
 
 ### Tags
 
-* [java21](/reference/recipes-by-tag#java21)
+* java21
 
 ## Recipe source
 

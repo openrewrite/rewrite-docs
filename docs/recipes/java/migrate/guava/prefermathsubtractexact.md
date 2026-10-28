@@ -15,7 +15,7 @@ _Prefer `java.lang.Math#subtractExact` instead of using `com.google.common.math.
 
 ### Tags
 
-* [guava](/reference/recipes-by-tag#guava)
+* guava
 
 ## Recipe source
 

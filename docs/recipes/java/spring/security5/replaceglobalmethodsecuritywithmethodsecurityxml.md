@@ -15,8 +15,8 @@ _`@EnableGlobalMethodSecurity` and `<global-method-security>` are deprecated in 
 
 ### Tags
 
-* [spring](/reference/recipes-by-tag#spring)
-* [security](/reference/recipes-by-tag#security)
+* spring
+* security
 
 ## Recipe source
 

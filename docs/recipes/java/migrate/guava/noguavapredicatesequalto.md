@@ -15,7 +15,7 @@ _Prefer `Predicate.isEqual(Object)` over `Predicates.equalTo(Object)`._
 
 ### Tags
 
-* [guava](/reference/recipes-by-tag#guava)
+* guava
 
 ## Recipe source
 

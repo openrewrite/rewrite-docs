@@ -15,9 +15,9 @@ _Find and replace javax references to jakarta in XHTML files._
 
 ### Tags
 
-* [faces](/reference/recipes-by-tag#faces)
-* [jsf](/reference/recipes-by-tag#jsf)
-* [jakarta](/reference/recipes-by-tag#jakarta)
+* faces
+* jsf
+* jakarta
 
 ## Recipe source
 

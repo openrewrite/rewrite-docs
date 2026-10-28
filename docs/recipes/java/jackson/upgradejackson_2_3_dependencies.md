@@ -15,7 +15,7 @@ _Upgrade Jackson Maven dependencies from 2.x to 3.x versions and update group ID
 
 ### Tags
 
-* [jackson-3](/reference/recipes-by-tag#jackson)
+* jackson-3
 
 ## Recipe source
 

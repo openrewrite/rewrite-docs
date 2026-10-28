@@ -15,8 +15,8 @@ _This recipe replaces `LTPACookieFromSSOToken()` with  `getSSOCookieFromSSOToken
 
 ### Tags
 
-* [websphere](/reference/recipes-by-tag#websphere)
-* [liberty](/reference/recipes-by-tag#liberty)
+* websphere
+* liberty
 
 ## Recipe source
 

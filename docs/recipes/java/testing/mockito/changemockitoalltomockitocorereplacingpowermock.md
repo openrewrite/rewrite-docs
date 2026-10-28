@@ -15,8 +15,8 @@ _Changes a declared `mockito-all` into `mockito-core`, as `mockito-all` is a 1.x
 
 ### Tags
 
-* [mockito](/reference/recipes-by-tag#mockito)
-* [testing](/reference/recipes-by-tag#testing)
+* mockito
+* testing
 
 ## Recipe source
 

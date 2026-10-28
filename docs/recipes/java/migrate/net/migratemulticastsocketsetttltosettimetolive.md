@@ -15,7 +15,7 @@ _Use `java.net.MulticastSocket#setTimeToLive(int)` instead of the deprecated `ja
 
 ### Tags
 
-* [deprecated](/reference/recipes-by-tag#deprecated)
+* deprecated
 
 ## Recipe source
 

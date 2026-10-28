@@ -15,9 +15,9 @@ _Update the Python version used by `actions/setup-python` if it is below the exp
 
 ### Tags
 
-* [github](/reference/recipes-by-tag#github)
-* [python](/reference/recipes-by-tag#python)
-* [deprecation](/reference/recipes-by-tag#deprecation)
+* github
+* python
+* deprecation
 
 ## Recipe source
 

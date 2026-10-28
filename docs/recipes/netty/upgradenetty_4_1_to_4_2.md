@@ -15,7 +15,7 @@ _Migrate applications to the latest Netty 4.2.x release._
 
 ### Tags
 
-* [netty](/reference/recipes-by-tag#netty)
+* netty
 
 ## Recipe source
 

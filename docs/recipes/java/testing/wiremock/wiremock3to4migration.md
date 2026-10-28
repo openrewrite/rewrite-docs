@@ -15,8 +15,8 @@ _Upgrade WireMock to 4.x, which requires Java 17, ships Jetty 12.1 by default, s
 
 ### Tags
 
-* [wiremock](/reference/recipes-by-tag#wiremock)
-* [testing](/reference/recipes-by-tag#testing)
+* wiremock
+* testing
 
 ## Recipe source
 

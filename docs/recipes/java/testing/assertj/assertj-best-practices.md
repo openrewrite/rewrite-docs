@@ -15,8 +15,8 @@ _Migrates JUnit asserts to AssertJ and applies best practices to assertions._
 
 ### Tags
 
-* [assertj](/reference/recipes-by-tag#assertj)
-* [testing](/reference/recipes-by-tag#testing)
+* assertj
+* testing
 
 ## Recipe source
 

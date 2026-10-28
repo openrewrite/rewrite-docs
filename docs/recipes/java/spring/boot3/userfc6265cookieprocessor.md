@@ -15,7 +15,7 @@ _Replace the legacy Tomcat `LegacyCookieProcessor` with the RFC 6265 compliant `
 
 ### Tags
 
-* [tomcat](/reference/recipes-by-tag#tomcat)
+* tomcat
 
 ## Recipe source
 

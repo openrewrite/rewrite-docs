@@ -15,7 +15,7 @@ _This recipe will apply changes commonly needed when migrating to Java 25. This 
 
 ### Tags
 
-* [java25](/reference/recipes-by-tag#java25)
+* java25
 
 ## Recipe source
 

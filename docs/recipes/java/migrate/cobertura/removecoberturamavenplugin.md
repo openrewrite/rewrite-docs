@@ -15,8 +15,8 @@ _This recipe will remove Cobertura, as it is not compatible with Java 11._
 
 ### Tags
 
-* [java11](/reference/recipes-by-tag#java11)
-* [cobertura](/reference/recipes-by-tag#cobertura)
+* java11
+* cobertura
 
 ## Recipe source
 

@@ -15,10 +15,10 @@ _Migrates Spring Boot @ConfigurationProperties to Quarkus @ConfigMapping. This r
 
 ### Tags
 
-* [spring](/reference/recipes-by-tag#spring)
-* [migration](/reference/recipes-by-tag#migration)
-* [configuration](/reference/recipes-by-tag#configuration)
-* [quarkus](/reference/recipes-by-tag#quarkus)
+* spring
+* migration
+* configuration
+* quarkus
 
 ## Recipe source
 

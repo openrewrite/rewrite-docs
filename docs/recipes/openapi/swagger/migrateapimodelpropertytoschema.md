@@ -15,8 +15,8 @@ _Converts the `@ApiModelProperty` annotation to `@Schema` and converts the "valu
 
 ### Tags
 
-* [openapi](/reference/recipes-by-tag#openapi)
-* [swagger](/reference/recipes-by-tag#swagger)
+* openapi
+* swagger
 
 ## Recipe source
 

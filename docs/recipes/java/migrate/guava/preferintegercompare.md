@@ -15,7 +15,7 @@ _Prefer `java.lang.Integer#compare` instead of using `com.google.common.primitiv
 
 ### Tags
 
-* [guava](/reference/recipes-by-tag#guava)
+* guava
 
 ## Recipe source
 

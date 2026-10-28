@@ -15,9 +15,9 @@ _Transforms code written using `java.util.logging` to use Log4j 2.x API._
 
 ### Tags
 
-* [logging](/reference/recipes-by-tag#logging)
-* [java-util-logging](/reference/recipes-by-tag#java)
-* [log4j](/reference/recipes-by-tag#log4j)
+* logging
+* java-util-logging
+* log4j
 
 ## Recipe source
 

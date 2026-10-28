@@ -15,7 +15,7 @@ _Prefer `java.lang.Short#compare` instead of using `com.google.common.primitives
 
 ### Tags
 
-* [guava](/reference/recipes-by-tag#guava)
+* guava
 
 ## Recipe source
 

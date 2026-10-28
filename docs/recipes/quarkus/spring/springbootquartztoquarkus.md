@@ -15,10 +15,10 @@ _Migrates `spring-boot-starter-quartz` to `quarkus-quartz`._
 
 ### Tags
 
-* [spring](/reference/recipes-by-tag#spring)
-* [scheduler](/reference/recipes-by-tag#scheduler)
-* [quartz](/reference/recipes-by-tag#quartz)
-* [quarkus](/reference/recipes-by-tag#quarkus)
+* spring
+* scheduler
+* quartz
+* quarkus
 
 ## Recipe source
 

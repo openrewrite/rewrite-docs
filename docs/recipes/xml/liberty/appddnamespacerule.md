@@ -15,7 +15,7 @@ _Namespace values in application.xml must be consistent with the descriptor vers
 
 ### Tags
 
-* [liberty](/reference/recipes-by-tag#liberty)
+* liberty
 
 ## Recipe source
 

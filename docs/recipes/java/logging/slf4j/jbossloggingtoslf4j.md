@@ -15,9 +15,9 @@ _Migrates usage of the JBoss Logging facade to using SLF4J._
 
 ### Tags
 
-* [jboss](/reference/recipes-by-tag#jboss)
-* [slf4j](/reference/recipes-by-tag#slf4j)
-* [logging](/reference/recipes-by-tag#logging)
+* jboss
+* slf4j
+* logging
 
 ## Recipe source
 

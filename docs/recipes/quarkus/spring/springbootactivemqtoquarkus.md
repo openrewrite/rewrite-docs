@@ -15,10 +15,10 @@ _Migrates `spring-boot-starter-activemq` to `quarkus-artemis-jms`._
 
 ### Tags
 
-* [spring](/reference/recipes-by-tag#spring)
-* [jms](/reference/recipes-by-tag#jms)
-* [activemq](/reference/recipes-by-tag#activemq)
-* [quarkus](/reference/recipes-by-tag#quarkus)
+* spring
+* jms
+* activemq
+* quarkus
 
 ## Recipe source
 

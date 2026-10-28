@@ -15,11 +15,11 @@ _Upgrades the Log4j 2.x dependencies to the latest 2.x version. Mitigates the [L
 
 ### Tags
 
-* [logging](/reference/recipes-by-tag#logging)
-* [security](/reference/recipes-by-tag#security)
-* [log4shell](/reference/recipes-by-tag#log4shell)
-* [CVE-2021-44228](/reference/recipes-by-tag#cve)
-* [log4j](/reference/recipes-by-tag#log4j)
+* logging
+* security
+* log4shell
+* CVE-2021-44228
+* log4j
 
 ## Recipe source
 

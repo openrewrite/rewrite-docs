@@ -15,7 +15,7 @@ _Migrate to Jakarta EE 11 by applying the Jakarta EE 10 migration, and then upgr
 
 ### Tags
 
-* [jakarta](/reference/recipes-by-tag#jakarta)
+* jakarta
 
 ## Recipe source
 

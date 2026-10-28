@@ -15,8 +15,8 @@ _Upgrades JUnit 5 to 5.14.x, including the 5.13 changes, and replaces deprecated
 
 ### Tags
 
-* [junit](/reference/recipes-by-tag#junit)
-* [testing](/reference/recipes-by-tag#testing)
+* junit
+* testing
 
 ## Recipe source
 

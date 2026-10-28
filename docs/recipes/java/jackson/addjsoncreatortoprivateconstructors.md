@@ -15,7 +15,7 @@ _Jackson 3 strictly enforces creator visibility rules. Non-public constructors i
 
 ### Tags
 
-* [jackson-3](/reference/recipes-by-tag#jackson)
+* jackson-3
 
 ## Recipe source
 

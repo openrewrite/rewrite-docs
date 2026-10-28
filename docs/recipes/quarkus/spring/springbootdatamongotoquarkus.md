@@ -15,10 +15,10 @@ _Migrates `spring-boot-starter-data-mongodb` to `quarkus-mongodb-panache`._
 
 ### Tags
 
-* [spring](/reference/recipes-by-tag#spring)
-* [data](/reference/recipes-by-tag#data)
-* [mongodb](/reference/recipes-by-tag#mongodb)
-* [quarkus](/reference/recipes-by-tag#quarkus)
+* spring
+* data
+* mongodb
+* quarkus
 
 ## Recipe source
 

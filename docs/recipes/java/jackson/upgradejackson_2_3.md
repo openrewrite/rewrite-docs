@@ -18,7 +18,7 @@ Migrate applications to the latest Jackson 3.x release. This recipe handles pack
 
 ### Tags
 
-* [jackson-3](/reference/recipes-by-tag#jackson)
+* jackson-3
 
 ## Recipe source
 

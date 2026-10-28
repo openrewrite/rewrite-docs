@@ -15,8 +15,8 @@ _Adds the Spring Cloud dependencies BOM as a managed import, but only when the p
 
 ### Tags
 
-* [spring](/reference/recipes-by-tag#spring)
-* [cloud](/reference/recipes-by-tag#cloud)
+* spring
+* cloud
 
 ## Recipe source
 

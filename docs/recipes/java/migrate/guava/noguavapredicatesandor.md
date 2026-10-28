@@ -15,7 +15,7 @@ _Prefer `Predicate.and(Predicate)` over `Predicates.and(Predicate, Predicate)`._
 
 ### Tags
 
-* [guava](/reference/recipes-by-tag#guava)
+* guava
 
 ## Recipe source
 

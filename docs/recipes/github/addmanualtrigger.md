@@ -15,7 +15,7 @@ _You can manually trigger workflow runs. To trigger specific workflows in a repo
 
 ### Tags
 
-* [github](/reference/recipes-by-tag#github)
+* github
 
 ## Recipe source
 

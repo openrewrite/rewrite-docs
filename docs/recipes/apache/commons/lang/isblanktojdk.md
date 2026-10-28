@@ -15,8 +15,8 @@ _Replace any `StringUtils#isBlank(String)` and `#isNotBlank(String)` with `s == 
 
 ### Tags
 
-* [apache](/reference/recipes-by-tag#apache)
-* [commons](/reference/recipes-by-tag#commons)
+* apache
+* commons
 
 ## Recipe source
 

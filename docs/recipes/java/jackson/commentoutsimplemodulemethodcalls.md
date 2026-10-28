@@ -15,7 +15,7 @@ _In Jackson 3, some modules (e.g. `JodaModule`) no longer extend `SimpleModule` 
 
 ### Tags
 
-* [jackson-3](/reference/recipes-by-tag#jackson)
+* jackson-3
 
 ## Recipe source
 

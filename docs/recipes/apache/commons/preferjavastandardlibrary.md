@@ -15,8 +15,8 @@ _Prefer the Java standard library instead of Apache Commons. These recipes repla
 
 ### Tags
 
-* [commons](/reference/recipes-by-tag#commons)
-* [apache](/reference/recipes-by-tag#apache)
+* commons
+* apache
 
 ## Recipe source
 

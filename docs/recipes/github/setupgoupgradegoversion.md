@@ -15,9 +15,9 @@ _Update the Go version used by `actions/setup-go` if it is below the expected ve
 
 ### Tags
 
-* [github](/reference/recipes-by-tag#github)
-* [go](/reference/recipes-by-tag#go)
-* [deprecation](/reference/recipes-by-tag#deprecation)
+* github
+* go
+* deprecation
 
 ## Recipe source
 

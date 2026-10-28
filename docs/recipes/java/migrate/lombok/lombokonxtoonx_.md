@@ -15,7 +15,7 @@ _Migrates Lombok's `onX` annotations from the Java 7 style using `@__` to the Ja
 
 ### Tags
 
-* [lombok](/reference/recipes-by-tag#lombok)
+* lombok
 
 ## Recipe source
 

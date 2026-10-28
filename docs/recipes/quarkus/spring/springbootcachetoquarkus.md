@@ -15,9 +15,9 @@ _Migrates `spring-boot-starter-cache` to `quarkus-cache`._
 
 ### Tags
 
-* [spring](/reference/recipes-by-tag#spring)
-* [cache](/reference/recipes-by-tag#cache)
-* [quarkus](/reference/recipes-by-tag#quarkus)
+* spring
+* cache
+* quarkus
 
 ## Recipe source
 

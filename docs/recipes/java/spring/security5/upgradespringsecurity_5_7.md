@@ -15,8 +15,8 @@ _Migrate applications to the latest Spring Security 5.7 release. This recipe wil
 
 ### Tags
 
-* [spring](/reference/recipes-by-tag#spring)
-* [security](/reference/recipes-by-tag#security)
+* spring
+* security
 
 ## Recipe source
 

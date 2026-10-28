@@ -15,7 +15,7 @@ _This recipe adds the Liberty Maven plugin, which provides several goals for man
 
 ### Tags
 
-* [liberty](/reference/recipes-by-tag#liberty)
+* liberty
 
 ## Recipe source
 

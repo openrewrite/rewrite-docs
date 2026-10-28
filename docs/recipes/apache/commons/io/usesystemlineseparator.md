@@ -15,8 +15,8 @@ _Prefer the Java standard library's `System.lineSeparator()` over third-party us
 
 ### Tags
 
-* [commons](/reference/recipes-by-tag#commons)
-* [apache](/reference/recipes-by-tag#apache)
+* commons
+* apache
 
 ## Recipe source
 

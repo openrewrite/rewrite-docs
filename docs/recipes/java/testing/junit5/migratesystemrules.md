@@ -15,12 +15,12 @@ _Migrates the JUnit 4 rules of System Rules (`com.github.stefanbirkner:system-ru
 
 ### Tags
 
-* [junit-pioneer](/reference/recipes-by-tag#junit)
-* [junit](/reference/recipes-by-tag#junit)
-* [jupiter](/reference/recipes-by-tag#jupiter)
-* [system-rules](/reference/recipes-by-tag#system)
-* [testing](/reference/recipes-by-tag#testing)
-* [system-stubs](/reference/recipes-by-tag#system)
+* junit-pioneer
+* junit
+* jupiter
+* system-rules
+* testing
+* system-stubs
 
 ## Recipe source
 

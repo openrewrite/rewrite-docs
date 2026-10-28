@@ -18,7 +18,7 @@ This recipe replaces the Bouncy Castle artifacts from any of the legacy artifact
 
 ### Tags
 
-* [bouncycastle](/reference/recipes-by-tag#bouncycastle)
+* bouncycastle
 
 ## Recipe source
 

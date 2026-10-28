@@ -15,7 +15,7 @@ _Replace calls to AWT and Swing methods deprecated since JDK 1.1 with calls to t
 
 ### Tags
 
-* [deprecated](/reference/recipes-by-tag#deprecated)
+* deprecated
 
 ## Recipe source
 

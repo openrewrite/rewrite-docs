@@ -15,9 +15,9 @@ _Renames the deprecated Stub Runner property prefix spring.cloud.contract.stubru
 
 ### Tags
 
-* [properties](/reference/recipes-by-tag#properties)
-* [spring-cloud-contract](/reference/recipes-by-tag#spring)
-* [stubborn-contract](/reference/recipes-by-tag#stubborn)
+* properties
+* spring-cloud-contract
+* stubborn-contract
 
 ## Recipe source
 

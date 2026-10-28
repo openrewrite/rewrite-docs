@@ -15,7 +15,7 @@ _In Jackson 3, auto-detection `MapperFeature` flags like `AUTO_DETECT_FIELDS` ar
 
 ### Tags
 
-* [jackson-3](/reference/recipes-by-tag#jackson)
+* jackson-3
 
 ## Recipe source
 

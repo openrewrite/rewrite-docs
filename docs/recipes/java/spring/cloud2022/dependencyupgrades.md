@@ -15,8 +15,8 @@ _Upgrade dependencies to Spring Cloud 2022 from prior 2021.x version._
 
 ### Tags
 
-* [spring](/reference/recipes-by-tag#spring)
-* [cloud](/reference/recipes-by-tag#cloud)
+* spring
+* cloud
 
 ## Recipe source
 

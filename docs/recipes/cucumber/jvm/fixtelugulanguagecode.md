@@ -15,8 +15,8 @@ _Cucumber-JVM 7.0.0 removed the incorrect ISO 639-1 code `tl` for Telugu, which 
 
 ### Tags
 
-* [cucumber](/reference/recipes-by-tag#cucumber)
-* [testing](/reference/recipes-by-tag#testing)
+* cucumber
+* testing
 
 ## Recipe source
 

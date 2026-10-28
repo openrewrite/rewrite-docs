@@ -15,7 +15,7 @@ _Bouncy Castle 1.78 moved the pre-standardization SPHINCS+ implementation from `
 
 ### Tags
 
-* [bouncycastle](/reference/recipes-by-tag#bouncycastle)
+* bouncycastle
 
 ## Recipe source
 

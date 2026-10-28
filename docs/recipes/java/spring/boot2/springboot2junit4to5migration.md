@@ -15,11 +15,11 @@ _This recipe will migrate a Spring Boot application's tests from JUnit 4 to JUni
 
 ### Tags
 
-* [spring](/reference/recipes-by-tag#spring)
-* [junit](/reference/recipes-by-tag#junit)
-* [jupiter](/reference/recipes-by-tag#jupiter)
-* [test](/reference/recipes-by-tag#test)
-* [boot](/reference/recipes-by-tag#boot)
+* spring
+* junit
+* jupiter
+* test
+* boot
 
 ## Recipe source
 

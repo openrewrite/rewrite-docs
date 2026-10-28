@@ -15,7 +15,7 @@ _Use the simplest method to add new tags._
 
 ### Tags
 
-* [micrometer](/reference/recipes-by-tag#micrometer)
+* micrometer
 
 ## Recipe source
 

@@ -15,7 +15,7 @@ _Jackson 2.10 moved most flag constants out of `JsonParser.Feature` and `JsonGen
 
 ### Tags
 
-* [jackson-3](/reference/recipes-by-tag#jackson)
+* jackson-3
 
 ## Recipe source
 

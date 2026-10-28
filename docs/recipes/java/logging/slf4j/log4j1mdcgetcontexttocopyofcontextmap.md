@@ -15,9 +15,9 @@ _Renames Log4j 1.x `org.apache.log4j.MDC.getContext()` (returns `Hashtable`) to 
 
 ### Tags
 
-* [slf4j](/reference/recipes-by-tag#slf4j)
-* [logging](/reference/recipes-by-tag#logging)
-* [log4j](/reference/recipes-by-tag#log4j)
+* slf4j
+* logging
+* log4j
 
 ## Recipe source
 

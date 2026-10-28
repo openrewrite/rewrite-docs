@@ -15,7 +15,7 @@ _Use `java.net.URLDecoder#decode(String, StandardCharsets.UTF_8)` instead of the
 
 ### Tags
 
-* [deprecated](/reference/recipes-by-tag#deprecated)
+* deprecated
 
 ## Recipe source
 

@@ -15,8 +15,8 @@ _Upgrades JUnit 5 to 5.13.x and replaces the deprecated `ParameterizedTest` plac
 
 ### Tags
 
-* [junit](/reference/recipes-by-tag#junit)
-* [testing](/reference/recipes-by-tag#testing)
+* junit
+* testing
 
 ## Recipe source
 

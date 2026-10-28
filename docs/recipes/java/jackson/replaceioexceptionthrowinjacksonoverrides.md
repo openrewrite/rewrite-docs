@@ -15,7 +15,7 @@ _In Jackson 3, `serialize()` and `deserialize()` methods no longer declare `thro
 
 ### Tags
 
-* [jackson-3](/reference/recipes-by-tag#jackson)
+* jackson-3
 
 ## Recipe source
 

@@ -15,9 +15,9 @@ _This recipe will update the `xmlns` entries in `weblogic.xml` files to WebLogic
 
 ### Tags
 
-* [weblogic](/reference/recipes-by-tag#weblogic)
-* [web-app](/reference/recipes-by-tag#web)
-* [schemas](/reference/recipes-by-tag#schemas)
+* weblogic
+* web-app
+* schemas
 
 ## Recipe source
 

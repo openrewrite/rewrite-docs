@@ -15,7 +15,7 @@ _Migrate to Flyway 10. See details at [Flyway V10 has landed](https://documentat
 
 ### Tags
 
-* [flyway](/reference/recipes-by-tag#flyway)
+* flyway
 
 ## Recipe source
 

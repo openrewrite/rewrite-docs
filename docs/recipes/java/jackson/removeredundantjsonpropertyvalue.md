@@ -15,7 +15,7 @@ _Remove `@JsonProperty` annotation or value attribute when the value matches the
 
 ### Tags
 
-* [jackson-2](/reference/recipes-by-tag#jackson)
+* jackson-2
 
 ## Recipe source
 

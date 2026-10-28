@@ -15,9 +15,9 @@ _Migrates `org.apache.log4j.MDC` to `org.slf4j.MDC`, wrapping non-`String` `put`
 
 ### Tags
 
-* [slf4j](/reference/recipes-by-tag#slf4j)
-* [logging](/reference/recipes-by-tag#logging)
-* [log4j](/reference/recipes-by-tag#log4j)
+* slf4j
+* logging
+* log4j
 
 ## Recipe source
 

@@ -15,8 +15,8 @@ _Cucumber-JVM 5.0.0 moved the `cucumber.api` types to `io.cucumber`, but not as 
 
 ### Tags
 
-* [cucumber](/reference/recipes-by-tag#cucumber)
-* [testing](/reference/recipes-by-tag#testing)
+* cucumber
+* testing
 
 ## Recipe source
 

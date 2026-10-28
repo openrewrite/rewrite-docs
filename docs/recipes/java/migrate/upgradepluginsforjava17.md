@@ -15,7 +15,7 @@ _Updates plugins to versions compatible with Java 17._
 
 ### Tags
 
-* [java17](/reference/recipes-by-tag#java17)
+* java17
 
 ## Recipe source
 

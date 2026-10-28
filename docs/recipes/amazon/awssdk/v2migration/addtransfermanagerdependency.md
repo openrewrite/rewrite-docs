@@ -15,8 +15,8 @@ _This recipe will add the Java v2 S3 Transfer Manager dependency if v1 Transfer 
 
 ### Tags
 
-* [aws](/reference/recipes-by-tag#aws)
-* [sdk](/reference/recipes-by-tag#sdk)
+* aws
+* sdk
 
 ## Recipe source
 

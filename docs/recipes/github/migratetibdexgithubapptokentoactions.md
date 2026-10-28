@@ -15,8 +15,8 @@ _Migrates from the deprecated `tibdex/github-app-token@v2` to `actions/create-gi
 
 ### Tags
 
-* [actions](/reference/recipes-by-tag#actions)
-* [github](/reference/recipes-by-tag#github)
+* actions
+* github
 
 ## Recipe source
 

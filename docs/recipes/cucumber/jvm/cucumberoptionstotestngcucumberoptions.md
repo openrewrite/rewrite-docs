@@ -15,8 +15,8 @@ _Replace `cucumber.api.CucumberOptions` with the TestNG variant in source files 
 
 ### Tags
 
-* [cucumber](/reference/recipes-by-tag#cucumber)
-* [testing](/reference/recipes-by-tag#testing)
+* cucumber
+* testing
 
 ## Recipe source
 

@@ -15,11 +15,11 @@ _Migrate Java code using OpenTracing API to OpenTelemetry API. OpenTracing has b
 
 ### Tags
 
-* [spring](/reference/recipes-by-tag#spring)
-* [migration](/reference/recipes-by-tag#migration)
-* [opentelemetry](/reference/recipes-by-tag#opentelemetry)
-* [boot](/reference/recipes-by-tag#boot)
-* [opentracing](/reference/recipes-by-tag#opentracing)
+* spring
+* migration
+* opentelemetry
+* boot
+* opentracing
 
 ## Recipe source
 

@@ -15,8 +15,8 @@ _Migrates to the latest Apache POI 5.x release. This recipe modifies build files
 
 ### Tags
 
-* [apache](/reference/recipes-by-tag#apache)
-* [poi](/reference/recipes-by-tag#poi)
+* apache
+* poi
 
 ## Recipe source
 

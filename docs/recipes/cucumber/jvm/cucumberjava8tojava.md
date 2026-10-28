@@ -15,8 +15,8 @@ _Migrates `cucumber-java8` step definitions, `LambdaGlue` hooks and `LambdaGlue`
 
 ### Tags
 
-* [cucumber](/reference/recipes-by-tag#cucumber)
-* [testing](/reference/recipes-by-tag#testing)
+* cucumber
+* testing
 
 ## Recipe source
 

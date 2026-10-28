@@ -15,10 +15,10 @@ _Migrates `spring-boot-starter-data-redis` to `quarkus-redis-client`._
 
 ### Tags
 
-* [spring](/reference/recipes-by-tag#spring)
-* [data](/reference/recipes-by-tag#data)
-* [redis](/reference/recipes-by-tag#redis)
-* [quarkus](/reference/recipes-by-tag#quarkus)
+* spring
+* data
+* redis
+* quarkus
 
 ## Recipe source
 

@@ -15,8 +15,8 @@ _Migrate from Swagger to OpenAPI._
 
 ### Tags
 
-* [openapi](/reference/recipes-by-tag#openapi)
-* [swagger](/reference/recipes-by-tag#swagger)
+* openapi
+* swagger
 
 ## Recipe source
 

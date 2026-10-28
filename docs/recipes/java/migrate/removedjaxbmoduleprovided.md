@@ -15,7 +15,7 @@ _The `java.xml.bind` and `java.activation` modules were removed in Java 11. WebS
 
 ### Tags
 
-* [java11](/reference/recipes-by-tag#java11)
+* java11
 
 ## Recipe source
 

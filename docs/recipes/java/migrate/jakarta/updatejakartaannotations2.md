@@ -15,7 +15,7 @@ _Deprecated and does nothing, as the `jakarta.annotation-api` upgrade to 2.1.x i
 
 ### Tags
 
-* [deprecated](/reference/recipes-by-tag#deprecated)
+* deprecated
 
 ## Recipe source
 

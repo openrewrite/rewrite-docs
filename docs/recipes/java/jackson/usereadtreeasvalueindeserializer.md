@@ -15,7 +15,7 @@ _In Jackson 3, `ObjectCodec` is replaced by `ObjectReadContext`, which does not 
 
 ### Tags
 
-* [jackson-3](/reference/recipes-by-tag#jackson)
+* jackson-3
 
 ## Recipe source
 

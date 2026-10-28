@@ -15,11 +15,11 @@ _Remove Spring Boot Maven plugin if present and add Quarkus Maven plugin using t
 
 ### Tags
 
-* [spring](/reference/recipes-by-tag#spring)
-* [migration](/reference/recipes-by-tag#migration)
-* [build](/reference/recipes-by-tag#build)
-* [maven](/reference/recipes-by-tag#maven)
-* [quarkus](/reference/recipes-by-tag#quarkus)
+* spring
+* migration
+* build
+* maven
+* quarkus
 
 ## Recipe source
 

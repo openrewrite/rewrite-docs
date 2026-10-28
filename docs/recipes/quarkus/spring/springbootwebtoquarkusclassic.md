@@ -15,10 +15,10 @@ _Migrates `spring-boot-starter-web` to `quarkus-resteasy-jackson` when no reacto
 
 ### Tags
 
-* [spring](/reference/recipes-by-tag#spring)
-* [classic](/reference/recipes-by-tag#classic)
-* [web](/reference/recipes-by-tag#web)
-* [quarkus](/reference/recipes-by-tag#quarkus)
+* spring
+* classic
+* web
+* quarkus
 
 ## Recipe source
 

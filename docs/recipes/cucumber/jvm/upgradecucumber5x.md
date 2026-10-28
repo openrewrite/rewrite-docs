@@ -15,8 +15,8 @@ _Upgrade to Cucumber-JVM 5.x from any previous version._
 
 ### Tags
 
-* [cucumber](/reference/recipes-by-tag#cucumber)
-* [testing](/reference/recipes-by-tag#testing)
+* cucumber
+* testing
 
 ## Recipe source
 

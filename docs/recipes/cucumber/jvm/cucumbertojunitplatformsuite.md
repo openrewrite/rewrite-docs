@@ -15,8 +15,8 @@ _Migrates Cucumber tests run by the `@Cucumber` annotation or the JUnit 4 `@RunW
 
 ### Tags
 
-* [cucumber](/reference/recipes-by-tag#cucumber)
-* [testing](/reference/recipes-by-tag#testing)
+* cucumber
+* testing
 
 ## Recipe source
 

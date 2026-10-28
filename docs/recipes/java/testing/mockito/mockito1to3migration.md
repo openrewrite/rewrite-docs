@@ -15,8 +15,8 @@ _Upgrade Mockito from 1.x to 3.x._
 
 ### Tags
 
-* [mockito](/reference/recipes-by-tag#mockito)
-* [testing](/reference/recipes-by-tag#testing)
+* mockito
+* testing
 
 ## Recipe source
 

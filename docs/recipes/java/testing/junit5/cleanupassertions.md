@@ -15,8 +15,8 @@ _Simplifies JUnit Jupiter assertions to their most-direct equivalents._
 
 ### Tags
 
-* [junit](/reference/recipes-by-tag#junit)
-* [testing](/reference/recipes-by-tag#testing)
+* junit
+* testing
 
 ## Recipe source
 

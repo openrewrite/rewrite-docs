@@ -15,8 +15,8 @@ _Remove `if` statement guards around SLF4J logging calls when parameterized logg
 
 ### Tags
 
-* [slf4j](/reference/recipes-by-tag#slf4j)
-* [logging](/reference/recipes-by-tag#logging)
+* slf4j
+* logging
 
 ## Recipe source
 

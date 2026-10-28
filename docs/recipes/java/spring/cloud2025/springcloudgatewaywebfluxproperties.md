@@ -15,8 +15,8 @@ _Migrate Spring Cloud Gateway Webflux properties for Spring Cloud 2025 release._
 
 ### Tags
 
-* [spring](/reference/recipes-by-tag#spring)
-* [cloud](/reference/recipes-by-tag#cloud)
+* spring
+* cloud
 
 ## Recipe source
 

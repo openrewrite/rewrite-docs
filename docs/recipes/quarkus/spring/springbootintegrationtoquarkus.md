@@ -15,10 +15,10 @@ _Migrates `spring-boot-starter-integration` to `camel-quarkus-core`._
 
 ### Tags
 
-* [spring](/reference/recipes-by-tag#spring)
-* [integration](/reference/recipes-by-tag#integration)
-* [camel](/reference/recipes-by-tag#camel)
-* [quarkus](/reference/recipes-by-tag#quarkus)
+* spring
+* integration
+* camel
+* quarkus
 
 ## Recipe source
 

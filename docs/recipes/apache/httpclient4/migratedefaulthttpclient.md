@@ -21,7 +21,7 @@ References:
 
 ### Tags
 
-* [CWE-326](/reference/recipes-by-tag#cwe)
+* CWE-326
 
 ## Recipe source
 

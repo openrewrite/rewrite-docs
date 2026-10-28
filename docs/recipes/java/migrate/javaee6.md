@@ -15,8 +15,8 @@ _Apply changes needed when migrating to Java EE 6, such as calling `HttpServletR
 
 ### Tags
 
-* [javaee6](/reference/recipes-by-tag#javaee6)
-* [deprecated](/reference/recipes-by-tag#deprecated)
+* javaee6
+* deprecated
 
 ## Recipe source
 

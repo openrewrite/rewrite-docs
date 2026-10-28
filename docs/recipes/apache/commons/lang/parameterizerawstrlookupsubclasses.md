@@ -15,8 +15,8 @@ _`org.apache.commons.text.StrLookup` implements `StringLookup`, which extends `U
 
 ### Tags
 
-* [apache](/reference/recipes-by-tag#apache)
-* [commons](/reference/recipes-by-tag#commons)
+* apache
+* commons
 
 ## Recipe source
 

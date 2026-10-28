@@ -15,8 +15,8 @@ _Upgrade Spring Data JPA to 3.4.6 version, which is the version used by spring-d
 
 ### Tags
 
-* [springframework](/reference/recipes-by-tag#springframework)
-* [springdata](/reference/recipes-by-tag#springdata)
+* springframework
+* springdata
 
 ## Recipe source
 

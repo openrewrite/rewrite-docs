@@ -15,9 +15,9 @@ _JUnit 4's `Assert#assertThat(..)` was deprecated in JUnit 4 and removed in JUni
 
 ### Tags
 
-* [hamcrest](/reference/recipes-by-tag#hamcrest)
-* [junit](/reference/recipes-by-tag#junit)
-* [testing](/reference/recipes-by-tag#testing)
+* hamcrest
+* junit
+* testing
 
 ## Recipe source
 

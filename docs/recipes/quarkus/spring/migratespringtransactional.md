@@ -15,10 +15,10 @@ _Migrates Spring's @Transactional annotation to Jakarta's @Transactional. Maps p
 
 ### Tags
 
-* [spring](/reference/recipes-by-tag#spring)
-* [migration](/reference/recipes-by-tag#migration)
-* [transaction](/reference/recipes-by-tag#transaction)
-* [quarkus](/reference/recipes-by-tag#quarkus)
+* spring
+* migration
+* transaction
+* quarkus
 
 ## Recipe source
 

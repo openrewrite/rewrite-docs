@@ -15,10 +15,10 @@ _Migrates Spring Boot starter dependencies to their Quarkus equivalents, removin
 
 ### Tags
 
-* [spring](/reference/recipes-by-tag#spring)
-* [migration](/reference/recipes-by-tag#migration)
-* [quarkus](/reference/recipes-by-tag#quarkus)
-* [dependencies](/reference/recipes-by-tag#dependencies)
+* spring
+* migration
+* quarkus
+* dependencies
 
 ## Recipe source
 

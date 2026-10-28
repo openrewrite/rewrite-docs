@@ -15,11 +15,11 @@ _Migrates Spring Cloud Service Discovery annotations and configurations to Quark
 
 ### Tags
 
-* [spring](/reference/recipes-by-tag#spring)
-* [cloud](/reference/recipes-by-tag#cloud)
-* [migration](/reference/recipes-by-tag#migration)
-* [service-discovery](/reference/recipes-by-tag#service)
-* [quarkus](/reference/recipes-by-tag#quarkus)
+* spring
+* cloud
+* migration
+* service-discovery
+* quarkus
 
 ## Recipe source
 

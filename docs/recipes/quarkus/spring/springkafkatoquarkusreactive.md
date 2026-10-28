@@ -15,11 +15,11 @@ _Migrates `spring-kafka` to `quarkus-messaging-kafka` when reactor dependencies 
 
 ### Tags
 
-* [spring](/reference/recipes-by-tag#spring)
-* [reactive](/reference/recipes-by-tag#reactive)
-* [quarkus](/reference/recipes-by-tag#quarkus)
-* [kafka](/reference/recipes-by-tag#kafka)
-* [messaging](/reference/recipes-by-tag#messaging)
+* spring
+* reactive
+* quarkus
+* kafka
+* messaging
 
 ## Recipe source
 

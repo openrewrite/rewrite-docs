@@ -15,7 +15,7 @@ _Rename JsonNode methods that were renamed in 3.x (e.g., `elements()` to `values
 
 ### Tags
 
-* [jackson-3](/reference/recipes-by-tag#jackson)
+* jackson-3
 
 ## Recipe source
 

@@ -15,11 +15,11 @@ _Migrate from Datadog Java tracing annotations to OpenTelemetry annotations. Rep
 
 ### Tags
 
-* [spring](/reference/recipes-by-tag#spring)
-* [migration](/reference/recipes-by-tag#migration)
-* [opentelemetry](/reference/recipes-by-tag#opentelemetry)
-* [boot](/reference/recipes-by-tag#boot)
-* [datadog](/reference/recipes-by-tag#datadog)
+* spring
+* migration
+* opentelemetry
+* boot
+* datadog
 
 ## Recipe source
 

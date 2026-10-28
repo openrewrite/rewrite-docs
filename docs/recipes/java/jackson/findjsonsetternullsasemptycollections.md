@@ -15,7 +15,7 @@ _Find `Map` and `Collection` fields that carry `@JsonSetter(nulls = Nulls.AS_EMP
 
 ### Tags
 
-* [jackson-3](/reference/recipes-by-tag#jackson)
+* jackson-3
 
 ## Recipe source
 

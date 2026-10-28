@@ -15,8 +15,8 @@ _Replace `org.powermock.reflect.Whitebox` calls (`setInternalState`, `getInterna
 
 ### Tags
 
-* [mockito](/reference/recipes-by-tag#mockito)
-* [testing](/reference/recipes-by-tag#testing)
+* mockito
+* testing
 
 ## Recipe source
 

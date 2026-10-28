@@ -15,10 +15,10 @@ _Replaces mutable tag or branch references in GitHub Actions `uses:` declaration
 
 ### Tags
 
-* [supply-chain](/reference/recipes-by-tag#supply)
-* [github](/reference/recipes-by-tag#github)
-* [security](/reference/recipes-by-tag#security)
-* [actions](/reference/recipes-by-tag#actions)
+* supply-chain
+* github
+* security
+* actions
 
 ## Recipe source
 

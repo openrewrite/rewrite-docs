@@ -15,8 +15,8 @@ _Recursively rewrites all Java import statements from org.springframework.cloud.
 
 ### Tags
 
-* [spring-cloud-contract](/reference/recipes-by-tag#spring)
-* [stubborn-contract](/reference/recipes-by-tag#stubborn)
+* spring-cloud-contract
+* stubborn-contract
 
 ## Recipe source
 

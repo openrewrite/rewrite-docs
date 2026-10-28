@@ -15,11 +15,11 @@ _Migrates `spring-boot-starter-amqp` to `quarkus-messaging-rabbitmq` when no rea
 
 ### Tags
 
-* [spring](/reference/recipes-by-tag#spring)
-* [classic](/reference/recipes-by-tag#classic)
-* [rabbitmq](/reference/recipes-by-tag#rabbitmq)
-* [amqp](/reference/recipes-by-tag#amqp)
-* [quarkus](/reference/recipes-by-tag#quarkus)
+* spring
+* classic
+* rabbitmq
+* amqp
+* quarkus
 
 ## Recipe source
 

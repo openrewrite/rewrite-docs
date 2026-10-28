@@ -15,10 +15,10 @@ _Java EE has been rebranded to Jakarta EE, necessitating a package relocation._
 
 ### Tags
 
-* [authorization](/reference/recipes-by-tag#authorization)
-* [security](/reference/recipes-by-tag#security)
-* [javax](/reference/recipes-by-tag#javax)
-* [jakarta](/reference/recipes-by-tag#jakarta)
+* authorization
+* security
+* javax
+* jakarta
 
 ## Recipe source
 

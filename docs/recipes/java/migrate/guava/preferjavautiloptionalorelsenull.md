@@ -16,7 +16,7 @@ _Replaces `com.google.common.base.Optional#orNull()` with `java.util.Optional#or
 ### Tags
 
 * [RSPEC-S4738](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S4738&open=java%3AS4738)
-* [guava](/reference/recipes-by-tag#guava)
+* guava
 
 ## Recipe source
 

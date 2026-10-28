@@ -15,9 +15,9 @@ _WireMock 3's `wiremock-jetty12` module ran on Jetty's EE10 servlet environment,
 
 ### Tags
 
-* [wiremock](/reference/recipes-by-tag#wiremock)
-* [testing](/reference/recipes-by-tag#testing)
-* [jetty](/reference/recipes-by-tag#jetty)
+* wiremock
+* testing
+* jetty
 
 ## Recipe source
 

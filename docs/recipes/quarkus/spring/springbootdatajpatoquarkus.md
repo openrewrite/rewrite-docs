@@ -15,10 +15,10 @@ _Migrates `spring-boot-starter-data-jpa` to `quarkus-hibernate-orm-panache`._
 
 ### Tags
 
-* [spring](/reference/recipes-by-tag#spring)
-* [jpa](/reference/recipes-by-tag#jpa)
-* [data](/reference/recipes-by-tag#data)
-* [quarkus](/reference/recipes-by-tag#quarkus)
+* spring
+* jpa
+* data
+* quarkus
 
 ## Recipe source
 

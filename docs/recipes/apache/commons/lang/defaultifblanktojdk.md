@@ -15,8 +15,8 @@ _Replace `StringUtils#defaultIfBlank(s, fallback)` with `s == null || s.isBlank(
 
 ### Tags
 
-* [apache](/reference/recipes-by-tag#apache)
-* [commons](/reference/recipes-by-tag#commons)
+* apache
+* commons
 
 ## Recipe source
 

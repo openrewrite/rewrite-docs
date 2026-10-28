@@ -15,8 +15,8 @@ _Replace older code patterns with `SequencedCollection` methods, as per https://
 
 ### Tags
 
-* [collections](/reference/recipes-by-tag#collections)
-* [java21](/reference/recipes-by-tag#java21)
+* collections
+* java21
 
 ## Recipe source
 

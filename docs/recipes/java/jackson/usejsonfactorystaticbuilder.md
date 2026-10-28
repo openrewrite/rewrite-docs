@@ -15,7 +15,7 @@ _After the Jackson 2 → 3 migration, prefer the concrete static `JsonFactory.bu
 
 ### Tags
 
-* [jackson-3](/reference/recipes-by-tag#jackson)
+* jackson-3
 
 ## Recipe source
 

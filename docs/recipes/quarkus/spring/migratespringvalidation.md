@@ -15,10 +15,10 @@ _Migrates Spring Boot validation to Quarkus Hibernate Validator. Adds the quarku
 
 ### Tags
 
-* [spring](/reference/recipes-by-tag#spring)
-* [migration](/reference/recipes-by-tag#migration)
-* [validation](/reference/recipes-by-tag#validation)
-* [quarkus](/reference/recipes-by-tag#quarkus)
+* spring
+* migration
+* validation
+* quarkus
 
 ## Recipe source
 

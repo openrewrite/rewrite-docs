@@ -15,10 +15,10 @@ _Removes Spring Boot DevTools dependency and configuration. Quarkus has built-in
 
 ### Tags
 
-* [spring](/reference/recipes-by-tag#spring)
-* [migration](/reference/recipes-by-tag#migration)
-* [devtools](/reference/recipes-by-tag#devtools)
-* [quarkus](/reference/recipes-by-tag#quarkus)
+* spring
+* migration
+* devtools
+* quarkus
 
 ## Recipe source
 

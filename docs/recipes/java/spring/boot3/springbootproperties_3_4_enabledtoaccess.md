@@ -15,8 +15,8 @@ _Migrate properties found in `application.properties` and `application.yml`, spe
 
 ### Tags
 
-* [spring](/reference/recipes-by-tag#spring)
-* [boot](/reference/recipes-by-tag#boot)
+* spring
+* boot
 
 ## Recipe source
 

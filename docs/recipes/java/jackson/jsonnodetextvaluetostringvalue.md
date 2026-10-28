@@ -15,7 +15,7 @@ _In Jackson 2, `JsonNode.textValue()` returns `null` for nodes that are not text
 
 ### Tags
 
-* [jackson-3](/reference/recipes-by-tag#jackson)
+* jackson-3
 
 ## Recipe source
 

@@ -15,7 +15,7 @@ _Remove `ObjectMapper` feature flag configurations that set values to their new 
 
 ### Tags
 
-* [jackson-3](/reference/recipes-by-tag#jackson)
+* jackson-3
 
 ## Recipe source
 

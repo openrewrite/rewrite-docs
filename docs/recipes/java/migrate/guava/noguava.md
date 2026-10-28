@@ -15,7 +15,7 @@ _Guava filled in important gaps in the Java standard library and still does. But
 
 ### Tags
 
-* [guava](/reference/recipes-by-tag#guava)
+* guava
 
 ## Recipe source
 

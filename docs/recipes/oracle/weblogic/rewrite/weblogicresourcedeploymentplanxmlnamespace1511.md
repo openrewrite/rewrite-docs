@@ -15,9 +15,9 @@ _This recipe will update the `xmlns` entries in `resource-deployment-plan.xml` f
 
 ### Tags
 
-* [weblogic](/reference/recipes-by-tag#weblogic)
-* [resource-deployment-plan](/reference/recipes-by-tag#resource)
-* [schemas](/reference/recipes-by-tag#schemas)
+* weblogic
+* resource-deployment-plan
+* schemas
 
 ## Recipe source
 

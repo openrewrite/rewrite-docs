@@ -15,11 +15,11 @@ _Migrates Spring's event mechanism to CDI events. Converts ApplicationEventPubli
 
 ### Tags
 
-* [spring](/reference/recipes-by-tag#spring)
-* [migration](/reference/recipes-by-tag#migration)
-* [cdi](/reference/recipes-by-tag#cdi)
-* [events](/reference/recipes-by-tag#events)
-* [quarkus](/reference/recipes-by-tag#quarkus)
+* spring
+* migration
+* cdi
+* events
+* quarkus
 
 ## Recipe source
 

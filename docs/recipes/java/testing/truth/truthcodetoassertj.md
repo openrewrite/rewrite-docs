@@ -15,9 +15,9 @@ _Convert Google Truth assertions, subject types and their methods to AssertJ equ
 
 ### Tags
 
-* [assertj](/reference/recipes-by-tag#assertj)
-* [testing](/reference/recipes-by-tag#testing)
-* [truth](/reference/recipes-by-tag#truth)
+* assertj
+* testing
+* truth
 
 ## Recipe source
 

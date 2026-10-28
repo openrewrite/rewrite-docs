@@ -15,8 +15,8 @@ _Migrates JUnit 4.x tests to JUnit Jupiter._
 
 ### Tags
 
-* [junit](/reference/recipes-by-tag#junit)
-* [testing](/reference/recipes-by-tag#testing)
+* junit
+* testing
 
 ## Recipe source
 

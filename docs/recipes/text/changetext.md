@@ -15,7 +15,7 @@ _Completely replaces the contents of the text file with other text. Use together
 
 ### Tags
 
-* [plain text](/reference/recipes-by-tag#plain-text)
+* plain text
 
 ## Recipe source
 

@@ -15,8 +15,8 @@ _Replace Guava's `Maps` and `Sets` `new*WithExpectedSize` factories and the prim
 
 ### Tags
 
-* [guava](/reference/recipes-by-tag#guava)
-* [java21](/reference/recipes-by-tag#java21)
+* guava
+* java21
 
 ## Recipe source
 

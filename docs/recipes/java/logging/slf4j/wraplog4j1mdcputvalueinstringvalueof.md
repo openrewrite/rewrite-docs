@@ -15,9 +15,9 @@ _SLF4J `MDC.put(String, String)` requires a `String` value, but Log4j 1.x `MDC.p
 
 ### Tags
 
-* [slf4j](/reference/recipes-by-tag#slf4j)
-* [logging](/reference/recipes-by-tag#logging)
-* [log4j](/reference/recipes-by-tag#log4j)
+* slf4j
+* logging
+* log4j
 
 ## Recipe source
 

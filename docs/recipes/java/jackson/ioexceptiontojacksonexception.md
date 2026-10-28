@@ -15,7 +15,7 @@ _In Jackson 3, `ObjectMapper` and related classes no longer throw `IOException`.
 
 ### Tags
 
-* [jackson-3](/reference/recipes-by-tag#jackson)
+* jackson-3
 
 ## Recipe source
 

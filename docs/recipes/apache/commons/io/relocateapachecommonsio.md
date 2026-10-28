@@ -15,9 +15,9 @@ _The deployment of `org.apache.commons:commons-io` [was a publishing mistake aro
 
 ### Tags
 
-* [commons](/reference/recipes-by-tag#commons)
-* [security](/reference/recipes-by-tag#security)
-* [apache](/reference/recipes-by-tag#apache)
+* commons
+* security
+* apache
 
 ## Recipe source
 

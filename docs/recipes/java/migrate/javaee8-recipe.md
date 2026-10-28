@@ -15,8 +15,8 @@ _Apply changes needed when migrating to Java EE 8, such as upgrading the Java Se
 
 ### Tags
 
-* [javaee8](/reference/recipes-by-tag#javaee8)
-* [deprecated](/reference/recipes-by-tag#deprecated)
+* javaee8
+* deprecated
 
 ## Recipe source
 

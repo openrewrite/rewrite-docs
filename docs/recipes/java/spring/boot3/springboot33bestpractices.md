@@ -15,8 +15,8 @@ _Applies best practices to Spring Boot 3 applications._
 
 ### Tags
 
-* [spring](/reference/recipes-by-tag#spring)
-* [boot](/reference/recipes-by-tag#boot)
+* spring
+* boot
 
 ## Recipe source
 

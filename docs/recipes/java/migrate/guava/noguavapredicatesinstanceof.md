@@ -15,7 +15,7 @@ _Prefer `A.class::isInstance` over `Predicates.instanceOf(A.class)`._
 
 ### Tags
 
-* [guava](/reference/recipes-by-tag#guava)
+* guava
 
 ## Recipe source
 

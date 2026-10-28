@@ -15,9 +15,9 @@ _Migrate DataNucleus applications to 5.2. This recipe first applies the 5.1 migr
 
 ### Tags
 
-* [jdo](/reference/recipes-by-tag#jdo)
-* [datanucleus](/reference/recipes-by-tag#datanucleus)
-* [jpa](/reference/recipes-by-tag#jpa)
+* jdo
+* datanucleus
+* jpa
 
 ## Recipe source
 

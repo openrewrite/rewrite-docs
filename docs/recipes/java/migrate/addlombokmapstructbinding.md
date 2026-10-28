@@ -15,7 +15,7 @@ _Add the `lombok-mapstruct-binding` annotation processor as needed when both Map
 
 ### Tags
 
-* [java17](/reference/recipes-by-tag#java17)
+* java17
 
 ## Recipe source
 

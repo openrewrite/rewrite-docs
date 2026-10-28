@@ -15,7 +15,7 @@ _Rename ObjectNode methods deprecated in Jackson 2 and removed in 3.x (`put(Stri
 
 ### Tags
 
-* [jackson-3](/reference/recipes-by-tag#jackson)
+* jackson-3
 
 ## Recipe source
 

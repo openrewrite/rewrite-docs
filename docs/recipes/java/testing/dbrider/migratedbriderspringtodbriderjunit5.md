@@ -15,9 +15,9 @@ _Migrates the DbRider dependency and annotations from `rider-spring` (JUnit 4) t
 
 ### Tags
 
-* [spring](/reference/recipes-by-tag#spring)
-* [dbrider](/reference/recipes-by-tag#dbrider)
-* [testing](/reference/recipes-by-tag#testing)
+* spring
+* dbrider
+* testing
 
 ## Recipe source
 

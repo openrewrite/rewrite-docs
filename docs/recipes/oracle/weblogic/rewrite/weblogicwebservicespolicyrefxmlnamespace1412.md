@@ -15,9 +15,9 @@ _Migrate xmlns entries in WebLogic Web Service Policy Reference schema files to 
 
 ### Tags
 
-* [weblogic](/reference/recipes-by-tag#weblogic)
-* [webservices-policy](/reference/recipes-by-tag#webservices)
-* [schemas](/reference/recipes-by-tag#schemas)
+* weblogic
+* webservices-policy
+* schemas
 
 ## Recipe source
 

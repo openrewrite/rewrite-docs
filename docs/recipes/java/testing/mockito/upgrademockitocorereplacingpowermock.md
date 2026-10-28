@@ -15,8 +15,8 @@ _Upgrades a declared `mockito-core` to at least the Mockito 3.x that replaces th
 
 ### Tags
 
-* [mockito](/reference/recipes-by-tag#mockito)
-* [testing](/reference/recipes-by-tag#testing)
+* mockito
+* testing
 
 ## Recipe source
 

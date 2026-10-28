@@ -15,8 +15,8 @@ _Adds an explanatory comment to Kotlin modules that remain at Java 24 after the 
 
 ### Tags
 
-* [kotlin](/reference/recipes-by-tag#kotlin)
-* [java25](/reference/recipes-by-tag#java25)
+* kotlin
+* java25
 
 ## Recipe source
 

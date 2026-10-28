@@ -15,10 +15,10 @@ _Migrates Spring Boot test annotations and utilities to Quarkus test equivalents
 
 ### Tags
 
-* [spring](/reference/recipes-by-tag#spring)
-* [migration](/reference/recipes-by-tag#migration)
-* [quarkus](/reference/recipes-by-tag#quarkus)
-* [testing](/reference/recipes-by-tag#testing)
+* spring
+* migration
+* quarkus
+* testing
 
 ## Recipe source
 

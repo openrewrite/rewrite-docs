@@ -15,7 +15,7 @@ _Prefer `java.lang.Long#parseUnsignedLong` instead of using `com.google.common.p
 
 ### Tags
 
-* [guava](/reference/recipes-by-tag#guava)
+* guava
 
 ## Recipe source
 

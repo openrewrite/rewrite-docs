@@ -15,9 +15,9 @@ _Migrate DataNucleus 3.x applications to 4.0. This recipe handles package reloca
 
 ### Tags
 
-* [jdo](/reference/recipes-by-tag#jdo)
-* [datanucleus](/reference/recipes-by-tag#datanucleus)
-* [jpa](/reference/recipes-by-tag#jpa)
+* jdo
+* datanucleus
+* jpa
 
 ## Recipe source
 

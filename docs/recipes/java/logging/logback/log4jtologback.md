@@ -15,9 +15,9 @@ _Migrates usage of Apache Log4j 2.x to using `logback` as an SLF4J implementatio
 
 ### Tags
 
-* [logging](/reference/recipes-by-tag#logging)
-* [log4j](/reference/recipes-by-tag#log4j)
-* [logback](/reference/recipes-by-tag#logback)
+* logging
+* log4j
+* logback
 
 ## Recipe source
 

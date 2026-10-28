@@ -15,7 +15,7 @@ _Certain Java logging APIs have become deprecated and their usages changed, nece
 
 ### Tags
 
-* [logging](/reference/recipes-by-tag#logging)
+* logging
 
 ## Recipe source
 

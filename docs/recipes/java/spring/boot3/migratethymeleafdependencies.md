@@ -15,9 +15,9 @@ _Migrate thymeleaf dependencies to the new artifactId, since these are changed w
 
 ### Tags
 
-* [spring](/reference/recipes-by-tag#spring)
-* [boot](/reference/recipes-by-tag#boot)
-* [thymeleaf](/reference/recipes-by-tag#thymeleaf)
+* spring
+* boot
+* thymeleaf
 
 ## Recipe source
 

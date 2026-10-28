@@ -15,8 +15,8 @@ _Migrate error handlers deprecated in Spring Kafka `2.8.x` to their replacements
 
 ### Tags
 
-* [spring](/reference/recipes-by-tag#spring)
-* [kafka](/reference/recipes-by-tag#kafka)
+* spring
+* kafka
 
 ## Recipe source
 

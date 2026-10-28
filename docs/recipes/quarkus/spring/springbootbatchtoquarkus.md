@@ -15,10 +15,10 @@ _Migrates `spring-boot-starter-batch` to `quarkus-scheduler`._
 
 ### Tags
 
-* [spring](/reference/recipes-by-tag#spring)
-* [batch](/reference/recipes-by-tag#batch)
-* [scheduler](/reference/recipes-by-tag#scheduler)
-* [quarkus](/reference/recipes-by-tag#quarkus)
+* spring
+* batch
+* scheduler
+* quarkus
 
 ## Recipe source
 

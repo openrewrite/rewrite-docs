@@ -15,7 +15,7 @@ _In Jackson 3, `ObjectMapper.copy()` was removed. Use `mapper.rebuild().build()`
 
 ### Tags
 
-* [jackson-3](/reference/recipes-by-tag#jackson)
+* jackson-3
 
 ## Recipe source
 

@@ -15,7 +15,7 @@ _In Jackson 3, `JsonMapper` and other format-aligned mappers are immutable. Conf
 
 ### Tags
 
-* [jackson-3](/reference/recipes-by-tag#jackson)
+* jackson-3
 
 ## Recipe source
 

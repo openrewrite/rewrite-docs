@@ -15,8 +15,8 @@ _Migrate `org.apache.commons.lang.WordUtils` to `org.apache.commons.text.WordUti
 
 ### Tags
 
-* [commons](/reference/recipes-by-tag#commons)
-* [apache](/reference/recipes-by-tag#apache)
+* commons
+* apache
 
 ## Recipe source
 

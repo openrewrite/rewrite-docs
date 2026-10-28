@@ -15,8 +15,8 @@ _Change maven.compiler.source and maven.compiler.target values to 17._
 
 ### Tags
 
-* [compiler](/reference/recipes-by-tag#compiler)
-* [java17](/reference/recipes-by-tag#java17)
+* compiler
+* java17
 
 ## Recipe source
 

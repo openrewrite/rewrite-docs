@@ -15,7 +15,7 @@ _Prefer `Collection.stream().filter(Predicate)` over `Sets.filter(Set, Predicate
 
 ### Tags
 
-* [guava](/reference/recipes-by-tag#guava)
+* guava
 
 ## Recipe source
 

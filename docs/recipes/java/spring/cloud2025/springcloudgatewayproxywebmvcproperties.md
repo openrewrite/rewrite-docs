@@ -15,8 +15,8 @@ _Migrate Spring Cloud Gateway Proxy WebMvc properties for Spring Cloud 2025 rele
 
 ### Tags
 
-* [spring](/reference/recipes-by-tag#spring)
-* [cloud](/reference/recipes-by-tag#cloud)
+* spring
+* cloud
 
 ## Recipe source
 

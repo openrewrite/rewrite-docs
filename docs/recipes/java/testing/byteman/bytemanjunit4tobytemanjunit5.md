@@ -15,9 +15,9 @@ _Migrates Byteman JUnit 4 to JUnit 5._
 
 ### Tags
 
-* [byteman](/reference/recipes-by-tag#byteman)
-* [junit](/reference/recipes-by-tag#junit)
-* [testing](/reference/recipes-by-tag#testing)
+* byteman
+* junit
+* testing
 
 ## Recipe source
 

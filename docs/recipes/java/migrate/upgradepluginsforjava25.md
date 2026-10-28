@@ -15,7 +15,7 @@ _Updates plugins and dependencies to versions compatible with Java 25._
 
 ### Tags
 
-* [java25](/reference/recipes-by-tag#java25)
+* java25
 
 ## Recipe source
 

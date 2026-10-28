@@ -15,7 +15,7 @@ _Jackson 3 moved date/time-related feature constants from `SerializationFeature`
 
 ### Tags
 
-* [jackson-3](/reference/recipes-by-tag#jackson)
+* jackson-3
 
 ## Recipe source
 

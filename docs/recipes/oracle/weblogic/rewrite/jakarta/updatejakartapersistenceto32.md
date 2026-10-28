@@ -15,9 +15,9 @@ _Update Jakarta Persistence to 3.2._
 
 ### Tags
 
-* [weblogic](/reference/recipes-by-tag#weblogic)
-* [persistence](/reference/recipes-by-tag#persistence)
-* [jakartaee](/reference/recipes-by-tag#jakartaee)
+* weblogic
+* persistence
+* jakartaee
 
 ## Recipe source
 

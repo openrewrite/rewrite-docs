@@ -15,10 +15,10 @@ _Migrates `spring-boot-starter-webflux` to `quarkus-rest-client-jackson` when re
 
 ### Tags
 
-* [spring](/reference/recipes-by-tag#spring)
-* [webflux](/reference/recipes-by-tag#webflux)
-* [reactive](/reference/recipes-by-tag#reactive)
-* [quarkus](/reference/recipes-by-tag#quarkus)
+* spring
+* webflux
+* reactive
+* quarkus
 
 ## Recipe source
 

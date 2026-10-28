@@ -15,8 +15,8 @@ _Upgrades actions from the official `actions` and `github` organizations to the 
 
 ### Tags
 
-* [github](/reference/recipes-by-tag#github)
-* [actions](/reference/recipes-by-tag#actions)
+* github
+* actions
 
 ## Recipe source
 

@@ -15,7 +15,7 @@ _This recipe will apply changes commonly needed when migrating to Java 21. Build
 
 ### Tags
 
-* [java21](/reference/recipes-by-tag#java21)
+* java21
 
 ## Recipe source
 

@@ -23,17 +23,15 @@ export const primarySections: NavSection[] = [
   { name: 'Recipe catalog', href: '/recipes' },
   { name: 'Reference', href: '/reference' },
   { name: 'Concepts & explanations', href: '/concepts-explanations' },
-  { name: 'Lists', href: '/lists' },
 ];
 
 /**
  * Route -> section href, derived from the sidebar tree.
  *
- * A section cannot be identified by URL prefix alone. Two cases break it:
- * Concepts & explanations is served at /concepts-explanations but its documents
- * live under /concepts-and-explanations, and Lists owns seven documents under
- * /reference — the same prefix Reference uses for its own thirteen. Walking the
- * tree is the only thing that knows which section a document belongs to.
+ * A section cannot be identified by URL prefix alone: Concepts & explanations is
+ * served at /concepts-explanations but its documents live under
+ * /concepts-and-explanations. Walking the tree is the only thing that knows
+ * which section a document belongs to.
  *
  * Safe to build from doc ids because routeBasePath is "/" and no document in a
  * section overrides its slug, so the route is always "/" + id.

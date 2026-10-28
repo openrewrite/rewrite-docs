@@ -15,7 +15,7 @@ _Migrate to Jakarta EE 10 from Java EE 8 or Jakarta EE 9. Moves `javax` packages
 
 ### Tags
 
-* [jakarta](/reference/recipes-by-tag#jakarta)
+* jakarta
 
 ## Recipe source
 

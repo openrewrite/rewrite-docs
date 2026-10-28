@@ -15,8 +15,8 @@ _`ServerName.getDisplayName()` is not available in Liberty._
 
 ### Tags
 
-* [websphere](/reference/recipes-by-tag#websphere)
-* [liberty](/reference/recipes-by-tag#liberty)
+* websphere
+* liberty
 
 ## Recipe source
 

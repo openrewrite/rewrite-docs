@@ -15,7 +15,7 @@ _Prefer `Collection.stream().map(Function)` over `Iterables.transform(Collection
 
 ### Tags
 
-* [guava](/reference/recipes-by-tag#guava)
+* guava
 
 ## Recipe source
 

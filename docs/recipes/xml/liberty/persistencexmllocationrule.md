@@ -15,8 +15,8 @@ _This recipes moves persistence.xml files into the root META-INF directory in so
 
 ### Tags
 
-* [websphere](/reference/recipes-by-tag#websphere)
-* [liberty](/reference/recipes-by-tag#liberty)
+* websphere
+* liberty
 
 ## Recipe source
 

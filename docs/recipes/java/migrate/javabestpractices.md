@@ -15,8 +15,8 @@ _Applies opinionated best practices for Java projects targeting Java 25. This re
 
 ### Tags
 
-* [best-practices](/reference/recipes-by-tag#best)
-* [java25](/reference/recipes-by-tag#java25)
+* best-practices
+* java25
 
 ## Recipe source
 

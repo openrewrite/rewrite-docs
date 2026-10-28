@@ -15,8 +15,8 @@ _Replace `String.format()` calls in SLF4J logging statements with parameterized 
 
 ### Tags
 
-* [slf4j](/reference/recipes-by-tag#slf4j)
-* [logging](/reference/recipes-by-tag#logging)
+* slf4j
+* logging
 
 ## Recipe source
 

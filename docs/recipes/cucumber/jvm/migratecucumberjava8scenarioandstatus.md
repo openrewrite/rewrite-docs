@@ -15,8 +15,8 @@ _`Scenario` and `Status` are the only `io.cucumber.java8` types with an `io.cucu
 
 ### Tags
 
-* [cucumber](/reference/recipes-by-tag#cucumber)
-* [testing](/reference/recipes-by-tag#testing)
+* cucumber
+* testing
 
 ## Recipe source
 

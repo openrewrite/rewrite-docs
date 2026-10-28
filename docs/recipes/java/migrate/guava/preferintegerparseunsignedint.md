@@ -15,7 +15,7 @@ _Prefer `java.lang.Integer#parseUnsignedInt` instead of using `com.google.common
 
 ### Tags
 
-* [guava](/reference/recipes-by-tag#guava)
+* guava
 
 ## Recipe source
 

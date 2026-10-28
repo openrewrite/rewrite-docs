@@ -15,8 +15,8 @@ _Use `IOUtils` method invocations that include the charset encoding instead of u
 
 ### Tags
 
-* [apache](/reference/recipes-by-tag#apache)
-* [commons](/reference/recipes-by-tag#commons)
+* apache
+* commons
 
 ## Recipe source
 

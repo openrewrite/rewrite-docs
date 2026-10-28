@@ -15,10 +15,10 @@ _Adds a `cooldown` section to each update configuration in Dependabot files. Sup
 
 ### Tags
 
-* [github](/reference/recipes-by-tag#github)
-* [security](/reference/recipes-by-tag#security)
-* [dependabot](/reference/recipes-by-tag#dependabot)
-* [dependencies](/reference/recipes-by-tag#dependencies)
+* github
+* security
+* dependabot
+* dependencies
 
 ## Recipe source
 

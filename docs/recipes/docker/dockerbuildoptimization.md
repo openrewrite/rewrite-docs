@@ -15,8 +15,8 @@ _Apply build optimization best practices to Dockerfiles. This includes combining
 
 ### Tags
 
-* [optimization](/reference/recipes-by-tag#optimization)
-* [docker](/reference/recipes-by-tag#docker)
+* optimization
+* docker
 
 ## Recipe source
 

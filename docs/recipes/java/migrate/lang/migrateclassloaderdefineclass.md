@@ -15,7 +15,7 @@ _Use `ClassLoader#defineClass(String, byte[], int, int)` instead of the deprecat
 
 ### Tags
 
-* [deprecated](/reference/recipes-by-tag#deprecated)
+* deprecated
 
 ## Recipe source
 

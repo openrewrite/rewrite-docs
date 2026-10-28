@@ -15,7 +15,7 @@ _Use `Logger#logrb(.., ResourceBundle bundleName, ..)` instead of the deprecated
 
 ### Tags
 
-* [deprecated](/reference/recipes-by-tag#deprecated)
+* deprecated
 
 ## Recipe source
 

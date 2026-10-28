@@ -15,12 +15,12 @@ _Migrates Spring Boot Actuator to Quarkus SmallRye Health and Metrics extensions
 
 ### Tags
 
-* [spring](/reference/recipes-by-tag#spring)
-* [migration](/reference/recipes-by-tag#migration)
-* [health](/reference/recipes-by-tag#health)
-* [actuator](/reference/recipes-by-tag#actuator)
-* [metrics](/reference/recipes-by-tag#metrics)
-* [quarkus](/reference/recipes-by-tag#quarkus)
+* spring
+* migration
+* health
+* actuator
+* metrics
+* quarkus
 
 ## Recipe source
 

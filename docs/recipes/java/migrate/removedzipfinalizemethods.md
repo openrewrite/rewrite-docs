@@ -15,7 +15,7 @@ _The `finalize` method in `java.util.zip.ZipFile` is replaced with the `close` m
 
 ### Tags
 
-* [java17](/reference/recipes-by-tag#java17)
+* java17
 
 ## Recipe source
 

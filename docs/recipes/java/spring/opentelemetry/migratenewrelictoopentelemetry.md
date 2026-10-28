@@ -15,11 +15,11 @@ _Migrate from New Relic Java Agent annotations to OpenTelemetry annotations. Rep
 
 ### Tags
 
-* [spring](/reference/recipes-by-tag#spring)
-* [migration](/reference/recipes-by-tag#migration)
-* [opentelemetry](/reference/recipes-by-tag#opentelemetry)
-* [boot](/reference/recipes-by-tag#boot)
-* [newrelic](/reference/recipes-by-tag#newrelic)
+* spring
+* migration
+* opentelemetry
+* boot
+* newrelic
 
 ## Recipe source
 

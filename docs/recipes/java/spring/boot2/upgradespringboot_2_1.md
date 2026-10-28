@@ -15,8 +15,8 @@ _Migrate applications to the latest Spring Boot 2.1 release. This recipe will mo
 
 ### Tags
 
-* [spring](/reference/recipes-by-tag#spring)
-* [boot](/reference/recipes-by-tag#boot)
+* spring
+* boot
 
 ## Recipe source
 

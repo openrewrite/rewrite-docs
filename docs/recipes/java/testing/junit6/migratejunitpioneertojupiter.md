@@ -15,10 +15,10 @@ _Migrates `@DefaultLocale`, `@DefaultTimeZone`, `@SetSystemProperty`, `@ClearSys
 
 ### Tags
 
-* [junit-pioneer](/reference/recipes-by-tag#junit)
-* [junit](/reference/recipes-by-tag#junit)
-* [jupiter](/reference/recipes-by-tag#jupiter)
-* [testing](/reference/recipes-by-tag#testing)
+* junit-pioneer
+* junit
+* jupiter
+* testing
 
 ## Recipe source
 

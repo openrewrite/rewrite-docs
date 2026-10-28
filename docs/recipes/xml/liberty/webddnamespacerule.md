@@ -15,7 +15,7 @@ _Namespace values in web.xml must be consistent with the descriptor version._
 
 ### Tags
 
-* [liberty](/reference/recipes-by-tag#liberty)
+* liberty
 
 ## Recipe source
 

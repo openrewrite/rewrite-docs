@@ -15,9 +15,9 @@ _Replaces org.springframework.cloud:spring-cloud-contract-* GAVs with sh.stubbor
 
 ### Tags
 
-* [gradle](/reference/recipes-by-tag#gradle)
-* [spring-cloud-contract](/reference/recipes-by-tag#spring)
-* [stubborn-contract](/reference/recipes-by-tag#stubborn)
+* gradle
+* spring-cloud-contract
+* stubborn-contract
 
 ## Recipe source
 

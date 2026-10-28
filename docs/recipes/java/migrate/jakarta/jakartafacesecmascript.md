@@ -15,9 +15,9 @@ _Convert JSF to Faces values inside JavaScript, TypeScript, and properties files
 
 ### Tags
 
-* [faces](/reference/recipes-by-tag#faces)
-* [jsf](/reference/recipes-by-tag#jsf)
-* [jakarta](/reference/recipes-by-tag#jakarta)
+* faces
+* jsf
+* jakarta
 
 ## Recipe source
 

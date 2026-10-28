@@ -15,7 +15,7 @@ _Prefer `java.lang.Character#compare` instead of using `com.google.common.primit
 
 ### Tags
 
-* [guava](/reference/recipes-by-tag#guava)
+* guava
 
 ## Recipe source
 

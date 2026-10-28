@@ -15,7 +15,7 @@ _Apply a set of Docker best practices to Dockerfiles. This recipe applies securi
 
 ### Tags
 
-* [docker](/reference/recipes-by-tag#docker)
+* docker
 
 ## Recipe source
 

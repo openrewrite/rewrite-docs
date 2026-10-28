@@ -15,8 +15,8 @@ _Migrates Log4j 1.x to Log4j 2.x._
 
 ### Tags
 
-* [logging](/reference/recipes-by-tag#logging)
-* [log4j](/reference/recipes-by-tag#log4j)
+* logging
+* log4j
 
 ## Recipe source
 

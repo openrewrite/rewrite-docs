@@ -15,9 +15,9 @@ _Migrate xmlns entries in WebLogic JMS schema files to WebLogic 14.1.2_
 
 ### Tags
 
-* [weblogic](/reference/recipes-by-tag#weblogic)
-* [jms](/reference/recipes-by-tag#jms)
-* [schemas](/reference/recipes-by-tag#schemas)
+* weblogic
+* jms
+* schemas
 
 ## Recipe source
 

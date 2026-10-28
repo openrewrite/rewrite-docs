@@ -15,11 +15,11 @@ _Adds configuration and dependencies required for Quarkus native image compilati
 
 ### Tags
 
-* [spring](/reference/recipes-by-tag#spring)
-* [migration](/reference/recipes-by-tag#migration)
-* [native](/reference/recipes-by-tag#native)
-* [graalvm](/reference/recipes-by-tag#graalvm)
-* [quarkus](/reference/recipes-by-tag#quarkus)
+* spring
+* migration
+* native
+* graalvm
+* quarkus
 
 ## Recipe source
 

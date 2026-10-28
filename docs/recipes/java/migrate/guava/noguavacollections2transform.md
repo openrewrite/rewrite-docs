@@ -15,7 +15,7 @@ _Prefer `Collection.stream().map(Function)` over `Collections2.transform(Collect
 
 ### Tags
 
-* [guava](/reference/recipes-by-tag#guava)
+* guava
 
 ## Recipe source
 

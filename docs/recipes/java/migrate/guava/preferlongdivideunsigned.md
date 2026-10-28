@@ -15,7 +15,7 @@ _Prefer `java.lang.Long#divideUnsigned` instead of using `com.google.common.prim
 
 ### Tags
 
-* [guava](/reference/recipes-by-tag#guava)
+* guava
 
 ## Recipe source
 

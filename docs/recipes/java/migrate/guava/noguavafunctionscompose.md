@@ -15,7 +15,7 @@ _Prefer `Function.compose(Function)` over `Functions.compose(Function, Function)
 
 ### Tags
 
-* [guava](/reference/recipes-by-tag#guava)
+* guava
 
 ## Recipe source
 
