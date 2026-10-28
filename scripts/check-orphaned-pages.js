@@ -113,7 +113,12 @@ for (const id of sidebarDocIds) {
   }
 }
 
-const categorySlugs = new Set(sidebar.filter((item) => item.link?.slug).map((item) => normalize(item.link.slug)));
+const categorySlugs = new Set(
+  sidebar
+    .map((item) => item.link?.slug ?? (item.link?.type === 'doc' ? `/${item.link.id}` : undefined))
+    .filter(Boolean)
+    .map(normalize),
+);
 for (const section of new Set([...primarySections, ...mobileSections])) {
   if (!categorySlugs.has(normalize(section.href))) {
     problems.push(

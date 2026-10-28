@@ -24,7 +24,9 @@ enum class License(val title: String, val url: String) {
     }
 }
 
-data class ManagedDependency(val groupId: String, val artifactId: String, val version: String, val scope: String?)
+data class ManagedDependency(val groupId: String, val artifactId: String, val version: String, val scope: String?) {
+    val coordinates get() = "$groupId:$artifactId"
+}
 
 class Pom(
     val groupId: String,
@@ -35,6 +37,8 @@ class Pom(
     val repository: String,
     val managedDependencies: List<ManagedDependency>,
 ) {
+    val coordinates get() = "$groupId:$artifactId"
+
     companion object {
         private val GITHUB_REPOSITORY = Regex("https://github\\.com/[^/]+/[^/]+?(?=\\.git|/|$)")
 

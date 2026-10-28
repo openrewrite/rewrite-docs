@@ -1,10 +1,9 @@
-import type { PropSidebarItem } from '@docusaurus/plugin-content-docs';
 import sidebars from '@site/sidebars';
 
 /**
  * Sections shown in the secondary nav.
  *
- * `href` must match a top-level category's generated-index slug in sidebars.ts —
+ * `href` must match a top-level category's generated-index slug or linked doc in sidebars.ts —
  * that is how a section resolves to its sidebar subtree. An href matching no
  * category still links, but its pages fall back to the full sidebar, so
  * scripts/check-orphaned-pages.js fails CI on one.
@@ -65,10 +64,13 @@ function buildRouteOwners(): Map<string, string> {
     if (typeof item !== 'object' || item === null) {
       return;
     }
-    const node = item as { type?: string; link?: { slug?: string }; items?: unknown[] };
-    const slug = node.link?.slug;
+    const node = item as { type?: string; link?: { slug?: string; id?: string }; items?: unknown[] };
+    const slug = node.link?.slug ?? (node.link?.id && `/${node.link.id}`);
     if (node.type !== 'category' || !slug || !Array.isArray(node.items)) {
       return;
+    }
+    if (node.link?.id) {
+      owners.set(`/${node.link.id}`.toLowerCase(), slug.toLowerCase());
     }
     collect(node.items, slug.toLowerCase());
   });
@@ -83,41 +85,12 @@ export function ownerOf(pathname: string): string | undefined {
   return routeOwners.get(pathname.toLowerCase().replace(/\/$/, ''));
 }
 
-/** How many releases the Releases dropdown lists before "More releases". */
-const RECENT_RELEASE_COUNT = 3;
-
-/**
- * The most recent releases, read from the Changelog category in sidebars.ts.
- *
- * Derived rather than listed: an automated job adds a changelog entry on every
- * release, so a hand-written list here would be stale within days. sidebars.ts
- * orders that category newest-first and imports only a type, which is why it is
- * safe to read from client code.
- */
-function recentReleases(): NavSection[] {
-  const top = (sidebars.docs ?? []) as PropSidebarItem[];
-  const changelog = top.find(
-    (item): item is PropSidebarItem & { items: unknown[] } =>
-      typeof item === 'object' && 'label' in item && item.label === 'Changelog',
-  );
-
-  return (changelog?.items ?? [])
-    .filter((id): id is string => typeof id === 'string')
-    .slice(0, RECENT_RELEASE_COUNT)
-    .map((id) => ({
-      // 'changelog/8-91-0-Release' -> '8.91.0'
-      name: `${id.replace(/^changelog\//, '').replace(/-Release$/i, '').replace(/-/g, '.')} release`,
-      href: `/${id}`,
-    }));
-}
-
-/** The section the release entries belong to. */
 const ALL_RELEASES_HREF = '/changelog';
 
 /** Right-aligned dropdown, mirroring Releases on docs.moderne.io. */
 export const releaseSections: NavSection[] = [
-  ...recentReleases(),
-  { name: 'All releases', href: ALL_RELEASES_HREF },
+  { name: 'Changelog', href: ALL_RELEASES_HREF },
+  { name: 'Latest versions', href: '/reference/latest-versions-of-every-openrewrite-module' },
 ];
 
 /** The drawer's sections, where the secondary nav is hidden: the same links, with
@@ -127,9 +100,7 @@ export const mobileSections: NavSection[] = [
   { name: 'Releases', href: ALL_RELEASES_HREF },
 ];
 
-/** Sections the secondary nav can mark active. The release entries are
- *  individual documents rather than sections, so they are excluded — only
- *  /changelog itself scopes a sidebar. */
+/** Sections the secondary nav can mark active. */
 export const selectableSections: NavSection[] = [
   ...primarySections,
   { name: 'Changelog', href: ALL_RELEASES_HREF },

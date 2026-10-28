@@ -33,6 +33,7 @@ jobs:
         env:
           ORG_GRADLE_PROJECT_codegenomeUsername: ${{ secrets.CODEGENOME_USERNAME }}
           ORG_GRADLE_PROJECT_codegenomePassword: ${{ secrets.CODEGENOME_TOKEN }}
+          GITHUB_TOKEN: ${{ github.token }}
         run: ./gradlew updateDocs
 
       # A push made with the GITHUB_TOKEN doesn't trigger the push-to-master deploy, so dispatch it explicitly.
