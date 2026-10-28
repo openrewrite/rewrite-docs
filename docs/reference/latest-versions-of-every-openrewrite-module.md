@@ -17,61 +17,61 @@ It is highly recommended that developers use the [rewrite-recipe-bom](https://gi
 to align the versions of Rewrite's modules to ensure compatibility.
 The use of the "bill of materials" means that a developer will only need to specify explicit versions of the BOM and the build plugins:
 
-| Module                                                                                                                | Version    | License |
-|-----------------------------------------------------------------------------------------------------------------------| ---------- | ------- |
-| [**org.openrewrite:rewrite-bom**](https://github.com/openrewrite/rewrite)                                             | **[8.94.0](https://github.com/openrewrite/rewrite/releases/tag/v8.94.0)** | [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
-| [**org.openrewrite:rewrite-maven-plugin**](https://github.com/openrewrite/rewrite-maven-plugin)                       | **[6.51.0](https://github.com/openrewrite/rewrite-maven-plugin/releases/tag/v6.51.0)** | [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
-| [**org.openrewrite:rewrite-gradle-plugin**](https://github.com/openrewrite/rewrite-gradle-plugin)                     | **[7.44.1](https://github.com/openrewrite/rewrite-gradle-plugin/releases/tag/v7.44.1)** | [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
-| [**org.openrewrite.recipe:rewrite-recipe-bom**](https://github.com/openrewrite/rewrite-recipe-bom)                    | **[3.42.0](https://github.com/openrewrite/rewrite-recipe-bom/releases/tag/v3.42.0)** | [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
-| [org.openrewrite:rewrite-android](https://github.com/openrewrite/rewrite/tree/main/)                                  | [8.94.0](https://github.com/openrewrite/rewrite/releases/tag/8.94.0)                       | [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license) |
-| [org.openrewrite:rewrite-core](https://github.com/openrewrite/rewrite/tree/main/)                                     | [8.94.0](https://github.com/openrewrite/rewrite/releases/tag/8.94.0)                       | [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
-| [org.openrewrite:rewrite-docker](https://github.com/openrewrite/rewrite/tree/main/)                                   | [8.94.0](https://github.com/openrewrite/rewrite/releases/tag/8.94.0)                       | [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
-| [org.openrewrite:rewrite-gradle](https://github.com/openrewrite/rewrite/tree/main/)                                   | [8.94.0](https://github.com/openrewrite/rewrite/releases/tag/8.94.0)                       | [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
-| [org.openrewrite:rewrite-groovy](https://github.com/openrewrite/rewrite/tree/main/)                                   | [8.94.0](https://github.com/openrewrite/rewrite/releases/tag/8.94.0)                       | [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
-| [org.openrewrite:rewrite-hcl](https://github.com/openrewrite/rewrite/tree/main/)                                      | [8.94.0](https://github.com/openrewrite/rewrite/releases/tag/8.94.0)                       | [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
-| [org.openrewrite:rewrite-java](https://github.com/openrewrite/rewrite/tree/main/)                                     | [8.94.0](https://github.com/openrewrite/rewrite/releases/tag/8.94.0)                       | [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
-| [org.openrewrite:rewrite-javascript](https://github.com/openrewrite/rewrite/tree/main/)                               | [8.94.0](https://github.com/openrewrite/rewrite/releases/tag/8.94.0)                       | [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license) |
-| [org.openrewrite:rewrite-json](https://github.com/openrewrite/rewrite/tree/main/)                                     | [8.94.0](https://github.com/openrewrite/rewrite/releases/tag/8.94.0)                       | [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
-| [org.openrewrite:rewrite-kotlin](https://github.com/openrewrite/rewrite/tree/main/)                                   | [8.94.0](https://github.com/openrewrite/rewrite/releases/tag/8.94.0)                       | [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
-| [org.openrewrite:rewrite-mainframe](https://github.com/moderneinc/rewrite-mainframe/tree/main/)                       | [3.4.0](https://github.com/moderneinc/rewrite-mainframe/releases/tag/3.4.0)                | [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license) |
-| [org.openrewrite:rewrite-maven](https://github.com/openrewrite/rewrite/tree/main/)                                    | [8.94.0](https://github.com/openrewrite/rewrite/releases/tag/8.94.0)                       | [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
-| [org.openrewrite:rewrite-polyglot](https://github.com/openrewrite/rewrite-polyglot/tree/main/)                        | [2.14.0](https://github.com/openrewrite/rewrite-polyglot/releases/tag/2.14.0)              | [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
-| [org.openrewrite:rewrite-properties](https://github.com/openrewrite/rewrite/tree/main/)                               | [8.94.0](https://github.com/openrewrite/rewrite/releases/tag/8.94.0)                       | [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
-| [org.openrewrite:rewrite-protobuf](https://github.com/openrewrite/rewrite/tree/main/)                                 | [8.94.0](https://github.com/openrewrite/rewrite/releases/tag/8.94.0)                       | [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
-| [org.openrewrite:rewrite-python](https://github.com/openrewrite/rewrite/tree/main/)                                   | [8.94.0](https://github.com/openrewrite/rewrite/releases/tag/8.94.0)                       | [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license) |
-| [org.openrewrite:rewrite-ruby](https://github.com/openrewrite/rewrite/tree/main/)                                     | [8.94.0](https://github.com/openrewrite/rewrite/releases/tag/8.94.0)                       | [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license) |
-| [org.openrewrite:rewrite-scala](https://github.com/openrewrite/rewrite/tree/main/)                                    | [8.94.0](https://github.com/openrewrite/rewrite/releases/tag/8.94.0)                       | [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license) |
-| [org.openrewrite:rewrite-templating](https://github.com/openrewrite/rewrite-templating/tree/main/)                    | [1.47.0](https://github.com/openrewrite/rewrite-templating/releases/tag/1.47.0)            | [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
-| [org.openrewrite:rewrite-toml](https://github.com/openrewrite/rewrite/tree/main/)                                     | [8.94.0](https://github.com/openrewrite/rewrite/releases/tag/8.94.0)                       | [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
-| [org.openrewrite:rewrite-xml](https://github.com/openrewrite/rewrite/tree/main/)                                      | [8.94.0](https://github.com/openrewrite/rewrite/releases/tag/8.94.0)                       | [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
-| [org.openrewrite:rewrite-yaml](https://github.com/openrewrite/rewrite/tree/main/)                                     | [8.94.0](https://github.com/openrewrite/rewrite/releases/tag/8.94.0)                       | [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
-| [org.openrewrite.recipe:rewrite-all](https://github.com/openrewrite/rewrite-all/tree/main/)                           | [1.31.0](https://github.com/openrewrite/rewrite-all/releases/tag/1.31.0)                   | [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
-| [org.openrewrite.recipe:rewrite-apache](https://github.com/openrewrite/rewrite-apache/tree/main/)                     | [2.35.0](https://github.com/openrewrite/rewrite-apache/releases/tag/2.35.0)                | [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license) |
-| [org.openrewrite.recipe:rewrite-cucumber-jvm](https://github.com/openrewrite/rewrite-cucumber-jvm/tree/main/)         | [2.21.0](https://github.com/openrewrite/rewrite-cucumber-jvm/releases/tag/2.21.0)          | [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license) |
-| [org.openrewrite.recipe:rewrite-github-actions](https://github.com/openrewrite/rewrite-github-actions/tree/main/)     | [3.34.0](https://github.com/openrewrite/rewrite-github-actions/releases/tag/3.34.0)        | [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license) |
-| [org.openrewrite.recipe:rewrite-gitlab](https://github.com/openrewrite/rewrite-gitlab/tree/main/)                     | [0.26.0](https://github.com/openrewrite/rewrite-gitlab/releases/tag/0.26.0)                | [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license) |
-| [org.openrewrite.recipe:rewrite-hibernate](https://github.com/openrewrite/rewrite-hibernate/tree/main/)               | [2.28.0](https://github.com/openrewrite/rewrite-hibernate/releases/tag/2.28.0)             | [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license) |
-| [org.openrewrite.recipe:rewrite-jackson](https://github.com/openrewrite/rewrite-jackson/tree/main/)                   | [1.32.0](https://github.com/openrewrite/rewrite-jackson/releases/tag/1.32.0)               | [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
-| [org.openrewrite.recipe:rewrite-java-dependencies](https://github.com/openrewrite/rewrite-java-dependencies/tree/main/) | [1.65.0](https://github.com/openrewrite/rewrite-java-dependencies/releases/tag/1.65.0)     | [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
-| [org.openrewrite.recipe:rewrite-jenkins](https://github.com/openrewrite/rewrite-jenkins/tree/main/)                   | [0.39.0](https://github.com/openrewrite/rewrite-jenkins/releases/tag/0.39.0)               | [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license) |
-| [org.openrewrite.recipe:rewrite-joda](https://github.com/openrewrite/rewrite-joda/tree/main/)                         | [0.13.0](https://github.com/openrewrite/rewrite-joda/releases/tag/0.13.0)                  | [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license) |
-| [org.openrewrite.recipe:rewrite-liberty](https://github.com/openrewrite/rewrite-liberty/tree/main/)                   | [1.29.0](https://github.com/openrewrite/rewrite-liberty/releases/tag/1.29.0)               | [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
-| [org.openrewrite.recipe:rewrite-logging-frameworks](https://github.com/openrewrite/rewrite-logging-frameworks/tree/main/) | [3.35.0](https://github.com/openrewrite/rewrite-logging-frameworks/releases/tag/3.35.0)    | [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license) |
-| [org.openrewrite.recipe:rewrite-micrometer](https://github.com/openrewrite/rewrite-micrometer/tree/main/)             | [0.32.0](https://github.com/openrewrite/rewrite-micrometer/releases/tag/0.32.0)            | [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license) |
-| [org.openrewrite.recipe:rewrite-micronaut](https://github.com/openrewrite/rewrite-micronaut/tree/main/)               | [2.40.0](https://github.com/openrewrite/rewrite-micronaut/releases/tag/2.40.0)             | [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
-| [org.openrewrite.recipe:rewrite-migrate-java](https://github.com/openrewrite/rewrite-migrate-java/tree/main/)         | [3.47.0](https://github.com/openrewrite/rewrite-migrate-java/releases/tag/3.47.0)          | [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license) |
-| [org.openrewrite.recipe:rewrite-netty](https://github.com/openrewrite/rewrite-netty/tree/main/)                       | [0.14.0](https://github.com/openrewrite/rewrite-netty/releases/tag/0.14.0)                 | [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
-| [org.openrewrite.recipe:rewrite-okhttp](https://github.com/openrewrite/rewrite-okhttp/tree/main/)                     | [0.26.0](https://github.com/openrewrite/rewrite-okhttp/releases/tag/0.26.0)                | [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license) |
-| [org.openrewrite.recipe:rewrite-openapi](https://github.com/openrewrite/rewrite-openapi/tree/main/)                   | [0.36.0](https://github.com/openrewrite/rewrite-openapi/releases/tag/0.36.0)               | [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
-| [org.openrewrite.recipe:rewrite-pmd](https://github.com/openrewrite/rewrite-pmd/tree/main/)                           | [0.2.0](https://github.com/openrewrite/rewrite-pmd/releases/tag/0.2.0)                     | [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license) |
-| [org.openrewrite.recipe:rewrite-prethink](https://github.com/openrewrite/rewrite-prethink/tree/main/)                 | [1.7.0](https://github.com/openrewrite/rewrite-prethink/releases/tag/1.7.0)                | [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license) |
-| [org.openrewrite.recipe:rewrite-quarkus](https://github.com/openrewrite/rewrite-quarkus/tree/main/)                   | [2.37.0](https://github.com/openrewrite/rewrite-quarkus/releases/tag/2.37.0)               | [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
-| [org.openrewrite.recipe:rewrite-rewrite](https://github.com/openrewrite/rewrite-rewrite/tree/main/)                   | [0.36.0](https://github.com/openrewrite/rewrite-rewrite/releases/tag/0.36.0)               | [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license) |
-| [org.openrewrite.recipe:rewrite-spring](https://github.com/openrewrite/rewrite-spring/tree/main/)                     | [6.42.0](https://github.com/openrewrite/rewrite-spring/releases/tag/6.42.0)                | [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license) |
-| [org.openrewrite.recipe:rewrite-spring-to-quarkus](https://github.com/openrewrite/rewrite-spring-to-quarkus/tree/main/) | [0.14.0](https://github.com/openrewrite/rewrite-spring-to-quarkus/releases/tag/0.14.0)     | [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license) |
-| [org.openrewrite.recipe:rewrite-static-analysis](https://github.com/openrewrite/rewrite-static-analysis/tree/main/)   | [2.46.0](https://github.com/openrewrite/rewrite-static-analysis/releases/tag/2.46.0)       | [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license) |
-| [org.openrewrite.recipe:rewrite-testing-frameworks](https://github.com/openrewrite/rewrite-testing-frameworks/tree/main/) | [3.50.0](https://github.com/openrewrite/rewrite-testing-frameworks/releases/tag/3.50.0)    | [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license) |
-| [org.openrewrite.recipe:rewrite-third-party](https://github.com/openrewrite/rewrite-third-party/tree/main/)           | [0.50.0](https://github.com/openrewrite/rewrite-third-party/releases/tag/0.50.0)           | [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
+| Module | Version | License |
+| ------ | ------- | ------- |
+| [**org.openrewrite:rewrite-bom**](https://github.com/openrewrite/rewrite) | **[8.95.0](https://github.com/openrewrite/rewrite/releases/tag/v8.95.0)** | [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
+| [**org.openrewrite:rewrite-maven-plugin**](https://github.com/openrewrite/rewrite-maven-plugin) | **[6.52.0](https://github.com/openrewrite/rewrite-maven-plugin/releases/tag/v6.52.0)** | [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
+| [**org.openrewrite:rewrite-gradle-plugin**](https://github.com/openrewrite/rewrite-gradle-plugin) | **[7.44.1](https://github.com/openrewrite/rewrite-gradle-plugin/releases/tag/v7.44.1)** | [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
+| [**org.openrewrite.recipe:rewrite-recipe-bom**](https://github.com/openrewrite/rewrite-recipe-bom) | **[3.43.0](https://github.com/openrewrite/rewrite-recipe-bom/releases/tag/v3.43.0)** | [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
+| [org.openrewrite:rewrite-android](https://github.com/openrewrite/rewrite) | [8.95.0](https://github.com/openrewrite/rewrite/releases/tag/v8.95.0) | [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license) |
+| [org.openrewrite:rewrite-core](https://github.com/openrewrite/rewrite) | [8.95.0](https://github.com/openrewrite/rewrite/releases/tag/v8.95.0) | [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
+| [org.openrewrite:rewrite-docker](https://github.com/openrewrite/rewrite) | [8.95.0](https://github.com/openrewrite/rewrite/releases/tag/v8.95.0) | [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
+| [org.openrewrite:rewrite-gradle](https://github.com/openrewrite/rewrite) | [8.95.0](https://github.com/openrewrite/rewrite/releases/tag/v8.95.0) | [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
+| [org.openrewrite:rewrite-groovy](https://github.com/openrewrite/rewrite) | [8.95.0](https://github.com/openrewrite/rewrite/releases/tag/v8.95.0) | [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
+| [org.openrewrite:rewrite-hcl](https://github.com/openrewrite/rewrite) | [8.95.0](https://github.com/openrewrite/rewrite/releases/tag/v8.95.0) | [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
+| [org.openrewrite:rewrite-java](https://github.com/openrewrite/rewrite) | [8.95.0](https://github.com/openrewrite/rewrite/releases/tag/v8.95.0) | [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
+| [org.openrewrite:rewrite-javascript](https://github.com/openrewrite/rewrite) | [8.95.0](https://github.com/openrewrite/rewrite/releases/tag/v8.95.0) | [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license) |
+| [org.openrewrite:rewrite-json](https://github.com/openrewrite/rewrite) | [8.95.0](https://github.com/openrewrite/rewrite/releases/tag/v8.95.0) | [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
+| [org.openrewrite:rewrite-kotlin](https://github.com/openrewrite/rewrite) | [8.95.0](https://github.com/openrewrite/rewrite/releases/tag/v8.95.0) | [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
+| [org.openrewrite:rewrite-mainframe](https://github.com/moderneinc/rewrite-mainframe) | [3.5.0](https://github.com/moderneinc/rewrite-mainframe/releases/tag/v3.5.0) | [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license) |
+| [org.openrewrite:rewrite-maven](https://github.com/openrewrite/rewrite) | [8.95.0](https://github.com/openrewrite/rewrite/releases/tag/v8.95.0) | [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
+| [org.openrewrite:rewrite-polyglot](https://github.com/openrewrite/rewrite-polyglot) | [2.15.0](https://github.com/openrewrite/rewrite-polyglot/releases/tag/v2.15.0) | [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
+| [org.openrewrite:rewrite-properties](https://github.com/openrewrite/rewrite) | [8.95.0](https://github.com/openrewrite/rewrite/releases/tag/v8.95.0) | [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
+| [org.openrewrite:rewrite-protobuf](https://github.com/openrewrite/rewrite) | [8.95.0](https://github.com/openrewrite/rewrite/releases/tag/v8.95.0) | [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
+| [org.openrewrite:rewrite-python](https://github.com/openrewrite/rewrite) | [8.95.0](https://github.com/openrewrite/rewrite/releases/tag/v8.95.0) | [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license) |
+| [org.openrewrite:rewrite-ruby](https://github.com/openrewrite/rewrite) | [8.95.0](https://github.com/openrewrite/rewrite/releases/tag/v8.95.0) | [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license) |
+| [org.openrewrite:rewrite-scala](https://github.com/openrewrite/rewrite) | [8.95.0](https://github.com/openrewrite/rewrite/releases/tag/v8.95.0) | [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license) |
+| [org.openrewrite:rewrite-templating](https://github.com/openrewrite/rewrite-templating) | [1.48.0](https://github.com/openrewrite/rewrite-templating/releases/tag/v1.48.0) | [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
+| [org.openrewrite:rewrite-toml](https://github.com/openrewrite/rewrite) | [8.95.0](https://github.com/openrewrite/rewrite/releases/tag/v8.95.0) | [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
+| [org.openrewrite:rewrite-xml](https://github.com/openrewrite/rewrite) | [8.95.0](https://github.com/openrewrite/rewrite/releases/tag/v8.95.0) | [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
+| [org.openrewrite:rewrite-yaml](https://github.com/openrewrite/rewrite) | [8.95.0](https://github.com/openrewrite/rewrite/releases/tag/v8.95.0) | [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
+| [org.openrewrite.recipe:rewrite-all](https://github.com/openrewrite/rewrite-all) | [1.32.0](https://github.com/openrewrite/rewrite-all/releases/tag/v1.32.0) | [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
+| [org.openrewrite.recipe:rewrite-apache](https://github.com/openrewrite/rewrite-apache) | [2.36.0](https://github.com/openrewrite/rewrite-apache/releases/tag/v2.36.0) | [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license) |
+| [org.openrewrite.recipe:rewrite-cucumber-jvm](https://github.com/openrewrite/rewrite-cucumber-jvm) | [2.22.0](https://github.com/openrewrite/rewrite-cucumber-jvm/releases/tag/v2.22.0) | [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license) |
+| [org.openrewrite.recipe:rewrite-github-actions](https://github.com/openrewrite/rewrite-github-actions) | [3.35.0](https://github.com/openrewrite/rewrite-github-actions/releases/tag/v3.35.0) | [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license) |
+| [org.openrewrite.recipe:rewrite-gitlab](https://github.com/openrewrite/rewrite-gitlab) | [0.27.0](https://github.com/openrewrite/rewrite-gitlab/releases/tag/v0.27.0) | [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license) |
+| [org.openrewrite.recipe:rewrite-hibernate](https://github.com/openrewrite/rewrite-hibernate) | [2.29.0](https://github.com/openrewrite/rewrite-hibernate/releases/tag/v2.29.0) | [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license) |
+| [org.openrewrite.recipe:rewrite-jackson](https://github.com/openrewrite/rewrite-jackson) | [1.33.0](https://github.com/openrewrite/rewrite-jackson/releases/tag/v1.33.0) | [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
+| [org.openrewrite.recipe:rewrite-java-dependencies](https://github.com/openrewrite/rewrite-java-dependencies) | [1.66.0](https://github.com/openrewrite/rewrite-java-dependencies/releases/tag/v1.66.0) | [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
+| [org.openrewrite.recipe:rewrite-jenkins](https://github.com/openrewrite/rewrite-jenkins) | [0.40.0](https://github.com/openrewrite/rewrite-jenkins/releases/tag/v0.40.0) | [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license) |
+| [org.openrewrite.recipe:rewrite-joda](https://github.com/openrewrite/rewrite-joda) | [0.14.0](https://github.com/openrewrite/rewrite-joda/releases/tag/v0.14.0) | [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license) |
+| [org.openrewrite.recipe:rewrite-liberty](https://github.com/openrewrite/rewrite-liberty) | [1.30.0](https://github.com/openrewrite/rewrite-liberty/releases/tag/v1.30.0) | [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
+| [org.openrewrite.recipe:rewrite-logging-frameworks](https://github.com/openrewrite/rewrite-logging-frameworks) | [3.36.0](https://github.com/openrewrite/rewrite-logging-frameworks/releases/tag/v3.36.0) | [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license) |
+| [org.openrewrite.recipe:rewrite-micrometer](https://github.com/openrewrite/rewrite-micrometer) | [0.33.0](https://github.com/openrewrite/rewrite-micrometer/releases/tag/v0.33.0) | [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license) |
+| [org.openrewrite.recipe:rewrite-micronaut](https://github.com/openrewrite/rewrite-micronaut) | [2.41.0](https://github.com/openrewrite/rewrite-micronaut/releases/tag/v2.41.0) | [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
+| [org.openrewrite.recipe:rewrite-migrate-java](https://github.com/openrewrite/rewrite-migrate-java) | [3.48.0](https://github.com/openrewrite/rewrite-migrate-java/releases/tag/v3.48.0) | [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license) |
+| [org.openrewrite.recipe:rewrite-netty](https://github.com/openrewrite/rewrite-netty) | [0.15.0](https://github.com/openrewrite/rewrite-netty/releases/tag/v0.15.0) | [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
+| [org.openrewrite.recipe:rewrite-okhttp](https://github.com/openrewrite/rewrite-okhttp) | [0.27.0](https://github.com/openrewrite/rewrite-okhttp/releases/tag/v0.27.0) | [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license) |
+| [org.openrewrite.recipe:rewrite-openapi](https://github.com/openrewrite/rewrite-openapi) | [0.37.0](https://github.com/openrewrite/rewrite-openapi/releases/tag/v0.37.0) | [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
+| [org.openrewrite.recipe:rewrite-pmd](https://github.com/openrewrite/rewrite-pmd) | [0.3.0](https://github.com/openrewrite/rewrite-pmd/releases/tag/v0.3.0) | [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license) |
+| [org.openrewrite.recipe:rewrite-prethink](https://github.com/openrewrite/rewrite-prethink) | [1.8.0](https://github.com/openrewrite/rewrite-prethink/releases/tag/v1.8.0) | [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license) |
+| [org.openrewrite.recipe:rewrite-quarkus](https://github.com/openrewrite/rewrite-quarkus) | [2.38.0](https://github.com/openrewrite/rewrite-quarkus/releases/tag/v2.38.0) | [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
+| [org.openrewrite.recipe:rewrite-rewrite](https://github.com/openrewrite/rewrite-rewrite) | [0.37.0](https://github.com/openrewrite/rewrite-rewrite/releases/tag/v0.37.0) | [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license) |
+| [org.openrewrite.recipe:rewrite-spring](https://github.com/openrewrite/rewrite-spring) | [6.43.0](https://github.com/openrewrite/rewrite-spring/releases/tag/v6.43.0) | [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license) |
+| [org.openrewrite.recipe:rewrite-spring-to-quarkus](https://github.com/openrewrite/rewrite-spring-to-quarkus) | [0.15.0](https://github.com/openrewrite/rewrite-spring-to-quarkus/releases/tag/v0.15.0) | [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license) |
+| [org.openrewrite.recipe:rewrite-static-analysis](https://github.com/openrewrite/rewrite-static-analysis) | [2.47.0](https://github.com/openrewrite/rewrite-static-analysis/releases/tag/v2.47.0) | [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license) |
+| [org.openrewrite.recipe:rewrite-testing-frameworks](https://github.com/openrewrite/rewrite-testing-frameworks) | [3.51.0](https://github.com/openrewrite/rewrite-testing-frameworks/releases/tag/v3.51.0) | [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license) |
+| [org.openrewrite.recipe:rewrite-third-party](https://github.com/openrewrite/rewrite-third-party) | [0.51.0](https://github.com/openrewrite/rewrite-third-party/releases/tag/v0.51.0) | [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
 
 ## Configure the Code Genome Project repository
 
@@ -156,7 +156,7 @@ repositories {
 </TabItem>
 </Tabs>
 
-## CLI Installation
+## CLI installation
 
 Point the CLI at the Code Genome Project so it can resolve recipe artifacts. Skip this if you
 resolve through an internal artifact repository that already mirrors it.
@@ -165,8 +165,7 @@ resolve through an internal artifact repository that already mirrors it.
 mod config recipes artifacts maven add https://artifacts.codegenomeproject.org/maven --user USERNAME --password TOKEN
 ```
 
-Then install the latest versions of all the OpenRewrite recipe modules into the Moderne CLI:
-
+Then install the latest versions of all the OpenRewrite recipe modules into the Moderne CLI.
 Source-available modules appear in the table above but are left out of the `jar` command
 below, because the Code Genome Project serves them to Moderne customers only. The `pip` and
 `npm` packages are unaffected.
@@ -193,181 +192,3 @@ mod config recipes npm install @openrewrite/rewrite
 
 </TabItem>
 </Tabs>
-
-## Moderne Installation
-
-Install the latest versions of all the OpenRewrite [recipe modules into Moderne](https://docs.moderne.io/administrator-documentation/moderne-platform/how-to-guides/importing-external-recipes#importing-recipes-via-a-graphql-api-call) using the GraphQL endpoint.
-
-The mutation below uses `installRecipesUniversal`, which installs into the universal marketplace (visible to everyone) and requires the `admin` role.
-
-<details>
-<summary>
-Show GraphQL mutation.
-</summary>
-
-```graphql
-mutation seedOpenRewriteArtifacts {
-
-      load_org_openrewrite_rewrite_core: installRecipesUniversal(
-        bundle: { maven: { groupId: "org.openrewrite", artifactId: "rewrite-core", version: "LATEST" } }
-      ) {
-        id
-      }
-      load_org_openrewrite_rewrite_docker: installRecipesUniversal(
-        bundle: { maven: { groupId: "org.openrewrite", artifactId: "rewrite-docker", version: "LATEST" } }
-      ) {
-        id
-      }
-      load_org_openrewrite_rewrite_gradle: installRecipesUniversal(
-        bundle: { maven: { groupId: "org.openrewrite", artifactId: "rewrite-gradle", version: "LATEST" } }
-      ) {
-        id
-      }
-      load_org_openrewrite_rewrite_groovy: installRecipesUniversal(
-        bundle: { maven: { groupId: "org.openrewrite", artifactId: "rewrite-groovy", version: "LATEST" } }
-      ) {
-        id
-      }
-      load_org_openrewrite_rewrite_hcl: installRecipesUniversal(
-        bundle: { maven: { groupId: "org.openrewrite", artifactId: "rewrite-hcl", version: "LATEST" } }
-      ) {
-        id
-      }
-      load_org_openrewrite_rewrite_java: installRecipesUniversal(
-        bundle: { maven: { groupId: "org.openrewrite", artifactId: "rewrite-java", version: "LATEST" } }
-      ) {
-        id
-      }
-      load_org_openrewrite_rewrite_json: installRecipesUniversal(
-        bundle: { maven: { groupId: "org.openrewrite", artifactId: "rewrite-json", version: "LATEST" } }
-      ) {
-        id
-      }
-      load_org_openrewrite_rewrite_kotlin: installRecipesUniversal(
-        bundle: { maven: { groupId: "org.openrewrite", artifactId: "rewrite-kotlin", version: "LATEST" } }
-      ) {
-        id
-      }
-      load_org_openrewrite_rewrite_maven: installRecipesUniversal(
-        bundle: { maven: { groupId: "org.openrewrite", artifactId: "rewrite-maven", version: "LATEST" } }
-      ) {
-        id
-      }
-      load_org_openrewrite_rewrite_properties: installRecipesUniversal(
-        bundle: { maven: { groupId: "org.openrewrite", artifactId: "rewrite-properties", version: "LATEST" } }
-      ) {
-        id
-      }
-      load_org_openrewrite_rewrite_protobuf: installRecipesUniversal(
-        bundle: { maven: { groupId: "org.openrewrite", artifactId: "rewrite-protobuf", version: "LATEST" } }
-      ) {
-        id
-      }
-      load_org_openrewrite_rewrite_toml: installRecipesUniversal(
-        bundle: { maven: { groupId: "org.openrewrite", artifactId: "rewrite-toml", version: "LATEST" } }
-      ) {
-        id
-      }
-      load_org_openrewrite_rewrite_xml: installRecipesUniversal(
-        bundle: { maven: { groupId: "org.openrewrite", artifactId: "rewrite-xml", version: "LATEST" } }
-      ) {
-        id
-      }
-      load_org_openrewrite_rewrite_yaml: installRecipesUniversal(
-        bundle: { maven: { groupId: "org.openrewrite", artifactId: "rewrite-yaml", version: "LATEST" } }
-      ) {
-        id
-      }
-      load_org_openrewrite_recipe_rewrite_all: installRecipesUniversal(
-        bundle: { maven: { groupId: "org.openrewrite.recipe", artifactId: "rewrite-all", version: "LATEST" } }
-      ) {
-        id
-      }
-      load_org_openrewrite_recipe_rewrite_jackson: installRecipesUniversal(
-        bundle: { maven: { groupId: "org.openrewrite.recipe", artifactId: "rewrite-jackson", version: "LATEST" } }
-      ) {
-        id
-      }
-      load_org_openrewrite_recipe_rewrite_java_dependencies: installRecipesUniversal(
-        bundle: { maven: { groupId: "org.openrewrite.recipe", artifactId: "rewrite-java-dependencies", version: "LATEST" } }
-      ) {
-        id
-      }
-      load_org_openrewrite_recipe_rewrite_liberty: installRecipesUniversal(
-        bundle: { maven: { groupId: "org.openrewrite.recipe", artifactId: "rewrite-liberty", version: "LATEST" } }
-      ) {
-        id
-      }
-      load_org_openrewrite_recipe_rewrite_micronaut: installRecipesUniversal(
-        bundle: { maven: { groupId: "org.openrewrite.recipe", artifactId: "rewrite-micronaut", version: "LATEST" } }
-      ) {
-        id
-      }
-      load_org_openrewrite_recipe_rewrite_netty: installRecipesUniversal(
-        bundle: { maven: { groupId: "org.openrewrite.recipe", artifactId: "rewrite-netty", version: "LATEST" } }
-      ) {
-        id
-      }
-      load_org_openrewrite_recipe_rewrite_openapi: installRecipesUniversal(
-        bundle: { maven: { groupId: "org.openrewrite.recipe", artifactId: "rewrite-openapi", version: "LATEST" } }
-      ) {
-        id
-      }
-      load_org_openrewrite_recipe_rewrite_quarkus: installRecipesUniversal(
-        bundle: { maven: { groupId: "org.openrewrite.recipe", artifactId: "rewrite-quarkus", version: "LATEST" } }
-      ) {
-        id
-      }
-      load_org_openrewrite_recipe_rewrite_third_party: installRecipesUniversal(
-        bundle: { maven: { groupId: "org.openrewrite.recipe", artifactId: "rewrite-third-party", version: "LATEST" } }
-      ) {
-        id
-      }
-}
-```
-
-</details>
-
-## Marketplace Sync
-
-As an alternative to installing modules one by one, the Moderne CLI can mirror an entire recipe marketplace into your local CLI.
-
-### Option 1: Sync from app.moderne.io
-
-The default tenant is the free public Moderne instance at [app.moderne.io](https://app.moderne.io), which already publishes every OpenRewrite recipe artifact listed in the table above. Point the CLI at it (or any other Moderne tenant you have access to), log in, and sync:
-
-```bash
-mod config moderne edit https://app.moderne.io
-mod config moderne login
-mod config recipes moderne sync
-```
-
-### Option 2: Import a self-hosted CSV
-
-If you cannot reach a Moderne tenant — for example in an air-gapped environment — you can supply your own CSV in the same [recipes-v5.csv format](https://docs.moderne.io/user-documentation/moderne-cli/references/recipes-csv/#csv-format) and import it directly:
-
-```bash
-mod config recipes import csv path/to/recipes.csv
-```
-
-Recipes with the same name are replaced by the imported version, so this can be re-run to refresh the marketplace. Pair it with the matching JAR/pip/npm/NuGet installs from [CLI Installation](#cli-installation) above so the recipes resolve when run.
-
-### Additional sync details
-
-Under the hood, `mod config recipes moderne sync` picks one of two paths against the configured Moderne tenant:
-
-1. **Preferred — REST CSV (SaaS v2):** the CLI first tries `GET <apiHost>/api/recipes`. If the endpoint responds, the body is written to `~/.moderne/cli/recipes-v5.csv` and sync is done. The CSV has one row per recipe, with columns: `ecosystem`, `packageName`, `requestedVersion`, `version`, `name`, `displayName`, `description`, `recipeCount`, `category1`–`category6`, `category1Description`–`category6Description`, `options`, and `dataTables`. The CLI uses this catalog for search, tab completion, and MCP tooling. The same CSV is a good starting point for [Option 2](#option-2-import-a-self-hosted-csv): fetch it once from a tenant you have access to, then host or distribute it as the seed for `mod config recipes import csv` in environments that cannot reach Moderne directly.
-2. **Fallback — GraphQL + per-artifact install (SaaS v1):** if the REST endpoint is unavailable, the CLI issues a GraphQL query for every finished recipe deployment and installs each artifact from Maven, the same way `mod config recipes jar install` would:
-   ```graphql
-   query {
-     recipeDeployments(state: FINISHED) {
-       artifact {
-         groupId
-         artifactId
-         version
-         requestedVersion
-         datedSnapshotVersion
-       }
-     }
-   }
-   ```

@@ -1,0 +1,49 @@
+# Keep the generated reference pages in sync with the latest OpenRewrite releases
+name: Update docs
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: 30 0 * * *
+
+concurrency:
+  group: "update-docs"
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+  actions: write
+
+jobs:
+  update:
+    name: Update docs
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: 21
+
+      - uses: gradle/actions/setup-gradle@v5
+
+      - name: Update the generated pages
+        env:
+          ORG_GRADLE_PROJECT_codegenomeUsername: ${{ secrets.CODEGENOME_USERNAME }}
+          ORG_GRADLE_PROJECT_codegenomePassword: ${{ secrets.CODEGENOME_TOKEN }}
+        run: ./gradlew updateDocs
+
+      # A push made with the GITHUB_TOKEN doesn't trigger the push-to-master deploy, so dispatch it explicitly.
+      - name: Commit, push and deploy
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git add -A docs src
+          git diff --cached --quiet && exit 0
+          git config user.email "team@moderne.io"
+          git config user.name "team-moderne[bot]"
+          git commit -m "[Auto] Update docs as of $(date +'%Y-%m-%dT%H%M')"
+          git push origin master
+          gh workflow run pages.yml --ref master

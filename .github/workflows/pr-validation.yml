@@ -58,3 +58,19 @@ jobs:
           CI_STRICT_LINKS: "1"
           NODE_OPTIONS: --max-old-space-size=8192
           DOCUSAURUS_IGNORE_SSG_WARNINGS: true
+
+  gradle:
+    name: Gradle
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: 21
+
+      - uses: gradle/actions/setup-gradle@v5
+
+      - name: Test the docs tasks
+        run: ./gradlew -p buildSrc test
