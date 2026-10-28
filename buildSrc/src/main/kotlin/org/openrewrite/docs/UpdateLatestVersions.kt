@@ -16,9 +16,6 @@ abstract class UpdateLatestVersions : DefaultTask() {
     abstract val modulePoms: ConfigurableFileCollection
 
     @get:InputFiles
-    abstract val rewriteBomPom: ConfigurableFileCollection
-
-    @get:InputFiles
     abstract val rewriteRecipeBomPom: ConfigurableFileCollection
 
     @get:InputFiles
@@ -34,22 +31,17 @@ abstract class UpdateLatestVersions : DefaultTask() {
     abstract val codegenomePassword: Property<String>
 
     @get:OutputFile
-    abstract val markdownFile: RegularFileProperty
-
-    @get:OutputFile
     abstract val javascriptFile: RegularFileProperty
 
     @TaskAction
     fun update() {
         val registries = PackageRegistries(codegenomeUsername.get(), codegenomePassword.get())
         val latestVersions = LatestVersions(
-            rewriteBom = version(rewriteBomPom),
             rewriteRecipeBom = version(rewriteRecipeBomPom),
             gradlePlugin = version(gradlePluginPom),
             mavenPlugin = version(mavenPluginPom),
             modules = modulePoms.map { Module.of(Pom.parse(it)) } + registries.modules(logger::warn),
         )
-        markdownFile.get().asFile.writeText(latestVersions.markdown())
         javascriptFile.get().asFile.writeText(latestVersions.javascript())
     }
 

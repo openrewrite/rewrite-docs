@@ -43,15 +43,13 @@ configurations.all {
 
 val updateLatestVersions = tasks.register<UpdateLatestVersions>("updateLatestVersions") {
     group = "documentation"
-    description = "Updates the latest versions of every OpenRewrite module."
+    description = "Updates the versions behind the {{VERSION_*}} placeholders in the docs."
     modulePoms.from(recipeModulePoms)
-    rewriteBomPom.from(latestPom("org.openrewrite:rewrite-bom"))
     rewriteRecipeBomPom.from(latestPom("org.openrewrite.recipe:rewrite-recipe-bom"))
     gradlePluginPom.from(latestPom("org.openrewrite:plugin"))
     mavenPluginPom.from(latestPom("org.openrewrite.maven:rewrite-maven-plugin"))
     codegenomeUsername = providers.gradleProperty("codegenomeUsername")
     codegenomePassword = providers.gradleProperty("codegenomePassword")
-    markdownFile = layout.projectDirectory.file("docs/reference/latest-versions-of-every-openrewrite-module.md")
     javascriptFile = layout.projectDirectory.file("src/plugins/latest-versions.js")
 }
 

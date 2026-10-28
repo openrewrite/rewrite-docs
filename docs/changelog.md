@@ -6,7 +6,7 @@ description: Release notes of the OpenRewrite modules in each release of the rew
 
 Each release of the [rewrite-recipe-bom](https://github.com/openrewrite/rewrite-recipe-bom), OpenRewrite's bill of materials, aligns the versions of its modules.
 These are the release notes of the modules that changed in each release over the past year, taken from their GitHub releases.
-For the current version of each module, see the [latest versions of every OpenRewrite module](./reference/latest-versions-of-every-openrewrite-module.md).
+For the current version of each module, see the [latest versions of every OpenRewrite module](https://docs.moderne.io/user-documentation/recipes/lists/latest-versions-of-every-openrewrite-module).
 
 ## [rewrite-recipe-bom 3.43.0](https://github.com/openrewrite/rewrite-recipe-bom/releases/tag/v3.43.0)
 

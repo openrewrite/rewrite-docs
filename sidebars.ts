@@ -121,7 +121,12 @@ const sidebars: SidebarsConfig = {
         'reference/faq',
         'licensing/openrewrite-licensing',
         'reference/building-openrewrite-from-source',
-        'reference/latest-versions-of-every-openrewrite-module',
+        {
+          type: 'link',
+          label: 'Latest versions of every OpenRewrite module',
+          description: 'The latest version of each OpenRewrite module, and how to install them.',
+          href: 'https://docs.moderne.io/user-documentation/recipes/lists/latest-versions-of-every-openrewrite-module',
+        },
         'reference/community-recipes',
         'reference/rewrite-maven-plugin',
         'reference/gradle-plugin-configuration',

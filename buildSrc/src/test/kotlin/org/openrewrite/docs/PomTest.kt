@@ -28,7 +28,7 @@ class PomTest {
         )
 
         assertThat(Module.of(pom)).isEqualTo(
-            Module("org.openrewrite", "rewrite-core", "8.95.0", License.Apache2, "https://github.com/openrewrite/rewrite")
+            Module("org.openrewrite", "rewrite-core", "8.95.0")
         )
     }
 

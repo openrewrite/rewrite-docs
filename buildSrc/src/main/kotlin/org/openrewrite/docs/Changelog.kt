@@ -91,7 +91,7 @@ class Changelog(private val boms: List<BomRelease>, private val releases: Map<St
 
             Each release of the [rewrite-recipe-bom](https://github.com/openrewrite/rewrite-recipe-bom), OpenRewrite's bill of materials, aligns the versions of its modules.
             These are the release notes of the modules that changed in each release over the past year, taken from their GitHub releases.
-            For the current version of each module, see the [latest versions of every OpenRewrite module](./reference/latest-versions-of-every-openrewrite-module.md).
+            For the current version of each module, see the [latest versions of every OpenRewrite module](https://docs.moderne.io/user-documentation/recipes/lists/latest-versions-of-every-openrewrite-module).
 
         """.trimIndent()
     }

@@ -5,7 +5,7 @@ package org.openrewrite.docs
 class PackageRegistries(codegenomeUsername: String, codegenomePassword: String) {
     private enum class Registry { CodeGenomeNpm, CodeGenomeNuGet, Go }
 
-    private class Package(val groupId: String, val artifactId: String, val name: String, val repository: String, val registry: Registry)
+    private class Package(val groupId: String, val artifactId: String, val name: String, val registry: Registry)
 
     private val codegenomeAuthorization = basicAuthorization(codegenomeUsername, codegenomePassword)
 
@@ -13,7 +13,7 @@ class PackageRegistries(codegenomeUsername: String, codegenomePassword: String) 
         runCatching { latestVersion(pkg) }
             .onFailure { warn("Could not resolve the latest version of ${pkg.name}: ${it.message}") }
             .getOrNull()
-            ?.let { Module(pkg.groupId, pkg.artifactId, it, License.Proprietary, pkg.repository) }
+            ?.let { Module(pkg.groupId, pkg.artifactId, it) }
     }
 
     private fun latestVersion(pkg: Package): String? = when (pkg.registry) {
@@ -37,17 +37,14 @@ class PackageRegistries(codegenomeUsername: String, codegenomePassword: String) 
     private fun json(url: String, headers: Map<String, String> = emptyMap()) = httpGetJson(url, headers) as Map<*, *>
 
     private companion object {
-        const val RECIPES_JAVASCRIPT = "https://github.com/moderneinc/recipes-javascript"
-        const val RECIPES_CSHARP = "https://github.com/moderneinc/recipes-csharp"
-
         val PACKAGES = listOf(
-            Package("io.moderne.recipe", "recipes-javascript-code-quality", "@openrewrite/recipes-code-quality", RECIPES_JAVASCRIPT, Registry.CodeGenomeNpm),
-            Package("io.moderne.recipe", "recipes-javascript-date-libraries", "@openrewrite/recipes-date-libraries", RECIPES_JAVASCRIPT, Registry.CodeGenomeNpm),
-            Package("io.moderne.recipe", "recipes-code-quality", "OpenRewrite.Recipes.CSharp.CodeQuality", RECIPES_CSHARP, Registry.CodeGenomeNuGet),
-            Package("io.moderne.recipe", "recipes-migrate-dotnet", "OpenRewrite.Recipes.CSharp.Migration.Dotnet", RECIPES_CSHARP, Registry.CodeGenomeNuGet),
-            Package("io.moderne.recipe", "recipes-tunit", "OpenRewrite.Recipes.CSharp.Migration.TUnit", RECIPES_CSHARP, Registry.CodeGenomeNuGet),
-            Package("io.moderne.recipe", "recipes-csharp-core", "OpenRewrite.Recipes.CSharp.Core", RECIPES_CSHARP, Registry.CodeGenomeNuGet),
-            Package("org.openrewrite.recipe", "recipes-go", "github.com/moderneinc/recipes-go", "https://github.com/moderneinc/recipes-go", Registry.Go),
+            Package("io.moderne.recipe", "recipes-javascript-code-quality", "@openrewrite/recipes-code-quality", Registry.CodeGenomeNpm),
+            Package("io.moderne.recipe", "recipes-javascript-date-libraries", "@openrewrite/recipes-date-libraries", Registry.CodeGenomeNpm),
+            Package("io.moderne.recipe", "recipes-code-quality", "OpenRewrite.Recipes.CSharp.CodeQuality", Registry.CodeGenomeNuGet),
+            Package("io.moderne.recipe", "recipes-migrate-dotnet", "OpenRewrite.Recipes.CSharp.Migration.Dotnet", Registry.CodeGenomeNuGet),
+            Package("io.moderne.recipe", "recipes-tunit", "OpenRewrite.Recipes.CSharp.Migration.TUnit", Registry.CodeGenomeNuGet),
+            Package("io.moderne.recipe", "recipes-csharp-core", "OpenRewrite.Recipes.CSharp.Core", Registry.CodeGenomeNuGet),
+            Package("org.openrewrite.recipe", "recipes-go", "github.com/moderneinc/recipes-go", Registry.Go),
         )
     }
 }

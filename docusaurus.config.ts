@@ -154,6 +154,10 @@ const config: Config = {
         redirects: [
           { from: removedChangelogPages, to: '/changelog' },
           { from: removedListPages, to: '/recipes' },
+          {
+            from: '/reference/latest-versions-of-every-openrewrite-module',
+            to: 'https://docs.moderne.io/user-documentation/recipes/lists/latest-versions-of-every-openrewrite-module',
+          },
         ],
       },
     ],
