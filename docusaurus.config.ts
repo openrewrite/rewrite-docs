@@ -165,7 +165,8 @@ const config: Config = {
           // part of the package, e.g. `java.spring.boot3`, so no vendor drops out. Recipes that are
           // not in the Code Genome Project yet (the python.cleanup recipes and a few staticanalysis
           // ones) fall back to their category's search. This file is a snapshot of the catalog's
-          // last state and is maintained by hand; there is no generator.
+          // last state and is maintained by hand; there is no generator. Inner-class recipe IDs keep a
+          // literal `$` in `to`: the plugin runs encodeURI on it, so a pre-encoded %24 would become %2524.
           ...(recipeCatalogRedirects as { from: string | string[]; to: string }[]),
         ],
       },
