@@ -2,6 +2,7 @@ import org.openrewrite.docs.GitHub
 import org.openrewrite.docs.Pom
 import org.openrewrite.docs.Version
 import org.openrewrite.docs.UpdateChangelog
+import org.openrewrite.docs.UpdateGradlePluginProperties
 import org.openrewrite.docs.UpdateLatestVersions
 
 repositories {
@@ -83,10 +84,16 @@ val updateChangelog = tasks.register<UpdateChangelog>("updateChangelog") {
     changelogFile = layout.projectDirectory.file("docs/changelog.md")
 }
 
+val updateGradlePluginProperties = tasks.register<UpdateGradlePluginProperties>("updateGradlePluginProperties") {
+    group = "documentation"
+    description = "Updates the Gradle plugin properties table from the rewrite-gradle-plugin reference."
+    pageFile = layout.projectDirectory.file("docs/reference/gradle-plugin-configuration.md")
+}
+
 tasks.register("updateDocs") {
     group = "documentation"
     description = "Updates every generated page of the docs."
-    dependsOn(updateLatestVersions, updateChangelog)
+    dependsOn(updateLatestVersions, updateChangelog, updateGradlePluginProperties)
 }
 
 /// Returns the `groupId:artifactId` of every module managed by the BOM at [coordinate], following `import`-scoped BOMs.

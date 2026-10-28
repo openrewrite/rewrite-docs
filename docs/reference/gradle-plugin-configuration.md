@@ -87,7 +87,7 @@ repositories {
 
 It generally makes sense to apply the plugin to the root `build.gradle` in a repository so that the configuration applies to each project in a multi-module project. You may also find it beneficial to [check out the auto-generated Gradle plugin Javadoc](https://openrewrite.github.io/rewrite-gradle-plugin/apidocs/) which contains `type` information among other things.
 
-<!-- AUTO-GENERATED-GRADLE-PROPS:START - Do not edit manually; updated by update-gradle-plugin-props workflow -->
+<!-- AUTO-GENERATED-GRADLE-PROPS:START - Do not edit manually; updated by ./gradlew updateGradlePluginProperties -->
 
 | Property | Type | Default | Description |
 | ---------------- | -------- | -------- | ------------------------ |
