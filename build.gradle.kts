@@ -15,7 +15,7 @@ repositories {
     mavenCentral()
 }
 
-val recipeBomGroups = setOf("org.openrewrite", "org.openrewrite.meta", "org.openrewrite.recipe", "io.moderne.recipe")
+val recipeBomGroups = setOf("org.openrewrite", "org.openrewrite.recipe", "io.moderne.recipe")
 val nonRecipeBomModules = setOf(
     "org.openrewrite:plugin",
     "org.openrewrite:rewrite-test",
