@@ -27,9 +27,8 @@ class PomTest {
             """.trimIndent()
         )
 
-        assertThat(Module.of(pom)).isEqualTo(
-            Module("org.openrewrite", "rewrite-core", "8.95.0")
-        )
+        assertThat(pom.coordinates).isEqualTo("org.openrewrite:rewrite-core")
+        assertThat(pom.version).isEqualTo("8.95.0")
     }
 
     @Test
