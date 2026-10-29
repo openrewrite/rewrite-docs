@@ -8,7 +8,7 @@ Recipe docs now live in the [Code Genome Project](https://codegenomeproject.org/
 
 ## Generated pages
 
-The [changelog](./docs/changelog.md) and the versions behind the `{{VERSION_*}}` placeholders in [latest-versions.js](./src/plugins/latest-versions.js) are updated nightly by the [Update docs](./.github/workflows/update-docs.yml) workflow. The versions are copied from [moderne-docs](https://github.com/moderneinc/moderne-docs/blob/main/src/plugins/latest-versions.js), which resolves them half an hour earlier. To update them locally, add your [Code Genome Project](https://artifacts.codegenomeproject.org/maven) credentials to `~/.gradle/gradle.properties` as `codegenomeUsername` and `codegenomePassword`, sign in with the [GitHub CLI](https://cli.github.com/) or set `GITHUB_TOKEN`, then run:
+The [changelog](./docs/changelog.md) and the [latest versions](./src/plugins/latest-versions.js), copied from [moderne-docs](https://github.com/moderneinc/moderne-docs), are updated nightly by the [Update docs](./.github/workflows/update-docs.yml) workflow. To update them locally, set `codegenomeUsername` and `codegenomePassword` in `~/.gradle/gradle.properties`, sign in with `gh` or set `GITHUB_TOKEN`, then run:
 
 ```shell
 ./gradlew updateDocs
