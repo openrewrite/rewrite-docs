@@ -5,7 +5,6 @@ import java.net.URI
 import java.net.http.HttpClient
 import java.net.http.HttpRequest
 import java.net.http.HttpResponse
-import java.util.Base64
 
 private val client = HttpClient.newBuilder().followRedirects(HttpClient.Redirect.NORMAL).build()
 
@@ -22,6 +21,3 @@ internal fun httpGetBody(url: String, headers: Map<String, String> = emptyMap())
 
 internal fun httpGetJson(url: String, headers: Map<String, String> = emptyMap()): Any =
     JsonSlurper().parseText(httpGetBody(url, headers))
-
-internal fun basicAuthorization(username: String, password: String) =
-    "Basic " + Base64.getEncoder().encodeToString("$username:$password".toByteArray())
