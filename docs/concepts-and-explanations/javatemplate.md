@@ -341,7 +341,7 @@ Since the Semantics class is functionally equivalent to defining a JavaTemplate 
 
 Kotlin sources are parsed into their own [LST](../concepts-and-explanations/lossless-semantic-trees.md) elements, so `JavaTemplate` — which parses snippets with a `JavaParser` — cannot generate or match them. For Kotlin, `rewrite-kotlin` provides [`KotlinTemplate`](https://github.com/openrewrite/rewrite/blob/main/rewrite-kotlin/src/main/java/org/openrewrite/kotlin/KotlinTemplate.java), which `extends JavaTemplate` and swaps in a `KotlinParser` behind the scenes.
 
-Because it's a subclass, everything covered above still applies: the same `builder(...)` API, the same positional `#{}` / `#{any(<type>)}` [substitution indicators](#code-snippets-and-parameters), the same `apply(cursor, coordinates, parameters...)` [usage](#usage), the same [coordinates](#coordinates), and the same ability to [match existing code](#using-javatemplates-to-match-existing-code). Only the parts listed below change.
+Because it's a subclass, everything covered above still applies: the same `builder(...)` API, the same positional `#{}` / `#{any(<type>)}` [substitution indicators](#code-snippets-and-parameters), the same `apply(cursor, coordinates, parameters...)` [usage](#usage), most of the same [coordinates](#coordinates), and the same ability to [match existing code](#using-javatemplates-to-match-existing-code). Only the parts listed below change.
 
 ### What differs from JavaTemplate
 
@@ -370,6 +370,49 @@ return Preconditions.check(new UsesMethod<>(CHAR_TO_INT_METHOD_MATCHER), new Kot
         return super.visitMethodInvocation(method, ctx);
     }
 });
+```
+
+### Supported coordinates
+
+`KotlinTemplate` works with the coordinates that insert or replace expressions, statements and annotations:
+
+* `replace()` on an expression or a statement
+* `before()` and `after()` on a statement
+* `firstStatement()` and `lastStatement()` on a block, and `replaceBody()` on a method declaration
+* `replaceArguments()` on a method invocation
+* `addAnnotation(...)` and `replaceAnnotations()` on declarations
+
+Coordinates that replace other parts of a declaration — `replaceParameters()`, `replaceTypeParameters()`, `replaceExtendsClause()`, `replaceImplementsClause()` and `replaceThrows()` — parse their snippet inside a stub written in Java syntax, so they don't work with Kotlin snippets. `replaceParameters()` with `a: Int`, for example, fails with "Could not parse as Java". Templating a whole class declaration is rejected as well, because it would need a context-sensitive template.
+
+There is also no coordinate for a function's return type alone. Templating the whole function to change it, for example to add `: Unit`, rebuilds the declaration from the snippet, so make that change on the `J.MethodDeclaration` itself instead.
+
+### How the snippet is parsed
+
+A context-free template is parsed on its own, wrapped in a small Kotlin class:
+
+* An **expression** is parsed as the initializer of a property, as in `class Template { var o : Any = <snippet> }`.
+* A **statement** is parsed inside an initializer block, as in `class Template { init { <snippet> } }`.
+
+The snippet therefore has to be valid Kotlin in that position. The [substitution indicators](#code-snippets-and-parameters) become placeholder expressions of the declared type, which is why `#{any(kotlin.Boolean)}` and the like should name the type the surrounding code expects.
+
+### Formatting of inserted code
+
+The code a template inserts is auto-formatted relative to where it lands, using the Kotlin formatter and the source file's style. You don't need to indent a snippet to match its destination. Write it with `\n` line breaks and no leading indentation:
+
+```java
+KotlinTemplate.builder("run {\nval x = #{any(kotlin.Int)}\nprintln(x)\n}")
+```
+
+Inserted three levels deep, this prints with each line of the `run` block indented one level further than `run` itself. Only the inserted code is formatted; the rest of the file is left as it is.
+
+### Substituting lambdas
+
+A lambda passed as a parameter is substituted as an ordinary argument, so `run(#{any()})` prints `run({ ... })` rather than the trailing-lambda form `run { ... }`. A snippet like `run #{any()}` isn't valid Kotlin and fails to parse. To produce a trailing lambda, write the braces in the template and substitute what goes inside them:
+
+```java
+KotlinTemplate.builder("run {\n#{any()}\n}")
+        .build()
+        .apply(getCursor(), statement.getCoordinates().replace(), expression);
 ```
 
 ### Alternating between Java and Kotlin in one recipe
