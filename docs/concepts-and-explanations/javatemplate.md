@@ -380,9 +380,11 @@ return Preconditions.check(new UsesMethod<>(CHAR_TO_INT_METHOD_MATCHER), new Kot
 * `before()` and `after()` on a statement
 * `firstStatement()` and `lastStatement()` on a block, and `replaceBody()` on a method declaration
 * `replaceArguments()` on a method invocation
+* `replaceParameters()` on a function, with a snippet such as `a: Int, b: String = "b"`
+* `replaceTypeParameters()` on a class or a function, with a snippet such as `T : Any`
 * `addAnnotation(...)` and `replaceAnnotations()` on declarations
 
-Coordinates that replace other parts of a declaration — `replaceParameters()`, `replaceTypeParameters()`, `replaceExtendsClause()`, `replaceImplementsClause()` and `replaceThrows()` — parse their snippet inside a stub written in Java syntax, so they don't work with Kotlin snippets. `replaceParameters()` with `a: Int`, for example, fails with "Could not parse as Java". Templating a whole class declaration is rejected as well, because it would need a context-sensitive template.
+`replaceExtendsClause()` and `replaceImplementsClause()` parse their snippet inside a stub written in Java syntax, so they don't work with Kotlin snippets and fail with "Could not parse as Java". Kotlin lists the superclass and interfaces together after a single `:`, so change those on the class declaration itself. `replaceThrows()` doesn't apply, since Kotlin has no `throws` clause. Templating a whole class declaration is rejected as well, because it would need a context-sensitive template.
 
 There is also no coordinate for a function's return type alone. Templating the whole function to change it, for example to add `: Unit`, rebuilds the declaration from the snippet, so make that change on the `J.MethodDeclaration` itself instead.
 
