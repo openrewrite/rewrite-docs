@@ -393,6 +393,8 @@ class UseElvisThrow : Recipe() {
 
 The whole `if` is replaced by a node of a different type, so the visitor is a non-iso `KotlinVisitor` rather than a `KotlinIsoVisitor`.
 
+For the coordinates `KotlinTemplate` supports, how it parses a snippet, and how it formats the code it inserts, see the [`KotlinTemplate` section](../concepts-and-explanations/javatemplate.md#kotlintemplate) of the `JavaTemplate` guide.
+
 ## Emitting a data table
 
 A recipe can emit structured rows instead of, or alongside, changing code – see the [data tables guide](./data-tables.md) for the full picture.
