@@ -132,7 +132,7 @@ dependencies {
 :::info
 While recipes should generally be compiled with Java 8 as the target for compatibility, tests can be compiled to target newer versions of the Java Runtime.
 
-We recommend either using Java 17 or Kotlin so that you get access to multi-line strings in your tests.
+We recommend either using Java 25 or Kotlin so that you get access to multi-line strings in your tests.
 
 This tutorial uses Java for tests, but which language you use is a matter of preference.
 :::

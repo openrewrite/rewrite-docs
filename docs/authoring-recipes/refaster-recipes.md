@@ -94,7 +94,7 @@ dependencies {
 
     // If you are developing recipes in Java, you'll need to bring in rewrite-java
     implementation("org.openrewrite:rewrite-java")
-    runtimeOnly("org.openrewrite:rewrite-java-17")
+    runtimeOnly("org.openrewrite:rewrite-java-25")
 
     // Refaster style recipes need the rewrite-templating annotation processor and dependency for generated recipes:
     // https://github.com/openrewrite/rewrite-templating/releases
