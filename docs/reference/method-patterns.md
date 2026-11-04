@@ -44,7 +44,7 @@ The three pieces of information we need to know to identify the method would be:
 * `String, int` – the method's argument types
 
 :::info
-Each of these are **type-sensitive**. Please make sure your capitalization exactly matches what you're looking for.
+Each of these is **case-sensitive**. Please make sure your capitalization exactly matches what you're looking for.
 :::
 
 Combining the three would make this method pattern:
@@ -54,7 +54,7 @@ org.foo.Bar baz(String, int)
 ```
 
 :::warning
-You might be wondering, "What if `baz` returned an object instead of `void`? Isn't that missing in the method pattern?
+You might be wondering, "What if `baz` returned an object instead of `void`? Isn't that missing in the method pattern?"
 
 That information isn't actually needed as methods in Java (and similar languages) can be uniquely identified by the fully qualified receiver type, method name, and argument types alone.
 :::
@@ -67,10 +67,6 @@ Method patterns can also accept wildcard symbols if you want to search for or ch
 In the following section, we will provide some examples of how to use these.
 
 ### Examples
-
-:::info
-Check out the [Moderne introduction to type-aware code searches](https://docs.moderne.io/user-documentation/moderne-platform/how-to-guides/introduction-to-type-aware-code-search/#using-a-search-recipe) for an example of how method patterns can be used by users running recipes.
-:::
 
 The below table shows some more examples of method patterns and the methods they match:
 
@@ -94,7 +90,7 @@ The below table shows some more examples of method patterns and the methods they
 | `org.openrewrite.java.* foo(..)`             | Any method named `foo` in a package that starts with `org.openrewrite.java.`. Note that the `.*` after `java` means that the method _must_ be in this package rather than some subsequent subpackages.             |
 | `org.Foo bar(java.util.List)`                | Exactly the `bar` method in the `org.Foo` class that takes in a single `java.util.List` as an argument.                                                                                                            |
 | `org.Foo bar(java.*.*, *)`                   | Exactly the `bar` method in the `org.Foo` class that takes two arguments of which the first argument type is nested exactly 2 levels deep in the `java` package.                                                   |
-| `org.Foo <constructor>(..)`                  | Matches any constructors in the `org.Foo` class that takes in any number of arguments.                                                                                                                             |
+| `org.Foo <constructor>(..)`                  | Matches any constructors in the `org.Foo` class that take in any number of arguments.                                                                                                                             |
 | `org.Foo <init>(..)`                         | Matches the same thing as the previous line. Demonstrates that `init` can be used as an alias of `constructor`.                                                                                                    |
 | `org.Foo bar()`                              | Matches exactly the `bar` method in the `org.Foo` class that has **no** arguments                                                                                                                                  |
 | `org.Foo#bar()`                              | Matches the same thing as the previous line. Demonstrates that `#` can be used to replace a space – which may be useful for certain types of input such as a CLI.                                                  |

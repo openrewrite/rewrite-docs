@@ -47,12 +47,12 @@ If you don't have a recipe to use or if you want to grab a simple one to start w
 4. You should see a `result` appear. You can press `view` to get a pop-up of the LST in your IDE or you could copy it to another text editor for use in the future.
 
 <figure>
-  ![](./assets/TVPExpression.png)
+  ![IDE debugger with TreeVisitingPrinter.printTree(getCursor()) entered in the Evaluate expression field and a result row with a View button](./assets/TVPExpression.png)
   <figcaption>_Entering the `printTree` expression_</figcaption>
 </figure>
 
 <figure>
-  ![](./assets/TVPResult.png)
+  ![Printed LST tree showing the hierarchy from J.CompilationUnit through J.ClassDeclaration and J.MethodDeclaration down to nested leaf nodes](./assets/TVPResult.png)
   <figcaption>_LST result_</figcaption>
 </figure>
 

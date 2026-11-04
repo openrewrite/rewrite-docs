@@ -362,7 +362,7 @@ As part of that, you might find that using the [TreeVisitingPrinter](../concepts
 Likewise, you would see that variables can be assigned or changed in LSTs such as `J.Assignment`, `J.AssignmentOperation`, and `J.Unary`.
 
 <figure>
-  ![](./assets/TreeVisitingPrinterExample.png)
+  ![TreeVisitingPrinter console output of an LST tree with the J.VariableDeclarations and J.Assignment nodes highlighted](./assets/TreeVisitingPrinterExample.png)
   <figcaption>_TreeVisitingPrinter example_</figcaption>
 </figure>
 

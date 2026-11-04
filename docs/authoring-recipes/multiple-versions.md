@@ -113,7 +113,7 @@ For Maven projects, we've updated the [rewrite-maven-plugin](https://github.com/
 </profiles>
 ```
 
-With this profile defined, you can generate a Typetable by running:
+With this profile defined, you can generate a TypeTable by running:
 
 ```bash
 ./mvnw generate-resources -Ptypetable

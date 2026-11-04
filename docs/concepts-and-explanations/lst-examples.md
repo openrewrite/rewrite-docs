@@ -17,7 +17,7 @@ To help you get started on working with Java LSTs and OpenRewrite, this guide wi
 
 In order to programmatically modify code without risking the introduction of syntactic or semantic errors, you must use a data structure that can accurately and comprehensively represent said code. OpenRewrite uses [Lossless Semantic Trees](./lossless-semantic-trees.md) (LSTs) for this purpose. Like other tree data structures, more complex LSTs are recursively composed of other, simpler LSTs.
 
-For instance, a [ClassDeclaration](#classdeclaration) is an LST that defines a class. A typical class declaration will be composed of elements such as fields, methods, constructors, and inner classes. Each of those elements are, themselves, an LST. So the term "LST" may refer to an entire, complete Java file or just one piece of it.
+For instance, a [ClassDeclaration](#classdeclaration) is an LST that defines a class. A typical class declaration will be composed of elements such as fields, methods, constructors, and inner classes. Each of those elements is, itself, an LST. So the term "LST" may refer to an entire, complete Java file or just one piece of it.
 
 It's important to note that it is possible to manipulate LSTs to create code that will not compile. While OpenRewrite provides some safeguards against grammatically invalid transformations in its type system (such as not allowing import statements to be replaced with a method declaration), it is still possible to write code that is valid according to the Java grammar without being a valid, compilable program.
 
@@ -28,7 +28,7 @@ For example, nothing prevents you from modifying an LST so that a variable is us
 This diagram demonstrates how a simple Java class is represented as an LST. Note the hierarchical structure where LSTs are composed out of other LSTs.
 
 <figure>
-  ![](./assets/vertical-ast-example.png)
+  ![Diagram mapping a simple Java class to its LST, with the source code on the left linked to nested LST element nodes on the right](./assets/vertical-ast-example.png)
   <figcaption></figcaption>
 </figure>
 
@@ -113,7 +113,7 @@ A [FieldAccess](https://github.com/openrewrite/rewrite/blob/v8.90.4/rewrite-java
 
 An [Identifier](https://github.com/openrewrite/rewrite/blob/v8.90.4/rewrite-java/src/main/java/org/openrewrite/java/tree/J.java#L2638-L2690) is any name in the code (class names, variable names, method names, etc).
 
-You can use `J.Identifier.getFieldType()` to tell what class the identifier is a field on. If `null` is returned, then that means the identifier it is not a field.
+You can use `J.Identifier.getFieldType()` to tell what class the identifier is a field on. If `null` is returned, then that means the identifier is not a field.
 
 ![Identifier Example](./assets/Identifier.png)
 

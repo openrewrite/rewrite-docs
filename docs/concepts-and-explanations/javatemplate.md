@@ -7,7 +7,7 @@ description: A technical overview of what JavaTemplates are and how to use them.
 More advanced refactoring recipes often require the construction of complex [Lossless Semantic Tree](../concepts-and-explanations/lossless-semantic-trees.md) (LST) elements. Manually constructing complex LST elements can be tedious and unfamiliar to developers accustomed to authoring code as text. OpenRewrite addresses this need with `JavaTemplate`, which parses textual code snippets into LST elements ready for use in a [visitor](./visitors.md).
 
 :::tip
-`JavaTemplates` produces LSTs that are correctly formatted, fully type-attributed, and able to reference symbols from the lexical scope of insertion.
+`JavaTemplates` produce LSTs that are correctly formatted, fully type-attributed, and able to reference symbols from the lexical scope of insertion.
 :::
 
 ## Construction
@@ -57,7 +57,7 @@ If the recipe test harness fails because of missing type information when you've
 
 #### Untyped Substitution Indicators
 
-You should use the untyped substitution indicator `#{}` when providing a non-LST element like a `String` as a template substitution argument. When providing an LST element, like a `J.Identifier`, into a context where the concept of type is nonsensical, you should begin by converting them to an appropriate `String`. Examples of untyped insertion points include the text of a comment, the name of a class in a class declaration, and keywords like `if` or `while`. Examples of snippets with untyped substitution indicators:
+You should use the untyped substitution indicator `#{}` when providing a non-LST element like a `String` as a template substitution argument. When providing an LST element, like a `J.Identifier`, into a context where the concept of type is nonsensical, you should begin by converting it to an appropriate `String`. Examples of untyped insertion points include the text of a comment, the name of a class in a class declaration, and keywords like `if` or `while`. Examples of snippets with untyped substitution indicators:
 
 * `// TODO: Fix bug #{}`
 * `public class #{} { }`
@@ -102,7 +102,7 @@ It isn't always possible to include all the libraries a Recipe may want to refer
 
 #### From Stubs
 
-Whenever a symbol you want to reference is not, or cannot, be looked up from the runtime classpath a stub providing all of the relevant type information can be provided instead. Stubs are provided with `JavaParser.Builder.dependsOn()`. Stubs must be valid Java source files, but only methods that are used in the template must exist in the stub, and those methods can be implemented with the bare minimum to be syntactically valid method declarations.
+Whenever a symbol you want to reference is not, or cannot be, looked up from the runtime classpath a stub providing all of the relevant type information can be provided instead. Stubs are provided with `JavaParser.Builder.dependsOn()`. Stubs must be valid Java source files, but only methods that are used in the template must exist in the stub, and those methods can be implemented with the bare minimum to be syntactically valid method declarations.
 
 ```java
 JavaTemplate.builder("Duration.ofMillis(#{any(int)})")

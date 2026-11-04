@@ -156,7 +156,7 @@ Key differences:
 
 ### Type casting helpers
 
-Each of these methods return `null` if it would not be valid to interpret the argument as of that type:
+Each of these methods returns `null` if it would not be valid to interpret the argument as of that type:
 
 ```java
 JavaType.Class clazz = TypeUtils.asClass(type);
