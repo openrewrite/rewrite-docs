@@ -112,7 +112,7 @@ OpenRewrite detects changes based on referential comparison of the LST passed in
 LSTs are mostly immutable by default, not exposing `set` methods for any field. Instead LSTs provide `with` methods which return a copy of the LST with a different value for the specified field. For example, you "change" the name of a class declaration by visiting it and using `J.ClassDeclaration.withName()` to return a new class declaration with everything the same except for the name.&#x20;
 
 :::warning
-A Recipe should never mutate a field on an LST. Mutating an LST may result patches that cannot be applied. Or worse: incomplete patches that _can_ be applied but omit required diffs.
+A Recipe should never mutate a field on an LST. Mutating an LST may result in patches that cannot be applied. Or worse: incomplete patches that _can_ be applied but omit required diffs.
 :::
 
 The most common way a recipe author runs afoul of this important requirement is to get a collection from an LST element and mutate it directly. For example, attempting to remove an argument from a method invocation by calling `method.getArguments().remove(0)`.

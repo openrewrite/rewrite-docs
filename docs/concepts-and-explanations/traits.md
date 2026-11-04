@@ -159,11 +159,11 @@ This trait has a method that really demonstrates how useful traits can be: `getD
 
 ### Matchers
 
-If you look at the `Annotated` trait further, you will see there that there is also a `Matcher` class included in it. Having a matcher allows people to filter through a complex LST and identify the pieces of the LST that match this trait – among other benefits.
+If you look at the `Annotated` trait further, you will see that there is also a `Matcher` class included in it. Having a matcher allows people to filter through a complex LST and identify the pieces of the LST that match this trait – among other benefits.
 
 This is a pattern you will often see in traits. Typically, the `Matcher` class extends the [SimpleTraitMatcher class](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/trait/SimpleTraitMatcher.java).
 
-To get basic matching to work, all you need to do is override the `test` method. This method takes in a cursor that points to a particular LST element and then say: yes or no? Can the LST element pointed to by this cursor be represented with this trait?
+To get basic matching to work, all you need to do is override the `test` method. This method takes in a cursor that points to a particular LST element and then says: yes or no? Can the LST element pointed to by this cursor be represented with this trait?
 
 ```java
 @Override
@@ -185,7 +185,7 @@ Converting a trait into a recipe makes testing a trait significantly easier, as 
 
 You can see this in action in the [AnnotatedTest class](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/test/java/org/openrewrite/java/trait/AnnotatedTest.java).
 
-Below is a snippet one of the tests in this class:
+Below is a snippet of one of the tests in this class:
 
 ```java
 @Test
@@ -250,7 +250,7 @@ While we, technically, could have added more methods to the LST – the best app
 
 The `Namespaced` trait offers a variety of useful methods and an **extensive matcher** that lets you search on common parameters.
 
-We can then use that matcher and the `asVisitor` method it comes with to create everything needed for a recipe that finds XML namespaces URIs and, optionally, filters on XPaths:
+We can then use that matcher and the `asVisitor` method it comes with to create everything needed for a recipe that finds XML namespace URIs and, optionally, filters on XPaths:
 
 ```java
 @Override

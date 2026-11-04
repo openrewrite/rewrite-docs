@@ -267,7 +267,7 @@ Also, we **strongly recommend** using an absolute path instead of a relative pat
 
 ### Step 3: Configure the CLI to build JavaScript LSTs
 
-In order for the Moderne CLI to build JavaScript/TypeScript LSTs, you'll need to make a few minor changes to the `.moderne.yml` file. Please follow along with our [JavaScript Moderne CLI documentation](https://docs.moderne.io/user-documentation/moderne-cli/how-to-guides/javascript/#step-1-update-your-moderneyml-file) to make these changes.
+In order for the Moderne CLI to build JavaScript/TypeScript LSTs, it needs the `javascript` build step. As of CLI v4.3.0, this step runs by default, so no configuration is required. If you're on an older CLI version or use an explicit build configuration, follow our [JavaScript Moderne CLI documentation](https://docs.moderne.io/user-documentation/moderne-cli/how-to-guides/javascript#adding-the-javascript-build-step-manually) to add it.
 
 ### Step 4: Run your recipes
 

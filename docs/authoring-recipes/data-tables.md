@@ -410,7 +410,7 @@ Once data tables have been enabled, please run your recipe as normal such as wit
 After your recipe has been run, a `target/rewrite/datatables` directory will be created in your repository. In there, there will be a timestamped folder that contains CSVs for the data tables that were produced by the recipe:
 
 <figure>
-  ![](./assets/datatable-example.png)
+  ![IDE file tree showing the target/rewrite/datatables folder with a timestamped subfolder containing two generated CSV data tables](./assets/datatable-example.png)
   <figcaption>_Example target folder_</figcaption>
 </figure>
 

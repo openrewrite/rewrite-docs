@@ -100,6 +100,27 @@ export async function activate(marketplace: RecipeMarketplace): Promise<void> {
 
 The `activate()` function is called by the Moderne CLI when loading your package and registers your recipes so they can be used with `mod run`. **Without this function, the CLI will not be able to find or run your recipes**.
 
+### Choosing where your recipe appears
+
+The second argument to `marketplace.install()` is the recipe's category path - an array of descriptors ordered from shallowest to deepest. The `MyPackage` path above files the recipe under a single top-level **My Recipes** category, and adding another descriptor nests it a level deeper:
+
+```typescript title="index.ts"
+export const MyCleanup: CategoryDescriptor[] = [
+    {displayName: "My Recipes"},
+    {displayName: "Cleanup"},
+];
+```
+
+Levels that don't exist yet are created on install.
+
+A category is keyed by its display name, so you can reuse an existing name to put your recipes next to ones already in the marketplace. If your organization publishes Java recipes named `com.example.recipes.*`, those show up under a top-level **Example** category, and a descriptor with `displayName: "Example"` lands your JavaScript recipes right there. There's no shared registry to import from. Every package declares its own descriptor, and matching ones merge into a single node.
+
+Copy the existing category's `description` as well as its `displayName`. Whichever bundle is installed first owns the node, so matching both is what keeps the result the same either way. If several of your own packages share a category, publish the descriptors in a small shared package and depend on it from each one.
+
+:::tip
+For more on how category trees merge across languages, check out the guide on [managing recipe categories](https://docs.moderne.io/administrator-documentation/moderne-platform/how-to-guides/categorize-recipes).
+:::
+
 ## Writing tests
 
 Now that we have a basic recipe defined (albeit one that doesn't actually _do_ anything), let's write tests to define our expected behavior. This will not only allow us to confirm that we've set everything up correctly so far, but it will also ensure that we've thought more about how this recipe will work.
@@ -409,7 +430,7 @@ class MigrateUtilFunctionsVisitor extends JavaScriptVisitor<ExecutionContext> {
 
 ### Find/replace a method
 
-Next, let's pick a method to find and replace such as `util.isArray(...)`. We need to replace that with `Array.isArray(...)` but, **also**, preserve whatever is inside the parenthesis.
+Next, let's pick a method to find and replace such as `util.isArray(...)`. We need to replace that with `Array.isArray(...)` but, **also**, preserve whatever is inside the parentheses.
 
 We can do this by utilizing the `capture()` function in combination with a simple OpenRewrite rule:
 
