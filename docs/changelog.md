@@ -8,6 +8,140 @@ Each release of the [rewrite-recipe-bom](https://github.com/openrewrite/rewrite-
 These are the release notes of the modules that changed in each release over the past year, taken from their GitHub releases.
 For the current version of each module, see the [latest versions of every OpenRewrite module](https://docs.moderne.io/user-documentation/recipes/lists/latest-versions-of-every-openrewrite-module).
 
+## [rewrite-recipe-bom 3.49.0](https://github.com/openrewrite/rewrite-recipe-bom/releases/tag/v3.49.0)
+
+Released on November 7, 2026, with OpenRewrite 8.101.0.
+
+#### [rewrite 8.101.0](https://github.com/openrewrite/rewrite/releases/tag/v8.101.0)
+
+* C#: keep space before `;` in labeled statements and extern aliases by @knutwannheden in [#9727](https://github.com/openrewrite/rewrite/pull/9727)
+* C#: attribute constructor declarations with their Roslyn symbols by @jkschneider in [#9728](https://github.com/openrewrite/rewrite/pull/9728)
+* Respect npm offline and deadline policy during native lock regeneration by @jkschneider in [#9733](https://github.com/openrewrite/rewrite/pull/9733)
+* Refuse unbound Bun and Yarn registry request policies by @jkschneider in [#9732](https://github.com/openrewrite/rewrite/pull/9732)
+* Reject registry credential requests outside their HTTPS authority by @jkschneider in [#9735](https://github.com/openrewrite/rewrite/pull/9735)
+* Refuse unsupported effective pnpm fetch deadlines by @jkschneider in [#9737](https://github.com/openrewrite/rewrite/pull/9737)
+* Spell ColdFusion's built-in functions as cfdocs.org does by @jkschneider in [#9736](https://github.com/openrewrite/rewrite/pull/9736)
+
+#### [rewrite 8.100.3](https://github.com/openrewrite/rewrite/releases/tag/v8.100.3)
+
+* YAML: make `.*` after a key or sequence select its children in JsonPathMatcher by @greg-at-moderne in [#9718](https://github.com/openrewrite/rewrite/pull/9718)
+* Match meta-annotation pattern parameters against the meta-annotation by @timtebeek in [#9262](https://github.com/openrewrite/rewrite/pull/9262)
+* Honor npm and pnpm registry proxy routes by @jkschneider in [#9720](https://github.com/openrewrite/rewrite/pull/9720)
+* Preserve Groovy double-not condition rendering opt-out by @jkschneider in [#9722](https://github.com/openrewrite/rewrite/pull/9722)
+* Preserve nested static imports with legacy model layout styles by @jkschneider in [#9721](https://github.com/openrewrite/rewrite/pull/9721)
+* Preserve Groovy assertion source and value diagnostics by @jkschneider in [#9724](https://github.com/openrewrite/rewrite/pull/9724)
+* Fix ColdFusion gaps found building 250 repositories by @jkschneider in [#9723](https://github.com/openrewrite/rewrite/pull/9723)
+* Preserve static member bindings when ordering imports by @jkschneider in [#9725](https://github.com/openrewrite/rewrite/pull/9725)
+* Avoid copying newly owned JSON parse trees by @jkschneider in [#9726](https://github.com/openrewrite/rewrite/pull/9726)
+
+#### [rewrite 8.100.2](https://github.com/openrewrite/rewrite/releases/tag/v8.100.2)
+
+* Preserve labels on Groovy if statements by @jkschneider in [#9700](https://github.com/openrewrite/rewrite/pull/9700)
+* Preserve nested negation precedence when simplifying comparisons by @jkschneider in [#9699](https://github.com/openrewrite/rewrite/pull/9699)
+* Preserve nested enum static imports when ordering imports by @jkschneider in [#9701](https://github.com/openrewrite/rewrite/pull/9701)
+* Preserve Kotlin statements when simplifying negated equals calls by @jkschneider in [#9702](https://github.com/openrewrite/rewrite/pull/9702)
+* Keep unpaired surrogates in JSON string values as escapes by @jkschneider in [#9706](https://github.com/openrewrite/rewrite/pull/9706)
+* Preserve Boolean coercion when simplifying duplicate short-circuit operands by @jkschneider in [#9703](https://github.com/openrewrite/rewrite/pull/9703)
+* Preserve leading Groovy statements and headers when updating imports by @jkschneider in [#9709](https://github.com/openrewrite/rewrite/pull/9709)
+* Preserve method invocations when boolean folding would replace a statement by @jkschneider in [#9707](https://github.com/openrewrite/rewrite/pull/9707)
+* Compare recursive generic types without overflowing equality by @jkschneider in [#9710](https://github.com/openrewrite/rewrite/pull/9710)
+* C#: keep the space before a for loop's first `;` by @knutwannheden in [#9714](https://github.com/openrewrite/rewrite/pull/9714)
+* Honor pnpm config trust when authenticating registry requests by @jkschneider in [#9711](https://github.com/openrewrite/rewrite/pull/9711)
+* Parse Javadoc on multi-variable field declarations as Javadoc.DocComment by @timtebeek in [#9704](https://github.com/openrewrite/rewrite/pull/9704)
+* YAML: fix parse failure for anchored sequences on SnakeYAML's buffer boundary by @timtebeek in [#9705](https://github.com/openrewrite/rewrite/pull/9705)
+* Preserve evaluation of String self-equals calls by @jkschneider in [#9708](https://github.com/openrewrite/rewrite/pull/9708)
+* Add rewrite-coldfusion, a CFML parser by @jkschneider in [#9698](https://github.com/openrewrite/rewrite/pull/9698)
+* Resolve npm workspace dependency graphs from the selected lock context by @jkschneider in [#9717](https://github.com/openrewrite/rewrite/pull/9717)
+* C#: keep the space before a type declaration's trailing `;` by @knutwannheden in [#9712](https://github.com/openrewrite/rewrite/pull/9712)
+* C#: keep the space before `;` in jump statements, do-while and expression-bodied members by @knutwannheden in [#9713](https://github.com/openrewrite/rewrite/pull/9713)
+* Contain C# build-context materialization paths before writes by @jkschneider in [#9696](https://github.com/openrewrite/rewrite/pull/9696)
+* Hoist C# and Go RPC preconditions the way JavaScript and Python do by @knutwannheden in [#9691](https://github.com/openrewrite/rewrite/pull/9691)
+* Keep Kotlin classes in position in `K.CompilationUnit` `withClasses` by @kmccarp in [#9687](https://github.com/openrewrite/rewrite/pull/9687)
+* RemoveUnusedImports unfolds a star import only into types named through it by @Jammy-Louie in [#9690](https://github.com/openrewrite/rewrite/pull/9690)
+* Leave a build's own version properties alone in `UpdateJavaCompatibility` by @kmccarp in [#9688](https://github.com/openrewrite/rewrite/pull/9688)
+* Preserve outer class type arguments when changing inner type in ChangeType by @Niloyyy in [#9536](https://github.com/openrewrite/rewrite/pull/9536)
+* Python: a uv.lock records the project as editable or virtual as the manifest now declares it by @timtebeek in [#9571](https://github.com/openrewrite/rewrite/pull/9571)
+* Python: refuse to stamp a Poetry, PDM or Pipfile lock that was out of date before the edit by @timtebeek in [#9572](https://github.com/openrewrite/rewrite/pull/9572)
+* Python: Poetry and PDM edits that move a package between groups, or reshape a declaration, defer to resolution by @timtebeek in [#9573](https://github.com/openrewrite/rewrite/pull/9573)
+* Don't drop a static star import next to a regular import in `ChangeType` by @krlittle in [#9586](https://github.com/openrewrite/rewrite/pull/9586)
+* Attribute C# local function declarations with their declared method symbols by @jkschneider in [#9651](https://github.com/openrewrite/rewrite/pull/9651)
+
+#### [rewrite 8.100.1](https://github.com/openrewrite/rewrite/releases/tag/v8.100.1)
+
+* JavaScript: add an XML LST by @greg-at-moderne in [#9694](https://github.com/openrewrite/rewrite/pull/9694)
+* JavaScript: a pattern's type annotation is required under lenient matching by @myhau in [#9683](https://github.com/openrewrite/rewrite/pull/9683)
+* JavaScript: add member editing helpers for JSON by @greg-at-moderne in [#9695](https://github.com/openrewrite/rewrite/pull/9695)
+* JavaScript: keep template replacements from fusing with adjacent word tokens by @greg-at-moderne in [#9682](https://github.com/openrewrite/rewrite/pull/9682)
+* JavaScript: parse BigInt literals to a bigint value by @greg-at-moderne in [#9678](https://github.com/openrewrite/rewrite/pull/9678)
+* JavaScript: parse `**` as `JS.Binary` instead of `JS.AssignmentOperation` by @greg-at-moderne in [#9684](https://github.com/openrewrite/rewrite/pull/9684)
+* Support single-element package names in ChangePackage by @Niloyyy in [#9689](https://github.com/openrewrite/rewrite/pull/9689)
+* JavaScript: support `import defer` and `import.defer(...)` by @greg-at-moderne in [#9660](https://github.com/openrewrite/rewrite/pull/9660)
+* Guard first-class prefix formatting for compilation units without classes by @jkschneider in [#9697](https://github.com/openrewrite/rewrite/pull/9697)
+
+#### [rewrite-cucumber-jvm 2.28.0](https://github.com/openrewrite/rewrite-cucumber-jvm/releases/tag/v2.28.0)
+
+* Add recipes for Cucumber-JVM 8.0.0 by @timtebeek in [#77](https://github.com/openrewrite/rewrite-cucumber-jvm/pull/77)
+* Find Cucumber report plugins in cucumber.api.CucumberOptions for Jackson by @timtebeek in [#78](https://github.com/openrewrite/rewrite-cucumber-jvm/pull/78)
+* Disable the Cucumber 8 module swap upgrade test until the mirror caches cucumber-jakarta-cdi 8.0.4 by @timtebeek in [#79](https://github.com/openrewrite/rewrite-cucumber-jvm/pull/79)
+
+#### [rewrite-java-dependencies 1.72.0](https://github.com/openrewrite/rewrite-java-dependencies/releases/tag/v1.72.0)
+
+* Match a qualified release such as 14.0.14-LTS against a version range in RepositoryHasDependency and ModuleHasDependency by @timtebeek in [#232](https://github.com/openrewrite/rewrite-java-dependencies/pull/232)
+
+#### [rewrite-maven-plugin 6.58.0](https://github.com/openrewrite/rewrite-maven-plugin/releases/tag/v6.58.0)
+
+* Activate codegenome profile for Moderne CLI builds by @timtebeek in [#1226](https://github.com/openrewrite/rewrite-maven-plugin/pull/1226)
+* Build KotlinIT's projects with Kotlin 2.4.21, which runs on JDK 25 by @jkschneider in [#1228](https://github.com/openrewrite/rewrite-maven-plugin/pull/1228)
+* Document every goal parameter and ship the HTML plugin descriptor by @timtebeek in [#1231](https://github.com/openrewrite/rewrite-maven-plugin/pull/1231)
+* Update rewrite-polyglot.version to 2.16.0-SNAPSHOT by @timtebeek in [#1232](https://github.com/openrewrite/rewrite-maven-plugin/pull/1232)
+* Drop Develocity, and keep CGP's Central mirror in resolves_settings by @timtebeek in [#1233](https://github.com/openrewrite/rewrite-maven-plugin/pull/1233)
+* Run integration test classes concurrently by @timtebeek in [#1234](https://github.com/openrewrite/rewrite-maven-plugin/pull/1234)
+
+#### [rewrite-migrate-java 3.54.0](https://github.com/openrewrite/rewrite-migrate-java/releases/tag/v3.54.0)
+
+* Keep Faces pages XML in the Jakarta Faces migrations by @pdelagrave in [#1440](https://github.com/openrewrite/rewrite-migrate-java/pull/1440)
+
+#### [rewrite-rewrite 0.43.0](https://github.com/openrewrite/rewrite-rewrite/releases/tag/v0.43.0)
+
+* Report UsesType preconditions in `FindSharedVisitorInstances` by @greg-at-moderne in [#120](https://github.com/openrewrite/rewrite-rewrite/pull/120)
+* Maintain inline steps for deprecated methods in one recipe here by @timtebeek in [#119](https://github.com/openrewrite/rewrite-rewrite/pull/119)
+* Remove test Java parsers the recipe-library plugin now provides by @timtebeek in [#121](https://github.com/openrewrite/rewrite-rewrite/pull/121)
+
+#### [rewrite-static-analysis 2.53.0](https://github.com/openrewrite/rewrite-static-analysis/releases/tag/v2.53.0)
+
+* Preserve intentional switch fall-through in common static analysis by @jkschneider in [#1216](https://github.com/openrewrite/rewrite-static-analysis/pull/1216)
+* Preserve Kotlin inferred-return method visibility in abstract classes by @jkschneider in [#1217](https://github.com/openrewrite/rewrite-static-analysis/pull/1217)
+* Keep native language syntax intact in WhileInsteadOfFor by @jkschneider in [#1219](https://github.com/openrewrite/rewrite-static-analysis/pull/1219)
+* Preserve Kotlin safe property comparisons with Boolean literals by @jkschneider in [#1220](https://github.com/openrewrite/rewrite-static-analysis/pull/1220)
+* Preserve abstract method contracts in MethodNameCasing by @jkschneider in [#1221](https://github.com/openrewrite/rewrite-static-analysis/pull/1221)
+* Respect source compatibility and preserve anonymous diamond arguments by @jkschneider in [#1218](https://github.com/openrewrite/rewrite-static-analysis/pull/1218)
+* Preserve finalizer cleanup in common static analysis by @jkschneider in [#1222](https://github.com/openrewrite/rewrite-static-analysis/pull/1222)
+* Preserve Kotlin rethrows before a later Throwable handler by @jkschneider in [#1223](https://github.com/openrewrite/rewrite-static-analysis/pull/1223)
+* Handle typed catches without a variable binding safely by @jkschneider in [#1225](https://github.com/openrewrite/rewrite-static-analysis/pull/1225)
+* Preserve implicit receivers in EqualsAvoidsNull by @jkschneider in [#1226](https://github.com/openrewrite/rewrite-static-analysis/pull/1226)
+* Limit Externalizable constructor generation to supported source languages by @jkschneider in [#1228](https://github.com/openrewrite/rewrite-static-analysis/pull/1228)
+* Preserve Groovy statement wrappers when replacing Class.isInstance by @jkschneider in [#1229](https://github.com/openrewrite/rewrite-static-analysis/pull/1229)
+* Replace only BigDecimal rounding expressions in Java templates by @jkschneider in [#1224](https://github.com/openrewrite/rewrite-static-analysis/pull/1224)
+* Restrict CovariantEquals to Java and Groovy by @jkschneider in [#1227](https://github.com/openrewrite/rewrite-static-analysis/pull/1227)
+* Preserve legacy Groovy labels when adding braces by @jkschneider in [#1230](https://github.com/openrewrite/rewrite-static-analysis/pull/1230)
+* Erase the instanceof template dummy without changing operand attribution by @jkschneider in [#1233](https://github.com/openrewrite/rewrite-static-analysis/pull/1233)
+* Retain reflection for recursive generic bounds on legacy runtimes by @jkschneider in [#1234](https://github.com/openrewrite/rewrite-static-analysis/pull/1234)
+* Preserve evaluation of empty Kotlin if conditions by @jkschneider in [#1236](https://github.com/openrewrite/rewrite-static-analysis/pull/1236)
+* Avoid changing semantics in `InlineVariable` (C20 of #1116) by @Niloyyy in [#1180](https://github.com/openrewrite/rewrite-static-analysis/pull/1180)
+* Preserve published public and protected constructor API by @jkschneider in [#1240](https://github.com/openrewrite/rewrite-static-analysis/pull/1240)
+* AllBranchesIdentical to hoist side-effect statements by @greg-at-moderne in [#1032](https://github.com/openrewrite/rewrite-static-analysis/pull/1032)
+* Preserve published public and protected class modifiers by @jkschneider in [#1241](https://github.com/openrewrite/rewrite-static-analysis/pull/1241)
+* Keep BigDecimal decimal round-trip conversion opt-in by @jkschneider in [#1237](https://github.com/openrewrite/rewrite-static-analysis/pull/1237)
+* Preserve nested boolean negation precedence and Groovy coercion by @jkschneider in [#1244](https://github.com/openrewrite/rewrite-static-analysis/pull/1244)
+* Preserve generated superclass method contracts when standardizing names by @jkschneider in [#1242](https://github.com/openrewrite/rewrite-static-analysis/pull/1242)
+* Preserve definite assignment for constructor early returns by @jkschneider in [#1243](https://github.com/openrewrite/rewrite-static-analysis/pull/1243)
+* Keep observable method-name refactoring out of common static analysis by @jkschneider in [#1245](https://github.com/openrewrite/rewrite-static-analysis/pull/1245)
+* Preserve size comparisons on known mock receivers by @jkschneider in [#1246](https://github.com/openrewrite/rewrite-static-analysis/pull/1246)
+* Keep parentheses needed for precedence in `SimplifyRedundantLogicalExpression` (E4 of #1116) by @Niloyyy in [#1178](https://github.com/openrewrite/rewrite-static-analysis/pull/1178)
+* Handle implicit `this` in `CollectionToArrayShouldHaveProperType` (part of C21 of #1116) by @Niloyyy in [#1179](https://github.com/openrewrite/rewrite-static-analysis/pull/1179)
+* Preserve known mock receivers declared in for initializers by @jkschneider in [#1249](https://github.com/openrewrite/rewrite-static-analysis/pull/1249)
+* Inline variables whose initializer is a subtype of the declared type by @timtebeek in [#1250](https://github.com/openrewrite/rewrite-static-analysis/pull/1250)
+
 ## [rewrite-recipe-bom 3.48.0](https://github.com/openrewrite/rewrite-recipe-bom/releases/tag/v3.48.0)
 
 Released on November 6, 2026, with OpenRewrite 8.100.0.
