@@ -8,6 +8,235 @@ Each release of the [rewrite-recipe-bom](https://github.com/openrewrite/rewrite-
 These are the release notes of the modules that changed in each release over the past year, taken from their GitHub releases.
 For the current version of each module, see the [latest versions of every OpenRewrite module](https://docs.moderne.io/user-documentation/recipes/lists/latest-versions-of-every-openrewrite-module).
 
+## [rewrite-recipe-bom 3.52.0](https://github.com/openrewrite/rewrite-recipe-bom/releases/tag/v3.52.0)
+
+Released on November 10, 2026, with OpenRewrite 8.104.0.
+
+#### [rewrite 8.104.0](https://github.com/openrewrite/rewrite/releases/tag/v8.104.0)
+
+* Type an `instanceof` pattern variable as the variable, not as `boolean` by @knutwannheden in [#9802](https://github.com/openrewrite/rewrite/pull/9802)
+* JavaScript: detect `npm()` test style from the parse the test already runs by @knutwannheden in [#9803](https://github.com/openrewrite/rewrite/pull/9803)
+* JavaScript: ask npm for its version once per npm installation by @knutwannheden in [#9804](https://github.com/openrewrite/rewrite/pull/9804)
+* Do not let JVM-defined system properties override pom properties by @timtebeek in [#9805](https://github.com/openrewrite/rewrite/pull/9805)
+* `JavaTemplate`: keep type variables of the edited code that a template names by @knutwannheden in [#9806](https://github.com/openrewrite/rewrite/pull/9806)
+* JavaScript: `maybeRebind` also moves a member spelled through its module by @myhau in [#9656](https://github.com/openrewrite/rewrite/pull/9656)
+* Update Java version properties behind references by @ds-xdev in [#9799](https://github.com/openrewrite/rewrite/pull/9799)
+* JavaScript: require project opt-in before applying Prettier defaults by @greg-at-moderne in [#9809](https://github.com/openrewrite/rewrite/pull/9809)
+* Raise Java version properties added earlier in the same cycle by @timtebeek in [#9816](https://github.com/openrewrite/rewrite/pull/9816)
+
+#### [rewrite 8.103.1](https://github.com/openrewrite/rewrite/releases/tag/v8.103.1)
+
+* Preserve comments in Kotlin import qualified names by @greg-at-moderne in [#9800](https://github.com/openrewrite/rewrite/pull/9800)
+* C#: add `Cs.HasComments` and `Cs.GetValueText` helpers by @greg-at-moderne in [#9801](https://github.com/openrewrite/rewrite/pull/9801)
+* JavaScript: add `JsonPathMatcher` by @greg-at-moderne in [#9781](https://github.com/openrewrite/rewrite/pull/9781)
+
+#### [rewrite-cucumber-jvm 2.31.0](https://github.com/openrewrite/rewrite-cucumber-jvm/releases/tag/v2.31.0)
+
+* Avoid `toString()` of untyped lambda parameters in `CucumberJava8StepDefinitionToCucumberJava` by @greg-at-moderne in [#80](https://github.com/openrewrite/rewrite-cucumber-jvm/pull/80)
+
+#### [rewrite-hibernate 2.38.0](https://github.com/openrewrite/rewrite-hibernate/releases/tag/v2.38.0)
+
+* Avoid printing and reparsing type names in `MigrateUserType` and `TypeAnnotationParameter` by @greg-at-moderne in [#121](https://github.com/openrewrite/rewrite-hibernate/pull/121)
+
+#### [rewrite-jackson 1.42.0](https://github.com/openrewrite/rewrite-jackson/releases/tag/v1.42.0)
+
+* Avoid textual import comparison in `MigrateMapperSettersToBuilder` by @greg-at-moderne in [#201](https://github.com/openrewrite/rewrite-jackson/pull/201)
+
+#### [rewrite-java-dependencies 1.75.0](https://github.com/openrewrite/rewrite-java-dependencies/releases/tag/v1.75.0)
+
+* Match a qualified release such as 14.0.14-LTS against a version range in RepositoryHasDependency and ModuleHasDependency by @timtebeek in [#232](https://github.com/openrewrite/rewrite-java-dependencies/pull/232)
+
+#### [rewrite-logging-frameworks 3.45.0](https://github.com/openrewrite/rewrite-logging-frameworks/releases/tag/v3.45.0)
+
+* Avoid textual comparison of the logger class literal in `LoggersNamedForEnclosingClass` by @greg-at-moderne in [#325](https://github.com/openrewrite/rewrite-logging-frameworks/pull/325)
+
+#### [rewrite-maven-plugin 6.61.0](https://github.com/openrewrite/rewrite-maven-plugin/releases/tag/v6.61.0)
+
+* Activate codegenome profile for Moderne CLI builds by @timtebeek in [#1226](https://github.com/openrewrite/rewrite-maven-plugin/pull/1226)
+* Build KotlinIT's projects with Kotlin 2.4.21, which runs on JDK 25 by @jkschneider in [#1228](https://github.com/openrewrite/rewrite-maven-plugin/pull/1228)
+* Document every goal parameter and ship the HTML plugin descriptor by @timtebeek in [#1231](https://github.com/openrewrite/rewrite-maven-plugin/pull/1231)
+* Update rewrite-polyglot.version to 2.16.0-SNAPSHOT by @timtebeek in [#1232](https://github.com/openrewrite/rewrite-maven-plugin/pull/1232)
+* Drop Develocity, and keep CGP's Central mirror in resolves_settings by @timtebeek in [#1233](https://github.com/openrewrite/rewrite-maven-plugin/pull/1233)
+* Run integration test classes concurrently by @timtebeek in [#1234](https://github.com/openrewrite/rewrite-maven-plugin/pull/1234)
+
+#### [rewrite-migrate-gradle 0.8.0](https://github.com/openrewrite/rewrite-migrate-gradle/releases/tag/v0.8.0)
+
+* Add the Gradle best-practice recipes by @shanman190 in [#2](https://github.com/openrewrite/rewrite-migrate-gradle/pull/2)
+* Port the recipes rewrite-gradle gained after the move by @shanman190 in [#7](https://github.com/openrewrite/rewrite-migrate-gradle/pull/7)
+* Replace `jcenter()` with `mavenCentral()` in `MigrateToGradle9` by @shanman190 in [#8](https://github.com/openrewrite/rewrite-migrate-gradle/pull/8)
+* Move `archivesBaseName` and friends into the `base` block in `MigrateToGradle9` by @shanman190 in [#9](https://github.com/openrewrite/rewrite-migrate-gradle/pull/9)
+* Run the main class recipes in `MigrateToGradle8`, where Kotlin scripts break by @shanman190 in [#10](https://github.com/openrewrite/rewrite-migrate-gradle/pull/10)
+* Rename the `org.gradle.unsafe.configuration-cache` properties by @shanman190 in [#12](https://github.com/openrewrite/rewrite-migrate-gradle/pull/12)
+* Set `org.gradle.tooling.parallel` where `org.gradle.parallel` is enabled by @shanman190 in [#13](https://github.com/openrewrite/rewrite-migrate-gradle/pull/13)
+* Remove the deprecated `Configuration.visible` property by @shanman190 in [#14](https://github.com/openrewrite/rewrite-migrate-gradle/pull/14)
+* Use assignment syntax for a repository's `url` by @shanman190 in [#15](https://github.com/openrewrite/rewrite-migrate-gradle/pull/15)
+* Use `objects.domainObjectContainer(Foo)` instead of `Project.container(Foo)` by @shanman190 in [#16](https://github.com/openrewrite/rewrite-migrate-gradle/pull/16)
+* Configure the built-in wrapper task instead of redeclaring it by @shanman190 in [#18](https://github.com/openrewrite/rewrite-migrate-gradle/pull/18)
+* Widen report migration beyond jacocoTestReport to every reporting task by @shanman190 in [#19](https://github.com/openrewrite/rewrite-migrate-gradle/pull/19)
+* Migrate removed test and JaCoCo output properties by @shanman190 in [#20](https://github.com/openrewrite/rewrite-migrate-gradle/pull/20)
+* Migrate `com.gradle.plugin-publish` to 1.x with its `pluginBundle` block by @shanman190 in [#47](https://github.com/openrewrite/rewrite-migrate-gradle/pull/47)
+* Remove `Provider.forUseAtConfigurationTime()` by @shanman190 in [#11](https://github.com/openrewrite/rewrite-migrate-gradle/pull/11)
+* Rename `<sourceSet>Compile` and `<sourceSet>Runtime` for custom source sets by @shanman190 in [#21](https://github.com/openrewrite/rewrite-migrate-gradle/pull/21)
+* Use `setFrom` for the file collections of JaCoCo tasks by @shanman190 in [#22](https://github.com/openrewrite/rewrite-migrate-gradle/pull/22)
+* Call `get()` on Kotlin DSL configuration accessors by @shanman190 in [#24](https://github.com/openrewrite/rewrite-migrate-gradle/pull/24)
+* Use `using` instead of `with` in dependency substitution rules by @shanman190 in [#25](https://github.com/openrewrite/rewrite-migrate-gradle/pull/25)
+* Use `project(":path")` instead of a `Project` as dependency notation by @shanman190 in [#26](https://github.com/openrewrite/rewrite-migrate-gradle/pull/26)
+* Use `extendsFrom` instead of a `Configuration` as a dependency by @shanman190 in [#27](https://github.com/openrewrite/rewrite-migrate-gradle/pull/27)
+* Make `assemble` depend on a task instead of adding it to `archives` by @shanman190 in [#28](https://github.com/openrewrite/rewrite-migrate-gradle/pull/28)
+* Move the `application` convention properties into the `application { }` block by @shanman190 in [#29](https://github.com/openrewrite/rewrite-migrate-gradle/pull/29)
+* Configure the `war`, `ear` and project report tasks instead of their plugin conventions by @shanman190 in [#30](https://github.com/openrewrite/rewrite-migrate-gradle/pull/30)
+* Use `filePermissions` and `dirPermissions` instead of `fileMode` and `dirMode` by @shanman190 in [#31](https://github.com/openrewrite/rewrite-migrate-gradle/pull/31)
+* Use `JvmVendorSpec.IBM` instead of `JvmVendorSpec.IBM_SEMERU` by @shanman190 in [#32](https://github.com/openrewrite/rewrite-migrate-gradle/pull/32)
+* Use `destinationFile` instead of `outputFile` on `WriteProperties` tasks by @shanman190 in [#33](https://github.com/openrewrite/rewrite-migrate-gradle/pull/33)
+* Use `named("x")` instead of `"x"()` in the Kotlin DSL by @shanman190 in [#34](https://github.com/openrewrite/rewrite-migrate-gradle/pull/34)
+* Set compile option properties instead of calling `fork(Map)`, `debug(Map)` and `define(Map)` by @shanman190 in [#35](https://github.com/openrewrite/rewrite-migrate-gradle/pull/35)
+* Use `testSources` and `testResources` on the IDEA module by @shanman190 in [#36](https://github.com/openrewrite/rewrite-migrate-gradle/pull/36)
+* Use `project` instead of `this@Build_gradle` by @shanman190 in [#37](https://github.com/openrewrite/rewrite-migrate-gradle/pull/37)
+* Use `compilerOptions` instead of `kotlinOptions` with the `kotlin-dsl` plugin by @shanman190 in [#38](https://github.com/openrewrite/rewrite-migrate-gradle/pull/38)
+* Add a search-only finder for what blocks a Gradle upgrade by @shanman190 in [#39](https://github.com/openrewrite/rewrite-migrate-gradle/pull/39)
+* Move `DependencyUseStringNotation` here and keep dependency map keys a string cannot hold by @shanman190 in [#40](https://github.com/openrewrite/rewrite-migrate-gradle/pull/40)
+* Use a Groovy 4 compatible Spock in a Gradle plugin project by @shanman190 in [#48](https://github.com/openrewrite/rewrite-migrate-gradle/pull/48)
+* Use `localGroovy()` in a Gradle plugin project by @shanman190 in [#49](https://github.com/openrewrite/rewrite-migrate-gradle/pull/49)
+* Remove the `append` property of the `jacoco` task extension by @shanman190 in [#23](https://github.com/openrewrite/rewrite-migrate-gradle/pull/23)
+
+#### [rewrite-migrate-java 3.57.0](https://github.com/openrewrite/rewrite-migrate-java/releases/tag/v3.57.0)
+
+* Avoid regex over printed `@Temporal` argument in `RemoveTemporalAnnotation` by @greg-at-moderne in [#1447](https://github.com/openrewrite/rewrite-migrate-java/pull/1447)
+* Upgrade Java version in GitLab CI images as part of `UpgradeJavaVersion` by @timtebeek in [#1448](https://github.com/openrewrite/rewrite-migrate-java/pull/1448)
+* Keep newer Faces descriptors in the Faces migrations by @pdelagrave in [#1443](https://github.com/openrewrite/rewrite-migrate-java/pull/1443)
+* Limit the beans.xml, validation.xml and orm.xml migrations to older descriptors by @pdelagrave in [#1444](https://github.com/openrewrite/rewrite-migrate-java/pull/1444)
+
+#### [rewrite-openapi 0.46.0](https://github.com/openrewrite/rewrite-openapi/releases/tag/v0.46.0)
+
+* Drop unused gradle-tooling-api test dependency by @greg-at-moderne in [#88](https://github.com/openrewrite/rewrite-openapi/pull/88)
+* Avoid printing `@SwaggerDefinition` values and `@Schema` arguments into template text by @greg-at-moderne in [#89](https://github.com/openrewrite/rewrite-openapi/pull/89)
+
+#### [rewrite-polyglot 2.24.0](https://github.com/openrewrite/rewrite-polyglot/releases/tag/v2.24.0)
+
+* Accept files under a symlinked root that JGit cannot open by @knutwannheden in [#61](https://github.com/openrewrite/rewrite-polyglot/pull/61)
+
+#### [rewrite-rewrite 0.46.0](https://github.com/openrewrite/rewrite-rewrite/releases/tag/v0.46.0)
+
+* Add actionable guidance to FindTreeToString markers by @greg-at-moderne in [#126](https://github.com/openrewrite/rewrite-rewrite/pull/126)
+* Point `AlreadyReplaced` advice at `maxCycles()` by @timtebeek in [#127](https://github.com/openrewrite/rewrite-rewrite/pull/127)
+
+#### [rewrite-spring 6.52.0](https://github.com/openrewrite/rewrite-spring/releases/tag/v6.52.0)
+
+* Fix quoted values in Docket configuration properties by @greg-at-moderne in [#1278](https://github.com/openrewrite/rewrite-spring/pull/1278)
+* Avoid `J.Modifier::toString` dropping parameter annotations in `MigrateItemWriterWrite` by @greg-at-moderne in [#1279](https://github.com/openrewrite/rewrite-spring/pull/1279)
+* Keep `spring.cassandra.ssl.verify-hostname` out of the Boot 3.1 `ssl.enabled` rename by @timtebeek in [#1281](https://github.com/openrewrite/rewrite-spring/pull/1281)
+
+#### [rewrite-static-analysis 2.56.0](https://github.com/openrewrite/rewrite-static-analysis/releases/tag/v2.56.0)
+
+* Avoid duplicating comments from `.toString()` in `RemoveInstanceOfPatternMatch` by @greg-at-moderne in [#1253](https://github.com/openrewrite/rewrite-static-analysis/pull/1253)
+* Build `RemoveInstanceOfPatternMatch`'s declaration from the `instanceof`'s types by @knutwannheden in [#1254](https://github.com/openrewrite/rewrite-static-analysis/pull/1254)
+* Keep `instanceof` patterns that RemoveInstanceOfPatternMatch can't fully rewrite by @knutwannheden in [#1255](https://github.com/openrewrite/rewrite-static-analysis/pull/1255)
+
+#### [rewrite-testing-frameworks 3.60.0](https://github.com/openrewrite/rewrite-testing-frameworks/releases/tag/v3.60.0)
+
+* Avoid `.toString` comparisons on JMockit migrations by @greg-at-moderne in [#1293](https://github.com/openrewrite/rewrite-testing-frameworks/pull/1293)
+
+## [rewrite-recipe-bom 3.51.0](https://github.com/openrewrite/rewrite-recipe-bom/releases/tag/v3.51.0)
+
+Released on November 10, 2026, with OpenRewrite 8.103.0.
+
+#### [rewrite 8.103.0](https://github.com/openrewrite/rewrite/releases/tag/v8.103.0)
+
+* JavaScript: a comment ending a nested YAML sequence is not an entry by @myhau in [#9779](https://github.com/openrewrite/rewrite/pull/9779)
+* JavaScript: fix binding edits that wrote wrong or uncompilable imports by @myhau in [#9632](https://github.com/openrewrite/rewrite/pull/9632)
+* Kotlin: fix parser gaps for empty branches, stray semicolons, dynamic… by @greg-at-moderne in [#9785](https://github.com/openrewrite/rewrite/pull/9785)
+* Resolve duplicate managed dependencies the way Maven 3.9 does in `RemoveDuplicateDependencies` by @martinfrancois in [#9759](https://github.com/openrewrite/rewrite/pull/9759)
+* C#: keep trailing comma and exclude whitespace from `#pragma warning` code names by @greg-at-moderne in [#9787](https://github.com/openrewrite/rewrite/pull/9787)
+* `AddOrUpdateAnnotationAttribute`: compare existing class values by type, not printed source by @greg-at-moderne in [#9786](https://github.com/openrewrite/rewrite/pull/9786)
+* C#: Record project version and identity properties on the MSBuildProject marker by @macsux in [#9768](https://github.com/openrewrite/rewrite/pull/9768)
+
+#### [rewrite-cucumber-jvm 2.30.0](https://github.com/openrewrite/rewrite-cucumber-jvm/releases/tag/v2.30.0)
+
+* Add recipes for Cucumber-JVM 8.0.0 by @timtebeek in [#77](https://github.com/openrewrite/rewrite-cucumber-jvm/pull/77)
+* Find Cucumber report plugins in cucumber.api.CucumberOptions for Jackson by @timtebeek in [#78](https://github.com/openrewrite/rewrite-cucumber-jvm/pull/78)
+* Disable the Cucumber 8 module swap upgrade test until the mirror caches cucumber-jakarta-cdi 8.0.4 by @timtebeek in [#79](https://github.com/openrewrite/rewrite-cucumber-jvm/pull/79)
+
+#### [rewrite-java-dependencies 1.74.0](https://github.com/openrewrite/rewrite-java-dependencies/releases/tag/v1.74.0)
+
+* Match a qualified release such as 14.0.14-LTS against a version range in RepositoryHasDependency and ModuleHasDependency by @timtebeek in [#232](https://github.com/openrewrite/rewrite-java-dependencies/pull/232)
+
+#### [rewrite-maven-plugin 6.60.0](https://github.com/openrewrite/rewrite-maven-plugin/releases/tag/v6.60.0)
+
+* Activate codegenome profile for Moderne CLI builds by @timtebeek in [#1226](https://github.com/openrewrite/rewrite-maven-plugin/pull/1226)
+* Build KotlinIT's projects with Kotlin 2.4.21, which runs on JDK 25 by @jkschneider in [#1228](https://github.com/openrewrite/rewrite-maven-plugin/pull/1228)
+* Document every goal parameter and ship the HTML plugin descriptor by @timtebeek in [#1231](https://github.com/openrewrite/rewrite-maven-plugin/pull/1231)
+* Update rewrite-polyglot.version to 2.16.0-SNAPSHOT by @timtebeek in [#1232](https://github.com/openrewrite/rewrite-maven-plugin/pull/1232)
+* Drop Develocity, and keep CGP's Central mirror in resolves_settings by @timtebeek in [#1233](https://github.com/openrewrite/rewrite-maven-plugin/pull/1233)
+* Run integration test classes concurrently by @timtebeek in [#1234](https://github.com/openrewrite/rewrite-maven-plugin/pull/1234)
+
+#### [rewrite-migrate-gradle 0.7.0](https://github.com/openrewrite/rewrite-migrate-gradle/releases/tag/v0.7.0)
+
+* Add the Gradle best-practice recipes by @shanman190 in [#2](https://github.com/openrewrite/rewrite-migrate-gradle/pull/2)
+* Port the recipes rewrite-gradle gained after the move by @shanman190 in [#7](https://github.com/openrewrite/rewrite-migrate-gradle/pull/7)
+* Replace `jcenter()` with `mavenCentral()` in `MigrateToGradle9` by @shanman190 in [#8](https://github.com/openrewrite/rewrite-migrate-gradle/pull/8)
+* Move `archivesBaseName` and friends into the `base` block in `MigrateToGradle9` by @shanman190 in [#9](https://github.com/openrewrite/rewrite-migrate-gradle/pull/9)
+* Run the main class recipes in `MigrateToGradle8`, where Kotlin scripts break by @shanman190 in [#10](https://github.com/openrewrite/rewrite-migrate-gradle/pull/10)
+* Rename the `org.gradle.unsafe.configuration-cache` properties by @shanman190 in [#12](https://github.com/openrewrite/rewrite-migrate-gradle/pull/12)
+* Set `org.gradle.tooling.parallel` where `org.gradle.parallel` is enabled by @shanman190 in [#13](https://github.com/openrewrite/rewrite-migrate-gradle/pull/13)
+* Remove the deprecated `Configuration.visible` property by @shanman190 in [#14](https://github.com/openrewrite/rewrite-migrate-gradle/pull/14)
+* Use assignment syntax for a repository's `url` by @shanman190 in [#15](https://github.com/openrewrite/rewrite-migrate-gradle/pull/15)
+* Use `objects.domainObjectContainer(Foo)` instead of `Project.container(Foo)` by @shanman190 in [#16](https://github.com/openrewrite/rewrite-migrate-gradle/pull/16)
+* Configure the built-in wrapper task instead of redeclaring it by @shanman190 in [#18](https://github.com/openrewrite/rewrite-migrate-gradle/pull/18)
+* Widen report migration beyond jacocoTestReport to every reporting task by @shanman190 in [#19](https://github.com/openrewrite/rewrite-migrate-gradle/pull/19)
+* Migrate removed test and JaCoCo output properties by @shanman190 in [#20](https://github.com/openrewrite/rewrite-migrate-gradle/pull/20)
+* Migrate `com.gradle.plugin-publish` to 1.x with its `pluginBundle` block by @shanman190 in [#47](https://github.com/openrewrite/rewrite-migrate-gradle/pull/47)
+* Remove `Provider.forUseAtConfigurationTime()` by @shanman190 in [#11](https://github.com/openrewrite/rewrite-migrate-gradle/pull/11)
+* Rename `<sourceSet>Compile` and `<sourceSet>Runtime` for custom source sets by @shanman190 in [#21](https://github.com/openrewrite/rewrite-migrate-gradle/pull/21)
+* Use `setFrom` for the file collections of JaCoCo tasks by @shanman190 in [#22](https://github.com/openrewrite/rewrite-migrate-gradle/pull/22)
+* Call `get()` on Kotlin DSL configuration accessors by @shanman190 in [#24](https://github.com/openrewrite/rewrite-migrate-gradle/pull/24)
+* Use `using` instead of `with` in dependency substitution rules by @shanman190 in [#25](https://github.com/openrewrite/rewrite-migrate-gradle/pull/25)
+* Use `project(":path")` instead of a `Project` as dependency notation by @shanman190 in [#26](https://github.com/openrewrite/rewrite-migrate-gradle/pull/26)
+* Use `extendsFrom` instead of a `Configuration` as a dependency by @shanman190 in [#27](https://github.com/openrewrite/rewrite-migrate-gradle/pull/27)
+* Make `assemble` depend on a task instead of adding it to `archives` by @shanman190 in [#28](https://github.com/openrewrite/rewrite-migrate-gradle/pull/28)
+* Move the `application` convention properties into the `application { }` block by @shanman190 in [#29](https://github.com/openrewrite/rewrite-migrate-gradle/pull/29)
+* Configure the `war`, `ear` and project report tasks instead of their plugin conventions by @shanman190 in [#30](https://github.com/openrewrite/rewrite-migrate-gradle/pull/30)
+* Use `filePermissions` and `dirPermissions` instead of `fileMode` and `dirMode` by @shanman190 in [#31](https://github.com/openrewrite/rewrite-migrate-gradle/pull/31)
+* Use `JvmVendorSpec.IBM` instead of `JvmVendorSpec.IBM_SEMERU` by @shanman190 in [#32](https://github.com/openrewrite/rewrite-migrate-gradle/pull/32)
+* Use `destinationFile` instead of `outputFile` on `WriteProperties` tasks by @shanman190 in [#33](https://github.com/openrewrite/rewrite-migrate-gradle/pull/33)
+* Use `named("x")` instead of `"x"()` in the Kotlin DSL by @shanman190 in [#34](https://github.com/openrewrite/rewrite-migrate-gradle/pull/34)
+* Set compile option properties instead of calling `fork(Map)`, `debug(Map)` and `define(Map)` by @shanman190 in [#35](https://github.com/openrewrite/rewrite-migrate-gradle/pull/35)
+* Use `testSources` and `testResources` on the IDEA module by @shanman190 in [#36](https://github.com/openrewrite/rewrite-migrate-gradle/pull/36)
+* Use `project` instead of `this@Build_gradle` by @shanman190 in [#37](https://github.com/openrewrite/rewrite-migrate-gradle/pull/37)
+* Use `compilerOptions` instead of `kotlinOptions` with the `kotlin-dsl` plugin by @shanman190 in [#38](https://github.com/openrewrite/rewrite-migrate-gradle/pull/38)
+* Add a search-only finder for what blocks a Gradle upgrade by @shanman190 in [#39](https://github.com/openrewrite/rewrite-migrate-gradle/pull/39)
+* Move `DependencyUseStringNotation` here and keep dependency map keys a string cannot hold by @shanman190 in [#40](https://github.com/openrewrite/rewrite-migrate-gradle/pull/40)
+* Use a Groovy 4 compatible Spock in a Gradle plugin project by @shanman190 in [#48](https://github.com/openrewrite/rewrite-migrate-gradle/pull/48)
+* Use `localGroovy()` in a Gradle plugin project by @shanman190 in [#49](https://github.com/openrewrite/rewrite-migrate-gradle/pull/49)
+* Remove the `append` property of the `jacoco` task extension by @shanman190 in [#23](https://github.com/openrewrite/rewrite-migrate-gradle/pull/23)
+
+#### [rewrite-migrate-java 3.56.0](https://github.com/openrewrite/rewrite-migrate-java/releases/tag/v3.56.0)
+
+* Migrate Mockito 2 to 4 APIs when UpgradeToJava25 upgrades to Mockito 5 by @ds-xdev in [#1442](https://github.com/openrewrite/rewrite-migrate-java/pull/1442)
+
+#### [rewrite-polyglot 2.23.0](https://github.com/openrewrite/rewrite-polyglot/releases/tag/v2.23.0)
+
+* Accept files under a symlinked root that JGit cannot open by @knutwannheden in [#61](https://github.com/openrewrite/rewrite-polyglot/pull/61)
+
+#### [rewrite-rewrite 0.45.0](https://github.com/openrewrite/rewrite-rewrite/releases/tag/v0.45.0)
+
+* Leave mirroring buildSrc to CGP's init scripts by @timtebeek in [#125](https://github.com/openrewrite/rewrite-rewrite/pull/125)
+
+#### [rewrite-spring 6.51.0](https://github.com/openrewrite/rewrite-spring/releases/tag/v6.51.0)
+
+* Add `@Valid` only to fields and record components of non-enum type by @knutwannheden in [#1273](https://github.com/openrewrite/rewrite-spring/pull/1273)
+* Add `@Valid` to nested config properties only before Spring Boot 3.4 by @knutwannheden in [#1272](https://github.com/openrewrite/rewrite-spring/pull/1272)
+* Test the `@Valid` gate through `UpgradeSpringBoot_3_4` and a starter by @knutwannheden in [#1274](https://github.com/openrewrite/rewrite-spring/pull/1274)
+* Add `@Valid` only in classes annotated as validated properties by @knutwannheden in [#1275](https://github.com/openrewrite/rewrite-spring/pull/1275)
+
+#### [rewrite-static-analysis 2.55.0](https://github.com/openrewrite/rewrite-static-analysis/releases/tag/v2.55.0)
+
+* Drop multi-catch alternatives covered within the same catch by @steve-aom-elliott in [#1252](https://github.com/openrewrite/rewrite-static-analysis/pull/1252)
+
+#### [rewrite-testing-frameworks 3.59.0](https://github.com/openrewrite/rewrite-testing-frameworks/releases/tag/v3.59.0)
+
+* Scope AnyToNullable to modules that declare mockito-all by @timtebeek in [#1291](https://github.com/openrewrite/rewrite-testing-frameworks/pull/1291)
+* Make AnyToNullable and VerifyZeroToNoMoreInteractions declarative by @timtebeek in [#1292](https://github.com/openrewrite/rewrite-testing-frameworks/pull/1292)
+
 ## [rewrite-recipe-bom 3.50.0](https://github.com/openrewrite/rewrite-recipe-bom/releases/tag/v3.50.0)
 
 Released on November 10, 2026, with OpenRewrite 8.102.0.
