@@ -39,17 +39,17 @@ Please keep these conventions in mind when you're creating OpenRewrite YAML file
 You can find the full schema for every resource type in [rewrite-core/openrewrite.json](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/openrewrite.json).
 :::
 
-| Key                             | Type                                                                                                        | Description                                                             |
-|---------------------------------|-------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------|
-| type                            | const                                                                                                       | A constant: `specs.openrewrite.org/v1beta/recipe`                       |
-| name                            | string                                                                                                      | A fully qualified, unique name for this recipe (**required**)           |
-| displayName                     | string                                                                                                      | A human-readable name for this recipe (does not end with a period)      |
-| description                     | string                                                                                                      | A human-readable description for this recipe (ends with a period)       |
-| tags                            | array of strings                                                                                            | A list of strings that help categorize this recipe                      |
-| estimatedEffortPerOccurrence    | [duration](https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html#parse-java.lang.CharSequence-) | The expected amount of time saved each time this recipe fixes something |
-| causesAnotherCycle              | boolean                                                                                                     | Whether or not this recipe can cause another cycle (defaults to false)  |
-| [preconditions](#preconditions) | array of recipes                                                                                            | Recipes that gate which source files this recipe may edit               |
-| [recipeList](#recipe-list)      | array of recipes                                                                                            | The list of recipes which comprise this recipe                          |
+| Key                             | Type                                                                                                        | Description                                                                                                                                                                                       |
+|---------------------------------|-------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| type                            | const                                                                                                       | A constant: `specs.openrewrite.org/v1beta/recipe`                                                                                                                                                 |
+| name                            | string                                                                                                      | A fully qualified, unique name for this recipe (**required**)                                                                                                                                     |
+| displayName                     | string                                                                                                      | A human-readable name for this recipe (does not end with a period)                                                                                                                                |
+| description                     | string                                                                                                      | A human-readable description for this recipe (ends with a period)                                                                                                                                 |
+| tags                            | array of strings                                                                                            | A list of strings that help categorize this recipe                                                                                                                                                |
+| estimatedEffortPerOccurrence    | [duration](https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html#parse-java.lang.CharSequence-) | Accepted and shown in the recipe's descriptor, but has no effect on [estimated time saved](../authoring-recipes/estimated-time-saved.md). The recipes in `recipeList` supply their own estimates. |
+| causesAnotherCycle              | boolean                                                                                                     | Whether or not this recipe can cause another cycle (defaults to false)                                                                                                                            |
+| [preconditions](#preconditions) | array of recipes                                                                                            | Recipes that gate which source files this recipe may edit                                                                                                                                         |
+| [recipeList](#recipe-list)      | array of recipes                                                                                            | The list of recipes which comprise this recipe                                                                                                                                                    |
 
 ### Preconditions
 
@@ -296,15 +296,15 @@ Categories control how recipes are grouped, named, and described in the recipe c
 
 ### Format
 
-| Key         | Type             | Description                                                                     |
-|-------------|------------------|---------------------------------------------------------------------------------|
-| type        | const            | A constant: `specs.openrewrite.org/v1beta/category`                             |
-| packageName | string           | The package this category describes, e.g. `org.openrewrite.yaml` (**required**) |
-| name        | string           | A human-readable name for the category                                          |
-| description | string           | A human-readable description for the category (ends with a period)              |
-| tags        | array of strings | A list of strings that help categorize this category                            |
+| Key         | Type             | Description                                                                                               |
+|-------------|------------------|-----------------------------------------------------------------------------------------------------------|
+| type        | const            | A constant: `specs.openrewrite.org/v1beta/category`                                                       |
+| packageName | string           | The package this category describes, e.g. `org.openrewrite.yaml` (**required**)                           |
+| name        | string           | A human-readable name for the category                                                                    |
+| description | string           | A human-readable description for the category (ends with a period)                                        |
+| tags        | array of strings | A list of strings that help categorize this category                                                      |
 | root        | boolean          | Whether this package is only a naming prefix; see [root categories](#root-categories) (defaults to false) |
-| priority    | integer          | Sort order relative to sibling categories; lower sorts first (defaults to 0)    |
+| priority    | integer          | Sort order relative to sibling categories; lower sorts first (defaults to 0)                              |
 
 ### Category example
 
