@@ -8,6 +8,48 @@ Each release of the [rewrite-recipe-bom](https://github.com/openrewrite/rewrite-
 These are the release notes of the modules that changed in each release over the past year, taken from their GitHub releases.
 For the current version of each module, see the [latest versions of every OpenRewrite module](https://docs.moderne.io/user-documentation/recipes/lists/latest-versions-of-every-openrewrite-module).
 
+## [rewrite-recipe-bom 3.53.0](https://github.com/openrewrite/rewrite-recipe-bom/releases/tag/v3.53.0)
+
+Released on November 11, 2026, with OpenRewrite 8.105.0.
+
+#### [rewrite 8.105.0](https://github.com/openrewrite/rewrite/releases/tag/v8.105.0)
+
+* Maven AddDependency: leave the added artifact out of its own family version by @steve-aom-elliott in [#9810](https://github.com/openrewrite/rewrite/pull/9810)
+* Python: keep file deletions made through the RPC facade by @knutwannheden in [#9820](https://github.com/openrewrite/rewrite/pull/9820)
+* Python: keep Java edits made between Python visits through the RPC facade by @knutwannheden in [#9821](https://github.com/openrewrite/rewrite/pull/9821)
+* Check that a recipe's output has the types a parse of its text gives by @knutwannheden in [#9815](https://github.com/openrewrite/rewrite/pull/9815)
+* Python: templates without dependencies resolve against the standard library alone by @knutwannheden in [#9822](https://github.com/openrewrite/rewrite/pull/9822)
+* Python: a lone recipe bundle runs in the facade's own process by @knutwannheden in [#8745](https://github.com/openrewrite/rewrite/pull/8745)
+* Bind a JavaTemplate's generic type variables where their type is sure by @knutwannheden in [#9823](https://github.com/openrewrite/rewrite/pull/9823)
+* JavaTemplate: prefer a fixed-arity overload to a varargs method when replacing its arguments by @knutwannheden in [#9825](https://github.com/openrewrite/rewrite/pull/9825)
+* Python: restart a re-installed recipe bundle's child process by @knutwannheden in [#9826](https://github.com/openrewrite/rewrite/pull/9826)
+* Scala: let fatal errors through the parser's catch-alls by @knutwannheden in [#9827](https://github.com/openrewrite/rewrite/pull/9827)
+* ReplaceConstantWithAnotherConstant: a replaced enum constant keeps the enum kind by @knutwannheden in [#9828](https://github.com/openrewrite/rewrite/pull/9828)
+* Scala: a source too deep for the typer leaves the rest of the batch typed by @knutwannheden in [#9829](https://github.com/openrewrite/rewrite/pull/9829)
+* Retype a method declaration's name along with its method type by @knutwannheden in [#9830](https://github.com/openrewrite/rewrite/pull/9830)
+
+#### [rewrite-jackson 1.43.0](https://github.com/openrewrite/rewrite-jackson/releases/tag/v1.43.0)
+
+* Write `JsonWriteFeature.QUOTE_PROPERTY_NAMES` by its simple name by @knutwannheden in [#203](https://github.com/openrewrite/rewrite-jackson/pull/203)
+
+#### [rewrite-maven-plugin 6.62.0](https://github.com/openrewrite/rewrite-maven-plugin/releases/tag/v6.62.0)
+
+* Activate codegenome profile for Moderne CLI builds by @timtebeek in [#1226](https://github.com/openrewrite/rewrite-maven-plugin/pull/1226)
+* Build KotlinIT's projects with Kotlin 2.4.21, which runs on JDK 25 by @jkschneider in [#1228](https://github.com/openrewrite/rewrite-maven-plugin/pull/1228)
+* Document every goal parameter and ship the HTML plugin descriptor by @timtebeek in [#1231](https://github.com/openrewrite/rewrite-maven-plugin/pull/1231)
+* Update rewrite-polyglot.version to 2.16.0-SNAPSHOT by @timtebeek in [#1232](https://github.com/openrewrite/rewrite-maven-plugin/pull/1232)
+* Drop Develocity, and keep CGP's Central mirror in resolves_settings by @timtebeek in [#1233](https://github.com/openrewrite/rewrite-maven-plugin/pull/1233)
+* Run integration test classes concurrently by @timtebeek in [#1234](https://github.com/openrewrite/rewrite-maven-plugin/pull/1234)
+
+#### [rewrite-migrate-gradle 0.9.0](https://github.com/openrewrite/rewrite-migrate-gradle/releases/tag/v0.9.0)
+
+* Compose this module's own MigrateToGradle8 in the test by @shanman190 in [#53](https://github.com/openrewrite/rewrite-migrate-gradle/pull/53)
+* Say that multi-string dependency notation is deprecated, not just discouraged by @shanman190 in [#56](https://github.com/openrewrite/rewrite-migrate-gradle/pull/56)
+* Move `ChangeTaskToTasksRegister`, `MigrateGradleEnterpriseToDevelocity` and `MigrateDependenciesToVersionCatalog` here by @shanman190 in [#52](https://github.com/openrewrite/rewrite-migrate-gradle/pull/52)
+* Compose `MigrateToGradle9` in `GradleBestPractices` by @shanman190 in [#54](https://github.com/openrewrite/rewrite-migrate-gradle/pull/54)
+* Migrate a `pluginBundle` block left behind on plugin-publish 1.x by @shanman190 in [#50](https://github.com/openrewrite/rewrite-migrate-gradle/pull/50)
+* Leave the repository alone when a `pluginBundle` is left behind by @shanman190 in [#51](https://github.com/openrewrite/rewrite-migrate-gradle/pull/51)
+
 ## [rewrite-recipe-bom 3.52.0](https://github.com/openrewrite/rewrite-recipe-bom/releases/tag/v3.52.0)
 
 Released on November 10, 2026, with OpenRewrite 8.104.0.
