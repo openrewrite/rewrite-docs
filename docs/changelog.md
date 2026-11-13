@@ -8,6 +8,81 @@ Each release of the [rewrite-recipe-bom](https://github.com/openrewrite/rewrite-
 These are the release notes of the modules that changed in each release over the past year, taken from their GitHub releases.
 For the current version of each module, see the [latest versions of every OpenRewrite module](https://docs.moderne.io/user-documentation/recipes/lists/latest-versions-of-every-openrewrite-module).
 
+## [rewrite-recipe-bom 3.54.0](https://github.com/openrewrite/rewrite-recipe-bom/releases/tag/v3.54.0)
+
+Released on November 12, 2026, with OpenRewrite 8.106.0.
+
+#### [rewrite 8.106.0](https://github.com/openrewrite/rewrite/releases/tag/v8.106.0)
+
+* Fix Gradle Kotlin DSL property-based dependency version upgrades by @JWanHeo in [#9824](https://github.com/openrewrite/rewrite/pull/9824)
+* No unused import when ChangeType moves a type into a nested type by @knutwannheden in [#9831](https://github.com/openrewrite/rewrite/pull/9831)
+* Share the JDK classes that test parsers map across a JVM's tests by @knutwannheden in [#9832](https://github.com/openrewrite/rewrite/pull/9832)
+* Declare an array variable with its own dimensions in a template stub by @knutwannheden in [#9833](https://github.com/openrewrite/rewrite/pull/9833)
+* JavaTemplate: bind a type variable through its argument's supertypes by @knutwannheden in [#9836](https://github.com/openrewrite/rewrite/pull/9836)
+* Keep the import ShortenFullyQualifiedTypeReferences adds for a name it shortens by @knutwannheden in [#9837](https://github.com/openrewrite/rewrite/pull/9837)
+* TypeUtils.isAssignableTo does not widen char to short by @knutwannheden in [#9838](https://github.com/openrewrite/rewrite/pull/9838)
+* JavaTemplate: a call whose arguments a template replaces takes a declared overload by @knutwannheden in [#9840](https://github.com/openrewrite/rewrite/pull/9840)
+* ChangeType removes an outer class's import that the nested type's import leaves unused by @knutwannheden in [#9841](https://github.com/openrewrite/rewrite/pull/9841)
+* Exclude comments and whitespace from `J.Package.getPackageName()` by @greg-at-moderne in [#9808](https://github.com/openrewrite/rewrite/pull/9808)
+* Avoid text-matching, use structural comparison in `RemoveUnusedImports` by @greg-at-moderne in [#9842](https://github.com/openrewrite/rewrite/pull/9842)
+* JavaTemplate: a call on a bound type variable keeps one method type by @knutwannheden in [#9843](https://github.com/openrewrite/rewrite/pull/9843)
+
+#### [rewrite-apache 2.47.0](https://github.com/openrewrite/rewrite-apache/releases/tag/v2.47.0)
+
+* Drop the unused AuthExchange.State import from MigrateAuthStateTest by @knutwannheden in [#185](https://github.com/openrewrite/rewrite-apache/pull/185)
+
+#### [rewrite-cucumber-jvm 2.33.0](https://github.com/openrewrite/rewrite-cucumber-jvm/releases/tag/v2.33.0)
+
+* Expect no import of a nested type the migration names through its outer class by @knutwannheden in [#82](https://github.com/openrewrite/rewrite-cucumber-jvm/pull/82)
+* Give the code the step and hook migrations write the types a parser gives it by @knutwannheden in [#83](https://github.com/openrewrite/rewrite-cucumber-jvm/pull/83)
+
+#### [rewrite-jackson 1.44.0](https://github.com/openrewrite/rewrite-jackson/releases/tag/v1.44.0)
+
+* Check that recipes give the code they write the types a parser gives it by @knutwannheden in [#204](https://github.com/openrewrite/rewrite-jackson/pull/204)
+* Stop transferring `nullUsing` from codehaus to fasterxml `@JsonSerialize` by @knutwannheden in [#205](https://github.com/openrewrite/rewrite-jackson/pull/205)
+
+#### [rewrite-joda 0.25.0](https://github.com/openrewrite/rewrite-joda/releases/tag/v0.25.0)
+
+* Check that the migration gives the code it writes the types a parser gives it by @knutwannheden in [#34](https://github.com/openrewrite/rewrite-joda/pull/34)
+
+#### [rewrite-logging-frameworks 3.47.0](https://github.com/openrewrite/rewrite-logging-frameworks/releases/tag/v3.47.0)
+
+* Check that recipes give the code they write the types a parser gives it by @knutwannheden in [#327](https://github.com/openrewrite/rewrite-logging-frameworks/pull/327)
+
+#### [rewrite-maven-plugin 6.63.0](https://github.com/openrewrite/rewrite-maven-plugin/releases/tag/v6.63.0)
+
+* Activate codegenome profile for Moderne CLI builds by @timtebeek in [#1226](https://github.com/openrewrite/rewrite-maven-plugin/pull/1226)
+* Build KotlinIT's projects with Kotlin 2.4.21, which runs on JDK 25 by @jkschneider in [#1228](https://github.com/openrewrite/rewrite-maven-plugin/pull/1228)
+* Document every goal parameter and ship the HTML plugin descriptor by @timtebeek in [#1231](https://github.com/openrewrite/rewrite-maven-plugin/pull/1231)
+* Update rewrite-polyglot.version to 2.16.0-SNAPSHOT by @timtebeek in [#1232](https://github.com/openrewrite/rewrite-maven-plugin/pull/1232)
+* Drop Develocity, and keep CGP's Central mirror in resolves_settings by @timtebeek in [#1233](https://github.com/openrewrite/rewrite-maven-plugin/pull/1233)
+* Run integration test classes concurrently by @timtebeek in [#1234](https://github.com/openrewrite/rewrite-maven-plugin/pull/1234)
+
+#### [rewrite-micronaut 2.52.0](https://github.com/openrewrite/rewrite-micronaut/releases/tag/v2.52.0)
+
+* Give the code three recipes write the types a parser gives it by @knutwannheden in [#170](https://github.com/openrewrite/rewrite-micronaut/pull/170)
+
+#### [rewrite-migrate-gradle 0.10.0](https://github.com/openrewrite/rewrite-migrate-gradle/releases/tag/v0.10.0)
+
+* Compose this module's own MigrateToGradle8 in the test by @shanman190 in [#53](https://github.com/openrewrite/rewrite-migrate-gradle/pull/53)
+* Say that multi-string dependency notation is deprecated, not just discouraged by @shanman190 in [#56](https://github.com/openrewrite/rewrite-migrate-gradle/pull/56)
+* Move `ChangeTaskToTasksRegister`, `MigrateGradleEnterpriseToDevelocity` and `MigrateDependenciesToVersionCatalog` here by @shanman190 in [#52](https://github.com/openrewrite/rewrite-migrate-gradle/pull/52)
+* Compose `MigrateToGradle9` in `GradleBestPractices` by @shanman190 in [#54](https://github.com/openrewrite/rewrite-migrate-gradle/pull/54)
+* Migrate a `pluginBundle` block left behind on plugin-publish 1.x by @shanman190 in [#50](https://github.com/openrewrite/rewrite-migrate-gradle/pull/50)
+* Leave the repository alone when a `pluginBundle` is left behind by @shanman190 in [#51](https://github.com/openrewrite/rewrite-migrate-gradle/pull/51)
+
+#### [rewrite-migrate-java 3.59.0](https://github.com/openrewrite/rewrite-migrate-java/releases/tag/v3.59.0)
+
+* Drop the unused nested-type import from the Fastjson test expectations by @pdelagrave in [#1452](https://github.com/openrewrite/rewrite-migrate-java/pull/1452)
+
+#### [rewrite-rewrite 0.48.0](https://github.com/openrewrite/rewrite-rewrite/releases/tag/v0.48.0)
+
+* Check that recipes give the code they write the types a parser gives it by @knutwannheden in [#129](https://github.com/openrewrite/rewrite-rewrite/pull/129)
+
+#### [rewrite-spring 6.54.0](https://github.com/openrewrite/rewrite-spring/releases/tag/v6.54.0)
+
+* Track applicable projects per module and detect Gradle builds in `AddLoggingPatternLevelForSleuth` (B3 of #1201)         by @DavJaveiro in [#1283](https://github.com/openrewrite/rewrite-spring/pull/1283)
+
 ## [rewrite-recipe-bom 3.53.0](https://github.com/openrewrite/rewrite-recipe-bom/releases/tag/v3.53.0)
 
 Released on November 11, 2026, with OpenRewrite 8.105.0.
