@@ -12,6 +12,124 @@ import TabItem from '@theme/TabItem';
 
 <TOCInline toc={toc} />
 
+## Why are there no new versions on Maven Central?
+
+Sonatype now puts [limits on what can be published to Maven Central](https://central.sonatype.org/publish/maven-central-publishing-limits/). OpenRewrite publishes around 80 modules a day, far beyond those limits, so new versions go to the [Code Genome Project](https://codegenomeproject.org/) instead.
+
+The last versions on Maven Central are `rewrite-core` 8.90.4 and `rewrite-maven-plugin` 6.46.1. The Gradle plugin 7.41.0 is the last one on the Gradle Plugin Portal. Anything newer exists only in the Code Genome Project. Its metadata requires authentication, which is also why mvnrepository.com does not list those versions.
+
+To use a newer version, [configure access to the Code Genome Project](../running-recipes/getting-started.md#step-2-add-rewrite-maven-plugin-or-rewrite-gradle-plugin-to-your-project).
+
+## Didn't you ask Sonatype for an exemption?
+
+No. Other projects have been granted exemptions, but we did not ask for one. A release process that depends on an exemption is not a reliable way to deliver our software, so we moved to a repository we control.
+
+## Is there an official announcement I can share with my infrastructure or security team?
+
+This entry is that announcement. When you need to explain the change internally, link to it:
+
+```text
+https://docs.openrewrite.org/reference/faq#why-are-there-no-new-versions-on-maven-central
+```
+
+Your team will need to allow `https://artifacts.codegenomeproject.org/maven` over HTTPS, plus the [username and download token](../running-recipes/getting-started.md#step-2-add-rewrite-maven-plugin-or-rewrite-gradle-plugin-to-your-project) that go with it.
+
+## Why do `rewrite-recipe-bom` 3.38.0 and Gradle plugin 7.41.0 fail to resolve `rewrite-bom`?
+
+`rewrite-recipe-bom` 3.38.0, and the Gradle plugin versions 7.40.0 and 7.41.0, were published around the move and still reference `rewrite-bom` 8.91.0, which exists only in the Code Genome Project.
+
+Neither Maven Central nor the Gradle Plugin Portal lets a publisher delete a version, so those stay broken.
+
+If your build resolves from Maven Central alone, use `rewrite-recipe-bom` 3.37.0 or older, and Gradle plugin 7.39.0 or older. Otherwise, [add the Code Genome Project](../running-recipes/getting-started.md#step-2-add-rewrite-maven-plugin-or-rewrite-gradle-plugin-to-your-project), and current versions resolve normally.
+
+The same problem hits `git bisect` across older commits that use `latest.release`: the commits that pick up a broken version fail to resolve until the Code Genome Project is configured.
+
+## Why do Apache-licensed artifacts need a token?
+
+Every download from the Code Genome Project is authenticated, including Apache 2.0 modules, the Maven and Gradle plugins, and the Moderne CLI. Every contributor and every fork that runs the build needs an account, which is the main objection from open-source projects. Accounts and download tokens are free.
+
+As with Sonatype, though, we do not want to be on the hook for inefficient use by a small group of users. A token shows who is behind a request, so we can reach out when we see misuse instead of blocking everyone.
+
+## I'm signed in, so why do I get a 403 for `rewrite-spring` or `rewrite-static-analysis`?
+
+A 401 means the request carried no credentials, or a token that is invalid or revoked. A 403 means the request was authenticated, but your account is not entitled to that artifact.
+
+What you can download depends on the license of the module:
+
+* Apache 2.0 modules, the Maven and Gradle plugins, the Moderne CLI, and the Moderne Connector download with a free account.
+* [Moderne Source Available License (MSAL)](../licensing/openrewrite-licensing.md#moderne-source-available-license) modules, such as `rewrite-spring` and `rewrite-static-analysis`, are available as binaries to Moderne customers only. Without a subscription, [build them from source](./building-openrewrite-from-source.md) within the terms of that license. Contributors need a Code Genome Project account to compile them locally.
+* Moderne proprietary modules are available to customers only.
+
+The [Moderne docs](https://docs.moderne.io/user-documentation/recipes/accessing-the-code-genome-project/#what-the-repository-hosts) describe the same split, and the [build order page](https://openrewrite.github.io/rewrite-recipe-bom/) shows which repository to build before which.
+
+## How do I tell whether a recipe is Apache-licensed or MSAL?
+
+Each recipe page in the [recipe catalog](https://codegenomeproject.org/recipes) shows the license next to the recipe name: Apache 2.0, MSAL, or Moderne proprietary. See [licensing](../licensing/openrewrite-licensing.md) for what each license allows.
+
+## Does adding another repository expose my build to dependency confusion?
+
+The Code Genome Project serves only OpenRewrite and Moderne artifacts. It does not mirror Maven Central, so a dependency from another publisher cannot resolve from it, even though the [packages browser](https://codegenomeproject.org/packages) shows more content than the Maven repository itself serves.
+
+You can also restrict the repository to the OpenRewrite and Moderne group IDs, so your build never asks it for anything else.
+
+In Gradle, that is `exclusiveContent`:
+
+```groovy title="build.gradle"
+repositories {
+  exclusiveContent {
+    forRepository {
+      maven {
+        url = 'https://artifacts.codegenomeproject.org/maven'
+        credentials {
+          username = providers.gradleProperty('codegenomeUsername').get()
+          password = providers.gradleProperty('codegenomePassword').get()
+        }
+      }
+    }
+    filter {
+      includeGroupByRegex 'org\\.openrewrite.*'
+      includeGroupByRegex 'io\\.moderne.*'
+    }
+  }
+}
+```
+
+Maven has no equivalent in `pom.xml`. It has [remote repository filtering](https://maven.apache.org/resolver/remote-repository-filtering.html), configured in the `.mvn` directory instead. On Maven 3.9 or newer, add two lines to `.mvn/maven.config`:
+
+```properties title=".mvn/maven.config"
+-Daether.remoteRepositoryFilter.groupId=true
+-Daether.remoteRepositoryFilter.groupId.basedir=${session.rootDirectory}/.mvn/rrf/
+```
+
+Then list the allowed groups, one per line, in `.mvn/rrf/groupId-codegenome.txt`:
+
+```text title=".mvn/rrf/groupId-codegenome.txt"
+org.openrewrite
+io.moderne
+```
+
+The file name ends with the repository ID, so the repository has to be declared with the ID `codegenome`, as in [getting started](../running-recipes/getting-started.md#step-2-add-rewrite-maven-plugin-or-rewrite-gradle-plugin-to-your-project). Either approach leaves the Code Genome Project out of the lookup for everything it does not host.
+
+## How do I proxy the Code Genome Project through Artifactory or Nexus?
+
+Add `https://artifacts.codegenomeproject.org/maven` as a remote repository, authenticating with your username and download token. In your virtual repository, put it below your internal repositories and above Maven Central. Above your internal repositories, it answers 404 for everything it does not host, which adds latency. Below Maven Central, you keep resolving the older releases. If your repository manager supports routing rules, send the `org.openrewrite` and `io.moderne` groups to it, so those requests cannot fall through to a Central mirror that only has the older releases.
+
+The [Moderne docs](https://docs.moderne.io/user-documentation/recipes/accessing-the-code-genome-project/#onboarding-the-repository-in-artifactory-or-nexus) walk through the setup, including the 404 that the connection test returns.
+
+If your organization restricts outbound connections, the host to add is `artifacts.codegenomeproject.org` over HTTPS. Some teams need weeks to open one, so start the request before you need the new versions.
+
+## Where do I find the latest version of a module?
+
+mvnrepository.com cannot index the Code Genome Project, because its metadata requires authentication. Use one of these instead:
+
+* [Latest versions of every OpenRewrite module](https://docs.moderne.io/user-documentation/recipes/lists/latest-versions-of-every-openrewrite-module)
+* The [Code Genome Project catalog](https://codegenomeproject.org/recipes)
+* The [rewrite releases](https://github.com/openrewrite/rewrite/releases) on GitHub
+
+## Will older releases disappear from Maven Central?
+
+No. Maven Central [does not allow deleting or replacing published artifacts](https://central.sonatype.org/faq/can-i-change-a-component/), so everything up to `rewrite-core` 8.90.4 and `rewrite-maven-plugin` 6.46.1 stays there. Builds pinned to those versions keep working without the Code Genome Project.
+
 ## Does OpenRewrite collect any data from our projects?
 
 **No**. The [rewrite-maven-plugin](https://github.com/openrewrite/rewrite-maven-plugin) and [rewrite-gradle-plugin](https://github.com/openrewrite/rewrite-gradle-plugin) run locally on your machine, without any connections to Moderne or OpenRewrite. The plugin calls out to the artifact repositories configured in your build (such as the Code Genome Project or a locally configured mirror) to check for new dependencies. Other than that, you should not see any other outbound traffic. 
