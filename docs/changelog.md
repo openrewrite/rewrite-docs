@@ -8,6 +8,119 @@ Each release of the [rewrite-recipe-bom](https://github.com/openrewrite/rewrite-
 These are the release notes of the modules that changed in each release over the past year, taken from their GitHub releases.
 For the current version of each module, see the [latest versions of every OpenRewrite module](https://docs.moderne.io/user-documentation/recipes/lists/latest-versions-of-every-openrewrite-module).
 
+## [rewrite-recipe-bom 3.55.0](https://github.com/openrewrite/rewrite-recipe-bom/releases/tag/v3.55.0)
+
+Released on November 13, 2026, with OpenRewrite 8.107.0.
+
+#### [rewrite 8.107.0](https://github.com/openrewrite/rewrite/releases/tag/v8.107.0)
+
+* Keep the lower bound of a captured wildcard by @knutwannheden in [#9857](https://github.com/openrewrite/rewrite/pull/9857)
+* Add `RecipeSpec.afterParser`, the parser of a recipe's output by @knutwannheden in [#9856](https://github.com/openrewrite/rewrite/pull/9856)
+* Declare a template's variable and `var` locals with their own types in a template stub by @knutwannheden in [#9859](https://github.com/openrewrite/rewrite/pull/9859)
+* Fix ChangeType references around nested types and type arguments by @knutwannheden in [#9860](https://github.com/openrewrite/rewrite/pull/9860)
+* Fix ChangeType on the declaration of the type it changes and on its file path by @knutwannheden in [#9861](https://github.com/openrewrite/rewrite/pull/9861)
+* Leave a package star import alone when RemoveImport removes a nested type named with $ by @knutwannheden in [#9862](https://github.com/openrewrite/rewrite/pull/9862)
+* Don't let ChangeType take a variable named like its type for the type by @knutwannheden in [#9863](https://github.com/openrewrite/rewrite/pull/9863)
+* Add an opt-in check that a recipe's output compiles by @knutwannheden in [#9874](https://github.com/openrewrite/rewrite/pull/9874)
+* Keep a renamed enum's kind and constants, and a static import of a field named like its type by @knutwannheden in [#9878](https://github.com/openrewrite/rewrite/pull/9878)
+* Match Python project-parse exclusions against files and paths by @knutwannheden in [#9883](https://github.com/openrewrite/rewrite/pull/9883)
+* Let JS foundSearchResult skip any search result with the same description by @knutwannheden in [#9886](https://github.com/openrewrite/rewrite/pull/9886)
+* Keep the import of an outer class when ChangeType moves a type within it by @knutwannheden in [#9887](https://github.com/openrewrite/rewrite/pull/9887)
+* Build the JavaScript and Python scanner at PrepareRecipe with a real accumulator by @knutwannheden in [#9888](https://github.com/openrewrite/rewrite/pull/9888)
+* Don't let a name of unknown type make ChangeType fully qualify a nested target by @knutwannheden in [#9889](https://github.com/openrewrite/rewrite/pull/9889)
+
+#### [rewrite 8.106.1](https://github.com/openrewrite/rewrite/releases/tag/v8.106.1)
+
+* Autodetected styles can be combined across separately parsed source sets by @sambsnyd in [#9845](https://github.com/openrewrite/rewrite/pull/9845)
+* Fail tests whose opt-outs of rewrite-test's checks pass anyway by @knutwannheden in [#9844](https://github.com/openrewrite/rewrite/pull/9844)
+* Keep Gradle dependencies in other configurations and pick versions from subproject repositories by @sambsnyd in [#9846](https://github.com/openrewrite/rewrite/pull/9846)
+* Remove test opt-outs of rewrite-test's checks that pass anyway by @knutwannheden in [#9847](https://github.com/openrewrite/rewrite/pull/9847)
+* Give a renamed annotation attribute the old one's method under its new name by @knutwannheden in [#9848](https://github.com/openrewrite/rewrite/pull/9848)
+* Hcl: fix `.toString()` implementations in LST elements by @greg-at-moderne in [#9849](https://github.com/openrewrite/rewrite/pull/9849)
+* JavaTemplate: a call whose method a template replaces takes a declared overload of the template's name by @knutwannheden in [#9851](https://github.com/openrewrite/rewrite/pull/9851)
+* C#: document and test primary constructor templates by @greg-at-moderne in [#9852](https://github.com/openrewrite/rewrite/pull/9852)
+* Declare a context-free JavaTemplate expression with `var` by @knutwannheden in [#9853](https://github.com/openrewrite/rewrite/pull/9853)
+* C#: Expose effective language versions on compilation units by @greg-at-moderne in [#9850](https://github.com/openrewrite/rewrite/pull/9850)
+
+#### [rewrite-apache 2.48.0](https://github.com/openrewrite/rewrite-apache/releases/tag/v2.48.0)
+
+* Drop the unused AuthExchange.State import from MigrateAuthStateTest by @knutwannheden in [#185](https://github.com/openrewrite/rewrite-apache/pull/185)
+
+#### [rewrite-cucumber-jvm 2.34.0](https://github.com/openrewrite/rewrite-cucumber-jvm/releases/tag/v2.34.0)
+
+* Expect no import of a nested type the migration names through its outer class by @knutwannheden in [#82](https://github.com/openrewrite/rewrite-cucumber-jvm/pull/82)
+* Give the code the step and hook migrations write the types a parser gives it by @knutwannheden in [#83](https://github.com/openrewrite/rewrite-cucumber-jvm/pull/83)
+
+#### [rewrite-hibernate 2.41.0](https://github.com/openrewrite/rewrite-hibernate/releases/tag/v2.41.0)
+
+* Add Hibernate 5.6 migrations, with and without Jakarta Persistence by @steve-aom-elliott in [#123](https://github.com/openrewrite/rewrite-hibernate/pull/123)
+
+#### [rewrite-jackson 1.45.0](https://github.com/openrewrite/rewrite-jackson/releases/tag/v1.45.0)
+
+* Compile MigrateMapperSettersToBuilder's template against the real mapper classes by @knutwannheden in [#206](https://github.com/openrewrite/rewrite-jackson/pull/206)
+* Fix the @JsonSerialize argument transfer from codehaus to fasterxml by @knutwannheden in [#207](https://github.com/openrewrite/rewrite-jackson/pull/207)
+* Name the CBOR, Smile and Ion mappers by their real classes by @knutwannheden in [#208](https://github.com/openrewrite/rewrite-jackson/pull/208)
+* Narrow Kotlin test opt-outs to the type checks that fail by @knutwannheden in [#209](https://github.com/openrewrite/rewrite-jackson/pull/209)
+* Remove a link to a non-public issue from KotlinMigrateMapperSettersToBuilderTest by @knutwannheden in [#210](https://github.com/openrewrite/rewrite-jackson/pull/210)
+
+#### [rewrite-joda 0.26.0](https://github.com/openrewrite/rewrite-joda/releases/tag/v0.26.0)
+
+* Check that the migration gives the code it writes the types a parser gives it by @knutwannheden in [#34](https://github.com/openrewrite/rewrite-joda/pull/34)
+
+#### [rewrite-logging-frameworks 3.48.0](https://github.com/openrewrite/rewrite-logging-frameworks/releases/tag/v3.48.0)
+
+* Check that recipes give the code they write the types a parser gives it by @knutwannheden in [#327](https://github.com/openrewrite/rewrite-logging-frameworks/pull/327)
+
+#### [rewrite-maven-plugin 6.64.0](https://github.com/openrewrite/rewrite-maven-plugin/releases/tag/v6.64.0)
+
+* Activate codegenome profile for Moderne CLI builds by @timtebeek in [#1226](https://github.com/openrewrite/rewrite-maven-plugin/pull/1226)
+* Build KotlinIT's projects with Kotlin 2.4.21, which runs on JDK 25 by @jkschneider in [#1228](https://github.com/openrewrite/rewrite-maven-plugin/pull/1228)
+* Document every goal parameter and ship the HTML plugin descriptor by @timtebeek in [#1231](https://github.com/openrewrite/rewrite-maven-plugin/pull/1231)
+* Update rewrite-polyglot.version to 2.16.0-SNAPSHOT by @timtebeek in [#1232](https://github.com/openrewrite/rewrite-maven-plugin/pull/1232)
+* Drop Develocity, and keep CGP's Central mirror in resolves_settings by @timtebeek in [#1233](https://github.com/openrewrite/rewrite-maven-plugin/pull/1233)
+* Run integration test classes concurrently by @timtebeek in [#1234](https://github.com/openrewrite/rewrite-maven-plugin/pull/1234)
+
+#### [rewrite-micrometer 0.45.0](https://github.com/openrewrite/rewrite-micrometer/releases/tag/v0.45.0)
+
+* Remove an empty misk label list only from Kotlin calls by @knutwannheden in [#48](https://github.com/openrewrite/rewrite-micrometer/pull/48)
+
+#### [rewrite-micronaut 2.53.0](https://github.com/openrewrite/rewrite-micronaut/releases/tag/v2.53.0)
+
+* Give the code three recipes write the types a parser gives it by @knutwannheden in [#170](https://github.com/openrewrite/rewrite-micronaut/pull/170)
+
+#### [rewrite-migrate-gradle 0.11.0](https://github.com/openrewrite/rewrite-migrate-gradle/releases/tag/v0.11.0)
+
+* Move `RemoveEnableFeaturePreview` here and support the Kotlin DSL by @shanman190 in [#57](https://github.com/openrewrite/rewrite-migrate-gradle/pull/57)
+
+#### [rewrite-migrate-java 3.60.0](https://github.com/openrewrite/rewrite-migrate-java/releases/tag/v3.60.0)
+
+* Repoint MigrateToGradle9 at rewrite-migrate-gradle by @shanman190 in [#1446](https://github.com/openrewrite/rewrite-migrate-java/pull/1446)
+
+#### [rewrite-openapi 0.49.0](https://github.com/openrewrite/rewrite-openapi/releases/tag/v0.49.0)
+
+* Give the name MigrateApiModelToSchema merges into @Schema its own method by @knutwannheden in [#91](https://github.com/openrewrite/rewrite-openapi/pull/91)
+* Keep a positional @ApiModel value when merging into an existing @Schema by @knutwannheden in [#92](https://github.com/openrewrite/rewrite-openapi/pull/92)
+
+#### [rewrite-quarkus 2.50.0](https://github.com/openrewrite/rewrite-quarkus/releases/tag/v2.50.0)
+
+* Give multi.toHotStream() the method Multi declares by @knutwannheden in [#131](https://github.com/openrewrite/rewrite-quarkus/pull/131)
+
+#### [rewrite-rewrite 0.49.0](https://github.com/openrewrite/rewrite-rewrite/releases/tag/v0.49.0)
+
+* Extend FindTreeToString to JavaScript/TypeScript recipes by @greg-at-moderne in [#130](https://github.com/openrewrite/rewrite-rewrite/pull/130)
+
+#### [rewrite-rewrite 0.48.1](https://github.com/openrewrite/rewrite-rewrite/releases/tag/v0.48.1)
+
+* Extend FindTreeToString to JavaScript/TypeScript recipes by @greg-at-moderne in [#130](https://github.com/openrewrite/rewrite-rewrite/pull/130)
+
+#### [rewrite-spring 6.55.0](https://github.com/openrewrite/rewrite-spring/releases/tag/v6.55.0)
+
+* Track applicable projects per module and detect Gradle builds in `AddLoggingPatternLevelForSleuth` (B3 of #1201)         by @DavJaveiro in [#1283](https://github.com/openrewrite/rewrite-spring/pull/1283)
+
+#### [rewrite-testing-frameworks 3.63.0](https://github.com/openrewrite/rewrite-testing-frameworks/releases/tag/v3.63.0)
+
+* Type what the MockWebServer recipes write by @knutwannheden in [#1297](https://github.com/openrewrite/rewrite-testing-frameworks/pull/1297)
+
 ## [rewrite-recipe-bom 3.54.0](https://github.com/openrewrite/rewrite-recipe-bom/releases/tag/v3.54.0)
 
 Released on November 12, 2026, with OpenRewrite 8.106.0.
