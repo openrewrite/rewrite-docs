@@ -8,6 +8,174 @@ Each release of the [rewrite-recipe-bom](https://github.com/openrewrite/rewrite-
 These are the release notes of the modules that changed in each release over the past year, taken from their GitHub releases.
 For the current version of each module, see the [latest versions of every OpenRewrite module](https://docs.moderne.io/user-documentation/recipes/lists/latest-versions-of-every-openrewrite-module).
 
+## [rewrite-recipe-bom 3.56.0](https://github.com/openrewrite/rewrite-recipe-bom/releases/tag/v3.56.0)
+
+Released on November 14, 2026, with OpenRewrite 8.108.0.
+
+#### [rewrite 8.108.0](https://github.com/openrewrite/rewrite/releases/tag/v8.108.0)
+
+* C#: respect namespace scope in `AddUsing` by @greg-at-moderne in [#9906](https://github.com/openrewrite/rewrite/pull/9906)
+* Type Scala type-table stubs and qualified method names by @timtebeek in [#9914](https://github.com/openrewrite/rewrite/pull/9914)
+* Add RSPEC-S3422 tag to NoSystemScopeDependencies by @Jammy-Louie in [#9917](https://github.com/openrewrite/rewrite/pull/9917)
+* Remove the Gradle version migration recipes that moved to rewrite-migrate-gradle by @shanman190 in [#9796](https://github.com/openrewrite/rewrite/pull/9796)
+* Retire `AlreadyReplaced` and `AlreadyIncremented` in favour of `maxCycles()` by @timtebeek in [#9793](https://github.com/openrewrite/rewrite/pull/9793)
+* Inline calls to deprecated OpenRewrite methods by @timtebeek in [#9680](https://github.com/openrewrite/rewrite/pull/9680)
+* Remove past-due `@ToBeRemoved` code and enable RemoveToBeRemoved in rewrite.yml by @timtebeek in [#8598](https://github.com/openrewrite/rewrite/pull/8598)
+* Replace text around comments in `ChangeTagValue` with regex by @steve-aom-elliott in [#9920](https://github.com/openrewrite/rewrite/pull/9920)
+* Skip unresolvable glob matches in Maven `ChangeDependency` after the first resolved artifact by @steve-aom-elliott in [#9921](https://github.com/openrewrite/rewrite/pull/9921)
+* Keep a tab after a Javadoc's margin before an HTML element on Java 25 by @sambsnyd in [#9922](https://github.com/openrewrite/rewrite/pull/9922)
+* Give each test JVM its own Gradle user home for tooling API builds by @shanman190 in [#9692](https://github.com/openrewrite/rewrite/pull/9692)
+* Walk String's supertypes in TypesInUse when a string literal is reached first by @knutwannheden in [#9923](https://github.com/openrewrite/rewrite/pull/9923)
+* Publish the Python package to the Code Genome Project under the username `cgp` by @knutwannheden in [#9924](https://github.com/openrewrite/rewrite/pull/9924)
+
+#### [rewrite 8.107.3](https://github.com/openrewrite/rewrite/releases/tag/v8.107.3)
+
+* AddImport matches an existing static import of a nested type named with dots by @knutwannheden in [#9909](https://github.com/openrewrite/rewrite/pull/9909)
+* parserTypedTrees takes a level that compares types up to their erasure by @knutwannheden in [#9910](https://github.com/openrewrite/rewrite/pull/9910)
+* Preserve qualified C# namespaces in `ChangeType` by @greg-at-moderne in [#9911](https://github.com/openrewrite/rewrite/pull/9911)
+
+#### [rewrite 8.107.2](https://github.com/openrewrite/rewrite/releases/tag/v8.107.2)
+
+* ChangeMethodName gives a renamed call the type of the method it now calls by @knutwannheden in [#9855](https://github.com/openrewrite/rewrite/pull/9855)
+* Build the names ChangeType writes from the target type by @knutwannheden in [#9896](https://github.com/openrewrite/rewrite/pull/9896)
+* rewrite-xml: Fix XPath matching of predicates, positions, and paths by @greg-at-moderne in [#9897](https://github.com/openrewrite/rewrite/pull/9897)
+* Import only the outermost class of a nested target in ChangeType by @knutwannheden in [#9898](https://github.com/openrewrite/rewrite/pull/9898)
+* ChangeMethodInvocationReturnType retypes a variable when the call already has the new return type by @knutwannheden in [#9901](https://github.com/openrewrite/rewrite/pull/9901)
+* JavaScript: add XPathMatcher to the XML module by @greg-at-moderne in [#9899](https://github.com/openrewrite/rewrite/pull/9899)
+* JavaScript: `maybeRebind` keeps the file's import layout when it moves named imports by @knutwannheden in [#9902](https://github.com/openrewrite/rewrite/pull/9902)
+* JavaScript autodetect measures a block's statements from the line its brace opens on by @knutwannheden in [#9900](https://github.com/openrewrite/rewrite/pull/9900)
+* Add back every static member import of ChangeType's original type by @knutwannheden in [#9905](https://github.com/openrewrite/rewrite/pull/9905)
+
+#### [rewrite 8.107.1](https://github.com/openrewrite/rewrite/releases/tag/v8.107.1)
+
+* Build a fresh JS editor per visit and gate a scanner with a recipe's editor by @knutwannheden in [#9890](https://github.com/openrewrite/rewrite/pull/9890)
+* Share one type replacer between ChangeType and ChangePackage by @knutwannheden in [#9891](https://github.com/openrewrite/rewrite/pull/9891)
+* Type the simple name ChangeType writes for a nested target type by @knutwannheden in [#9892](https://github.com/openrewrite/rewrite/pull/9892)
+* Report an untyped method return type in FindMissingTypes by @knutwannheden in [#9893](https://github.com/openrewrite/rewrite/pull/9893)
+* JavaTemplate: read a parenthesized argument's type when substituting and matching by @knutwannheden in [#9882](https://github.com/openrewrite/rewrite/pull/9882)
+* Match a JavaScript pattern's imported identifier by the import it reads by @knutwannheden in [#9894](https://github.com/openrewrite/rewrite/pull/9894)
+* JavaScript: use public Node built-ins in binding tests by @greg-at-moderne in [#9811](https://github.com/openrewrite/rewrite/pull/9811)
+* Emit the Java RPC vitest fixture as an ES module by @knutwannheden in [#9895](https://github.com/openrewrite/rewrite/pull/9895)
+
+#### [rewrite-all 1.45.0](https://github.com/openrewrite/rewrite-all/releases/tag/v1.45.0)
+
+* Narrow the FindCallGraph type validation opt-outs by @timtebeek in [#54](https://github.com/openrewrite/rewrite-all/pull/54)
+
+#### [rewrite-apache 2.49.0](https://github.com/openrewrite/rewrite-apache/releases/tag/v2.49.0)
+
+* Give the code the recipes write the types a parser gives it by @knutwannheden in [#186](https://github.com/openrewrite/rewrite-apache/pull/186)
+* Raise parserTypedTrees opt-outs to the Erasure level by @knutwannheden in [#187](https://github.com/openrewrite/rewrite-apache/pull/187)
+
+#### [rewrite-cucumber-jvm 2.35.0](https://github.com/openrewrite/rewrite-cucumber-jvm/releases/tag/v2.35.0)
+
+* Expect no import of a nested type the migration names through its outer class by @knutwannheden in [#82](https://github.com/openrewrite/rewrite-cucumber-jvm/pull/82)
+* Give the code the step and hook migrations write the types a parser gives it by @knutwannheden in [#83](https://github.com/openrewrite/rewrite-cucumber-jvm/pull/83)
+
+#### [rewrite-gitlab 0.40.0](https://github.com/openrewrite/rewrite-gitlab/releases/tag/v0.40.0)
+
+* Leave container images to rewrite-migrate-java in UpgradeJavaVersion by @timtebeek in [#66](https://github.com/openrewrite/rewrite-gitlab/pull/66)
+
+#### [rewrite-hibernate 2.42.0](https://github.com/openrewrite/rewrite-hibernate/releases/tag/v2.42.0)
+
+* Move Hibernate Tools and Validator add-ons to their own group IDs in the 6.0 migration by @steve-aom-elliott in [#124](https://github.com/openrewrite/rewrite-hibernate/pull/124)
+
+#### [rewrite-jackson 1.46.0](https://github.com/openrewrite/rewrite-jackson/releases/tag/v1.46.0)
+
+* Keep a configured factory when moving to a format mapper and its builder by @knutwannheden in [#211](https://github.com/openrewrite/rewrite-jackson/pull/211)
+* Expect a nested type written through its outer class by @knutwannheden in [#212](https://github.com/openrewrite/rewrite-jackson/pull/212)
+* Raise parserTypedTrees opt-outs to the Erasure level by @knutwannheden in [#213](https://github.com/openrewrite/rewrite-jackson/pull/213)
+
+#### [rewrite-java-dependencies 1.79.0](https://github.com/openrewrite/rewrite-java-dependencies/releases/tag/v1.79.0)
+
+* Relocated dependency migrations as of oga-maven-plugin 0737a5a by @timtebeek in [#236](https://github.com/openrewrite/rewrite-java-dependencies/pull/236)
+
+#### [rewrite-joda 0.27.0](https://github.com/openrewrite/rewrite-joda/releases/tag/v0.27.0)
+
+* Raise parserTypedTrees opt-outs to the Erasure level by @knutwannheden in [#35](https://github.com/openrewrite/rewrite-joda/pull/35)
+
+#### [rewrite-logging-frameworks 3.49.0](https://github.com/openrewrite/rewrite-logging-frameworks/releases/tag/v3.49.0)
+
+* Raise parserTypedTrees opt-outs to the Erasure level by @knutwannheden in [#328](https://github.com/openrewrite/rewrite-logging-frameworks/pull/328)
+* Remove unneeded TypeValidation opt-outs by @timtebeek in [#329](https://github.com/openrewrite/rewrite-logging-frameworks/pull/329)
+
+#### [rewrite-maven-plugin 6.65.0](https://github.com/openrewrite/rewrite-maven-plugin/releases/tag/v6.65.0)
+
+* Activate codegenome profile for Moderne CLI builds by @timtebeek in [#1226](https://github.com/openrewrite/rewrite-maven-plugin/pull/1226)
+* Build KotlinIT's projects with Kotlin 2.4.21, which runs on JDK 25 by @jkschneider in [#1228](https://github.com/openrewrite/rewrite-maven-plugin/pull/1228)
+* Document every goal parameter and ship the HTML plugin descriptor by @timtebeek in [#1231](https://github.com/openrewrite/rewrite-maven-plugin/pull/1231)
+* Update rewrite-polyglot.version to 2.16.0-SNAPSHOT by @timtebeek in [#1232](https://github.com/openrewrite/rewrite-maven-plugin/pull/1232)
+* Drop Develocity, and keep CGP's Central mirror in resolves_settings by @timtebeek in [#1233](https://github.com/openrewrite/rewrite-maven-plugin/pull/1233)
+* Run integration test classes concurrently by @timtebeek in [#1234](https://github.com/openrewrite/rewrite-maven-plugin/pull/1234)
+
+#### [rewrite-micrometer 0.46.0](https://github.com/openrewrite/rewrite-micrometer/releases/tag/v0.46.0)
+
+* Remove an unneeded type validation opt-out by @timtebeek in [#49](https://github.com/openrewrite/rewrite-micrometer/pull/49)
+
+#### [rewrite-micronaut 2.54.0](https://github.com/openrewrite/rewrite-micronaut/releases/tag/v2.54.0)
+
+* Resolve the stubbed ConstraintExceptionHandler constructor by @timtebeek in [#171](https://github.com/openrewrite/rewrite-micronaut/pull/171)
+
+#### [rewrite-migrate-gradle 0.12.0](https://github.com/openrewrite/rewrite-migrate-gradle/releases/tag/v0.12.0)
+
+* Absorb `rewrite-gradle`'s best practices into `migrate.GradleBestPractices` by @shanman190 in [#58](https://github.com/openrewrite/rewrite-migrate-gradle/pull/58)
+* Remove an unneeded type validation opt-out by @timtebeek in [#59](https://github.com/openrewrite/rewrite-migrate-gradle/pull/59)
+
+#### [rewrite-migrate-java 3.61.0](https://github.com/openrewrite/rewrite-migrate-java/releases/tag/v3.61.0)
+
+* Upgrade Java images in CI and Kubernetes YAML through a file pattern and JsonPath by @timtebeek in [#1450](https://github.com/openrewrite/rewrite-migrate-java/pull/1450)
+* Keep Faces and Jakarta EE 10 descriptors XML when replacing `javax.` by @pdelagrave in [#1451](https://github.com/openrewrite/rewrite-migrate-java/pull/1451)
+* Narrow TypeValidation opt-outs and say why they are needed by @timtebeek in [#1457](https://github.com/openrewrite/rewrite-migrate-java/pull/1457)
+* Raise a Mockito version property in a parent pom when `UpgradeToJava25` migrates `mockito-all` by @ds-xdev in [#1453](https://github.com/openrewrite/rewrite-migrate-java/pull/1453)
+* Only remove `SecurityManager` checks on `System.getSecurityManager()` by @ds-xdev in [#1454](https://github.com/openrewrite/rewrite-migrate-java/pull/1454)
+* Use non-deprecated `J.VariableDeclarations` constructor in `IfElseIfConstructToSwitch` by @timtebeek in [#1458](https://github.com/openrewrite/rewrite-migrate-java/pull/1458)
+
+#### [rewrite-openapi 0.50.0](https://github.com/openrewrite/rewrite-openapi/releases/tag/v0.50.0)
+
+* Parse recipe output with the OpenAPI annotations, and type `responseCode` as a String by @knutwannheden in [#93](https://github.com/openrewrite/rewrite-openapi/pull/93)
+
+#### [rewrite-pmd 0.16.0](https://github.com/openrewrite/rewrite-pmd/releases/tag/v0.16.0)
+
+* Rename Vector rules deprecated in PMD 7.29.0 to ReplaceJavaUtilVector by @sullis in [#11](https://github.com/openrewrite/rewrite-pmd/pull/11)
+
+#### [rewrite-quarkus 2.51.0](https://github.com/openrewrite/rewrite-quarkus/releases/tag/v2.51.0)
+
+* Raise parserTypedTrees opt-outs to the Erasure level by @knutwannheden in [#132](https://github.com/openrewrite/rewrite-quarkus/pull/132)
+
+#### [rewrite-rewrite 0.50.0](https://github.com/openrewrite/rewrite-rewrite/releases/tag/v0.50.0)
+
+* Raise parserTypedTrees opt-outs to the Erasure level by @knutwannheden in [#131](https://github.com/openrewrite/rewrite-rewrite/pull/131)
+
+#### [rewrite-spring 6.56.0](https://github.com/openrewrite/rewrite-spring/releases/tag/v6.56.0)
+
+* Type the Scopes return type SecurityContextToSecurityScheme writes by @knutwannheden in [#1288](https://github.com/openrewrite/rewrite-spring/pull/1288)
+* Fix a `ClassCastException` and non-compiling `Scopes` return types in `SecurityContextToSecurityScheme` by @knutwannheden in [#1289](https://github.com/openrewrite/rewrite-spring/pull/1289)
+* Expect a nested type written through its outer class by @knutwannheden in [#1290](https://github.com/openrewrite/rewrite-spring/pull/1290)
+* Narrow TypeValidation opt-outs to the checks that need them by @timtebeek in [#1291](https://github.com/openrewrite/rewrite-spring/pull/1291)
+* Rename JobRegistryBeanPostProcessor only when migrating to Spring Batch 6.0 by @shanman190 in [#1259](https://github.com/openrewrite/rewrite-spring/pull/1259)
+* Drop the removed `dimensionsBeforeName` argument from the `J.VariableDeclarations` constructor call by @steve-aom-elliott in [#1293](https://github.com/openrewrite/rewrite-spring/pull/1293)
+* Switch Hibernate to the Jakarta artifacts in the Spring Framework 6.0 upgrade by @steve-aom-elliott in [#1292](https://github.com/openrewrite/rewrite-spring/pull/1292)
+* Simplify lambda blocks to expressions (K1 of #1201) by @DongJinNam in [#1294](https://github.com/openrewrite/rewrite-spring/pull/1294)
+* Remove `//noinspection` lines (K3 of #1201) by @DongJinNam in [#1296](https://github.com/openrewrite/rewrite-spring/pull/1296)
+* Fix/1052 flyway dependency scope by @rocky-bgta in [#1236](https://github.com/openrewrite/rewrite-spring/pull/1236)
+
+#### [rewrite-static-analysis 2.60.0](https://github.com/openrewrite/rewrite-static-analysis/releases/tag/v2.60.0)
+
+* Narrow TypeValidation none() opt-outs and say why they are needed by @timtebeek in [#1262](https://github.com/openrewrite/rewrite-static-analysis/pull/1262)
+* Type the array CollectionToArrayShouldHaveProperType inserts by @timtebeek in [#1263](https://github.com/openrewrite/rewrite-static-analysis/pull/1263)
+* Call `J.VariableDeclarations`' constructor without `dimensionsBeforeName` by @knutwannheden in [#1265](https://github.com/openrewrite/rewrite-static-analysis/pull/1265)
+* Simplify lambdas nested under overloaded calls in `LambdaBlockToExpression` by @timtebeek in [#1264](https://github.com/openrewrite/rewrite-static-analysis/pull/1264)
+
+#### [rewrite-testing-frameworks 3.64.0](https://github.com/openrewrite/rewrite-testing-frameworks/releases/tag/v3.64.0)
+
+* Type the throws UpdateMockWebServer adds to an existing @AfterEach by @knutwannheden in [#1298](https://github.com/openrewrite/rewrite-testing-frameworks/pull/1298)
+* Narrow TypeValidation opt-outs to the checks that need them by @timtebeek in [#1299](https://github.com/openrewrite/rewrite-testing-frameworks/pull/1299)
+* Type the output of CloseUnclosedStaticMocks and the JMockit InOrder rewriter instead of opting out by @timtebeek in [#1300](https://github.com/openrewrite/rewrite-testing-frameworks/pull/1300)
+* Upgrade JUnit Pioneer to 3.x as part of the JUnit 6 migration by @sullis in [#1260](https://github.com/openrewrite/rewrite-testing-frameworks/pull/1260)
+* Cover more WireMock 4 breaking changes in the 3 to 4 migration by @sullis in [#1258](https://github.com/openrewrite/rewrite-testing-frameworks/pull/1258)
+* Raise a version property in a parent pom when the Mockito migrations change `mockito-all` by @ds-xdev in [#1296](https://github.com/openrewrite/rewrite-testing-frameworks/pull/1296)
+* Remove two more type validation opt-outs, explain the rest by @timtebeek in [#1301](https://github.com/openrewrite/rewrite-testing-frameworks/pull/1301)
+* Replace the removed `classpath(byte[]...)` call in TestsShouldNotBePublicTest by @knutwannheden in [#1302](https://github.com/openrewrite/rewrite-testing-frameworks/pull/1302)
+
 ## [rewrite-recipe-bom 3.55.0](https://github.com/openrewrite/rewrite-recipe-bom/releases/tag/v3.55.0)
 
 Released on November 13, 2026, with OpenRewrite 8.107.0.
