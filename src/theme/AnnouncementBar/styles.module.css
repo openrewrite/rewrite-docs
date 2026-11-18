@@ -49,8 +49,8 @@ html[data-notice-bar-dismissed='true'] .noticeBar {
 
 @media (min-width: 997px) {
   :root {
-    /* The bar's own height on desktop, where one line of copy always fits.
-       Below the breakpoint it stays `auto` and wraps. Nothing derives a layout
+    /* The bar's minimum height on desktop; longer copy wraps and grows it.
+       Below the breakpoint it stays `auto`. Nothing derives a layout
        offset from this any more — Navbar/Layout measures the rendered header. */
     --docusaurus-announcement-bar-height: 40px;
   }

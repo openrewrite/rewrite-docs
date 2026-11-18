@@ -6,7 +6,7 @@ import styles from './styles.module.css';
 // Mirrored by the head script in docusaurus.config.ts, which sets these attributes before
 // hydration so nothing flashes. The key is specific to this notice, so new copy re-shows
 // the bar to everyone.
-const NOTICE_BAR_STORAGE_KEY = 'code-genome-project-announcement-dismissed';
+const NOTICE_BAR_STORAGE_KEY = 'ai-software-factory-27-announcement-dismissed';
 const NOTICE_BAR_DISMISSED_ATTRIBUTE = 'data-notice-bar-dismissed';
 
 /**
@@ -60,12 +60,14 @@ function NoticeAnnouncementBar({onClose}: {onClose: () => void}): JSX.Element {
     <div className={styles.noticeBar} role="banner">
       <div className={styles.announcementBarPlaceholder} />
       <div className={styles.noticeBarContent}>
-        <strong>Recipes are moving from Maven Central to the Code Genome
-        Project.</strong>{' '}
-        <Link to="/running-recipes/getting-started#step-2-add-rewrite-maven-plugin-or-rewrite-gradle-plugin-to-your-project">
-          Configure access
-        </Link>{' '}
-        to keep releases resolving.
+        Using OpenRewrite at work? Become an expert with hands-on training,
+        roundtables, and more at <strong>AI Software Factory Summit</strong>,
+        Feb. 22-24 in Miami. Save 50% on your pass with code{' '}
+        <strong>REWRITE50</strong>.{' '}
+        <Link href="https://dashboard.eventcombo.com/e/ai-software-factory-summit-2027-79906?discount=REWRITE50">
+          Register Now
+        </Link>
+        .
       </div>
       <AnnouncementBarCloseButton
         onClick={onClose}
