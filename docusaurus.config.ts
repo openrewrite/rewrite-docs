@@ -51,7 +51,7 @@ const config: Config = {
       tagName: 'script',
       attributes: {},
       innerHTML: `try {
-  if (window.localStorage.getItem('code-genome-project-announcement-dismissed') === 'true') {
+  if (window.localStorage.getItem('ai-software-factory-27-announcement-dismissed') === 'true') {
     document.documentElement.setAttribute('data-notice-bar-dismissed', 'true');
   }
 } catch (e) {}`,
