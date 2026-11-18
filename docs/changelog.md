@@ -8,6 +8,120 @@ Each release of the [rewrite-recipe-bom](https://github.com/openrewrite/rewrite-
 These are the release notes of the modules that changed in each release over the past year, taken from their GitHub releases.
 For the current version of each module, see the [latest versions of every OpenRewrite module](https://docs.moderne.io/user-documentation/recipes/lists/latest-versions-of-every-openrewrite-module).
 
+## [rewrite-recipe-bom 3.59.0](https://github.com/openrewrite/rewrite-recipe-bom/releases/tag/v3.59.0)
+
+Released on November 17, 2026, with OpenRewrite 8.110.0.
+
+#### [rewrite 8.110.0](https://github.com/openrewrite/rewrite/releases/tag/v8.110.0)
+
+* Groovy: fill missing type attribution and stop assigning wrong types by @knutwannheden in [#9930](https://github.com/openrewrite/rewrite/pull/9930)
+* Go: fix parsing of comments before `else` by @greg-at-moderne in [#9933](https://github.com/openrewrite/rewrite/pull/9933)
+* C#: Fix array assignability across overloads by @greg-at-moderne in [#9934](https://github.com/openrewrite/rewrite/pull/9934)
+* Go: preserve type arguments of generic instantiations by @greg-at-moderne in [#9935](https://github.com/openrewrite/rewrite/pull/9935)
+* Go: Fix template substitution, validation, imports, and shadowing by @greg-at-moderne in [#9936](https://github.com/openrewrite/rewrite/pull/9936)
+* Go: Preserve carriage returns `\r` in raw string literals by @greg-at-moderne in [#9932](https://github.com/openrewrite/rewrite/pull/9932)
+* C#: MethodMatcher to match array parameters in method patterns by @greg-at-moderne in [#9907](https://github.com/openrewrite/rewrite/pull/9907)
+* Groovy: a property read at the end of a command chain (`library('my-shared-lib') _`) fails to parse by @jimshowalter in [#9867](https://github.com/openrewrite/rewrite/pull/9867)
+* Groovy: a qualified class name broken around a dot (`new Outer.\n    Inner(…)`) fails to parse by @jimshowalter in [#9872](https://github.com/openrewrite/rewrite/pull/9872)
+* JavaScript: adding an import keeps a comment that ends the previous line on that line by @myhau in [#9904](https://github.com/openrewrite/rewrite/pull/9904)
+* Python: lay out a statement template's tree as its code is written by @knutwannheden in [#9926](https://github.com/openrewrite/rewrite/pull/9926)
+* Python: indent subscripts and type parameters spread over lines by @knutwannheden in [#9939](https://github.com/openrewrite/rewrite/pull/9939)
+* Kotlin: name file facades as the compiler does by @knutwannheden in [#9938](https://github.com/openrewrite/rewrite/pull/9938)
+* Gradle: type build scripts against the API of the project's Gradle version by @knutwannheden in [#9937](https://github.com/openrewrite/rewrite/pull/9937)
+* C#: Fix nested generic type argument matching by @greg-at-moderne in [#9912](https://github.com/openrewrite/rewrite/pull/9912)
+* JavaScript: a moved or added import joins no import with other attributes by @myhau in [#9903](https://github.com/openrewrite/rewrite/pull/9903)
+* Go: preserve trailing commas in generic value instantiations by @greg-at-moderne in [#9941](https://github.com/openrewrite/rewrite/pull/9941)
+* Register addGradleApiToTypeTable without the deprecated delegate by @timtebeek in [#9944](https://github.com/openrewrite/rewrite/pull/9944)
+* Kotlin: type an indexed assignment like the direct `set`/`get` call by @knutwannheden in [#9950](https://github.com/openrewrite/rewrite/pull/9950)
+* Refactor RewriteTest to use defaults method by @timtebeek in [#9951](https://github.com/openrewrite/rewrite/pull/9951)
+* Don't shorten a Groovy property read of class type as a qualified type name by @timtebeek in [#9952](https://github.com/openrewrite/rewrite/pull/9952)
+* Kotlin: leave calls on an unresolved receiver without a method type by @knutwannheden in [#9953](https://github.com/openrewrite/rewrite/pull/9953)
+* Gradle: type Kotlin build scripts against the Kotlin DSL and its accessors by @knutwannheden in [#9949](https://github.com/openrewrite/rewrite/pull/9949)
+* YAML: accept a tab between tokens, such as after `key:` by @steve-aom-elliott in [#9954](https://github.com/openrewrite/rewrite/pull/9954)
+* Gradle AddDependency only upgrades declarations related to the configuration it targets by @sambsnyd in [#9962](https://github.com/openrewrite/rewrite/pull/9962)
+* Groovy: type statically imported fields and methods like Java by @knutwannheden in [#9968](https://github.com/openrewrite/rewrite/pull/9968)
+* Pick upgraded versions from subproject repositories in root subprojects and allprojects blocks by @sambsnyd in [#9884](https://github.com/openrewrite/rewrite/pull/9884)
+* Groovy: give accessor-backed property reads a field type by @knutwannheden in [#9969](https://github.com/openrewrite/rewrite/pull/9969)
+* Groovy: parse a parenthesized static field read on Groovy 2.5 by @knutwannheden in [#9970](https://github.com/openrewrite/rewrite/pull/9970)
+* Groovy: round-trip aliased static-import calls and quoted call names by @knutwannheden in [#9971](https://github.com/openrewrite/rewrite/pull/9971)
+* Groovy: print a read of an aliased static field by its alias on Groovy 2.5 by @knutwannheden in [#9972](https://github.com/openrewrite/rewrite/pull/9972)
+* Kotlin: give a variable's use the owner of its declaration by @knutwannheden in [#9973](https://github.com/openrewrite/rewrite/pull/9973)
+* Groovy: print parenthesized variable and property reads on Groovy 2.5 by @knutwannheden in [#9974](https://github.com/openrewrite/rewrite/pull/9974)
+* Groovy: give bare property names, imported getters and map keys a field type by @knutwannheden in [#9975](https://github.com/openrewrite/rewrite/pull/9975)
+* Go: Fix import declaration boundaries and comment preservation by @greg-at-moderne in [#9942](https://github.com/openrewrite/rewrite/pull/9942)
+
+#### [rewrite-all 1.48.0](https://github.com/openrewrite/rewrite-all/releases/tag/v1.48.0)
+
+* Narrow the FindCallGraph type validation opt-outs by @timtebeek in [#54](https://github.com/openrewrite/rewrite-all/pull/54)
+
+#### [rewrite-github-actions 3.51.0](https://github.com/openrewrite/rewrite-github-actions/releases/tag/v3.51.0)
+
+* Refactor RewriteTest to use defaults method by @timtebeek in [#244](https://github.com/openrewrite/rewrite-github-actions/pull/244)
+
+#### [rewrite-gitlab 0.43.0](https://github.com/openrewrite/rewrite-gitlab/releases/tag/v0.43.0)
+
+* Leave container images to rewrite-migrate-java in UpgradeJavaVersion by @timtebeek in [#66](https://github.com/openrewrite/rewrite-gitlab/pull/66)
+
+#### [rewrite-java-dependencies 1.82.0](https://github.com/openrewrite/rewrite-java-dependencies/releases/tag/v1.82.0)
+
+* Keep dependencies that Maven mediation would downgrade or scope still needs in RemoveRedundantDependencies (B4 of #211) by @timtebeek in [#237](https://github.com/openrewrite/rewrite-java-dependencies/pull/237)
+* Only resolve sibling closures for a declaration dependencyManagement does not pin by @steve-aom-elliott in [#238](https://github.com/openrewrite/rewrite-java-dependencies/pull/238)
+* Decide Gradle redundancy in RemoveRedundantDependencies from the trees Gradle resolved by @steve-aom-elliott in [#239](https://github.com/openrewrite/rewrite-java-dependencies/pull/239)
+
+#### [rewrite-joda 0.30.0](https://github.com/openrewrite/rewrite-joda/releases/tag/v0.30.0)
+
+* Raise parserTypedTrees opt-outs to the Erasure level by @knutwannheden in [#35](https://github.com/openrewrite/rewrite-joda/pull/35)
+
+#### [rewrite-logging-frameworks 3.52.0](https://github.com/openrewrite/rewrite-logging-frameworks/releases/tag/v3.52.0)
+
+* Raise parserTypedTrees opt-outs to the Erasure level by @knutwannheden in [#328](https://github.com/openrewrite/rewrite-logging-frameworks/pull/328)
+* Remove unneeded TypeValidation opt-outs by @timtebeek in [#329](https://github.com/openrewrite/rewrite-logging-frameworks/pull/329)
+
+#### [rewrite-mainframe 3.21.0](https://github.com/moderneinc/rewrite-mainframe/releases/tag/v3.21.0)
+
+* OpenRewrite recipe best practices by @timtebeek in [#294](https://github.com/moderneinc/rewrite-mainframe/pull/294)
+
+#### [rewrite-micrometer 0.49.0](https://github.com/openrewrite/rewrite-micrometer/releases/tag/v0.49.0)
+
+* Remove an unneeded type validation opt-out by @timtebeek in [#49](https://github.com/openrewrite/rewrite-micrometer/pull/49)
+
+#### [rewrite-migrate-gradle 0.15.0](https://github.com/openrewrite/rewrite-migrate-gradle/releases/tag/v0.15.0)
+
+* OpenRewrite recipe best practices by @timtebeek in [#60](https://github.com/openrewrite/rewrite-migrate-gradle/pull/60)
+
+#### [rewrite-migrate-java 3.64.0](https://github.com/openrewrite/rewrite-migrate-java/releases/tag/v3.64.0)
+
+* Refactor RewriteTest to use defaults method by @timtebeek in [#1461](https://github.com/openrewrite/rewrite-migrate-java/pull/1461)
+
+#### [rewrite-pmd 0.19.0](https://github.com/openrewrite/rewrite-pmd/releases/tag/v0.19.0)
+
+* Rename Vector rules deprecated in PMD 7.29.0 to ReplaceJavaUtilVector by @sullis in [#11](https://github.com/openrewrite/rewrite-pmd/pull/11)
+
+#### [rewrite-quarkus 2.54.0](https://github.com/openrewrite/rewrite-quarkus/releases/tag/v2.54.0)
+
+* Raise parserTypedTrees opt-outs to the Erasure level by @knutwannheden in [#132](https://github.com/openrewrite/rewrite-quarkus/pull/132)
+
+#### [rewrite-rewrite 0.53.0](https://github.com/openrewrite/rewrite-rewrite/releases/tag/v0.53.0)
+
+* Remove a test recipe that `defaults` already sets by @timtebeek in [#138](https://github.com/openrewrite/rewrite-rewrite/pull/138)
+
+#### [rewrite-spring 6.59.0](https://github.com/openrewrite/rewrite-spring/releases/tag/v6.59.0)
+
+* Write `@Trace` and `@WithSpan` as code in the Datadog and New Relic migration descriptions by @timtebeek in [#1300](https://github.com/openrewrite/rewrite-spring/pull/1300)
+* Refactor RewriteTest to use defaults method by @timtebeek in [#1301](https://github.com/openrewrite/rewrite-spring/pull/1301)
+
+#### [rewrite-static-analysis 2.63.0](https://github.com/openrewrite/rewrite-static-analysis/releases/tag/v2.63.0)
+
+* OpenRewrite recipe best practices by @timtebeek in [#1267](https://github.com/openrewrite/rewrite-static-analysis/pull/1267)
+
+#### [rewrite-testing-frameworks 3.67.0](https://github.com/openrewrite/rewrite-testing-frameworks/releases/tag/v3.67.0)
+
+* Migrate Groovy TemporaryFolder.root property reads to the TempDir file by @timtebeek in [#1304](https://github.com/openrewrite/rewrite-testing-frameworks/pull/1304)
+
+#### [rewrite-third-party 0.67.0](https://github.com/openrewrite/rewrite-third-party/releases/tag/v0.67.0)
+
+* Migrate AWS SDK for Java v1 to v2 by @sambsnyd in [#120](https://github.com/openrewrite/rewrite-third-party/pull/120)
+
 ## [rewrite-recipe-bom 3.58.0](https://github.com/openrewrite/rewrite-recipe-bom/releases/tag/v3.58.0)
 
 Released on November 16, 2026, with OpenRewrite 8.109.0.
@@ -41,15 +155,6 @@ Released on November 16, 2026, with OpenRewrite 8.109.0.
 
 * Raise parserTypedTrees opt-outs to the Erasure level by @knutwannheden in [#328](https://github.com/openrewrite/rewrite-logging-frameworks/pull/328)
 * Remove unneeded TypeValidation opt-outs by @timtebeek in [#329](https://github.com/openrewrite/rewrite-logging-frameworks/pull/329)
-
-#### [rewrite-maven-plugin 6.67.0](https://github.com/openrewrite/rewrite-maven-plugin/releases/tag/v6.67.0)
-
-* Activate codegenome profile for Moderne CLI builds by @timtebeek in [#1226](https://github.com/openrewrite/rewrite-maven-plugin/pull/1226)
-* Build KotlinIT's projects with Kotlin 2.4.21, which runs on JDK 25 by @jkschneider in [#1228](https://github.com/openrewrite/rewrite-maven-plugin/pull/1228)
-* Document every goal parameter and ship the HTML plugin descriptor by @timtebeek in [#1231](https://github.com/openrewrite/rewrite-maven-plugin/pull/1231)
-* Update rewrite-polyglot.version to 2.16.0-SNAPSHOT by @timtebeek in [#1232](https://github.com/openrewrite/rewrite-maven-plugin/pull/1232)
-* Drop Develocity, and keep CGP's Central mirror in resolves_settings by @timtebeek in [#1233](https://github.com/openrewrite/rewrite-maven-plugin/pull/1233)
-* Run integration test classes concurrently by @timtebeek in [#1234](https://github.com/openrewrite/rewrite-maven-plugin/pull/1234)
 
 #### [rewrite-micrometer 0.48.0](https://github.com/openrewrite/rewrite-micrometer/releases/tag/v0.48.0)
 
@@ -142,15 +247,6 @@ Released on November 15, 2026, with OpenRewrite 8.108.1.
 
 * Raise parserTypedTrees opt-outs to the Erasure level by @knutwannheden in [#328](https://github.com/openrewrite/rewrite-logging-frameworks/pull/328)
 * Remove unneeded TypeValidation opt-outs by @timtebeek in [#329](https://github.com/openrewrite/rewrite-logging-frameworks/pull/329)
-
-#### [rewrite-maven-plugin 6.66.0](https://github.com/openrewrite/rewrite-maven-plugin/releases/tag/v6.66.0)
-
-* Activate codegenome profile for Moderne CLI builds by @timtebeek in [#1226](https://github.com/openrewrite/rewrite-maven-plugin/pull/1226)
-* Build KotlinIT's projects with Kotlin 2.4.21, which runs on JDK 25 by @jkschneider in [#1228](https://github.com/openrewrite/rewrite-maven-plugin/pull/1228)
-* Document every goal parameter and ship the HTML plugin descriptor by @timtebeek in [#1231](https://github.com/openrewrite/rewrite-maven-plugin/pull/1231)
-* Update rewrite-polyglot.version to 2.16.0-SNAPSHOT by @timtebeek in [#1232](https://github.com/openrewrite/rewrite-maven-plugin/pull/1232)
-* Drop Develocity, and keep CGP's Central mirror in resolves_settings by @timtebeek in [#1233](https://github.com/openrewrite/rewrite-maven-plugin/pull/1233)
-* Run integration test classes concurrently by @timtebeek in [#1234](https://github.com/openrewrite/rewrite-maven-plugin/pull/1234)
 
 #### [rewrite-micrometer 0.47.0](https://github.com/openrewrite/rewrite-micrometer/releases/tag/v0.47.0)
 
@@ -311,15 +407,6 @@ Released on November 14, 2026, with OpenRewrite 8.108.0.
 * Raise parserTypedTrees opt-outs to the Erasure level by @knutwannheden in [#328](https://github.com/openrewrite/rewrite-logging-frameworks/pull/328)
 * Remove unneeded TypeValidation opt-outs by @timtebeek in [#329](https://github.com/openrewrite/rewrite-logging-frameworks/pull/329)
 
-#### [rewrite-maven-plugin 6.65.0](https://github.com/openrewrite/rewrite-maven-plugin/releases/tag/v6.65.0)
-
-* Activate codegenome profile for Moderne CLI builds by @timtebeek in [#1226](https://github.com/openrewrite/rewrite-maven-plugin/pull/1226)
-* Build KotlinIT's projects with Kotlin 2.4.21, which runs on JDK 25 by @jkschneider in [#1228](https://github.com/openrewrite/rewrite-maven-plugin/pull/1228)
-* Document every goal parameter and ship the HTML plugin descriptor by @timtebeek in [#1231](https://github.com/openrewrite/rewrite-maven-plugin/pull/1231)
-* Update rewrite-polyglot.version to 2.16.0-SNAPSHOT by @timtebeek in [#1232](https://github.com/openrewrite/rewrite-maven-plugin/pull/1232)
-* Drop Develocity, and keep CGP's Central mirror in resolves_settings by @timtebeek in [#1233](https://github.com/openrewrite/rewrite-maven-plugin/pull/1233)
-* Run integration test classes concurrently by @timtebeek in [#1234](https://github.com/openrewrite/rewrite-maven-plugin/pull/1234)
-
 #### [rewrite-micrometer 0.46.0](https://github.com/openrewrite/rewrite-micrometer/releases/tag/v0.46.0)
 
 * Remove an unneeded type validation opt-out by @timtebeek in [#49](https://github.com/openrewrite/rewrite-micrometer/pull/49)
@@ -452,15 +539,6 @@ Released on November 13, 2026, with OpenRewrite 8.107.0.
 
 * Check that recipes give the code they write the types a parser gives it by @knutwannheden in [#327](https://github.com/openrewrite/rewrite-logging-frameworks/pull/327)
 
-#### [rewrite-maven-plugin 6.64.0](https://github.com/openrewrite/rewrite-maven-plugin/releases/tag/v6.64.0)
-
-* Activate codegenome profile for Moderne CLI builds by @timtebeek in [#1226](https://github.com/openrewrite/rewrite-maven-plugin/pull/1226)
-* Build KotlinIT's projects with Kotlin 2.4.21, which runs on JDK 25 by @jkschneider in [#1228](https://github.com/openrewrite/rewrite-maven-plugin/pull/1228)
-* Document every goal parameter and ship the HTML plugin descriptor by @timtebeek in [#1231](https://github.com/openrewrite/rewrite-maven-plugin/pull/1231)
-* Update rewrite-polyglot.version to 2.16.0-SNAPSHOT by @timtebeek in [#1232](https://github.com/openrewrite/rewrite-maven-plugin/pull/1232)
-* Drop Develocity, and keep CGP's Central mirror in resolves_settings by @timtebeek in [#1233](https://github.com/openrewrite/rewrite-maven-plugin/pull/1233)
-* Run integration test classes concurrently by @timtebeek in [#1234](https://github.com/openrewrite/rewrite-maven-plugin/pull/1234)
-
 #### [rewrite-micrometer 0.45.0](https://github.com/openrewrite/rewrite-micrometer/releases/tag/v0.45.0)
 
 * Remove an empty misk label list only from Kotlin calls by @knutwannheden in [#48](https://github.com/openrewrite/rewrite-micrometer/pull/48)
@@ -543,15 +621,6 @@ Released on November 12, 2026, with OpenRewrite 8.106.0.
 
 * Check that recipes give the code they write the types a parser gives it by @knutwannheden in [#327](https://github.com/openrewrite/rewrite-logging-frameworks/pull/327)
 
-#### [rewrite-maven-plugin 6.63.0](https://github.com/openrewrite/rewrite-maven-plugin/releases/tag/v6.63.0)
-
-* Activate codegenome profile for Moderne CLI builds by @timtebeek in [#1226](https://github.com/openrewrite/rewrite-maven-plugin/pull/1226)
-* Build KotlinIT's projects with Kotlin 2.4.21, which runs on JDK 25 by @jkschneider in [#1228](https://github.com/openrewrite/rewrite-maven-plugin/pull/1228)
-* Document every goal parameter and ship the HTML plugin descriptor by @timtebeek in [#1231](https://github.com/openrewrite/rewrite-maven-plugin/pull/1231)
-* Update rewrite-polyglot.version to 2.16.0-SNAPSHOT by @timtebeek in [#1232](https://github.com/openrewrite/rewrite-maven-plugin/pull/1232)
-* Drop Develocity, and keep CGP's Central mirror in resolves_settings by @timtebeek in [#1233](https://github.com/openrewrite/rewrite-maven-plugin/pull/1233)
-* Run integration test classes concurrently by @timtebeek in [#1234](https://github.com/openrewrite/rewrite-maven-plugin/pull/1234)
-
 #### [rewrite-micronaut 2.52.0](https://github.com/openrewrite/rewrite-micronaut/releases/tag/v2.52.0)
 
 * Give the code three recipes write the types a parser gives it by @knutwannheden in [#170](https://github.com/openrewrite/rewrite-micronaut/pull/170)
@@ -600,15 +669,6 @@ Released on November 11, 2026, with OpenRewrite 8.105.0.
 #### [rewrite-jackson 1.43.0](https://github.com/openrewrite/rewrite-jackson/releases/tag/v1.43.0)
 
 * Write `JsonWriteFeature.QUOTE_PROPERTY_NAMES` by its simple name by @knutwannheden in [#203](https://github.com/openrewrite/rewrite-jackson/pull/203)
-
-#### [rewrite-maven-plugin 6.62.0](https://github.com/openrewrite/rewrite-maven-plugin/releases/tag/v6.62.0)
-
-* Activate codegenome profile for Moderne CLI builds by @timtebeek in [#1226](https://github.com/openrewrite/rewrite-maven-plugin/pull/1226)
-* Build KotlinIT's projects with Kotlin 2.4.21, which runs on JDK 25 by @jkschneider in [#1228](https://github.com/openrewrite/rewrite-maven-plugin/pull/1228)
-* Document every goal parameter and ship the HTML plugin descriptor by @timtebeek in [#1231](https://github.com/openrewrite/rewrite-maven-plugin/pull/1231)
-* Update rewrite-polyglot.version to 2.16.0-SNAPSHOT by @timtebeek in [#1232](https://github.com/openrewrite/rewrite-maven-plugin/pull/1232)
-* Drop Develocity, and keep CGP's Central mirror in resolves_settings by @timtebeek in [#1233](https://github.com/openrewrite/rewrite-maven-plugin/pull/1233)
-* Run integration test classes concurrently by @timtebeek in [#1234](https://github.com/openrewrite/rewrite-maven-plugin/pull/1234)
 
 #### [rewrite-migrate-gradle 0.9.0](https://github.com/openrewrite/rewrite-migrate-gradle/releases/tag/v0.9.0)
 
@@ -660,15 +720,6 @@ Released on November 10, 2026, with OpenRewrite 8.104.0.
 #### [rewrite-logging-frameworks 3.45.0](https://github.com/openrewrite/rewrite-logging-frameworks/releases/tag/v3.45.0)
 
 * Avoid textual comparison of the logger class literal in `LoggersNamedForEnclosingClass` by @greg-at-moderne in [#325](https://github.com/openrewrite/rewrite-logging-frameworks/pull/325)
-
-#### [rewrite-maven-plugin 6.61.0](https://github.com/openrewrite/rewrite-maven-plugin/releases/tag/v6.61.0)
-
-* Activate codegenome profile for Moderne CLI builds by @timtebeek in [#1226](https://github.com/openrewrite/rewrite-maven-plugin/pull/1226)
-* Build KotlinIT's projects with Kotlin 2.4.21, which runs on JDK 25 by @jkschneider in [#1228](https://github.com/openrewrite/rewrite-maven-plugin/pull/1228)
-* Document every goal parameter and ship the HTML plugin descriptor by @timtebeek in [#1231](https://github.com/openrewrite/rewrite-maven-plugin/pull/1231)
-* Update rewrite-polyglot.version to 2.16.0-SNAPSHOT by @timtebeek in [#1232](https://github.com/openrewrite/rewrite-maven-plugin/pull/1232)
-* Drop Develocity, and keep CGP's Central mirror in resolves_settings by @timtebeek in [#1233](https://github.com/openrewrite/rewrite-maven-plugin/pull/1233)
-* Run integration test classes concurrently by @timtebeek in [#1234](https://github.com/openrewrite/rewrite-maven-plugin/pull/1234)
 
 #### [rewrite-migrate-gradle 0.8.0](https://github.com/openrewrite/rewrite-migrate-gradle/releases/tag/v0.8.0)
 
@@ -770,15 +821,6 @@ Released on November 10, 2026, with OpenRewrite 8.103.0.
 #### [rewrite-java-dependencies 1.74.0](https://github.com/openrewrite/rewrite-java-dependencies/releases/tag/v1.74.0)
 
 * Match a qualified release such as 14.0.14-LTS against a version range in RepositoryHasDependency and ModuleHasDependency by @timtebeek in [#232](https://github.com/openrewrite/rewrite-java-dependencies/pull/232)
-
-#### [rewrite-maven-plugin 6.60.0](https://github.com/openrewrite/rewrite-maven-plugin/releases/tag/v6.60.0)
-
-* Activate codegenome profile for Moderne CLI builds by @timtebeek in [#1226](https://github.com/openrewrite/rewrite-maven-plugin/pull/1226)
-* Build KotlinIT's projects with Kotlin 2.4.21, which runs on JDK 25 by @jkschneider in [#1228](https://github.com/openrewrite/rewrite-maven-plugin/pull/1228)
-* Document every goal parameter and ship the HTML plugin descriptor by @timtebeek in [#1231](https://github.com/openrewrite/rewrite-maven-plugin/pull/1231)
-* Update rewrite-polyglot.version to 2.16.0-SNAPSHOT by @timtebeek in [#1232](https://github.com/openrewrite/rewrite-maven-plugin/pull/1232)
-* Drop Develocity, and keep CGP's Central mirror in resolves_settings by @timtebeek in [#1233](https://github.com/openrewrite/rewrite-maven-plugin/pull/1233)
-* Run integration test classes concurrently by @timtebeek in [#1234](https://github.com/openrewrite/rewrite-maven-plugin/pull/1234)
 
 #### [rewrite-migrate-gradle 0.7.0](https://github.com/openrewrite/rewrite-migrate-gradle/releases/tag/v0.7.0)
 
@@ -916,15 +958,6 @@ Released on November 10, 2026, with OpenRewrite 8.102.0.
 #### [rewrite-java-dependencies 1.73.0](https://github.com/openrewrite/rewrite-java-dependencies/releases/tag/v1.73.0)
 
 * Match a qualified release such as 14.0.14-LTS against a version range in RepositoryHasDependency and ModuleHasDependency by @timtebeek in [#232](https://github.com/openrewrite/rewrite-java-dependencies/pull/232)
-
-#### [rewrite-maven-plugin 6.59.0](https://github.com/openrewrite/rewrite-maven-plugin/releases/tag/v6.59.0)
-
-* Activate codegenome profile for Moderne CLI builds by @timtebeek in [#1226](https://github.com/openrewrite/rewrite-maven-plugin/pull/1226)
-* Build KotlinIT's projects with Kotlin 2.4.21, which runs on JDK 25 by @jkschneider in [#1228](https://github.com/openrewrite/rewrite-maven-plugin/pull/1228)
-* Document every goal parameter and ship the HTML plugin descriptor by @timtebeek in [#1231](https://github.com/openrewrite/rewrite-maven-plugin/pull/1231)
-* Update rewrite-polyglot.version to 2.16.0-SNAPSHOT by @timtebeek in [#1232](https://github.com/openrewrite/rewrite-maven-plugin/pull/1232)
-* Drop Develocity, and keep CGP's Central mirror in resolves_settings by @timtebeek in [#1233](https://github.com/openrewrite/rewrite-maven-plugin/pull/1233)
-* Run integration test classes concurrently by @timtebeek in [#1234](https://github.com/openrewrite/rewrite-maven-plugin/pull/1234)
 
 #### [rewrite-migrate-java 3.55.0](https://github.com/openrewrite/rewrite-migrate-java/releases/tag/v3.55.0)
 
@@ -1066,11 +1099,6 @@ Released on November 7, 2026, with OpenRewrite 8.101.0.
 
 #### [rewrite-maven-plugin 6.58.0](https://github.com/openrewrite/rewrite-maven-plugin/releases/tag/v6.58.0)
 
-* Activate codegenome profile for Moderne CLI builds by @timtebeek in [#1226](https://github.com/openrewrite/rewrite-maven-plugin/pull/1226)
-* Build KotlinIT's projects with Kotlin 2.4.21, which runs on JDK 25 by @jkschneider in [#1228](https://github.com/openrewrite/rewrite-maven-plugin/pull/1228)
-* Document every goal parameter and ship the HTML plugin descriptor by @timtebeek in [#1231](https://github.com/openrewrite/rewrite-maven-plugin/pull/1231)
-* Update rewrite-polyglot.version to 2.16.0-SNAPSHOT by @timtebeek in [#1232](https://github.com/openrewrite/rewrite-maven-plugin/pull/1232)
-* Drop Develocity, and keep CGP's Central mirror in resolves_settings by @timtebeek in [#1233](https://github.com/openrewrite/rewrite-maven-plugin/pull/1233)
 * Run integration test classes concurrently by @timtebeek in [#1234](https://github.com/openrewrite/rewrite-maven-plugin/pull/1234)
 
 #### [rewrite-migrate-java 3.54.0](https://github.com/openrewrite/rewrite-migrate-java/releases/tag/v3.54.0)
@@ -1196,14 +1224,6 @@ Released on November 6, 2026, with OpenRewrite 8.100.0.
 * Visit the words of a CBL or PROCESS statement by @knutwannheden in [#289](https://github.com/moderneinc/rewrite-mainframe/pull/289)
 * Read the DSNTEP2 input GenevaERS Workbench keeps its schema in by @knutwannheden in [#290](https://github.com/moderneinc/rewrite-mainframe/pull/290)
 * Read a primary key declared on its column by @knutwannheden in [#291](https://github.com/moderneinc/rewrite-mainframe/pull/291)
-
-#### [rewrite-maven-plugin 6.57.0](https://github.com/openrewrite/rewrite-maven-plugin/releases/tag/v6.57.0)
-
-* Activate codegenome profile for Moderne CLI builds by @timtebeek in [#1226](https://github.com/openrewrite/rewrite-maven-plugin/pull/1226)
-* Build KotlinIT's projects with Kotlin 2.4.21, which runs on JDK 25 by @jkschneider in [#1228](https://github.com/openrewrite/rewrite-maven-plugin/pull/1228)
-* Document every goal parameter and ship the HTML plugin descriptor by @timtebeek in [#1231](https://github.com/openrewrite/rewrite-maven-plugin/pull/1231)
-* Update rewrite-polyglot.version to 2.16.0-SNAPSHOT by @timtebeek in [#1232](https://github.com/openrewrite/rewrite-maven-plugin/pull/1232)
-* Drop Develocity, and keep CGP's Central mirror in resolves_settings by @timtebeek in [#1233](https://github.com/openrewrite/rewrite-maven-plugin/pull/1233)
 
 #### [rewrite-micronaut 2.46.0](https://github.com/openrewrite/rewrite-micronaut/releases/tag/v2.46.0)
 
@@ -1343,14 +1363,6 @@ Released on November 5, 2026, with OpenRewrite 8.99.0.
 * Visit the words of a CBL or PROCESS statement by @knutwannheden in [#289](https://github.com/moderneinc/rewrite-mainframe/pull/289)
 * Read the DSNTEP2 input GenevaERS Workbench keeps its schema in by @knutwannheden in [#290](https://github.com/moderneinc/rewrite-mainframe/pull/290)
 * Read a primary key declared on its column by @knutwannheden in [#291](https://github.com/moderneinc/rewrite-mainframe/pull/291)
-
-#### [rewrite-maven-plugin 6.56.0](https://github.com/openrewrite/rewrite-maven-plugin/releases/tag/v6.56.0)
-
-* Activate codegenome profile for Moderne CLI builds by @timtebeek in [#1226](https://github.com/openrewrite/rewrite-maven-plugin/pull/1226)
-* Build KotlinIT's projects with Kotlin 2.4.21, which runs on JDK 25 by @jkschneider in [#1228](https://github.com/openrewrite/rewrite-maven-plugin/pull/1228)
-* Document every goal parameter and ship the HTML plugin descriptor by @timtebeek in [#1231](https://github.com/openrewrite/rewrite-maven-plugin/pull/1231)
-* Update rewrite-polyglot.version to 2.16.0-SNAPSHOT by @timtebeek in [#1232](https://github.com/openrewrite/rewrite-maven-plugin/pull/1232)
-* Drop Develocity, and keep CGP's Central mirror in resolves_settings by @timtebeek in [#1233](https://github.com/openrewrite/rewrite-maven-plugin/pull/1233)
 
 #### [rewrite-micronaut 2.45.0](https://github.com/openrewrite/rewrite-micronaut/releases/tag/v2.45.0)
 
@@ -1617,10 +1629,6 @@ Released on November 4, 2026, with OpenRewrite 8.98.0.
 
 #### [rewrite-maven-plugin 6.55.0](https://github.com/openrewrite/rewrite-maven-plugin/releases/tag/v6.55.0)
 
-* Activate codegenome profile for Moderne CLI builds by @timtebeek in [#1226](https://github.com/openrewrite/rewrite-maven-plugin/pull/1226)
-* Build KotlinIT's projects with Kotlin 2.4.21, which runs on JDK 25 by @jkschneider in [#1228](https://github.com/openrewrite/rewrite-maven-plugin/pull/1228)
-* Document every goal parameter and ship the HTML plugin descriptor by @timtebeek in [#1231](https://github.com/openrewrite/rewrite-maven-plugin/pull/1231)
-* Update rewrite-polyglot.version to 2.16.0-SNAPSHOT by @timtebeek in [#1232](https://github.com/openrewrite/rewrite-maven-plugin/pull/1232)
 * Drop Develocity, and keep CGP's Central mirror in resolves_settings by @timtebeek in [#1233](https://github.com/openrewrite/rewrite-maven-plugin/pull/1233)
 
 #### [rewrite-micronaut 2.44.0](https://github.com/openrewrite/rewrite-micronaut/releases/tag/v2.44.0)
@@ -1925,13 +1933,6 @@ Released on November 2, 2026, with OpenRewrite 8.97.0.
 * Read an SQL host variable qualified by its structure by @knutwannheden in [#266](https://github.com/moderneinc/rewrite-mainframe/pull/266)
 * Resolve a REDEFINES object by position by @knutwannheden in [#267](https://github.com/moderneinc/rewrite-mainframe/pull/267)
 
-#### [rewrite-maven-plugin 6.54.0](https://github.com/openrewrite/rewrite-maven-plugin/releases/tag/v6.54.0)
-
-* Activate codegenome profile for Moderne CLI builds by @timtebeek in [#1226](https://github.com/openrewrite/rewrite-maven-plugin/pull/1226)
-* Build KotlinIT's projects with Kotlin 2.4.21, which runs on JDK 25 by @jkschneider in [#1228](https://github.com/openrewrite/rewrite-maven-plugin/pull/1228)
-* Document every goal parameter and ship the HTML plugin descriptor by @timtebeek in [#1231](https://github.com/openrewrite/rewrite-maven-plugin/pull/1231)
-* Update rewrite-polyglot.version to 2.16.0-SNAPSHOT by @timtebeek in [#1232](https://github.com/openrewrite/rewrite-maven-plugin/pull/1232)
-
 #### [rewrite-migrate-java 3.50.0](https://github.com/openrewrite/rewrite-migrate-java/releases/tag/v3.50.0)
 
 * Upgrade the Lombok Maven plugin runtime for Java 25 by @jkschneider in [#1384](https://github.com/openrewrite/rewrite-migrate-java/pull/1384)
@@ -2035,8 +2036,6 @@ Released on October 28, 2026, with OpenRewrite 8.96.0.
 
 #### [rewrite-maven-plugin 6.53.0](https://github.com/openrewrite/rewrite-maven-plugin/releases/tag/v6.53.0)
 
-* Activate codegenome profile for Moderne CLI builds by @timtebeek in [#1226](https://github.com/openrewrite/rewrite-maven-plugin/pull/1226)
-* Build KotlinIT's projects with Kotlin 2.4.21, which runs on JDK 25 by @jkschneider in [#1228](https://github.com/openrewrite/rewrite-maven-plugin/pull/1228)
 * Document every goal parameter and ship the HTML plugin descriptor by @timtebeek in [#1231](https://github.com/openrewrite/rewrite-maven-plugin/pull/1231)
 * Update rewrite-polyglot.version to 2.16.0-SNAPSHOT by @timtebeek in [#1232](https://github.com/openrewrite/rewrite-maven-plugin/pull/1232)
 
@@ -2191,11 +2190,6 @@ Released on October 27, 2026, with OpenRewrite 8.95.0.
 #### [rewrite-mainframe 3.5.0](https://github.com/moderneinc/rewrite-mainframe/releases/tag/v3.5.0)
 
 * Share copybook trees and copied-word markers, so a COBOL LST takes 42% less heap by @knutwannheden in [#187](https://github.com/moderneinc/rewrite-mainframe/pull/187)
-
-#### [rewrite-maven-plugin 6.52.0](https://github.com/openrewrite/rewrite-maven-plugin/releases/tag/v6.52.0)
-
-* Activate codegenome profile for Moderne CLI builds by @timtebeek in [#1226](https://github.com/openrewrite/rewrite-maven-plugin/pull/1226)
-* Build KotlinIT's projects with Kotlin 2.4.21, which runs on JDK 25 by @jkschneider in [#1228](https://github.com/openrewrite/rewrite-maven-plugin/pull/1228)
 
 #### [rewrite-micrometer 0.33.0](https://github.com/openrewrite/rewrite-micrometer/releases/tag/v0.33.0)
 
