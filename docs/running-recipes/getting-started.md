@@ -51,6 +51,10 @@ git clone https://github.com/openrewrite/spring-petclinic-migration.git
 
 Once you've checked out your project, the next step is to add the OpenRewrite plugin to Maven or Gradle.
 
+:::info
+New OpenRewrite versions are no longer published to Maven Central. [Why there are no new versions on Maven Central](../reference/faq.md#why-are-there-no-new-versions-on-maven-central) explains what moved, what is still there, and what a download token gives you.
+:::
+
 OpenRewrite releases, including the Maven and Gradle plugins themselves, are published to the Code Genome Project repository (`https://artifacts.codegenomeproject.org/maven`), which requires authentication. To get access, sign in to the Code Genome Project and create a download token. Your build then authenticates with the email or username you signed in with, plus that token as the password.
 
 Gradle builds read those credentials from `gradle.properties`. Put them in `~/.gradle/gradle.properties` rather than the copy in your repository, so they are never committed:
