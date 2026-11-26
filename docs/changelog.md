@@ -8,6 +8,101 @@ Each release of the [rewrite-recipe-bom](https://github.com/openrewrite/rewrite-
 These are the release notes of the modules that changed in each release over the past year, taken from their GitHub releases.
 For the current version of each module, see the [latest versions of every OpenRewrite module](https://docs.moderne.io/user-documentation/recipes/lists/latest-versions-of-every-openrewrite-module).
 
+## [rewrite-recipe-bom 3.66.0](https://github.com/openrewrite/rewrite-recipe-bom/releases/tag/v3.66.0)
+
+Released on November 26, 2026, with OpenRewrite 8.118.0.
+
+#### [rewrite 8.118.0](https://github.com/openrewrite/rewrite/releases/tag/v8.118.0)
+
+* MavenPomDownloader to write off a Maven repository endpoint a proxy reports it could not connect to by @greg-at-moderne in [#10120](https://github.com/openrewrite/rewrite/pull/10120)
+* C#: isolate the test harness's whitespace validation setting per run by @greg-at-moderne in [#10144](https://github.com/openrewrite/rewrite/pull/10144)
+* JavaScript: support pnpm 10.12.1 in native lock regeneration by @greg-at-moderne in [#10145](https://github.com/openrewrite/rewrite/pull/10145)
+* JavaScript: stop `Type.isOfTypeWithName` at heritage that cycles back by @steve-aom-elliott in [#10115](https://github.com/openrewrite/rewrite/pull/10115)
+* JavaScript: attribute calls into project source to the declaring file and name by @greg-at-moderne in [#10147](https://github.com/openrewrite/rewrite/pull/10147)
+* JavaScript: attribute member calls on class-less objects to the function they hold by @greg-at-moderne in [#10149](https://github.com/openrewrite/rewrite/pull/10149)
+* JavaScript: model pnpm 10.33.4–10.34.5 backports of pnpm 11 fixes in the pnpm port by @greg-at-moderne in [#10150](https://github.com/openrewrite/rewrite/pull/10150)
+* JavaScript: declare members of an aliased type literal on the type alias by @greg-at-moderne in [#10148](https://github.com/openrewrite/rewrite/pull/10148)
+* JavaScript: support pnpm 10.12.0, 10.33.0–10.33.4 and 10.34.5–10.34.8 in native lock regeneration by @greg-at-moderne in [#10151](https://github.com/openrewrite/rewrite/pull/10151)
+* JavaScript: give a JSX tag the method type of the component it renders by @greg-at-moderne in [#10152](https://github.com/openrewrite/rewrite/pull/10152)
+* JavaScript: declare a function implementing a member of a named type on that member by @greg-at-moderne in [#10153](https://github.com/openrewrite/rewrite/pull/10153)
+* ChangeDependency: skip new-coordinate exclusions when old dependency isn't declared by @timtebeek in [#10143](https://github.com/openrewrite/rewrite/pull/10143)
+* Run Gradle 4 compatibility tests in testGradle4 by @greg-at-moderne in [#10146](https://github.com/openrewrite/rewrite/pull/10146)
+* Keep a tab after a Javadoc's margin on Java 25 on a line after &lt;pre>&lt;code> by @pdelagrave in [#9875](https://github.com/openrewrite/rewrite/pull/9875)
+* JavaScript: give an empty YAML value no prefix, as the Java parser does by @steve-aom-elliott in [#10155](https://github.com/openrewrite/rewrite/pull/10155)
+* Add Sonar severity composites by @Jammy-Louie in [#10158](https://github.com/openrewrite/rewrite/pull/10158)
+
+#### [rewrite-cucumber-jvm 2.46.0](https://github.com/openrewrite/rewrite-cucumber-jvm/releases/tag/v2.46.0)
+
+* Add `cucumber-java` and keep `cucumber-junit` where the Cucumber 7 migration lost them by @greg-at-moderne in [#88](https://github.com/openrewrite/rewrite-cucumber-jvm/pull/88)
+* Pin the import layout in the flaky helper-class runner test by @timtebeek in [#89](https://github.com/openrewrite/rewrite-cucumber-jvm/pull/89)
+
+#### [rewrite-logging-frameworks 3.60.0](https://github.com/openrewrite/rewrite-logging-frameworks/releases/tag/v3.60.0)
+
+* Add recipe migrating `org.fissore:slf4j-fluent` to SLF4J 2.x by @greg-at-moderne in [#342](https://github.com/openrewrite/rewrite-logging-frameworks/pull/342)
+
+#### [rewrite-migrate-java 3.72.0](https://github.com/openrewrite/rewrite-migrate-java/releases/tag/v3.72.0)
+
+* Add Sonar severity composites by @Jammy-Louie in [#1491](https://github.com/openrewrite/rewrite-migrate-java/pull/1491)
+
+#### [rewrite-spring-to-quarkus 0.39.0](https://github.com/openrewrite/rewrite-spring-to-quarkus/releases/tag/v0.39.0)
+
+* Migrate to Quarkus 4 by default by @timtebeek in [#112](https://github.com/openrewrite/rewrite-spring-to-quarkus/pull/112)
+* Quarkus 4 follow-ups: Gradle platform, Jackson 3, Java 21 in CI and Docker by @timtebeek in [#114](https://github.com/openrewrite/rewrite-spring-to-quarkus/pull/114)
+
+#### [rewrite-static-analysis 2.71.0](https://github.com/openrewrite/rewrite-static-analysis/releases/tag/v2.71.0)
+
+* Add Sonar severity composites by @Jammy-Louie in [#1280](https://github.com/openrewrite/rewrite-static-analysis/pull/1280)
+
+#### [rewrite-testing-frameworks 3.75.0](https://github.com/openrewrite/rewrite-testing-frameworks/releases/tag/v3.75.0)
+
+* Add Sonar severity composites by @Jammy-Louie in [#1351](https://github.com/openrewrite/rewrite-testing-frameworks/pull/1351)
+
+#### [rewrite-third-party 0.75.0](https://github.com/openrewrite/rewrite-third-party/releases/tag/v0.75.0)
+
+* Add Sonar severity composites by @Jammy-Louie in [#130](https://github.com/openrewrite/rewrite-third-party/pull/130)
+* Aggregate Quarkus recipes from the released quarkus-update-recipes by @timtebeek in [#131](https://github.com/openrewrite/rewrite-third-party/pull/131)
+* Require Java 17 by @greg-at-moderne in [#132](https://github.com/openrewrite/rewrite-third-party/pull/132)
+
+## [rewrite-recipe-bom 3.65.0](https://github.com/openrewrite/rewrite-recipe-bom/releases/tag/v3.65.0)
+
+Released on November 25, 2026, with OpenRewrite 8.117.0.
+
+#### [rewrite 8.117.0](https://github.com/openrewrite/rewrite/releases/tag/v8.117.0)
+
+* C#: map statements and members with missing tokens to J.Erroneous by @greg-at-moderne in [#10131](https://github.com/openrewrite/rewrite/pull/10131)
+* Keep trailing comments in place when AddDependency inserts a Gradle dependency by @timtebeek in [#10127](https://github.com/openrewrite/rewrite/pull/10127)
+* YAML: parse Helm templates that output entries before more entries by @steve-aom-elliott in [#10038](https://github.com/openrewrite/rewrite/pull/10038)
+* Autodetect: vote on for-loop semicolon and array initializer spacing by @timtebeek in [#10136](https://github.com/openrewrite/rewrite/pull/10136)
+* ChangeDependency updates version variables declared as extra properties by @timtebeek in [#10126](https://github.com/openrewrite/rewrite/pull/10126)
+* Autodetect: detect empty bodies kept on one line by @timtebeek in [#10137](https://github.com/openrewrite/rewrite/pull/10137)
+* RemoveExclusion keeps effective wildcard exclusions with onlyIneffective by @timtebeek in [#10141](https://github.com/openrewrite/rewrite/pull/10141)
+
+#### [rewrite 8.116.1](https://github.com/openrewrite/rewrite/releases/tag/v8.116.1)
+
+* Escape unpaired surrogates in Java annotation constant values by @knutwannheden in [#10133](https://github.com/openrewrite/rewrite/pull/10133)
+* Disable some tests temporarily; Serve the missing transitive dependencies of MavenDependencyFailuresTest from a local mock mirror by @greg-at-moderne in [#10132](https://github.com/openrewrite/rewrite/pull/10132)
+
+#### [rewrite-logging-frameworks 3.59.0](https://github.com/openrewrite/rewrite-logging-frameworks/releases/tag/v3.59.0)
+
+* Add recipe to pass Log4j parameters and composed messages as lambda suppliers by @ds-xdev in [#330](https://github.com/openrewrite/rewrite-logging-frameworks/pull/330)
+
+#### [rewrite-maven-plugin 6.75.0](https://github.com/openrewrite/rewrite-maven-plugin/releases/tag/v6.75.0)
+
+* Fix basedir_resource_no_plaintext_leak by @greg-at-moderne in [#1239](https://github.com/openrewrite/rewrite-maven-plugin/pull/1239)
+
+#### [rewrite-migrate-gradle 0.22.0](https://github.com/openrewrite/rewrite-migrate-gradle/releases/tag/v0.22.0)
+
+* Upgrade third-party plugins that break on Gradle 9 by @timtebeek in [#63](https://github.com/openrewrite/rewrite-migrate-gradle/pull/63)
+
+#### [rewrite-migrate-java 3.71.0](https://github.com/openrewrite/rewrite-migrate-java/releases/tag/v3.71.0)
+
+* Upgrade Jib base images as part of `UpgradeJavaVersion` by @timtebeek in [#1488](https://github.com/openrewrite/rewrite-migrate-java/pull/1488)
+* Take Gradle 9 plugin upgrades from rewrite-migrate-gradle by @timtebeek in [#1489](https://github.com/openrewrite/rewrite-migrate-java/pull/1489)
+
+#### [rewrite-spring 6.66.0](https://github.com/openrewrite/rewrite-spring/releases/tag/v6.66.0)
+
+* Fix `JdbcTemplateQueryForLongMigration` overload and SQL `NULL` handling (E4) by @RojanFrancis in [#1235](https://github.com/openrewrite/rewrite-spring/pull/1235)
+
 ## [rewrite-recipe-bom 3.64.0](https://github.com/openrewrite/rewrite-recipe-bom/releases/tag/v3.64.0)
 
 Released on November 24, 2026, with OpenRewrite 8.116.0.
