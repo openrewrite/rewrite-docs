@@ -8,6 +8,105 @@ Each release of the [rewrite-recipe-bom](https://github.com/openrewrite/rewrite-
 These are the release notes of the modules that changed in each release over the past year, taken from their GitHub releases.
 For the current version of each module, see the [latest versions of every OpenRewrite module](https://docs.moderne.io/user-documentation/recipes/lists/latest-versions-of-every-openrewrite-module).
 
+## [rewrite-recipe-bom 3.67.0](https://github.com/openrewrite/rewrite-recipe-bom/releases/tag/v3.67.0)
+
+Released on November 27, 2026, with OpenRewrite 8.119.0.
+
+#### [rewrite 8.119.0](https://github.com/openrewrite/rewrite/releases/tag/v8.119.0)
+
+* JavaScript: answer pnpm 10.12.2–10.32.x's lock and config changes in the pnpm port by @greg-at-moderne in [#10167](https://github.com/openrewrite/rewrite/pull/10167)
+* JavaScript: support pnpm 10.16.0–10.25.0 in native lock regeneration by @greg-at-moderne in [#10168](https://github.com/openrewrite/rewrite/pull/10168)
+* JavaScript: support pnpm 10.12.2–10.13.1, 10.27.0–10.28.1, 10.29.2–10.30.3 and 10.32.1 in native lock regeneration by @greg-at-moderne in [#10170](https://github.com/openrewrite/rewrite/pull/10170)
+* JavaScript: support pnpm 10.11.1, 10.14.0, 10.15.1, 10.26.x, 10.28.2, 10.32.0, 10.34.1 and 10.34.3–10.34.4 in native lock regeneration by @greg-at-moderne in [#10171](https://github.com/openrewrite/rewrite/pull/10171)
+* JavaScript: put the space after a comma in a YAML flow sequence on the item by @steve-aom-elliott in [#10162](https://github.com/openrewrite/rewrite/pull/10162)
+* JavaScript: read YAML anchors and tags wherever they appear, as the Java parser does by @steve-aom-elliott in [#10163](https://github.com/openrewrite/rewrite/pull/10163)
+* Limit Sonar composites to Java sources by @Jammy-Louie in [#10174](https://github.com/openrewrite/rewrite/pull/10174)
+* JavaScript: support pnpm 10.1.0–10.10.0 in native lock regeneration by @greg-at-moderne in [#10175](https://github.com/openrewrite/rewrite/pull/10175)
+* Return false from TOML and XML SemanticallyEqual when exactly one argument is null by @timtebeek in [#10176](https://github.com/openrewrite/rewrite/pull/10176)
+* Recognize class references in Spring and servlet XML by @pdelagrave in [#10165](https://github.com/openrewrite/rewrite/pull/10165)
+* YAML: record the comma after a nested collection, alias or pair in a flow sequence by @steve-aom-elliott in [#10161](https://github.com/openrewrite/rewrite/pull/10161)
+* Remember a repository's authentication challenge when the credentialed request answers 404 by @shanman190 in [#10178](https://github.com/openrewrite/rewrite/pull/10178)
+* Resolve a Gradle dynamic version before requesting its POM by @shanman190 in [#10160](https://github.com/openrewrite/rewrite/pull/10160)
+
+#### [rewrite-apache 2.61.0](https://github.com/openrewrite/rewrite-apache/releases/tag/v2.61.0)
+
+* Remove locals and imports left unused by RemoveSettingsIgnoredWithConnectionManager by @timtebeek in [#201](https://github.com/openrewrite/rewrite-apache/pull/201)
+* Remove TLS settings ignored next to `setConnectionManager` for HttpClient 5 by @timtebeek in [#202](https://github.com/openrewrite/rewrite-apache/pull/202)
+* Migrate `HttpClientBuilder` pool settings to `PoolingHttpClientConnectionManagerBuilder` for HttpClient 5 by @ds-xdev in [#200](https://github.com/openrewrite/rewrite-apache/pull/200)
+* Group no-change tests in a `@Nested class NoChange` by @timtebeek in [#203](https://github.com/openrewrite/rewrite-apache/pull/203)
+
+#### [rewrite-cucumber-jvm 2.47.0](https://github.com/openrewrite/rewrite-cucumber-jvm/releases/tag/v2.47.0)
+
+* Add migration from `cucumber-jvm-deps` to `cucumber-java` by @greg-at-moderne in [#87](https://github.com/openrewrite/rewrite-cucumber-jvm/pull/87)
+* Group no-change tests in a `@Nested class NoChange` by @timtebeek in [#90](https://github.com/openrewrite/rewrite-cucumber-jvm/pull/90)
+
+#### [rewrite-hibernate 2.54.0](https://github.com/openrewrite/rewrite-hibernate/releases/tag/v2.54.0)
+
+* Group no-change tests in a `@Nested class NoChange` by @timtebeek in [#127](https://github.com/openrewrite/rewrite-hibernate/pull/127)
+
+#### [rewrite-jackson 1.58.0](https://github.com/openrewrite/rewrite-jackson/releases/tag/v1.58.0)
+
+* Declare the Spring beans namespace in the springXmlBeanClass test by @timtebeek in [#220](https://github.com/openrewrite/rewrite-jackson/pull/220)
+* Group no-change tests in a `@Nested class NoChange` by @timtebeek in [#219](https://github.com/openrewrite/rewrite-jackson/pull/219)
+
+#### [rewrite-java-dependencies 1.91.0](https://github.com/openrewrite/rewrite-java-dependencies/releases/tag/v1.91.0)
+
+* Group no-change tests in a `@Nested class NoChange` by @timtebeek in [#243](https://github.com/openrewrite/rewrite-java-dependencies/pull/243)
+
+#### [rewrite-jenkins 0.65.0](https://github.com/openrewrite/rewrite-jenkins/releases/tag/v0.65.0)
+
+* Group no-change tests in a `@Nested class NoChange` by @timtebeek in [#123](https://github.com/openrewrite/rewrite-jenkins/pull/123)
+
+#### [rewrite-micronaut 2.66.0](https://github.com/openrewrite/rewrite-micronaut/releases/tag/v2.66.0)
+
+* Group no-change tests in a `@Nested class NoChange` by @timtebeek in [#173](https://github.com/openrewrite/rewrite-micronaut/pull/173)
+
+#### [rewrite-migrate-java 3.73.0](https://github.com/openrewrite/rewrite-migrate-java/releases/tag/v3.73.0)
+
+* Limit Sonar composites to Java sources by @Jammy-Louie in [#1492](https://github.com/openrewrite/rewrite-migrate-java/pull/1492)
+
+#### [rewrite-pmd 0.28.0](https://github.com/openrewrite/rewrite-pmd/releases/tag/v0.28.0)
+
+* Group no-change tests in a `@Nested class NoChange` by @timtebeek in [#12](https://github.com/openrewrite/rewrite-pmd/pull/12)
+
+#### [rewrite-prethink 1.33.0](https://github.com/openrewrite/rewrite-prethink/releases/tag/v1.33.0)
+
+* Group no-change tests in a `@Nested class NoChange` by @timtebeek in [#45](https://github.com/openrewrite/rewrite-prethink/pull/45)
+
+#### [rewrite-quarkus 2.63.0](https://github.com/openrewrite/rewrite-quarkus/releases/tag/v2.63.0)
+
+* Group no-change tests in a `@Nested class NoChange` by @timtebeek in [#134](https://github.com/openrewrite/rewrite-quarkus/pull/134)
+
+#### [rewrite-spring 6.68.0](https://github.com/openrewrite/rewrite-spring/releases/tag/v6.68.0)
+
+* Rename Redis pool properties to `spring.data.redis` instead of commenting them out by @ds-xdev in [#1335](https://github.com/openrewrite/rewrite-spring/pull/1335)
+* Upgrade PageHelper Spring Boot starter in UpgradeMyBatisToSpringBoot_3_0 by @ds-xdev in [#1334](https://github.com/openrewrite/rewrite-spring/pull/1334)
+* Leave WebSecurityConfigurerAdapter classes unchanged when legacy spring-security-oauth2 is used by @ds-xdev in [#1333](https://github.com/openrewrite/rewrite-spring/pull/1333)
+
+#### [rewrite-spring-to-quarkus 0.40.0](https://github.com/openrewrite/rewrite-spring-to-quarkus/releases/tag/v0.40.0)
+
+* Group no-change tests in a `@Nested class NoChange` by @timtebeek in [#115](https://github.com/openrewrite/rewrite-spring-to-quarkus/pull/115)
+
+#### [rewrite-static-analysis 2.72.0](https://github.com/openrewrite/rewrite-static-analysis/releases/tag/v2.72.0)
+
+* Skip Ruby sources in several recipes by @greg-at-moderne in [#1281](https://github.com/openrewrite/rewrite-static-analysis/pull/1281)
+* Limit Sonar composites to Java sources by @Jammy-Louie in [#1282](https://github.com/openrewrite/rewrite-static-analysis/pull/1282)
+* Qualify only calls of the anonymous class in NoDoubleBraceInitialization by @Jammy-Louie in [#1283](https://github.com/openrewrite/rewrite-static-analysis/pull/1283)
+
+#### [rewrite-testing-frameworks 3.76.0](https://github.com/openrewrite/rewrite-testing-frameworks/releases/tag/v3.76.0)
+
+* Fix false positives in RemoveEmptyTests and TestsShouldIncludeAssertions by @Jammy-Louie in [#1352](https://github.com/openrewrite/rewrite-testing-frameworks/pull/1352)
+* Limit Sonar composites to Java sources by @Jammy-Louie in [#1355](https://github.com/openrewrite/rewrite-testing-frameworks/pull/1355)
+* Update WireMock 4 recipe to 4.0.0-beta.44 by @sullis in [#1353](https://github.com/openrewrite/rewrite-testing-frameworks/pull/1353)
+* Add AwaitilityBestPractices recipe by @sullis in [#1354](https://github.com/openrewrite/rewrite-testing-frameworks/pull/1354)
+
+#### [rewrite-third-party 0.76.0](https://github.com/openrewrite/rewrite-third-party/releases/tag/v0.76.0)
+
+* Limit Sonar composites to Java sources by @Jammy-Louie in [#133](https://github.com/openrewrite/rewrite-third-party/pull/133)
+* Group no-change tests in a `@Nested class NoChange` by @timtebeek in [#134](https://github.com/openrewrite/rewrite-third-party/pull/134)
+* Aggregate Quarkus recipes from quarkus-update-recipes 1.16.0 by @timtebeek in [#135](https://github.com/openrewrite/rewrite-third-party/pull/135)
+* Run Picnic String rules in Sonar critical only where their replacement compiles by @Jammy-Louie in [#136](https://github.com/openrewrite/rewrite-third-party/pull/136)
+
 ## [rewrite-recipe-bom 3.66.0](https://github.com/openrewrite/rewrite-recipe-bom/releases/tag/v3.66.0)
 
 Released on November 26, 2026, with OpenRewrite 8.118.0.
