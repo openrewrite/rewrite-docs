@@ -8,6 +8,56 @@ Each release of the [rewrite-recipe-bom](https://github.com/openrewrite/rewrite-
 These are the release notes of the modules that changed in each release over the past year, taken from their GitHub releases.
 For the current version of each module, see the [latest versions of every OpenRewrite module](https://docs.moderne.io/user-documentation/recipes/lists/latest-versions-of-every-openrewrite-module).
 
+## [rewrite-recipe-bom 3.68.0](https://github.com/openrewrite/rewrite-recipe-bom/releases/tag/v3.68.0)
+
+Released on November 28, 2026, with OpenRewrite 8.120.0.
+
+#### [rewrite 8.120.0](https://github.com/openrewrite/rewrite/releases/tag/v8.120.0)
+
+* Keep the Go type mapper's interface hierarchy acyclic by @knutwannheden in [#10181](https://github.com/openrewrite/rewrite/pull/10181)
+* Give nested captured wildcards distinct type signatures in the Java parsers by @knutwannheden in [#10182](https://github.com/openrewrite/rewrite/pull/10182)
+* Keep closing one RecipeClassLoader from breaking others reading the same jar by @knutwannheden in [#10183](https://github.com/openrewrite/rewrite/pull/10183)
+* Maven: let RemoveDependency remove system-scoped dependencies by @knutwannheden in [#10185](https://github.com/openrewrite/rewrite/pull/10185)
+* Scala: give no-argument method invocations `J.Empty` by @greg-at-moderne in [#10189](https://github.com/openrewrite/rewrite/pull/10189)
+* Rename subpackages in `ChangePackage` when the new name is a string prefix of the old by @timtebeek in [#10184](https://github.com/openrewrite/rewrite/pull/10184)
+* Limit `InlineMethodCalls` to Java sources by @greg-at-moderne in [#10190](https://github.com/openrewrite/rewrite/pull/10190)
+* C#: run DotNetBuildContextTests in the process environment collection by @greg-at-moderne in [#10191](https://github.com/openrewrite/rewrite/pull/10191)
+* YAML: keep end-of-line comments in place in AppendToSequence, DeleteKey and DeleteProperty by @steve-aom-elliott in [#10180](https://github.com/openrewrite/rewrite/pull/10180)
+
+#### [rewrite-apache 2.62.0](https://github.com/openrewrite/rewrite-apache/releases/tag/v2.62.0)
+
+* Improve test coverage and assertions for UpgradeApacheHttpClient_5 by @sullis in [#204](https://github.com/openrewrite/rewrite-apache/pull/204)
+
+#### [rewrite-hibernate 2.55.0](https://github.com/openrewrite/rewrite-hibernate/releases/tag/v2.55.0)
+
+* Declare the `JsonType` stub in its own package in `TypeAnnotationParameterTest` by @steve-aom-elliott in [#128](https://github.com/openrewrite/rewrite-hibernate/pull/128)
+
+#### [rewrite-migrate-gradle 0.25.0](https://github.com/openrewrite/rewrite-migrate-gradle/releases/tag/v0.25.0)
+
+* Fix two categories accidentally merged in a YAML by @greg-at-moderne in [#64](https://github.com/openrewrite/rewrite-migrate-gradle/pull/64)
+
+#### [rewrite-migrate-java 3.74.0](https://github.com/openrewrite/rewrite-migrate-java/releases/tag/v3.74.0)
+
+* ExtractExplicitConstructorInvocationArguments - Name extracted constructor arguments of nested types by their simple name by @greg-at-moderne in [#1493](https://github.com/openrewrite/rewrite-migrate-java/pull/1493)
+
+#### [rewrite-netty 0.41.0](https://github.com/openrewrite/rewrite-netty/releases/tag/v0.41.0)
+
+* Support constructor arguments and KQueue in EventLoopGroup migration by @sullis in [#29](https://github.com/openrewrite/rewrite-netty/pull/29)
+
+#### [rewrite-rewrite 0.63.0](https://github.com/openrewrite/rewrite-rewrite/releases/tag/v0.63.0)
+
+* `UseVisitWithParentCursor` - fix `ClassCastException` when the rewritten call is a method select by @greg-at-moderne in [#143](https://github.com/openrewrite/rewrite-rewrite/pull/143)
+* Use `Collections.singleton(..)` for a single recipe tag by @timtebeek in [#144](https://github.com/openrewrite/rewrite-rewrite/pull/144)
+
+#### [rewrite-spring 6.69.0](https://github.com/openrewrite/rewrite-spring/releases/tag/v6.69.0)
+
+* Add Spring Boot versions to recipes table in README by @sullis in [#1336](https://github.com/openrewrite/rewrite-spring/pull/1336)
+
+#### [rewrite-static-analysis 2.73.0](https://github.com/openrewrite/rewrite-static-analysis/releases/tag/v2.73.0)
+
+* `VariableReferences` - treat compound assignment at the root of the searched subtree as a read by @greg-at-moderne in [#1291](https://github.com/openrewrite/rewrite-static-analysis/pull/1291)
+* Fix a few recipes for Python, TypeScript by @greg-at-moderne in [#1290](https://github.com/openrewrite/rewrite-static-analysis/pull/1290)
+
 ## [rewrite-recipe-bom 3.67.0](https://github.com/openrewrite/rewrite-recipe-bom/releases/tag/v3.67.0)
 
 Released on November 27, 2026, with OpenRewrite 8.119.0.
